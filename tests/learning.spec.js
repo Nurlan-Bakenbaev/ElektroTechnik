@@ -13,7 +13,8 @@ function watchErrors(page) {
 }
 
 async function visit(page, route = 'home') {
-  await page.goto(`/#/${route}`);
+  const basePath = new URL(process.env.PLAYWRIGHT_BASE_URL || 'http://127.0.0.1:3000').pathname.replace(/\/$/, '');
+  await page.goto(`${basePath}/#/${route}`);
   await expect(page.getByRole('main')).toBeVisible();
 }
 

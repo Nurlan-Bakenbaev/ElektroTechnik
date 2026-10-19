@@ -1,18 +1,19 @@
 // Original textbook illustrations downloaded from the official OpenStax repository.
 // This immutable revision was distributed under CC BY 4.0; original pixels are preserved.
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
 const revision = 'db44eb99e9aa1d918fd8cf182f82ccdece9c7b11';
 const sourceBase = `https://github.com/openstax/osbooks-university-physics-bundle/blob/${revision}/media/`;
 const attribution = {
   credit: 'OpenStax / Rice University — Samuel J. Ling, Jeff Sanny, William Moebs',
   license: 'CC BY 4.0',
   licenseUrl: 'https://creativecommons.org/licenses/by/4.0/',
-  attributionUrl: '/images/ATTRIBUTION.md',
+  attributionUrl: `${basePath}/images/ATTRIBUTION.md`,
 };
 
 export const illustrations = {
   current: {
     ...attribution,
-    src: '/images/current-flow.jpg',
+    src: `${basePath}/images/current-flow.jpg`,
     width: 720,
     height: 241,
     alt: 'Два проводника: положительные заряды движутся вдоль условного тока, отрицательные — против него. Показаны сечение A, поле E и ток I.',
@@ -22,7 +23,7 @@ export const illustrations = {
   },
   circuits: {
     ...attribution,
-    src: '/images/electric-circuit.jpg',
+    src: `${basePath}/images/electric-circuit.jpg`,
     width: 858,
     height: 374,
     alt: 'Батарея, выключатель и лампа, а рядом две электрические схемы: с разомкнутым и замкнутым выключателем.',
@@ -32,7 +33,7 @@ export const illustrations = {
   },
   resistance: {
     ...attribution,
-    src: '/images/resistance-wire.jpg',
+    src: `${basePath}/images/resistance-wire.jpg`,
     width: 624,
     height: 240,
     alt: 'Однородный цилиндрический проводник длиной L, площадью сечения A и удельным сопротивлением ρ. Подписана формула R = ρL/A.',
@@ -42,7 +43,7 @@ export const illustrations = {
   },
   field: {
     ...attribution,
-    src: '/images/electric-field.jpg',
+    src: `${basePath}/images/electric-field.jpg`,
     width: 765,
     height: 456,
     alt: 'Слева силовые линии расходятся от положительного заряда; справа линии диполя идут от положительного заряда к отрицательному.',
@@ -52,7 +53,7 @@ export const illustrations = {
   },
   capacitor: {
     ...attribution,
-    src: '/images/capacitor-plates.jpg',
+    src: `${basePath}/images/capacitor-plates.jpg`,
     width: 629,
     height: 462,
     alt: 'Плоский конденсатор из двух пластин площадью A с зазором d и зарядами +Q и −Q, а рядом свёрнутый конденсатор с диэлектриком.',
@@ -62,7 +63,7 @@ export const illustrations = {
   },
   magnets: {
     ...attribution,
-    src: '/images/magnetic-field.jpg',
+    src: `${basePath}/images/magnetic-field.jpg`,
     width: 945,
     height: 362,
     alt: 'Магнитные линии стержневого магнита и поля между разноимёнными и одноимёнными полюсами N и S.',
@@ -72,7 +73,7 @@ export const illustrations = {
   },
   electromagnetism: {
     ...attribution,
-    src: '/images/electromagnetic-induction.jpg',
+    src: `${basePath}/images/electromagnetic-induction.jpg`,
     width: 964,
     height: 492,
     alt: 'Пять опытов с магнитом, катушкой и гальванометром: движение магнита меняет направление тока; неподвижный магнит не создаёт индукционный ток.',
@@ -82,7 +83,7 @@ export const illustrations = {
   },
   'magnetic-quantities': {
     ...attribution,
-    src: '/images/solenoid.jpg',
+    src: `${basePath}/images/solenoid.jpg`,
     width: 683,
     height: 740,
     alt: 'Соленоид с током и его продольный разрез: поля отдельных витков складываются в магнитное поле вдоль оси катушки.',
