@@ -1,0 +1,93 @@
+// Original textbook illustrations downloaded from the official OpenStax repository.
+// This immutable revision was distributed under CC BY 4.0; original pixels are preserved.
+const revision = 'db44eb99e9aa1d918fd8cf182f82ccdece9c7b11';
+const sourceBase = `https://github.com/openstax/osbooks-university-physics-bundle/blob/${revision}/media/`;
+const attribution = {
+  credit: 'OpenStax / Rice University — Samuel J. Ling, Jeff Sanny, William Moebs',
+  license: 'CC BY 4.0',
+  licenseUrl: 'https://creativecommons.org/licenses/by/4.0/',
+  attributionUrl: '/images/ATTRIBUTION.md',
+};
+
+export const illustrations = {
+  current: {
+    ...attribution,
+    src: '/images/current-flow.jpg',
+    width: 720,
+    height: 241,
+    alt: 'Два проводника: положительные заряды движутся вдоль условного тока, отрицательные — против него. Показаны сечение A, поле E и ток I.',
+    caption: 'Условное направление тока совпадает с движением положительного заряда. В металлах электроны движутся в противоположную сторону. A — поперечное сечение, E — электрическое поле.',
+    sourceUrl: `${sourceBase}CNX_UPhysics_26_01_CurrentI.jpg`,
+    textbookUrl: 'https://openstax.org/books/university-physics-volume-2/pages/9-1-electrical-current',
+  },
+  circuits: {
+    ...attribution,
+    src: '/images/electric-circuit.jpg',
+    width: 858,
+    height: 374,
+    alt: 'Батарея, выключатель и лампа, а рядом две электрические схемы: с разомкнутым и замкнутым выключателем.',
+    caption: 'Одна цепь на рисунке и на схеме. Батарея создаёт напряжение, лампа служит нагрузкой. Только замкнутый выключатель даёт току непрерывный путь; при разрыве установившийся ток прекращается.',
+    sourceUrl: `${sourceBase}CNX_UPhysics_26_01_Circuit.jpg`,
+    textbookUrl: 'https://openstax.org/books/university-physics-volume-2/pages/9-1-electrical-current',
+  },
+  resistance: {
+    ...attribution,
+    src: '/images/resistance-wire.jpg',
+    width: 624,
+    height: 240,
+    alt: 'Однородный цилиндрический проводник длиной L, площадью сечения A и удельным сопротивлением ρ. Подписана формула R = ρL/A.',
+    caption: 'Геометрия сопротивления: длинный провод затрудняет ток сильнее, а большое сечение даёт больше путей для переноса заряда. ρ характеризует материал при заданной температуре.',
+    sourceUrl: `${sourceBase}CNX_UPhysics_26_03_Cylinder.jpg`,
+    textbookUrl: 'https://openstax.org/books/university-physics-volume-2/pages/9-3-resistivity-and-resistance',
+  },
+  field: {
+    ...attribution,
+    src: '/images/electric-field.jpg',
+    width: 765,
+    height: 456,
+    alt: 'Слева силовые линии расходятся от положительного заряда; справа линии диполя идут от положительного заряда к отрицательному.',
+    caption: 'Силовые линии электрического поля выходят из положительного заряда и входят в отрицательный. Касательная показывает направление E, а большая густота линий соответствует более сильному полю.',
+    sourceUrl: `${sourceBase}CNX_UPhysics_22_06_FieldPos.jpg`,
+    textbookUrl: 'https://openstax.org/books/university-physics-volume-2/pages/5-6-electric-field-lines',
+  },
+  capacitor: {
+    ...attribution,
+    src: '/images/capacitor-plates.jpg',
+    width: 629,
+    height: 462,
+    alt: 'Плоский конденсатор из двух пластин площадью A с зазором d и зарядами +Q и −Q, а рядом свёрнутый конденсатор с диэлектриком.',
+    caption: 'Две обкладки накапливают равные по модулю и противоположные заряды. Плоские пластины можно свернуть с изолирующим слоем: большая площадь помещается в компактный корпус. Insulator означает диэлектрик.',
+    sourceUrl: `${sourceBase}CNX_UPhysics_25_01_Battery.jpg`,
+    textbookUrl: 'https://openstax.org/books/university-physics-volume-2/pages/8-1-capacitors-and-capacitance',
+  },
+  magnets: {
+    ...attribution,
+    src: '/images/magnetic-field.jpg',
+    width: 945,
+    height: 362,
+    alt: 'Магнитные линии стержневого магнита и поля между разноимёнными и одноимёнными полюсами N и S.',
+    caption: 'Снаружи магнита линии идут от N к S и замыкаются через его внутреннюю область. Между разноимёнными полюсами линии соединяются; между одноимёнными расходятся. N — северный, S — южный полюс.',
+    sourceUrl: `${sourceBase}CNX_UPhysics_28_02_MagLines.jpg`,
+    textbookUrl: 'https://openstax.org/books/university-physics-volume-2/pages/11-2-magnetic-fields-and-lines',
+  },
+  electromagnetism: {
+    ...attribution,
+    src: '/images/electromagnetic-induction.jpg',
+    width: 964,
+    height: 492,
+    alt: 'Пять опытов с магнитом, катушкой и гальванометром: движение магнита меняет направление тока; неподвижный магнит не создаёт индукционный ток.',
+    caption: 'Магнит движется относительно катушки — поток меняется и прибор показывает ток. При смене направления движения или полюса меняется направление тока. В последнем опыте магнит неподвижен, поток постоянен и индукционного тока нет.',
+    sourceUrl: `${sourceBase}CNX_UPhysics_30_01_GalvMag.jpg`,
+    textbookUrl: 'https://openstax.org/books/university-physics-volume-2/pages/13-1-faradays-law',
+  },
+  'magnetic-quantities': {
+    ...attribution,
+    src: '/images/solenoid.jpg',
+    width: 683,
+    height: 740,
+    alt: 'Соленоид с током и его продольный разрез: поля отдельных витков складываются в магнитное поле вдоль оси катушки.',
+    caption: 'Соленоид — длинная катушка. Каждый виток создаёт поле, а внутри поля витков складываются. Для длинной равномерной катушки H ≈ NI/l; в линейной среде B = μ₀μrH. Точки и крестики показывают ток к наблюдателю и от него.',
+    sourceUrl: `${sourceBase}CNX_UPhysics_29_06_Solenoid.jpg`,
+    textbookUrl: 'https://openstax.org/books/university-physics-volume-2/pages/12-6-solenoids-and-toroids',
+  },
+};
