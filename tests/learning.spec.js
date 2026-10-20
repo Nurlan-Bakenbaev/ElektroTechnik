@@ -264,7 +264,9 @@ test("glossary finds German terms, follows the lesson link and handles an empty 
   await search.fill(term.german);
   const match = page
     .locator(".glossary-list article")
-    .filter({ hasText: term.term });
+    .filter({
+      has: page.getByRole("heading", { name: new RegExp(`^${term.term}`) }),
+    });
   await expect(match).toHaveCount(1);
   await expect(match).toContainText(term.definition);
   await match.getByRole("link", { name: /^Zur Lektion/ }).click();
@@ -538,5 +540,34 @@ test("German typography, local equation images and reduced-motion scrolling work
   await expect(formula).toHaveAttribute("src", /\/images\/formulas\/28.svg$/);
   await page.emulateMedia({ reducedMotion: "reduce" });
   await expect(page.locator("html")).not.toHaveClass(/lenis/);
+  expect(errors).toEqual([]);
+});
+
+test("merged local registration trims names, persists them and supports cancellation", async ({
+  page,
+}) => {
+  const errors = watchErrors(page);
+  await visit(page);
+  await page.getByRole("button", { name: "Registrieren", exact: true }).click();
+  const dialog = page.getByRole("dialog", { name: "Registrierung (lokal)" });
+  await expect(dialog).toBeVisible();
+  await dialog.getByLabel("Name", { exact: true }).fill("   ");
+  await dialog.getByRole("checkbox").check();
+  await expect(
+    dialog.getByRole("button", { name: "Registrieren", exact: true }),
+  ).toBeDisabled();
+  await dialog.getByLabel("Name", { exact: true }).fill("  Volt Lerner  ");
+  await dialog
+    .getByRole("button", { name: "Registrieren", exact: true })
+    .click();
+  await expect(dialog).not.toBeVisible();
+  await page.reload();
+  await expect(page.locator(".profile-button strong")).toHaveText(
+    "Volt Lerner",
+  );
+  expect((await readProfile(page)).name).toBe("Volt Lerner");
+  await page.getByRole("button", { name: "Registrieren", exact: true }).click();
+  await page.keyboard.press("Escape");
+  await expect(dialog).not.toBeVisible();
   expect(errors).toEqual([]);
 });

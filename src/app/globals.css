@@ -3535,20 +3535,43 @@ h3 {
 }
 
 /* circuit-art electron animation */
-.circuit-art { background-image: radial-gradient(ellipse at 10% 20%, rgba(255,255,255,0.35), transparent 20%), linear-gradient(180deg, #eef4fc 0%, #fdebc1 60%); }
-.circuit-art .electrons { pointer-events: none; }
-.circuit-art .electron { transform-origin: center; }
-.circuit-art .electron circle { filter: drop-shadow(0 4px 8px rgba(0,0,0,0.08)); }
-.circuit-art .electron text { font-weight: 700; font-family: inherit; }
-.circuit-art .electron:nth-child(1) { animation: drift-1 4.8s linear infinite; }
-.circuit-art .electron:nth-child(2) { animation: drift-2 5.6s linear infinite; }
-.circuit-art .electron:nth-child(3) { animation: drift-3 6.2s linear infinite; }
+.circuit-art {
+  background-image:
+    radial-gradient(
+      ellipse at 10% 20%,
+      rgba(255, 255, 255, 0.35),
+      transparent 20%
+    ),
+    linear-gradient(180deg, #eef4fc 0%, #fdebc1 60%);
+}
+.circuit-art .electrons {
+  pointer-events: none;
+}
+.circuit-art .electron {
+  transform-origin: center;
+}
+.circuit-art .electron circle {
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.08));
+}
+.circuit-art .electron text {
+  font-weight: 700;
+  font-family: inherit;
+}
+.circuit-art .electron:nth-child(1) {
+  animation: drift-1 4.8s linear infinite;
+}
+.circuit-art .electron:nth-child(2) {
+  animation: drift-2 5.6s linear infinite;
+}
+.circuit-art .electron:nth-child(3) {
+  animation: drift-3 6.2s linear infinite;
+}
 
 /* lightning motif */
 .circuit-art .lightning path {
   stroke: #ffd86b;
   stroke-width: 6;
-  filter: drop-shadow(0 6px 18px rgba(255,216,107,0.25));
+  filter: drop-shadow(0 6px 18px rgba(255, 216, 107, 0.25));
   stroke-linejoin: round;
   stroke-linecap: round;
   animation: bolt-glow 1.8s ease-in-out infinite;
@@ -3559,49 +3582,102 @@ h3 {
   top: 12px;
   font-size: 34px;
   color: #ffcc33;
-  text-shadow: 0 4px 18px rgba(255,204,51,0.25);
+  text-shadow: 0 4px 18px rgba(255, 204, 51, 0.25);
   animation: spark-flicker 3s ease-in-out infinite;
 }
 
 @keyframes bolt-glow {
-  0% { opacity: 0.6; filter: drop-shadow(0 2px 6px rgba(255,216,107,0.08)); }
-  50% { opacity: 1; filter: drop-shadow(0 10px 30px rgba(255,216,107,0.18)); }
-  100% { opacity: 0.6; filter: drop-shadow(0 2px 6px rgba(255,216,107,0.08)); }
+  0% {
+    opacity: 0.6;
+    filter: drop-shadow(0 2px 6px rgba(255, 216, 107, 0.08));
+  }
+  50% {
+    opacity: 1;
+    filter: drop-shadow(0 10px 30px rgba(255, 216, 107, 0.18));
+  }
+  100% {
+    opacity: 0.6;
+    filter: drop-shadow(0 2px 6px rgba(255, 216, 107, 0.08));
+  }
 }
 @keyframes spark-flicker {
-  0% { transform: translateY(0) scale(1); opacity: 0.9; }
-  50% { transform: translateY(-2px) scale(1.06); opacity: 1; }
-  100% { transform: translateY(0) scale(1); opacity: 0.9; }
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translateY(-2px) scale(1.06);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.9;
+  }
 }
 
 @keyframes drift-1 {
-  0% { transform: translate(0px, 0px); }
-  25% { transform: translate(12px, -8px); }
-  50% { transform: translate(0px, 6px); }
-  75% { transform: translate(-10px, -4px); }
-  100% { transform: translate(0px, 0px); }
+  0% {
+    transform: translate(0px, 0px);
+  }
+  25% {
+    transform: translate(12px, -8px);
+  }
+  50% {
+    transform: translate(0px, 6px);
+  }
+  75% {
+    transform: translate(-10px, -4px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
 }
 @keyframes drift-2 {
-  0% { transform: translate(0px, 0px); }
-  25% { transform: translate(-14px, 10px); }
-  50% { transform: translate(6px, -6px); }
-  75% { transform: translate(10px, 4px); }
-  100% { transform: translate(0px, 0px); }
+  0% {
+    transform: translate(0px, 0px);
+  }
+  25% {
+    transform: translate(-14px, 10px);
+  }
+  50% {
+    transform: translate(6px, -6px);
+  }
+  75% {
+    transform: translate(10px, 4px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
 }
 @keyframes drift-3 {
-  0% { transform: translate(0px, 0px); }
-  25% { transform: translate(8px, 6px); }
-  50% { transform: translate(-6px, -8px); }
-  75% { transform: translate(-12px, 6px); }
-  100% { transform: translate(0px, 0px); }
+  0% {
+    transform: translate(0px, 0px);
+  }
+  25% {
+    transform: translate(8px, 6px);
+  }
+  50% {
+    transform: translate(-6px, -8px);
+  }
+  75% {
+    transform: translate(-12px, 6px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .circuit-art .electron { animation: none !important; }
-  .circuit-art .lightning path { animation: none !important; }
-  .art-spark { animation: none !important; }
+  .circuit-art .electron {
+    animation: none !important;
+  }
+  .circuit-art .lightning path {
+    animation: none !important;
+  }
+  .art-spark {
+    animation: none !important;
+  }
 }
-
 
 /* Technisches Design: Blaupause-Raster, kantige Karten, Messing-Akzent */
 body {
@@ -3610,8 +3686,8 @@ body {
     linear-gradient(#0f4c8a0d 1px, transparent 1px),
     linear-gradient(90deg, #0f4c8a0d 1px, transparent 1px);
   background-size: 32px 32px;
-  font-size: 16px;
-  line-height: 1.65;
+  font-size: 17px;
+  line-height: 1.7;
 }
 h1,
 h2,
@@ -3622,11 +3698,10 @@ h3 {
 h1 {
   letter-spacing: -1px;
 }
-.formula-box,
-.formula-ref,
 .formula-grid code,
 code {
-  font-family: "JetBrains Mono", "Cascadia Mono", Consolas, "Courier New", monospace;
+  font-family:
+    "JetBrains Mono", "Cascadia Mono", Consolas, "Courier New", monospace;
 }
 .formula-box {
   border-left: 4px solid var(--green);
@@ -3645,4 +3720,65 @@ a:focus-visible,
 input:focus-visible,
 summary:focus-visible {
   outline-color: var(--green-deep);
+}
+
+/* Preserve the reading contrast and usable registration controls after merging themes. */
+.sidebar h3,
+.exam-banner h2 {
+  color: #f4f7fb;
+}
+.confirm-modal form {
+  display: grid;
+  gap: 16px;
+  margin-top: 24px;
+  text-align: left;
+}
+.confirm-modal input:not([type="checkbox"]) {
+  width: 100%;
+  padding: 12px 14px;
+  background: #fff;
+  border: 1px solid #65748a;
+  border-radius: 6px;
+  color: #17212b;
+}
+.confirm-modal .checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+.confirm-modal input[type="checkbox"] {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  margin-top: 3px;
+  accent-color: #0f4c8a;
+}
+.confirm-modal .button-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 12px;
+}
+@media (max-width: 700px) {
+  .topbar-right {
+    gap: 8px;
+  }
+  .register-button {
+    padding: 9px 10px;
+    font-size: 12px;
+    min-height: 40px;
+  }
+  .topbar .profile-button > span:not(.avatar),
+  .topbar .profile-button > svg,
+  .topbar-separator {
+    display: none;
+  }
+  .topbar .profile-button {
+    padding: 0;
+  }
+  .topbar .xp-indicator {
+    padding: 7px;
+  }
 }

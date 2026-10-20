@@ -51,6 +51,6 @@ Playwright verwendet `/usr/bin/chromium`; ein anderer Pfad kann mit `PLAYWRIGHT_
 STATIC_EXPORT=true NEXT_PUBLIC_BASE_PATH=/ElektroTechnik npm run build
 ```
 
-Das Verzeichnis `out/` enthält die statische Website. `.github/workflows/deploy-pages.yml` prüft, baut und veröffentlicht bei Push auf `main`. Der zusätzliche Next.js-Workflow ist weiterhin manuell ausführbar; es gibt nur einen automatischen Deployment-Workflow. GitHub Pages muss als Quelle **GitHub Actions** verwenden.
+Das Verzeichnis `out/` enthält die statische Website. `.github/workflows/deploy-pages.yml` prüft, baut und veröffentlicht bei Push auf `main`. Alle Quellcode-Branches sind integriert; ein einziger Workflow und `next.config.mjs` steuern Build und Veröffentlichung. Die Branch `gh-pages` enthält frühere Build-Artefakte und wird nicht in den Quellcode gemischt. GitHub Pages muss als Quelle **GitHub Actions** verwenden.
 
 Die Navigation verwendet Hash-Routen; alle lokalen Bilder, Schriftdateien und Formelbilder funktionieren auch unter `/ElektroTechnik/`. Externe Webseiten dienen ausschließlich als weiterführende Quellen.

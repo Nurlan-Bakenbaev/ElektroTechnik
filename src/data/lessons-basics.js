@@ -25,8 +25,7 @@ export const basicsLessons = [
         ],
         callout: {
           type: "insight",
-          title:
-            "Ein stromführender Draht ist nicht aufgeladen",
+          title: "Ein stromführender Draht ist nicht aufgeladen",
           text: "Ein Draht bleibt im Stromkreis praktisch elektrisch neutral. Positive und negative Ladungen heben sich auf. Der Strom beschreibt die Ladung, die durch einen Querschnitt transportiert wird, nicht eine Überschussladung im Draht.",
         },
       },
@@ -71,8 +70,7 @@ export const basicsLessons = [
       },
       {
         id: "closed-loop",
-        title:
-          "4. Warum braucht man einen geschlossenen Stromkreis?",
+        title: "4. Warum braucht man einen geschlossenen Stromkreis?",
         paragraphs: [
           "Ein dauerhafter Gleichstrom braucht bewegliche Ladungsträger, ein aufrechterhaltenes Feld und einen geschlossenen Weg. Er führt von einer Klemme der Quelle über Hinleiter und Verbraucher und über den Rückleiter zur anderen Klemme. Im Inneren der Quelle setzt er sich fort. Schließt man nur einen Pol an die Lampe an, verschieben sich kurz Ladungen, ein stabiler Strom fließt aber nicht.",
           "Außerhalb der Quelle treibt das elektrische Feld die Ladungsträger an. In der Quelle trennen chemische Vorgänge die Ladungen und liefern so die Energie für den Verbraucher. Im Elektrolyten wandern Ionen, an den Elektroden laufen Reaktionen ab. Bei der Entladung wird der Vorrat an chemischer Energie aufgebraucht, nicht der Vorrat an Elektronen. Die Lampe wandelt Energie in Licht und Wärme um. Die Ladung bleibt erhalten.",
@@ -80,8 +78,7 @@ export const basicsLessons = [
         ],
         callout: {
           type: "warning",
-          title:
-            "Geschlossen heißt nicht kurzgeschlossen",
+          title: "Geschlossen heißt nicht kurzgeschlossen",
           text: "Ein normaler Stromkreis enthält einen Verbraucher, der den Strom begrenzt und Energie umwandelt. Verwenden Sie für Übungsaufbauten eine strombegrenzte Kleinspannungsquelle und einen geeigneten Verbraucher.",
         },
       },
@@ -344,8 +341,7 @@ export const basicsLessons = [
         ],
         callout: {
           type: "insight",
-          title:
-            "Nicht jede Schaltung lässt sich so vereinfachen",
+          title: "Nicht jede Schaltung lässt sich so vereinfachen",
           text: "Brückenschaltungen enthalten oft keine einfachen Reihen- und Parallelgruppen. Dann braucht man die Kirchhoffschen Gesetze. Fassen Sie keine Elemente zusammen, wenn zwischen ihnen ein weiterer Zweig abgeht.",
         },
       },
@@ -399,8 +395,7 @@ export const basicsLessons = [
         german: "gemischte Schaltung",
         symbol: "—",
         unit: "—",
-        definition:
-          "Schaltung mit Reihen- und Parallelgruppen.",
+        definition: "Schaltung mit Reihen- und Parallelgruppen.",
       },
       {
         term: "Zweig",
@@ -740,8 +735,7 @@ export const basicsLessons = [
       {
         id: "voltage-5",
         type: "choice",
-        question:
-          "Welche Aussage über eine Batterie im Leerlauf ist richtig?",
+        question: "Welche Aussage über eine Batterie im Leerlauf ist richtig?",
         options: [
           "Ohne Strom liegt auch keine Spannung an der Batterie an",
           "Spannung liegt nur innerhalb der Lampe vor",
@@ -1122,8 +1116,7 @@ export const basicsLessons = [
       },
       {
         id: "boundaries-and-review",
-        title:
-          "6. Wo das Gesetz nicht in einfacher Form gilt",
+        title: "6. Wo das Gesetz nicht in einfacher Form gilt",
         paragraphs: [
           "Glühlampe, Diode, Batterie und elektronische Baugruppen sind nicht unbedingt Widerstände mit konstantem R. Bei der Diode hängt der Strom stark nichtlinear von der Spannung ab. Bei der Glühlampe ändert die Erwärmung den Widerstand. Bei Kondensator und Spule ist der Strom in Ausgleichsvorgängen mit der Änderung von Spannung bzw. Magnetfluss verbunden. Man kann sie nicht durch einen konstanten Widerstand ersetzen. Bei Wechselstrom mit Blindelementen verwendet man die Impedanz.",
           "Praktischer Ablauf: Bauelement und Betriebszustand bestimmen, ein passendes Modell wählen, die Spannung genau an diesem Bauelement ablesen, Einheiten prüfen, rechnen. Danach kontrollieren Sie Knotenregel, Maschenregel und Leistung. Ist das Ergebnis unerwartet groß, probieren Sie es nicht am realen Aufbau aus. Prüfen Sie zuerst Vorsätze, Kurzschlüsse und die Grenzen des Modells. Der unendlich große Strom bei R = 0 an einer idealen Quelle zeigt nur, dass die Idealisierung nicht passt.",

@@ -56,8 +56,7 @@ export const magnetismLessons = [
         },
         callout: {
           type: "warning",
-          title:
-            "Die Spannung bleibt auch nach dem Abschalten bestehen",
+          title: "Die Spannung bleibt auch nach dem Abschalten bestehen",
           text: "Ein Kondensator kann eine gefährliche Ladung speichern. Experimentieren Sie nur mit Kleinspannung. Entladen Sie über einen geeigneten Widerstand und kontrollieren Sie die Spannung mit einem Messgerät. Schließen Sie geladene Kondensatoren nie mit einem Schraubendreher kurz und öffnen Sie keine Netzteile.",
         },
       },

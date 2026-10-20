@@ -359,7 +359,7 @@ export default function LearningApp() {
                 profile={profile}
                 onClose={() => setShowRegister(false)}
                 onSave={(name) => {
-                  updateProfile((p) => ({ ...p, name }));
+                  updateProfile((p) => setProfileName(p, name));
                   setShowRegister(false);
                   notify("Registrierung lokal gespeichert");
                 }}
@@ -499,7 +499,14 @@ function CircuitArt() {
         <circle cx="201" cy="127" r="94" fill="#fde2a2" fillOpacity=".35" />
         {/* lightning motif */}
         <g className="lightning" transform="translate(260,10)">
-          <path d="M10 10 L40 40 L26 40 L60 90 L30 70 L44 70 L10 10" fill="none" stroke="#ffd86b" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round" />
+          <path
+            d="M10 10 L40 40 L26 40 L60 90 L30 70 L44 70 L10 10"
+            fill="none"
+            stroke="#ffd86b"
+            strokeWidth="6"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
         </g>
         <path
           d="M78 100V57Q78 46 90 46H173M222 46H302Q315 46 315 59V190Q315 204 302 204H91Q78 204 78 190V150"
@@ -543,15 +550,21 @@ function CircuitArt() {
         <g className="electrons" aria-hidden="true">
           <g className="electron">
             <circle cx="140" cy="80" r="5" fill="#2563eb" />
-            <text x="140" y="84" fontSize="8" fill="#fff" textAnchor="middle">+</text>
+            <text x="140" y="84" fontSize="8" fill="#fff" textAnchor="middle">
+              +
+            </text>
           </g>
           <g className="electron">
             <circle cx="220" cy="110" r="5" fill="#ef4444" />
-            <text x="220" y="114" fontSize="8" fill="#fff" textAnchor="middle">−</text>
+            <text x="220" y="114" fontSize="8" fill="#fff" textAnchor="middle">
+              −
+            </text>
           </g>
           <g className="electron">
             <circle cx="250" cy="70" r="5" fill="#2563eb" />
-            <text x="250" y="74" fontSize="8" fill="#fff" textAnchor="middle">+</text>
+            <text x="250" y="74" fontSize="8" fill="#fff" textAnchor="middle">
+              +
+            </text>
           </g>
         </g>
 
@@ -569,7 +582,9 @@ function CircuitArt() {
           <ArrowUpRight size={12} />
         </span>
       </div>
-      <span className="art-spark">⚡</span>
+      <span className="art-spark" aria-hidden="true">
+        ⚡
+      </span>
     </div>
   );
 }
@@ -2241,8 +2256,8 @@ function RegisterDialog({ profile, onClose, onSave }) {
   }, []);
   function submit(e) {
     e.preventDefault();
-    if (!name || !confirmLocal) return;
-    onSave(name);
+    if (!name.trim() || !confirmLocal) return;
+    onSave(name.trim());
   }
   return (
     <dialog
@@ -2293,7 +2308,7 @@ function RegisterDialog({ profile, onClose, onSave }) {
             <button
               type="submit"
               className="button button-dark"
-              disabled={!name || !confirmLocal}
+              disabled={!name.trim() || !confirmLocal}
             >
               Registrieren
             </button>
