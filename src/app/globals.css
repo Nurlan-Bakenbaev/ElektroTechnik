@@ -4189,6 +4189,18 @@ select {
   }
 }
 
+@media (max-width: 1280px) {
+  :root {
+    --sidebar: 240px;
+  }
+}
+
+@media (max-width: 1050px) {
+  :root {
+    --sidebar: 0px;
+  }
+}
+
 @media (max-width: 1000px) {
   .hero {
     padding: 30px;
