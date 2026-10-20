@@ -54,6 +54,11 @@ import {
   toggleBookmark,
   setProfileName,
 } from "../lib/progress.js";
+import {
+  loadProfileFromStorage,
+  saveProfileToStorage,
+  removeAttemptKeys,
+} from "../lib/storage.js";
 import Quiz from "./Quiz";
 import InteractiveLab from "./InteractiveLab";
 
@@ -110,9 +115,10 @@ export default function LearningApp() {
   useEffect(() => {
     let initial;
     try {
-      const stored = localStorage.getItem(STORAGE_KEY);
-      initial = stored ? normalizeProfile(JSON.parse(stored)) : createProfile();
-    } catch {
+      // use storage wrapper for better testability
+      const stored = loadProfileFromStorage(STORAGE_KEY);
+      initial = stored ? normalizeProfile(stored) : createProfile();
+    } catch (err) {
       initial = createProfile();
       setStorageError(
         "Speichern konnte nicht gelesen werden. Beschädigte Daten werden nicht überschrieben. Exportieren Sie Ihren aktuellen Fortschritt oder stellen Sie ein Backup in Ihrem Profil wieder her.",
@@ -158,7 +164,7 @@ export default function LearningApp() {
     setProfile((current) => {
       const next = typeof updater === "function" ? updater(current) : updater;
       try {
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(next));
+        saveProfileToStorage(STORAGE_KEY, next);
         setStorageError("");
       } catch {
         setStorageError(
@@ -489,7 +495,11 @@ function CircuitArt() {
             <path d="M0,0 L6,3 L0,6" fill="#5b6b37" />
           </marker>
         </defs>
-        <circle cx="201" cy="127" r="94" fill="#e3efb0" fillOpacity=".55" />
+        <circle cx="201" cy="127" r="94" fill="#e3efb0" fillOpacity=".35" />
+        {/* lightning motif */}
+        <g className="lightning" transform="translate(260,10)">
+          <path d="M10 10 L40 40 L26 40 L60 90 L30 70 L44 70 L10 10" fill="none" stroke="#ffd86b" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round" />
+        </g>
         <path
           d="M78 100V57Q78 46 90 46H173M222 46H302Q315 46 315 59V190Q315 204 302 204H91Q78 204 78 190V150"
           fill="none"
@@ -558,7 +568,7 @@ function CircuitArt() {
           <ArrowUpRight size={12} />
         </span>
       </div>
-      <span className="art-spark">✳</span>
+      <span className="art-spark">⚡</span>
     </div>
   );
 }
@@ -1808,9 +1818,8 @@ function Profile({ profile, progress, onUpdate, notify }) {
             setName(next.name);
             setReset(false);
             try {
-              Object.keys(localStorage)
-                .filter((k) => k.startsWith("volt-academy:attempt:"))
-                .forEach((k) => localStorage.removeItem(k));
+              // use helper to remove attempt keys (best-effort)
+              removeAttemptKeys();
             } catch {}
             notify("Fortschritt zurückgesetzt");
           }}
@@ -2114,7 +2123,7 @@ function Essentials() {
             <strong>I = Q / t = 20 / 10 = 2 À</strong>
             <small>
               Überprüfen Sie: 2 Ampere sind 2 Coulomb pro Sekunde. In 10
-              Sekunden erhalten Sie 20 Anhänger.
+              Sekunden erhalten Sie 20 Coulomb.
             </small>
             <a className="text-link" href="#/lesson/current">
               Practice in the lesson

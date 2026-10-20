@@ -3488,12 +3488,44 @@ h3 {
 .textbook-section h2, .lesson-header h1, .worked-example h3 { color: #111827; }
 
 /* circuit-art electron animation */
+.circuit-art { background-image: radial-gradient(ellipse at 10% 20%, rgba(255,255,255,0.35), transparent 20%), linear-gradient(180deg, #f8fbef 0%, #eaf5c9 60%); }
 .circuit-art .electrons { pointer-events: none; }
 .circuit-art .electron { transform-origin: center; }
 .circuit-art .electron circle { filter: drop-shadow(0 4px 8px rgba(0,0,0,0.08)); }
+.circuit-art .electron text { font-weight: 700; font-family: inherit; }
 .circuit-art .electron:nth-child(1) { animation: drift-1 4.8s linear infinite; }
 .circuit-art .electron:nth-child(2) { animation: drift-2 5.6s linear infinite; }
 .circuit-art .electron:nth-child(3) { animation: drift-3 6.2s linear infinite; }
+
+/* lightning motif */
+.circuit-art .lightning path {
+  stroke: #ffd86b;
+  stroke-width: 6;
+  filter: drop-shadow(0 6px 18px rgba(255,216,107,0.25));
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  animation: bolt-glow 1.8s ease-in-out infinite;
+}
+.art-spark {
+  position: absolute;
+  right: 22px;
+  top: 12px;
+  font-size: 34px;
+  color: #ffcc33;
+  text-shadow: 0 4px 18px rgba(255,204,51,0.25);
+  animation: spark-flicker 3s ease-in-out infinite;
+}
+
+@keyframes bolt-glow {
+  0% { opacity: 0.6; filter: drop-shadow(0 2px 6px rgba(255,216,107,0.08)); }
+  50% { opacity: 1; filter: drop-shadow(0 10px 30px rgba(255,216,107,0.18)); }
+  100% { opacity: 0.6; filter: drop-shadow(0 2px 6px rgba(255,216,107,0.08)); }
+}
+@keyframes spark-flicker {
+  0% { transform: translateY(0) scale(1); opacity: 0.9; }
+  50% { transform: translateY(-2px) scale(1.06); opacity: 1; }
+  100% { transform: translateY(0) scale(1); opacity: 0.9; }
+}
 
 @keyframes drift-1 {
   0% { transform: translate(0px, 0px); }
@@ -3519,5 +3551,7 @@ h3 {
 
 @media (prefers-reduced-motion: reduce) {
   .circuit-art .electron { animation: none !important; }
+  .circuit-art .lightning path { animation: none !important; }
+  .art-spark { animation: none !important; }
 }
 

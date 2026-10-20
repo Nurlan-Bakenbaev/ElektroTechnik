@@ -32,7 +32,7 @@ export const examQuestions = [
     lessonId: "current",
     type: "numeric",
     question:
-      "Es fließt 2 Minuten lang ein Gleichstrom von 0,4 A. Welche Ladung geht durch den Drahtquerschnitt? Geben Sie Ihre Antwort in Anhängern an.",
+      "Es fließt 2 Minuten lang ein Gleichstrom von 0,4 A. Welche Ladung geht durch den Drahtquerschnitt? Geben Sie Ihre Antwort in Coulomb an.",
     answer: 48,
     unit: "C",
     tolerance: 0.1,

@@ -130,7 +130,7 @@ export const basicsLessons = [
         term: "Elektrische Ladung",
         german: "elektrische Ladung",
         symbol: "Q",
-        unit: "C - Anhänger",
+        unit: "C - Coulomb",
         definition:
           "Eine physikalische Größe, die die elektrischen Eigenschaften von Partikeln und die Menge der übertragenen Elektrizität charakterisiert.",
       },
@@ -162,7 +162,7 @@ export const basicsLessons = [
         term: "Amperemeter",
         german: "Amperemeter",
         symbol: "A",
-        unit: "Maßnahmen A",
+        unit: "A - Ampere",
         definition:
           "Ein Gerät zur Strommessung, das in Reihe mit dem zu untersuchenden Bereich geschaltet ist.",
       },
@@ -656,7 +656,7 @@ export const basicsLessons = [
         term: "Voltmeter",
         german: "Voltmeter",
         symbol: "V",
-        unit: "Maßnahmen V",
+        unit: "V - Volt",
         definition:
           "Ein hochohmiges Gerät, das zwischen zwei Punkten angeschlossen ist, um die Potenzialdifferenz zu messen.",
       },
