@@ -1,5 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
+import { motion } from "motion/react";
+import { AnimatedProgress } from "./LearningMotion";
 import {
   ArrowRight,
   Check,
@@ -300,13 +302,16 @@ export default function Quiz({
         className="quiz-progress"
         aria-label={`${answers.length} von ${questions.length} Antworten`}
       >
-        <span
-          style={{ width: `${(answers.length / questions.length) * 100}%` }}
-        />
+        <AnimatedProgress value={(answers.length / questions.length) * 100} />
       </div>
-      <h2 id="quiz-question" key={question.id}>
+      <motion.h2
+        id="quiz-question"
+        key={question.id}
+        initial={{ opacity: 0, y: 8 }}
+        animate={{ opacity: 1, y: 0 }}
+      >
         {question.question}
-      </h2>
+      </motion.h2>
       <form onSubmit={submit}>
         {question.type === "choice" ? (
           <fieldset className="answer-options">
@@ -366,7 +371,9 @@ export default function Quiz({
           </p>
         )}
         {checked ? (
-          <div
+          <motion.div
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
             className={`answer-feedback ${evaluate(question, answers[index].value) ? "feedback-correct" : "feedback-wrong"}`}
             role="status"
           >
@@ -376,7 +383,7 @@ export default function Quiz({
                 : `Richtige Antwort: ${correctText(question)}`}
             </strong>
             <p>{question.explanation}</p>
-          </div>
+          </motion.div>
         ) : null}
         <div className="quiz-bottom">
           <span>

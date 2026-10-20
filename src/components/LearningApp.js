@@ -2,6 +2,7 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "motion/react";
 import { scrollToReadingTarget } from "./LearningExperience";
+import { Reveal, AnimatedProgress } from "./LearningMotion";
 import FormulaImage from "./FormulaImage";
 import Image from "next/image";
 import {
@@ -281,7 +282,7 @@ export default function LearningApp() {
             <strong>{progress.percent}%</strong>
           </div>
           <div className="progress-track">
-            <span style={{ width: `${progress.percent}%` }} />
+            <AnimatedProgress value={progress.percent} />
           </div>
           <p>{progress.completed} von 13 Themen gemeistert</p>
           <a href={`#/lesson/${current.id}`}>
@@ -755,7 +756,8 @@ function LessonCard({ lesson, profile, bookmark, featured = false }) {
   const score = profile.results[lesson.id]?.score;
   const passed = score >= 4;
   return (
-    <article
+    <Reveal
+      as="article"
       className={`lesson-card ${featured ? "lesson-featured" : ""} ${passed ? "lesson-passed" : ""}`}
     >
       <div className="lesson-card-top">
@@ -813,7 +815,7 @@ function LessonCard({ lesson, profile, bookmark, featured = false }) {
           <ArrowUpRight size={17} />
         </span>
       </a>
-    </article>
+    </Reveal>
   );
 }
 
@@ -1048,7 +1050,8 @@ function Lesson({ lesson, profile, bookmark, onComplete }) {
                 </ul>
               </div>
               {lesson.sections.map((s, i) => (
-                <section
+                <Reveal
+                  as="section"
                   id={`section-${s.id}`}
                   className="textbook-section"
                   key={s.id}
@@ -1105,7 +1108,7 @@ function Lesson({ lesson, profile, bookmark, onComplete }) {
                   {i === 0 && illustrations[lesson.id] && (
                     <LessonFigure illustration={illustrations[lesson.id]} />
                   )}
-                </section>
+                </Reveal>
               ))}
               <section className="lesson-summary" id="summary">
                 <span className="eyebrow">
@@ -1484,7 +1487,7 @@ function Exam({ profile, progress, onComplete }) {
               <strong>{progress.completed} / 13</strong>
             </div>
             <div className="progress-track">
-              <span style={{ width: `${progress.percent}%` }} />
+              <AnimatedProgress value={progress.percent} />
             </div>
           </div>
           <div className="exam-checklist">
@@ -1596,7 +1599,7 @@ function Profile({ profile, progress, onUpdate, notify }) {
             </span>
           </div>
           <div className="progress-track">
-            <span style={{ width: `${(progress.xp % 200) / 2}%` }} />
+            <AnimatedProgress value={(progress.xp % 200) / 2} />
           </div>
           <p>
             20 XP für jede richtige Antwort des besten Versuchs der Lektion. In
@@ -2032,7 +2035,12 @@ function Essentials() {
       </div>
       <div className="concepts-grid">
         {quickConcepts.map((c, i) => (
-          <article className="concept-card" key={c.id}>
+          <Reveal
+            as="article"
+            delay={(i % 2) * 0.06}
+            className="concept-card"
+            key={c.id}
+          >
             <div className="concept-top">
               <span>{String(i + 1).padStart(2, "0")}</span>
               <span>{c.symbol}</span>
@@ -2057,7 +2065,7 @@ function Essentials() {
               Gehen Sie zur detaillierten Lektion
               <ArrowUpRight size={14} />
             </a>
-          </article>
+          </Reveal>
         ))}
       </div>
       <section className="first-calculations">

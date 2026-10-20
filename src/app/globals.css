@@ -3482,7 +3482,54 @@ h3 {
 }
 
 /* Neutral reading surface and explicit high-contrast text hierarchy. */
-.view-lesson { background: #ffffff; }
-.textbook-section > p, .concept-definition, .example-given, .worked-example li, .lesson-summary li { color: #252b33; }
-.formula-box > p, .formula-box > small, .lesson-figure figcaption, .formula-image figcaption { color: #374151; }
-.textbook-section h2, .lesson-header h1, .worked-example h3 { color: #111827; }
+.view-lesson {
+  background: #ffffff;
+}
+.textbook-section > p,
+.concept-definition,
+.example-given,
+.worked-example li,
+.lesson-summary li {
+  color: #252b33;
+}
+.formula-box > p,
+.formula-box > small,
+.lesson-figure figcaption,
+.formula-image figcaption {
+  color: #374151;
+}
+.textbook-section h2,
+.lesson-header h1,
+.worked-example h3 {
+  color: #111827;
+}
+/* Small responses to deliberate interaction, with no continuous text motion. */
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .button,
+  .path-card,
+  .visual-card,
+  .bookmark-button {
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease,
+      background-color 0.2s ease;
+  }
+  .button:hover,
+  .path-card:hover,
+  .visual-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px #17212b14;
+  }
+  .button:active,
+  .bookmark-button:active {
+    transform: scale(0.97);
+  }
+  .text-link > svg,
+  .lesson-card-bottom > svg {
+    transition: transform 0.2s ease;
+  }
+  .text-link:hover > svg,
+  .lesson-card-bottom:hover > svg {
+    transform: translateX(4px);
+  }
+}
