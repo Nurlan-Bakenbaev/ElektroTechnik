@@ -501,7 +501,7 @@ function CircuitArt() {
         <text x="332" y="123" className="svg-label">
           I
         </text>
-        <text x="106" y="114" fontSize="10" fill="#596044">
+        <text x="106" y="114" fontSize="12" fill="#596044">
           +
         </text>
         <text x="103" y="139" fontSize="13" fill="#596044">

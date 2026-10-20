@@ -21,7 +21,7 @@
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.09em;
   color: #667b35;
@@ -39,7 +39,7 @@
   display: flex;
   align-items: center;
   gap: 6px;
-  font-size: 11px;
+  font-size: 12px;
   color: #77806d;
 }
 .lab-live i {
@@ -144,7 +144,7 @@
   font-variant-numeric: tabular-nums;
 }
 .lab-control-label output span {
-  font-size: 11px;
+  font-size: 12px;
   color: #78816d;
   font-weight: 500;
 }
@@ -167,7 +167,7 @@
   display: flex;
   justify-content: space-between;
   color: #919785;
-  font-size: 9px;
+  font-size: 12px;
 }
 .lab-switch {
   display: grid;
@@ -180,7 +180,7 @@
 .lab-switch button {
   padding: 9px 4px;
   font: inherit;
-  font-size: 10px;
+  font-size: 12px;
   line-height: 1.3;
   background: transparent;
   border: 0;
@@ -212,7 +212,7 @@
 .lab-result-label {
   display: block;
   color: #7a8662;
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 500;
   margin-bottom: 5px;
 }
@@ -242,7 +242,7 @@
   gap: 9px;
   margin: 17px 0 0;
   color: #727a65;
-  font-size: 11px;
+  font-size: 12px;
   line-height: 1.8;
 }
 .lab-note > span {
@@ -253,13 +253,13 @@
   border: 1px solid #adb99a;
   border-radius: 50%;
   font-family: Georgia, serif;
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 700;
 }
 .lab-safety {
   margin: 10px 0 0 23px;
   color: #969d8b;
-  font-size: 9px;
+  font-size: 12px;
   line-height: 1.7;
 }
 .lab-conductor {
@@ -284,7 +284,7 @@
   flex-direction: column;
   align-items: center;
   gap: 6px;
-  font-size: 10px;
+  font-size: 12px;
   color: #949782;
 }
 .lab-conductor-caption strong {
@@ -294,7 +294,7 @@
 }
 .lab-conductor p {
   margin: 0;
-  font-size: 10px;
+  font-size: 12px;
   color: #879075;
   line-height: 1.8;
   text-align: center;
@@ -312,7 +312,7 @@
   min-width: 0;
 }
 .lab-flow span {
-  font-size: 10px;
+  font-size: 12px;
   color: #7a846b;
 }
 .lab-flow strong {
@@ -323,7 +323,7 @@
   white-space: nowrap;
 }
 .lab-flow small {
-  font-size: 10px;
+  font-size: 12px;
 }
 .lab-flow-arrow {
   font-size: 28px;
@@ -361,7 +361,7 @@
   padding: 24px;
 }
 .lab-energy-display > span {
-  font-size: 10px;
+  font-size: 12px;
   color: #879274;
 }
 .lab-energy-display > strong {
@@ -377,7 +377,7 @@
   letter-spacing: 0;
 }
 .lab-energy-display p {
-  font-size: 11px;
+  font-size: 12px;
   color: #7e896c;
   margin: 0;
 }

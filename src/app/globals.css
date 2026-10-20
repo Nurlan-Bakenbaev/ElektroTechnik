@@ -126,7 +126,7 @@ h3 {
   display: flex;
   align-items: center;
   gap: 9px;
-  font-size: 11px;
+  font-size: 12px;
   line-height: 1.6;
   letter-spacing: 1.4px;
   font-weight: 750;
@@ -268,14 +268,14 @@ h3 {
   position: absolute;
   top: 43px;
   left: 61px;
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.3px;
   white-space: nowrap;
   color: #9cb4a4;
 }
 .sidebar-label {
   margin: 0 13px 13px;
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 1.3px;
   color: #8fa996;
@@ -321,7 +321,7 @@ h3 {
   min-width: 22px;
   height: 22px;
   border-radius: 5px;
-  font-size: 11px;
+  font-size: 12px;
 }
 .main-nav > a.nav-active small {
   background: #abc963;
@@ -353,7 +353,7 @@ h3 {
   align-items: center;
   gap: 8px;
   color: #a7c68d;
-  font-size: 8px;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.9px;
 }
@@ -390,7 +390,7 @@ h3 {
 }
 .sidebar-course > p {
   margin-top: 9px;
-  font-size: 11px;
+  font-size: 12px;
   color: #a6b99a;
 }
 .sidebar-course > a {
@@ -401,7 +401,7 @@ h3 {
   border-top: 1px solid #40593d;
   padding: 16px 0;
   margin-top: 19px;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
   color: #d1e4bc;
 }
@@ -426,7 +426,7 @@ h3 {
   display: flex;
   align-items: center;
   gap: 7px;
-  font-size: 9px;
+  font-size: 12px;
   color: #92ad96;
 }
 .local-label > span {
@@ -519,7 +519,7 @@ h3 {
   font-weight: 700;
 }
 .profile-button small {
-  font-size: 10px;
+  font-size: 12px;
   color: #778971;
   white-space: nowrap;
 }
@@ -548,7 +548,7 @@ h3 {
   align-items: center;
   gap: 10px;
   color: #667f4f;
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 1.2px;
 }
@@ -562,7 +562,7 @@ h3 {
   border-radius: 30px;
   color: #70865a;
   padding: 6px 13px;
-  font-size: 11px;
+  font-size: 12px;
   white-space: nowrap;
 }
 .hero {
@@ -576,7 +576,7 @@ h3 {
 }
 .hero-copy > .eyebrow {
   color: #5d7e41;
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 1.2px;
   margin-bottom: 21px;
 }
@@ -628,7 +628,7 @@ h3 {
   display: flex;
   align-items: center;
   gap: 12px;
-  font-size: 11px;
+  font-size: 12px;
   color: #7b8b70;
 }
 .mini-avatars {
@@ -644,7 +644,7 @@ h3 {
   margin-left: -4px;
   border-radius: 50%;
   color: #667e4d;
-  font-size: 9px;
+  font-size: 12px;
   font-weight: 700;
   background: #e5edd8;
 }
@@ -681,7 +681,7 @@ h3 {
   align-items: center;
   gap: 7px;
   padding: 23px 23px 0;
-  font-size: 8px;
+  font-size: 12px;
   font-weight: 750;
   letter-spacing: 0.8px;
   color: #788d57;
@@ -712,7 +712,7 @@ h3 {
 }
 .svg-caption {
   font-family: inherit;
-  font-size: 8px;
+  font-size: 12px;
   fill: #71894f;
 }
 .art-bottom {
@@ -723,7 +723,7 @@ h3 {
   padding: 15px 0;
   margin: 0 23px;
   border-top: 1px solid #d2dfaf;
-  font-size: 8px;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 1px;
   color: #758b55;
@@ -787,7 +787,7 @@ h3 {
   font-weight: 700;
 }
 .course-stats small {
-  font-size: 10px;
+  font-size: 12px;
   color: #7b8c6b;
   font-weight: 400;
 }
@@ -840,7 +840,7 @@ h3 {
 .section-heading .eyebrow {
   margin-bottom: 10px;
   color: #6f8c54;
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 1.3px;
 }
 .section-heading h2 {
@@ -911,7 +911,7 @@ h3 {
   color: #9c78b4;
 }
 .lesson-number {
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 1px;
   font-weight: 750;
   color: #7d906a;
@@ -965,7 +965,7 @@ h3 {
   padding-bottom: 20px;
   margin-top: auto;
   color: #7a8e63;
-  font-size: 11px;
+  font-size: 12px;
 }
 .lesson-card-meta > span {
   display: flex;
@@ -1034,7 +1034,7 @@ h3 {
   align-items: center;
   justify-content: space-between;
   margin-bottom: 24px;
-  font-size: 11px;
+  font-size: 12px;
   color: #81986a;
 }
 .path-card > svg {
@@ -1060,7 +1060,7 @@ h3 {
   gap: 15px;
   padding-top: 13px;
   border-top: 1px solid #e1e9d7;
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.7px;
   color: #7c9664;
 }
@@ -1101,7 +1101,7 @@ h3 {
 }
 .visual-card-title small {
   display: block;
-  font-size: 10px;
+  font-size: 12px;
   color: #77955b;
   letter-spacing: 1px;
   font-weight: 700;
@@ -1117,7 +1117,7 @@ h3 {
 }
 .visual-credit {
   padding: 0 22px 20px;
-  font-size: 10px;
+  font-size: 12px;
   color: #76905f;
   line-height: 1.8;
 }
@@ -1150,7 +1150,7 @@ h3 {
 }
 .exam-banner .eyebrow {
   color: #b2d395;
-  font-size: 9px;
+  font-size: 12px;
   letter-spacing: 1.4px;
   margin-bottom: 10px;
 }
@@ -1176,7 +1176,7 @@ h3 {
   flex-wrap: wrap;
   gap: 30px;
   padding: 29px 0 0;
-  font-size: 11px;
+  font-size: 12px;
   color: #6b8356;
 }
 .trust-strip > span {
@@ -1192,7 +1192,7 @@ h3 {
   padding: 25px 0 28px;
   margin: 15px 40px 0;
   border-top: 1px solid var(--line);
-  font-size: 11px;
+  font-size: 12px;
   color: #778b66;
 }
 .footer-brand {
@@ -1213,7 +1213,7 @@ h3 {
 }
 .page-intro > .eyebrow {
   color: #66894b;
-  font-size: 11px;
+  font-size: 12px;
 }
 .page-intro h1 {
   font-size: clamp(38px, 3.2vw, 52px);
@@ -1258,7 +1258,7 @@ h3 {
 .filter-tabs > button > span {
   display: inline-block;
   padding: 0 5px;
-  font-size: 10px;
+  font-size: 12px;
   background: #cfe4b3;
   border-radius: 4px;
   color: #4e7735;
@@ -1291,7 +1291,7 @@ h3 {
   font-size: 12px;
 }
 .lesson-header > .eyebrow {
-  font-size: 11px;
+  font-size: 12px;
   color: #688b4c;
   letter-spacing: 1px;
 }
@@ -1373,7 +1373,7 @@ h3 {
   margin-bottom: 42px;
 }
 .objectives-box .eyebrow {
-  font-size: 11px;
+  font-size: 12px;
   color: #608344;
 }
 .objectives-box ul {
@@ -1437,7 +1437,7 @@ h3 {
   box-shadow: var(--shadow);
 }
 .formula-box > .eyebrow {
-  font-size: 10px;
+  font-size: 12px;
   color: #709251;
 }
 .formula-box > strong {
@@ -1472,7 +1472,7 @@ h3 {
   background: #fff;
 }
 .worked-example > .eyebrow {
-  font-size: 10px;
+  font-size: 12px;
   color: #759351;
 }
 .example-dot {
@@ -1581,7 +1581,7 @@ h3 {
 }
 .reading-toc > .eyebrow {
   margin: 6px 0 23px;
-  font-size: 10px;
+  font-size: 12px;
   color: #77965a;
 }
 .reading-toc nav {
@@ -1602,7 +1602,7 @@ h3 {
 .reading-toc nav a > span {
   flex-shrink: 0;
   color: #8cab6c;
-  font-size: 10px;
+  font-size: 12px;
 }
 .reading-toc nav a > svg {
   transform: translateY(2px);
@@ -1633,7 +1633,7 @@ h3 {
 }
 .lesson-summary > .eyebrow {
   color: #759849;
-  font-size: 10px;
+  font-size: 12px;
 }
 .lesson-summary h2 {
   font-size: 28px;
@@ -1736,7 +1736,7 @@ h3 {
 }
 .lesson-bottom-nav small {
   display: block;
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 1px;
   color: #79965c;
   margin-bottom: 6px;
@@ -1756,11 +1756,11 @@ h3 {
   margin-bottom: 25px;
 }
 .figure-heading > .eyebrow {
-  font-size: 10px;
+  font-size: 12px;
   color: #749553;
 }
 .figure-heading > span:last-child {
-  font-size: 11px;
+  font-size: 12px;
   color: #7b9460;
 }
 .textbook-image {
@@ -1785,7 +1785,7 @@ h3 {
   flex-wrap: wrap;
   align-items: center;
   gap: 8px 14px;
-  font-size: 11px;
+  font-size: 12px;
   color: #728d53;
   margin-top: 15px;
 }
@@ -1842,7 +1842,7 @@ h3 {
 .quiz-result > .eyebrow {
   justify-content: center;
   color: #73964a;
-  font-size: 11px;
+  font-size: 12px;
 }
 .quiz-intro h2,
 .quiz-result > h2 {
@@ -1898,7 +1898,7 @@ h3 {
   color: #729051;
 }
 .quiz-top .eyebrow {
-  font-size: 11px;
+  font-size: 12px;
 }
 .quiz-progress {
   height: 6px;
@@ -2343,7 +2343,7 @@ h3 {
   color: #6b9046;
 }
 .reference-formula .eyebrow {
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 0.7px;
 }
 .formula-ref {
@@ -2454,7 +2454,7 @@ h3 {
   border-radius: 50%;
   background: #f0f6e7;
   color: #8ca967;
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 650;
 }
 .check-done {
@@ -2537,7 +2537,7 @@ h3 {
   border-radius: 50%;
 }
 .profile-main-card > .eyebrow {
-  font-size: 10px;
+  font-size: 12px;
   color: #799e51;
 }
 .profile-main-card h2 {
@@ -2652,7 +2652,7 @@ h3 {
 }
 .data-card > .eyebrow {
   color: #71974a;
-  font-size: 10px;
+  font-size: 12px;
 }
 .data-card h2 {
   font-size: 31px;
@@ -2710,7 +2710,7 @@ h3 {
   border-radius: 8px;
   background: #eaf3dd;
   color: #81a256;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 650;
 }
 .profile-results > a > span:nth-child(3) {
@@ -2820,7 +2820,7 @@ h3 {
   padding-top: 5px;
 }
 .sources-list .eyebrow {
-  font-size: 10px;
+  font-size: 12px;
   color: #729352;
 }
 .sources-list h2 {
@@ -2904,7 +2904,7 @@ h3 {
   margin-bottom: 40px;
 }
 .origin-card > .eyebrow {
-  font-size: 11px;
+  font-size: 12px;
   color: #6d9546;
 }
 .origin-card > h2 {
