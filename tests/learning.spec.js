@@ -575,6 +575,12 @@ test("German typography, local equation images and reduced-motion scrolling work
       .first()
       .evaluate((e) => parseFloat(getComputedStyle(e).fontSize)),
   ).toBeGreaterThanOrEqual(17);
+  await page
+    .locator(".textbook-section .lesson-depth")
+    .filter({ has: page.locator(".formula-image") })
+    .first()
+    .locator("summary")
+    .click();
   const formula = page.locator(".formula-image img").first();
   await formula.scrollIntoViewIfNeeded();
   await expect

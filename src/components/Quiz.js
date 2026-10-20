@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import { motion } from "motion/react";
 import { AnimatedProgress } from "./LearningMotion";
 import { gradeAnswer, parseQuantity } from "../lib/answers.js";
+import { UnitText } from "./QuantityLegend";
+import { unitDefinitions } from "../data/units.js";
 import {
   ArrowRight,
   Check,
@@ -305,7 +307,7 @@ export default function Quiz({
         initial={{ opacity: 0, y: 8 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        {question.question}
+        <UnitText>{question.question}</UnitText>
       </motion.h2>
       <form onSubmit={submit}>
         {question.type === "choice" ? (
@@ -349,7 +351,12 @@ export default function Quiz({
                   setError("");
                 }}
               />
-              <span>{question.unit}</span>
+              <span>
+                {question.unit}
+                {unitDefinitions[question.unit]
+                  ? ` — ${unitDefinitions[question.unit].name}`
+                  : ""}
+              </span>
             </div>
             <small id="numeric-hint">
               Der Bruchteil kann durch einen Punkt oder ein Komma getrennt
@@ -377,7 +384,9 @@ export default function Quiz({
                 ? "Das stimmt!"
                 : `Richtige Antwort: ${correctText(question)}`}
             </strong>
-            <p>{question.explanation}</p>
+            <p>
+              <UnitText>{question.explanation}</UnitText>
+            </p>
           </motion.div>
         ) : null}
         <div className="quiz-bottom">

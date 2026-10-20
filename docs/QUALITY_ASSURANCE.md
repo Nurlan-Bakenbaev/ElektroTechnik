@@ -32,3 +32,17 @@ The reference walkthrough checks switch behavior, zero current with preserved so
 - [Mobile workspace](screenshots/ohm-mobile.png)
 
 These are actual screenshots, not generated mockups. Automated image-diff baselines are not yet configured. No field LCP, INP or CLS measurements are claimed. PDF export, a second theme, guided-session export and didactic migration of the remaining modules are outside this reference release.
+
+## Fachinformatik adaptation verification
+
+`npm run lint` covers the new beginner content, unit data, lesson-introduction/legend components and tests. `npm test` now has **44 passing tests**, including complete 13-topic / 78-section coverage, retained reference paragraphs, quantity/unit distinctions, preserved text tokenization, Celsius versus coulomb, and independent checks of the new worked numerical examples.
+
+Browser coverage additionally checks all thirteen rendered topics, access to preserved long references, C/F definitions in lessons and labs, category filtering/bookmark persistence in the new directory, and the actual effect of supply capacity versus device demand on the homepage. The existing profile, laboratory, course completion and exam scenarios remain in the full suite. The first new homepage test exposed an ambiguous status locator (outputs also have an implicit status role); the test was corrected to target the verdict component and then passed.
+
+- [Redesigned homepage, desktop](screenshots/azubi-home-desktop.png)
+- [Redesigned homepage, mobile](screenshots/azubi-home-mobile.png)
+- [Beginner explanation and example, mobile](screenshots/azubi-current-mobile.png)
+- [Course directory, desktop](screenshots/azubi-course-desktop.png)
+- [Course directory, mobile](screenshots/azubi-course-mobile.png)
+
+The final adaptation checks passed: `npm run lint`, `npm test` (**44 passed**), `npm run build`, and `npm run test:e2e` (**19 passed, 0 failed**). The browser suite includes all 65 topic questions and the 35-question final exam. Screenshot inspection supplements the assertions; it is not a claim of a complete accessibility certification.

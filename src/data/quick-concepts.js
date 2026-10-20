@@ -146,7 +146,7 @@ export const quickConcepts = [
     symbol: "C",
     unit: "Farad (F)",
     short:
-      "Die Kapazität gibt an, wie viel Ladung auf einer Platte des Kondensators für eine bestimmte Spannung zwischen den Platten benötigt wird. Für einen linearen Kondensator ist C = Q/U.",
+      "Die Kapazität beschreibt, wie viel Ladung ein Kondensator pro Volt aufnehmen kann. Das Größenzeichen ist C, die Einheit heißt Farad (F). Achtung: C hinter einer Zahl kann stattdessen Coulomb bedeuten, die Einheit der Ladungsmenge Q.",
     analogy:
       "Eine elastische Membran in einem Rohr kann die beiden Seiten trennen und bei Verformung Energie speichern. Wie das Dielektrikum eines idealen Kondensators lässt es keinen konstanten Fluss durch; Die Analogie ist qualitativ.",
     pitfall:

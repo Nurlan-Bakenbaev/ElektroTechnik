@@ -62,7 +62,10 @@ import {
 } from "../lib/storage.js";
 import Quiz from "./Quiz";
 import InteractiveLab from "./InteractiveLab";
-import { getTeachingGuide } from "../data/teaching-guides.js";
+import { lessonBasics } from "../data/lesson-basics.js";
+import LessonBrief from "./LessonBrief";
+import QuantityLegend, { UnitText } from "./QuantityLegend";
+import PowerSupplyDemo from "./PowerSupplyDemo";
 import Notation from "./Notation";
 import dynamic from "next/dynamic";
 const ReferenceLesson = dynamic(() => import("./lesson/ReferenceLesson"), {
@@ -283,12 +286,12 @@ export default function LearningApp() {
             <span className="course-symbol">
               <Zap size={18} />
             </span>
-            <span>KLEINE SCHRITTE</span>
+            <span>DEIN AUSBILDUNGSWEG</span>
           </div>
           <h3>
-            Große Entdeckungen
+            Grundlagen verstehen.
             <br />
-            Beginnen Sie mit den Grundlagen.
+            Im IT-Alltag anwenden.
           </h3>
           <div className="sidebar-progress-title">
             <span>Ihr Fortschritt</span>
@@ -610,34 +613,22 @@ function Dashboard({ profile, progress, current, bookmark }) {
           <span className="tiny-sun">✳</span>Ein guter Tag, um Neues zu
           verstehen
         </span>
-        <span className="course-badge">Physik · Grundkurs</span>
+        <span className="course-badge">Ausbildung · Fachinformatik</span>
       </div>
       <section className="hero">
         <div className="hero-copy">
           <div className="eyebrow">
             <span className="green-dash" />
-            VON DER ERSTEN LADUNG BIS ZUM MAGNETFELD
+            VOLT. / IT-LERNWERKSTATT
           </div>
           <h1>
-            Elektrotechnik.
-            <br /> Endlich{" "}
-            <span className="underlined">
-              verstehen
-              <svg
-                viewBox="0 0 200 12"
-                preserveAspectRatio="none"
-                aria-hidden="true"
-              >
-                <path d="M2 8Q90 0 196 6" />
-              </svg>
-            </span>
-            .
+            12 Volt. 3 Ampere.
+            <br /> Was heißt das für dein Gerät?
           </h1>
           <p>
-            Klare Erklärungen, Live-Beispiele und Übung.
-            <br className="desktop-break" /> Formeln nicht nur auswendig lernen
-            – verstehen
-            <br className="desktop-break" /> wie Elektrizität funktioniert.
+            Was muss beim Netzteil passen? Warum wird ein Kabel warm? Lerne an
+            IT-Beispielen und schlage Volt, Ampere oder Kilowattstunden direkt
+            im Unterricht nach.
           </p>
           <div className="hero-actions">
             <a className="button button-dark" href={`#/lesson/${current.id}`}>
@@ -655,10 +646,12 @@ function Dashboard({ profile, progress, current, bookmark }) {
               <span>I</span>
               <span>R</span>
             </span>
-            <span>Von Grund auf. In Ihrem eigenen Tempo. Mit Verständnis.</span>
+            <span>
+              Erst die Grundlagen. Dann rechnen. Bei Bedarf vertiefen.
+            </span>
           </div>
         </div>
-        <CircuitArt />
+        <PowerSupplyDemo />
       </section>
       <section className="course-stats" aria-label="Kurszusammensetzung">
         <div>
@@ -694,10 +687,10 @@ function Dashboard({ profile, progress, current, bookmark }) {
           <Lightbulb size={22} strokeWidth={1.5} />
         </span>
         <div>
-          <strong>Strom, Spannung, Felder. Was ist das überhaupt?</strong>
+          <strong>Ampere, Watt und Coulomb: Was bedeuten die Wörter?</strong>
           <p>
-            12 Hauptkonzepte in einfachen Worten – bevor wir uns mit den Formeln
-            befassen.
+            Die Grundbegriffe nachschlagen und Unterschiede verstehen — etwa
+            Leistung in kW und Energie in kWh.
           </p>
         </div>
         <ArrowUpRight size={20} />
@@ -851,7 +844,7 @@ function LessonCard({ lesson, profile, bookmark, featured = false }) {
         <h3>{lesson.title}</h3>
         <span>{lesson.german}</span>
       </a>
-      <p>{lesson.description}</p>
+      <p>{lessonBasics[lesson.id].question}</p>
       <div className="lesson-card-meta">
         <span>
           <Clock3 size={13} />
@@ -898,14 +891,59 @@ function PageIntro({ eyebrow, title, text, children }) {
     </div>
   );
 }
+function LessonRow({ lesson, profile, bookmark }) {
+  const basics = lessonBasics[lesson.id];
+  const score = profile.results[lesson.id]?.score;
+  const saved = profile.bookmarks.includes(lesson.id);
+  return (
+    <article className={`course-row ${score >= 4 ? "is-complete" : ""}`}>
+      <span className="course-row-number">
+        {String(lesson.number).padStart(2, "0")}
+      </span>
+      <a className="course-row-title" href={`#/lesson/${lesson.id}`}>
+        <span>{basics.context}</span>
+        <h3>{lesson.title}</h3>
+        <p>{basics.question}</p>
+      </a>
+      <div className="course-row-state">
+        {score >= 4 ? (
+          <>
+            <CheckCircle2 size={16} />
+            <span>{score}/5 · bestanden</span>
+          </>
+        ) : (
+          <>
+            <Clock3 size={15} />
+            <span>Grundlagen + Vertiefung</span>
+          </>
+        )}
+      </div>
+      <button
+        className="course-row-bookmark"
+        aria-label={`${saved ? "Lesezeichen löschen" : "Fügen Sie ein Lesezeichen hinzu"}: ${lesson.title}`}
+        aria-pressed={saved}
+        onClick={() => bookmark(lesson.id)}
+      >
+        <Bookmark size={18} fill={saved ? "currentColor" : "none"} />
+      </button>
+      <a
+        className="course-row-open"
+        href={`#/lesson/${lesson.id}`}
+        aria-label={`${lesson.title} öffnen`}
+      >
+        <ArrowUpRight size={20} />
+      </a>
+    </article>
+  );
+}
 function Curriculum({ profile, bookmark }) {
   const [filter, setFilter] = useState("all");
   return (
     <>
       <PageIntro
         eyebrow="IHR WEG ZUM VERSTEHEN"
-        title="Wissen ist in einer Kette geschlossen."
-        text="13 verwandte Themen – von der ersten Ladung bis zum magnetischen Fluss. Gehen Sie der Reihe nach vor oder kehren Sie zu dem zurück, was Sie tiefer verstehen möchten."
+        title="Deine Werkstatt für die Grundlagen."
+        text="13 Themen mit verständlichem Einstieg, IT-Beispiel, virtuellem Experiment und fünf Testfragen. Bei Bedarf öffnest du Formeln, Rechenwege und weitere Hintergründe."
       />
       <div className="filter-tabs" aria-label="Kursabschnitte">
         <button
@@ -935,11 +973,11 @@ function Curriculum({ profile, bookmark }) {
               </div>
               <span className="muted small-text">{c.caption}</span>
             </div>
-            <div className="lesson-grid">
+            <div className="course-module-list">
               {lessons
                 .filter((l) => l.category === c.id)
                 .map((l) => (
-                  <LessonCard
+                  <LessonRow
                     key={l.id}
                     lesson={l}
                     profile={profile}
@@ -1046,7 +1084,7 @@ function Lesson({ lesson, profile, bookmark, onComplete }) {
           <span>.</span>
         </h1>
         <p className="german-title">{lesson.german}</p>
-        <p className="lesson-lead">{lesson.description}</p>
+        <p className="lesson-lead">{lessonBasics[lesson.id].essentials[0]}</p>
         <div className="lesson-header-meta">
           <span>
             <Clock3 size={15} />
@@ -1087,7 +1125,7 @@ function Lesson({ lesson, profile, bookmark, onComplete }) {
         }}
       >
         {[
-          { id: "theory", label: "Lehrbuch", icon: BookOpen },
+          { id: "theory", label: "Verstehen", icon: BookOpen },
           { id: "lab", label: "Interaktiv", icon: Activity },
           { id: "quiz", label: "Wissenstest", icon: CheckCircle2 },
         ].map((t) => (
@@ -1111,21 +1149,15 @@ function Lesson({ lesson, profile, bookmark, onComplete }) {
         {tab === "theory" && (
           <div className="reading-layout">
             <article className="lesson-article">
-              <section className="lesson-entry" aria-label="Frage zum Einstieg">
-                <span className="eyebrow">FRAGE ZUM EINSTIEG</span>
-                <h2>{getTeachingGuide(lesson.id).problem}</h2>
-                <p>{getTeachingGuide(lesson.id).experiment}</p>
-                <button
-                  className="button button-dark"
-                  onClick={() => {
-                    setTab("lab");
-                    scrollToReadingTarget(320);
-                  }}
-                >
-                  Im Labor untersuchen <ArrowRight size={16} />
-                </button>
-              </section>
-              <div className="objectives-box">
+              <LessonBrief
+                lessonId={lesson.id}
+                onExperiment={() => {
+                  setTab("lab");
+                  scrollToReadingTarget(320);
+                }}
+              />
+              <details className="objectives-box">
+                <summary>Lernziele für die Vertiefung anzeigen</summary>
                 <span className="eyebrow">
                   <Lightbulb size={16} />
                   Nach dieser Lektion werden Sie dazu in der Lage sein
@@ -1138,7 +1170,7 @@ function Lesson({ lesson, profile, bookmark, onComplete }) {
                     </li>
                   ))}
                 </ul>
-              </div>
+              </details>
               {lesson.sections.map((s, i) => (
                 <Reveal
                   as="section"
@@ -1151,56 +1183,80 @@ function Lesson({ lesson, profile, bookmark, onComplete }) {
                     <span />
                   </div>
                   <h2>{s.title}</h2>
-                  {s.paragraphs.map((p, j) => (
-                    <p key={j}>{p}</p>
-                  ))}
-                  {s.formula && (
-                    <div className="formula-box">
-                      <span className="eyebrow">FORMEL</span>
-                      <FormulaImage expression={s.formula.expression} />
-                      <p>{s.formula.legend}</p>
-                      {s.formula.note && <small>{s.formula.note}</small>}
-                    </div>
-                  )}
-                  {s.example && (
-                    <div className="worked-example">
-                      <span className="eyebrow">
-                        <span className="example-dot" />
-                        Schauen wir uns ein Beispiel an
-                      </span>
-                      <h3>{s.example.title}</h3>
-                      <p className="example-given">
-                        <strong>Gegeben:</strong> {s.example.given}
+                  <p className="plain-explanation">
+                    <UnitText>
+                      {lessonBasics[lesson.id].sections[s.id]}
+                    </UnitText>
+                  </p>
+                  <details className="lesson-depth">
+                    <summary>
+                      Ausführliche Erklärung, Formel und Rechenweg
+                    </summary>
+                    {s.paragraphs.map((p, j) => (
+                      <p key={j}>
+                        <UnitText>{p}</UnitText>
                       </p>
-                      <ol>
-                        {s.example.steps.map((step, j) => (
-                          <li key={j}>
-                            <span>{j + 1}</span>
-                            <p>{step}</p>
-                          </li>
-                        ))}
-                      </ol>
-                      <div className="example-answer">
-                        <CheckCircle2 size={17} />
-                        <strong>{s.example.answer}</strong>
+                    ))}
+                    {s.formula && (
+                      <div className="formula-box">
+                        <span className="eyebrow">FORMEL</span>
+                        <FormulaImage expression={s.formula.expression} />
+                        <p>
+                          <UnitText>{s.formula.legend}</UnitText>
+                        </p>
+                        {s.formula.note && (
+                          <small>
+                            <UnitText>{s.formula.note}</UnitText>
+                          </small>
+                        )}
                       </div>
-                    </div>
-                  )}
-                  {s.callout && (
-                    <aside className={`callout callout-${s.callout.type}`}>
-                      <Lightbulb size={20} />
-                      <div>
-                        <strong>{s.callout.title}</strong>
-                        <p>{s.callout.text}</p>
+                    )}
+                    {s.example && (
+                      <div className="worked-example">
+                        <span className="eyebrow">
+                          <span className="example-dot" />
+                          Schauen wir uns ein Beispiel an
+                        </span>
+                        <h3>{s.example.title}</h3>
+                        <p className="example-given">
+                          <strong>Gegeben:</strong>{" "}
+                          <UnitText>{s.example.given}</UnitText>
+                        </p>
+                        <ol>
+                          {s.example.steps.map((step, j) => (
+                            <li key={j}>
+                              <span>{j + 1}</span>
+                              <p>
+                                <UnitText>{step}</UnitText>
+                              </p>
+                            </li>
+                          ))}
+                        </ol>
+                        <div className="example-answer">
+                          <CheckCircle2 size={17} />
+                          <strong>
+                            <UnitText>{s.example.answer}</UnitText>
+                          </strong>
+                        </div>
                       </div>
-                    </aside>
-                  )}
+                    )}
+                    {s.callout && (
+                      <aside className={`callout callout-${s.callout.type}`}>
+                        <Lightbulb size={20} />
+                        <div>
+                          <strong>{s.callout.title}</strong>
+                          <p>{s.callout.text}</p>
+                        </div>
+                      </aside>
+                    )}
+                  </details>
                   {i === 0 && illustrations[lesson.id] && (
                     <LessonFigure illustration={illustrations[lesson.id]} />
                   )}
                 </Reveal>
               ))}
-              <section className="lesson-summary" id="summary">
+              <details className="lesson-summary" id="summary">
+                <summary>Zusammenfassung der Vertiefung</summary>
                 <span className="eyebrow">
                   <Bookmark size={16} />
                   Das Wichtigste sammeln
@@ -1214,8 +1270,9 @@ function Lesson({ lesson, profile, bookmark, onComplete }) {
                     </li>
                   ))}
                 </ul>
-              </section>
-              <section className="lesson-terms">
+              </details>
+              <details className="lesson-terms">
+                <summary>Alle Fachbegriffe dieser Lektion nachschlagen</summary>
                 <h2>Worte dieser Lektion</h2>
                 {lesson.terms.map((t) => (
                   <div key={`${t.term}-${t.symbol}`}>
@@ -1237,7 +1294,7 @@ function Lesson({ lesson, profile, bookmark, onComplete }) {
                     <p>{t.definition}</p>
                   </div>
                 ))}
-              </section>
+              </details>
               <div className="lesson-end">
                 <span className="topic-icon">
                   <Activity size={24} />
@@ -1262,6 +1319,7 @@ function Lesson({ lesson, profile, bookmark, onComplete }) {
               </div>
             </article>
             <aside className="reading-toc">
+              <QuantityLegend items={lessonBasics[lesson.id].units} compact />
               <span className="eyebrow">IN DIESER LEKTION</span>
               <nav>
                 {lesson.sections.map((s, i) => (
@@ -1320,13 +1378,16 @@ function Lesson({ lesson, profile, bookmark, onComplete }) {
           </div>
         )}
         {tab === "quiz" && (
-          <Quiz
-            questions={lesson.quiz}
-            quizId={lesson.id}
-            previousScore={score}
-            onComplete={onComplete}
-            onNext={next}
-          />
+          <>
+            <QuantityLegend items={lessonBasics[lesson.id].units} compact />
+            <Quiz
+              questions={lesson.quiz}
+              quizId={lesson.id}
+              previousScore={score}
+              onComplete={onComplete}
+              onNext={next}
+            />
+          </>
         )}
       </div>
       <div className="lesson-bottom-nav">
@@ -2062,8 +2123,19 @@ function Essentials() {
     <>
       <PageIntro
         eyebrow="FÜR DEN ALLERERSTEN SCHRITT"
-        title="Das Komplexe beginnt mit dem Einfachen."
-        text="Kurze Erklärungen vor einem großen Lehrbuch. Hier können Sie in wenigen Minuten herausfinden, wie sich Strom von Spannung unterscheidet, woher die Felder kommen und was der Stromzähler anzeigt."
+        title="Was bedeuten die Begriffe?"
+        text="Ein Nachschlagebereich für die Grundlagen. Die 13 Lektionen erklären die Zusammenhänge mit IT-Beispielen; hier kannst du ein einzelnes Wort wiederholen."
+      />
+      <QuantityLegend
+        items={[
+          "current",
+          "charge",
+          "voltage",
+          "power",
+          "kilowattHour",
+          "capacitance",
+        ]}
+        compact
       />
       <section className="origin-card">
         <div className="eyebrow">
@@ -2187,13 +2259,13 @@ function Essentials() {
               Q = 20 C, t = 10 s. Wir wählen I = Q/t. Wir ersetzen Zahlen durch
               Einheiten: I = 20 C / 10 s = 2 A.
             </p>
-            <strong>I = Q / t = 20 / 10 = 2 À</strong>
+            <strong>Ergebnis: 2 A — 2 Ampere.</strong>
             <small>
               Überprüfen Sie: 2 Ampere sind 2 Coulomb pro Sekunde. In 10
               Sekunden erhalten Sie 20 Coulomb.
             </small>
             <a className="text-link" href="#/lesson/current">
-              Practice in the lesson
+              In der Lektion üben
               <ArrowRight size={14} />
             </a>
           </div>
@@ -2207,13 +2279,13 @@ function Essentials() {
               20 Minuten. Rechnen wir in praktische Einheiten um: 1.500 W = 1,5
               kW, 20 Minuten = ⅓ Stunde. Multiplizieren Sie Leistung mit Zeit.
             </p>
-            <strong>W = P t = 1.5 ⅓ = 0.5 kWh</strong>
+            <strong>Ergebnis: 0,5 kWh — eine halbe Kilowattstunde.</strong>
             <small>
               In Joule: 1.500 W · 1.200 s = 1.800.000 J. Ein Ergebnis, zwei
               Energieeinheiten.
             </small>
             <a className="text-link" href="#/lesson/energy">
-              Mehr Beispiele und Lieferungen
+              Weitere Rechenbeispiele
               <ArrowRight size={14} />
             </a>
           </div>

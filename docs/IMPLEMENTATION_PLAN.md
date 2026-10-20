@@ -9,6 +9,8 @@
 
 ## Subsequent module migrations
 
+The beginner wording adaptation is now implemented across all thirteen topics, including 78 short explanations and preserved expandable references. The shared UI and unit-legend layer are also implemented. The steps below concern the remaining migration of the experimental controllers, not removal or replacement of the working modules.
+
 1. Current/voltage/resistance: add instrument-connection tasks and consistent charge-flow explanations.
 2. Circuit types: guided node/branch measurements and current/voltage conservation, then mixed resistor networks.
 3. Energy/power/efficiency: measurement intervals, Wh/kWh conversion and power-loss balance.

@@ -11,3 +11,11 @@ Persistence uses `volt-academy:lesson:ohm:v2`. Loading validates range limits, s
 `ReferenceLesson` binds reducer state to guidance and instruments. `KnowledgeCheck` handles feedback and `OhmWorkbench` renders the current physical result. Heavy reference UI is dynamically imported only on the reference route. The other twelve modules continue to use the old renderer; migrations must preserve their stable IDs and quiz scoring.
 
 Known limits: guided session notes are not included in the existing JSON profile export; the final exam still uses its existing question runner. Neither local state nor imported scores are official certification.
+
+## Adaptation layer for all thirteen topics
+
+`lesson-basics.js` maps the stable topic and section IDs to practical context, a beginner question/answer, three essentials, an explicit unit list, a worked example and concise section explanations. This is teaching content, not a new route or a copy of the old paragraph array. The existing topic objects, original paragraphs, quizzes, lab IDs and profile schema remain unchanged.
+
+`LessonBrief` renders the contextual introduction. The twelve reference-style lessons show concise explanations first and preserve original paragraphs, formulas and worked calculations inside expandable detail blocks. The guided Ohm lesson retains its controller and gains the same IT context and unit help. Glossary and original summaries are preserved as optional reference.
+
+`units.js` is the common source for names and meanings. `QuantityLegend` distinguishes quantity from unit; `UnitText` only annotates recognized units following numbers, preserving the original visible string. `C` as a standalone quantity symbol is therefore not automatically interpreted as coulomb. Numeric test inputs show unit names as well as symbols.

@@ -92,3 +92,11 @@ No dynamic HTML injection, `dangerouslySetInnerHTML` or `eval` was found in `src
 Known badge damage came from tokenization, not a missing font or broken UTF-8. Valid engineering symbols are retained. Automated checks cover German diacritics, Unicode replacement characters, mojibake and subscripts; screenshots are needed to verify rendered glyphs. There is no generated PDF with embedded fonts; PDF testing is NOT RUN.
 
 The reference lesson supports keyboard ranges, labeled inputs, fieldsets, text feedback, focus states, reduced motion and a described circuit diagram. The reference module loads dynamically. Field Core Web Vitals and full screen-reader certification are NOT RUN. Concrete test and visual evidence is recorded in `QUALITY_ASSURANCE.md`.
+
+## Fachinformatik beginner adaptation
+
+Following the learner's clarification, the thirteen-topic structure, all laboratories, quiz/exam questions and stored profile model remain intact. This iteration adapts the existing lessons rather than replacing the course with a new track. `lesson-basics.js` supplies thirteen practical introductions/examples and concise original explanations for every one of the 78 section IDs. Existing long paragraphs remain in the data and can be expanded in the UI. The guided Ohm engine is retained with added IT context and notation help.
+
+The previous notation help assumed learners already understood single-letter units. `units.js` now distinguishes physical quantity from unit: Q / C, C / F, P / W and energy / J or kWh. Numeric annotations supplement explicit legends; the parser only recognizes units after numbers, so a standalone quantity symbol C is not automatically labeled coulomb. Tests cover the Celsius/Coulomb distinction and preservation of original text.
+
+The shared design now includes a functional source-rating experiment on the homepage and a row-based curriculum with IT context. These changes do not claim that all twelve remaining labs have migrated to the reference lesson engine.

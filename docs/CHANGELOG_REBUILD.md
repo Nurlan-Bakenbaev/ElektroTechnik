@@ -2,6 +2,10 @@
 
 ## 2026-10-20
 
+- Adapted all thirteen existing topics for beginner Fachinformatik trainees. Added original IT introductions, worked examples and 78 concise section explanations in `src/data/lesson-basics.js`; retained every original reference paragraph in expandable sections.
+- Added shared quantity/unit legends and numeric unit annotations in lessons, labs and quiz feedback. Explicitly distinguished charge Q in coulomb (C), capacitance C in farad (F), energy and power.
+- Rebuilt the shared shell, homepage and course directory as an IT learning workshop. The homepage now demonstrates supply rating versus device demand with the existing physical model; the directory shows practical context and existing progress/bookmarks.
+
 - Corrected the metal-conductor illustration: negative electrons move opposite to conventional current. Both directions now have explicit German labels; the charge/time calculation uses charge magnitude. Added a browser regression check for both arrows and negative carrier symbols.
 
 - Added `ReferenceLesson`, a dedicated 12-step activity workspace at the existing `#/lesson/ohm` route. Existing quiz/profile IDs remain stable.

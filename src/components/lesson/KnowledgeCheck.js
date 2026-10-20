@@ -2,6 +2,7 @@
 
 import { useId, useState } from "react";
 import { CheckCircle2, Lightbulb, RefreshCcw } from "lucide-react";
+import { unitDefinitions } from "../../data/units.js";
 import {
   gradeAnswer,
   numericFeedback,
@@ -60,7 +61,12 @@ export default function KnowledgeCheck({
         <legend>{question.prompt}</legend>
         {question.type === "numeric" ? (
           <div className="ohm-answer-input">
-            <label htmlFor={id}>Dein Ergebnis in {question.unit}</label>
+            <label htmlFor={id}>
+              Dein Ergebnis in {question.unit}
+              {unitDefinitions[question.unit]
+                ? ` (${unitDefinitions[question.unit].name})`
+                : ""}
+            </label>
             <input
               id={id}
               type="text"

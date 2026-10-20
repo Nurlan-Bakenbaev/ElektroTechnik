@@ -17,3 +17,9 @@ Motion: entrance opacity/6 px translation lasts 200 ms; button transitions 160 m
 | `Notation` | Semantic subscripts in terms | Preserves surrounding Unicode text without HTML injection |
 
 The existing global course shell and old modules have legacy theme rules. This stylesheet is scoped to the reference experience; a complete global theme cleanup is not yet done. A second theme is deferred until the reference flow is stable.
+
+## Shared IT workshop layer
+
+`src/app/academy.css`, loaded after legacy globals, now owns the shared course presentation. The navigation and live instrument preview use deep navy with cyan signals; reading surfaces use white and blue-gray borders. The primary study area uses larger 17–18 px explanations, structured practical examples and expandable long references. The course directory is organized as module rows, preserving bookmarks and pass status rather than creating another grid of generic cards.
+
+`QuantityLegend` always exposes full unit names in its compact summary and can expand definitions. `UnitText` annotates numeric units without rewriting the wording; these annotations supplement the visible legend. `PowerSupplyDemo` is an actual controlled exercise: changing supply capacity does not change the demanded device current; an insufficient rating is flagged without pretending to simulate a real protection circuit.

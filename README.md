@@ -2,6 +2,10 @@
 
 Eine Lernplattform auf Deutsch, entwickelt mit **Next.js 16, React 19 und JavaScript**. Der neu aufgebaute Referenzunterricht zum Ohmschen Gesetz führt durch ein echtes virtuelles Experiment; die weiteren zwölf Module bleiben als bestehende Lernangebote erhalten und werden schrittweise migriert.
 
+**Für Azubis in der Fachinformatik:** Alle 13 Themen haben jetzt einen eigenen IT-Einstieg, ein verständliches Praxisbeispiel und kurze, neu formulierte Erklärungen für sämtliche 78 Abschnitte. Ausführliche Originalerklärungen sind weiterhin aufklappbar. Labore, Fragen, Profil und Fortschritt bleiben erhalten. Eine gemeinsame Legende erklärt Größen und Einheiten, insbesondere Ladung in Coulomb (C), Kapazität C in Farad (F), Ampere, Watt und Kilowattstunden.
+
+Die gemeinsame Oberfläche ist als IT-Lernwerkstatt aufgebaut: interaktiver Netzteilvergleich auf der Startseite, modulweise Kursübersicht mit Praxisbezug und fachbezogene Legenden direkt in Lektionen, Laboren und numerischen Testaufgaben.
+
 **Live:** https://nurlan-bakenbaev.github.io/ElektroTechnik/
 
 **Neues Lernlabor:** https://nurlan-bakenbaev.github.io/ElektroTechnik/#/lesson/ohm

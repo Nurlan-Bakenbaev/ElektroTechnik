@@ -1,5 +1,6 @@
 import "@fontsource-variable/manrope";
 import "./globals.css";
+import "./academy.css";
 import LearningExperience from "../components/LearningExperience";
 
 export const metadata = {

@@ -2,6 +2,8 @@
 
 import { useId, useState } from "react";
 import "./lab.css";
+import QuantityLegend, { UnitName, UnitText } from "./QuantityLegend";
+import { lessonBasics } from "../data/lesson-basics.js";
 import {
   dcCircuit,
   seriesResistance,
@@ -41,7 +43,10 @@ function Range({ label, value, min, max, step = 1, unit, onChange }) {
       <div className="lab-control-label">
         <label htmlFor={id}>{label}</label>
         <output htmlFor={id}>
-          {format(value, 3)} <span>{unit}</span>
+          {format(value, 3)}{" "}
+          <span>
+            <UnitName unit={unit} />
+          </span>
         </output>
       </div>
       <input
@@ -846,6 +851,9 @@ export default function InteractiveLab({ lessonId }) {
       </div>
       <h3 className="lab-title">{title}</h3>
       <p className="lab-lead">{lead}</p>
+      {lessonBasics[id] && (
+        <QuantityLegend items={lessonBasics[id].units} compact />
+      )}
       <div className="lab-body">
         <div className="lab-visual">{visual}</div>
         <div className="lab-controls">{controls}</div>
@@ -867,7 +875,7 @@ export default function InteractiveLab({ lessonId }) {
       </div>
       <p className="lab-note">
         <span aria-hidden="true">i</span>
-        {note}
+        <UnitText>{note}</UnitText>
       </p>
       <p className="lab-safety">
         Trainingsmodell. Verwenden Sie es für Berechnungen; Führen Sie echte

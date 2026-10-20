@@ -29,6 +29,8 @@ import KnowledgeCheck from "./KnowledgeCheck";
 import FormulaImage from "../FormulaImage";
 import Quiz from "../Quiz";
 import Notation from "../Notation";
+import { lessonBasics } from "../../data/lesson-basics.js";
+import QuantityLegend, { UnitText } from "../QuantityLegend";
 import "./reference-lesson.css";
 
 const InteractiveLab = dynamic(() => import("../InteractiveLab"), {
@@ -184,6 +186,18 @@ export default function ReferenceLesson({
           {warning}
         </p>
       )}
+      <section
+        className="ohm-it-context"
+        aria-label="Ohmsches Gesetz im IT-Alltag"
+      >
+        <span className="brief-context">
+          FACHINFORMATIK · {lessonBasics.ohm.context}
+        </span>
+        <p>
+          <UnitText>{lessonBasics.ohm.answer}</UnitText>
+        </p>
+        <QuantityLegend items={lessonBasics.ohm.units} compact />
+      </section>
       <div
         className="ohm-view-tabs"
         role="tablist"
@@ -598,9 +612,17 @@ export default function ReferenceLesson({
             {lesson.sections.map((section) => (
               <details key={section.id}>
                 <summary>{section.title}</summary>
-                {section.paragraphs.map((p) => (
-                  <p key={p}>{p}</p>
-                ))}
+                <p>
+                  <UnitText>{lessonBasics.ohm.sections[section.id]}</UnitText>
+                </p>
+                <details className="lesson-depth">
+                  <summary>Ausführliche Erklärung</summary>
+                  {section.paragraphs.map((p) => (
+                    <p key={p}>
+                      <UnitText>{p}</UnitText>
+                    </p>
+                  ))}
+                </details>
                 {section.formula && (
                   <>
                     <FormulaImage expression={section.formula.expression} />

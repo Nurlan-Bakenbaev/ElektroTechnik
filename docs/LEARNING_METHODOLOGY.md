@@ -18,3 +18,11 @@ The reference lesson follows Problem → Observe → Predict → Experiment → 
 The bank contains 13 distinct checks. Hints are recorded. Wrong answers receive a relevant principle or unit diagnostic, and can be retried; a worked solution is optional after two submitted attempts. Only the original final quiz updates course XP, so repeated practice does not inflate the profile.
 
 The Ohm model assumes a constant temperature and constant resistance. It must not be generalized to an incandescent filament, diode or reactive AC circuit without changing the model. Sources are linked directly from the model notes.
+
+## Beginner explanations across the existing course
+
+Each topic now starts with a concrete IT question, an answer in ordinary German, three essential distinctions, an explained legend and one worked practical example. The 78 sections each receive a concise explanation before their original long reference. Learners can read and apply the basic idea first and expand the background later.
+
+Examples connect current/voltage to regulated power supplies, resistance to cable voltage drop, power to USB/PoE, energy to workplace electricity costs, efficiency to power-supply heat, fields to ESD, capacitance to buffering, and magnetism to HDD/SSD/fans. Advanced magnetic quantities are identified as background knowledge rather than assumed daily calculation work for a Fachinformatiker. No examination-board syllabus compliance is claimed.
+
+Units are taught at the point of use. A symbol is not a substitute for an explanation: Q is charge and C after a number means coulomb; C as a capacitance symbol is measured in F. New section summaries are original teaching copy; the sourced equation images and retained reference material keep their attribution.
