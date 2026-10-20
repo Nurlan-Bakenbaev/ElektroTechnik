@@ -1,4 +1,4 @@
-# volt. — Elektrotechnik verstehen
+# Volt. — Elektrotechnik verstehen
 
 Ein interaktives Lernbuch auf Deutsch, entwickelt mit **Next.js 16, React 19 und JavaScript**.
 
