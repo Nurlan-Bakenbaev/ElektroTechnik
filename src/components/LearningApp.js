@@ -527,6 +527,23 @@ function CircuitArt() {
         </text>
         <circle cx="78" cy="46" r="4" fill="#434c31" />
         <circle cx="315" cy="204" r="4" fill="#434c31" />
+
+        {/* Electron animation: decorative, respects reduced-motion */}
+        <g className="electrons" aria-hidden="true">
+          <g className="electron">
+            <circle cx="140" cy="80" r="5" fill="#2563eb" />
+            <text x="140" y="84" fontSize="8" fill="#fff" textAnchor="middle">+</text>
+          </g>
+          <g className="electron">
+            <circle cx="220" cy="110" r="5" fill="#ef4444" />
+            <text x="220" y="114" fontSize="8" fill="#fff" textAnchor="middle">−</text>
+          </g>
+          <g className="electron">
+            <circle cx="250" cy="70" r="5" fill="#2563eb" />
+            <text x="250" y="74" fontSize="8" fill="#fff" textAnchor="middle">+</text>
+          </g>
+        </g>
+
         <text x="195" y="133" textAnchor="middle" className="svg-formula">
           U = I · R
         </text>

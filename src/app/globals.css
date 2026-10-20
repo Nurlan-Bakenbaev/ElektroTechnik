@@ -3486,3 +3486,38 @@ h3 {
 .textbook-section > p, .concept-definition, .example-given, .worked-example li, .lesson-summary li { color: #252b33; }
 .formula-box > p, .formula-box > small, .lesson-figure figcaption, .formula-image figcaption { color: #374151; }
 .textbook-section h2, .lesson-header h1, .worked-example h3 { color: #111827; }
+
+/* circuit-art electron animation */
+.circuit-art .electrons { pointer-events: none; }
+.circuit-art .electron { transform-origin: center; }
+.circuit-art .electron circle { filter: drop-shadow(0 4px 8px rgba(0,0,0,0.08)); }
+.circuit-art .electron:nth-child(1) { animation: drift-1 4.8s linear infinite; }
+.circuit-art .electron:nth-child(2) { animation: drift-2 5.6s linear infinite; }
+.circuit-art .electron:nth-child(3) { animation: drift-3 6.2s linear infinite; }
+
+@keyframes drift-1 {
+  0% { transform: translate(0px, 0px); }
+  25% { transform: translate(12px, -8px); }
+  50% { transform: translate(0px, 6px); }
+  75% { transform: translate(-10px, -4px); }
+  100% { transform: translate(0px, 0px); }
+}
+@keyframes drift-2 {
+  0% { transform: translate(0px, 0px); }
+  25% { transform: translate(-14px, 10px); }
+  50% { transform: translate(6px, -6px); }
+  75% { transform: translate(10px, 4px); }
+  100% { transform: translate(0px, 0px); }
+}
+@keyframes drift-3 {
+  0% { transform: translate(0px, 0px); }
+  25% { transform: translate(8px, 6px); }
+  50% { transform: translate(-6px, -8px); }
+  75% { transform: translate(-12px, 6px); }
+  100% { transform: translate(0px, 0px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .circuit-art .electron { animation: none !important; }
+}
+
