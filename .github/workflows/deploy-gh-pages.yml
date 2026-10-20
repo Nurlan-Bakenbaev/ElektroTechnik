@@ -26,9 +26,6 @@ jobs:
       - name: Build Next.js
         run: npm run build
 
-      - name: Export static HTML
-        run: npx next export
-
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v4
         with:
