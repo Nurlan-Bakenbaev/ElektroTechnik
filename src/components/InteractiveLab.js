@@ -181,56 +181,73 @@ function Circuit({ voltage, resistance, current, second, parallel = false }) {
 
 function Charges({ charge, time }) {
   return (
-    <svg
-      className="lab-diagram"
-      viewBox="0 0 420 220"
-      role="img"
-      aria-label="Positive Ladungen bewegen sich durch den Querschnitt des Leiters; Der Strom ist gleich der Ladung geteilt durch die Zeit"
-    >
-      <rect
-        x="36"
-        y="68"
-        width="348"
-        height="78"
-        rx="39"
-        fill="#e8ecf2"
-        stroke="#c6d1e0"
-      />
-      <ellipse
-        cx="249"
-        cy="107"
-        rx="13"
-        ry="39"
-        fill="#fbcd62"
-        fillOpacity=".5"
-        stroke="#31537e"
-        strokeDasharray="4 4"
-      />
-      {[73, 119, 165, 211, 289, 335].map((x) => (
-        <g key={x}>
-          <circle cx={x} cy="107" r="13" fill="#fff" stroke="#31537e" />
-          <text x={x} y="112" className="lab-svg-symbol">
-            +
-          </text>
-        </g>
-      ))}
-      <path
-        d="M151 42H240L231 36M240 42 231 48"
-        fill="none"
-        stroke="#31537e"
-        strokeWidth="2"
-      />
-      <text x="196" y="27" className="lab-svg-label">
-        Bedingte Stromrichtung
-      </text>
-      <text x="250" y="173" className="lab-svg-label">
-        Leiterquerschnitt
-      </text>
-      <text x="210" y="207" className="lab-svg-label">
-        In {format(time)} s fließen {format(charge)} Coulomb (C) durch den
-        Leiterquerschnitt.
-      </text>
-    </svg>
+    <figure className="lab-charge-model">
+      <svg
+        className="lab-diagram"
+        viewBox="0 0 420 240"
+        role="img"
+        aria-label="Metallleiter: Negative Elektronen bewegen sich von Minus nach Plus, hier nach links. Die technische Stromrichtung zeigt entgegengesetzt von Plus nach Minus, hier nach rechts."
+      >
+        <rect
+          x="36"
+          y="75"
+          width="348"
+          height="78"
+          rx="39"
+          fill="#e8ecf2"
+          stroke="#c6d1e0"
+        />
+        <ellipse
+          cx="249"
+          cy="114"
+          rx="13"
+          ry="39"
+          fill="#fbcd62"
+          fillOpacity=".5"
+          stroke="#31537e"
+          strokeDasharray="4 4"
+        />
+        {[73, 119, 165, 211, 289, 335].map((x) => (
+          <g key={x}>
+            <circle cx={x} cy="114" r="13" fill="#fff" stroke="#31537e" />
+            <text x={x} y="119" className="lab-svg-symbol">
+              −
+            </text>
+          </g>
+        ))}
+        <path
+          d="M151 42H240L231 36M240 42 231 48"
+          fill="none"
+          stroke="#31537e"
+          strokeWidth="2"
+        />
+        <text x="210" y="25" className="lab-svg-label">
+          Technische Stromrichtung: Plus → Minus
+        </text>
+        <text x="297" y="174" className="lab-svg-label">
+          Leiterquerschnitt
+        </text>
+        <path
+          d="M249 153L270 163"
+          stroke="#526574"
+          strokeWidth="1"
+          fill="none"
+        />
+        <path
+          d="M270 195H150L159 189M150 195 159 201"
+          fill="none"
+          stroke="#31537e"
+          strokeWidth="2"
+        />
+        <text x="210" y="223" className="lab-svg-label">
+          Elektronenbewegung: Minus → Plus
+        </text>
+      </svg>
+      <figcaption>
+        In {format(time)} s durchqueren Elektronen mit einem Gesamtladungsbetrag
+        von {format(charge)} Coulomb (C) den Leiterquerschnitt.
+      </figcaption>
+    </figure>
   );
 }
 
@@ -540,7 +557,7 @@ export default function InteractiveLab({ lessonId }) {
       result = v.charge / v.time;
       unit = "A";
       note =
-        "1 A = 1 Coulomb (C) pro Sekunde. Das Diagramm zeigt die technische Stromrichtung positiver Ladungen. In einem Metall bewegen sich die Elektronen entgegengesetzt.";
+        "In einem Metallleiter tragen negativ geladene Elektronen den Strom. Ihre gerichtete Bewegung verläuft im äußeren Stromkreis von Minus nach Plus. Die technische Stromrichtung ist als Richtung positiver Ladungen definiert und zeigt entgegengesetzt: von Plus nach Minus. Für die angezeigte Stromstärke verwenden wir hier den Ladungsbetrag Q; die Elektronen selbst sind negativ geladen. 1 A entspricht 1 Coulomb (C) pro Sekunde. Die Skizze zeigt keine tatsächliche Teilchenzahl oder Geschwindigkeit.";
       break;
     case "circuits": {
       const req = parallel

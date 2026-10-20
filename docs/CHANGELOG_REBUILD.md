@@ -2,6 +2,8 @@
 
 ## 2026-10-20
 
+- Corrected the metal-conductor illustration: negative electrons move opposite to conventional current. Both directions now have explicit German labels; the charge/time calculation uses charge magnitude. Added a browser regression check for both arrows and negative carrier symbols.
+
 - Added `ReferenceLesson`, a dedicated 12-step activity workspace at the existing `#/lesson/ohm` route. Existing quiz/profile IDs remain stable.
 - Added an instrument diagram, keyboard controls, switch, DC readings, model-based current/resistance graph, measurement capture and reset. The ammeter is in series and the voltmeter parallel.
 - Added a versioned lesson reducer with completion conditions, bounded answer histories, hints, reflection and validated local restoration. Reset clears guided sessions too.

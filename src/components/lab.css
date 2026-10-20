@@ -82,6 +82,15 @@
   height: auto;
   min-height: 180px;
 }
+.lab-charge-model {
+  margin: 0;
+}
+.lab-charge-model figcaption {
+  padding: 12px 18px 18px;
+  color: #263952;
+  font-size: 14px;
+  line-height: 1.65;
+}
 .lab-wire {
   fill: none;
   stroke: #7a8a9e;

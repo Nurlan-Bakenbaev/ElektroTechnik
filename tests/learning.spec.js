@@ -281,11 +281,9 @@ test("glossary finds German terms, follows the lesson link and handles an empty 
     exact: true,
   });
   await search.fill(term.german);
-  const match = page
-    .locator(".glossary-list article")
-    .filter({
-      has: page.getByRole("heading", { name: new RegExp(`^${term.term}`) }),
-    });
+  const match = page.locator(".glossary-list article").filter({
+    has: page.getByRole("heading", { name: new RegExp(`^${term.term}`) }),
+  });
   await expect(match).toHaveCount(1);
   await expect(match).toContainText(term.definition);
   await match.getByRole("link", { name: /^Zur Lektion/ }).click();
@@ -325,6 +323,17 @@ test("every lesson has an interactive lab whose sliders update its model without
         }),
       ).toBeVisible();
       await expect(lab).toContainText("Coulomb (C)");
+      const conductor = lab.getByRole("img", { name: /^Metallleiter:/ });
+      await expect(conductor).toContainText(
+        "Technische Stromrichtung: Plus → Minus",
+      );
+      await expect(conductor).toContainText("Elektronenbewegung: Minus → Plus");
+      await expect(conductor.locator("text.lab-svg-symbol")).toHaveCount(6);
+      for (const carrier of await conductor
+        .locator("text.lab-svg-symbol")
+        .all()) {
+        await expect(carrier).toHaveText("−");
+      }
     }
     if (lesson.id === "energy") {
       await expect(lab).toContainText("Wh");
@@ -571,7 +580,10 @@ test("German typography, local equation images and reduced-motion scrolling work
   await expect
     .poll(() => formula.evaluate((e) => e.complete && e.naturalWidth > 0))
     .toBe(true);
-  await expect(formula).toHaveAttribute("src", /\/images\/formulas\/wiki-[a-f0-9]+\.svg$/);
+  await expect(formula).toHaveAttribute(
+    "src",
+    /\/images\/formulas\/wiki-[a-f0-9]+\.svg$/,
+  );
   await page.emulateMedia({ reducedMotion: "reduce" });
   await expect(page.locator("html")).not.toHaveClass(/lenis/);
   expect(errors).toEqual([]);
