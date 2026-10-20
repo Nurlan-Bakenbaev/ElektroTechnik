@@ -14,7 +14,7 @@ export default defineConfig({
   use: {
     baseURL,
     viewport: { width: 1440, height: 1000 },
-    locale: 'ru-RU',
+    locale: 'de-DE',
     browserName: 'chromium',
     launchOptions: {
       executablePath: process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH || '/usr/bin/chromium',

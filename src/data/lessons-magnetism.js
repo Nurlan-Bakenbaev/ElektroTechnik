@@ -1,670 +1,1148 @@
 export const magnetismLessons = [
   {
-    id: 'capacitor',
+    id: "capacitor",
     number: 10,
-    title: 'Конденсатор',
-    german: 'Kondensator',
-    chapter: '4.2',
-    category: 'fields',
+    title: "Kondensator",
+    german: "Kondensator",
+    chapter: "4.2",
+    category: "fields",
     duration: 35,
-    description: 'Как электрическое поле хранит энергию, от чего зависит ёмкость и что происходит при зарядке и разрядке конденсатора.',
+    description:
+      "Wie ein elektrisches Feld Energie speichert, wovon die Kapazität abhängt und was passiert, wenn ein Kondensator geladen und entladen wird.",
     objectives: [
-      'Связывать заряд, напряжение и ёмкость и рассчитывать соединения конденсаторов.',
-      'Объяснять зарядку и разрядку через резистор с помощью постоянной времени RC.',
-      'Рассчитывать запасённую энергию и безопасно обращаться с заряженными конденсаторами.'
+      "Setzen Sie Ladung, Spannung und Kapazität in Beziehung und berechnen Sie Kondensatorverbindungen.",
+      "Erklären Sie das Laden und Entladen über einen Widerstand mithilfe der RC-Zeitkonstante.",
+      "Berechnen Sie die gespeicherte Energie und gehen Sie sicher mit geladenen Kondensatoren um.",
     ],
     sections: [
       {
-        id: 'capacitor-charge',
-        title: '1. Два проводника и электрическое поле между ними',
+        id: "capacitor-charge",
+        title: "1. Zwei Leiter und ein elektrisches Feld zwischen ihnen",
         paragraphs: [
-          'Конденсатор состоит из двух проводящих обкладок, разделённых изолирующим промежутком. При подключении к источнику источник переносит электроны с одной обкладки на другую: на одной появляется заряд −Q, на другой +Q. В обычной модели конденсатор в целом остаётся электрически нейтральным. Энергия хранится в электрическом поле между обкладками, а не в непрерывном потоке зарядов сквозь изолятор.',
-          'Электрическая ёмкость C, по-немецки Kapazität, показывает, какой модуль заряда Q получает каждая обкладка при данном напряжении U. Большая ёмкость означает: при том же напряжении можно разделить больший заряд. Фарад — очень большая единица для многих практических деталей, поэтому используют микрофарады, нанофарады и пикофарады: 1 мкФ = 10⁻⁶ Ф, 1 нФ = 10⁻⁹ Ф, 1 пФ = 10⁻¹² Ф.',
-          'Для идеального конденсатора с постоянной ёмкостью действует Q = CU. Здесь Q — не сумма модулей зарядов двух обкладок, а модуль заряда одной из них. Если напряжение не меняется, ток через идеальный конденсатор в установившемся режиме постоянного тока равен нулю. При изменении напряжения ток существует: источник заряжает или разряжает обкладки.'
+          "Ein Kondensator besteht aus zwei leitenden Platten, die durch einen Isolierspalt getrennt sind. Bei Anschluss an eine Quelle überträgt die Quelle Elektronen von einer Platte auf eine andere: Auf der einen erscheint die Ladung −Q und auf der anderen die Ladung +Q. Beim herkömmlichen Modell bleibt der Kondensator insgesamt elektrisch neutral. Die Energie wird im elektrischen Feld zwischen den Platten gespeichert und nicht in einem kontinuierlichen Ladungsfluss durch den Isolator.",
+          "Die elektrische Kapazität C, zu Deutsch Kapazität, gibt an, wie viel Ladung Q jede Platte bei einer gegebenen Spannung U aufnimmt. Große Kapazität bedeutet: Bei gleicher Spannung kann eine größere Ladung geteilt werden. Das Farad ist für viele praktische Teile eine sehr große Einheit, daher werden Mikrofarad, Nanofarad und Picofarad verwendet: 1 µF = 10⁻⁶ F, 1 nF = 10⁻⁹ F, 1 pF = 10⁻¹² F.",
+          "Für einen idealen Kondensator mit konstanter Kapazität ist Q = CU. Hier ist Q nicht die Summe der Ladungsmodule der beiden Platten, sondern der Ladungsmodul einer von ihnen. Wenn sich die Spannung nicht ändert, ist der Strom durch einen idealen Kondensator bei stationärem Gleichstrom Null. Wenn sich die Spannung ändert, entsteht Strom: Die Quelle lädt oder entlädt die Platten.",
         ],
         formula: {
-          expression: 'C = Q / U; Q = C · U; i = C · dU/dt',
-          legend: 'C — ёмкость в фарадах (Ф); Q — модуль заряда одной обкладки в кулонах (Кл); U — напряжение в вольтах (В); i — ток в амперах (А).',
-          note: 'Последняя формула относится к постоянной C и выбранному пассивному направлению тока: положительный ток входит в обкладку с положительным напряжением.'
+          expression: "C = Q / U; Q = C · U; i = C · dU/dt",
+          legend:
+            "C ist die Kapazität in Farad (F); Q ist der Ladungsmodul einer Platte in Coulomb (C); U - Spannung in Volt (V); i ist der Strom in Ampere (A).",
+          note: "Die letzte Formel bezieht sich auf die Konstante C und die gewählte passive Stromrichtung: Positiver Strom tritt mit positiver Spannung in die Platte ein.",
         },
         example: {
-          title: 'Сколько заряда хранит конденсатор?',
-          given: 'C = 470 мкФ, U = 12 В. Найти Q.',
+          title: "Wie viel Ladung speichert ein Kondensator?",
+          given: "C = 470 µF, U = 12 V. Finden Sie Q.",
           steps: [
-            'Переводим ёмкость: 470 мкФ = 470 · 10⁻⁶ Ф = 0,000470 Ф.',
-            'Применяем Q = CU: Q = 0,000470 · 12 = 0,00564 Кл.',
-            'Выражаем результат в милликулонах: 0,00564 Кл = 5,64 мКл.'
+            "Umrechnung der Kapazität: 470 µF = 470 · 10⁻⁶ F = 0,000470 F.",
+            "Wir wenden Q = CU an: Q = 0,000470 · 12 = 0,00564 C.",
+            "Wir geben das Ergebnis in Milliculomb an: 0,00564 C = 5,64 mC.",
           ],
-          answer: 'На обкладках находятся заряды +5,64 мКл и −5,64 мКл.'
-        }
+          answer: "Die Platten enthalten Ladungen von +5,64 mC und −5,64 mC.",
+        },
       },
       {
-        id: 'capacitor-geometry',
-        title: '2. Геометрия, диэлектрик и допустимое напряжение',
+        id: "capacitor-geometry",
+        title: "2. Geometrie, Dielektrikum und zulässige Spannung",
         paragraphs: [
-          'У плоского конденсатора ёмкость увеличивается с площадью обкладок A и уменьшается при увеличении расстояния d между ними. Между большими близкими пластинами поле почти однородно; краевые эффекты можно не учитывать, если зазор намного меньше размеров пластин. Материал между пластинами — диэлектрик — поляризуется и обычно увеличивает ёмкость по сравнению с вакуумом.',
-          'Относительная диэлектрическая проницаемость εᵣ характеризует материал, а ε₀ — электрическая постоянная, примерно 8,854 · 10⁻¹² Ф/м. При фиксированном напряжении увеличение εᵣ увеличивает заряд Q. Если предварительно заряженный конденсатор отключить от источника, заряд сохраняется приближённо постоянным и внесение диэлектрика уменьшает напряжение. Поэтому перед выводами всегда уточняй, соединён ли конденсатор с источником.',
-          'Реальный диэлектрик выдерживает ограниченную напряжённость поля. При превышении допустимого напряжения возможен пробой: изолирующий слой становится проводящим и деталь повреждается. Рабочее напряжение на корпусе — ограничение, а не напряжение, которое конденсатор создаёт сам. У электролитических конденсаторов обычно нужно дополнительно соблюдать полярность; у керамических и плёночных деталей полярности, как правило, нет.'
+          "Bei einem Flachkondensator nimmt die Kapazität mit der Fläche der Platten A zu und mit zunehmendem Abstand d zwischen ihnen ab. Zwischen großen, nahe beieinander liegenden Platten ist das Feld nahezu gleichmäßig; Randeffekte können vernachlässigt werden, wenn der Spalt deutlich kleiner als die Abmessungen der Platten ist. Das Material zwischen den Platten – das Dielektrikum – wird polarisiert und erhöht in der Regel die Kapazität im Vergleich zum Vakuum.",
+          "Die relative Dielektrizitätskonstante εᵣ charakterisiert das Material und ε₀ ist die elektrische Konstante, etwa 8,854 · 10⁻¹² F/m. Bei einer festen Spannung erhöht ein Anstieg von εᵣ die Ladung Q. Wenn der vorgeladene Kondensator von der Quelle getrennt wird, bleibt die Ladung annähernd konstant und die Zugabe eines Dielektrikums verringert die Spannung. Bevor Sie Schlussfolgerungen ziehen, prüfen Sie daher immer, ob der Kondensator an die Quelle angeschlossen ist.",
+          "Ein echtes Dielektrikum kann einer begrenzten Feldstärke standhalten. Bei Überschreitung der zulässigen Spannung ist ein Durchschlag möglich: Die Isolierschicht wird leitfähig und das Teil wird beschädigt. Begrenzend ist die Betriebsspannung am Gehäuse, nicht die Spannung, die der Kondensator selbst erzeugt. Elektrolytkondensatoren erfordern normalerweise eine zusätzliche Polarität; Keramik- und Folienteile haben in der Regel keine Polarität.",
         ],
         formula: {
-          expression: 'C = ε₀ · εᵣ · A / d; E ≈ U / d',
-          legend: 'A — площадь перекрытия обкладок в м²; d — расстояние в м; εᵣ — относительная диэлектрическая проницаемость; E — напряжённость поля в В/м.',
-          note: 'Формулы описывают плоские параллельные обкладки с однородным диэлектриком и пренебрежимо малыми краевыми эффектами.'
+          expression: "C = ε₀ · εᵣ · A / d; E ≈ U / d",
+          legend:
+            "A ist die Überlappungsfläche der Deckschichten in m²; d – Entfernung in m; εᵣ – relative Dielektrizitätskonstante; E ist die Feldstärke in V/m.",
+          note: "Die Formeln beschreiben flache parallele Platten mit einem homogenen Dielektrikum und vernachlässigbaren Kanteneffekten.",
         },
         callout: {
-          type: 'warning',
-          title: 'Напряжение остаётся и после отключения питания',
-          text: 'Конденсатор может сохранить опасный заряд. Для учебных опытов используй только безопасное низкое напряжение; разряжай через подходящий резистор и проверяй напряжение прибором. Не замыкай мощный заряженный конденсатор отвёрткой и не разбирай сетевые блоки питания.'
-        }
+          type: "warning",
+          title:
+            "Die Spannung bleibt auch nach dem Ausschalten der Stromversorgung bestehen.",
+          text: "Der Kondensator kann eine gefährliche Ladung speichern. Verwenden Sie für Trainingsexperimente nur sichere Niederspannung; Entladen Sie sich über einen geeigneten Widerstand und überprüfen Sie die Spannung mit einem Gerät. Schließen Sie einen stark geladenen Kondensator nicht mit einem Schraubendreher kurz und zerlegen Sie keine Netzteile.",
+        },
       },
       {
-        id: 'capacitor-networks',
-        title: '3. Параллельное и последовательное соединение',
+        id: "capacitor-networks",
+        title: "3. Parallele und serielle Verbindung",
         paragraphs: [
-          'При параллельном соединении обе пары обкладок подключены к одним и тем же двум узлам. Напряжения одинаковы, а заряды складываются: Qобщ = Q₁ + Q₂. Поэтому общая ёмкость равна сумме ёмкостей. Такое соединение похоже на увеличение площади обкладок и используется, когда нужна большая ёмкость или требуются разные свойства деталей на разных частотах.',
-          'При последовательном соединении двух первоначально незаряженных идеальных конденсаторов промежуточный узел изолирован. На обкладках устанавливаются одинаковые модули зарядов, а напряжения складываются. Общая ёмкость получается меньше наименьшей отдельной ёмкости. Напряжение распределяется обратно пропорционально ёмкости: меньшая ёмкость получает большее напряжение.',
-          'У реальных последовательно соединённых конденсаторов токи утечки и допуски отличаются. Поэтому нельзя автоматически считать, что два конденсатора с одинаковой маркировкой делят постоянное напряжение строго пополам или безопасно удваивают допустимое напряжение. В практических конструкциях распределение напряжений проверяют и при необходимости применяют балансировочные резисторы.'
+          "Bei einer Parallelschaltung sind beide Plattenpaare mit denselben zwei Knoten verbunden. Die Spannungen sind gleich, aber die Ladungen addieren sich: Qtot = Q₁ + Q₂. Daher ist die Gesamtkapazität gleich der Summe der Kapazitäten. Diese Verbindung ähnelt einer Vergrößerung der Plattenfläche und wird verwendet, wenn eine größere Kapazität benötigt wird oder unterschiedliche Eigenschaften von Teilen bei unterschiedlichen Frequenzen erforderlich sind.",
+          "Wenn zwei zunächst ungeladene ideale Kondensatoren in Reihe geschaltet werden, ist der Zwischenknoten isoliert. Auf den Platten werden identische Lademodule installiert und die Spannungen addiert. Die Gesamtkapazität ist geringer als die kleinste Einzelkapazität. Die Spannung verteilt sich umgekehrt proportional zur Kapazität: Eine kleinere Kapazität empfängt eine größere Spannung.",
+          "Bei echten in Reihe geschalteten Kondensatoren unterscheiden sich Leckströme und Toleranzen. Daher kann man nicht automatisch davon ausgehen, dass zwei Kondensatoren mit gleicher Kennzeichnung die Gleichspannung genau halbieren oder die zulässige Spannung sicher verdoppeln. In praktischen Ausführungen wird die Spannungsverteilung überprüft und ggf. Ausgleichswiderstände eingesetzt.",
         ],
         formula: {
-          expression: 'Параллельно: Cобщ = C₁ + C₂; последовательно: 1/Cобщ = 1/C₁ + 1/C₂',
-          legend: 'C₁, C₂ и Cобщ — отдельные и эквивалентная ёмкости в одной и той же единице.',
-          note: 'Для двух последовательных конденсаторов Cобщ = C₁C₂ / (C₁ + C₂). При параллельном соединении U одинаково, при идеальном последовательном — одинаков модуль Q.'
+          expression:
+            "Parallel dazu: Ctot = C₁ + C₂; nacheinander: 1/Ctot = 1/C₁ + 1/C₂",
+          legend:
+            "C₁, C₂ und Ctot sind separate und gleichwertige Kapazitäten in derselben Einheit.",
+          note: "Für zwei Serienkondensatoren ist Ctotal = C₁C₂ / (C₁ + C₂). Bei einer Parallelschaltung ist U gleich, bei einer idealen Reihenschaltung ist das Modul Q gleich.",
         },
         example: {
-          title: 'Почему напряжения делятся не поровну',
-          given: 'C₁ = 10 мкФ и C₂ = 20 мкФ соединены последовательно с источником 12 В. Изначально оба разряжены.',
+          title: "Warum werden die Spannungen nicht gleichmäßig aufgeteilt?",
+          given:
+            "C₁ = 10 µF und C₂ = 20 µF sind in Reihe mit einer 12-V-Quelle geschaltet. Zunächst werden beide entlassen.",
           steps: [
-            'Cобщ = 10 · 20 / (10 + 20) = 6,67 мкФ.',
-            'Общий модуль заряда Q = CобщU = 6,67 мкФ · 12 В ≈ 80 мкКл.',
-            'U₁ = Q/C₁ = 80/10 = 8 В; U₂ = Q/C₂ = 80/20 = 4 В.',
-            'Проверяем: 8 В + 4 В = 12 В. Меньшая ёмкость получила большее напряжение.'
+            "Ctotal = 10 20 / (10 + 20) = 6,67 µF.",
+            "Gesamtladungsmodul Q = CtotalU = 6,67 μF · 12 V ≈ 80 μC.",
+            "U₁ = Q/C₁ = 80/10 = 8 V; U₂ = Q/C₂ = 80/20 = 4 V.",
+            "Wir prüfen: 8 V + 4 V = 12 V. Die kleinere Kapazität erhielt eine höhere Spannung.",
           ],
-          answer: 'Cобщ ≈ 6,67 мкФ; на 10 мкФ приходится 8 В, на 20 мкФ — 4 В.'
-        }
+          answer: "Ctotal ≈ 6,67 µF; 10 µF haben 8 V, 20 µF haben 4 V.",
+        },
       },
       {
-        id: 'capacitor-rc',
-        title: '4. Зарядка и разрядка: почему нужен параметр RC',
+        id: "capacitor-rc",
+        title: "4. Laden und Entladen: Warum der RC-Parameter benötigt wird",
         paragraphs: [
-          'Подключим первоначально разряженный конденсатор к идеальному источнику U₀ через резистор R. Сразу после замыкания напряжение на конденсаторе равно нулю, поэтому начальный ток равен U₀/R. По мере накопления заряда напряжение на конденсаторе растёт, напряжение на резисторе уменьшается и ток постепенно падает. Напряжение идеального конденсатора не может измениться скачком при конечном токе.',
-          'Постоянная времени τ = RC задаёт скорость процесса. После одной τ напряжение при зарядке достигает примерно 63,2 % конечного значения. При разрядке за одну τ оно падает до 36,8 % начального. После пяти τ зарядка завершена примерно на 99,3 %, а при разрядке остаётся около 0,67 %. Математически экспонента не достигает предела за конечное время, но для практики часто достаточно пяти постоянных времени.',
-          'При разрядке источник отключён, а конденсатор отдаёт энергию резистору. Направление тока меняется относительно зарядки. Увеличение R или C замедляет оба процесса. Если есть несколько резисторов, в τ используют эквивалентное сопротивление, которое видит конденсатор в рассматриваемом режиме, с учётом схемы и внутренних сопротивлений источников.'
+          "Verbinden wir den zunächst entladenen Kondensator über einen Widerstand R mit einer idealen Quelle U₀. Unmittelbar nach der Schaltung ist die Spannung am Kondensator Null, sodass der Anfangsstrom gleich U₀/R ist. Wenn sich Ladung ansammelt, steigt die Spannung am Kondensator, die Spannung am Widerstand nimmt ab und der Strom fällt allmählich ab. Die Spannung eines idealen Kondensators kann sich bei einem endlichen Strom nicht abrupt ändern.",
+          "Die Zeitkonstante τ = RC bestimmt die Geschwindigkeit des Prozesses. Nach einem τ erreicht die Ladespannung ca. 63,2 % des Endwertes. Bei Entladung in einem τ sinkt er auf 36,8 % des Ausgangswertes. Nach fünf τ ist der Ladevorgang zu ca. 99,3 % abgeschlossen, beim Entladen verbleiben ca. 0,67 %. Mathematisch gesehen erreicht das Exponential seine Grenze nicht in einer endlichen Zeit, für die Praxis reichen jedoch oft fünf Zeitkonstanten aus.",
+          "Beim Entladen wird die Quelle ausgeschaltet und der Kondensator überträgt Energie an den Widerstand. Die Richtung des Stroms ändert sich relativ zum Laden. Eine Erhöhung von R oder C verlangsamt beide Prozesse. Bei mehreren Widerständen verwendet τ den Ersatzwiderstand, den der Kondensator im betrachteten Modus sieht, unter Berücksichtigung der Schaltung und der Innenwiderstände der Quellen.",
         ],
         formula: {
-          expression: 'τ = RC; Uзар(t) = U₀(1 − e^(−t/τ)); Uразр(t) = Uнач · e^(−t/τ)',
-          legend: 'τ и t — время в секундах; R — сопротивление в омах; C — ёмкость в фарадах; U₀ — напряжение источника; Uнач — начальное напряжение при разрядке.',
-          note: 'Зарядная формула предполагает начальное напряжение 0 В. При зарядке i(t) = (U₀/R)e^(−t/τ); при разрядке знак тока зависит от выбранного направления.'
+          expression:
+            "τ = RC; Ucharge(t) = U₀(1 − e^(−t/τ)); Udel(t) = Uinit e^(−t/τ)",
+          legend:
+            "τ und t – Zeit in Sekunden; R - Widerstand in Ohm; C ist die Kapazität in Farad; U₀ – Quellenspannung; Uinit ist die Anfangsspannung während der Entladung.",
+          note: "Die Ladeformel geht von einer Anfangsspannung von 0 V aus. Beim Laden gilt i(t) = (U₀/R)e^(−t/τ); Beim Entladen hängt das Vorzeichen des Stroms von der gewählten Richtung ab.",
         },
         example: {
-          title: 'Как быстро зарядится конденсатор',
-          given: 'R = 10 кОм, C = 100 мкФ, U₀ = 5 В. Найти τ и напряжение через 1 с.',
+          title: "Wie schnell lädt sich ein Kondensator auf?",
+          given:
+            "R = 10 kOhm, C = 100 µF, U₀ = 5 V. Finden Sie τ und Spannung nach 1 s.",
           steps: [
-            'Переводим единицы: R = 10 000 Ом; C = 0,000100 Ф.',
-            'τ = RC = 10 000 · 0,000100 = 1 с.',
-            'При t = τ: U = 5(1 − e⁻¹) ≈ 5 · 0,632 = 3,16 В.',
-            'Через 5 с, то есть 5τ, напряжение будет примерно 4,97 В.'
+            "Einheiten umrechnen: R = 10.000 Ohm; C = 0,000100 F.",
+            "τ = RC = 10.000 · 0,000100 = 1 s.",
+            "Bei t = τ: U = 5(1 − e⁻¹) ≈ 5 · 0,632 = 3,16 V.",
+            "Nach 5 s, also 5τ, beträgt die Spannung etwa 4,97 V.",
           ],
-          answer: 'τ = 1 с; через 1 с напряжение составляет примерно 3,16 В.'
-        }
+          answer: "τ = 1 s; nach 1 s beträgt die Spannung ca. 3,16 V.",
+        },
       },
       {
-        id: 'capacitor-energy',
-        title: '5. Энергия электрического поля',
+        id: "capacitor-energy",
+        title: "5. Elektrische Feldenergie",
         paragraphs: [
-          'Для переноса очередной порции заряда на уже заряженные обкладки требуется всё больше работы: напряжение растёт от нуля до конечного U. Поэтому энергия не равна QU, а равна QU/2. Тот же результат можно записать через ёмкость и квадрат напряжения. Удвоение напряжения при неизменной ёмкости увеличивает энергию в четыре раза.',
-          'При зарядке первоначально разряженного конденсатора от идеального источника постоянного напряжения через резистор источник отдаёт энергию CU². Половина оказывается в конденсаторе, половина превращается в тепло в сопротивлениях цепи. Это утверждение относится именно к такой схеме зарядки; другие способы передачи энергии, например импульсный преобразователь, могут иметь другой баланс потерь.',
-          'Конденсатор может отдавать энергию быстро, поэтому его используют для вспышек, сглаживания напряжения и кратковременного питания схем. Для длительного хранения энергии аккумулятор обычно выгоднее по энергии на массу. Сравнивать устройства нужно не только по ёмкости C: обязательно учитывают рабочее напряжение, допустимый ток, утечку и реальные потери.'
+          "Um den nächsten Ladungsanteil auf bereits geladene Platten zu übertragen, ist immer mehr Arbeit erforderlich: Die Spannung steigt von Null auf den Endwert U. Daher ist die Energie nicht gleich QU, sondern gleich QU/2. Das gleiche Ergebnis kann über die Kapazität und das Quadrat der Spannung geschrieben werden. Eine Verdoppelung der Spannung bei gleicher Kapazität erhöht die Energie um das Vierfache.",
+          "Beim Laden eines zunächst entladenen Kondensators von einer idealen Konstantspannungsquelle über einen Widerstand gibt die Quelle Energie an die CU² ab. Die Hälfte landet im Kondensator, die andere Hälfte wird in den Stromkreiswiderständen in Wärme umgewandelt. Diese Erklärung gilt speziell für dieses Ladeverfahren; Andere Energieübertragungsmethoden, beispielsweise ein Schaltwandler, können eine andere Verlustbilanz aufweisen.",
+          "Ein Kondensator kann schnell Energie abgeben und wird daher für Blitze, Spannungsglättung und kurzfristige Stromversorgung von Schaltkreisen verwendet. Für die langfristige Energiespeicherung ist eine Batterie in der Regel pro Masse energieeffizienter. Es ist notwendig, Geräte nicht nur nach Kapazität C zu vergleichen: Sie müssen die Betriebsspannung, den zulässigen Strom, den Leckstrom und die tatsächlichen Verluste berücksichtigen.",
         ],
         formula: {
-          expression: 'W = ½CU² = ½QU = Q²/(2C)',
-          legend: 'W — энергия в джоулях (Дж); C — ёмкость в Ф; U — напряжение в В; Q — заряд в Кл.',
-          note: 'Формулы относятся к линейному конденсатору с постоянной ёмкостью. Напряжение в формулу подставляется фактическое, а не максимальное с маркировки.'
+          expression: "W = ½CU² = ½QU = Q²/(2C)",
+          legend:
+            "W ist die Energie in Joule (J); C – Kapazität in F; U ist die Spannung in V; Q - Ladung in C.",
+          note: "Die Formeln beziehen sich auf einen linearen Kondensator mit konstanter Kapazität. In die Formel wird die tatsächliche Spannung eingesetzt, nicht die maximale Spannung aus der Markierung.",
         },
         example: {
-          title: 'Запас энергии',
-          given: 'C = 1000 мкФ, U = 24 В. Найти энергию поля.',
+          title: "Energiereserve",
+          given: "C = 1000 µF, U = 24 V. Finden Sie die Feldenergie.",
           steps: [
-            '1000 мкФ = 0,001 Ф.',
-            'W = 0,5 · 0,001 · 24² = 0,288 Дж.',
-            'Если напряжение уменьшить до 12 В, энергия станет 0,072 Дж: в четыре раза меньше.'
+            "1000 µF = 0,001 F.",
+            "W = 0,5 · 0,001 · 24² = 0,288 J.",
+            "Reduziert man die Spannung auf 12 V, beträgt die Energie 0,072 J: viermal weniger.",
           ],
-          answer: 'При 24 В конденсатор запасает 0,288 Дж.'
-        }
+          answer: "Bei 24 V speichert der Kondensator 0,288 J.",
+        },
       },
       {
-        id: 'capacitor-real',
-        title: '6. Реальная деталь и грамотная проверка',
+        id: "capacitor-real",
+        title: "6. Echtes Teil und ordnungsgemäße Prüfung",
         paragraphs: [
-          'У настоящего конденсатора есть допуск ёмкости, ток утечки, эквивалентное последовательное сопротивление ESR и паразитная индуктивность. Утечка объясняет, почему изолированный заряженный конденсатор со временем теряет напряжение. ESR вызывает нагрев от переменного тока. При высоких частотах одна идеальная модель C уже не описывает всё поведение детали.',
-          'Для проверки сначала отключают питание, безопасно разряжают деталь и измеряют оставшееся напряжение. Измерение ёмкости прямо в схеме может дать неверный результат из-за соседних компонентов. Соблюдают полярность щупов и рекомендации прибора. Вздутие, течь электролита и повреждение корпуса — признаки неисправности, но нормальный внешний вид сам по себе не доказывает исправность.',
-          'При решении задач полезно последовательно определить режим: постоянный ток после установления, переходный процесс или переменный ток. Затем выбрать нужную связь: Q = CU для заряда, τ = RC для времени, W = CU²/2 для энергии. Ошибка на множитель миллион чаще всего возникает из-за подстановки микрофарад как фарад; перевод единиц выполняй до вычислений.'
+          "Ein echter Kondensator weist Kapazitätstoleranz, Leckstrom, äquivalenten Serienwiderstand ESR und parasitäre Induktivität auf. Leckage erklärt, warum ein isolierter, geladener Kondensator mit der Zeit an Spannung verliert. ESR verursacht eine Erwärmung durch den Wechselstrom. Bei hohen Frequenzen beschreibt ein ideales Modell C nicht mehr das gesamte Verhalten des Teils.",
+          "Zum Testen schalten Sie zunächst den Strom aus, entladen das Teil sicher und messen die verbleibende Spannung. Die Messung der Kapazität direkt im Stromkreis kann aufgrund benachbarter Komponenten zu einem falschen Ergebnis führen. Beachten Sie die Polarität der Sonden und die Empfehlungen des Gerätes. Blähungen, Elektrolytaustritt und Schäden am Gehäuse sind Anzeichen einer Fehlfunktion, ein normales Aussehen allein ist jedoch kein Beweis für die Funktionsfähigkeit.",
+          "Bei der Lösung von Problemen ist es sinnvoll, den Modus nacheinander zu bestimmen: Gleichstrom nach dem Einschwingen, transienter Prozess oder Wechselstrom. Wählen Sie dann den gewünschten Zusammenhang aus: Q = CU für Ladung, τ = RC für Zeit, W = CU²/2 für Energie. Ein Fehler um den Faktor einer Million tritt am häufigsten aufgrund der Ersetzung von Mikrofarad durch Farad auf; Konvertieren Sie Einheiten, bevor Sie Berechnungen durchführen.",
         ],
         callout: {
-          type: 'tip',
-          title: 'Проверка здравым смыслом',
-          text: 'При неизменной C больший U означает больший Q и гораздо большую W. При неизменном R большая C заряжается медленнее. Если расчёт даёт противоположную зависимость, проверь формулу и единицы.'
-        }
-      }
+          type: "tip",
+          title: "Überprüfung des gesunden Menschenverstandes",
+          text: "Für ein konstantes C bedeutet ein größeres U ein größeres Q und ein viel größeres W. Für ein konstantes R bedeutet ein größeres C langsamer. Wenn die Berechnung das gegenteilige Verhältnis ergibt, überprüfen Sie die Formel und die Einheiten.",
+        },
+      },
     ],
     terms: [
-      { term: 'Конденсатор', german: 'Kondensator', symbol: 'C', unit: 'Ф', definition: 'Элемент из двух проводников с изоляцией между ними, который запасает энергию электрического поля.' },
-      { term: 'Электрическая ёмкость', german: 'Kapazität', symbol: 'C', unit: 'Ф', definition: 'Отношение модуля заряда одной обкладки к напряжению между обкладками: C = Q/U.' },
-      { term: 'Диэлектрик', german: 'Dielektrikum', symbol: 'εᵣ', unit: 'безразмерная', definition: 'Изолирующий материал, поляризация которого влияет на электрическое поле и ёмкость.' },
-      { term: 'Постоянная времени', german: 'Zeitkonstante', symbol: 'τ', unit: 'с', definition: 'Характерное время RC-цепи: τ = RC. За это время отклонение от конечного значения уменьшается в e раз.' },
-      { term: 'Ток утечки', german: 'Leckstrom', symbol: 'Iут', unit: 'А', definition: 'Небольшой ток через неидеальную изоляцию, вызывающий медленную потерю заряда.' },
-      { term: 'Энергия поля', german: 'Feldenergie', symbol: 'W', unit: 'Дж', definition: 'Работа, запасённая при разделении зарядов; для постоянной ёмкости W = CU²/2.' }
+      {
+        term: "Kondensator",
+        german: "Kondensator",
+        symbol: "C",
+        unit: "F",
+        definition:
+          "Ein Element aus zwei Leitern mit einer Isolierung dazwischen, das die Energie eines elektrischen Feldes speichert.",
+      },
+      {
+        term: "Kapazität",
+        german: "Kapazität",
+        symbol: "C",
+        unit: "F",
+        definition:
+          "Das Verhältnis des Ladungsmoduls einer Platte zur Spannung zwischen den Platten: C = Q/U.",
+      },
+      {
+        term: "Dielektrikum",
+        german: "Dielektrikum",
+        symbol: "εᵣ",
+        unit: "dimensionslos",
+        definition:
+          "Ein isolierendes Material, dessen Polarisation das elektrische Feld und die Kapazität beeinflusst.",
+      },
+      {
+        term: "Zeitkonstante",
+        german: "Zeitkonstante",
+        symbol: "τ",
+        unit: "s",
+        definition:
+          "Charakteristische Zeit einer RC-Schaltung: τ = RC. In dieser Zeit verringert sich die Abweichung vom Endwert um das e-fache.",
+      },
+      {
+        term: "Leckstrom",
+        german: "Leckstrom",
+        symbol: "Iut",
+        unit: "A",
+        definition:
+          "Durch eine unvollständige Isolierung fließt ein kleiner Strom, was zu einem langsamen Ladungsverlust führt.",
+      },
+      {
+        term: "Feldenergie",
+        german: "Feldenergie",
+        symbol: "W",
+        unit: "J",
+        definition:
+          "Während der Ladungstrennung gespeicherte Arbeit; für konstante Kapazität W = CU²/2.",
+      },
     ],
     summary: [
-      'Ёмкость связывает заряд и напряжение: Q = CU; 1 Ф = 1 Кл/В.',
-      'Площадь обкладок и диэлектрик увеличивают ёмкость, расстояние между обкладками уменьшает её.',
-      'Параллельно ёмкости складываются; при последовательном соединении складываются их обратные значения.',
-      'Переходный процесс RC имеет постоянную времени τ = RC; пять τ — удобный практический ориентир.',
-      'Энергия W = CU²/2 зависит от квадрата напряжения.',
-      'Отключение питания не гарантирует отсутствие напряжения на конденсаторе.'
+      "Die Kapazität bezieht sich auf Ladung und Spannung: Q = CU; 1 F = 1 C/V.",
+      "Die Fläche der Platten und das Dielektrikum erhöhen die Kapazität, der Abstand zwischen den Platten verringert sie.",
+      "Die Behälter werden parallel gefaltet; Bei Reihenschaltung addieren sich ihre Umkehrwerte.",
+      "Der transiente Prozess RC hat eine Zeitkonstante τ = RC; five τ ist ein praktischer praktischer Leitfaden.",
+      "Die Energie W = CU²/2 hängt vom Quadrat der Spannung ab.",
+      "Das Ausschalten der Stromversorgung garantiert nicht, dass am Kondensator keine Spannung anliegt.",
     ],
     quiz: [
-      { id: 'capacitor-1', type: 'choice', question: 'Как изменится ёмкость плоского конденсатора, если расстояние между обкладками увеличить вдвое, сохранив площадь и диэлектрик?', options: ['Уменьшится вдвое', 'Увеличится вдвое', 'Не изменится', 'Увеличится в четыре раза'], answer: 0, explanation: 'В модели плоского конденсатора C = ε₀εᵣA/d. Увеличение d вдвое уменьшает C вдвое.' },
-      { id: 'capacitor-2', type: 'numeric', question: 'Ёмкость равна 200 мкФ, напряжение — 10 В. Найди модуль заряда одной обкладки в милликулонах.', answer: 2, unit: 'мКл', tolerance: 0.01, explanation: 'Q = CU = 200 · 10⁻⁶ · 10 = 0,002 Кл = 2 мКл.' },
-      { id: 'capacitor-3', type: 'choice', question: 'До какой доли конечного напряжения зарядится первоначально разряженный конденсатор через одну постоянную времени RC?', options: ['Примерно 36,8 %', 'Примерно 50 %', 'Примерно 63,2 %', 'Ровно 100 %'], answer: 2, explanation: 'U(τ)/U₀ = 1 − e⁻¹ ≈ 0,632. Значение 36,8 % относится к оставшемуся напряжению при разрядке.' },
-      { id: 'capacitor-4', type: 'numeric', question: 'Конденсатор 1000 мкФ заряжен до 10 В. Какую энергию он запасает в джоулях?', answer: 0.05, unit: 'Дж', tolerance: 0.001, explanation: '1000 мкФ = 0,001 Ф. W = ½CU² = 0,5 · 0,001 · 100 = 0,05 Дж.' },
-      { id: 'capacitor-5', type: 'choice', question: 'Два первоначально разряженных идеальных конденсатора 10 мкФ и 20 мкФ соединены последовательно. Какое утверждение верно?', options: ['На обоих обязательно одинаковое напряжение', 'На 20 мкФ напряжение вдвое больше', 'Общая ёмкость равна 30 мкФ', 'На 10 мкФ напряжение вдвое больше'], answer: 3, explanation: 'При последовательном соединении модули зарядов равны, а U = Q/C. На конденсаторе меньшей ёмкости напряжение больше: U₁/U₂ = C₂/C₁ = 2.' }
-    ]
+      {
+        id: "capacitor-1",
+        type: "choice",
+        question:
+          "Wie verändert sich die Kapazität eines Flachkondensators, wenn der Abstand zwischen den Platten verdoppelt wird und dabei Fläche und Dielektrikum erhalten bleiben?",
+        options: [
+          "Wird halbiert",
+          "Wird sich verdoppeln",
+          "Wird sich nicht ändern",
+          "Wird sich vervierfachen",
+        ],
+        answer: 0,
+        explanation:
+          "Im Flachkondensatormodell ist C = ε₀εᵣA/d. Durch Erhöhen von d um die Hälfte wird C um die Hälfte reduziert.",
+      },
+      {
+        id: "capacitor-2",
+        type: "numeric",
+        question:
+          "Die Kapazität beträgt 200 μF, die Spannung beträgt 10 V. Ermitteln Sie den Ladungsmodul einer Platte in Milliculomb.",
+        answer: 2,
+        unit: "mC",
+        tolerance: 0.01,
+        explanation: "Q = CU = 200 · 10⁻⁶ · 10 = 0,002 C = 2 mC.",
+      },
+      {
+        id: "capacitor-3",
+        type: "choice",
+        question:
+          "Auf welchen Bruchteil der Endspannung wird der zunächst entladene Kondensator nach einer Zeitkonstanten RC aufgeladen?",
+        options: [
+          "Ungefähr 36,8 %",
+          "Ungefähr 50 %",
+          "Ungefähr 63,2 %",
+          "Genau 100 %",
+        ],
+        answer: 2,
+        explanation:
+          "U(τ)/U₀ = 1 − e⁻¹ ≈ 0,632. Der Wert von 36,8 % bezieht sich auf die verbleibende Spannung beim Entladen.",
+      },
+      {
+        id: "capacitor-4",
+        type: "numeric",
+        question:
+          "Ein 1000 uF-Kondensator wird auf 10 V aufgeladen. Wie viel Energie speichert er in Joule?",
+        answer: 0.05,
+        unit: "J",
+        tolerance: 0.001,
+        explanation: "1000 µF = 0,001 F. W = ½CU² = 0,5 0,001 100 = 0,05 J.",
+      },
+      {
+        id: "capacitor-5",
+        type: "choice",
+        question:
+          "Zwei zunächst entladene ideale Kondensatoren 10 µF und 20 µF sind in Reihe geschaltet. Welche Aussage ist wahr?",
+        options: [
+          "Beide müssen die gleiche Spannung haben.",
+          "Bei 20 µF ist die Spannung doppelt so hoch",
+          "Die Gesamtkapazität beträgt 30 µF",
+          "Bei 10 µF ist die Spannung doppelt so hoch",
+        ],
+        answer: 3,
+        explanation:
+          "Bei einer Reihenschaltung sind die Ladungsmodule gleich und U = Q/C. Bei einem Kondensator mit kleinerer Kapazität ist die Spannung höher: U₁/U₂ = C₂/C₁ = 2.",
+      },
+    ],
   },
   {
-    id: 'magnets',
+    id: "magnets",
     number: 11,
-    title: 'Магниты и магнитные линии',
-    german: 'Magnete & magnetische Feldlinien',
-    chapter: '5.1',
-    category: 'magnetism',
+    title: "Magnete & magnetische Feldlinien",
+    german: "Magnete & magnetische Feldlinien",
+    chapter: "5.1",
+    category: "magnetism",
     duration: 32,
-    description: 'Магнитные полюса, форма и направление поля, действие на ток и движение зарядов — от компаса до магнитного потока.',
+    description:
+      "Magnetische Pole, die Form und Richtung des Feldes, die Wirkung auf den Strom und die Bewegung von Ladungen – vom Kompass bis zum magnetischen Fluss.",
     objectives: [
-      'Правильно читать магнитные линии и определять направление поля с помощью компаса.',
-      'Объяснять действие магнитного поля на движущиеся заряды и проводник с током.',
-      'Различать магнитную индукцию B и магнитный поток Φ и учитывать ориентацию поверхности.'
+      "Lesen Sie magnetische Linien richtig ab und bestimmen Sie die Richtung des Feldes mit einem Kompass.",
+      "Erklären Sie die Wirkung eines Magnetfeldes auf bewegte Ladungen und einen stromdurchflossenen Leiter.",
+      "Unterscheiden Sie zwischen magnetischer Induktion B und magnetischem Fluss Φ und berücksichtigen Sie die Ausrichtung der Oberfläche.",
     ],
     sections: [
       {
-        id: 'magnets-poles',
-        title: '1. Северный и южный полюса',
+        id: "magnets-poles",
+        title: "1. Nord- und Südpol",
         paragraphs: [
-          'У обычного постоянного магнита различают северный полюс N и южный S. Одноимённые полюса отталкиваются, разноимённые притягиваются. Особенно заметное взаимодействие у концов стержневого магнита не означает, что поле существует только там: магнитное поле занимает пространство вокруг магнита и внутри него.',
-          'Если разломить магнит, не получится отдельно северный и отдельно южный полюс. Каждый фрагмент станет магнитом с двумя полюсами. Изолированные магнитные заряды, или монополи, в обычной электротехнике не наблюдаются; классическое магнитное поле не имеет источников и стоков, аналогичных отдельным положительным и отрицательным электрическим зарядам.',
-          'Постоянный магнит сохраняет намагниченность благодаря упорядочению микроскопических магнитных моментов в материале. В простом объяснении это связывают с магнитными доменами — областями с согласованной намагниченностью. Нагрев, сильное противоположное поле и механические воздействия могут ослабить магнит; конкретная устойчивость зависит от материала.'
+          "In einem gewöhnlichen Permanentmagneten gibt es einen Nordpol N und einen Südpol S. Gleiche Pole stoßen sich ab, ungleiche Pole ziehen sich an. Die besonders auffällige Wechselwirkung an den Enden eines Stabmagneten bedeutet nicht, dass das Feld nur dort existiert: Das Magnetfeld nimmt den Raum um und im Inneren des Magneten ein.",
+          "Wenn Sie einen Magneten zerbrechen, erhalten Sie keinen separaten Nordpol und keinen separaten Südpol. Jedes Fragment wird zu einem Magneten mit zwei Polen. Isolierte magnetische Ladungen oder Monopole werden in der konventionellen Elektrotechnik nicht beobachtet; Ein klassisches Magnetfeld hat keine Quellen und Senken analog zu einzelnen positiven und negativen elektrischen Ladungen.",
+          "Ein Permanentmagnet hält die Magnetisierung aufrecht, indem er mikroskopisch kleine magnetische Momente im Material anordnet. Eine einfache Erklärung bezieht dies auf magnetische Domänen – Bereiche mit gleichmäßiger Magnetisierung. Hitze, starke Gegenfelder und mechanische Beanspruchung können den Magneten schwächen; Der spezifische Widerstand hängt vom Material ab.",
         ],
         callout: {
-          type: 'insight',
-          title: 'Сходные слова, разные физические объекты',
-          text: 'Положительный электрический заряд можно отделить от отрицательного. Отдельный северный полюс обычного магнита получить разрезанием нельзя: у каждого куска появится собственная пара N и S.'
-        }
+          type: "insight",
+          title: "Ähnliche Wörter, unterschiedliche physische Objekte",
+          text: "Eine positive elektrische Ladung kann von einer negativen getrennt werden. Ein separater Nordpol eines gewöhnlichen Magneten kann nicht durch Schneiden erhalten werden: Jedes Stück hat sein eigenes Paar aus N und S.",
+        },
       },
       {
-        id: 'magnets-lines',
-        title: '2. Как читать магнитные линии',
+        id: "magnets-lines",
+        title: "2. Wie man magnetische Linien liest",
         paragraphs: [
-          'Магнитная линия — воображаемая кривая, касательная к которой в каждой точке указывает направление вектора магнитной индукции B. Вокруг стержневого магнита направление снаружи принято от N к S, а внутри магнита — от S к N. Таким образом, линии образуют замкнутые контуры и не начинаются на северном полюсе.',
-          'Линии одного поля не пересекаются: иначе в одной точке пришлось бы назначить два разных направления B. Там, где на одной и той же условной схеме линии расположены плотнее, поле обычно показывают более сильным. Число нарисованных линий выбирает автор рисунка: сами по себе линии не являются материальными нитями и не имеют универсального количества.',
-          'В почти однородном поле линии на плоском рисунке выглядят параллельными и равноотстоящими. Поле внутри длинного соленоида или между подходящими полюсными наконечниками можно приблизительно считать однородным в ограниченной области. У краёв оно искривляется, поэтому нельзя без проверки переносить простую модель на всё пространство.'
+          "Eine magnetische Linie ist eine imaginäre Kurve, deren Tangente an jedem Punkt die Richtung des magnetischen Induktionsvektors B angibt. Um einen Stabmagneten verläuft die Richtung außen von N nach S und innerhalb des Magneten von S nach N. Somit bilden die Linien geschlossene Konturen und beginnen nicht am Nordpol.",
+          "Die Linien eines Feldes schneiden sich nicht: Andernfalls müssten an einem Punkt zwei unterschiedliche Richtungen B zugewiesen werden. Wenn die Linien im gleichen herkömmlichen Diagramm dichter sind, wird das Feld normalerweise als stärker dargestellt. Die Anzahl der gezeichneten Linien wird vom Autor der Zeichnung gewählt: Die Linien selbst sind keine materiellen Fäden und haben keine universelle Größe.",
+          "In einem nahezu gleichmäßigen Feld erscheinen die Linien in einer flachen Zeichnung parallel und im gleichen Abstand. Das Feld innerhalb eines langen Magneten oder zwischen geeigneten Polstücken kann über einen begrenzten Bereich als annähernd gleichmäßig angesehen werden. Es ist an den Rändern gewölbt, so dass es unmöglich ist, ein einfaches Modell ungeprüft auf den gesamten Raum zu übertragen.",
         ],
         callout: {
-          type: 'tip',
-          title: 'Поле перпендикулярно листу',
-          text: 'Символ ⊙ обозначает вектор к наблюдателю: видим остриё стрелы. Символ ⊗ обозначает вектор от наблюдателя: видим оперение стрелы. Это удобная запись направления в трёхмерных задачах.'
-        }
+          type: "tip",
+          title: "Das Feld steht senkrecht zum Blatt",
+          text: "Das Symbol ⊙ bezeichnet den Vektor zum Beobachter: Wir sehen die Spitze eines Pfeils. Das Symbol ⊗ bezeichnet den Vektor vom Beobachter: Wir sehen die Feder des Pfeils. Dies ist eine praktische Richtungsangabe bei dreidimensionalen Problemen.",
+        },
       },
       {
-        id: 'magnets-compass',
-        title: '3. Компас, поле Земли и наложение полей',
+        id: "magnets-compass",
+        title: "3. Kompass, Erdfeld und Feldüberlagerung",
         paragraphs: [
-          'Маленькая магнитная стрелка стремится повернуться вдоль местного поля. Направление, в которое указывает северный конец стрелки, принимают за направление B. При этом компас показывает направление суммарного поля Земли, близких магнитов и токов в проводниках. Поэтому измерение рядом со стальным столом, динамиком или силовым кабелем может сильно отличаться от ожидаемого.',
-          'Северный конец компаса указывает приблизительно к географическому северу. В магнитном смысле вблизи географического Северного полюса Земли находится область южной магнитной полярности, которая притягивает северный конец стрелки. Географическое и магнитное направления не совпадают точно: угол между ними называется магнитным склонением. Линии земного поля также наклонены к горизонту.',
-          'Магнитная индукция — вектор. При наложении нескольких полей складывают векторы, а не просто их модули. Два одинаковых поля, направленных противоположно, могут взаимно компенсироваться в определённой точке. Поля под прямым углом дают результирующее направление между ними. Принцип суперпозиции применяют с учётом того, что магнитные материалы могут менять своё состояние под действием общего поля.'
+          "Die kleine Magnetnadel neigt dazu, sich entlang des lokalen Feldes zu drehen. Die Richtung, in die das nördliche Ende des Pfeils zeigt, wird als Richtung B angenommen. In diesem Fall zeigt der Kompass die Richtung des Gesamtfeldes der Erde, benachbarter Magnete und Ströme in Leitern an. Daher kann eine Messung in der Nähe eines Stahltisches, eines Lautsprechers oder eines Stromkabels stark von den Erwartungen abweichen.",
+          "Das nördliche Ende des Kompasses zeigt ungefähr auf den geografischen Norden. Im magnetischen Sinne gibt es in der Nähe des geografischen Nordpols der Erde einen Bereich mit südlicher magnetischer Polarität, der das nördliche Ende der Nadel anzieht. Geografische und magnetische Richtungen stimmen nicht genau überein: Der Winkel zwischen ihnen wird magnetische Deklination genannt. Auch die Feldlinien der Erde sind zum Horizont geneigt.",
+          "Magnetische Induktion ist ein Vektor. Bei der Überlappung mehrerer Felder werden Vektoren hinzugefügt, nicht nur deren Module. Zwei identische Felder, die in entgegengesetzte Richtungen gerichtet sind, können sich an einem bestimmten Punkt gegenseitig aufheben. Rechtwinklige Felder geben die resultierende Richtung zwischen ihnen an. Das Superpositionsprinzip wird unter Berücksichtigung der Tatsache angewendet, dass magnetische Materialien unter dem Einfluss eines allgemeinen Feldes ihren Zustand ändern können.",
         ],
         formula: {
-          expression: 'B⃗общ = B⃗₁ + B⃗₂; для перпендикулярных полей: Bобщ = √(B₁² + B₂²)',
-          legend: 'B⃗ — вектор магнитной индукции; B — его модуль в теслах (Тл).',
-          note: 'Обычное арифметическое сложение модулей допустимо только для одинаково направленных векторов.'
+          expression:
+            "B⃗total = B⃗₁ + B⃗₂; für senkrechte Felder: Btotal = √(B₁² + B₂²)",
+          legend:
+            "B⃗ ist der magnetische Induktionsvektor; B ist sein Modul in Tesla (T).",
+          note: "Die herkömmliche arithmetische Modulo-Addition ist nur für gleichgerichtete Vektoren gültig.",
         },
         example: {
-          title: 'Два поля в противоположных направлениях',
-          given: 'В выбранной точке B₁ = 4 мТл направлено вправо, B₂ = 1,5 мТл — влево.',
+          title: "Zwei Felder in entgegengesetzter Richtung",
+          given:
+            "Am ausgewählten Punkt ist B₁ = 4 mT nach rechts gerichtet, B₂ = 1,5 mT ist nach links gerichtet.",
           steps: [
-            'Выбираем положительное направление вправо.',
-            'Складываем проекции: Bx = 4 − 1,5 = 2,5 мТл.',
-            'Положительный результат означает, что суммарное поле направлено вправо.'
+            "Wir wählen die positive Richtung nach rechts.",
+            "Wir addieren die Projektionen: Bx = 4 − 1,5 = 2,5 mT.",
+            "Ein positives Ergebnis bedeutet, dass das gesamte Feld nach rechts gerichtet ist.",
           ],
-          answer: 'Суммарная магнитная индукция равна 2,5 мТл и направлена вправо.'
-        }
+          answer:
+            "Die gesamte magnetische Induktion beträgt 2,5 mT und ist nach rechts gerichtet.",
+        },
       },
       {
-        id: 'magnets-force',
-        title: '4. Магнитное поле действует на движение зарядов',
+        id: "magnets-force",
+        title: "4. Das Magnetfeld beeinflusst die Ladungsbewegung",
         paragraphs: [
-          'На движущийся заряд действует магнитная составляющая силы Лоренца. Её модуль зависит от заряда, скорости, магнитной индукции и угла между скоростью и полем. Если заряд покоится или движется вдоль поля, эта сила равна нулю. При движении поперёк поля сила максимальна и всегда перпендикулярна одновременно скорости и B.',
-          'Для положительного заряда направление задаёт векторное произведение v × B: его можно определить правилом правой руки. Для отрицательного заряда направление противоположно. Поскольку магнитная сила перпендикулярна скорости, сама по себе она не совершает работы над точечным зарядом и не меняет его кинетическую энергию. Она меняет направление движения; электрическое поле, напротив, может менять скорость по модулю.',
-          'В проводнике носители зарядов движутся упорядоченно, поэтому поле действует на проводник с током. Для прямого участка длиной l в однородном поле модуль силы F = BIl sin α, где угол α измеряется между направлением условного положительного тока и B. На этом взаимодействии основан принцип электродвигателя.'
+          "Eine bewegte Ladung wird durch die magnetische Komponente der Lorentzkraft beeinflusst. Sein Modul hängt von Ladung, Geschwindigkeit, magnetischer Induktion und dem Winkel zwischen Geschwindigkeit und Feld ab. Wenn die Ladung ruht oder sich entlang des Feldes bewegt, ist diese Kraft Null. Bei der Bewegung über das Feld ist die Kraft maximal und steht immer senkrecht sowohl zur Geschwindigkeit als auch zu B.",
+          "Für eine positive Ladung ist die Richtung durch das Vektorprodukt v × B gegeben: Sie kann durch die Rechte-Hand-Regel bestimmt werden. Bei einer negativen Ladung ist die Richtung umgekehrt. Da die Magnetkraft senkrecht zur Geschwindigkeit wirkt, verrichtet sie selbst keine Arbeit an einer Punktladung und verändert deren kinetische Energie nicht. Sie ändert die Richtung; Das elektrische Feld hingegen kann seine Geschwindigkeit modulo ändern.",
+          "In einem Leiter bewegen sich Ladungsträger geordnet, sodass das Feld auf den stromdurchflossenen Leiter wirkt. Für einen geraden Abschnitt der Länge l in einem gleichmäßigen Feld gilt der Kraftmodul F = BIl sin α, wobei der Winkel α zwischen der Richtung des bedingten positiven Stroms und B gemessen wird. Auf diesem Zusammenspiel basiert das Prinzip des Elektromotors.",
         ],
         formula: {
-          expression: 'Fмаг = |q| · v · B · sin α; Fпров = B · I · l · sin α',
-          legend: 'F — сила в Н; q — заряд в Кл; v — скорость в м/с; B — магнитная индукция в Тл; I — ток в А; l — активная длина в м.',
-          note: 'Формула для проводника предполагает прямой участок в однородном поле. Векторная форма для заряда: F⃗маг = q(v⃗ × B⃗).'
+          expression: "Fmag = |q| · v · B · sin α; Fprov = B I l sin α",
+          legend:
+            "F – Kraft in N; q ist die Ladung in C; v – Geschwindigkeit in m/s; B – magnetische Induktion in T; I - Strom in A; l - aktive Länge in m.",
+          note: "Die Formel für einen Leiter geht von einem geraden Abschnitt in einem gleichmäßigen Feld aus. Vektorform für Ladung: F⃗mag = q(v⃗ × B⃗).",
         },
         example: {
-          title: 'Сила на проводник',
-          given: 'B = 0,20 Тл, I = 3 А, l = 10 см. Проводник перпендикулярен полю.',
+          title: "Kraft auf den Leiter",
+          given:
+            "B = 0,20 T, I = 3 A, l = 10 cm. Der Leiter steht senkrecht zum Feld.",
           steps: [
-            'Переводим длину: l = 0,10 м.',
-            'Так как α = 90°, sin α = 1.',
-            'F = BIl = 0,20 · 3 · 0,10 = 0,060 Н.',
-            'Если развернуть проводник вдоль поля, α станет 0° и сила будет равна нулю.'
+            "Länge umrechnen: l = 0,10 m.",
+            "Da α = 90°, ist sin α = 1.",
+            "F = BIl = 0,20 3 0,10 = 0,060 N.",
+            "Wenn der Leiter entlang des Feldes gedreht wird, wird α zu 0° und die Kraft ist Null.",
           ],
-          answer: 'Модуль силы равен 0,060 Н; её направление перпендикулярно току и полю.'
-        }
+          answer:
+            "Der Kraftmodul beträgt 0,060 N; seine Richtung ist senkrecht zum Strom und Feld.",
+        },
       },
       {
-        id: 'magnets-flux',
-        title: '5. Магнитная индукция и поток — разные величины',
+        id: "magnets-flux",
+        title:
+          "5. Magnetische Induktion und Fluss sind unterschiedliche Größen",
         paragraphs: [
-          'Магнитная индукция B характеризует поле в конкретной точке и измеряется в теслах. Магнитный поток Φ относится к выбранной поверхности: он учитывает, насколько велико поле, какова площадь и как эта площадь ориентирована. Поэтому одинаковое поле может давать разный поток через разные рамки.',
-          'Для плоской поверхности в однородном поле Φ = BA cos α. Здесь α — угол между B и нормалью, то есть перпендикуляром к поверхности, а не угол между B и самой плоскостью. Если поле проходит через рамку перпендикулярно её плоскости, α = 0° и модуль потока максимален. Если линии лежат в плоскости рамки, α = 90° и поток равен нулю.',
-          'Поток может быть положительным или отрицательным: знак зависит от выбранного направления нормали. Для неоднородного поля поверхность мысленно делят на малые участки и складывают потоки через них. Суммарный магнитный поток через любую замкнутую поверхность равен нулю: сколько линий условно вошло, столько вышло. Это другая формулировка отсутствия магнитных монополей.'
+          "Die magnetische Induktion B charakterisiert das Feld an einem bestimmten Punkt und wird in Tesla gemessen. Der magnetische Fluss Φ ist relativ zur gewählten Oberfläche: Er berücksichtigt, wie stark das Feld ist, wie groß die Fläche ist und wie diese Fläche ausgerichtet ist. Daher kann dasselbe Feld unterschiedliche Flüsse durch verschiedene Frames erzeugen.",
+          "Für eine ebene Fläche in einem gleichmäßigen Feld gilt Φ = BA cos α. Dabei ist α der Winkel zwischen B und der Normalen, also senkrecht zur Oberfläche, und nicht der Winkel zwischen B und der Stufe selbst. Wenn das Feld den Rahmen senkrecht zu seiner Stufe durchquert, ist α = 0° und der Flussmodul ist maximal. Liegen die Linien in der Rahmenebene, ist α = 90° und der Fluss ist Null.",
+          "Der Fluss kann positiv oder negativ sein: Das Vorzeichen hängt von der gewählten Normalenrichtung ab. Bei einem ungleichmäßigen Feld wird die Oberfläche gedanklich in kleine Bereiche unterteilt und die Flüsse durch diese werden aufsummiert. Der gesamte magnetische Fluss durch jede geschlossene Oberfläche ist Null: Wie viele Linien treten ein, so viele treten aus. Dies ist eine weitere Formulierung der Abwesenheit magnetischer Monopole.",
         ],
         formula: {
-          expression: 'Φ = B · A · cos α; 1 Вб = 1 Тл · м²',
-          legend: 'Φ — магнитный поток в веберах (Вб); A — площадь в м²; α — угол между B и выбранной нормалью к поверхности.',
-          note: 'Простая формула применима к плоской поверхности в однородном поле. Для общего случая Φ = ∫ B⃗ · dA⃗.'
+          expression: "Φ = B · A · cos α; 1 Wb = 1 T m²",
+          legend:
+            "Φ – magnetischer Fluss in Webers (Wb); A – Fläche in m²; α ist der Winkel zwischen B und der ausgewählten Flächennormalen.",
+          note: "Eine einfache Formel gilt für eine ebene Fläche in einem gleichmäßigen Feld. Für den allgemeinen Fall Φ = ∫ B⃗ · dA⃗.",
         },
         example: {
-          title: 'Поворот рамки меняет поток',
-          given: 'B = 0,10 Тл, A = 20 см², угол между полем и нормалью α = 60°.',
+          title: "Durch Drehen des Rahmens ändert sich der Fluss",
+          given:
+            "B = 0,10 T, A = 20 cm², Winkel zwischen Feld und Normale α = 60°.",
           steps: [
-            'Площадь переводим как квадрат длины: 20 см² = 20 · 10⁻⁴ м² = 0,002 м².',
-            'cos 60° = 0,5.',
-            'Φ = 0,10 · 0,002 · 0,5 = 0,0001 Вб.',
-            '0,0001 Вб = 0,10 мВб. При α = 0° поток был бы вдвое больше.'
+            "Die Fläche übersetzen wir als Quadrat der Länge: 20 cm² = 20 · 10⁻⁴ m² = 0,002 m².",
+            "cos 60° = 0,5.",
+            "Φ = 0,10 · 0,002 · 0,5 = 0,0001 Wb.",
+            "0,0001 Wb = 0,10 mWb. Bei α = 0° wäre der Durchfluss doppelt so groß.",
           ],
-          answer: 'Магнитный поток равен 0,10 мВб.'
-        }
+          answer: "Der magnetische Fluss beträgt 0,10 mWb.",
+        },
       },
       {
-        id: 'magnets-materials',
-        title: '6. Какие материалы взаимодействуют с магнитом',
+        id: "magnets-materials",
+        title: "6. Welche Materialien interagieren mit einem Magneten?",
         paragraphs: [
-          'Ферромагнитные материалы, например железо, никель и кобальт в подходящих условиях, способны сильно намагничиваться. У магнитомягких материалов намагниченность легко меняется: они удобны для сердечников электромагнитов и трансформаторов. Магнитотвёрдые материалы лучше удерживают намагниченность и используются в постоянных магнитах. Слова «мягкий» и «твёрдый» здесь описывают магнитное поведение, а не механическую твёрдость.',
-          'Не каждый металл заметно притягивается постоянным магнитом. Медь и алюминий не ведут себя как железо. Парамагнитные материалы слабо усиливают внешнее поле, диамагнитные слабо ослабляют его. Эти небольшие эффекты обычно незаметны в простом школьном опыте, но имеют значение в точных измерениях и специальных устройствах.',
-          'Стальные предметы изменяют картину поля, а сильные магниты способны резко притягиваться друг к другу и защемлять пальцы. Для учебных опытов достаточно маленьких магнитов, компаса и безопасных токов. Чувствительные устройства и медицинские имплантаты требуют соблюдения инструкций производителя; сила магнита на вид не определяется.'
+          "Ferromagnetische Materialien wie Eisen, Nickel und Kobalt können unter den richtigen Bedingungen stark magnetisiert werden. In weichmagnetischen Materialien ändert sich die Magnetisierung leicht: Sie eignen sich für die Kerne von Elektromagneten und Transformatoren. Hartmagnetische Materialien behalten die Magnetisierung besser bei und werden in Permanentmagneten verwendet. Die Wörter „weich“ und „hart“ beschreiben hier magnetisches Verhalten, nicht mechanische Härte.",
+          "Nicht jedes Metall wird spürbar von einem Permanentmagneten angezogen. Kupfer und Aluminium verhalten sich nicht wie Eisen. Paramagnetische Materialien verstärken das äußere Feld nur schwach, während diamagnetische Materialien es nur schwach schwächen. Diese kleinen Effekte machen sich bei einfachen Unterrichtserfahrungen meist nicht bemerkbar, machen aber bei präzisen Messungen und speziellen Geräten einen Unterschied.",
+          "Stahlgegenstände verändern das Feldmuster und starke Magnete können stark voneinander angezogen werden und Finger einklemmen. Für pädagogische Experimente genügen kleine Magnete, ein Kompass und sichere Ströme. Bei empfindlichen Geräten und medizinischen Implantaten müssen die Herstelleranweisungen eingehalten werden. Die Stärke des Magneten kann nicht visuell bestimmt werden.",
         ],
         callout: {
-          type: 'insight',
-          title: 'Что действительно показывает опыт с опилками',
-          text: 'Железные опилки намагничиваются и ориентируются в поле, делая его форму наглядной. Они показывают рисунок направлений, но не измеряют величину B и сами немного изменяют поле.'
-        }
-      }
+          type: "insight",
+          title: "Was zeigen die Erfahrungen mit Sägemehl wirklich?",
+          text: "Eisenspäne werden im Feld magnetisiert und ausgerichtet, wodurch ihre Form sichtbar wird. Sie zeigen ein Richtungsmuster, messen jedoch nicht den Wert von B und verändern selbst das Feld geringfügig.",
+        },
+      },
     ],
     terms: [
-      { term: 'Магнитное поле', german: 'Magnetfeld', symbol: 'B⃗', unit: 'Тл', definition: 'Поле, создаваемое движением зарядов и намагниченностью; действует на движущиеся заряды и магнитные моменты.' },
-      { term: 'Магнитная линия', german: 'Magnetische Feldlinie', symbol: '—', unit: '—', definition: 'Воображаемая кривая, касательная к которой направлена по вектору магнитной индукции.' },
-      { term: 'Магнитная индукция', german: 'Magnetische Flussdichte', symbol: 'B', unit: 'Тл', definition: 'Векторная величина, описывающая магнитное поле и входящая в формулу магнитной силы.' },
-      { term: 'Магнитный поток', german: 'Magnetischer Fluss', symbol: 'Φ', unit: 'Вб', definition: 'Поток вектора B через ориентированную поверхность; для однородного поля Φ = BA cos α.' },
-      { term: 'Сила Лоренца', german: 'Lorentzkraft', symbol: 'F', unit: 'Н', definition: 'Сила на заряд в электромагнитном поле; магнитная часть равна q(v × B). Полная сила также включает qE.' },
-      { term: 'Ферромагнетик', german: 'Ferromagnetischer Stoff', symbol: '—', unit: '—', definition: 'Материал с сильной намагниченностью, связанной с упорядочением магнитных моментов и доменами.' }
+      {
+        term: "Magnetfeld",
+        german: "Magnetfeld",
+        symbol: "B⃗",
+        unit: "T",
+        definition:
+          "Feld, das durch die Bewegung von Ladungen und Magnetisierung entsteht; wirkt auf bewegte Ladungen und magnetische Momente.",
+      },
+      {
+        term: "Magnetische Feldlinie",
+        german: "Magnetische Feldlinie",
+        symbol: "—",
+        unit: "—",
+        definition:
+          "Eine imaginäre Kurve, deren Tangente entlang des magnetischen Induktionsvektors gerichtet ist.",
+      },
+      {
+        term: "Magnetische Flussdichte",
+        german: "Magnetische Flussdichte",
+        symbol: "B",
+        unit: "T",
+        definition:
+          "Eine Vektorgröße, die ein Magnetfeld beschreibt und in die Formel für die Magnetkraft eingeht.",
+      },
+      {
+        term: "Magnetischer Fluss",
+        german: "Magnetischer Fluss",
+        symbol: "Φ",
+        unit: "Wb",
+        definition:
+          "Fluss des Vektors B durch eine orientierte Oberfläche; für ein einheitliches Feld Φ = BA cos α.",
+      },
+      {
+        term: "Lorentzkraft",
+        german: "Lorentzkraft",
+        symbol: "F",
+        unit: "N",
+        definition:
+          "Kraft auf eine Ladung in einem elektromagnetischen Feld; der magnetische Anteil ist gleich q(v × B). In der Gesamtkraft ist auch qE enthalten.",
+      },
+      {
+        term: "Ferromagnetischer Stoff",
+        german: "Ferromagnetischer Stoff",
+        symbol: "—",
+        unit: "—",
+        definition:
+          "Ein Material mit starker Magnetisierung, die mit der Ordnung magnetischer Momente und Domänen verbunden ist.",
+      },
     ],
     summary: [
-      'У обычного магнита всегда есть северная и южная полярности; разрезание не выделяет отдельный полюс.',
-      'Снаружи магнита линии B идут от N к S, внутри — от S к N; линии замкнуты.',
-      'Северный конец компаса указывает направление местного суммарного поля.',
-      'Магнитная сила перпендикулярна скорости заряда; при движении вдоль B она равна нулю.',
-      'B измеряется в теслах, Φ — в веберах; поток зависит от площади и ориентации поверхности.',
-      'В Φ = BA cos α угол измеряется относительно нормали к поверхности.'
+      "Ein gewöhnlicher Magnet hat immer Nord- und Südpolarität; Beim Schneiden wird kein separater Pol ausgewählt.",
+      "Außerhalb des Magneten verlaufen die Linien B von N nach S, innen von S nach N; Die Leitungen sind geschlossen.",
+      "Das nördliche Ende des Kompasses zeigt die Richtung des lokalen Zusammenfassungsfelds an.",
+      "Die magnetische Kraft ist senkrecht zur Geschwindigkeit der Ladung; bei Bewegung entlang B ist es gleich Null.",
+      "B wird in Tesla gemessen, Φ in Weber; Die Strömung hängt von der Oberfläche und der Ausrichtung ab.",
+      "Bei Φ = BA cos α wird der Winkel relativ zur Flächennormalen gemessen.",
     ],
     quiz: [
-      { id: 'magnets-1', type: 'choice', question: 'Что произойдёт, если стержневой магнит разрезать на две части?', options: ['Одна часть будет только северным полюсом, другая — только южным', 'Магнитные свойства обязательно полностью исчезнут', 'Каждая часть получит северный и южный полюса', 'Обе части получат только северные полюса'], answer: 2, explanation: 'Разрезание обычного магнита не выделяет магнитные монополи. Образуются меньшие магниты с обоими полюсами.' },
-      { id: 'magnets-2', type: 'choice', question: 'Как направлены магнитные линии снаружи стержневого магнита?', options: ['От N к S', 'От S к N', 'От положительного заряда к отрицательному', 'Всегда по окружностям вокруг магнита'], answer: 0, explanation: 'Снаружи магнита направление B принято от северного к южному полюсу. Внутри линии продолжаются от S к N, образуя замкнутые контуры.' },
-      { id: 'magnets-3', type: 'numeric', question: 'Проводник длиной 0,20 м с током 2 А перпендикулярен однородному полю B = 0,50 Тл. Найди силу в ньютонах.', answer: 0.2, unit: 'Н', tolerance: 0.005, explanation: 'F = BIl sin 90° = 0,50 · 2 · 0,20 = 0,20 Н.' },
-      { id: 'magnets-4', type: 'numeric', question: 'Поле B = 0,20 Тл перпендикулярно плоскости рамки площадью 0,01 м². Найди модуль потока в милливеберах.', answer: 2, unit: 'мВб', tolerance: 0.01, explanation: 'Поле параллельно нормали, поэтому cos α = 1. Φ = BA = 0,20 · 0,01 = 0,002 Вб = 2 мВб.' },
-      { id: 'magnets-5', type: 'choice', question: 'Положительный заряд движется точно вдоль однородного магнитного поля. Чему равна магнитная составляющая силы Лоренца?', options: ['qvB', 'qB/v', 'Она всегда направлена против скорости', 'Нулю'], answer: 3, explanation: 'Fмаг = |q|vB sin α. При движении вдоль поля α = 0° и sin α = 0, поэтому магнитная сила отсутствует.' }
-    ]
+      {
+        id: "magnets-1",
+        type: "choice",
+        question:
+          "Was passiert, wenn ein Stabmagnet in zwei Teile zerschnitten wird?",
+        options: [
+          "Ein Teil wird nur der Nordpol sein, der andere nur der Südpol",
+          "Die magnetischen Eigenschaften werden definitiv vollständig verschwinden",
+          "Jedes Stück erhält einen Nord- und einen Südpol",
+          "Beide Teile erhalten nur die Nordpole",
+        ],
+        answer: 2,
+        explanation:
+          "Durch das Schneiden eines normalen Magneten werden keine magnetischen Monopole freigesetzt. Es entstehen kleinere Magnete mit beiden Polen.",
+      },
+      {
+        id: "magnets-2",
+        type: "choice",
+        question:
+          "Welche Richtung haben die magnetischen Linien auf der Außenseite eines Stabmagneten?",
+        options: [
+          "Von N nach S",
+          "Von S nach N",
+          "Von positiver zu negativer Ladung",
+          "Immer im Kreis um den Magneten",
+        ],
+        answer: 0,
+        explanation:
+          "Außerhalb des Magneten verläuft die Richtung B vom Nord- zum Südpol. Im Inneren verlaufen die Linien von S nach N und bilden geschlossene Konturen.",
+      },
+      {
+        id: "magnets-3",
+        type: "numeric",
+        question:
+          "Ein 0,20 m langer Leiter mit einem Strom von 2 A steht senkrecht zu einem gleichmäßigen Feld B = 0,50 T. Finden Sie die Kraft in Newton.",
+        answer: 0.2,
+        unit: "N",
+        tolerance: 0.005,
+        explanation: "F = BIl sin 90° = 0,50 2 0,20 = 0,20 N.",
+      },
+      {
+        id: "magnets-4",
+        type: "numeric",
+        question:
+          "Feld B = 0,20 T senkrecht zur Rahmenebene mit einer Fläche von 0,01 m². Finden Sie das Thread-Modul in Milliwebers.",
+        answer: 2,
+        unit: "mWb",
+        tolerance: 0.01,
+        explanation:
+          "Das Feld ist parallel zur Normalen, also cos α = 1. Φ = BA = 0,20 · 0,01 = 0,002 Wb = 2 mWb.",
+      },
+      {
+        id: "magnets-5",
+        type: "choice",
+        question:
+          "Die positive Ladung bewegt sich genau entlang eines gleichmäßigen Magnetfeldes. Was ist die magnetische Komponente der Lorentzkraft?",
+        options: [
+          "qvB",
+          "qB/v",
+          "Es richtet sich immer gegen die Geschwindigkeit",
+          "Null",
+        ],
+        answer: 3,
+        explanation:
+          "Fmag = |q|vB sin α. Bei der Bewegung entlang des Feldes gilt α = 0° und sin α = 0, es entsteht also keine magnetische Kraft.",
+      },
+    ],
   },
   {
-    id: 'electromagnetism',
+    id: "electromagnetism",
     number: 12,
-    title: 'Электромагнетизм',
-    german: 'Elektromagnetismus',
-    chapter: '5.3',
-    category: 'magnetism',
+    title: "Elektromagnetismus",
+    german: "Elektromagnetismus",
+    chapter: "5.3",
+    category: "magnetism",
     duration: 38,
-    description: 'Как ток создаёт поле, почему катушка становится магнитом и как изменение магнитного потока рождает электрическое напряжение.',
+    description:
+      "Wie Strom ein Feld erzeugt, warum eine Spule zu einem Magneten wird und wie eine Änderung des magnetischen Flusses elektrische Spannung erzeugt.",
     objectives: [
-      'Определять направление поля проводника и катушки по направлению тока.',
-      'Применять закон электромагнитной индукции и правило Ленца.',
-      'Объяснять самоиндукцию, принцип двигателя, генератора и трансформатора.'
+      "Bestimmen Sie die Richtung des Feldes von Leiter und Spule in Stromrichtung.",
+      "Wenden Sie das Gesetz der elektromagnetischen Induktion und die Lenzsche Regel an.",
+      "Erklären Sie die Selbstinduktion, das Prinzip von Motor, Generator und Transformator.",
     ],
     sections: [
       {
-        id: 'electromagnetism-wire',
-        title: '1. Ток создаёт магнитное поле',
+        id: "electromagnetism-wire",
+        title: "1. Strom erzeugt ein Magnetfeld",
         paragraphs: [
-          'Магнитное поле существует не только около постоянных магнитов. Электрический ток в проводнике тоже создаёт поле. Вокруг длинного прямого провода линии B имеют форму концентрических окружностей, лежащих в плоскостях, перпендикулярных проводу. Центр каждой окружности находится на оси провода.',
-          'Направление поля находят правилом правой руки: большой палец направляют по условному положительному току, согнутые пальцы показывают направление магнитных линий. В металлическом проводе электроны дрейфуют противоположно условному току, но для этого правила используют именно направление тока. Изменение направления тока меняет направление поля.',
-          'В вакууме или воздухе вдали от концов длинного тонкого провода B пропорционально току и обратно пропорционально расстоянию до оси. В два раза дальше поле в два раза слабее, а не в четыре раза. Формула относится к идеализированному длинному прямому проводу и точкам снаружи него; соседние проводники создают дополнительные поля.'
+          "Das Magnetfeld existiert nicht nur um Permanentmagnete herum. Elektrischer Strom in einem Leiter erzeugt ebenfalls ein Feld. Um einen langen geraden Draht verlaufen die Linien B in Form konzentrischer Kreise, die in Ebenen senkrecht zum Draht liegen. Der Mittelpunkt jedes Kreises liegt auf der Achse des Drahtes.",
+          "Die Richtung des Feldes lässt sich anhand der Regel der rechten Hand ermitteln: Der Daumen wird entlang des bedingten positiven Stroms geführt, angewinkelte Finger zeigen die Richtung der Magnetlinien an. In einem Metalldraht driften Elektronen entgegengesetzt zum herkömmlichen Strom, die Regeln verwenden hierfür jedoch die Richtung des Stroms. Eine Änderung der Stromrichtung ändert die Richtung des Feldes.",
+          "Im Vakuum oder in der Luft, entfernt von den Enden eines langen dünnen Drahtes, ist B proportional zum Strom und umgekehrt proportional zum Abstand zur Achse. Bei doppelter Entfernung ist das Feld doppelt so schwach, nicht viermal schwächer. Die Formel bezieht sich auf einen idealisierten langen geraden Draht und die Punkte außerhalb davon; benachbarte Leiter erzeugen zusätzliche Felder.",
         ],
         formula: {
-          expression: 'B = μ₀I / (2πr)',
-          legend: 'B — магнитная индукция в Тл; I — ток в А; r — расстояние до оси провода в м; μ₀ ≈ 1,256637 · 10⁻⁶ Гн/м.',
-          note: 'Модель длинного прямого провода в вакууме; для воздуха обычно достаточно той же приближённой формулы.'
+          expression: "B = μ₀I / (2πr)",
+          legend:
+            "B – magnetische Induktion in T; I - Strom in A; r ist der Abstand zur Drahtachse in m; μ₀ ≈ 1,256637 · 10⁻⁶ H/m.",
+          note: "Modell eines langen geraden Drahtes im Vakuum; für Luft reicht in der Regel die gleiche Näherungsformel aus.",
         },
         example: {
-          title: 'Поле около прямого провода',
-          given: 'I = 10 А, расстояние r = 2 см. Окружающая среда — воздух.',
+          title: "Feld in der Nähe eines geraden Kabels",
+          given: "I = 10 A, Abstand r = 2 cm. Die Umgebung ist Luft.",
           steps: [
-            'r = 0,020 м; принимаем μ ≈ μ₀.',
-            'B = (4π · 10⁻⁷ · 10)/(2π · 0,020) ≈ 1,0 · 10⁻⁴ Тл.',
-            '1,0 · 10⁻⁴ Тл = 0,10 мТл = 100 мкТл.',
-            'Направление в выбранной точке определяем правилом правой руки, а не только числовой формулой.'
+            "r = 0,020 m; wir nehmen μ ≈ μ₀.",
+            "B = (4π · 10⁻⁷ · 10)/(2π · 0,020) ≈ 1,0 · 10⁻⁴ T.",
+            "1,0 · 10⁻⁴ T = 0,10 mT = 100 µT.",
+            "Die Richtung am ausgewählten Punkt wird durch die Rechte-Hand-Regel und nicht nur durch eine numerische Formel bestimmt.",
           ],
-          answer: 'B ≈ 0,10 мТл на расстоянии 2 см.'
-        }
+          answer: "B ≈ 0,10 mT im Abstand von 2 cm.",
+        },
       },
       {
-        id: 'electromagnetism-coil',
-        title: '2. Катушка и электромагнит',
+        id: "electromagnetism-coil",
+        title: "2. Spule und Elektromagnet",
         paragraphs: [
-          'Если провод свернуть в виток, поля разных участков складываются и усиливают друг друга в центральной области. Множество витков образует катушку, а длинная катушка называется соленоидом. Внутри длинного соленоида поле приблизительно однородно; снаружи картина похожа на поле стержневого магнита. У катушки есть северный и южный магнитные полюса, определяемые направлением тока.',
-          'Правило правой руки для катушки формулируется так: согнутые пальцы направлены по току в витках, большой палец показывает B внутри катушки и указывает на её северный конец. При взгляде на торец ток против часовой стрелки делает этот торец северным. Перестановка выводов источника меняет ток, поле и полярность.',
-          'Больше ампер-витков NI обычно означает более сильное намагничивающее действие. Ферромагнитный сердечник может заметно увеличить B, однако зависимость не остаётся линейной при любых токах: существуют насыщение и гистерезис. Воздушные зазоры, форма сердечника, утечка потока и нагрев обмотки тоже влияют на работу реального электромагнита.'
+          "Wird der Draht zu einer Spule gerollt, addieren sich die Felder verschiedener Abschnitte und verstärken sich im mittleren Bereich gegenseitig. Viele Windungen bilden eine Spule, und die lange Spule wird Magnetspule genannt. Innerhalb der langen Magnetspule ist das Feld annähernd gleichmäßig; Von außen betrachtet ähnelt das Bild dem Feld eines Stabmagneten. Die Spule hat magnetische Nord- und Südpole, die durch die Richtung des Stroms bestimmt werden.",
+          "Die Rechte-Hand-Regel für eine Spule ist wie folgt formuliert: Die gebogenen Finger sind entlang des Stroms in den Windungen gerichtet, der Daumen zeigt B im Inneren der Spule und zeigt auf deren nördliches Ende. Wenn man auf das Ende schaut, zeigt die Strömung gegen den Uhrzeigersinn, dass das Ende nach Norden verläuft. Durch die Neuanordnung der Quellpins werden Strom, Feld und Polarität geändert.",
+          "Mehr Amperewindungen NI bedeuten normalerweise eine stärkere Magnetisierungswirkung. Ein ferromagnetischer Kern kann B deutlich erhöhen, aber die Abhängigkeit bleibt bei keinem Strom linear: Es kommt zu Sättigung und Hysterese. Auch Luftspalte, Kernform, Streufluss und Wicklungserwärmung beeinflussen den Betrieb eines echten Elektromagneten.",
         ],
         formula: {
-          expression: 'H ≈ NI/l; B ≈ μ₀μᵣNI/l',
-          legend: 'N — число витков; I — ток в А; l — длина длинного соленоида в м; H — напряжённость магнитного поля в А/м; μᵣ — относительная магнитная проницаемость.',
-          note: 'Формула для B предполагает длинный соленоид и однородную линейную среду. Для воздушного сердечника μᵣ ≈ 1; для ферромагнетика μᵣ зависит от состояния и поля.'
+          expression: "H ≈ NI/l; B ≈ μ₀μᵣNI/l",
+          legend:
+            "N ist die Anzahl der Windungen; I - Strom in A; l ist die Länge des langen Magneten in m; H – magnetische Feldstärke in A/m; μᵣ – relative magnetische Permeabilität.",
+          note: "Die Formel für B geht von einem langen Solenoid und einem gleichmäßigen linearen Medium aus. Für einen Luftkern μᵣ ≈ 1; Bei einem Ferromagneten hängt μᵣ vom Zustand und dem Feld ab.",
         },
         callout: {
-          type: 'warning',
-          title: 'Катушка тоже нагревается',
-          text: 'У обмотки есть сопротивление. Тепловые потери I²R растут с квадратом тока, поэтому усиление электромагнита повышением напряжения ограничено допустимым током, температурой и режимом работы.'
-        }
+          type: "warning",
+          title: "Auch die Spule wird heiß",
+          text: "Die Wicklung hat einen Widerstand. Die thermischen Verluste I²R nehmen mit dem Quadrat des Stroms zu, daher ist die Verstärkung des Elektromagneten durch Spannungserhöhung durch den zulässigen Strom, die Temperatur und die Betriebsart begrenzt.",
+        },
       },
       {
-        id: 'electromagnetism-induction',
-        title: '3. Изменение потока создаёт ЭДС',
+        id: "electromagnetism-induction",
+        title: "3. Eine Änderung des Flusses erzeugt eine EMF",
         paragraphs: [
-          'Электромагнитная индукция возникает, когда магнитный поток, сцепленный с контуром, меняется во времени. Это можно сделать несколькими способами: двигать магнит относительно катушки, изменять ток в соседней катушке, вращать рамку или менять её площадь. Наличие сильного, но неизменного потока через неподвижную рамку само по себе не создаёт индукционной ЭДС.',
-          'Закон Фарадея связывает ЭДС с быстротой изменения потокосцепления. Если все N витков охвачены одинаковым потоком Φ, потокосцепление Ψ = NΦ. Чем больше витков и быстрее изменение потока, тем больше модуль ЭДС. В расчётах за конечный интервал обычно находят среднюю ЭДС; мгновенное значение требует производной по времени.',
-          'ЭДС — характеристика действия, которое может приводить заряды в движение. При разомкнутой катушке между выводами может быть измеримо напряжение, хотя ток в цепи отсутствует. Ток возникает при замыкании цепи и зависит от её полного электрического сопротивления и других свойств. Поэтому формулировка «индукция всегда создаёт ток» неполна.'
+          "Elektromagnetische Induktion tritt auf, wenn sich der an einen Stromkreis gekoppelte magnetische Fluss im Laufe der Zeit ändert. Dies kann auf verschiedene Arten erfolgen: Bewegen Sie den Magneten relativ zur Spule, ändern Sie den Strom in einer benachbarten Spule, drehen Sie den Rahmen oder ändern Sie seine Fläche. Das Vorhandensein einer starken, aber konstanten Strömung durch einen stationären Rahmen erzeugt an sich noch keine induzierte EMK.",
+          "Das Faradaysche Gesetz setzt die EMK in Beziehung zur Änderungsrate der Flusskopplung. Wenn alle N Windungen vom gleichen Fluss Φ abgedeckt sind, ist die Flussverkettung Ψ = NΦ. Je mehr Windungen und je schneller sich der Fluss ändert, desto größer ist das EMF-Modul. Bei Berechnungen für ein Endintervall wird normalerweise die durchschnittliche EMK ermittelt; Der Momentanwert erfordert eine Ableitung nach der Zeit.",
+          "EMF ist ein Aktionsmerkmal, das Ladungen in Bewegung setzen kann. Bei geöffneter Spule kann zwischen den Anschlüssen eine messbare Spannung anliegen, obwohl im Stromkreis kein Strom fließt. Der Strom entsteht, wenn ein Stromkreis geschlossen ist, und hängt von seinem gesamten elektrischen Widerstand und anderen Eigenschaften ab. Daher ist die Formulierung „Induktion erzeugt immer einen Strom“ unvollständig.",
         ],
         formula: {
-          expression: '𝓔 = −dΨ/dt = −N · dΦ/dt; |𝓔ср| = N · |ΔΦ| / Δt',
-          legend: '𝓔 — ЭДС в В; Ψ — потокосцепление в Вб·виток; Φ — поток через один виток в Вб; N — число витков; t — время в с.',
-          note: 'Множитель N используется, если витки охвачены одинаковым потоком. Знак минус выражает правило Ленца и зависит от согласованного выбора направления контура и нормали.'
+          expression: "𝓔 = −dΨ/dt = −N · dΦ/dt; |𝓔av| = N |ΔΦ| /Δt",
+          legend:
+            "𝓔 – EMF in V; Ψ ist die Flussverknüpfung in der Wb-Windung; Φ ist der Fluss durch eine Windung in Wb; N ist die Anzahl der Windungen; t – Zeit in s.",
+          note: "Der N-Multiplikator wird verwendet, wenn die Windungen vom gleichen Fluss bedeckt sind. Das Minuszeichen drückt die Lenzsche Regel aus und hängt von der konsequenten Wahl der Richtung der Kontur und der Normalen ab.",
         },
         example: {
-          title: 'Средняя ЭДС катушки',
-          given: 'N = 200. Поток через каждый виток уменьшается с 3 мВб до 1 мВб за 0,10 с.',
+          title: "Durchschnittliche Spulen-EMK",
+          given:
+            "N = 200. Der Fluss durch jede Windung nimmt in 0,10 s von 3 mWb auf 1 mWb ab.",
           steps: [
-            'ΔΦ = 0,001 − 0,003 = −0,002 Вб.',
-            'Средняя скорость изменения потока: ΔΦ/Δt = −0,002/0,10 = −0,020 Вб/с.',
-            'Модуль средней ЭДС: |𝓔ср| = 200 · 0,020 = 4 В.',
-            'Для определения полярности нужно дополнительно задать направление исходного поля и направление намотки.'
+            "ΔΦ = 0,001 − 0,003 = −0,002 Wb.",
+            "Durchschnittliche Flussänderungsrate: ΔΦ/Δt = −0,002/0,10 = −0,020 Wb/s.",
+            "Modul der durchschnittlichen EMF: |𝓔av| = 200 · 0,020 = 4 V.",
+            "Um die Polarität zu bestimmen, müssen Sie zusätzlich die Richtung des Quellfeldes und die Wicklungsrichtung angeben.",
           ],
-          answer: 'Модуль средней ЭДС равен 4 В.'
-        }
+          answer: "Das Modul der durchschnittlichen EMF beträgt 4 V.",
+        },
       },
       {
-        id: 'electromagnetism-lenz',
-        title: '4. Правило Ленца и сохранение энергии',
+        id: "electromagnetism-lenz",
+        title: "4. Lenzsche Regel und Energieerhaltung",
         paragraphs: [
-          'Правило Ленца: индуцированный ток направлен так, чтобы его магнитное действие противодействовало изменению магнитного потока, вызвавшему этот ток. Он не обязательно направлен против самого исходного поля. Если поток растёт, индуцированное поле стремится ослабить рост. Если поток уменьшается, оно стремится его поддержать.',
-          'Когда северный полюс магнита приближают к замкнутой катушке, её ближний торец становится северным и отталкивает магнит. При удалении того же полюса ближний торец становится южным и притягивает уходящий магнит. В обоих случаях для движения требуется работа; она переходит в электрическую энергию и затем, например, в тепло. Без противодействия можно было бы получать энергию без затрат.',
-          'Для определения направления действуй по порядку: установи направление внешнего потока, определи, растёт он или убывает, выбери нужное направление индуцированного поля, затем по правилу правой руки найди ток. Попытка сразу угадать «по часовой» часто приводит к ошибке, потому что это направление зависит от стороны наблюдения.'
+          "Lenzsche Regel: Ein induzierter Strom wird so gerichtet, dass seine magnetische Wirkung der Änderung des magnetischen Flusses entgegenwirkt, die den Strom verursacht hat. Es richtet sich nicht unbedingt gegen das ursprüngliche Feld selbst. Wenn die Strömung zunimmt, neigt das induzierte Feld dazu, das Wachstum abzuschwächen. Wenn der Fluss abnimmt, wird er tendenziell aufrechterhalten.",
+          "Wenn der Nordpol eines Magneten näher an eine geschlossene Spule gebracht wird, wird sein nahes Ende zum Norden und stößt den Magneten ab. Wenn derselbe Pol entfernt wird, wird das nahe Ende nach Süden ausgerichtet und zieht den ausgehenden Magneten an. In beiden Fällen erfordert Bewegung Arbeit; es wird in elektrische Energie und dann beispielsweise in Wärme umgewandelt. Ohne Widerstand wäre es möglich, Energie kostenlos zu beziehen.",
+          "Um die Richtung zu bestimmen, gehen Sie der Reihe nach vor: Stellen Sie die Richtung des externen Flusses ein, bestimmen Sie, ob er zunimmt oder abnimmt, wählen Sie die gewünschte Richtung des induzierten Feldes aus und verwenden Sie dann die rechte Handregel, um den Strom zu ermitteln. Der Versuch, sofort den „Uhrzeigersinn“ zu erraten, führt oft zu einem Fehler, da diese Richtung von der Beobachtungsseite abhängt.",
         ],
         callout: {
-          type: 'tip',
-          title: 'Три слова для проверки',
-          text: 'Противодействие именно изменению потока. При ослаблении внешнего поля индуцированное поле может совпадать с ним по направлению. Это полностью соответствует правилу Ленца.'
-        }
+          type: "tip",
+          title: "Drei Wörter zum Überprüfen",
+          text: "Der Strömungsänderung gezielt entgegenwirken. Wenn das äußere Feld geschwächt wird, kann die Richtung des induzierten Feldes mit diesem übereinstimmen. Dies steht voll und ganz im Einklang mit der Lenzschen Regel.",
+        },
       },
       {
-        id: 'electromagnetism-self-induction',
-        title: '5. Самоиндукция и энергия катушки',
+        id: "electromagnetism-self-induction",
+        title: "5. Selbstinduktion und Spulenenergie",
         paragraphs: [
-          'Ток катушки создаёт собственный поток. Если ток меняется, меняется и потокосцепление самой катушки: возникает ЭДС самоиндукции. Для линейной катушки потокосцепление пропорционально току, Ψ = LI, где L — индуктивность. Катушка противодействует быстрому изменению тока, подобно тому как конденсатор противодействует быстрому изменению своего напряжения.',
-          'При включении RL-цепи ток возрастает постепенно. При размыкании катушка стремится сохранить прежний ток и может создать очень большое напряжение, если другого пути для тока нет. Именно этим объясняются искра на контактах и опасные выбросы напряжения у реле и электромагнитов. В цепях постоянного тока часто используют защитный диод или подходящий ограничитель, рассчитанный на конкретную схему.',
-          'Линейная идеальная катушка запасает энергию W = LI²/2 в магнитном поле. У реальной катушки одновременно есть сопротивление провода и потери в сердечнике. После установления постоянного тока идеальная индуктивная часть не создаёт падения напряжения, однако медный провод продолжает выделять тепло. Ферромагнитная катушка с насыщением требует более точного описания, чем одна постоянная L.'
+          "Der Spulenstrom erzeugt seinen eigenen Strom. Ändert sich der Strom, ändert sich auch die Flussverkettung der Spule selbst: Es entsteht eine selbstinduktive EMK. Bei einer linearen Spule ist die Flusskopplung proportional zum Strom, Ψ = LI, wobei L die Induktivität ist. Die Spule widersteht einer schnellen Änderung des Stroms, genauso wie ein Kondensator einer schnellen Änderung seiner Spannung widersteht.",
+          "Wenn die RL-Schaltung eingeschaltet wird, steigt der Strom allmählich an. Im geöffneten Zustand behält die Spule tendenziell den gleichen Strom bei und kann eine sehr große Spannung erzeugen, wenn es keinen anderen Weg für den Strom gibt. Dies erklärt den Funken an den Kontakten und gefährliche Spannungsstöße an Relais und Elektromagneten. Gleichstromkreise verwenden häufig eine Schutzdiode oder einen geeigneten Begrenzer, der für den jeweiligen Stromkreis entwickelt wurde.",
+          "Eine lineare ideale Spule speichert Energie W = LI²/2 in einem Magnetfeld. Eine echte Spule hat sowohl Drahtwiderstand als auch Kernverluste. Sobald ein konstanter Strom hergestellt ist, erzeugt der ideale induktive Teil keinen Spannungsabfall, der Kupferdraht erzeugt jedoch weiterhin Wärme. Eine gesättigte ferromagnetische Spule erfordert eine genauere Beschreibung als eine einzelne Konstante L.",
         ],
         formula: {
-          expression: '𝓔сам = −L · dI/dt; W = ½LI²; τRL = L/R',
-          legend: 'L — индуктивность в генри (Гн); I — ток в А; W — энергия в Дж; R — суммарное последовательное сопротивление в Ом; τRL — постоянная времени в с.',
-          note: 'Формулы с постоянной L применимы к линейной катушке. Для пассивного напряжения на идеальной индуктивности uL = L · dI/dt; знак ЭДС выбран как противодействие изменению тока.'
+          expression: "𝓔self = −L · dI/dt; W = ½LI²; τRL = L/R",
+          legend:
+            "L - Induktivität in Henry (H); I - Strom in A; W – Energie in J; R ist der gesamte Serienwiderstand in Ohm; τRL ist die Zeitkonstante in s.",
+          note: "Formeln mit konstantem L gelten für eine lineare Spule. Für passive Spannung an einer idealen Induktivität uL = L dI/dt; Das Vorzeichen des EMF wird so gewählt, dass es der Stromänderung entgegenwirkt.",
         },
         example: {
-          title: 'ЭДС при быстром отключении',
-          given: 'L = 0,20 Гн. Ток уменьшается от 2 А до 0 за 0,010 с. Найти модуль средней ЭДС самоиндукции.',
+          title: "EMF beim schnellen Herunterfahren",
+          given:
+            "L = 0,20 H. Der Strom sinkt in 0,010 s von 2 A auf 0. Finden Sie den Modul der durchschnittlichen Selbstinduktions-EMK.",
           steps: [
-            'ΔI = 0 − 2 = −2 А.',
-            'ΔI/Δt = −2/0,010 = −200 А/с.',
-            '|𝓔ср| = L · |ΔI/Δt| = 0,20 · 200 = 40 В.',
-            'До отключения энергия поля составляла W = 0,5 · 0,20 · 2² = 0,40 Дж; ей нужен путь рассеивания или возврата.'
+            "ΔI = 0 − 2 = −2 A.",
+            "ΔI/Δt = −2/0,010 = −200 A/s.",
+            "|𝓔av| = L |ΔI/Δt| = 0,20 200 = 40 V.",
+            "Vor der Abschaltung betrug die Feldenergie W = 0,5 · 0,20 · 2² = 0,40 J; es braucht einen Weg der Zerstreuung oder Rückkehr.",
           ],
-          answer: 'Модуль средней ЭДС составляет 40 В; при ещё более быстром изменении тока он был бы выше.'
-        }
+          answer:
+            "Das durchschnittliche EMF-Modul beträgt 40 V; bei einer noch schnelleren Stromänderung wäre sie höher.",
+        },
       },
       {
-        id: 'electromagnetism-machines',
-        title: '6. Двигатель, генератор и трансформатор',
+        id: "electromagnetism-machines",
+        title: "6. Motor, Generator und Transformator",
         paragraphs: [
-          'Электродвигатель использует силы, действующие на проводники с током в магнитном поле. У рамки противоположные стороны испытывают силы противоположных направлений, которые создают вращающий момент. Чтобы вращение продолжалось, конструкция управляет током или вращающимся магнитным полем. Энергия поступает от электрического источника и превращается в механическую с потерями.',
-          'Генератор использует обратное преобразование: механическое движение меняет потокосцепление обмотки и создаёт ЭДС. Когда подключена нагрузка, индуцированный ток создаёт противодействующий момент, поэтому для поддержания вращения нужно подводить механическую мощность. Вращать ненагруженный генератор легче, чем нагруженный, если сравнивать одинаковую скорость и учитывать потери.',
-          'Трансформатор передаёт энергию между обмотками через изменяющийся магнитный поток. В идеальной модели отношения напряжений равны отношениям чисел витков, а токи изменяются обратно, чтобы сохранялась мощность. Обычный трансформатор не предназначен для прямого подключения к постоянному напряжению: после переходного процесса поток перестаёт меняться, а первичная обмотка может перегреться из-за чрезмерного тока и насыщения.'
+          "Ein Elektromotor nutzt Kräfte, die in einem Magnetfeld auf stromdurchflossene Leiter wirken. Am Rahmen wirken auf gegenüberliegende Seiten Kräfte in entgegengesetzter Richtung, die ein Drehmoment erzeugen. Um die Rotation aufrechtzuerhalten, steuert das Design einen Strom oder ein rotierendes Magnetfeld. Energie stammt aus einer elektrischen Quelle und wird unter Verlusten in mechanische Energie umgewandelt.",
+          "Der Generator nutzt eine umgekehrte Transformation: Durch mechanische Bewegung wird die Flussverknüpfung der Wicklung verändert und eine EMK erzeugt. Wenn eine Last angeschlossen wird, erzeugt der induzierte Strom ein Gegendrehmoment, sodass mechanische Kraft zugeführt werden muss, um die Rotation aufrechtzuerhalten. Es ist einfacher, einen unbelasteten Generator zu drehen als einen belasteten, wenn man die gleiche Drehzahl vergleicht und Verluste berücksichtigt.",
+          "Ein Transformator überträgt Energie zwischen Wicklungen durch einen sich ändernden magnetischen Fluss. In einem idealen Modell sind die Spannungsverhältnisse gleich den Windungsverhältnissen und die Ströme werden umgekehrt, um die Leistung aufrechtzuerhalten. Ein herkömmlicher Transformator ist nicht für den direkten Anschluss an Gleichspannung ausgelegt: Nach dem Übergang ändert sich der Fluss nicht mehr und die Primärwicklung kann aufgrund von übermäßigem Strom und Sättigung überhitzen.",
         ],
         formula: {
-          expression: 'U₂/U₁ ≈ N₂/N₁; I₂/I₁ ≈ N₁/N₂; U₁I₁ ≈ U₂I₂',
-          legend: 'Индексы 1 и 2 относятся к первичной и вторичной обмоткам; U и I — действующие значения напряжения и тока в согласованном режиме идеального трансформатора.',
-          note: 'Отношения справедливы в идеализированной модели переменного режима. У реального трансформатора есть потери, ток намагничивания, ограничения по частоте, напряжению и нагрузке.'
+          expression: "U₂/U₁ ≈ N₂/N₁; I₂/I₁ ≈ N₁/N₂; U₁I₁ ≈ U₂I₂",
+          legend:
+            "Die Indizes 1 und 2 beziehen sich auf die Primär- und Sekundärwicklungen; U und I sind die Effektivwerte von Spannung und Strom im angepassten Modus eines idealen Transformators.",
+          note: "Die Beziehungen gelten in einem idealisierten Modell mit variablem Modus. Ein echter Transformator weist Verluste, Magnetisierungsströme sowie Einschränkungen hinsichtlich Frequenz, Spannung und Last auf.",
         },
         callout: {
-          type: 'insight',
-          title: 'Одна система, два направления передачи энергии',
-          text: 'Многие электрические машины способны работать и двигателем, и генератором. Режим определяется направлением передачи энергии и управлением, а не только названием устройства.'
-        }
-      }
+          type: "insight",
+          title: "Ein System, zwei Richtungen der Energieübertragung",
+          text: "Viele elektrische Maschinen können sowohl als Motor als auch als Generator arbeiten. Der Modus wird durch die Richtung der Energieübertragung und -steuerung bestimmt, nicht nur durch den Namen des Geräts.",
+        },
+      },
     ],
     terms: [
-      { term: 'Соленоид', german: 'Zylinderspule / Solenoid', symbol: 'N', unit: 'виток', definition: 'Длинная цилиндрическая катушка, внутри которой поле можно приближённо считать однородным.' },
-      { term: 'Электромагнитная индукция', german: 'Elektromagnetische Induktion', symbol: '𝓔', unit: 'В', definition: 'Возникновение ЭДС вследствие изменения магнитного потокосцепления контура.' },
-      { term: 'Потокосцепление', german: 'Flussverkettung', symbol: 'Ψ', unit: 'Вб·виток', definition: 'Сумма магнитных потоков через витки обмотки; для одинакового потока Ψ = NΦ.' },
-      { term: 'Правило Ленца', german: 'Lenzsche Regel', symbol: '−', unit: '—', definition: 'Индуцированный ток своим магнитным действием противодействует изменению потока, которое его вызвало.' },
-      { term: 'Индуктивность', german: 'Induktivität', symbol: 'L', unit: 'Гн', definition: 'Для линейной катушки коэффициент пропорциональности между потокосцеплением и током: Ψ = LI.' },
-      { term: 'Самоиндукция', german: 'Selbstinduktion', symbol: '𝓔сам', unit: 'В', definition: 'Возникновение ЭДС в контуре при изменении его собственного тока и магнитного потока.' },
-      { term: 'Электромагнит', german: 'Elektromagnet', symbol: 'NI', unit: 'А·виток', definition: 'Устройство, в котором магнитное действие создаётся током обмотки, часто с магнитным сердечником.' }
+      {
+        term: "Zylinderspule / Solenoid",
+        german: "Zylinderspule / Solenoid",
+        symbol: "N",
+        unit: "drehen",
+        definition:
+          "Eine lange zylindrische Spule, innerhalb derer das Feld als annähernd gleichmäßig angesehen werden kann.",
+      },
+      {
+        term: "Elektromagnetische Induktion",
+        german: "Elektromagnetische Induktion",
+        symbol: "𝓔",
+        unit: "V",
+        definition:
+          "Das Auftreten von EMF aufgrund einer Änderung der magnetischen Flussverknüpfung des Stromkreises.",
+      },
+      {
+        term: "Flussverkettung",
+        german: "Flussverkettung",
+        symbol: "Ψ",
+        unit: "Wb",
+        definition:
+          "Die Summe der magnetischen Flüsse durch die Windungen der Wicklung; für den gleichen Fluss Ψ = NΦ.",
+      },
+      {
+        term: "Lenzsche Regel",
+        german: "Lenzsche Regel",
+        symbol: "−",
+        unit: "—",
+        definition:
+          "Der induzierte Strom wirkt durch seine magnetische Wirkung der Flussänderung entgegen, die ihn verursacht hat.",
+      },
+      {
+        term: "Induktivität",
+        german: "Induktivität",
+        symbol: "L",
+        unit: "H",
+        definition:
+          "Für eine lineare Spule beträgt der Proportionalitätskoeffizient zwischen Flusskopplung und Strom: Ψ = LI.",
+      },
+      {
+        term: "Selbstinduktion",
+        german: "Selbstinduktion",
+        symbol: "𝓔ich selbst",
+        unit: "V",
+        definition:
+          "Das Auftreten von EMF in einem Stromkreis, wenn sich der eigene Strom und der magnetische Fluss ändern.",
+      },
+      {
+        term: "Elektromagnet",
+        german: "Elektromagnet",
+        symbol: "NI",
+        unit: "A",
+        definition:
+          "Ein Gerät, bei dem durch Strom in einer Wicklung, oft mit einem Magnetkern, eine magnetische Wirkung erzeugt wird.",
+      },
     ],
     summary: [
-      'Вокруг прямого провода поле направлено по окружностям; направление определяет правая рука.',
-      'Магнитное действие катушки связано с ампер-витками NI; сердечник может усилить поле, но способен насыщаться.',
-      'Закон Фарадея: ЭДС возникает при изменении потокосцепления, 𝓔 = −dΨ/dt.',
-      'По правилу Ленца индуцированное действие препятствует изменению потока.',
-      'Самоиндукция препятствует изменению тока; линейная катушка хранит энергию LI²/2.',
-      'Двигатель преобразует электрическую энергию в механическую, генератор — механическую в электрическую.'
+      "Um einen geraden Draht herum ist das Feld kreisförmig gerichtet; Die Richtung wird durch die rechte Hand bestimmt.",
+      "Die magnetische Wirkung der Spule hängt von den Amperewindungen NI ab; Der Kern kann das Feld verstärken, ist aber zur Sättigung fähig.",
+      "Faradaysches Gesetz: EMF tritt auf, wenn sich die Flusskopplung ändert, 𝓔 = −dΨ/dt.",
+      "Nach der Lenzschen Regel verhindert die induzierte Wirkung eine Strömungsänderung.",
+      "Die Selbstinduktion verhindert, dass sich der Strom ändert. Die Linearspule speichert LI²/2-Energie.",
+      "Der Motor wandelt elektrische Energie in mechanische Energie um, der Generator wandelt mechanische Energie in elektrische Energie um.",
     ],
     quiz: [
-      { id: 'electromagnetism-1', type: 'choice', question: 'Как найти направление магнитного поля вокруг прямого провода с током?', options: ['Направить большой палец левой руки по электронам', 'Направить большой палец правой руки по току; согнутые пальцы покажут B', 'Поле всегда направлено вдоль провода', 'Поле всегда направлено от провода радиально наружу'], answer: 1, explanation: 'Для прямого провода действует правило правой руки: большой палец направлен по условному положительному току, пальцы охватывают провод по направлению поля.' },
-      { id: 'electromagnetism-2', type: 'numeric', question: 'Катушка имеет 100 витков. Поток через каждый виток равномерно изменился на 0,002 Вб за 0,10 с. Найди модуль средней ЭДС.', answer: 2, unit: 'В', tolerance: 0.01, explanation: '|𝓔ср| = N|ΔΦ|/Δt = 100 · 0,002/0,10 = 2 В.' },
-      { id: 'electromagnetism-3', type: 'choice', question: 'Внешний магнитный поток через замкнутую катушку уменьшается. Как направлено поле индуцированного тока?', options: ['Оно обязательно перпендикулярно исходному', 'Оно всегда противоположно исходному', 'Оно стремится поддержать исходный поток', 'Поля не возникает, так как поток уменьшается'], answer: 2, explanation: 'Правило Ленца относится к изменению потока. При уменьшении внешнего потока индуцированное поле стремится компенсировать уменьшение и поддержать исходное направление потока.' },
-      { id: 'electromagnetism-4', type: 'numeric', question: 'Линейная катушка имеет L = 0,50 Гн и ток I = 2 А. Сколько энергии запасено в её поле?', answer: 1, unit: 'Дж', tolerance: 0.01, explanation: 'W = ½LI² = 0,5 · 0,50 · 2² = 1 Дж.' },
-      { id: 'electromagnetism-5', type: 'choice', question: 'Почему при размыкании цепи катушки может возникнуть большой выброс напряжения?', options: ['Катушка стремится сохранить ток и создаёт ЭДС самоиндукции', 'Сопротивление медного провода всегда становится нулевым', 'Магнитный поток при отключении обязан мгновенно стать бесконечным', 'Это возможно только у постоянного магнита'], answer: 0, explanation: 'Быстрое уменьшение тока создаёт ЭДС самоиндукции, модуль которой примерно L|ΔI/Δt|. Запасённая энергия должна перейти в другие формы, поэтому нужна правильно спроектированная защита.' }
-    ]
+      {
+        id: "electromagnetism-1",
+        type: "choice",
+        question:
+          "Wie findet man die Richtung des Magnetfeldes um einen geraden, stromdurchflossenen Draht?",
+        options: [
+          "Führen Sie Ihren linken Daumen entlang der Elektronen",
+          "Richten Sie den Daumen Ihrer rechten Hand entlang der Strömung; gebeugte Finger zeigen B",
+          "Das Feld ist immer entlang des Drahtes gerichtet",
+          "Das Feld ist vom Draht immer radial nach außen gerichtet",
+        ],
+        answer: 1,
+        explanation:
+          "Für einen geraden Draht gilt die Regel der rechten Hand: Der Daumen wird entlang des bedingten positiven Stroms geführt, die Finger decken den Draht in Richtung des Feldes ab.",
+      },
+      {
+        id: "electromagnetism-2",
+        type: "numeric",
+        question:
+          "Die Spule hat 100 Windungen. Der Fluss durch jede Windung änderte sich in 0,10 s gleichmäßig um 0,002 Wb. Finden Sie den Modul der durchschnittlichen EMK.",
+        answer: 2,
+        unit: "V",
+        tolerance: 0.01,
+        explanation: "|𝓔av| = N|ΔΦ|/Δt = 100 · 0,002/0,10 = 2 V.",
+      },
+      {
+        id: "electromagnetism-3",
+        type: "choice",
+        question:
+          "Der äußere magnetische Fluss durch die geschlossene Spule nimmt ab. Welche Richtung hat das induzierte Stromfeld?",
+        options: [
+          "Es muss senkrecht zum Original stehen",
+          "Es ist immer das Gegenteil des Originals",
+          "Ziel ist es, den ursprünglichen Fluss aufrechtzuerhalten",
+          "Bei abnehmendem Durchfluss entsteht kein Feld",
+        ],
+        answer: 2,
+        explanation:
+          "Die Lenzsche Regel gilt für Strömungsänderungen. Wenn die externe Strömung abnimmt, versucht das induzierte Feld, die Abnahme auszugleichen und die ursprüngliche Strömungsrichtung beizubehalten.",
+      },
+      {
+        id: "electromagnetism-4",
+        type: "numeric",
+        question:
+          "Eine lineare Spule hat L = 0,50 H und einen Strom I = 2 A. Wie viel Energie ist in ihrem Feld gespeichert?",
+        answer: 1,
+        unit: "J",
+        tolerance: 0.01,
+        explanation: "W = ½LI² = 0,5 · 0,50 · 2² = 1 J.",
+      },
+      {
+        id: "electromagnetism-5",
+        type: "choice",
+        question:
+          "Warum kann es beim Öffnen des Spulenstromkreises zu einem großen Spannungsstoß kommen?",
+        options: [
+          "Die Spule ist bestrebt, den Strom aufrechtzuerhalten und erzeugt eine selbstinduktive EMK",
+          "Der Widerstand des Kupferdrahtes wird immer Null",
+          "Im ausgeschalteten Zustand muss der magnetische Fluss sofort unendlich werden",
+          "Dies ist nur mit einem Permanentmagneten möglich",
+        ],
+        answer: 0,
+        explanation:
+          "Ein schneller Abfall des Stroms erzeugt eine selbstinduktive EMK, deren Modul ungefähr L|ΔI/Δt| beträgt. Die gespeicherte Energie muss in andere Formen umgewandelt werden, daher ist ein entsprechend konzipierter Schutz erforderlich.",
+      },
+    ],
   },
   {
-    id: 'magnetic-quantities',
+    id: "magnetic-quantities",
     number: 13,
-    title: 'Магнитные величины',
-    german: 'Magnetische Größen',
-    chapter: '5.5',
-    category: 'magnetism',
+    title: "Magnetische Größen",
+    german: "Magnetische Größen",
+    chapter: "5.5",
+    category: "magnetism",
     duration: 37,
-    description: 'B, H, Φ, проницаемость и магнитное сопротивление: связная система величин для расчёта катушек и магнитных цепей.',
+    description:
+      "B, H, Φ, Permeabilität und magnetischer Widerstand: ein zusammenhängendes Größensystem zur Berechnung von Spulen und Magnetkreisen.",
     objectives: [
-      'Различать B, H, Φ и потокосцепление по смыслу, единицам и применению.',
-      'Рассчитывать поле линейной магнитной системы и поток через поверхность.',
-      'Объяснять влияние воздушного зазора, насыщения и гистерезиса на реальную магнитную цепь.'
+      "Unterscheiden Sie zwischen B, H, Φ und Flussverknüpfung nach Bedeutung, Einheit und Anwendung.",
+      "Berechnen Sie das Feld eines linearen Magnetsystems und den Fluss durch eine Oberfläche.",
+      "Erklären Sie die Auswirkungen von Luftspalt, Sättigung und Hysterese auf einen realen Magnetkreis.",
     ],
     sections: [
       {
-        id: 'magnetic-quantities-map',
-        title: '1. B, H и Φ: три разных вопроса',
+        id: "magnetic-quantities-map",
+        title: "1. B, H und Φ: drei verschiedene Fragen",
         paragraphs: [
-          'Магнитная индукция B отвечает на вопрос, каким является магнитное поле в данной точке с точки зрения действия на движущиеся заряды и проводник с током. Это векторная величина в теслах. Напряжённость магнитного поля H — другая векторная величина, измеряемая в амперах на метр; она удобна для описания намагничивающего действия свободных токов с учётом геометрии магнитной системы.',
-          'Магнитный поток Φ относится уже не к точке, а к выбранной поверхности. Он измеряется в веберах и учитывает нормальную составляющую B на всей поверхности. Потокосцепление Ψ дополнительно учитывает витки: если каждый из N витков охвачен одним и тем же потоком, Ψ = NΦ. Именно скорость изменения Ψ определяет ЭДС катушки.',
-          'Эти величины нельзя подменять друг другом. Два сердечника могут иметь одинаковую B, но разный Φ из-за разных площадей сечения. Одинаковая H может давать сильно различающиеся B в воздухе и в ферромагнетике. Одинаковый поток через один виток даст в катушках с разным N разные потокосцепления и ЭДС при одинаковом изменении.'
+          "Die magnetische Induktion B beantwortet die Frage, wie sich das Magnetfeld an einem bestimmten Punkt auf bewegte Ladungen und einen stromdurchflossenen Leiter auswirkt. Dies ist eine Vektorgröße in Tesla. Die magnetische Feldstärke H ist eine weitere Vektorgröße, die in Ampere pro Meter gemessen wird; Es eignet sich zur Beschreibung der magnetisierenden Wirkung freier Ströme unter Berücksichtigung der Geometrie des Magnetsystems.",
+          "Der magnetische Fluss Φ bezieht sich nicht mehr auf einen Punkt, sondern auf eine ausgewählte Fläche. Sie wird in Weber gemessen und berücksichtigt die Normalkomponente B über die gesamte Fläche. Die Flussverkettung Ψ berücksichtigt zusätzlich Windungen: Wenn jede der N Windungen vom gleichen Fluss bedeckt ist, ist Ψ = NΦ. Es ist die Änderungsrate von Ψ, die die EMK der Spule bestimmt.",
+          "Diese Mengen können nicht gegeneinander ausgetauscht werden. Zwei Kerne können das gleiche B, aber aufgrund unterschiedlicher Querschnittsflächen unterschiedliche Φ haben. Das gleiche H kann in Luft und in einem Ferromagneten sehr unterschiedliches B ergeben. Der gleiche Fluss durch eine Windung führt bei derselben Änderung zu unterschiedlichen Flussverknüpfungen und EMKs in Spulen mit unterschiedlichem N.",
         ],
         formula: {
-          expression: 'B: Тл; H: А/м; Φ: Вб; Ψ = NΦ: Вб·виток',
-          legend: 'B — магнитная индукция; H — напряжённость магнитного поля; Φ — магнитный поток; Ψ — потокосцепление.',
-          note: 'Число витков безразмерно в системе СИ; слово «виток» сохраняют в записи единицы для ясного физического смысла.'
+          expression: "B: T; H: A/m; Φ: Wb; Ψ = NΦ: Wb",
+          legend:
+            "B – magnetische Induktion; H – magnetische Feldstärke; Φ – magnetischer Fluss; Ψ – Flussverknüpfung.",
+          note: "Die Windungszahl ist im SI-System dimensionslos; Das Wort „drehen“ wird für eine klare physikalische Bedeutung in Einheiten beibehalten.",
         },
         callout: {
-          type: 'tip',
-          title: 'Мнемоника по единицам',
-          text: 'Тесла описывает B в точке, вебер — поток через площадь, ампер на метр — H вдоль магнитного пути. Если в ответе на вопрос о потоке получились теслы, скорее всего, забыта площадь.'
-        }
+          type: "tip",
+          title: "Mnemonik nach Einheiten",
+          text: "Tesla beschreibt B an einem Punkt, Weber beschreibt den Fluss durch eine Fläche, Ampere pro Meter – H entlang einer magnetischen Bahn. Wenn sich herausstellt, dass die Antwort auf die Flussfrage Tesla ist, ist der Bereich höchstwahrscheinlich vergessen.",
+        },
       },
       {
-        id: 'magnetic-quantities-permeability',
-        title: '2. Проницаемость и предел линейной модели',
+        id: "magnetic-quantities-permeability",
+        title: "2. Permeabilität und die Grenze des linearen Modells",
         paragraphs: [
-          'В вакууме B = μ₀H. В однородной линейной изотропной среде используют B = μH = μ₀μᵣH. Здесь μ — абсолютная магнитная проницаемость в генри на метр, а μᵣ — относительная проницаемость без единицы. Для воздуха μᵣ очень близка к 1, поэтому воздушную катушку обычно рассчитывают почти как вакуумную.',
-          'Ферромагнитный сердечник нельзя считать средой с одной постоянной μᵣ во всех режимах. Его B зависит от H нелинейно, а также от предыстории намагничивания, температуры и частоты. При насыщении рост H вызывает сравнительно небольшой дополнительный рост B. Поэтому увеличение тока в катушке после насыщения резко увеличивает нагрев, но даёт ограниченное усиление индукции.',
-          'Более общая связь имеет вид B = μ₀(H + M), где M — намагниченность материала в А/м. Она показывает, что поле связано и со свободными токами, описываемыми через H, и с магнитной реакцией вещества. Для школьных расчётов часто задают постоянную μᵣ как условие; пользоваться ею можно в пределах этой явно принятой модели.'
+          "Im Vakuum B = μ₀H. Verwenden Sie in einem homogenen linearen isotropen Medium B = μH = μ₀μᵣH. Dabei ist μ die absolute magnetische Permeabilität in Henry pro Meter und μᵣ die relative Permeabilität ohne Einheit. Bei Luft liegt μᵣ sehr nahe bei 1, sodass die Luftspule normalerweise fast wie eine Vakuumspule konstruiert ist.",
+          "Ein ferromagnetischer Kern kann nicht als Medium mit einer Konstante μᵣ in allen Moden betrachtet werden. Sein B hängt nichtlinear von H sowie von der Magnetisierungsgeschichte, Temperatur und Frequenz ab. Bei Sättigung führt ein Anstieg von H zu einem relativ geringen zusätzlichen Anstieg von B. Daher erhöht ein Anstieg des Stroms in der Spule nach der Sättigung die Erwärmung stark, führt jedoch zu einem begrenzten Anstieg der Induktion.",
+          "Eine allgemeinere Beziehung hat die Form B = μ₀(H + M), wobei M die Magnetisierung des Materials in A/m ist. Es zeigt, dass das Feld sowohl mit freien Strömen, beschrieben durch H, als auch mit der magnetischen Reaktion der Substanz zusammenhängt. Für Schulrechnungen wird oft die Konstante μᵣ als Bedingung angegeben; es kann innerhalb der Grenzen dieses ausdrücklich akzeptierten Modells verwendet werden.",
         ],
         formula: {
-          expression: 'B = μ₀(H + M); в линейной среде: B = μ₀μᵣH; μ = μ₀μᵣ',
-          legend: 'μ₀ ≈ 1,256637 · 10⁻⁶ Гн/м; μᵣ — относительная проницаемость; M — намагниченность в А/м.',
-          note: 'B и H параллельны только в соответствующей изотропной модели. Для нелинейного ферромагнетика используют характеристику B(H), а не произвольное постоянное μᵣ.'
+          expression:
+            "B = μ₀(H + M); in einem linearen Medium: B = μ₀μᵣH; μ = μ₀μᵣ",
+          legend:
+            "μ₀ ≈ 1,256637 10⁻⁶ H/m; μᵣ – relative Durchlässigkeit; M ist die Magnetisierung in A/m.",
+          note: "B und H sind nur im entsprechenden isotropen Modell parallel. Für einen nichtlinearen Ferromagneten wird die Charakteristik B(H) anstelle einer willkürlichen Konstante μᵣ verwendet.",
         },
         example: {
-          title: 'Поле в воздухе',
-          given: 'В воздушной области H = 1000 А/м. Найти B, принимая μᵣ = 1.',
+          title: "Feld in der Luft",
+          given:
+            "Im Luftbereich H = 1000 A/m. Finden Sie B und nehmen Sie μᵣ = 1.",
           steps: [
-            'Применяем B = μ₀H.',
-            'B ≈ 1,256637 · 10⁻⁶ · 1000 = 1,256637 · 10⁻³ Тл.',
-            'Переводим в миллитеслы: B ≈ 1,26 мТл.'
+            "Wir verwenden B = μ₀H.",
+            "B ≈ 1,256637 · 10⁻⁶ · 1000 = 1,256637 · 10⁻³ T.",
+            "In Millitesla umrechnen: B ≈ 1,26 mT.",
           ],
-          answer: 'B ≈ 1,26 мТл. Значение H при этом остаётся 1000 А/м: это разные величины.'
-        }
+          answer:
+            "B ≈ 1,26 mT. Der H-Wert bleibt bei 1000 A/m: Das sind unterschiedliche Werte.",
+        },
       },
       {
-        id: 'magnetic-quantities-flux',
-        title: '3. От индукции к потоку и потокосцеплению',
+        id: "magnetic-quantities-flux",
+        title: "3. Von der Induktion zum Fluss und zur Flussverknüpfung",
         paragraphs: [
-          'В сердечнике с примерно однородной индукцией и сечением, перпендикулярным линиям поля, поток равен BA. Если сечение уменьшается, а поток остаётся почти тем же, B в узкой части возрастает. Именно узкий участок может первым войти в насыщение. В простой неразветвлённой магнитной цепи поток в разных сечениях принимают одинаковым, если утечкой пренебрегают.',
-          'Для наклонной поверхности важно брать проекцию площади на плоскость, перпендикулярную полю. Эквивалентно используют нормальную составляющую B. В формуле Φ = BA cos α угол α измеряют к нормали. При перевороте выбранной нормали знак потока меняется, хотя физическое поле остаётся прежним.',
-          'В электромагнитной индукции к потоку добавляется число сцепленных витков. Если поток через каждый из 500 витков равен 0,001 Вб, потокосцепление составляет 0,5 Вб·виток. Это не значит, что внутри сердечника стало 0,5 Вб: поток через сечение по-прежнему 0,001 Вб. Разница существенна для расчётов ЭДС и индуктивности.'
+          "In einem Kern mit annähernd gleichmäßiger Induktion und einem Querschnitt senkrecht zu den Feldlinien ist der Fluss gleich BA. Wenn der Querschnitt kleiner wird und die Strömung nahezu gleich bleibt, nimmt B im engen Teil zu. Es ist der schmale Abschnitt, der als erster in die Sättigung gelangen kann. In einem einfachen unverzweigten Magnetkreis wird davon ausgegangen, dass der Fluss in verschiedenen Abschnitten gleich ist, wenn die Streuung vernachlässigt wird.",
+          "Bei einer geneigten Fläche ist es wichtig, die Fläche auf eine Stufe senkrecht zum Feld zu projizieren. Äquivalent dazu wird die Normalkomponente B verwendet. In der Formel Φ = BA cos α wird der Winkel α zur Normalen gemessen. Wenn die ausgewählte Normale umgedreht wird, ändert sich das Vorzeichen des Flusses, obwohl das physikalische Feld gleich bleibt.",
+          "Bei der elektromagnetischen Induktion wird die Anzahl der ineinandergreifenden Windungen zum Fluss addiert. Wenn der Fluss durch jede der 500 Windungen 0,001 Wb beträgt, beträgt die Flusskopplung 0,5 Wb·Windung. Dies bedeutet nicht, dass sich im Kern 0,5 Wb befinden: Der Fluss durch den Querschnitt beträgt immer noch 0,001 Wb. Der Unterschied ist für die Berechnung von EMF und Induktivität von Bedeutung.",
         ],
         formula: {
-          expression: 'Φ = BA cos α; Ψ = NΦ; для линейной катушки L = Ψ/I',
-          legend: 'A — площадь в м²; α — угол B с нормалью; N — число витков; I — ток в А; L — индуктивность в Гн.',
-          note: 'Если поле неоднородно, поток вычисляют интегрированием B по поверхности; если потоки разных витков неодинаковы, их складывают отдельно.'
+          expression: "Φ = BA cos α; Ψ = NΦ; für eine lineare Spule L = Ψ/I",
+          legend:
+            "A – Fläche in m²; α ist der Winkel B mit der Normalen; N ist die Anzahl der Windungen; I - Strom in A; L - Induktivität in H.",
+          note: "Wenn das Feld nicht gleichmäßig ist, wird der Fluss durch Integration von B über die Oberfläche berechnet; Wenn die Flüsse verschiedener Windungen nicht gleich sind, werden sie separat addiert.",
         },
         example: {
-          title: 'Из площади сечения к индуктивности',
-          given: 'B = 0,80 Тл в однородном сечении A = 4 см². N = 250 витков, I = 2 А. Принять линейную модель и одинаковый поток во всех витках.',
+          title: "Von der Querschnittsfläche bis zur Induktivität",
+          given:
+            "B = 0,80 T in einem gleichmäßigen Abschnitt A = 4 cm². N = 250 Windungen, I = 2 A. Nehmen Sie ein lineares Modell und den gleichen Fluss in allen Windungen an.",
           steps: [
-            'A = 4 · 10⁻⁴ м² = 0,0004 м². Поле перпендикулярно сечению, cos α = 1.',
-            'Φ = BA = 0,80 · 0,0004 = 0,00032 Вб = 0,32 мВб.',
-            'Ψ = NΦ = 250 · 0,00032 = 0,080 Вб·виток.',
-            'L = Ψ/I = 0,080/2 = 0,040 Гн = 40 мГн.'
+            "A = 4 · 10⁻⁴ m² = 0,0004 m². Das Feld steht senkrecht zum Schnitt, cos α = 1.",
+            "Φ = BA = 0,80 · 0,0004 = 0,00032 Wb = 0,32 mWb.",
+            "Ψ = NΦ = 250 · 0,00032 = 0,080 Wb Windung.",
+            "L = Ψ/I = 0,080/2 = 0,040 H = 40 mH.",
           ],
-          answer: 'Φ = 0,32 мВб; Ψ = 0,080 Вб·виток; L = 40 мГн в принятой линейной модели.'
-        }
+          answer:
+            "Φ = 0,32 mWb; Ψ = 0,080 Wb-Wende; L = 40 mH im angenommenen linearen Modell.",
+        },
       },
       {
-        id: 'magnetic-quantities-circuit',
-        title: '4. Магнитодвижущая сила и магнитное сопротивление',
+        id: "magnetic-quantities-circuit",
+        title: "4. Magnetomotorische Kraft und magnetischer Widerstand",
         paragraphs: [
-          'Обмотка с N витками и током I создаёт магнитодвижущую силу Θ = NI. Термин исторический: это не механическая сила в ньютонах. Единицу часто записывают как ампер-виток, хотя в СИ число витков безразмерно. Для выбранного замкнутого пути в магнитостатике закон полного тока связывает циркуляцию H со сцепленным током: ∮H · dl = NI.',
-          'Для простого однородного магнитного пути длиной l и постоянным сечением A вводят магнитное сопротивление ℛm = l/(μA). Тогда Φ = Θ/ℛm. Аналогия с законом Ома помогает организовать расчёт: роль тока играет поток, роль напряжения — магнитодвижущая сила. Но поток не является потоком вещества, а магнитное сопротивление само по себе не рассеивает мощность как электрический резистор.',
-          'В последовательных участках магнитной цепи без заметной утечки поток одинаков, а падения магнитодвижущей силы складываются: NI = ΣHᵢlᵢ. Магнитные сопротивления можно складывать, если для каждого участка известна применимая проницаемость. В ферромагнитных системах расчёт часто итерационный: предполагают поток, находят B, по кривой B(H) определяют H и проверяют требуемые ампер-витки.'
+          "Eine Wicklung mit N Windungen und dem Strom I erzeugt eine magnetomotorische Kraft Θ = NI. Der Begriff ist historisch: Es handelt sich nicht um mechanische Kraft in Newton. Die Einheit wird oft als Ampere-Windung geschrieben, obwohl in SI die Anzahl der Windungen dimensionslos ist. Für einen ausgewählten geschlossenen Pfad in der Magnetostatik setzt das Gesamtstromgesetz die Zirkulation H mit dem eingekoppelten Strom in Beziehung: ∮H · dl = NI.",
+          "Für einen einfachen homogenen magnetischen Pfad der Länge l und konstanten Querschnitts A wird der magnetische Widerstand ℛm = l/(μA) eingeführt. Dann ist Φ = Θ/ℛm. Eine Analogie zum Ohmschen Gesetz hilft bei der Organisation der Berechnung: Die Rolle des Stroms wird vom Fluss gespielt, die Rolle der Spannung wird von der magnetomotorischen Kraft gespielt. Aber Fluss ist kein Fluss von Materie, und der magnetische Widerstand selbst verbraucht keine Energie wie ein elektrischer Widerstand.",
+          "In aufeinanderfolgenden Abschnitten des Magnetkreises ohne merkliche Leckage ist der Fluss derselbe und die Abfälle der magnetomotorischen Kraft summieren sich: NI = ΣHᵢlᵢ. Magnetische Widerstände können hinzugefügt werden, wenn die anwendbare Permeabilität für jeden Abschnitt bekannt ist. In ferromagnetischen Systemen ist die Berechnung oft iterativ: Der Fluss wird angenommen, B wird gefunden, H wird aus der B(H)-Kurve bestimmt und die erforderlichen Amperewindungen werden überprüft.",
         ],
         formula: {
-          expression: 'Θ = NI; ℛm = l/(μA); Φ = Θ/ℛm; NI = ΣHᵢlᵢ',
-          legend: 'Θ — магнитодвижущая сила в А·виток; ℛm — магнитное сопротивление в А/Вб, то же что Гн⁻¹; l — длина пути в м; A — сечение в м².',
-          note: 'Сосредоточенная модель магнитной цепи предполагает известный путь потока и достаточно малые утечку и неоднородность. Проницаемость берут для соответствующего режима.'
+          expression: "Θ = NI; ℛm = l/(μA); Φ = Θ/ℛm; NI = ΣHᵢlᵢ",
+          legend:
+            "Θ – magnetomotorische Kraft in einer A-Kurve; ℛm – magnetischer Widerstand in A/Wb, derselbe wie Gn⁻¹; l ist die Weglänge in m; A - Abschnitt in m².",
+          note: "Das konzentrierte Magnetkreismodell geht von einem bekannten Flusspfad und ausreichend kleinen Leckagen und Diskontinuitäten aus. Die Permeabilität wird für den entsprechenden Modus angenommen.",
         },
         callout: {
-          type: 'insight',
-          title: 'Полезная аналогия имеет границы',
-          text: 'Большое магнитное сопротивление уменьшает поток при тех же NI. Но оно не означает выделение тепла Φ²ℛm. Реальные магнитные потери связаны, например, с гистерезисом и вихревыми токами при изменяющемся поле.'
-        }
+          type: "insight",
+          title: "Eine nützliche Analogie hat Grenzen",
+          text: "Ein hoher magnetischer Widerstand reduziert den Fluss bei gleichem NI. Dies bedeutet jedoch nicht die Freisetzung von Wärme Φ²ℛm. Reale magnetische Verluste sind beispielsweise mit Hysterese und Wirbelströmen bei sich änderndem Feld verbunden.",
+        },
       },
       {
-        id: 'magnetic-quantities-gap',
-        title: '5. Почему маленький воздушный зазор так важен',
+        id: "magnetic-quantities-gap",
+        title: "5. Warum ein kleiner Luftspalt so wichtig ist",
         paragraphs: [
-          'В воздухе проницаемость намного меньше, чем у ферромагнетика до насыщения. Поэтому даже короткий воздушный зазор способен дать большую часть магнитного сопротивления всей цепи. При примерно одинаковой B в сердечнике и зазоре для зазора требуется Hзаз = B/μ₀, то есть значительная напряжённость.',
-          'При расчёте цепи с зазором складывают требуемые ампер-витки сердечника и воздуха. Если сопротивлением сердечника можно пренебречь, NI ≈ Bg/μ₀, где g — суммарная длина всех последовательных воздушных зазоров. Если зазоров два по 0,5 мм, в формулу подставляют 1 мм. Это приближение игнорирует выпучивание поля у краёв и потоки утечки.',
-          'Воздушный зазор не всегда является недостатком. В накопительных дросселях он помогает хранить энергию и уменьшает зависимость индуктивности от нелинейности сердечника. Значительная часть энергии находится именно в поле зазора. В реле и электромагнитах зазор, напротив, сильно влияет на требуемый ток и силу притяжения.'
+          "In Luft ist die Permeabilität viel geringer als die eines Ferromagneten vor der Sättigung. Daher kann selbst ein kurzer Luftspalt den größten Teil des magnetischen Widerstands des gesamten Stromkreises bereitstellen. Bei annähernd gleichem B im Kern und Spalt erfordert der Spalt Hzaz = B/μ₀, also eine erhebliche Spannung.",
+          "Addieren Sie bei der Berechnung eines Stromkreises mit Lücke die erforderlichen Amperewindungen des Kerns und der Luft. Wenn der Kernwiderstand vernachlässigt werden kann, gilt NI ≈ Bg/μ₀, wobei g die Gesamtlänge aller aufeinanderfolgenden Luftspalte ist. Wenn zwei Lücken von jeweils 0,5 mm vorhanden sind, setzen Sie 1 mm in die Formel ein. Bei dieser Näherung werden Feldausbeulungen an den Rändern und Leckströme außer Acht gelassen.",
+          "Ein Luftspalt ist nicht immer ein Nachteil. In Speicherdrosseln hilft es, Energie zu speichern und verringert die Abhängigkeit der Induktivität von der Nichtlinearität des Kerns. Ein erheblicher Teil der Energie befindet sich im Lückenfeld. Bei Relais und Elektromagneten hingegen hat der Spalt großen Einfluss auf den benötigten Strom und die Anziehungskraft.",
         ],
         formula: {
-          expression: 'NI = Hсерlсер + (B/μ₀)g; если сердечником пренебречь: NI ≈ Bg/μ₀',
-          legend: 'g — суммарная длина воздушных зазоров в м; lсер — длина пути по сердечнику в м; Hсер — напряжённость в сердечнике при выбранной B.',
-          note: 'Предполагаются примерно одинаковое сечение, одинаковый поток, малые утечка и краевые эффекты. Для точного проекта эти эффекты учитывают отдельно.'
+          expression:
+            "NI = Hserlser + (B/μ₀)g; wenn der Kern vernachlässigt wird: NI ≈ Bg/μ₀",
+          legend:
+            "g ist die Gesamtlänge der Luftspalte in m; lser ist die Weglänge entlang des Kerns in m; Hser ist die Spannung im Kern bei ausgewähltem B.",
+          note: "Annähernd gleicher Querschnitt, gleicher Durchfluss, geringe Leckage und Randeffekte werden vorausgesetzt. Für eine genaue Auslegung werden diese Effekte gesondert berücksichtigt.",
         },
         example: {
-          title: 'Ампер-витки для воздушного зазора',
-          given: 'Нужна B = 0,50 Тл. Суммарный зазор g = 1 мм, N = 500 витков. Магнитным сопротивлением сердечника и краевыми эффектами пренебречь.',
+          title: "Ampere-Windungen für Luftspalt",
+          given:
+            "Bedarf B = 0,50 T. Gesamtspalt g = 1 mm, N = 500 Umdrehungen. Vernachlässigen Sie den magnetischen Kernwiderstand und Kanteneffekte.",
           steps: [
-            'g = 0,001 м.',
-            'Требуемая магнитодвижущая сила: NI ≈ 0,50 · 0,001 / (1,256637 · 10⁻⁶) ≈ 398 А·виток.',
-            'Ток I = 398/500 ≈ 0,796 А.',
-            'В реальной цепи сердечник тоже требует ампер-витков, а утечка и выпучивание поля изменяют результат.'
+            "g = 0,001 m.",
+            "Erforderliche magnetomotorische Kraft: NI ≈ 0,50 · 0,001 / (1,256637 · 10⁻⁶) ≈ 398 A Umdrehung.",
+            "Strom I = 398/500 ≈ 0,796 A.",
+            "In einer realen Schaltung benötigt der Kern ebenfalls Amperewindungen, und Leckage und Feldknickung verändern das Ergebnis.",
           ],
-          answer: 'В упрощённой модели требуется ток около 0,80 А.'
-        }
+          answer:
+            "Ein vereinfachtes Modell erfordert einen Strom von etwa 0,80 A.",
+        },
       },
       {
-        id: 'magnetic-quantities-hysteresis',
-        title: '6. Гистерезис, потери и энергия поля',
+        id: "magnetic-quantities-hysteresis",
+        title: "6. Hysterese, Verluste und Feldenergie",
         paragraphs: [
-          'Если циклически менять H ферромагнетика, зависимость B(H) обычно образует петлю гистерезиса. После возвращения H к нулю может остаться индукция Br — остаточная индукция. Чтобы в определённом цикле довести B до нуля, требуется противоположная Hc — коэрцитивная напряжённость. Значения зависят от материала, условий и используемой характеристики.',
-          'Площадь петли B(H) соответствует энергии гистерезисных потерь за цикл на единицу объёма. В проводящем сердечнике переменное поле дополнительно создаёт вихревые токи и нагрев. Для уменьшения таких потерь применяют изолированные тонкие листы электротехнической стали, ферриты и другие подходящие материалы. Выбор зависит от частоты и допустимой индукции.',
-          'В линейной среде плотность энергии магнитного поля равна w = BH/2. В вакууме и воздухе её можно записать как B²/(2μ₀). Для катушки это согласуется с W = LI²/2. В нелинейных и гистерезисных материалах нельзя без оговорок применять одну постоянную μ и формулу BH/2: путь намагничивания и потери имеют значение.'
+          "Wenn H eines Ferromagneten zyklisch variiert wird, bildet die B(H)-Abhängigkeit normalerweise eine Hystereseschleife. Nachdem H auf Null zurückgekehrt ist, kann die Induktion Br bestehen bleiben – Restinduktion. Um B in einem bestimmten Zyklus auf Null zu bringen, ist das Gegenteil von Hc erforderlich – die Koerzitivfeldstärke. Die Werte hängen vom verwendeten Material, den Bedingungen und den Eigenschaften ab.",
+          "Die Schleifenfläche B(H) entspricht der Energie der Hystereseverluste pro Zyklus pro Volumeneinheit. Im leitfähigen Kern entstehen durch das Wechselfeld zusätzlich Wirbelströme und Erwärmung. Um solche Verluste zu reduzieren, werden isolierte dünne Bleche aus Elektroband, Ferriten und anderen geeigneten Materialien verwendet. Die Auswahl hängt von der Frequenz und der zulässigen Induktion ab.",
+          "In einem linearen Medium beträgt die Energiedichte des Magnetfelds w = BH/2. In Vakuum und Luft kann es als B²/(2μ₀) geschrieben werden. Für eine Spule stimmt dies mit W = LI²/2 überein. In nichtlinearen Materialien und Hysteresematerialien können eine Konstante μ und die BH/2-Formel nicht ohne Einschränkung verwendet werden: Der Magnetisierungspfad und die Verluste spielen eine Rolle.",
         ],
         formula: {
-          expression: 'Для линейной среды: w = ½BH = B²/(2μ); Wкатушки = ½LI²',
-          legend: 'w — плотность энергии в Дж/м³; W — полная энергия в Дж; μ — магнитная проницаемость; Br — остаточная индукция в Тл; Hc — коэрцитивная напряжённость в А/м.',
-          note: 'Энергетические формулы с ½ справедливы для линейной зависимости. Потери за цикл на единицу объёма связаны с площадью петли ∮H dB.'
+          expression:
+            "Für ein lineares Medium: w = ½BH = B²/(2μ); Wcoils = ½LI²",
+          legend:
+            "w – Energiedichte in J/m³; W ist die Gesamtenergie in J; μ – magnetische Permeabilität; Br – Restinduktion in T; Hc ist die Koerzitivfeldstärke in A/m.",
+          note: "Energieformeln mit ½ gelten für eine lineare Abhängigkeit. Der Zyklusverlust pro Volumeneinheit hängt mit der Schleifenfläche ∮H dB zusammen.",
         },
         callout: {
-          type: 'tip',
-          title: 'Алгоритм расчёта магнитной цепи',
-          text: 'Нарисуй путь потока и отметь зазоры. Переведи длины и площади в СИ. Найди B = Φ/A в каждом участке. Выбери H из линейной модели или кривой материала. Сложи Hl и сравни с NI. В конце проверь насыщение, нагрев и пределы принятых приближений.'
-        }
-      }
+          type: "tip",
+          title: "Algorithmus zur Berechnung eines Magnetkreises",
+          text: "Zeichnen Sie den Fließweg ein und markieren Sie die Lücken. Konvertieren Sie Längen und Flächen in SI. Finden Sie B = Φ/A in jedem Abschnitt. Wählen Sie H aus dem linearen Modell oder der Materialkurve. Addiere Hl und vergleiche mit NI. Überprüfen Sie abschließend die Sättigung, Erwärmung und die Grenzen der akzeptierten Näherungen.",
+        },
+      },
     ],
     terms: [
-      { term: 'Напряжённость магнитного поля', german: 'Magnetische Feldstärke', symbol: 'H', unit: 'А/м', definition: 'Векторная величина, используемая для описания намагничивающего действия свободных токов и расчёта магнитных цепей.' },
-      { term: 'Магнитная проницаемость', german: 'Magnetische Permeabilität', symbol: 'μ', unit: 'Гн/м', definition: 'В линейной изотропной среде коэффициент связи B = μH; μ = μ₀μᵣ.' },
-      { term: 'Магнитодвижущая сила', german: 'Magnetische Durchflutung', symbol: 'Θ', unit: 'А·виток', definition: 'Суммарные ампер-витки, намагничивающие магнитную цепь; для одной обмотки Θ = NI.' },
-      { term: 'Магнитное сопротивление', german: 'Magnetischer Widerstand / Reluktanz', symbol: 'ℛm', unit: 'А/Вб', definition: 'В линейной модели магнитной цепи отношение магнитодвижущей силы к потоку: ℛm = Θ/Φ = l/(μA).' },
-      { term: 'Магнитное насыщение', german: 'Magnetische Sättigung', symbol: 'B', unit: 'Тл', definition: 'Область характеристики ферромагнетика, в которой дальнейшее увеличение H даёт относительно небольшой рост B.' },
-      { term: 'Остаточная индукция', german: 'Remanenzflussdichte', symbol: 'Br', unit: 'Тл', definition: 'Значение магнитной индукции, остающееся при H = 0 после определённого процесса намагничивания.' },
-      { term: 'Коэрцитивная напряжённость', german: 'Koerzitivfeldstärke', symbol: 'Hc', unit: 'А/м', definition: 'Модуль противоположной напряжённости, необходимой для доведения B до нуля на соответствующей ветви петли гистерезиса.' },
-      { term: 'Гистерезис', german: 'Hysterese', symbol: 'B(H)', unit: '—', definition: 'Зависимость магнитного состояния от предыстории; при циклическом перемагничивании проявляется петлёй B(H) и потерями.' }
+      {
+        term: "Magnetische Feldstärke",
+        german: "Magnetische Feldstärke",
+        symbol: "H",
+        unit: "A/m",
+        definition:
+          "Eine vektorielle Größe, die zur Beschreibung der magnetisierenden Wirkung freier Ströme und zur Berechnung magnetischer Kreise verwendet wird.",
+      },
+      {
+        term: "Magnetische Permeabilität",
+        german: "Magnetische Permeabilität",
+        symbol: "μ",
+        unit: "H/m",
+        definition:
+          "In einem linear isotropen Medium beträgt der Kopplungskoeffizient B = μH; μ = μ₀μᵣ.",
+      },
+      {
+        term: "Magnetische Durchflutung",
+        german: "Magnetische Durchflutung",
+        symbol: "Θ",
+        unit: "A",
+        definition:
+          "Die gesamten Amperewindungen, die den Magnetkreis magnetisieren; für eine Wicklung Θ = NI.",
+      },
+      {
+        term: "Magnetischer Widerstand / Reluktanz",
+        german: "Magnetischer Widerstand / Reluktanz",
+        symbol: "ℛm",
+        unit: "A/Wb",
+        definition:
+          "Im linearen Modell eines Magnetkreises beträgt das Verhältnis der magnetomotorischen Kraft zum Fluss: ℛm = Θ/Φ = l/(μA).",
+      },
+      {
+        term: "Magnetische Sättigung",
+        german: "Magnetische Sättigung",
+        symbol: "B",
+        unit: "T",
+        definition:
+          "Der Charakteristikbereich eines Ferromagneten, in dem ein weiterer Anstieg von H zu einem relativ geringen Anstieg von B führt.",
+      },
+      {
+        term: "Remanenzflussdichte",
+        german: "Remanenzflussdichte",
+        symbol: "Br",
+        unit: "T",
+        definition:
+          "Der Wert der magnetischen Induktion, der nach einem bestimmten Magnetisierungsprozess bei H = 0 bleibt.",
+      },
+      {
+        term: "Koerzitivfeldstärke",
+        german: "Koerzitivfeldstärke",
+        symbol: "Hc",
+        unit: "A/m",
+        definition:
+          "Der Modul der entgegengesetzten Spannung, der erforderlich ist, um B auf dem entsprechenden Zweig der Hystereseschleife auf Null zu bringen.",
+      },
+      {
+        term: "Hysterese",
+        german: "Hysterese",
+        symbol: "B(H)",
+        unit: "—",
+        definition:
+          "Abhängigkeit des magnetischen Zustands von der Vorgeschichte; Bei der zyklischen Magnetisierungsumkehr äußert es sich als B(H)-Schleife und Verluste.",
+      },
     ],
     summary: [
-      'B — индукция в Тл, H — напряжённость в А/м, Φ — поток в Вб, Ψ — потокосцепление.',
-      'B = μ₀μᵣH работает при принятых условиях линейной среды; у ферромагнетика проницаемость не универсальная постоянная.',
-      'Поток в однородном перпендикулярном сечении равен BA; потокосцепление одинаковых витков равно NΦ.',
-      'Магнитодвижущая сила Θ = NI; в простой линейной цепи Φ = Θ/ℛm и ℛm = l/(μA).',
-      'Воздушный зазор может определять основную часть требуемых ампер-витков и накопленной энергии.',
-      'Насыщение, гистерезис и вихревые токи ограничивают применимость идеальных моделей.'
+      "B ist die Induktion in T, H ist die Spannung in A/m, Φ ist der Fluss in Wb, Ψ ist die Flussverknüpfung.",
+      "B = μ₀μᵣH arbeitet unter den akzeptierten Bedingungen eines linearen Mediums; Die Permeabilität eines Ferromagneten ist keine universelle Konstante.",
+      "Der Fluss in einem gleichmäßigen senkrechten Abschnitt ist BA; die Flussverkettung gleicher Windungen ist gleich NΦ.",
+      "Magnetomotorische Kraft Θ = NI; in einer einfachen linearen Kette Φ = Θ/ℛm und ℛm = l/(μA).",
+      "Der Luftspalt kann den Großteil der erforderlichen Amperewindungen und der gespeicherten Energie bestimmen.",
+      "Sättigung, Hysterese und Wirbelströme schränken die Anwendbarkeit idealer Modelle ein.",
     ],
     quiz: [
-      { id: 'magnetic-quantities-1', type: 'choice', question: 'Какая пара «величина — единица» указана верно?', options: ['Магнитный поток Φ — тесла', 'Напряжённость H — ампер на метр', 'Магнитная индукция B — вебер', 'Относительная проницаемость μᵣ — генри'], answer: 1, explanation: 'H измеряется в А/м. B измеряется в Тл, Φ — в Вб, а μᵣ безразмерна.' },
-      { id: 'magnetic-quantities-2', type: 'numeric', question: 'Однородная индукция B = 0,50 Тл перпендикулярна сечению сердечника A = 6 см². Найди магнитный поток в милливеберах.', answer: 0.3, unit: 'мВб', tolerance: 0.005, explanation: '6 см² = 6 · 10⁻⁴ м². Φ = BA = 0,50 · 0,0006 = 0,0003 Вб = 0,30 мВб.' },
-      { id: 'magnetic-quantities-3', type: 'choice', question: 'Почему нельзя использовать одну и ту же постоянную μᵣ для ферромагнитного сердечника при любых токах?', options: ['Проницаемость всегда равна нулю', 'Число витков автоматически меняется с током', 'Вебер и тесла являются одинаковыми единицами', 'Существуют нелинейность, насыщение и зависимость от предыстории'], answer: 3, explanation: 'У ферромагнетика B(H) обычно нелинейна и имеет гистерезис. Постоянная μᵣ может быть лишь приближением для заданного режима.' },
-      { id: 'magnetic-quantities-4', type: 'numeric', question: 'Катушка имеет 400 витков и ток 0,50 А. Найди магнитодвижущую силу Θ.', answer: 200, unit: 'А·виток', tolerance: 0.5, explanation: 'Θ = NI = 400 · 0,50 = 200 А·виток. Это не механическая сила в ньютонах.' },
-      { id: 'magnetic-quantities-5', type: 'choice', question: 'Почему небольшой воздушный зазор может сильно увеличить требуемые ампер-витки?', options: ['Проницаемость воздуха мала по сравнению с проницаемостью ненасыщенного сердечника', 'В воздухе магнитный поток вообще невозможен', 'Зазор всегда увеличивает число витков', 'В воздухе B и H имеют одинаковые численные значения в СИ'], answer: 0, explanation: 'Магнитное сопротивление ℛm = l/(μA). В воздухе μ ≈ μ₀, поэтому даже короткий зазор способен иметь большое магнитное сопротивление и требовать значительного Hl.' }
-    ]
-  }
+      {
+        id: "magnetic-quantities-1",
+        type: "choice",
+        question: "Welches Mengen-Einheiten-Paar ist richtig?",
+        options: [
+          "Magnetischer Fluss Φ - Tesla",
+          "Spannung H - Ampere pro Meter",
+          "Magnetische Induktion B - Weber",
+          "Relative Permeabilität μᵣ - Henry",
+        ],
+        answer: 1,
+        explanation:
+          "H wird in A/m gemessen. B wird in T gemessen, Φ in Wb und μᵣ ist dimensionslos.",
+      },
+      {
+        id: "magnetic-quantities-2",
+        type: "numeric",
+        question:
+          "Die gleichmäßige Induktion B = 0,50 T steht senkrecht zum Kernquerschnitt A = 6 cm². Finden Sie den magnetischen Fluss in Milliweber.",
+        answer: 0.3,
+        unit: "mWb",
+        tolerance: 0.005,
+        explanation:
+          "6 cm² = 6 · 10⁻⁴ m². Φ = BA = 0,50 · 0,0006 = 0,0003 Wb = 0,30 mWb.",
+      },
+      {
+        id: "magnetic-quantities-3",
+        type: "choice",
+        question:
+          "Warum kann für einen ferromagnetischen Kern bei keinem Strom die gleiche Konstante μᵣ verwendet werden?",
+        options: [
+          "Die Permeabilität ist immer Null",
+          "Die Anzahl der Windungen ändert sich automatisch mit der Stromstärke",
+          "Weber und Tesla sind die gleichen Einheiten",
+          "Es gibt Nichtlinearität, Sättigung und Abhängigkeit von der Geschichte",
+        ],
+        answer: 3,
+        explanation:
+          "In einem Ferromagneten ist B(H) normalerweise nichtlinear und weist eine Hysterese auf. Die Konstante μᵣ kann nur eine Näherung für ein gegebenes Regime sein.",
+      },
+      {
+        id: "magnetic-quantities-4",
+        type: "numeric",
+        question:
+          "Die Spule hat 400 Windungen und einen Strom von 0,50 A. Ermitteln Sie die magnetomotorische Kraft Θ.",
+        answer: 200,
+        unit: "A",
+        tolerance: 0.5,
+        explanation:
+          "Θ = NI = 400 · 0,50 = 200 Eine Umdrehung. Dies ist keine mechanische Kraft in Newton.",
+      },
+      {
+        id: "magnetic-quantities-5",
+        type: "choice",
+        question:
+          "Warum kann ein kleiner Luftspalt die erforderlichen Amperewindungen stark erhöhen?",
+        options: [
+          "Die Luftdurchlässigkeit ist im Vergleich zur Durchlässigkeit des ungesättigten Kerns gering",
+          "In Luft ist ein magnetischer Fluss im Allgemeinen unmöglich",
+          "Die Lücke erhöht immer die Anzahl der Windungen",
+          "In Luft haben B und H die gleichen SI-Zahlenwerte",
+        ],
+        answer: 0,
+        explanation:
+          "Magnetischer Widerstand ℛm = l/(μA). In Luft μ ≈ μ₀ kann daher selbst ein kurzer Spalt einen großen magnetischen Widerstand haben und einen erheblichen Hl-Wert erfordern.",
+      },
+    ],
+  },
 ];

@@ -1,71 +1,56 @@
-# volt. — интерактивный учебник электротехники
+# volt. — Elektrotechnik verstehen
 
-Учебный сайт на **Next.js 16, React 19 и JavaScript**. Все основные материалы на русском, термины дополнены немецкими названиями из учебной программы.
+Ein interaktives Lernbuch auf Deutsch, entwickelt mit **Next.js 16, React 19 und JavaScript**.
 
-## Что внутри
+**Live:** https://nurlan-bakenbaev.github.io/ElektroTechnik/
 
-- 13 подробных уроков: ток, цепи, напряжение, сопротивление, закон Ома, энергия, мощность, КПД, электрическое поле, конденсаторы и магнетизм.
-- 78 разделов учебника, 31 решённая задача, формулы с условиями применимости и немецко-русский словарь.
-- 13 интерактивных тренажёров с изменяемыми параметрами, результатами в единицах СИ и схемами.
-- 65 вопросов после уроков, включая 26 расчётных. Зачёт: 4 из 5.
-- Контрольная из 35 вопросов, включая 19 расчётных, после зачёта всех тем. Зачёт: 28 из 35.
-- Отдельный вводный раздел «Простыми словами» с 12 базовыми понятиями и пошаговыми примерами.
-- 8 оригинальных иллюстраций OpenStax, полученных из официального репозитория в версии под CC BY 4.0. Авторство: [public/images/ATTRIBUTION.md](public/images/ATTRIBUTION.md).
-- Имя, лучшие результаты, XP, уровень, закладки, история контрольных и незавершённые попытки сохраняются в браузере. Экспорт/импорт JSON и подтверждаемый сброс доступны в профиле.
+## Lernmaterial
 
-## Запуск
+- 13 ausführliche Themen mit 78 Abschnitten und 31 gelösten Beispielen.
+- 13 interaktive Experimente zu Strom, Schaltungen, Spannung, Widerstand, Energie und Feldern.
+- 65 Übungsfragen, davon 26 Rechenaufgaben; ein Thema gilt ab 4 von 5 richtigen Antworten als bestanden.
+- Abschlussprüfung mit 35 Fragen, davon 19 Rechenaufgaben, nach Abschluss aller Themen. Bestehensgrenze: 28 von 35.
+- 12 Grundbegriffe, Lexikon, Formelsammlung und Merkliste.
+- Acht OpenStax-Abbildungen mit [Lizenznachweisen](public/images/ATTRIBUTION.md).
+- 70 lokal gespeicherte SVG-Formelbilder aus dem CodeCogs Equation Editor. [Quellen](public/images/formulas/SOURCES.md); jede Abbildung verlinkt ihre Original-URL.
 
-Требуется Node.js **20.9+** (проверено на 24.19.0) и npm.
+## Gestaltung und Speicherung
+
+Größere Leseschrift, responsive Navigation und lokal eingebundene Manrope-Schrift. **Lenis** steuert sanftes Scrollen, **Motion** animiert Seitenwechsel. Die Systemeinstellung für reduzierte Bewegung wird berücksichtigt; Touch-Scrollen bleibt nativ.
+
+Name, Lernfortschritt, beste Ergebnisse, XP, Level und Merkliste werden ausschließlich im Browser gespeichert. Bestehende Profile bleiben kompatibel. Im Profil sind JSON-Export, validierter Import und ein bestätigter Reset verfügbar. Keine Anmeldung, Datenbank oder API-Schlüssel erforderlich. Keine automatische Synchronisierung zwischen Geräten. Kein garantierter Offlinezugriff/PWA.
+
+## Entwicklung
+
+Node.js ab 20.9, empfohlen 24 (siehe `.nvmrc`).
 
 ```sh
-cd /workspace/ElektroTechnik
-npm ci --cache /workspace/.cache/npm
+npm ci
 npm run dev
 ```
 
-Для production:
+Produktionsserver:
 
 ```sh
 npm run build
-npm run start -- --port 3000
+npm run start
 ```
 
-`npm run dev` и `npm run start` слушают `0.0.0.0`; порт по умолчанию — 3000. Секреты, аккаунты, база данных и внешние API не нужны. Шрифты и иллюстрации включены локально; после загрузки все расчёты и проверки выполняются в браузере. Это не PWA: без загрузки сайта офлайн-доступ не обещается.
-
-## Проверки
+## Prüfungen
 
 ```sh
 npm test
-npm run build
 npm run test:e2e
 ```
 
-Модульные проверки тестируют модель прогресса, валидность содержимого и независимый расчёт всех числовых ответов. Playwright проверяет прохождение курса и контрольной, сохранение результатов, восстановление попыток, профиль, закладки, импорт, поиск, тренажёры и мобильную навигацию. E2E автоматически запускает production-сервер (предварительно выполните build), либо использует существующий на порту 3000. По умолчанию Chromium расположен в `/usr/bin/chromium`; можно задать `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH`. На другой машине установите Chromium поддерживаемым способом или `npx playwright install chromium` и укажите путь.
+Playwright verwendet `/usr/bin/chromium`; ein anderer Pfad kann mit `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH` angegeben werden. `PLAYWRIGHT_BASE_URL` erlaubt Tests gegen eine bereits laufende statische Vorschau inklusive Unterpfad.
 
-## Структура
-
-- `src/app/` — страница, метаданные и стили.
-- `src/components/LearningApp.js` — разделы приложения и клиентская навигация через hash URL.
-- `src/components/Quiz.js` — тесты, допуски числовых ответов, промежуточное сохранение и разбор ошибок.
-- `src/components/InteractiveLab.js` — интерактивные модели и SVG-схемы.
-- `src/data/` — уроки, тесты, формулы, вводные понятия и метаданные иллюстраций.
-- `src/lib/progress.js` — версия и проверка формата данных, лучшие результаты и уровни.
-- `tests/` — модульные и браузерные проверки.
-
-Профиль хранится под ключом `volt-academy:v1`, незавершённые тесты — `volt-academy:attempt:*`. Локальные данные относятся к текущему браузеру и origin. При смене адреса сайта или очистке браузера используйте резервную копию. Сервер не получает имя или результаты. Экспорт содержит профиль и завершённые результаты; незавершённые попытки остаются на устройстве.
-
-Никакие зависимости не загружаются через CDN во время работы. Внешние ссылки в справочнике — дополнительные источники; доступность сайтов не является условием работы курса. Сохранённые номера параграфов соответствуют программе пользователя, включая две самостоятельные темы с номером 2.8.
-
-## Публикация на GitHub Pages
-
-Адрес после включения GitHub Pages и успешной публикации: **https://nurlan-bakenbaev.github.io/ElektroTechnik/**
-
-Workflow `.github/workflows/deploy-pages.yml` проверяет код, создаёт статическую сборку и публикует её после каждого push в `main`. В настройках репозитория откройте **Settings → Pages → Build and deployment → Source** и выберите **GitHub Actions**. Если workflow уже запускался до включения Pages, запустите его повторно во вкладке Actions. Отдельные секреты для публикации не нужны: workflow использует временный токен GitHub с правами Pages/OIDC только в задании публикации.
-
-Аналогичная статическая сборка локально:
+## GitHub Pages
 
 ```sh
 STATIC_EXPORT=true NEXT_PUBLIC_BASE_PATH=/ElektroTechnik npm run build
 ```
 
-Результат находится в `out/`. Его нужно обслуживать как статические файлы под путём `/ElektroTechnik/`; `next start` предназначен для обычной, а не экспортированной сборки. По умолчанию `npm run build` по-прежнему создаёт стандартную Next.js-сборку. При переносе на собственный домен измените `NEXT_PUBLIC_BASE_PATH` и пересоберите сайт.
+Das Verzeichnis `out/` enthält die statische Website. `.github/workflows/deploy-pages.yml` prüft, baut und veröffentlicht bei Push auf `main`. Der zusätzliche Next.js-Workflow ist weiterhin manuell ausführbar; es gibt nur einen automatischen Deployment-Workflow. GitHub Pages muss als Quelle **GitHub Actions** verwenden.
+
+Die Navigation verwendet Hash-Routen; alle lokalen Bilder, Schriftdateien und Formelbilder funktionieren auch unter `/ElektroTechnik/`. Externe Webseiten dienen ausschließlich als weiterführende Quellen.
