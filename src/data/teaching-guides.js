@@ -40,7 +40,7 @@ export const teachingGuides = {
     apply: "Bestimme den Vorwiderstand für eine LED-Schaltung und achte auf die Einheit Ohm.",
     reflect: "Welche Bauteileigenschaft verändert sich bei einem längeren Draht?",
   },
-  "ohms-law": {
+  ohm: {
     problem: "Was passiert mit I, wenn bei 12 V der Widerstand von 6 Ω auf 24 Ω steigt?",
     observe: "Die Simulation berechnet I aus der gewählten Spannung und dem Widerstand.",
     predict: "Vermutung: Vierfacher Widerstand führt bei gleicher Spannung zu einem Viertel des Stroms.",

@@ -8,6 +8,7 @@
     "build": "next build",
     "start": "next start --hostname 0.0.0.0",
     "test": "node --test tests/*.test.js",
+    "lint": "eslint src/lib src/data/ohm-lesson.js src/components/lesson src/components/Notation.js src/components/FormulaImage.js tests/physics.test.js tests/lesson-engine.test.js tests/reference-lesson.spec.js",
     "test:e2e": "playwright test"
   },
   "dependencies": {
@@ -20,7 +21,10 @@
     "react-dom": "19.3.1"
   },
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
     "@playwright/test": "1.64.1",
+    "eslint": "^10.13.0",
+    "globals": "^17.13.0",
     "prettier": "^3.6.2"
   },
   "engines": {

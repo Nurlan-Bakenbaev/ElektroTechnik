@@ -1,8 +1,12 @@
 # Volt. — Elektrotechnik verstehen
 
-Ein interaktives Lernbuch auf Deutsch, entwickelt mit **Next.js 16, React 19 und JavaScript**.
+Eine Lernplattform auf Deutsch, entwickelt mit **Next.js 16, React 19 und JavaScript**. Der neu aufgebaute Referenzunterricht zum Ohmschen Gesetz führt durch ein echtes virtuelles Experiment; die weiteren zwölf Module bleiben als bestehende Lernangebote erhalten und werden schrittweise migriert.
 
 **Live:** https://nurlan-bakenbaev.github.io/ElektroTechnik/
+
+**Neues Lernlabor:** https://nurlan-bakenbaev.github.io/ElektroTechnik/#/lesson/ohm
+
+Im Referenzlabor: 12 Lernschritte, Schalter, Amperemeter, Voltmeter, modellbasierter Graph, eigene Messreihe, 13 unterschiedliche Übungsaufgaben, geführte Rechnung, Einheitenprüfung und lokal gespeicherte Reflexion. Der frühere Block mit sieben reinen Textschaltern wurde entfernt.
 
 ## Lernmaterial
 
@@ -12,7 +16,7 @@ Ein interaktives Lernbuch auf Deutsch, entwickelt mit **Next.js 16, React 19 und
 - Abschlussprüfung mit 35 Fragen, davon 19 Rechenaufgaben, nach Abschluss aller Themen. Bestehensgrenze: 28 von 35.
 - 12 Grundbegriffe, Lexikon, Formelsammlung und Merkliste.
 - Acht OpenStax-Abbildungen mit [Lizenznachweisen](public/images/ATTRIBUTION.md).
-- 70 lokal gespeicherte SVG-Formelbilder aus dem CodeCogs Equation Editor. [Quellen](public/images/formulas/SOURCES.md); jede Abbildung verlinkt ihre Original-URL.
+- Lokal gespeicherte SVG-Formelbilder von Wikimedia Math. [Quellen](public/images/formulas/SOURCES.md); die Bilder verlinken ihre Quellrevisionen und Lizenz.
 
 ## Gestaltung und Speicherung
 
@@ -40,10 +44,13 @@ npm run start
 
 ```sh
 npm test
+npm run lint
 npm run test:e2e
 ```
 
 Playwright verwendet `/usr/bin/chromium`; ein anderer Pfad kann mit `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH` angegeben werden. `PLAYWRIGHT_BASE_URL` erlaubt Tests gegen eine bereits laufende statische Vorschau inklusive Unterpfad.
+
+Architektur, Methodik und bekannte Grenzen stehen unter [docs](docs/AUDIT_REPORT.md). [Qualitätsnachweise](docs/QUALITY_ASSURANCE.md) trennen durchgeführte Prüfungen von offenen Arbeiten. Die JSON-Profilsicherung enthält Kursresultate; die neue geführte Lernsitzung liegt getrennt im Browser und ist noch nicht Bestandteil dieses Exports.
 
 ## GitHub Pages
 

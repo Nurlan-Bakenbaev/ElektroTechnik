@@ -5,7 +5,7 @@ export function loadProfileFromStorage(key) {
     return stored ? JSON.parse(stored) : null;
   } catch (e) {
     // Bubble up a simple error for the caller to handle
-    throw new Error("Speicher konnte nicht gelesen werden");
+    throw new Error("Speicher konnte nicht gelesen werden", { cause: e });
   }
 }
 
@@ -15,7 +15,7 @@ export function saveProfileToStorage(key, profile) {
       throw new Error("Kein localStorage verfügbar");
     globalThis.localStorage.setItem(key, JSON.stringify(profile));
   } catch (e) {
-    throw new Error("Speichern fehlgeschlagen");
+    throw new Error("Speichern fehlgeschlagen", { cause: e });
   }
 }
 

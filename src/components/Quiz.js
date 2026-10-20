@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "motion/react";
 import { AnimatedProgress } from "./LearningMotion";
+import { gradeAnswer, parseQuantity } from "../lib/answers.js";
 import {
   ArrowRight,
   Check,
@@ -14,13 +15,7 @@ import {
 } from "lucide-react";
 
 function evaluate(question, value) {
-  if (question.type === "choice") return value === question.answer;
-  const number = Number(String(value).trim().replace(",", "."));
-  return (
-    String(value).trim() !== "" &&
-    Number.isFinite(number) &&
-    Math.abs(number - question.answer) <= (question.tolerance ?? 0.001)
-  );
+  return gradeAnswer(question, value);
 }
 const correctText = (q) =>
   q.type === "choice"
@@ -67,7 +62,7 @@ export default function Quiz({
                 a.value < questions[i].options.length
               : typeof a.value === "string" &&
                 a.value.trim() !== "" &&
-                Number.isFinite(Number(a.value.replace(",", ".")))),
+                parseQuantity(a.value, questions[i].unit).valid),
         )
       ) {
         setAnswers(saved.answers);
@@ -91,12 +86,12 @@ export default function Quiz({
     if (
       value === "" ||
       (question.type === "numeric" &&
-        (!value.trim() ||
-          !Number.isFinite(Number(value.trim().replace(",", ".")))))
+        (!value.trim() || !parseQuantity(value, question.unit).valid))
     ) {
       setError(
         question.type === "numeric"
-          ? "Geben Sie eine Zahl ein. Dezimalbrüche können durch Kommas getrennt geschrieben werden."
+          ? parseQuantity(value, question.unit).error ||
+              "Geben Sie eine Zahl mit passender Einheit ein."
           : "Wählen Sie eine Antwort.",
       );
       return;

@@ -4794,6 +4794,16 @@ body {
 .formula-box > small {
   font-size: 14px;
 }
+.lesson-entry {
+  margin-bottom: 28px;
+  padding: 24px;
+  background: #edf6f8;
+  border: 1px solid #a9c8d2;
+  border-left: 4px solid #167e93;
+  border-radius: 8px;
+}
+.lesson-entry h2 { margin: 10px 0 12px; color: #133a4b; font-size: 25px; }
+.lesson-entry p { margin-bottom: 18px; color: #355665; }
 @media (max-width: 700px) {
   body {
     font-size: 17px;

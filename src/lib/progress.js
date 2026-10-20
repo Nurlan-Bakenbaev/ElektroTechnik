@@ -80,7 +80,10 @@ function normalizeName(value) {
   if (
     Array.from(name).length < 1 ||
     Array.from(name).length > 32 ||
-    /[\u0000-\u001f\u007f]/.test(name)
+    Array.from(name).some(
+      (character) =>
+        character.codePointAt(0) < 32 || character.codePointAt(0) === 127,
+    )
   ) {
     invalid(
       "Der Name muss zwischen 1 und 32 Zeichen ohne Steuerzeichen enthalten",

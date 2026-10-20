@@ -5,7 +5,7 @@ import LearningExperience from "../components/LearningExperience";
 export const metadata = {
   title: "Volt. — Elektrotechnik, die klar wird",
   description:
-    "Interaktives Lehrbuch der Elektrotechnik: 13 ausführliche Themen, anschauliche Beispiele, deutsche Begriffe, praktische Simulatoren und Tests mit Lösungsanalyse.",
+    "Elektrotechnik verstehen: Lernlabor zum Ohmschen Gesetz, 13 Themen, virtuelle Experimente, Rechenaufgaben und Tests mit Lösungsanalyse auf Deutsch.",
 };
 
 export default function RootLayout({ children }) {

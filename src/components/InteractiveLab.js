@@ -2,6 +2,11 @@
 
 import { useId, useState } from "react";
 import "./lab.css";
+import {
+  dcCircuit,
+  seriesResistance,
+  parallelResistance,
+} from "../lib/physics.js";
 
 const format = (value, digits = 2) =>
   new Intl.NumberFormat("de-DE", { maximumFractionDigits: digits }).format(
@@ -538,7 +543,9 @@ export default function InteractiveLab({ lessonId }) {
         "1 A = 1 Coulomb (C) pro Sekunde. Das Diagramm zeigt die technische Stromrichtung positiver Ladungen. In einem Metall bewegen sich die Elektronen entgegengesetzt.";
       break;
     case "circuits": {
-      const req = parallel ? (v.r1 * v.r2) / (v.r1 + v.r2) : v.r1 + v.r2;
+      const req = parallel
+        ? parallelResistance([v.r1, v.r2])
+        : seriesResistance([v.r1, v.r2]);
       title = "Zwei Widerstände – zwei Verbindungsmethoden";
       lead =
         "Vertauschen Sie den Anschluss und vergleichen Sie den Gesamtwiderstand mit einer 12-V-Quelle.";
@@ -794,11 +801,16 @@ export default function InteractiveLab({ lessonId }) {
         <Circuit
           voltage={v.voltage}
           resistance={v.resistance}
-          current={v.voltage / v.resistance}
+          current={
+            dcCircuit({ voltage: v.voltage, resistance: v.resistance }).current
+          }
         />
       );
       formula = `I = U / R = ${format(v.voltage)} / ${format(v.resistance)}`;
-      result = v.voltage / v.resistance;
+      result = dcCircuit({
+        voltage: v.voltage,
+        resistance: v.resistance,
+      }).current;
       unit = "A";
       note =
         "Bei konstantem R verdoppelt die Verdoppelung von U I. Bei konstantem U halbiert die Verdoppelung von R I. Modell: Ohmscher Widerstand mit konstanter Temperatur und ideale Konstantspannungsquelle.";

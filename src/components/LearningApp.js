@@ -62,8 +62,12 @@ import {
 } from "../lib/storage.js";
 import Quiz from "./Quiz";
 import InteractiveLab from "./InteractiveLab";
-import TeachingSequence from "./TeachingSequence";
+import { getTeachingGuide } from "../data/teaching-guides.js";
 import Notation from "./Notation";
+import dynamic from "next/dynamic";
+const ReferenceLesson = dynamic(() => import("./lesson/ReferenceLesson"), {
+  loading: () => <p role="status">Das Lernlabor wird geladen …</p>,
+});
 
 const icons = {
   basics: Zap,
@@ -995,6 +999,16 @@ function Lesson({ lesson, profile, bookmark, onComplete }) {
       scrollToReadingTarget(0);
     }
   }
+  if (lesson.id === "ohm") {
+    return (
+      <ReferenceLesson
+        lesson={lesson}
+        profile={profile}
+        bookmark={bookmark}
+        onComplete={onComplete}
+      />
+    );
+  }
   return (
     <>
       <div className="lesson-navigation">
@@ -1097,7 +1111,20 @@ function Lesson({ lesson, profile, bookmark, onComplete }) {
         {tab === "theory" && (
           <div className="reading-layout">
             <article className="lesson-article">
-              <TeachingSequence lesson={lesson} />
+              <section className="lesson-entry" aria-label="Frage zum Einstieg">
+                <span className="eyebrow">FRAGE ZUM EINSTIEG</span>
+                <h2>{getTeachingGuide(lesson.id).problem}</h2>
+                <p>{getTeachingGuide(lesson.id).experiment}</p>
+                <button
+                  className="button button-dark"
+                  onClick={() => {
+                    setTab("lab");
+                    scrollToReadingTarget(320);
+                  }}
+                >
+                  Im Labor untersuchen <ArrowRight size={16} />
+                </button>
+              </section>
               <div className="objectives-box">
                 <span className="eyebrow">
                   <Lightbulb size={16} />
@@ -1196,7 +1223,14 @@ function Lesson({ lesson, profile, bookmark, onComplete }) {
                       {t.term}
                       <small>
                         {t.german}
-                        {t.symbol ? <> · <Notation>{t.symbol}</Notation></> : ""}
+                        {t.symbol ? (
+                          <>
+                            {" "}
+                            · <Notation>{t.symbol}</Notation>
+                          </>
+                        ) : (
+                          ""
+                        )}
                         {t.unit ? ` · ${t.unit}` : ""}
                       </small>
                     </strong>
@@ -1397,7 +1431,11 @@ function Glossary() {
           {filtered.map((t) => (
             <article key={t.term}>
               <div className="term-symbol">
-                {t.symbol ? <Notation>{t.symbol}</Notation> : <BookOpen size={21} />}
+                {t.symbol ? (
+                  <Notation>{t.symbol}</Notation>
+                ) : (
+                  <BookOpen size={21} />
+                )}
               </div>
               <div>
                 <h2>
@@ -1841,6 +1879,7 @@ function Profile({ profile, progress, onUpdate, notify }) {
             try {
               // use helper to remove attempt keys (best-effort)
               removeAttemptKeys();
+              removeAttemptKeys("volt-academy:lesson:");
             } catch {}
             notify("Fortschritt zurückgesetzt");
           }}
@@ -2105,7 +2144,9 @@ function Essentials() {
           >
             <div className="concept-top">
               <span>{String(i + 1).padStart(2, "0")}</span>
-              <span><Notation>{c.symbol}</Notation></span>
+              <span>
+                <Notation>{c.symbol}</Notation>
+              </span>
             </div>
             <h2>{c.title}</h2>
             <span className="concept-german">
