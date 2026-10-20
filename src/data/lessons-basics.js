@@ -45,7 +45,7 @@ export const basicsLessons = [
         example: {
           title: "Beispiel: Ladung durch einen Leiter",
           given:
-            "In 8 s fließt eine Ladung von 2,4 C durch den Drahtquerschnitt. Gesucht ist der Gleichstrom in A und mA.",
+            "In 8 s fließt eine elektrische Ladung von 2,4 Coulomb (C) durch den Leiterquerschnitt. Gesucht ist der Gleichstrom in A und mA.",
           steps: [
             "Alle Werte liegen in SI-Einheiten vor: Q = 2,4 C und t = 8 s.",
             "Wir verwenden die Definition der Stromstärke: I = Q/t.",

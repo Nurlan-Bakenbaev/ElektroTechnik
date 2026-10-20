@@ -1197,3 +1197,7 @@ formulaImages["B: T; H: A/m; Φ: Wb; Ψ = NΦ: Wb"] = {
   images: ["d5f13db7d887fb2a81ae96bb979a1546fece3b79"],
   note: "B ist die Flussdichte, H die Feldstärke, Φ der Fluss und Ψ der verkettete Fluss."
 };
+formulaImages["P = U · I; P = I² · R; P = U² / R"] = {
+  images: ["c53743d9e5302d46ece2df8a2804abb8eb943376", "cf1cb81aac2eb9bfe3effc4fff0cda1f66fbe2e7"],
+  note: "Leistung ist die pro Zeit umgesetzte Energie."
+};
