@@ -20,9 +20,13 @@ export function saveProfileToStorage(key, profile) {
 export function removeAttemptKeys(prefix = "volt-academy:attempt:") {
   try {
     if (!globalThis.localStorage) return;
-    Object.keys(globalThis.localStorage)
-      .filter((k) => k.startsWith(prefix))
-      .forEach((k) => globalThis.localStorage.removeItem(k));
+    const storage = globalThis.localStorage;
+    const keys = [];
+    for (let i = 0; i < storage.length; i += 1) {
+      const k = storage.key(i);
+      if (k && k.startsWith(prefix)) keys.push(k);
+    }
+    keys.forEach((k) => storage.removeItem(k));
   } catch (e) {
     // best-effort removal; swallow errors
   }
