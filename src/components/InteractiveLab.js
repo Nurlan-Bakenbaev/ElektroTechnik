@@ -78,7 +78,7 @@ function Circuit({ voltage, resistance, current, second, parallel = false }) {
           refY="3.5"
           orient="auto"
         >
-          <path d="M0 0 7 3.5 0 7Z" fill="#667b35" />
+          <path d="M0 0 7 3.5 0 7Z" fill="#31537e" />
         </marker>
       </defs>
       <path d="M68 87V60H350V174H68V133" className="lab-wire" />
@@ -162,7 +162,7 @@ function Circuit({ voltage, resistance, current, second, parallel = false }) {
       )}
       <path
         d="M280 174H205"
-        stroke="#667b35"
+        stroke="#31537e"
         strokeWidth="3"
         fill="none"
         markerEnd={`url(#${marker})`}
@@ -188,22 +188,22 @@ function Charges({ charge, time }) {
         width="348"
         height="78"
         rx="39"
-        fill="#f0f2e8"
-        stroke="#d8dfc7"
+        fill="#e8ecf2"
+        stroke="#c6d1e0"
       />
       <ellipse
         cx="249"
         cy="107"
         rx="13"
         ry="39"
-        fill="#d8f36a"
+        fill="#fbcd62"
         fillOpacity=".5"
-        stroke="#667b35"
+        stroke="#31537e"
         strokeDasharray="4 4"
       />
       {[73, 119, 165, 211, 289, 335].map((x) => (
         <g key={x}>
-          <circle cx={x} cy="107" r="13" fill="#fff" stroke="#667b35" />
+          <circle cx={x} cy="107" r="13" fill="#fff" stroke="#31537e" />
           <text x={x} y="112" className="lab-svg-symbol">
             +
           </text>
@@ -212,7 +212,7 @@ function Charges({ charge, time }) {
       <path
         d="M151 42H240L231 36M240 42 231 48"
         fill="none"
-        stroke="#667b35"
+        stroke="#31537e"
         strokeWidth="2"
       />
       <text x="196" y="27" className="lab-svg-label">
@@ -238,14 +238,14 @@ function Plates({ voltage, gap = 4, capacitor = false }) {
       role="img"
       aria-label={`Zwei parallele Platten mit Potentialdifferenz ${voltage} volt. Das Feld wird von der positiven Platte zur negativen gerichtet`}
     >
-      <rect x={left - 8} y="38" width="12" height="135" rx="3" fill="#667b35" />
+      <rect x={left - 8} y="38" width="12" height="135" rx="3" fill="#31537e" />
       <rect
         x={right - 4}
         y="38"
         width="12"
         height="135"
         rx="3"
-        fill="#a9b49a"
+        fill="#99a5b5"
       />
       {[61, 90, 119, 148].map((y) => (
         <g key={y}>
@@ -257,7 +257,7 @@ function Plates({ voltage, gap = 4, capacitor = false }) {
           </text>
           <path
             d={`M${left + 14} ${y}H${right - 15}l-7 -4m7 4 -7 4`}
-            stroke="#809545"
+            stroke="#416799"
             strokeWidth="1.7"
             fill="none"
           />
@@ -265,7 +265,7 @@ function Plates({ voltage, gap = 4, capacitor = false }) {
       ))}
       <path
         d={`M${left} 188H${right}M${left} 183V193M${right} 183V193`}
-        stroke="#a9b49a"
+        stroke="#99a5b5"
       />
       <text x="210" y="211" className="lab-svg-label">
         {capacitor
@@ -310,7 +310,7 @@ function Magnet({ angle = 45, coil = false, turns = 200, current = 1 }) {
           refY="3"
           orient="auto"
         >
-          <path d="M0 0 6 3 0 6Z" fill="#809545" />
+          <path d="M0 0 6 3 0 6Z" fill="#416799" />
         </marker>
       </defs>
       <path
@@ -335,7 +335,7 @@ function Magnet({ angle = 45, coil = false, turns = 200, current = 1 }) {
       />
       {coil ? (
         <>
-          <rect x="140" y="85" width="140" height="50" rx="10" fill="#f0f3e8" />
+          <rect x="140" y="85" width="140" height="50" rx="10" fill="#e7edf4" />
           {Array.from({ length: 13 }, (_, i) => (
             <ellipse
               key={i}
@@ -344,7 +344,7 @@ function Magnet({ angle = 45, coil = false, turns = 200, current = 1 }) {
               rx="7"
               ry="28"
               fill="none"
-              stroke="#788d48"
+              stroke="#456590"
               strokeWidth="2"
             />
           ))}
@@ -368,11 +368,11 @@ function Magnet({ angle = 45, coil = false, turns = 200, current = 1 }) {
         <>
           <path
             d="M145 89H210V132H145Q138 132 138 125V96Q138 89 145 89"
-            fill="#d8f36a"
+            fill="#fbcd62"
           />
           <path
             d="M210 89H275Q282 89 282 96V125Q282 132 275 132H210Z"
-            fill="#dfe5d5"
+            fill="#d4dce6"
           />
           <text x="175" y="116" className="lab-svg-symbol">
             N
@@ -381,10 +381,10 @@ function Magnet({ angle = 45, coil = false, turns = 200, current = 1 }) {
             S
           </text>
           <g transform={`translate(${x} ${y})`}>
-            <circle r="20" fill="white" stroke="#cbd3bb" />
+            <circle r="20" fill="white" stroke="#bac5d4" />
             <g transform={`rotate(${compassAngle})`}>
               <path d="M15 0 -10 -5V5Z" fill="#a45040" />
-              <path d="M-15 0 0 -5V5Z" fill="#b5c0a3" />
+              <path d="M-15 0 0 -5V5Z" fill="#a2afc1" />
             </g>
           </g>
           <text x="210" y="215" className="lab-svg-label">
@@ -449,9 +449,9 @@ function Flux({ angle, field, area }) {
       <g transform={`translate(212 108) rotate(${-angle})`}>
         <path
           d="M0 -62 18 -48V62L0 48Z"
-          fill="#d8f36a"
+          fill="#fbcd62"
           fillOpacity=".8"
-          stroke="#667b35"
+          stroke="#31537e"
         />
         <path
           d="M7 0H86L79 -5M86 0 79 5"

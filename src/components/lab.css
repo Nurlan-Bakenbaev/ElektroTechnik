@@ -1,7 +1,7 @@
 .lab {
   margin: 30px 0;
   padding: 28px;
-  border: 1px solid #e0e4d6;
+  border: 1px solid #d5dce5;
   border-radius: 18px;
   background: #fff;
   color: #17212b;
@@ -31,7 +31,7 @@
   place-items: center;
   width: 22px;
   height: 22px;
-  background: #edf3d8;
+  background: #d7e4f4;
   border-radius: 6px;
   font-size: 17px;
 }
@@ -46,7 +46,7 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #7c943e;
+  background: #3a6398;
 }
 .lab-title {
   margin: 0 0 8px !important;
@@ -72,8 +72,8 @@
 .lab-visual {
   min-width: 0;
   overflow: hidden;
-  background: #fafbf6;
-  border: 1px solid #edf0e5;
+  background: #f6f8fb;
+  border: 1px solid #e4eaf1;
   border-radius: 13px;
 }
 .lab-diagram {
@@ -84,19 +84,19 @@
 }
 .lab-wire {
   fill: none;
-  stroke: #8f9c7c;
+  stroke: #7a8a9e;
   stroke-width: 2;
   stroke-linecap: round;
   stroke-linejoin: round;
 }
 .lab-source {
   fill: #fff;
-  stroke: #667b35;
+  stroke: #31537e;
   stroke-width: 2;
 }
 .lab-svg-symbol {
   text-anchor: middle;
-  fill: #3f5028;
+  fill: #263952;
   font-family: inherit;
   font-size: 17px;
   font-weight: 600;
@@ -108,8 +108,8 @@
   font-size: 12px;
 }
 .lab-resistor {
-  fill: #e6efca;
-  stroke: #667b35;
+  fill: #c8daf1;
+  stroke: #31537e;
   stroke-width: 2;
 }
 .lab-node {
@@ -117,7 +117,7 @@
 }
 .lab-field-line {
   fill: none;
-  stroke: #9eae7a;
+  stroke: #7790b1;
   stroke-width: 1.7;
 }
 .lab-controls {
@@ -155,12 +155,12 @@
   margin: 9px 0;
   padding: 0;
   cursor: pointer;
-  accent-color: #768b3e;
-  background: #e7ecd9;
+  accent-color: #3a5f8f;
+  background: #d8e1ed;
   border-radius: 20px;
 }
 .lab-control input[type="range"]:focus-visible {
-  outline: 3px solid #b4ca77;
+  outline: 3px solid #739ace;
   outline-offset: 7px;
 }
 .lab-range-ends {
@@ -174,7 +174,7 @@
   grid-template-columns: 1fr 1fr;
   gap: 3px;
   padding: 3px;
-  background: #f0f3e8;
+  background: #e7edf4;
   border-radius: 8px;
 }
 .lab-switch button {
@@ -195,7 +195,7 @@
   font-weight: 600;
 }
 .lab-switch button:focus-visible {
-  outline: 2px solid #8da85c;
+  outline: 2px solid #587cac;
   outline-offset: 2px;
 }
 .lab-result {
@@ -205,8 +205,8 @@
   flex-wrap: wrap;
   gap: 14px;
   padding: 17px 20px;
-  background: #f1f5df;
-  border: 1px solid #e4ebce;
+  background: #dee8f6;
+  border: 1px solid #cddaec;
   border-radius: 11px;
 }
 .lab-result-label {
@@ -250,7 +250,7 @@
   place-items: center;
   flex: 0 0 14px;
   height: 14px;
-  border: 1px solid #adb99a;
+  border: 1px solid #98a7bb;
   border-radius: 50%;
   font-family: Georgia, serif;
   font-size: 12px;
@@ -342,7 +342,7 @@
   border-radius: 10px;
 }
 .lab-flow-useful {
-  background: #e7efcf;
+  background: #cdddf1;
 }
 .lab-flow-loss {
   background: #f0ece2;
@@ -389,10 +389,10 @@
   width: 8px;
   height: 13px;
   border-radius: 2px;
-  background: #e4e9db;
+  background: #dae1ea;
 }
 .lab-energy-dots .lab-dot-on {
-  background: #adbf7c;
+  background: #7999c2;
 }
 @media (max-width: 760px) {
   .lab {

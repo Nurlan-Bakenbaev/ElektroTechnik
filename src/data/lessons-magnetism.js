@@ -8,106 +8,106 @@ export const magnetismLessons = [
     category: "fields",
     duration: 35,
     description:
-      "Wie ein elektrisches Feld Energie speichert, wovon die Kapazität abhängt und was passiert, wenn ein Kondensator geladen und entladen wird.",
+      "Wie ein elektrisches Feld Energie speichert, wovon die Kapazität abhängt und wie sich ein Kondensator beim Laden und Entladen verhält.",
     objectives: [
-      "Setzen Sie Ladung, Spannung und Kapazität in Beziehung und berechnen Sie Kondensatorverbindungen.",
-      "Erklären Sie das Laden und Entladen über einen Widerstand mithilfe der RC-Zeitkonstante.",
+      "Beschreiben Sie den Zusammenhang von Ladung, Spannung und Kapazität und berechnen Sie Kondensatorschaltungen.",
+      "Erklären Sie das Laden und Entladen über einen Widerstand mit der Zeitkonstanten τ = RC.",
       "Berechnen Sie die gespeicherte Energie und gehen Sie sicher mit geladenen Kondensatoren um.",
     ],
     sections: [
       {
         id: "capacitor-charge",
-        title: "1. Zwei Leiter und ein elektrisches Feld zwischen ihnen",
+        title: "1. Zwei Leiter mit einem elektrischen Feld dazwischen",
         paragraphs: [
-          "Ein Kondensator besteht aus zwei leitenden Platten, die durch einen Isolierspalt getrennt sind. Bei Anschluss an eine Quelle überträgt die Quelle Elektronen von einer Platte auf eine andere: Auf der einen erscheint die Ladung −Q und auf der anderen die Ladung +Q. Beim herkömmlichen Modell bleibt der Kondensator insgesamt elektrisch neutral. Die Energie wird im elektrischen Feld zwischen den Platten gespeichert und nicht in einem kontinuierlichen Ladungsfluss durch den Isolator.",
-          "Die elektrische Kapazität C, zu Deutsch Kapazität, gibt an, wie viel Ladung Q jede Platte bei einer gegebenen Spannung U aufnimmt. Große Kapazität bedeutet: Bei gleicher Spannung kann eine größere Ladung geteilt werden. Das Farad ist für viele praktische Teile eine sehr große Einheit, daher werden Mikrofarad, Nanofarad und Picofarad verwendet: 1 µF = 10⁻⁶ F, 1 nF = 10⁻⁹ F, 1 pF = 10⁻¹² F.",
-          "Für einen idealen Kondensator mit konstanter Kapazität ist Q = CU. Hier ist Q nicht die Summe der Ladungsmodule der beiden Platten, sondern der Ladungsmodul einer von ihnen. Wenn sich die Spannung nicht ändert, ist der Strom durch einen idealen Kondensator bei stationärem Gleichstrom Null. Wenn sich die Spannung ändert, entsteht Strom: Die Quelle lädt oder entlädt die Platten.",
+          "Ein Kondensator besteht aus zwei leitenden Platten, die durch einen Isolator getrennt sind. Eine Quelle verschiebt Elektronen von einer Platte zur anderen: Eine Platte trägt die Ladung −Q, die andere +Q. Insgesamt bleibt der Kondensator elektrisch neutral. Die Energie steckt im elektrischen Feld zwischen den Platten.",
+          "Die Kapazität C gibt an, wie viel Ladung Q jede Platte bei einer Spannung U aufnimmt. Das Farad ist eine große Einheit, daher nutzt man meist Teile davon: 1 µF = 10⁻⁶ F, 1 nF = 10⁻⁹ F, 1 pF = 10⁻¹² F.",
+          "Für einen idealen Kondensator gilt Q = CU. Q ist der Betrag der Ladung einer Platte. Bei konstanter Spannung fließt im Gleichstromfall kein Strom. Ändert sich die Spannung, fließt ein Strom: Die Quelle lädt oder entlädt die Platten.",
         ],
         formula: {
           expression: "C = Q / U; Q = C · U; i = C · dU/dt",
           legend:
-            "C ist die Kapazität in Farad (F); Q ist der Ladungsmodul einer Platte in Coulomb (C); U - Spannung in Volt (V); i ist der Strom in Ampere (A).",
-          note: "Die letzte Formel bezieht sich auf die Konstante C und die gewählte passive Stromrichtung: Positiver Strom tritt mit positiver Spannung in die Platte ein.",
+            "C ist die Kapazität in Farad (F); Q ist der Betrag der Ladung einer Platte in Coulomb (C); U ist die Spannung in Volt (V); i ist der Strom in Ampere (A).",
+          note: "Die letzte Formel gilt für konstantes C im Verbraucherzählpfeilsystem: Positiver Strom fließt bei positiver Spannung in die Platte hinein.",
         },
         example: {
           title: "Wie viel Ladung speichert ein Kondensator?",
-          given: "C = 470 µF, U = 12 V. Finden Sie Q.",
+          given: "C = 470 µF, U = 12 V. Gesucht: Q.",
           steps: [
-            "Umrechnung der Kapazität: 470 µF = 470 · 10⁻⁶ F = 0,000470 F.",
-            "Wir wenden Q = CU an: Q = 0,000470 · 12 = 0,00564 C.",
-            "Wir geben das Ergebnis in Milliculomb an: 0,00564 C = 5,64 mC.",
+            "Kapazität umrechnen: 470 µF = 470 · 10⁻⁶ F = 0,000470 F.",
+            "Mit Q = CU: Q = 0,000470 · 12 = 0,00564 C.",
+            "Ergebnis in Millicoulomb: 0,00564 C = 5,64 mC.",
           ],
-          answer: "Die Platten enthalten Ladungen von +5,64 mC und −5,64 mC.",
+          answer: "Die Platten tragen die Ladungen +5,64 mC und −5,64 mC.",
         },
       },
       {
         id: "capacitor-geometry",
         title: "2. Geometrie, Dielektrikum und zulässige Spannung",
         paragraphs: [
-          "Bei einem Flachkondensator nimmt die Kapazität mit der Fläche der Platten A zu und mit zunehmendem Abstand d zwischen ihnen ab. Zwischen großen, nahe beieinander liegenden Platten ist das Feld nahezu gleichmäßig; Randeffekte können vernachlässigt werden, wenn der Spalt deutlich kleiner als die Abmessungen der Platten ist. Das Material zwischen den Platten – das Dielektrikum – wird polarisiert und erhöht in der Regel die Kapazität im Vergleich zum Vakuum.",
-          "Die relative Dielektrizitätskonstante εᵣ charakterisiert das Material und ε₀ ist die elektrische Konstante, etwa 8,854 · 10⁻¹² F/m. Bei einer festen Spannung erhöht ein Anstieg von εᵣ die Ladung Q. Wenn der vorgeladene Kondensator von der Quelle getrennt wird, bleibt die Ladung annähernd konstant und die Zugabe eines Dielektrikums verringert die Spannung. Bevor Sie Schlussfolgerungen ziehen, prüfen Sie daher immer, ob der Kondensator an die Quelle angeschlossen ist.",
-          "Ein echtes Dielektrikum kann einer begrenzten Feldstärke standhalten. Bei Überschreitung der zulässigen Spannung ist ein Durchschlag möglich: Die Isolierschicht wird leitfähig und das Teil wird beschädigt. Begrenzend ist die Betriebsspannung am Gehäuse, nicht die Spannung, die der Kondensator selbst erzeugt. Elektrolytkondensatoren erfordern normalerweise eine zusätzliche Polarität; Keramik- und Folienteile haben in der Regel keine Polarität.",
+          "Beim Plattenkondensator wächst die Kapazität mit der Plattenfläche A und sinkt mit dem Plattenabstand d. Zwischen großen, nahen Platten ist das Feld nahezu homogen. Randeffekte sind vernachlässigbar, wenn d viel kleiner ist als die Plattenabmessungen. Das Dielektrikum zwischen den Platten wird polarisiert und erhöht die Kapazität gegenüber Vakuum.",
+          "Die relative Permittivität εᵣ kennzeichnet das Material, ε₀ ist die elektrische Feldkonstante (ca. 8,854 · 10⁻¹² F/m). Bei fester Spannung vergrößert ein höheres εᵣ die Ladung Q. Ist der geladene Kondensator von der Quelle getrennt, bleibt Q konstant, und ein Dielektrikum senkt die Spannung. Prüfen Sie daher immer, ob die Quelle angeschlossen ist.",
+          "Ein Dielektrikum hält nur eine begrenzte elektrische Feldstärke aus. Wird die zulässige Spannung überschritten, kommt es zum Durchschlag: Der Isolator wird leitend und das Bauteil wird zerstört. Maßgeblich ist die Nennspannung auf dem Gehäuse. Elektrolytkondensatoren sind gepolt; Keramik- und Folienkondensatoren meist nicht.",
         ],
         formula: {
           expression: "C = ε₀ · εᵣ · A / d; E ≈ U / d",
           legend:
-            "A ist die Überlappungsfläche der Deckschichten in m²; d – Entfernung in m; εᵣ – relative Dielektrizitätskonstante; E ist die Feldstärke in V/m.",
-          note: "Die Formeln beschreiben flache parallele Platten mit einem homogenen Dielektrikum und vernachlässigbaren Kanteneffekten.",
+            "A ist die Überdeckungsfläche der Platten in m²; d ist der Plattenabstand in m; εᵣ ist die relative Permittivität; E ist die elektrische Feldstärke in V/m.",
+          note: "Die Formeln gelten für parallele Platten mit homogenem Dielektrikum und vernachlässigbaren Randeffekten.",
         },
         callout: {
           type: "warning",
           title:
-            "Die Spannung bleibt auch nach dem Ausschalten der Stromversorgung bestehen.",
-          text: "Der Kondensator kann eine gefährliche Ladung speichern. Verwenden Sie für Trainingsexperimente nur sichere Niederspannung; Entladen Sie sich über einen geeigneten Widerstand und überprüfen Sie die Spannung mit einem Gerät. Schließen Sie einen stark geladenen Kondensator nicht mit einem Schraubendreher kurz und zerlegen Sie keine Netzteile.",
+            "Die Spannung bleibt auch nach dem Abschalten bestehen",
+          text: "Ein Kondensator kann eine gefährliche Ladung speichern. Experimentieren Sie nur mit Kleinspannung. Entladen Sie über einen geeigneten Widerstand und kontrollieren Sie die Spannung mit einem Messgerät. Schließen Sie geladene Kondensatoren nie mit einem Schraubendreher kurz und öffnen Sie keine Netzteile.",
         },
       },
       {
         id: "capacitor-networks",
-        title: "3. Parallele und serielle Verbindung",
+        title: "3. Parallel- und Reihenschaltung",
         paragraphs: [
-          "Bei einer Parallelschaltung sind beide Plattenpaare mit denselben zwei Knoten verbunden. Die Spannungen sind gleich, aber die Ladungen addieren sich: Qtot = Q₁ + Q₂. Daher ist die Gesamtkapazität gleich der Summe der Kapazitäten. Diese Verbindung ähnelt einer Vergrößerung der Plattenfläche und wird verwendet, wenn eine größere Kapazität benötigt wird oder unterschiedliche Eigenschaften von Teilen bei unterschiedlichen Frequenzen erforderlich sind.",
-          "Wenn zwei zunächst ungeladene ideale Kondensatoren in Reihe geschaltet werden, ist der Zwischenknoten isoliert. Auf den Platten werden identische Lademodule installiert und die Spannungen addiert. Die Gesamtkapazität ist geringer als die kleinste Einzelkapazität. Die Spannung verteilt sich umgekehrt proportional zur Kapazität: Eine kleinere Kapazität empfängt eine größere Spannung.",
-          "Bei echten in Reihe geschalteten Kondensatoren unterscheiden sich Leckströme und Toleranzen. Daher kann man nicht automatisch davon ausgehen, dass zwei Kondensatoren mit gleicher Kennzeichnung die Gleichspannung genau halbieren oder die zulässige Spannung sicher verdoppeln. In praktischen Ausführungen wird die Spannungsverteilung überprüft und ggf. Ausgleichswiderstände eingesetzt.",
+          "Bei der Parallelschaltung liegen alle Kondensatoren an derselben Spannung, die Ladungen addieren sich: Qges = Q₁ + Q₂. Daher addieren sich auch die Kapazitäten. Das entspricht einer größeren Plattenfläche.",
+          "Bei der Reihenschaltung zweier zunächst ungeladener idealer Kondensatoren ist der Mittelpunkt isoliert. Beide Kondensatoren tragen den gleichen Betrag der Ladung, die Spannungen addieren sich. Die Gesamtkapazität ist kleiner als die kleinste Einzelkapazität. Die kleinere Kapazität erhält die größere Spannung.",
+          "Bei realen Kondensatoren in Reihe unterscheiden sich Leckströme und Toleranzen. Die Spannung teilt sich daher nicht sicher gleichmäßig auf. In der Praxis prüft man die Spannungsaufteilung und setzt bei Bedarf Symmetrierwiderstände ein.",
         ],
         formula: {
           expression:
             "Parallel dazu: Ctot = C₁ + C₂; nacheinander: 1/Ctot = 1/C₁ + 1/C₂",
           legend:
-            "C₁, C₂ und Ctot sind separate und gleichwertige Kapazitäten in derselben Einheit.",
-          note: "Für zwei Serienkondensatoren ist Ctotal = C₁C₂ / (C₁ + C₂). Bei einer Parallelschaltung ist U gleich, bei einer idealen Reihenschaltung ist das Modul Q gleich.",
+            "C₁, C₂ und Cges sind Einzel- und Gesamtkapazität in derselben Einheit.",
+          note: "Für zwei Kondensatoren in Reihe gilt Cges = C₁C₂ / (C₁ + C₂). Bei Parallelschaltung ist U gleich, bei Reihenschaltung ist der Betrag von Q gleich.",
         },
         example: {
-          title: "Warum werden die Spannungen nicht gleichmäßig aufgeteilt?",
+          title: "Warum teilt sich die Spannung nicht gleichmäßig auf?",
           given:
-            "C₁ = 10 µF und C₂ = 20 µF sind in Reihe mit einer 12-V-Quelle geschaltet. Zunächst werden beide entlassen.",
+            "C₁ = 10 µF und C₂ = 20 µF liegen in Reihe an einer 12-V-Quelle. Beide sind zu Beginn entladen.",
           steps: [
-            "Ctotal = 10 20 / (10 + 20) = 6,67 µF.",
-            "Gesamtladungsmodul Q = CtotalU = 6,67 μF · 12 V ≈ 80 μC.",
+            "Cges = 10 20 / (10 + 20) = 6,67 µF.",
+            "Gesamtladung Q = CgesU = 6,67 μF · 12 V ≈ 80 μC.",
             "U₁ = Q/C₁ = 80/10 = 8 V; U₂ = Q/C₂ = 80/20 = 4 V.",
-            "Wir prüfen: 8 V + 4 V = 12 V. Die kleinere Kapazität erhielt eine höhere Spannung.",
+            "Probe: 8 V + 4 V = 12 V. Die kleinere Kapazität erhält die größere Spannung.",
           ],
-          answer: "Ctotal ≈ 6,67 µF; 10 µF haben 8 V, 20 µF haben 4 V.",
+          answer: "Cges ≈ 6,67 µF; an 10 µF liegen 8 V, an 20 µF liegen 4 V.",
         },
       },
       {
         id: "capacitor-rc",
-        title: "4. Laden und Entladen: Warum der RC-Parameter benötigt wird",
+        title: "4. Laden und Entladen über einen Widerstand",
         paragraphs: [
-          "Verbinden wir den zunächst entladenen Kondensator über einen Widerstand R mit einer idealen Quelle U₀. Unmittelbar nach der Schaltung ist die Spannung am Kondensator Null, sodass der Anfangsstrom gleich U₀/R ist. Wenn sich Ladung ansammelt, steigt die Spannung am Kondensator, die Spannung am Widerstand nimmt ab und der Strom fällt allmählich ab. Die Spannung eines idealen Kondensators kann sich bei einem endlichen Strom nicht abrupt ändern.",
-          "Die Zeitkonstante τ = RC bestimmt die Geschwindigkeit des Prozesses. Nach einem τ erreicht die Ladespannung ca. 63,2 % des Endwertes. Bei Entladung in einem τ sinkt er auf 36,8 % des Ausgangswertes. Nach fünf τ ist der Ladevorgang zu ca. 99,3 % abgeschlossen, beim Entladen verbleiben ca. 0,67 %. Mathematisch gesehen erreicht das Exponential seine Grenze nicht in einer endlichen Zeit, für die Praxis reichen jedoch oft fünf Zeitkonstanten aus.",
-          "Beim Entladen wird die Quelle ausgeschaltet und der Kondensator überträgt Energie an den Widerstand. Die Richtung des Stroms ändert sich relativ zum Laden. Eine Erhöhung von R oder C verlangsamt beide Prozesse. Bei mehreren Widerständen verwendet τ den Ersatzwiderstand, den der Kondensator im betrachteten Modus sieht, unter Berücksichtigung der Schaltung und der Innenwiderstände der Quellen.",
+          "Ein entladener Kondensator wird über einen Widerstand R an eine ideale Quelle U₀ geschaltet. Anfangs ist die Kondensatorspannung null, der Strom beträgt U₀/R. Mit wachsender Ladung steigt die Kondensatorspannung, die Spannung am Widerstand sinkt und der Strom nimmt ab. Die Kondensatorspannung kann sich bei endlichem Strom nicht sprunghaft ändern.",
+          "Die Zeitkonstante τ = RC bestimmt die Geschwindigkeit. Nach einem τ hat die Spannung beim Laden etwa 63,2 % des Endwerts erreicht, beim Entladen ist sie auf 36,8 % gesunken. Nach fünf τ ist der Ladevorgang zu ca. 99,3 % abgeschlossen, beim Entladen bleiben ca. 0,67 %. Praktisch genügen oft fünf Zeitkonstanten.",
+          "Beim Entladen gibt der Kondensator seine Energie an den Widerstand ab. Die Stromrichtung kehrt sich gegenüber dem Laden um. Ein größeres R oder C verlangsamt beides. Bei mehreren Widerständen ist für τ der Ersatzwiderstand maßgeblich, den der Kondensator sieht, einschließlich der Innenwiderstände der Quellen.",
         ],
         formula: {
           expression:
             "τ = RC; Ucharge(t) = U₀(1 − e^(−t/τ)); Udel(t) = Uinit e^(−t/τ)",
           legend:
-            "τ und t – Zeit in Sekunden; R - Widerstand in Ohm; C ist die Kapazität in Farad; U₀ – Quellenspannung; Uinit ist die Anfangsspannung während der Entladung.",
-          note: "Die Ladeformel geht von einer Anfangsspannung von 0 V aus. Beim Laden gilt i(t) = (U₀/R)e^(−t/τ); Beim Entladen hängt das Vorzeichen des Stroms von der gewählten Richtung ab.",
+            "τ und t sind Zeiten in Sekunden; R ist der Widerstand in Ohm; C ist die Kapazität in Farad; U₀ ist die Quellenspannung; Uinit ist die Anfangsspannung beim Entladen.",
+          note: "Die Ladeformel gilt für die Anfangsspannung 0 V. Beim Laden gilt i(t) = (U₀/R)e^(−t/τ); beim Entladen hängt das Vorzeichen des Stroms von der gewählten Zählrichtung ab.",
         },
         example: {
           title: "Wie schnell lädt sich ein Kondensator auf?",
           given:
-            "R = 10 kOhm, C = 100 µF, U₀ = 5 V. Finden Sie τ und Spannung nach 1 s.",
+            "R = 10 kOhm, C = 100 µF, U₀ = 5 V. Gesucht: τ und die Spannung nach 1 s.",
           steps: [
             "Einheiten umrechnen: R = 10.000 Ohm; C = 0,000100 F.",
             "τ = RC = 10.000 · 0,000100 = 1 s.",
@@ -119,41 +119,41 @@ export const magnetismLessons = [
       },
       {
         id: "capacitor-energy",
-        title: "5. Elektrische Feldenergie",
+        title: "5. Energie des elektrischen Feldes",
         paragraphs: [
-          "Um den nächsten Ladungsanteil auf bereits geladene Platten zu übertragen, ist immer mehr Arbeit erforderlich: Die Spannung steigt von Null auf den Endwert U. Daher ist die Energie nicht gleich QU, sondern gleich QU/2. Das gleiche Ergebnis kann über die Kapazität und das Quadrat der Spannung geschrieben werden. Eine Verdoppelung der Spannung bei gleicher Kapazität erhöht die Energie um das Vierfache.",
-          "Beim Laden eines zunächst entladenen Kondensators von einer idealen Konstantspannungsquelle über einen Widerstand gibt die Quelle Energie an die CU² ab. Die Hälfte landet im Kondensator, die andere Hälfte wird in den Stromkreiswiderständen in Wärme umgewandelt. Diese Erklärung gilt speziell für dieses Ladeverfahren; Andere Energieübertragungsmethoden, beispielsweise ein Schaltwandler, können eine andere Verlustbilanz aufweisen.",
-          "Ein Kondensator kann schnell Energie abgeben und wird daher für Blitze, Spannungsglättung und kurzfristige Stromversorgung von Schaltkreisen verwendet. Für die langfristige Energiespeicherung ist eine Batterie in der Regel pro Masse energieeffizienter. Es ist notwendig, Geräte nicht nur nach Kapazität C zu vergleichen: Sie müssen die Betriebsspannung, den zulässigen Strom, den Leckstrom und die tatsächlichen Verluste berücksichtigen.",
+          "Jede weitere Ladung auf die bereits geladenen Platten zu bringen, kostet mehr Arbeit, denn die Spannung steigt von null auf U. Die Energie ist daher QU/2 und nicht QU. Bei doppelter Spannung und gleicher Kapazität wächst sie auf das Vierfache.",
+          "Lädt man einen entladenen Kondensator über einen Widerstand aus einer idealen Gleichspannungsquelle, gibt die Quelle die Energie CU² ab. Die Hälfte speichert der Kondensator, die andere Hälfte wird im Widerstand in Wärme umgesetzt. Das gilt nur für diese Ladeart; ein Schaltwandler hat eine andere Verlustbilanz.",
+          "Kondensatoren geben Energie schnell ab. Man nutzt sie für Blitzlicht, Glättung und die kurzzeitige Versorgung von Schaltungen. Zur langfristigen Speicherung ist ein Akkumulator je Masse meist besser. Vergleichen Sie Bauteile nicht nur nach C, sondern auch nach Nennspannung, zulässigem Strom, Leckstrom und Verlusten.",
         ],
         formula: {
           expression: "W = ½CU² = ½QU = Q²/(2C)",
           legend:
-            "W ist die Energie in Joule (J); C – Kapazität in F; U ist die Spannung in V; Q - Ladung in C.",
-          note: "Die Formeln beziehen sich auf einen linearen Kondensator mit konstanter Kapazität. In die Formel wird die tatsächliche Spannung eingesetzt, nicht die maximale Spannung aus der Markierung.",
+            "W ist die Energie in Joule (J); C ist die Kapazität in F; U ist die Spannung in V; Q ist die Ladung in C.",
+          note: "Die Formeln gelten für einen linearen Kondensator mit konstanter Kapazität. Einzusetzen ist die tatsächliche Spannung, nicht die Nennspannung.",
         },
         example: {
-          title: "Energiereserve",
-          given: "C = 1000 µF, U = 24 V. Finden Sie die Feldenergie.",
+          title: "Energiespeicher",
+          given: "C = 1000 µF, U = 24 V. Gesucht: Energie des Feldes.",
           steps: [
             "1000 µF = 0,001 F.",
             "W = 0,5 · 0,001 · 24² = 0,288 J.",
-            "Reduziert man die Spannung auf 12 V, beträgt die Energie 0,072 J: viermal weniger.",
+            "Bei 12 V beträgt die Energie 0,072 J: viermal weniger.",
           ],
           answer: "Bei 24 V speichert der Kondensator 0,288 J.",
         },
       },
       {
         id: "capacitor-real",
-        title: "6. Echtes Teil und ordnungsgemäße Prüfung",
+        title: "6. Reales Bauteil und richtiges Prüfen",
         paragraphs: [
-          "Ein echter Kondensator weist Kapazitätstoleranz, Leckstrom, äquivalenten Serienwiderstand ESR und parasitäre Induktivität auf. Leckage erklärt, warum ein isolierter, geladener Kondensator mit der Zeit an Spannung verliert. ESR verursacht eine Erwärmung durch den Wechselstrom. Bei hohen Frequenzen beschreibt ein ideales Modell C nicht mehr das gesamte Verhalten des Teils.",
-          "Zum Testen schalten Sie zunächst den Strom aus, entladen das Teil sicher und messen die verbleibende Spannung. Die Messung der Kapazität direkt im Stromkreis kann aufgrund benachbarter Komponenten zu einem falschen Ergebnis führen. Beachten Sie die Polarität der Sonden und die Empfehlungen des Gerätes. Blähungen, Elektrolytaustritt und Schäden am Gehäuse sind Anzeichen einer Fehlfunktion, ein normales Aussehen allein ist jedoch kein Beweis für die Funktionsfähigkeit.",
-          "Bei der Lösung von Problemen ist es sinnvoll, den Modus nacheinander zu bestimmen: Gleichstrom nach dem Einschwingen, transienter Prozess oder Wechselstrom. Wählen Sie dann den gewünschten Zusammenhang aus: Q = CU für Ladung, τ = RC für Zeit, W = CU²/2 für Energie. Ein Fehler um den Faktor einer Million tritt am häufigsten aufgrund der Ersetzung von Mikrofarad durch Farad auf; Konvertieren Sie Einheiten, bevor Sie Berechnungen durchführen.",
+          "Ein realer Kondensator hat eine Kapazitätstoleranz, einen Leckstrom, einen Ersatzserienwiderstand (ESR) und eine parasitäre Induktivität. Der Leckstrom entlädt einen isolierten Kondensator mit der Zeit. Der ESR erwärmt das Bauteil bei Wechselstrom. Bei hohen Frequenzen reicht das ideale Modell nicht mehr aus.",
+          "Zum Prüfen schalten Sie zuerst spannungsfrei, entladen das Bauteil sicher und messen die Restspannung. Eine Kapazitätsmessung in der Schaltung kann durch Nachbarbauteile verfälscht werden. Beachten Sie die Polung und die Hinweise des Messgeräts. Aufgewölbtes Gehäuse oder ausgetretener Elektrolyt weisen auf einen Defekt hin; ein unauffälliges Aussehen beweist aber keine Funktion.",
+          "Bestimmen Sie bei Aufgaben zuerst den Betriebsfall: Gleichstrom nach dem Einschwingen, Ausgleichsvorgang oder Wechselstrom. Wählen Sie dann die Formel: Q = CU für die Ladung, τ = RC für die Zeit, W = CU²/2 für die Energie. Der häufigste Fehler ist der Faktor eine Million durch verwechselte Mikrofarad und Farad. Rechnen Sie Einheiten vorher um.",
         ],
         callout: {
           type: "tip",
-          title: "Überprüfung des gesunden Menschenverstandes",
-          text: "Für ein konstantes C bedeutet ein größeres U ein größeres Q und ein viel größeres W. Für ein konstantes R bedeutet ein größeres C langsamer. Wenn die Berechnung das gegenteilige Verhältnis ergibt, überprüfen Sie die Formel und die Einheiten.",
+          title: "Plausibilitätsprüfung",
+          text: "Bei konstantem C bedeuten größeres U ein größeres Q und ein viel größeres W. Bei konstantem R bedeutet größeres C einen langsameren Vorgang. Liefert Ihre Rechnung das Gegenteil, prüfen Sie Formel und Einheiten.",
         },
       },
     ],
@@ -164,7 +164,7 @@ export const magnetismLessons = [
         symbol: "C",
         unit: "F",
         definition:
-          "Ein Element aus zwei Leitern mit einer Isolierung dazwischen, das die Energie eines elektrischen Feldes speichert.",
+          "Bauelement aus zwei Leitern mit Isolierung dazwischen, das Energie im elektrischen Feld speichert.",
       },
       {
         term: "Kapazität",
@@ -172,7 +172,7 @@ export const magnetismLessons = [
         symbol: "C",
         unit: "F",
         definition:
-          "Das Verhältnis des Ladungsmoduls einer Platte zur Spannung zwischen den Platten: C = Q/U.",
+          "Verhältnis des Betrags der Ladung einer Platte zur Spannung zwischen den Platten: C = Q/U.",
       },
       {
         term: "Dielektrikum",
@@ -180,7 +180,7 @@ export const magnetismLessons = [
         symbol: "εᵣ",
         unit: "dimensionslos",
         definition:
-          "Ein isolierendes Material, dessen Polarisation das elektrische Feld und die Kapazität beeinflusst.",
+          "Isolierstoff, dessen Polarisation das elektrische Feld und die Kapazität beeinflusst.",
       },
       {
         term: "Zeitkonstante",
@@ -188,7 +188,7 @@ export const magnetismLessons = [
         symbol: "τ",
         unit: "s",
         definition:
-          "Charakteristische Zeit einer RC-Schaltung: τ = RC. In dieser Zeit verringert sich die Abweichung vom Endwert um das e-fache.",
+          "Kennzeit einer RC-Schaltung: τ = RC. In dieser Zeit sinkt die Abweichung vom Endwert auf den e-ten Teil.",
       },
       {
         term: "Leckstrom",
@@ -196,7 +196,7 @@ export const magnetismLessons = [
         symbol: "Iut",
         unit: "A",
         definition:
-          "Durch eine unvollständige Isolierung fließt ein kleiner Strom, was zu einem langsamen Ladungsverlust führt.",
+          "Durch unvollkommene Isolation fließt ein kleiner Strom, der die Ladung langsam abbaut.",
       },
       {
         term: "Feldenergie",
@@ -204,23 +204,23 @@ export const magnetismLessons = [
         symbol: "W",
         unit: "J",
         definition:
-          "Während der Ladungstrennung gespeicherte Arbeit; für konstante Kapazität W = CU²/2.",
+          "Beim Aufbau des Feldes aufgewendete Arbeit; bei konstanter Kapazität W = CU²/2.",
       },
     ],
     summary: [
-      "Die Kapazität bezieht sich auf Ladung und Spannung: Q = CU; 1 F = 1 C/V.",
-      "Die Fläche der Platten und das Dielektrikum erhöhen die Kapazität, der Abstand zwischen den Platten verringert sie.",
-      "Die Behälter werden parallel gefaltet; Bei Reihenschaltung addieren sich ihre Umkehrwerte.",
-      "Der transiente Prozess RC hat eine Zeitkonstante τ = RC; five τ ist ein praktischer praktischer Leitfaden.",
+      "Kapazität verknüpft Ladung und Spannung: Q = CU; 1 F = 1 C/V.",
+      "Plattenfläche und Dielektrikum erhöhen die Kapazität, ein größerer Plattenabstand verringert sie.",
+      "Bei Parallelschaltung addieren sich die Kapazitäten; bei Reihenschaltung addieren sich die Kehrwerte.",
+      "Der RC-Ausgleichsvorgang hat die Zeitkonstante τ = RC; fünf τ sind ein praktischer Richtwert.",
       "Die Energie W = CU²/2 hängt vom Quadrat der Spannung ab.",
-      "Das Ausschalten der Stromversorgung garantiert nicht, dass am Kondensator keine Spannung anliegt.",
+      "Nach dem Abschalten kann am Kondensator noch Spannung anliegen.",
     ],
     quiz: [
       {
         id: "capacitor-1",
         type: "choice",
         question:
-          "Wie verändert sich die Kapazität eines Flachkondensators, wenn der Abstand zwischen den Platten verdoppelt wird und dabei Fläche und Dielektrikum erhalten bleiben?",
+          "Wie ändert sich die Kapazität eines Plattenkondensators, wenn der Plattenabstand verdoppelt wird (Fläche und Dielektrikum bleiben gleich)?",
         options: [
           "Wird halbiert",
           "Wird sich verdoppeln",
@@ -229,13 +229,13 @@ export const magnetismLessons = [
         ],
         answer: 0,
         explanation:
-          "Im Flachkondensatormodell ist C = ε₀εᵣA/d. Durch Erhöhen von d um die Hälfte wird C um die Hälfte reduziert.",
+          "Beim Plattenkondensator gilt C = ε₀εᵣA/d. Verdoppelt man d, halbiert sich C.",
       },
       {
         id: "capacitor-2",
         type: "numeric",
         question:
-          "Die Kapazität beträgt 200 μF, die Spannung beträgt 10 V. Ermitteln Sie den Ladungsmodul einer Platte in Milliculomb.",
+          "Die Kapazität beträgt 200 μF, die Spannung 10 V. Wie groß ist der Betrag der Ladung einer Platte in Millicoulomb?",
         answer: 2,
         unit: "mC",
         tolerance: 0.01,
@@ -245,7 +245,7 @@ export const magnetismLessons = [
         id: "capacitor-3",
         type: "choice",
         question:
-          "Auf welchen Bruchteil der Endspannung wird der zunächst entladene Kondensator nach einer Zeitkonstanten RC aufgeladen?",
+          "Auf welchen Anteil der Endspannung lädt sich ein entladener Kondensator nach einer Zeitkonstanten RC auf?",
         options: [
           "Ungefähr 36,8 %",
           "Ungefähr 50 %",
@@ -254,13 +254,13 @@ export const magnetismLessons = [
         ],
         answer: 2,
         explanation:
-          "U(τ)/U₀ = 1 − e⁻¹ ≈ 0,632. Der Wert von 36,8 % bezieht sich auf die verbleibende Spannung beim Entladen.",
+          "U(τ)/U₀ = 1 − e⁻¹ ≈ 0,632. Die 36,8 % beschreiben die Restspannung beim Entladen.",
       },
       {
         id: "capacitor-4",
         type: "numeric",
         question:
-          "Ein 1000 uF-Kondensator wird auf 10 V aufgeladen. Wie viel Energie speichert er in Joule?",
+          "Ein 1000-µF-Kondensator wird auf 10 V aufgeladen. Welche Energie speichert er in Joule?",
         answer: 0.05,
         unit: "J",
         tolerance: 0.001,
@@ -270,159 +270,159 @@ export const magnetismLessons = [
         id: "capacitor-5",
         type: "choice",
         question:
-          "Zwei zunächst entladene ideale Kondensatoren 10 µF und 20 µF sind in Reihe geschaltet. Welche Aussage ist wahr?",
+          "Zwei zunächst entladene ideale Kondensatoren (10 µF und 20 µF) liegen in Reihe. Welche Aussage ist richtig?",
         options: [
           "Beide müssen die gleiche Spannung haben.",
           "Bei 20 µF ist die Spannung doppelt so hoch",
           "Die Gesamtkapazität beträgt 30 µF",
-          "Bei 10 µF ist die Spannung doppelt so hoch",
+          "An 10 µF liegt die doppelte Spannung",
         ],
         answer: 3,
         explanation:
-          "Bei einer Reihenschaltung sind die Ladungsmodule gleich und U = Q/C. Bei einem Kondensator mit kleinerer Kapazität ist die Spannung höher: U₁/U₂ = C₂/C₁ = 2.",
+          "In der Reihenschaltung ist der Betrag der Ladung gleich, U = Q/C. Am Kondensator mit der kleineren Kapazität liegt die größere Spannung: U₁/U₂ = C₂/C₁ = 2.",
       },
     ],
   },
   {
     id: "magnets",
     number: 11,
-    title: "Magnete & magnetische Feldlinien",
-    german: "Magnete & magnetische Feldlinien",
+    title: "Magnete und magnetische Feldlinien",
+    german: "Magnete und magnetische Feldlinien",
     chapter: "5.1",
     category: "magnetism",
     duration: 32,
     description:
-      "Magnetische Pole, die Form und Richtung des Feldes, die Wirkung auf den Strom und die Bewegung von Ladungen – vom Kompass bis zum magnetischen Fluss.",
+      "Magnetpole, Form und Richtung des Feldes, Kraftwirkung auf Strom und bewegte Ladungen – vom Kompass bis zum magnetischen Fluss.",
     objectives: [
-      "Lesen Sie magnetische Linien richtig ab und bestimmen Sie die Richtung des Feldes mit einem Kompass.",
-      "Erklären Sie die Wirkung eines Magnetfeldes auf bewegte Ladungen und einen stromdurchflossenen Leiter.",
-      "Unterscheiden Sie zwischen magnetischer Induktion B und magnetischem Fluss Φ und berücksichtigen Sie die Ausrichtung der Oberfläche.",
+      "Lesen Sie magnetische Feldlinien richtig und bestimmen Sie die Feldrichtung mit einem Kompass.",
+      "Erklären Sie die Kraftwirkung eines Magnetfeldes auf bewegte Ladungen und stromdurchflossene Leiter.",
+      "Unterscheiden Sie die magnetische Flussdichte B vom magnetischen Fluss Φ und beachten Sie die Ausrichtung der Fläche.",
     ],
     sections: [
       {
         id: "magnets-poles",
         title: "1. Nord- und Südpol",
         paragraphs: [
-          "In einem gewöhnlichen Permanentmagneten gibt es einen Nordpol N und einen Südpol S. Gleiche Pole stoßen sich ab, ungleiche Pole ziehen sich an. Die besonders auffällige Wechselwirkung an den Enden eines Stabmagneten bedeutet nicht, dass das Feld nur dort existiert: Das Magnetfeld nimmt den Raum um und im Inneren des Magneten ein.",
-          "Wenn Sie einen Magneten zerbrechen, erhalten Sie keinen separaten Nordpol und keinen separaten Südpol. Jedes Fragment wird zu einem Magneten mit zwei Polen. Isolierte magnetische Ladungen oder Monopole werden in der konventionellen Elektrotechnik nicht beobachtet; Ein klassisches Magnetfeld hat keine Quellen und Senken analog zu einzelnen positiven und negativen elektrischen Ladungen.",
-          "Ein Permanentmagnet hält die Magnetisierung aufrecht, indem er mikroskopisch kleine magnetische Momente im Material anordnet. Eine einfache Erklärung bezieht dies auf magnetische Domänen – Bereiche mit gleichmäßiger Magnetisierung. Hitze, starke Gegenfelder und mechanische Beanspruchung können den Magneten schwächen; Der spezifische Widerstand hängt vom Material ab.",
+          "Ein Dauermagnet hat einen Nordpol N und einen Südpol S. Gleichnamige Pole stoßen sich ab, ungleichnamige ziehen sich an. Die Wirkung ist an den Enden eines Stabmagneten am stärksten. Das Magnetfeld erfüllt aber den ganzen Raum um und im Magneten.",
+          "Bricht man einen Magneten durch, erhält man keinen einzelnen Nord- oder Südpol. Jedes Teilstück ist wieder ein Magnet mit zwei Polen. Magnetische Einzelladungen (Monopole) sind nicht nachgewiesen. Das Magnetfeld hat daher keine Quellen und Senken wie das elektrische Feld.",
+          "Ein Dauermagnet behält seine Magnetisierung, weil die magnetischen Momente im Werkstoff geordnet sind. Vereinfacht erklärt man das mit magnetischen Domänen (Weiss-Bezirken), also Bereichen mit gleicher Magnetisierung. Hitze, starke Gegenfelder und mechanische Belastung schwächen den Magneten.",
         ],
         callout: {
           type: "insight",
-          title: "Ähnliche Wörter, unterschiedliche physische Objekte",
-          text: "Eine positive elektrische Ladung kann von einer negativen getrennt werden. Ein separater Nordpol eines gewöhnlichen Magneten kann nicht durch Schneiden erhalten werden: Jedes Stück hat sein eigenes Paar aus N und S.",
+          title: "Ähnliche Begriffe, unterschiedliche Größen",
+          text: "Eine positive elektrische Ladung lässt sich von einer negativen trennen. Einen einzelnen Nordpol erhält man durch Zerteilen nicht: Jedes Stück hat sein eigenes Paar N und S.",
         },
       },
       {
         id: "magnets-lines",
-        title: "2. Wie man magnetische Linien liest",
+        title: "2. Magnetische Feldlinien lesen",
         paragraphs: [
-          "Eine magnetische Linie ist eine imaginäre Kurve, deren Tangente an jedem Punkt die Richtung des magnetischen Induktionsvektors B angibt. Um einen Stabmagneten verläuft die Richtung außen von N nach S und innerhalb des Magneten von S nach N. Somit bilden die Linien geschlossene Konturen und beginnen nicht am Nordpol.",
-          "Die Linien eines Feldes schneiden sich nicht: Andernfalls müssten an einem Punkt zwei unterschiedliche Richtungen B zugewiesen werden. Wenn die Linien im gleichen herkömmlichen Diagramm dichter sind, wird das Feld normalerweise als stärker dargestellt. Die Anzahl der gezeichneten Linien wird vom Autor der Zeichnung gewählt: Die Linien selbst sind keine materiellen Fäden und haben keine universelle Größe.",
-          "In einem nahezu gleichmäßigen Feld erscheinen die Linien in einer flachen Zeichnung parallel und im gleichen Abstand. Das Feld innerhalb eines langen Magneten oder zwischen geeigneten Polstücken kann über einen begrenzten Bereich als annähernd gleichmäßig angesehen werden. Es ist an den Rändern gewölbt, so dass es unmöglich ist, ein einfaches Modell ungeprüft auf den gesamten Raum zu übertragen.",
+          "Eine Feldlinie ist eine gedachte Kurve. Ihre Tangente zeigt in jedem Punkt in die Richtung der magnetischen Flussdichte B. Außerhalb eines Stabmagneten verlaufen die Feldlinien von N nach S, im Inneren von S nach N. Sie sind also in sich geschlossen.",
+          "Feldlinien schneiden sich nie, sonst hätte B in einem Punkt zwei Richtungen. Dichtere Linien stehen in Zeichnungen für ein stärkeres Feld. Wie viele Linien man zeichnet, ist aber Konvention. Feldlinien sind keine realen Fäden.",
+          "In einem nahezu homogenen Feld verlaufen die Linien parallel und im gleichen Abstand. Das gilt etwa im Inneren einer langen Spule oder zwischen passenden Polschuhen, nur in einem begrenzten Bereich. Am Rand ist das Feld gewölbt.",
         ],
         callout: {
           type: "tip",
-          title: "Das Feld steht senkrecht zum Blatt",
-          text: "Das Symbol ⊙ bezeichnet den Vektor zum Beobachter: Wir sehen die Spitze eines Pfeils. Das Symbol ⊗ bezeichnet den Vektor vom Beobachter: Wir sehen die Feder des Pfeils. Dies ist eine praktische Richtungsangabe bei dreidimensionalen Problemen.",
+          title: "Das Feld steht senkrecht zur Zeichenebene",
+          text: "Das Symbol ⊙ bedeutet: Der Vektor zeigt auf den Betrachter zu (Pfeilspitze). Das Symbol ⊗ bedeutet: Der Vektor zeigt vom Betrachter weg (Pfeilende). So lassen sich dreidimensionale Aufgaben übersichtlich darstellen.",
         },
       },
       {
         id: "magnets-compass",
-        title: "3. Kompass, Erdfeld und Feldüberlagerung",
+        title: "3. Kompass, Erdfeld und Überlagerung von Feldern",
         paragraphs: [
-          "Die kleine Magnetnadel neigt dazu, sich entlang des lokalen Feldes zu drehen. Die Richtung, in die das nördliche Ende des Pfeils zeigt, wird als Richtung B angenommen. In diesem Fall zeigt der Kompass die Richtung des Gesamtfeldes der Erde, benachbarter Magnete und Ströme in Leitern an. Daher kann eine Messung in der Nähe eines Stahltisches, eines Lautsprechers oder eines Stromkabels stark von den Erwartungen abweichen.",
-          "Das nördliche Ende des Kompasses zeigt ungefähr auf den geografischen Norden. Im magnetischen Sinne gibt es in der Nähe des geografischen Nordpols der Erde einen Bereich mit südlicher magnetischer Polarität, der das nördliche Ende der Nadel anzieht. Geografische und magnetische Richtungen stimmen nicht genau überein: Der Winkel zwischen ihnen wird magnetische Deklination genannt. Auch die Feldlinien der Erde sind zum Horizont geneigt.",
-          "Magnetische Induktion ist ein Vektor. Bei der Überlappung mehrerer Felder werden Vektoren hinzugefügt, nicht nur deren Module. Zwei identische Felder, die in entgegengesetzte Richtungen gerichtet sind, können sich an einem bestimmten Punkt gegenseitig aufheben. Rechtwinklige Felder geben die resultierende Richtung zwischen ihnen an. Das Superpositionsprinzip wird unter Berücksichtigung der Tatsache angewendet, dass magnetische Materialien unter dem Einfluss eines allgemeinen Feldes ihren Zustand ändern können.",
+          "Eine kleine Magnetnadel richtet sich nach dem örtlichen Feld aus. Das Nordende der Nadel zeigt in Richtung von B. Der Kompass zeigt dabei das Gesamtfeld aus Erdfeld, Magneten und Strömen. Nahe Stahltischen, Lautsprechern oder Stromleitungen weicht die Anzeige daher stark ab.",
+          "Das Nordende der Nadel zeigt ungefähr zum geografischen Norden. Dort liegt magnetisch ein Südpol, der das Nordende der Nadel anzieht. Geografischer und magnetischer Norden stimmen nicht überein; der Winkel dazwischen heißt Missweisung (Deklination). Die Feldlinien des Erdfeldes sind außerdem gegen den Horizont geneigt (Inklination).",
+          "Die magnetische Flussdichte ist ein Vektor. Bei Überlagerung addiert man Vektoren, nicht nur Beträge. Zwei gleich große, entgegengesetzte Felder heben sich in einem Punkt auf. Bei senkrechten Feldern ergibt sich die Richtung dazwischen. Beachten Sie: Magnetische Werkstoffe ändern unter dem Gesamtfeld ihren Zustand.",
         ],
         formula: {
           expression:
             "B⃗total = B⃗₁ + B⃗₂; für senkrechte Felder: Btotal = √(B₁² + B₂²)",
           legend:
-            "B⃗ ist der magnetische Induktionsvektor; B ist sein Modul in Tesla (T).",
-          note: "Die herkömmliche arithmetische Modulo-Addition ist nur für gleichgerichtete Vektoren gültig.",
+            "B⃗ ist der Vektor der magnetischen Flussdichte; B ist sein Betrag in Tesla (T).",
+          note: "Die einfache Addition der Beträge gilt nur für gleichgerichtete Vektoren.",
         },
         example: {
           title: "Zwei Felder in entgegengesetzter Richtung",
           given:
-            "Am ausgewählten Punkt ist B₁ = 4 mT nach rechts gerichtet, B₂ = 1,5 mT ist nach links gerichtet.",
+            "Im betrachteten Punkt zeigt B₁ = 4 mT nach rechts und B₂ = 1,5 mT nach links.",
           steps: [
-            "Wir wählen die positive Richtung nach rechts.",
-            "Wir addieren die Projektionen: Bx = 4 − 1,5 = 2,5 mT.",
-            "Ein positives Ergebnis bedeutet, dass das gesamte Feld nach rechts gerichtet ist.",
+            "Wir legen die positive Richtung nach rechts fest.",
+            "Wir addieren die Komponenten: Bx = 4 − 1,5 = 2,5 mT.",
+            "Das positive Vorzeichen bedeutet: Das Gesamtfeld zeigt nach rechts.",
           ],
           answer:
-            "Die gesamte magnetische Induktion beträgt 2,5 mT und ist nach rechts gerichtet.",
+            "Die resultierende magnetische Flussdichte beträgt 2,5 mT und zeigt nach rechts.",
         },
       },
       {
         id: "magnets-force",
-        title: "4. Das Magnetfeld beeinflusst die Ladungsbewegung",
+        title: "4. Kraft des Magnetfeldes auf bewegte Ladungen",
         paragraphs: [
-          "Eine bewegte Ladung wird durch die magnetische Komponente der Lorentzkraft beeinflusst. Sein Modul hängt von Ladung, Geschwindigkeit, magnetischer Induktion und dem Winkel zwischen Geschwindigkeit und Feld ab. Wenn die Ladung ruht oder sich entlang des Feldes bewegt, ist diese Kraft Null. Bei der Bewegung über das Feld ist die Kraft maximal und steht immer senkrecht sowohl zur Geschwindigkeit als auch zu B.",
-          "Für eine positive Ladung ist die Richtung durch das Vektorprodukt v × B gegeben: Sie kann durch die Rechte-Hand-Regel bestimmt werden. Bei einer negativen Ladung ist die Richtung umgekehrt. Da die Magnetkraft senkrecht zur Geschwindigkeit wirkt, verrichtet sie selbst keine Arbeit an einer Punktladung und verändert deren kinetische Energie nicht. Sie ändert die Richtung; Das elektrische Feld hingegen kann seine Geschwindigkeit modulo ändern.",
-          "In einem Leiter bewegen sich Ladungsträger geordnet, sodass das Feld auf den stromdurchflossenen Leiter wirkt. Für einen geraden Abschnitt der Länge l in einem gleichmäßigen Feld gilt der Kraftmodul F = BIl sin α, wobei der Winkel α zwischen der Richtung des bedingten positiven Stroms und B gemessen wird. Auf diesem Zusammenspiel basiert das Prinzip des Elektromotors.",
+          "Auf eine bewegte Ladung wirkt der magnetische Anteil der Lorentzkraft. Er hängt von Ladung, Geschwindigkeit, magnetischer Flussdichte und dem Winkel zwischen v und B ab. Ruht die Ladung oder bewegt sie sich entlang des Feldes, ist die Kraft null. Bei Bewegung quer zum Feld ist sie maximal und steht senkrecht zu v und zu B.",
+          "Für eine positive Ladung gibt das Kreuzprodukt v × B die Kraftrichtung an (Rechte-Hand-Regel). Bei einer negativen Ladung ist die Richtung umgekehrt. Weil die Kraft senkrecht zur Geschwindigkeit wirkt, verrichtet sie keine Arbeit und ändert die kinetische Energie nicht. Sie lenkt nur ab. Ein elektrisches Feld kann dagegen den Betrag der Geschwindigkeit ändern.",
+          "In einem Leiter bewegen sich die Ladungsträger geordnet, daher wirkt das Feld auf den stromdurchflossenen Leiter. Für ein gerades Leiterstück der Länge l in einem homogenen Feld gilt F = BIl sin α. Dabei ist α der Winkel zwischen der technischen Stromrichtung und B. Darauf beruht der Elektromotor.",
         ],
         formula: {
           expression: "Fmag = |q| · v · B · sin α; Fprov = B I l sin α",
           legend:
-            "F – Kraft in N; q ist die Ladung in C; v – Geschwindigkeit in m/s; B – magnetische Induktion in T; I - Strom in A; l - aktive Länge in m.",
-          note: "Die Formel für einen Leiter geht von einem geraden Abschnitt in einem gleichmäßigen Feld aus. Vektorform für Ladung: F⃗mag = q(v⃗ × B⃗).",
+            "F ist die Kraft in N; q ist die Ladung in C; v ist die Geschwindigkeit in m/s; B ist die magnetische Flussdichte in T; I ist der Strom in A; l ist die wirksame Länge in m.",
+          note: "Die Leiterformel gilt für ein gerades Leiterstück im homogenen Feld. Vektorform für eine Ladung: F⃗mag = q(v⃗ × B⃗).",
         },
         example: {
-          title: "Kraft auf den Leiter",
+          title: "Kraft auf einen Leiter",
           given:
             "B = 0,20 T, I = 3 A, l = 10 cm. Der Leiter steht senkrecht zum Feld.",
           steps: [
             "Länge umrechnen: l = 0,10 m.",
-            "Da α = 90°, ist sin α = 1.",
+            "Wegen α = 90° ist sin α = 1.",
             "F = BIl = 0,20 3 0,10 = 0,060 N.",
-            "Wenn der Leiter entlang des Feldes gedreht wird, wird α zu 0° und die Kraft ist Null.",
+            "Dreht man den Leiter in Feldrichtung, wird α = 0° und die Kraft null.",
           ],
           answer:
-            "Der Kraftmodul beträgt 0,060 N; seine Richtung ist senkrecht zum Strom und Feld.",
+            "Die Kraft beträgt 0,060 N; sie steht senkrecht zu Strom und Feld.",
         },
       },
       {
         id: "magnets-flux",
         title:
-          "5. Magnetische Induktion und Fluss sind unterschiedliche Größen",
+          "5. Magnetische Flussdichte und magnetischer Fluss sind verschiedene Größen",
         paragraphs: [
-          "Die magnetische Induktion B charakterisiert das Feld an einem bestimmten Punkt und wird in Tesla gemessen. Der magnetische Fluss Φ ist relativ zur gewählten Oberfläche: Er berücksichtigt, wie stark das Feld ist, wie groß die Fläche ist und wie diese Fläche ausgerichtet ist. Daher kann dasselbe Feld unterschiedliche Flüsse durch verschiedene Frames erzeugen.",
-          "Für eine ebene Fläche in einem gleichmäßigen Feld gilt Φ = BA cos α. Dabei ist α der Winkel zwischen B und der Normalen, also senkrecht zur Oberfläche, und nicht der Winkel zwischen B und der Stufe selbst. Wenn das Feld den Rahmen senkrecht zu seiner Stufe durchquert, ist α = 0° und der Flussmodul ist maximal. Liegen die Linien in der Rahmenebene, ist α = 90° und der Fluss ist Null.",
-          "Der Fluss kann positiv oder negativ sein: Das Vorzeichen hängt von der gewählten Normalenrichtung ab. Bei einem ungleichmäßigen Feld wird die Oberfläche gedanklich in kleine Bereiche unterteilt und die Flüsse durch diese werden aufsummiert. Der gesamte magnetische Fluss durch jede geschlossene Oberfläche ist Null: Wie viele Linien treten ein, so viele treten aus. Dies ist eine weitere Formulierung der Abwesenheit magnetischer Monopole.",
+          "Die magnetische Flussdichte B beschreibt das Feld in einem Punkt und wird in Tesla gemessen. Der magnetische Fluss Φ gilt für eine gewählte Fläche. Er hängt von der Flussdichte, der Flächengröße und der Ausrichtung der Fläche ab. Dasselbe Feld liefert daher durch verschiedene Flächen unterschiedliche Flüsse.",
+          "Für eine ebene Fläche im homogenen Feld gilt Φ = BA cos α. Dabei ist α der Winkel zwischen B und der Flächennormalen, nicht der Winkel zur Fläche selbst. Durchsetzt das Feld die Fläche senkrecht, ist α = 0° und der Fluss maximal. Verlaufen die Feldlinien in der Flächenebene, ist α = 90° und der Fluss null.",
+          "Das Vorzeichen des Flusses hängt von der gewählten Richtung der Normalen ab. Bei einem inhomogenen Feld teilt man die Fläche in kleine Stücke und addiert deren Flüsse. Durch jede geschlossene Fläche ist der Gesamtfluss null: So viele Linien eintreten, so viele treten aus. Das ist eine weitere Formulierung dafür, dass es keine magnetischen Monopole gibt.",
         ],
         formula: {
           expression: "Φ = B · A · cos α; 1 Wb = 1 T m²",
           legend:
-            "Φ – magnetischer Fluss in Webers (Wb); A – Fläche in m²; α ist der Winkel zwischen B und der ausgewählten Flächennormalen.",
-          note: "Eine einfache Formel gilt für eine ebene Fläche in einem gleichmäßigen Feld. Für den allgemeinen Fall Φ = ∫ B⃗ · dA⃗.",
+            "Φ ist der magnetische Fluss in Weber (Wb); A ist die Fläche in m²; α ist der Winkel zwischen B und der Flächennormalen.",
+          note: "Die einfache Formel gilt für eine ebene Fläche im homogenen Feld. Allgemein gilt Φ = ∫ B⃗ · dA⃗.",
         },
         example: {
-          title: "Durch Drehen des Rahmens ändert sich der Fluss",
+          title: "Beim Drehen der Leiterschleife ändert sich der Fluss",
           given:
             "B = 0,10 T, A = 20 cm², Winkel zwischen Feld und Normale α = 60°.",
           steps: [
-            "Die Fläche übersetzen wir als Quadrat der Länge: 20 cm² = 20 · 10⁻⁴ m² = 0,002 m².",
+            "Fläche umrechnen: 20 cm² = 20 · 10⁻⁴ m² = 0,002 m².",
             "cos 60° = 0,5.",
             "Φ = 0,10 · 0,002 · 0,5 = 0,0001 Wb.",
-            "0,0001 Wb = 0,10 mWb. Bei α = 0° wäre der Durchfluss doppelt so groß.",
+            "0,0001 Wb = 0,10 mWb. Bei α = 0° wäre der Fluss doppelt so groß.",
           ],
           answer: "Der magnetische Fluss beträgt 0,10 mWb.",
         },
       },
       {
         id: "magnets-materials",
-        title: "6. Welche Materialien interagieren mit einem Magneten?",
+        title: "6. Welche Werkstoffe reagieren auf Magnete?",
         paragraphs: [
-          "Ferromagnetische Materialien wie Eisen, Nickel und Kobalt können unter den richtigen Bedingungen stark magnetisiert werden. In weichmagnetischen Materialien ändert sich die Magnetisierung leicht: Sie eignen sich für die Kerne von Elektromagneten und Transformatoren. Hartmagnetische Materialien behalten die Magnetisierung besser bei und werden in Permanentmagneten verwendet. Die Wörter „weich“ und „hart“ beschreiben hier magnetisches Verhalten, nicht mechanische Härte.",
-          "Nicht jedes Metall wird spürbar von einem Permanentmagneten angezogen. Kupfer und Aluminium verhalten sich nicht wie Eisen. Paramagnetische Materialien verstärken das äußere Feld nur schwach, während diamagnetische Materialien es nur schwach schwächen. Diese kleinen Effekte machen sich bei einfachen Unterrichtserfahrungen meist nicht bemerkbar, machen aber bei präzisen Messungen und speziellen Geräten einen Unterschied.",
-          "Stahlgegenstände verändern das Feldmuster und starke Magnete können stark voneinander angezogen werden und Finger einklemmen. Für pädagogische Experimente genügen kleine Magnete, ein Kompass und sichere Ströme. Bei empfindlichen Geräten und medizinischen Implantaten müssen die Herstelleranweisungen eingehalten werden. Die Stärke des Magneten kann nicht visuell bestimmt werden.",
+          "Ferromagnetische Werkstoffe wie Eisen, Nickel und Kobalt lassen sich stark magnetisieren. Weichmagnetische Werkstoffe ändern ihre Magnetisierung leicht; sie eignen sich für Kerne von Elektromagneten und Transformatoren. Hartmagnetische Werkstoffe behalten ihre Magnetisierung und werden für Dauermagnete verwendet. „Weich“ und „hart“ beziehen sich hier nicht auf die mechanische Härte.",
+          "Nicht jedes Metall wird von einem Dauermagneten angezogen. Kupfer und Aluminium verhalten sich anders als Eisen. Paramagnetische Stoffe verstärken ein äußeres Feld nur schwach, diamagnetische schwächen es nur schwach. Im einfachen Versuch fällt das kaum auf, bei Präzisionsmessungen spielt es eine Rolle.",
+          "Stahlteile verändern das Feldbild. Starke Magnete ziehen sich kräftig an und können Finger einklemmen. Für Versuche genügen kleine Magnete, ein Kompass und ungefährliche Ströme. Beachten Sie bei empfindlichen Geräten und medizinischen Implantaten die Herstellerangaben. Die Stärke eines Magneten lässt sich nicht erkennen.",
         ],
         callout: {
           type: "insight",
-          title: "Was zeigen die Erfahrungen mit Sägemehl wirklich?",
-          text: "Eisenspäne werden im Feld magnetisiert und ausgerichtet, wodurch ihre Form sichtbar wird. Sie zeigen ein Richtungsmuster, messen jedoch nicht den Wert von B und verändern selbst das Feld geringfügig.",
+          title: "Was zeigt der Eisenspäne-Versuch wirklich?",
+          text: "Eisenspäne werden im Feld magnetisiert und richten sich aus, sodass das Feldbild sichtbar wird. Sie zeigen die Richtung, messen aber nicht den Wert von B und verändern das Feld etwas.",
         },
       },
     ],
@@ -433,7 +433,7 @@ export const magnetismLessons = [
         symbol: "B⃗",
         unit: "T",
         definition:
-          "Feld, das durch die Bewegung von Ladungen und Magnetisierung entsteht; wirkt auf bewegte Ladungen und magnetische Momente.",
+          "Feld, das von bewegten Ladungen und Magnetisierung erzeugt wird und auf bewegte Ladungen und magnetische Momente wirkt.",
       },
       {
         term: "Magnetische Feldlinie",
@@ -441,7 +441,7 @@ export const magnetismLessons = [
         symbol: "—",
         unit: "—",
         definition:
-          "Eine imaginäre Kurve, deren Tangente entlang des magnetischen Induktionsvektors gerichtet ist.",
+          "Gedachte Kurve, deren Tangente in Richtung des Vektors der magnetischen Flussdichte zeigt.",
       },
       {
         term: "Magnetische Flussdichte",
@@ -449,7 +449,7 @@ export const magnetismLessons = [
         symbol: "B",
         unit: "T",
         definition:
-          "Eine Vektorgröße, die ein Magnetfeld beschreibt und in die Formel für die Magnetkraft eingeht.",
+          "Vektorgröße, die das Magnetfeld beschreibt und in die Formel der magnetischen Kraft eingeht.",
       },
       {
         term: "Magnetischer Fluss",
@@ -457,7 +457,7 @@ export const magnetismLessons = [
         symbol: "Φ",
         unit: "Wb",
         definition:
-          "Fluss des Vektors B durch eine orientierte Oberfläche; für ein einheitliches Feld Φ = BA cos α.",
+          "Fluss des Vektors B durch eine orientierte Fläche; im homogenen Feld Φ = BA cos α.",
       },
       {
         term: "Lorentzkraft",
@@ -465,7 +465,7 @@ export const magnetismLessons = [
         symbol: "F",
         unit: "N",
         definition:
-          "Kraft auf eine Ladung in einem elektromagnetischen Feld; der magnetische Anteil ist gleich q(v × B). In der Gesamtkraft ist auch qE enthalten.",
+          "Kraft auf eine Ladung im elektromagnetischen Feld; der magnetische Anteil beträgt q(v × B). In der Gesamtkraft ist auch qE enthalten.",
       },
       {
         term: "Ferromagnetischer Stoff",
@@ -473,53 +473,53 @@ export const magnetismLessons = [
         symbol: "—",
         unit: "—",
         definition:
-          "Ein Material mit starker Magnetisierung, die mit der Ordnung magnetischer Momente und Domänen verbunden ist.",
+          "Werkstoff mit starker Magnetisierung, die auf der Ordnung magnetischer Momente und Domänen beruht.",
       },
     ],
     summary: [
-      "Ein gewöhnlicher Magnet hat immer Nord- und Südpolarität; Beim Schneiden wird kein separater Pol ausgewählt.",
-      "Außerhalb des Magneten verlaufen die Linien B von N nach S, innen von S nach N; Die Leitungen sind geschlossen.",
-      "Das nördliche Ende des Kompasses zeigt die Richtung des lokalen Zusammenfassungsfelds an.",
-      "Die magnetische Kraft ist senkrecht zur Geschwindigkeit der Ladung; bei Bewegung entlang B ist es gleich Null.",
-      "B wird in Tesla gemessen, Φ in Weber; Die Strömung hängt von der Oberfläche und der Ausrichtung ab.",
-      "Bei Φ = BA cos α wird der Winkel relativ zur Flächennormalen gemessen.",
+      "Ein Magnet hat immer Nord- und Südpol; beim Zerteilen entsteht kein einzelner Pol.",
+      "Außerhalb des Magneten verlaufen die Feldlinien von N nach S, innen von S nach N; sie sind geschlossen.",
+      "Das Nordende der Kompassnadel zeigt die Richtung des örtlichen Feldes.",
+      "Die magnetische Kraft steht senkrecht zur Geschwindigkeit der Ladung; bei Bewegung entlang B ist sie null.",
+      "B wird in Tesla gemessen, Φ in Weber; der Fluss hängt von Fläche und Ausrichtung ab.",
+      "Bei Φ = BA cos α wird der Winkel zur Flächennormalen gemessen.",
     ],
     quiz: [
       {
         id: "magnets-1",
         type: "choice",
         question:
-          "Was passiert, wenn ein Stabmagnet in zwei Teile zerschnitten wird?",
+          "Was geschieht, wenn man einen Stabmagneten in zwei Teile zerbricht?",
         options: [
-          "Ein Teil wird nur der Nordpol sein, der andere nur der Südpol",
-          "Die magnetischen Eigenschaften werden definitiv vollständig verschwinden",
-          "Jedes Stück erhält einen Nord- und einen Südpol",
-          "Beide Teile erhalten nur die Nordpole",
+          "Ein Teil hat nur den Nordpol, der andere nur den Südpol",
+          "Die magnetischen Eigenschaften verschwinden vollständig",
+          "Jedes Teilstück hat einen Nord- und einen Südpol",
+          "Beide Teile haben nur einen Nordpol",
         ],
         answer: 2,
         explanation:
-          "Durch das Schneiden eines normalen Magneten werden keine magnetischen Monopole freigesetzt. Es entstehen kleinere Magnete mit beiden Polen.",
+          "Beim Zerteilen eines Magneten entstehen keine Monopole, sondern kleinere Magnete mit zwei Polen.",
       },
       {
         id: "magnets-2",
         type: "choice",
         question:
-          "Welche Richtung haben die magnetischen Linien auf der Außenseite eines Stabmagneten?",
+          "Welche Richtung haben die Feldlinien außerhalb eines Stabmagneten?",
         options: [
           "Von N nach S",
           "Von S nach N",
-          "Von positiver zu negativer Ladung",
-          "Immer im Kreis um den Magneten",
+          "Von der positiven zur negativen Ladung",
+          "Immer kreisförmig um den Magneten",
         ],
         answer: 0,
         explanation:
-          "Außerhalb des Magneten verläuft die Richtung B vom Nord- zum Südpol. Im Inneren verlaufen die Linien von S nach N und bilden geschlossene Konturen.",
+          "Außerhalb des Magneten verlaufen die Feldlinien von N nach S. Im Inneren verlaufen sie von S nach N und sind geschlossen.",
       },
       {
         id: "magnets-3",
         type: "numeric",
         question:
-          "Ein 0,20 m langer Leiter mit einem Strom von 2 A steht senkrecht zu einem gleichmäßigen Feld B = 0,50 T. Finden Sie die Kraft in Newton.",
+          "Ein 0,20 m langer Leiter führt 2 A und steht senkrecht zu einem homogenen Feld B = 0,50 T. Wie groß ist die Kraft in Newton?",
         answer: 0.2,
         unit: "N",
         tolerance: 0.005,
@@ -529,27 +529,27 @@ export const magnetismLessons = [
         id: "magnets-4",
         type: "numeric",
         question:
-          "Feld B = 0,20 T senkrecht zur Rahmenebene mit einer Fläche von 0,01 m². Finden Sie das Thread-Modul in Milliwebers.",
+          "Ein Feld B = 0,20 T steht senkrecht zu einer Fläche von 0,01 m². Wie groß ist der magnetische Fluss in Milliweber?",
         answer: 2,
         unit: "mWb",
         tolerance: 0.01,
         explanation:
-          "Das Feld ist parallel zur Normalen, also cos α = 1. Φ = BA = 0,20 · 0,01 = 0,002 Wb = 2 mWb.",
+          "Das Feld ist parallel zur Flächennormalen, also cos α = 1. Φ = BA = 0,20 · 0,01 = 0,002 Wb = 2 mWb.",
       },
       {
         id: "magnets-5",
         type: "choice",
         question:
-          "Die positive Ladung bewegt sich genau entlang eines gleichmäßigen Magnetfeldes. Was ist die magnetische Komponente der Lorentzkraft?",
+          "Eine positive Ladung bewegt sich genau entlang eines homogenen Magnetfeldes. Wie groß ist der magnetische Anteil der Lorentzkraft?",
         options: [
           "qvB",
           "qB/v",
-          "Es richtet sich immer gegen die Geschwindigkeit",
+          "Sie wirkt immer entgegen der Geschwindigkeit",
           "Null",
         ],
         answer: 3,
         explanation:
-          "Fmag = |q|vB sin α. Bei der Bewegung entlang des Feldes gilt α = 0° und sin α = 0, es entsteht also keine magnetische Kraft.",
+          "Fmag = |q|vB sin α. Bei Bewegung entlang des Feldes ist α = 0° und sin α = 0, also entsteht keine magnetische Kraft.",
       },
     ],
   },
@@ -562,35 +562,35 @@ export const magnetismLessons = [
     category: "magnetism",
     duration: 38,
     description:
-      "Wie Strom ein Feld erzeugt, warum eine Spule zu einem Magneten wird und wie eine Änderung des magnetischen Flusses elektrische Spannung erzeugt.",
+      "Wie Strom ein Magnetfeld erzeugt, warum eine Spule zum Magneten wird und wie eine Änderung des magnetischen Flusses eine Spannung induziert.",
     objectives: [
-      "Bestimmen Sie die Richtung des Feldes von Leiter und Spule in Stromrichtung.",
-      "Wenden Sie das Gesetz der elektromagnetischen Induktion und die Lenzsche Regel an.",
-      "Erklären Sie die Selbstinduktion, das Prinzip von Motor, Generator und Transformator.",
+      "Bestimmen Sie die Richtung des Magnetfeldes von Leiter und Spule aus der Stromrichtung.",
+      "Wenden Sie das Induktionsgesetz und die Lenzsche Regel an.",
+      "Erklären Sie Selbstinduktion sowie die Funktionsweise von Motor, Generator und Transformator.",
     ],
     sections: [
       {
         id: "electromagnetism-wire",
         title: "1. Strom erzeugt ein Magnetfeld",
         paragraphs: [
-          "Das Magnetfeld existiert nicht nur um Permanentmagnete herum. Elektrischer Strom in einem Leiter erzeugt ebenfalls ein Feld. Um einen langen geraden Draht verlaufen die Linien B in Form konzentrischer Kreise, die in Ebenen senkrecht zum Draht liegen. Der Mittelpunkt jedes Kreises liegt auf der Achse des Drahtes.",
-          "Die Richtung des Feldes lässt sich anhand der Regel der rechten Hand ermitteln: Der Daumen wird entlang des bedingten positiven Stroms geführt, angewinkelte Finger zeigen die Richtung der Magnetlinien an. In einem Metalldraht driften Elektronen entgegengesetzt zum herkömmlichen Strom, die Regeln verwenden hierfür jedoch die Richtung des Stroms. Eine Änderung der Stromrichtung ändert die Richtung des Feldes.",
-          "Im Vakuum oder in der Luft, entfernt von den Enden eines langen dünnen Drahtes, ist B proportional zum Strom und umgekehrt proportional zum Abstand zur Achse. Bei doppelter Entfernung ist das Feld doppelt so schwach, nicht viermal schwächer. Die Formel bezieht sich auf einen idealisierten langen geraden Draht und die Punkte außerhalb davon; benachbarte Leiter erzeugen zusätzliche Felder.",
+          "Ein Magnetfeld gibt es nicht nur bei Dauermagneten. Auch ein stromdurchflossener Leiter erzeugt eins. Um einen langen geraden Draht verlaufen die Feldlinien als konzentrische Kreise in Ebenen senkrecht zum Draht. Der Mittelpunkt liegt auf der Drahtachse.",
+          "Die Richtung folgt aus der Rechte-Hand-Regel: Der Daumen zeigt in die technische Stromrichtung, die gekrümmten Finger zeigen die Richtung der Feldlinien. Im Metalldraht wandern die Elektronen entgegen der technischen Stromrichtung, die Regel nutzt aber diese. Kehrt der Strom um, kehrt auch das Feld um.",
+          "In Vakuum oder Luft ist B weit entfernt von den Drahtenden proportional zum Strom und umgekehrt proportional zum Abstand von der Achse. Bei doppeltem Abstand halbiert sich das Feld, es sinkt nicht auf ein Viertel. Die Formel gilt für einen idealisierten langen, geraden Draht; benachbarte Leiter erzeugen zusätzliche Felder.",
         ],
         formula: {
           expression: "B = μ₀I / (2πr)",
           legend:
-            "B – magnetische Induktion in T; I - Strom in A; r ist der Abstand zur Drahtachse in m; μ₀ ≈ 1,256637 · 10⁻⁶ H/m.",
-          note: "Modell eines langen geraden Drahtes im Vakuum; für Luft reicht in der Regel die gleiche Näherungsformel aus.",
+            "B ist die magnetische Flussdichte in T; I ist der Strom in A; r ist der Abstand zur Drahtachse in m; μ₀ ≈ 1,256637 · 10⁻⁶ H/m (magnetische Feldkonstante).",
+          note: "Modell eines langen geraden Drahtes im Vakuum; für Luft genügt dieselbe Näherung.",
         },
         example: {
-          title: "Feld in der Nähe eines geraden Kabels",
-          given: "I = 10 A, Abstand r = 2 cm. Die Umgebung ist Luft.",
+          title: "Feld in der Nähe eines geraden Leiters",
+          given: "I = 10 A, Abstand r = 2 cm. Das Medium ist Luft.",
           steps: [
-            "r = 0,020 m; wir nehmen μ ≈ μ₀.",
+            "r = 0,020 m; wir setzen μ ≈ μ₀.",
             "B = (4π · 10⁻⁷ · 10)/(2π · 0,020) ≈ 1,0 · 10⁻⁴ T.",
             "1,0 · 10⁻⁴ T = 0,10 mT = 100 µT.",
-            "Die Richtung am ausgewählten Punkt wird durch die Rechte-Hand-Regel und nicht nur durch eine numerische Formel bestimmt.",
+            "Die Richtung in einem Punkt ergibt sich aus der Rechte-Hand-Regel, nicht aus der Formel.",
           ],
           answer: "B ≈ 0,10 mT im Abstand von 2 cm.",
         },
@@ -599,109 +599,109 @@ export const magnetismLessons = [
         id: "electromagnetism-coil",
         title: "2. Spule und Elektromagnet",
         paragraphs: [
-          "Wird der Draht zu einer Spule gerollt, addieren sich die Felder verschiedener Abschnitte und verstärken sich im mittleren Bereich gegenseitig. Viele Windungen bilden eine Spule, und die lange Spule wird Magnetspule genannt. Innerhalb der langen Magnetspule ist das Feld annähernd gleichmäßig; Von außen betrachtet ähnelt das Bild dem Feld eines Stabmagneten. Die Spule hat magnetische Nord- und Südpole, die durch die Richtung des Stroms bestimmt werden.",
-          "Die Rechte-Hand-Regel für eine Spule ist wie folgt formuliert: Die gebogenen Finger sind entlang des Stroms in den Windungen gerichtet, der Daumen zeigt B im Inneren der Spule und zeigt auf deren nördliches Ende. Wenn man auf das Ende schaut, zeigt die Strömung gegen den Uhrzeigersinn, dass das Ende nach Norden verläuft. Durch die Neuanordnung der Quellpins werden Strom, Feld und Polarität geändert.",
-          "Mehr Amperewindungen NI bedeuten normalerweise eine stärkere Magnetisierungswirkung. Ein ferromagnetischer Kern kann B deutlich erhöhen, aber die Abhängigkeit bleibt bei keinem Strom linear: Es kommt zu Sättigung und Hysterese. Auch Luftspalte, Kernform, Streufluss und Wicklungserwärmung beeinflussen den Betrieb eines echten Elektromagneten.",
+          "Wickelt man den Draht zu einer Spule, addieren sich die Felder der einzelnen Windungen und verstärken sich im Inneren. Eine lange Spule nennt man Zylinderspule. In ihr ist das Feld nahezu homogen, außen gleicht das Feldbild dem eines Stabmagneten. Die Spule hat einen Nord- und einen Südpol, die von der Stromrichtung abhängen.",
+          "Rechte-Hand-Regel für die Spule: Die gekrümmten Finger zeigen in Stromrichtung der Windungen, der Daumen zeigt in Richtung B im Inneren, also zum Nordpol. Blickt man auf ein Spulenende und fließt der Strom dort gegen den Uhrzeigersinn, ist es der Nordpol. Vertauscht man die Anschlüsse, kehren Strom, Feld und Polung um.",
+          "Eine größere Durchflutung Θ = NI bedeutet meist eine stärkere magnetische Wirkung. Ein ferromagnetischer Kern erhöht B deutlich, aber nicht bei jedem Strom linear: Es treten Sättigung und Hysterese auf. Luftspalt, Kernform, Streufluss und Erwärmung der Wicklung beeinflussen einen realen Elektromagneten ebenfalls.",
         ],
         formula: {
           expression: "H ≈ NI/l; B ≈ μ₀μᵣNI/l",
           legend:
-            "N ist die Anzahl der Windungen; I - Strom in A; l ist die Länge des langen Magneten in m; H – magnetische Feldstärke in A/m; μᵣ – relative magnetische Permeabilität.",
-          note: "Die Formel für B geht von einem langen Solenoid und einem gleichmäßigen linearen Medium aus. Für einen Luftkern μᵣ ≈ 1; Bei einem Ferromagneten hängt μᵣ vom Zustand und dem Feld ab.",
+            "N ist die Windungszahl; I ist der Strom in A; l ist die Länge der Spule in m; H ist die magnetische Feldstärke in A/m; μᵣ ist die relative Permeabilität.",
+          note: "Die Formel für B gilt für eine lange Spule und ein homogenes, lineares Medium. Für Luft ist μᵣ ≈ 1; bei Ferromagnetika hängt μᵣ vom Zustand und vom Feld ab.",
         },
         callout: {
           type: "warning",
-          title: "Auch die Spule wird heiß",
-          text: "Die Wicklung hat einen Widerstand. Die thermischen Verluste I²R nehmen mit dem Quadrat des Stroms zu, daher ist die Verstärkung des Elektromagneten durch Spannungserhöhung durch den zulässigen Strom, die Temperatur und die Betriebsart begrenzt.",
+          title: "Auch die Spule erwärmt sich",
+          text: "Die Wicklung hat einen Widerstand. Die Verluste I²R wachsen quadratisch mit dem Strom. Mehr Spannung und damit mehr Strom stärkt den Elektromagneten, wird aber durch zulässigen Strom, Temperatur und Betriebsart begrenzt.",
         },
       },
       {
         id: "electromagnetism-induction",
-        title: "3. Eine Änderung des Flusses erzeugt eine EMF",
+        title: "3. Flussänderung erzeugt eine Induktionsspannung",
         paragraphs: [
-          "Elektromagnetische Induktion tritt auf, wenn sich der an einen Stromkreis gekoppelte magnetische Fluss im Laufe der Zeit ändert. Dies kann auf verschiedene Arten erfolgen: Bewegen Sie den Magneten relativ zur Spule, ändern Sie den Strom in einer benachbarten Spule, drehen Sie den Rahmen oder ändern Sie seine Fläche. Das Vorhandensein einer starken, aber konstanten Strömung durch einen stationären Rahmen erzeugt an sich noch keine induzierte EMK.",
-          "Das Faradaysche Gesetz setzt die EMK in Beziehung zur Änderungsrate der Flusskopplung. Wenn alle N Windungen vom gleichen Fluss Φ abgedeckt sind, ist die Flussverkettung Ψ = NΦ. Je mehr Windungen und je schneller sich der Fluss ändert, desto größer ist das EMF-Modul. Bei Berechnungen für ein Endintervall wird normalerweise die durchschnittliche EMK ermittelt; Der Momentanwert erfordert eine Ableitung nach der Zeit.",
-          "EMF ist ein Aktionsmerkmal, das Ladungen in Bewegung setzen kann. Bei geöffneter Spule kann zwischen den Anschlüssen eine messbare Spannung anliegen, obwohl im Stromkreis kein Strom fließt. Der Strom entsteht, wenn ein Stromkreis geschlossen ist, und hängt von seinem gesamten elektrischen Widerstand und anderen Eigenschaften ab. Daher ist die Formulierung „Induktion erzeugt immer einen Strom“ unvollständig.",
+          "Induktion tritt auf, wenn sich der mit einer Leiterschleife verkettete magnetische Fluss zeitlich ändert. Das geschieht, wenn man den Magneten zur Spule bewegt, den Strom einer Nachbarspule ändert, die Schleife dreht oder ihre Fläche ändert. Ein starker, aber konstanter Fluss durch eine ruhende Schleife induziert keine Spannung.",
+          "Das Induktionsgesetz verknüpft die Induktionsspannung mit der Änderungsrate der Flussverkettung. Durchsetzt derselbe Fluss Φ alle N Windungen, ist Ψ = NΦ. Je mehr Windungen und je schneller die Änderung, desto größer ist der Betrag der Spannung. Für ein Zeitintervall berechnet man meist den Mittelwert, der Momentanwert erfordert die Ableitung nach der Zeit.",
+          "Die Induktionsspannung kann Ladungen in Bewegung setzen. Bei offener Spule liegt sie an den Klemmen an, obwohl kein Strom fließt. Ein Strom entsteht erst im geschlossenen Kreis und hängt vom Gesamtwiderstand ab. Die Aussage „Induktion erzeugt immer einen Strom“ ist daher unvollständig.",
         ],
         formula: {
           expression: "𝓔 = −dΨ/dt = −N · dΦ/dt; |𝓔av| = N |ΔΦ| /Δt",
           legend:
-            "𝓔 – EMF in V; Ψ ist die Flussverknüpfung in der Wb-Windung; Φ ist der Fluss durch eine Windung in Wb; N ist die Anzahl der Windungen; t – Zeit in s.",
-          note: "Der N-Multiplikator wird verwendet, wenn die Windungen vom gleichen Fluss bedeckt sind. Das Minuszeichen drückt die Lenzsche Regel aus und hängt von der konsequenten Wahl der Richtung der Kontur und der Normalen ab.",
+            "𝓔 ist die Induktionsspannung in V; Ψ ist die Flussverkettung in Wb; Φ ist der Fluss durch eine Windung in Wb; N ist die Windungszahl; t ist die Zeit in s.",
+          note: "Der Faktor N gilt, wenn alle Windungen vom selben Fluss durchsetzt werden. Das Minuszeichen drückt die Lenzsche Regel aus und hängt von der gewählten Umlaufrichtung und Normalen ab.",
         },
         example: {
-          title: "Durchschnittliche Spulen-EMK",
+          title: "Mittlere Induktionsspannung einer Spule",
           given:
-            "N = 200. Der Fluss durch jede Windung nimmt in 0,10 s von 3 mWb auf 1 mWb ab.",
+            "N = 200. Der Fluss durch jede Windung sinkt in 0,10 s von 3 mWb auf 1 mWb.",
           steps: [
             "ΔΦ = 0,001 − 0,003 = −0,002 Wb.",
-            "Durchschnittliche Flussänderungsrate: ΔΦ/Δt = −0,002/0,10 = −0,020 Wb/s.",
-            "Modul der durchschnittlichen EMF: |𝓔av| = 200 · 0,020 = 4 V.",
-            "Um die Polarität zu bestimmen, müssen Sie zusätzlich die Richtung des Quellfeldes und die Wicklungsrichtung angeben.",
+            "Mittlere Änderungsrate des Flusses: ΔΦ/Δt = −0,002/0,10 = −0,020 Wb/s.",
+            "Betrag der mittleren Induktionsspannung: |𝓔av| = 200 · 0,020 = 4 V.",
+            "Für die Polarität müssen Sie zusätzlich die Richtung des ursprünglichen Feldes und den Wickelsinn kennen.",
           ],
-          answer: "Das Modul der durchschnittlichen EMF beträgt 4 V.",
+          answer: "Der Betrag der mittleren Induktionsspannung beträgt 4 V.",
         },
       },
       {
         id: "electromagnetism-lenz",
         title: "4. Lenzsche Regel und Energieerhaltung",
         paragraphs: [
-          "Lenzsche Regel: Ein induzierter Strom wird so gerichtet, dass seine magnetische Wirkung der Änderung des magnetischen Flusses entgegenwirkt, die den Strom verursacht hat. Es richtet sich nicht unbedingt gegen das ursprüngliche Feld selbst. Wenn die Strömung zunimmt, neigt das induzierte Feld dazu, das Wachstum abzuschwächen. Wenn der Fluss abnimmt, wird er tendenziell aufrechterhalten.",
-          "Wenn der Nordpol eines Magneten näher an eine geschlossene Spule gebracht wird, wird sein nahes Ende zum Norden und stößt den Magneten ab. Wenn derselbe Pol entfernt wird, wird das nahe Ende nach Süden ausgerichtet und zieht den ausgehenden Magneten an. In beiden Fällen erfordert Bewegung Arbeit; es wird in elektrische Energie und dann beispielsweise in Wärme umgewandelt. Ohne Widerstand wäre es möglich, Energie kostenlos zu beziehen.",
-          "Um die Richtung zu bestimmen, gehen Sie der Reihe nach vor: Stellen Sie die Richtung des externen Flusses ein, bestimmen Sie, ob er zunimmt oder abnimmt, wählen Sie die gewünschte Richtung des induzierten Feldes aus und verwenden Sie dann die rechte Handregel, um den Strom zu ermitteln. Der Versuch, sofort den „Uhrzeigersinn“ zu erraten, führt oft zu einem Fehler, da diese Richtung von der Beobachtungsseite abhängt.",
+          "Lenzsche Regel: Der induzierte Strom ist so gerichtet, dass seine magnetische Wirkung der Flussänderung entgegenwirkt, die ihn verursacht. Sie wirkt nicht zwingend dem ursprünglichen Feld entgegen. Nimmt der Fluss zu, schwächt das induzierte Feld den Anstieg. Nimmt er ab, stützt es den Fluss.",
+          "Nähert man den Nordpol eines Magneten einer geschlossenen Spule, wird deren nahes Ende zum Nordpol und stößt den Magneten ab. Entfernt man ihn, wird es zum Südpol und zieht den Magneten an. In beiden Fällen ist Arbeit nötig. Sie wird in elektrische Energie und dann etwa in Wärme umgewandelt. Ohne diese Gegenwirkung gäbe es Energie umsonst.",
+          "Gehen Sie zur Richtungsbestimmung schrittweise vor: Richtung des äußeren Flusses festlegen, Zu- oder Abnahme bestimmen, Richtung des induzierten Feldes wählen und mit der Rechte-Hand-Regel den Strom ermitteln. Ein schnelles Raten des Uhrzeigersinns führt oft zu Fehlern, weil er vom Blickwinkel abhängt.",
         ],
         callout: {
           type: "tip",
-          title: "Drei Wörter zum Überprüfen",
-          text: "Der Strömungsänderung gezielt entgegenwirken. Wenn das äußere Feld geschwächt wird, kann die Richtung des induzierten Feldes mit diesem übereinstimmen. Dies steht voll und ganz im Einklang mit der Lenzschen Regel.",
+          title: "Merksatz zur Kontrolle",
+          text: "Die Flussänderung wird bekämpft. Nimmt das äußere Feld ab, kann das induzierte Feld dieselbe Richtung haben. Das entspricht genau der Lenzschen Regel.",
         },
       },
       {
         id: "electromagnetism-self-induction",
-        title: "5. Selbstinduktion und Spulenenergie",
+        title: "5. Selbstinduktion und Energie der Spule",
         paragraphs: [
-          "Der Spulenstrom erzeugt seinen eigenen Strom. Ändert sich der Strom, ändert sich auch die Flussverkettung der Spule selbst: Es entsteht eine selbstinduktive EMK. Bei einer linearen Spule ist die Flusskopplung proportional zum Strom, Ψ = LI, wobei L die Induktivität ist. Die Spule widersteht einer schnellen Änderung des Stroms, genauso wie ein Kondensator einer schnellen Änderung seiner Spannung widersteht.",
-          "Wenn die RL-Schaltung eingeschaltet wird, steigt der Strom allmählich an. Im geöffneten Zustand behält die Spule tendenziell den gleichen Strom bei und kann eine sehr große Spannung erzeugen, wenn es keinen anderen Weg für den Strom gibt. Dies erklärt den Funken an den Kontakten und gefährliche Spannungsstöße an Relais und Elektromagneten. Gleichstromkreise verwenden häufig eine Schutzdiode oder einen geeigneten Begrenzer, der für den jeweiligen Stromkreis entwickelt wurde.",
-          "Eine lineare ideale Spule speichert Energie W = LI²/2 in einem Magnetfeld. Eine echte Spule hat sowohl Drahtwiderstand als auch Kernverluste. Sobald ein konstanter Strom hergestellt ist, erzeugt der ideale induktive Teil keinen Spannungsabfall, der Kupferdraht erzeugt jedoch weiterhin Wärme. Eine gesättigte ferromagnetische Spule erfordert eine genauere Beschreibung als eine einzelne Konstante L.",
+          "Der Spulenstrom erzeugt ein eigenes Feld. Ändert sich der Strom, ändert sich die Flussverkettung der Spule selbst: Es entsteht eine Selbstinduktionsspannung. Bei einer linearen Spule gilt Ψ = LI mit der Induktivität L. Die Spule widersetzt sich einer schnellen Stromänderung, so wie ein Kondensator einer schnellen Spannungsänderung.",
+          "Beim Einschalten eines RL-Kreises steigt der Strom allmählich an. Beim Abschalten will die Spule den Strom beibehalten und kann eine sehr hohe Spannung erzeugen, wenn der Strom keinen anderen Weg hat. Das erklärt Funken an Kontakten und gefährliche Spannungsspitzen an Relais und Elektromagneten. In Gleichstromkreisen setzt man oft eine Freilaufdiode oder eine passende Schutzbeschaltung ein.",
+          "Eine ideale lineare Spule speichert im Magnetfeld die Energie W = LI²/2. Eine reale Spule hat Drahtwiderstand und Kernverluste. Bei konstantem Strom fällt am idealen induktiven Anteil keine Spannung ab, der Kupferdraht erwärmt sich aber weiter. Eine gesättigte Spule lässt sich nicht mit einem konstanten L beschreiben.",
         ],
         formula: {
           expression: "𝓔self = −L · dI/dt; W = ½LI²; τRL = L/R",
           legend:
-            "L - Induktivität in Henry (H); I - Strom in A; W – Energie in J; R ist der gesamte Serienwiderstand in Ohm; τRL ist die Zeitkonstante in s.",
-          note: "Formeln mit konstantem L gelten für eine lineare Spule. Für passive Spannung an einer idealen Induktivität uL = L dI/dt; Das Vorzeichen des EMF wird so gewählt, dass es der Stromänderung entgegenwirkt.",
+            "L ist die Induktivität in Henry (H); I ist der Strom in A; W ist die Energie in J; R ist der gesamte Reihenwiderstand in Ohm; τRL ist die Zeitkonstante in s.",
+          note: "Die Formeln mit konstantem L gelten für eine lineare Spule. Für die Spannung an einer idealen Induktivität gilt uL = L dI/dt; das Vorzeichen der Induktionsspannung wirkt der Stromänderung entgegen.",
         },
         example: {
-          title: "EMF beim schnellen Herunterfahren",
+          title: "Induktionsspannung beim schnellen Abschalten",
           given:
-            "L = 0,20 H. Der Strom sinkt in 0,010 s von 2 A auf 0. Finden Sie den Modul der durchschnittlichen Selbstinduktions-EMK.",
+            "L = 0,20 H. Der Strom sinkt in 0,010 s von 2 A auf 0. Gesucht: Betrag der mittleren Selbstinduktionsspannung.",
           steps: [
             "ΔI = 0 − 2 = −2 A.",
             "ΔI/Δt = −2/0,010 = −200 A/s.",
             "|𝓔av| = L |ΔI/Δt| = 0,20 200 = 40 V.",
-            "Vor der Abschaltung betrug die Feldenergie W = 0,5 · 0,20 · 2² = 0,40 J; es braucht einen Weg der Zerstreuung oder Rückkehr.",
+            "Vor dem Abschalten betrug die Feldenergie W = 0,5 · 0,20 · 2² = 0,40 J; sie muss abgebaut oder zurückgespeist werden.",
           ],
           answer:
-            "Das durchschnittliche EMF-Modul beträgt 40 V; bei einer noch schnelleren Stromänderung wäre sie höher.",
+            "Der Betrag der mittleren Spannung beträgt 40 V; bei noch schnellerer Stromänderung wäre er höher.",
         },
       },
       {
         id: "electromagnetism-machines",
         title: "6. Motor, Generator und Transformator",
         paragraphs: [
-          "Ein Elektromotor nutzt Kräfte, die in einem Magnetfeld auf stromdurchflossene Leiter wirken. Am Rahmen wirken auf gegenüberliegende Seiten Kräfte in entgegengesetzter Richtung, die ein Drehmoment erzeugen. Um die Rotation aufrechtzuerhalten, steuert das Design einen Strom oder ein rotierendes Magnetfeld. Energie stammt aus einer elektrischen Quelle und wird unter Verlusten in mechanische Energie umgewandelt.",
-          "Der Generator nutzt eine umgekehrte Transformation: Durch mechanische Bewegung wird die Flussverknüpfung der Wicklung verändert und eine EMK erzeugt. Wenn eine Last angeschlossen wird, erzeugt der induzierte Strom ein Gegendrehmoment, sodass mechanische Kraft zugeführt werden muss, um die Rotation aufrechtzuerhalten. Es ist einfacher, einen unbelasteten Generator zu drehen als einen belasteten, wenn man die gleiche Drehzahl vergleicht und Verluste berücksichtigt.",
-          "Ein Transformator überträgt Energie zwischen Wicklungen durch einen sich ändernden magnetischen Fluss. In einem idealen Modell sind die Spannungsverhältnisse gleich den Windungsverhältnissen und die Ströme werden umgekehrt, um die Leistung aufrechtzuerhalten. Ein herkömmlicher Transformator ist nicht für den direkten Anschluss an Gleichspannung ausgelegt: Nach dem Übergang ändert sich der Fluss nicht mehr und die Primärwicklung kann aufgrund von übermäßigem Strom und Sättigung überhitzen.",
+          "Ein Elektromotor nutzt die Kraft auf stromdurchflossene Leiter im Magnetfeld. An gegenüberliegenden Seiten einer Schleife wirken entgegengesetzte Kräfte, die ein Drehmoment erzeugen. Damit die Drehung anhält, wird der Strom umgeschaltet oder ein Drehfeld erzeugt. Die Energie stammt aus einer elektrischen Quelle und wird mit Verlusten in mechanische Energie umgewandelt.",
+          "Der Generator arbeitet umgekehrt: Mechanische Bewegung ändert die Flussverkettung der Wicklung und induziert eine Spannung. Schließt man einen Verbraucher an, erzeugt der Strom ein Gegenmoment, sodass mechanische Leistung zugeführt werden muss. Bei gleicher Drehzahl ist ein unbelasteter Generator leichter zu drehen als ein belasteter.",
+          "Ein Transformator überträgt Energie zwischen Wicklungen über einen sich ändernden magnetischen Fluss. Im idealen Modell entspricht das Spannungsverhältnis dem Windungszahlverhältnis, die Ströme verhalten sich umgekehrt, die Leistung bleibt gleich. Ein Transformator darf nicht an Gleichspannung betrieben werden: Der Fluss ändert sich nach dem Einschalten nicht mehr, und die Primärwicklung kann durch zu hohen Strom und Sättigung überhitzen.",
         ],
         formula: {
           expression: "U₂/U₁ ≈ N₂/N₁; I₂/I₁ ≈ N₁/N₂; U₁I₁ ≈ U₂I₂",
           legend:
-            "Die Indizes 1 und 2 beziehen sich auf die Primär- und Sekundärwicklungen; U und I sind die Effektivwerte von Spannung und Strom im angepassten Modus eines idealen Transformators.",
-          note: "Die Beziehungen gelten in einem idealisierten Modell mit variablem Modus. Ein echter Transformator weist Verluste, Magnetisierungsströme sowie Einschränkungen hinsichtlich Frequenz, Spannung und Last auf.",
+            "Die Indizes 1 und 2 stehen für Primär- und Sekundärwicklung; U und I sind Effektivwerte von Spannung und Strom des idealen Transformators.",
+          note: "Die Beziehungen gelten für ein idealisiertes Modell im Wechselstrombetrieb. Ein realer Transformator hat Verluste, Magnetisierungsstrom sowie Grenzen bei Frequenz, Spannung und Last.",
         },
         callout: {
           type: "insight",
           title: "Ein System, zwei Richtungen der Energieübertragung",
-          text: "Viele elektrische Maschinen können sowohl als Motor als auch als Generator arbeiten. Der Modus wird durch die Richtung der Energieübertragung und -steuerung bestimmt, nicht nur durch den Namen des Geräts.",
+          text: "Viele elektrische Maschinen arbeiten als Motor und als Generator. Die Betriebsart bestimmt die Richtung des Energieflusses, nicht der Name des Geräts.",
         },
       },
     ],
@@ -712,7 +712,7 @@ export const magnetismLessons = [
         symbol: "N",
         unit: "drehen",
         definition:
-          "Eine lange zylindrische Spule, innerhalb derer das Feld als annähernd gleichmäßig angesehen werden kann.",
+          "Lange zylindrische Spule, in deren Inneren das Feld als nahezu homogen gelten kann.",
       },
       {
         term: "Elektromagnetische Induktion",
@@ -720,7 +720,7 @@ export const magnetismLessons = [
         symbol: "𝓔",
         unit: "V",
         definition:
-          "Das Auftreten von EMF aufgrund einer Änderung der magnetischen Flussverknüpfung des Stromkreises.",
+          "Entstehung einer Spannung durch Änderung der Flussverkettung eines Stromkreises.",
       },
       {
         term: "Flussverkettung",
@@ -728,7 +728,7 @@ export const magnetismLessons = [
         symbol: "Ψ",
         unit: "Wb",
         definition:
-          "Die Summe der magnetischen Flüsse durch die Windungen der Wicklung; für den gleichen Fluss Ψ = NΦ.",
+          "Summe der magnetischen Flüsse durch die Windungen einer Wicklung; bei gleichem Fluss Ψ = NΦ.",
       },
       {
         term: "Lenzsche Regel",
@@ -736,7 +736,7 @@ export const magnetismLessons = [
         symbol: "−",
         unit: "—",
         definition:
-          "Der induzierte Strom wirkt durch seine magnetische Wirkung der Flussänderung entgegen, die ihn verursacht hat.",
+          "Der induzierte Strom wirkt mit seinem Magnetfeld der Flussänderung entgegen, die ihn verursacht.",
       },
       {
         term: "Induktivität",
@@ -744,7 +744,7 @@ export const magnetismLessons = [
         symbol: "L",
         unit: "H",
         definition:
-          "Für eine lineare Spule beträgt der Proportionalitätskoeffizient zwischen Flusskopplung und Strom: Ψ = LI.",
+          "Bei einer linearen Spule der Proportionalitätsfaktor zwischen Flussverkettung und Strom: Ψ = LI.",
       },
       {
         term: "Selbstinduktion",
@@ -752,7 +752,7 @@ export const magnetismLessons = [
         symbol: "𝓔ich selbst",
         unit: "V",
         definition:
-          "Das Auftreten von EMF in einem Stromkreis, wenn sich der eigene Strom und der magnetische Fluss ändern.",
+          "Entstehung einer Spannung im Stromkreis durch Änderung des eigenen Stroms und Flusses.",
       },
       {
         term: "Elektromagnet",
@@ -760,38 +760,38 @@ export const magnetismLessons = [
         symbol: "NI",
         unit: "A",
         definition:
-          "Ein Gerät, bei dem durch Strom in einer Wicklung, oft mit einem Magnetkern, eine magnetische Wirkung erzeugt wird.",
+          "Gerät, bei dem der Strom in einer Wicklung, oft mit Eisenkern, ein Magnetfeld erzeugt.",
       },
     ],
     summary: [
-      "Um einen geraden Draht herum ist das Feld kreisförmig gerichtet; Die Richtung wird durch die rechte Hand bestimmt.",
-      "Die magnetische Wirkung der Spule hängt von den Amperewindungen NI ab; Der Kern kann das Feld verstärken, ist aber zur Sättigung fähig.",
-      "Faradaysches Gesetz: EMF tritt auf, wenn sich die Flusskopplung ändert, 𝓔 = −dΨ/dt.",
-      "Nach der Lenzschen Regel verhindert die induzierte Wirkung eine Strömungsänderung.",
-      "Die Selbstinduktion verhindert, dass sich der Strom ändert. Die Linearspule speichert LI²/2-Energie.",
-      "Der Motor wandelt elektrische Energie in mechanische Energie um, der Generator wandelt mechanische Energie in elektrische Energie um.",
+      "Um einen geraden Draht ist das Feld kreisförmig; die Richtung folgt aus der Rechte-Hand-Regel.",
+      "Die Wirkung der Spule hängt von der Durchflutung NI ab; ein Kern verstärkt das Feld, geht aber in Sättigung.",
+      "Induktionsgesetz: Eine Änderung der Flussverkettung induziert eine Spannung, 𝓔 = −dΨ/dt.",
+      "Nach der Lenzschen Regel wirkt die induzierte Wirkung der Flussänderung entgegen.",
+      "Selbstinduktion wirkt Stromänderungen entgegen. Die lineare Spule speichert die Energie LI²/2.",
+      "Der Motor wandelt elektrische in mechanische Energie, der Generator mechanische in elektrische.",
     ],
     quiz: [
       {
         id: "electromagnetism-1",
         type: "choice",
         question:
-          "Wie findet man die Richtung des Magnetfeldes um einen geraden, stromdurchflossenen Draht?",
+          "Wie bestimmt man die Richtung des Magnetfeldes um einen geraden stromdurchflossenen Draht?",
         options: [
-          "Führen Sie Ihren linken Daumen entlang der Elektronen",
-          "Richten Sie den Daumen Ihrer rechten Hand entlang der Strömung; gebeugte Finger zeigen B",
-          "Das Feld ist immer entlang des Drahtes gerichtet",
-          "Das Feld ist vom Draht immer radial nach außen gerichtet",
+          "Linken Daumen in Richtung der Elektronen halten",
+          "Daumen der rechten Hand in Stromrichtung; die gekrümmten Finger zeigen B",
+          "Das Feld verläuft immer entlang des Drahtes",
+          "Das Feld zeigt immer radial vom Draht weg",
         ],
         answer: 1,
         explanation:
-          "Für einen geraden Draht gilt die Regel der rechten Hand: Der Daumen wird entlang des bedingten positiven Stroms geführt, die Finger decken den Draht in Richtung des Feldes ab.",
+          "Für einen geraden Draht gilt die Rechte-Hand-Regel: Der Daumen zeigt in die technische Stromrichtung, die gekrümmten Finger zeigen die Feldrichtung.",
       },
       {
         id: "electromagnetism-2",
         type: "numeric",
         question:
-          "Die Spule hat 100 Windungen. Der Fluss durch jede Windung änderte sich in 0,10 s gleichmäßig um 0,002 Wb. Finden Sie den Modul der durchschnittlichen EMK.",
+          "Die Spule hat 100 Windungen. Der Fluss durch jede Windung ändert sich in 0,10 s gleichmäßig um 0,002 Wb. Wie groß ist der Betrag der mittleren Induktionsspannung?",
         answer: 2,
         unit: "V",
         tolerance: 0.01,
@@ -801,22 +801,22 @@ export const magnetismLessons = [
         id: "electromagnetism-3",
         type: "choice",
         question:
-          "Der äußere magnetische Fluss durch die geschlossene Spule nimmt ab. Welche Richtung hat das induzierte Stromfeld?",
+          "Der äußere magnetische Fluss durch eine geschlossene Spule nimmt ab. Welche Richtung hat das Feld des induzierten Stroms?",
         options: [
-          "Es muss senkrecht zum Original stehen",
-          "Es ist immer das Gegenteil des Originals",
-          "Ziel ist es, den ursprünglichen Fluss aufrechtzuerhalten",
-          "Bei abnehmendem Durchfluss entsteht kein Feld",
+          "Es steht senkrecht zum ursprünglichen Feld",
+          "Es ist immer dem ursprünglichen Feld entgegengerichtet",
+          "Es versucht, den ursprünglichen Fluss aufrechtzuerhalten",
+          "Bei abnehmendem Fluss entsteht kein Feld",
         ],
         answer: 2,
         explanation:
-          "Die Lenzsche Regel gilt für Strömungsänderungen. Wenn die externe Strömung abnimmt, versucht das induzierte Feld, die Abnahme auszugleichen und die ursprüngliche Strömungsrichtung beizubehalten.",
+          "Die Lenzsche Regel wirkt der Flussänderung entgegen. Nimmt der äußere Fluss ab, stützt das induzierte Feld den ursprünglichen Fluss.",
       },
       {
         id: "electromagnetism-4",
         type: "numeric",
         question:
-          "Eine lineare Spule hat L = 0,50 H und einen Strom I = 2 A. Wie viel Energie ist in ihrem Feld gespeichert?",
+          "Eine lineare Spule hat L = 0,50 H und führt I = 2 A. Welche Energie ist in ihrem Feld gespeichert?",
         answer: 1,
         unit: "J",
         tolerance: 0.01,
@@ -826,16 +826,16 @@ export const magnetismLessons = [
         id: "electromagnetism-5",
         type: "choice",
         question:
-          "Warum kann es beim Öffnen des Spulenstromkreises zu einem großen Spannungsstoß kommen?",
+          "Warum kann beim Öffnen eines Spulenstromkreises eine hohe Spannungsspitze entstehen?",
         options: [
-          "Die Spule ist bestrebt, den Strom aufrechtzuerhalten und erzeugt eine selbstinduktive EMK",
-          "Der Widerstand des Kupferdrahtes wird immer Null",
-          "Im ausgeschalteten Zustand muss der magnetische Fluss sofort unendlich werden",
-          "Dies ist nur mit einem Permanentmagneten möglich",
+          "Die Spule will den Strom beibehalten und erzeugt eine Selbstinduktionsspannung",
+          "Der Widerstand des Kupferdrahtes wird immer null",
+          "Der magnetische Fluss muss beim Abschalten sofort unendlich werden",
+          "Das geht nur mit einem Dauermagneten",
         ],
         answer: 0,
         explanation:
-          "Ein schneller Abfall des Stroms erzeugt eine selbstinduktive EMK, deren Modul ungefähr L|ΔI/Δt| beträgt. Die gespeicherte Energie muss in andere Formen umgewandelt werden, daher ist ein entsprechend konzipierter Schutz erforderlich.",
+          "Ein schneller Stromabfall erzeugt eine Selbstinduktionsspannung mit dem Betrag von etwa L|ΔI/Δt|. Die gespeicherte Energie muss abgebaut werden, daher ist eine geeignete Schutzbeschaltung nötig.",
       },
     ],
   },
@@ -850,155 +850,155 @@ export const magnetismLessons = [
     description:
       "B, H, Φ, Permeabilität und magnetischer Widerstand: ein zusammenhängendes Größensystem zur Berechnung von Spulen und Magnetkreisen.",
     objectives: [
-      "Unterscheiden Sie zwischen B, H, Φ und Flussverknüpfung nach Bedeutung, Einheit und Anwendung.",
-      "Berechnen Sie das Feld eines linearen Magnetsystems und den Fluss durch eine Oberfläche.",
-      "Erklären Sie die Auswirkungen von Luftspalt, Sättigung und Hysterese auf einen realen Magnetkreis.",
+      "Unterscheiden Sie B, H, Φ und Flussverkettung nach Bedeutung, Einheit und Anwendung.",
+      "Berechnen Sie das Feld in einem linearen Magnetkreis und den Fluss durch eine Fläche.",
+      "Erklären Sie die Wirkung von Luftspalt, Sättigung und Hysterese im realen Magnetkreis.",
     ],
     sections: [
       {
         id: "magnetic-quantities-map",
-        title: "1. B, H und Φ: drei verschiedene Fragen",
+        title: "1. B, H und Φ: drei verschiedene Größen",
         paragraphs: [
-          "Die magnetische Induktion B beantwortet die Frage, wie sich das Magnetfeld an einem bestimmten Punkt auf bewegte Ladungen und einen stromdurchflossenen Leiter auswirkt. Dies ist eine Vektorgröße in Tesla. Die magnetische Feldstärke H ist eine weitere Vektorgröße, die in Ampere pro Meter gemessen wird; Es eignet sich zur Beschreibung der magnetisierenden Wirkung freier Ströme unter Berücksichtigung der Geometrie des Magnetsystems.",
-          "Der magnetische Fluss Φ bezieht sich nicht mehr auf einen Punkt, sondern auf eine ausgewählte Fläche. Sie wird in Weber gemessen und berücksichtigt die Normalkomponente B über die gesamte Fläche. Die Flussverkettung Ψ berücksichtigt zusätzlich Windungen: Wenn jede der N Windungen vom gleichen Fluss bedeckt ist, ist Ψ = NΦ. Es ist die Änderungsrate von Ψ, die die EMK der Spule bestimmt.",
-          "Diese Mengen können nicht gegeneinander ausgetauscht werden. Zwei Kerne können das gleiche B, aber aufgrund unterschiedlicher Querschnittsflächen unterschiedliche Φ haben. Das gleiche H kann in Luft und in einem Ferromagneten sehr unterschiedliches B ergeben. Der gleiche Fluss durch eine Windung führt bei derselben Änderung zu unterschiedlichen Flussverknüpfungen und EMKs in Spulen mit unterschiedlichem N.",
+          "Die magnetische Flussdichte B beschreibt das Magnetfeld in einem Punkt und seine Wirkung auf bewegte Ladungen und stromdurchflossene Leiter. Sie ist ein Vektor in Tesla. Die magnetische Feldstärke H ist ebenfalls ein Vektor, gemessen in Ampere pro Meter. Sie beschreibt die magnetisierende Wirkung der freien Ströme und hängt von der Geometrie des Magnetkreises ab.",
+          "Der magnetische Fluss Φ gilt nicht für einen Punkt, sondern für eine Fläche. Er wird in Weber gemessen und berücksichtigt die Normalkomponente von B über die Fläche. Die Flussverkettung Ψ berücksichtigt zusätzlich die Windungen: Durchsetzt derselbe Fluss alle N Windungen, gilt Ψ = NΦ. Die Änderungsrate von Ψ bestimmt die Induktionsspannung der Spule.",
+          "Diese Größen sind nicht austauschbar. Zwei Kerne mit gleichem B haben bei verschiedenen Querschnitten unterschiedliche Φ. Dasselbe H ergibt in Luft und in einem Ferromagneten sehr verschiedene B. Bei gleicher Flussänderung ergeben Spulen mit unterschiedlichem N verschiedene Flussverkettungen und Induktionsspannungen.",
         ],
         formula: {
           expression: "B: T; H: A/m; Φ: Wb; Ψ = NΦ: Wb",
           legend:
-            "B – magnetische Induktion; H – magnetische Feldstärke; Φ – magnetischer Fluss; Ψ – Flussverknüpfung.",
-          note: "Die Windungszahl ist im SI-System dimensionslos; Das Wort „drehen“ wird für eine klare physikalische Bedeutung in Einheiten beibehalten.",
+            "B ist die magnetische Flussdichte; H ist die magnetische Feldstärke; Φ ist der magnetische Fluss; Ψ ist die Flussverkettung.",
+          note: "Die Windungszahl ist im SI-System dimensionslos; das Wort „Windung“ wird nur zur Verdeutlichung in Einheiten mitgeführt.",
         },
         callout: {
           type: "tip",
-          title: "Mnemonik nach Einheiten",
-          text: "Tesla beschreibt B an einem Punkt, Weber beschreibt den Fluss durch eine Fläche, Ampere pro Meter – H entlang einer magnetischen Bahn. Wenn sich herausstellt, dass die Antwort auf die Flussfrage Tesla ist, ist der Bereich höchstwahrscheinlich vergessen.",
+          title: "Eselsbrücke über die Einheiten",
+          text: "Tesla gehört zu B in einem Punkt, Weber zum Fluss durch eine Fläche, Ampere pro Meter zu H entlang eines magnetischen Weges. Ist die Einheit der Antwort auf eine Flussfrage Tesla, wurde vermutlich die Fläche vergessen.",
         },
       },
       {
         id: "magnetic-quantities-permeability",
-        title: "2. Permeabilität und die Grenze des linearen Modells",
+        title: "2. Permeabilität und Grenzen des linearen Modells",
         paragraphs: [
-          "Im Vakuum B = μ₀H. Verwenden Sie in einem homogenen linearen isotropen Medium B = μH = μ₀μᵣH. Dabei ist μ die absolute magnetische Permeabilität in Henry pro Meter und μᵣ die relative Permeabilität ohne Einheit. Bei Luft liegt μᵣ sehr nahe bei 1, sodass die Luftspule normalerweise fast wie eine Vakuumspule konstruiert ist.",
-          "Ein ferromagnetischer Kern kann nicht als Medium mit einer Konstante μᵣ in allen Moden betrachtet werden. Sein B hängt nichtlinear von H sowie von der Magnetisierungsgeschichte, Temperatur und Frequenz ab. Bei Sättigung führt ein Anstieg von H zu einem relativ geringen zusätzlichen Anstieg von B. Daher erhöht ein Anstieg des Stroms in der Spule nach der Sättigung die Erwärmung stark, führt jedoch zu einem begrenzten Anstieg der Induktion.",
-          "Eine allgemeinere Beziehung hat die Form B = μ₀(H + M), wobei M die Magnetisierung des Materials in A/m ist. Es zeigt, dass das Feld sowohl mit freien Strömen, beschrieben durch H, als auch mit der magnetischen Reaktion der Substanz zusammenhängt. Für Schulrechnungen wird oft die Konstante μᵣ als Bedingung angegeben; es kann innerhalb der Grenzen dieses ausdrücklich akzeptierten Modells verwendet werden.",
+          "Im Vakuum gilt B = μ₀H. In einem homogenen, linearen, isotropen Medium gilt B = μH = μ₀μᵣH. Dabei ist μ die Permeabilität in Henry pro Meter und μᵣ die relative Permeabilität ohne Einheit. Für Luft ist μᵣ nahezu 1, daher rechnet man eine Luftspule meist wie eine Spule im Vakuum.",
+          "Ein ferromagnetischer Kern hat nicht in allen Betriebszuständen ein konstantes μᵣ. B hängt nichtlinear von H ab, außerdem von Magnetisierungsvorgeschichte, Temperatur und Frequenz. In der Sättigung bewirkt ein größeres H nur noch einen kleinen Zuwachs von B. Mehr Spulenstrom erhöht dann vor allem die Erwärmung, kaum noch die Flussdichte.",
+          "Allgemein gilt B = μ₀(H + M) mit der Magnetisierung M in A/m. Das Feld hängt also von den freien Strömen (H) und von der magnetischen Antwort des Stoffes ab. In Schulaufgaben ist μᵣ oft als konstant vorgegeben; dann darf man innerhalb dieses Modells damit rechnen.",
         ],
         formula: {
           expression:
             "B = μ₀(H + M); in einem linearen Medium: B = μ₀μᵣH; μ = μ₀μᵣ",
           legend:
-            "μ₀ ≈ 1,256637 10⁻⁶ H/m; μᵣ – relative Durchlässigkeit; M ist die Magnetisierung in A/m.",
-          note: "B und H sind nur im entsprechenden isotropen Modell parallel. Für einen nichtlinearen Ferromagneten wird die Charakteristik B(H) anstelle einer willkürlichen Konstante μᵣ verwendet.",
+            "μ₀ ≈ 1,256637 10⁻⁶ H/m; μᵣ ist die relative Permeabilität; M ist die Magnetisierung in A/m.",
+          note: "B und H sind nur im isotropen Modell parallel. Für einen nichtlinearen Ferromagneten nutzt man die Kennlinie B(H) statt eines festen μᵣ.",
         },
         example: {
-          title: "Feld in der Luft",
+          title: "Feld in Luft",
           given:
-            "Im Luftbereich H = 1000 A/m. Finden Sie B und nehmen Sie μᵣ = 1.",
+            "In einem Luftbereich ist H = 1000 A/m. Gesucht: B mit μᵣ = 1.",
           steps: [
-            "Wir verwenden B = μ₀H.",
+            "Wir nutzen B = μ₀H.",
             "B ≈ 1,256637 · 10⁻⁶ · 1000 = 1,256637 · 10⁻³ T.",
-            "In Millitesla umrechnen: B ≈ 1,26 mT.",
+            "Umrechnung in Millitesla: B ≈ 1,26 mT.",
           ],
           answer:
-            "B ≈ 1,26 mT. Der H-Wert bleibt bei 1000 A/m: Das sind unterschiedliche Werte.",
+            "B ≈ 1,26 mT. H bleibt 1000 A/m: Es sind verschiedene Größen.",
         },
       },
       {
         id: "magnetic-quantities-flux",
-        title: "3. Von der Induktion zum Fluss und zur Flussverknüpfung",
+        title: "3. Von der Flussdichte zum Fluss und zur Flussverkettung",
         paragraphs: [
-          "In einem Kern mit annähernd gleichmäßiger Induktion und einem Querschnitt senkrecht zu den Feldlinien ist der Fluss gleich BA. Wenn der Querschnitt kleiner wird und die Strömung nahezu gleich bleibt, nimmt B im engen Teil zu. Es ist der schmale Abschnitt, der als erster in die Sättigung gelangen kann. In einem einfachen unverzweigten Magnetkreis wird davon ausgegangen, dass der Fluss in verschiedenen Abschnitten gleich ist, wenn die Streuung vernachlässigt wird.",
-          "Bei einer geneigten Fläche ist es wichtig, die Fläche auf eine Stufe senkrecht zum Feld zu projizieren. Äquivalent dazu wird die Normalkomponente B verwendet. In der Formel Φ = BA cos α wird der Winkel α zur Normalen gemessen. Wenn die ausgewählte Normale umgedreht wird, ändert sich das Vorzeichen des Flusses, obwohl das physikalische Feld gleich bleibt.",
-          "Bei der elektromagnetischen Induktion wird die Anzahl der ineinandergreifenden Windungen zum Fluss addiert. Wenn der Fluss durch jede der 500 Windungen 0,001 Wb beträgt, beträgt die Flusskopplung 0,5 Wb·Windung. Dies bedeutet nicht, dass sich im Kern 0,5 Wb befinden: Der Fluss durch den Querschnitt beträgt immer noch 0,001 Wb. Der Unterschied ist für die Berechnung von EMF und Induktivität von Bedeutung.",
+          "In einem Kern mit nahezu homogener Flussdichte und einem Querschnitt senkrecht zu den Feldlinien ist der Fluss BA. Wird der Querschnitt kleiner und der Fluss bleibt gleich, steigt B im engen Teil. Dort tritt zuerst Sättigung ein. Im einfachen unverzweigten Magnetkreis ist der Fluss ohne Streuung in allen Abschnitten gleich.",
+          "Bei einer geneigten Fläche projiziert man sie auf eine Ebene senkrecht zum Feld. Gleichwertig nutzt man die Normalkomponente von B. In Φ = BA cos α wird α zur Flächennormalen gemessen. Dreht man die gewählte Normale um, wechselt der Fluss das Vorzeichen, das Feld bleibt gleich.",
+          "Bei der Induktion kommt die Windungszahl zum Fluss hinzu. Beträgt der Fluss durch jede von 500 Windungen 0,001 Wb, ist die Flussverkettung 0,5 Wb·Windung. Im Kern liegen aber nicht 0,5 Wb vor: Der Fluss durch den Querschnitt bleibt 0,001 Wb. Der Unterschied ist wichtig für Induktionsspannung und Induktivität.",
         ],
         formula: {
           expression: "Φ = BA cos α; Ψ = NΦ; für eine lineare Spule L = Ψ/I",
           legend:
-            "A – Fläche in m²; α ist der Winkel B mit der Normalen; N ist die Anzahl der Windungen; I - Strom in A; L - Induktivität in H.",
-          note: "Wenn das Feld nicht gleichmäßig ist, wird der Fluss durch Integration von B über die Oberfläche berechnet; Wenn die Flüsse verschiedener Windungen nicht gleich sind, werden sie separat addiert.",
+            "A ist die Fläche in m²; α ist der Winkel zwischen B und der Normalen; N ist die Windungszahl; I ist der Strom in A; L ist die Induktivität in H.",
+          note: "Ist das Feld inhomogen, berechnet man den Fluss durch Integration von B über die Fläche. Sind die Flüsse der Windungen verschieden, addiert man sie einzeln.",
         },
         example: {
-          title: "Von der Querschnittsfläche bis zur Induktivität",
+          title: "Vom Querschnitt zur Induktivität",
           given:
-            "B = 0,80 T in einem gleichmäßigen Abschnitt A = 4 cm². N = 250 Windungen, I = 2 A. Nehmen Sie ein lineares Modell und den gleichen Fluss in allen Windungen an.",
+            "B = 0,80 T in einem homogenen Abschnitt A = 4 cm². N = 250 Windungen, I = 2 A. Annahme: lineares Modell und gleicher Fluss in allen Windungen.",
           steps: [
-            "A = 4 · 10⁻⁴ m² = 0,0004 m². Das Feld steht senkrecht zum Schnitt, cos α = 1.",
+            "A = 4 · 10⁻⁴ m² = 0,0004 m². Das Feld steht senkrecht zum Querschnitt, cos α = 1.",
             "Φ = BA = 0,80 · 0,0004 = 0,00032 Wb = 0,32 mWb.",
             "Ψ = NΦ = 250 · 0,00032 = 0,080 Wb Windung.",
             "L = Ψ/I = 0,080/2 = 0,040 H = 40 mH.",
           ],
           answer:
-            "Φ = 0,32 mWb; Ψ = 0,080 Wb-Wende; L = 40 mH im angenommenen linearen Modell.",
+            "Φ = 0,32 mWb; Ψ = 0,080 Wb; L = 40 mH im angenommenen linearen Modell.",
         },
       },
       {
         id: "magnetic-quantities-circuit",
-        title: "4. Magnetomotorische Kraft und magnetischer Widerstand",
+        title: "4. Durchflutung und magnetischer Widerstand",
         paragraphs: [
-          "Eine Wicklung mit N Windungen und dem Strom I erzeugt eine magnetomotorische Kraft Θ = NI. Der Begriff ist historisch: Es handelt sich nicht um mechanische Kraft in Newton. Die Einheit wird oft als Ampere-Windung geschrieben, obwohl in SI die Anzahl der Windungen dimensionslos ist. Für einen ausgewählten geschlossenen Pfad in der Magnetostatik setzt das Gesamtstromgesetz die Zirkulation H mit dem eingekoppelten Strom in Beziehung: ∮H · dl = NI.",
-          "Für einen einfachen homogenen magnetischen Pfad der Länge l und konstanten Querschnitts A wird der magnetische Widerstand ℛm = l/(μA) eingeführt. Dann ist Φ = Θ/ℛm. Eine Analogie zum Ohmschen Gesetz hilft bei der Organisation der Berechnung: Die Rolle des Stroms wird vom Fluss gespielt, die Rolle der Spannung wird von der magnetomotorischen Kraft gespielt. Aber Fluss ist kein Fluss von Materie, und der magnetische Widerstand selbst verbraucht keine Energie wie ein elektrischer Widerstand.",
-          "In aufeinanderfolgenden Abschnitten des Magnetkreises ohne merkliche Leckage ist der Fluss derselbe und die Abfälle der magnetomotorischen Kraft summieren sich: NI = ΣHᵢlᵢ. Magnetische Widerstände können hinzugefügt werden, wenn die anwendbare Permeabilität für jeden Abschnitt bekannt ist. In ferromagnetischen Systemen ist die Berechnung oft iterativ: Der Fluss wird angenommen, B wird gefunden, H wird aus der B(H)-Kurve bestimmt und die erforderlichen Amperewindungen werden überprüft.",
+          "Eine Wicklung mit N Windungen und dem Strom I erzeugt die Durchflutung Θ = NI (auch magnetische Spannung oder magnetomotorische Kraft genannt). Der Begriff ist historisch: Es ist keine mechanische Kraft in Newton. Die Einheit ist Ampere, oft als Amperewindung angegeben. Für einen geschlossenen Weg setzt das Durchflutungsgesetz die Umlaufspannung von H mit dem umfassten Strom gleich: ∮H · dl = NI.",
+          "Für einen homogenen magnetischen Weg der Länge l mit konstantem Querschnitt A gilt der magnetische Widerstand ℛm = l/(μA). Dann ist Φ = Θ/ℛm. Die Analogie zum Ohmschen Gesetz hilft beim Rechnen: Der Fluss entspricht dem Strom, die Durchflutung der Spannung. Der Fluss ist aber kein Stoffstrom, und der magnetische Widerstand verbraucht keine Energie wie ein ohmscher Widerstand.",
+          "In hintereinanderliegenden Abschnitten ohne nennenswerte Streuung ist der Fluss gleich, und die magnetischen Spannungsabfälle addieren sich: NI = ΣHᵢlᵢ. Magnetische Widerstände lassen sich addieren, wenn für jeden Abschnitt die Permeabilität bekannt ist. Bei Ferromagnetika rechnet man oft iterativ: Fluss annehmen, B bestimmen, H aus der B(H)-Kennlinie ablesen und die nötige Durchflutung prüfen.",
         ],
         formula: {
           expression: "Θ = NI; ℛm = l/(μA); Φ = Θ/ℛm; NI = ΣHᵢlᵢ",
           legend:
-            "Θ – magnetomotorische Kraft in einer A-Kurve; ℛm – magnetischer Widerstand in A/Wb, derselbe wie Gn⁻¹; l ist die Weglänge in m; A - Abschnitt in m².",
-          note: "Das konzentrierte Magnetkreismodell geht von einem bekannten Flusspfad und ausreichend kleinen Leckagen und Diskontinuitäten aus. Die Permeabilität wird für den entsprechenden Modus angenommen.",
+            "Θ ist die Durchflutung in A; ℛm ist der magnetische Widerstand in A/Wb, also der Kehrwert des magnetischen Leitwerts; l ist die Weglänge in m; A ist der Querschnitt in m².",
+          note: "Das Modell mit konzentrierten Größen setzt einen bekannten Flussweg und kleine Streuung und Inhomogenitäten voraus. Die Permeabilität gilt für den jeweiligen Betriebspunkt.",
         },
         callout: {
           type: "insight",
-          title: "Eine nützliche Analogie hat Grenzen",
-          text: "Ein hoher magnetischer Widerstand reduziert den Fluss bei gleichem NI. Dies bedeutet jedoch nicht die Freisetzung von Wärme Φ²ℛm. Reale magnetische Verluste sind beispielsweise mit Hysterese und Wirbelströmen bei sich änderndem Feld verbunden.",
+          title: "Die nützliche Analogie hat Grenzen",
+          text: "Ein großer magnetischer Widerstand verringert den Fluss bei gleichem NI. Es entsteht aber keine Wärme Φ²ℛm. Reale magnetische Verluste entstehen durch Hysterese und Wirbelströme bei wechselndem Feld.",
         },
       },
       {
         id: "magnetic-quantities-gap",
         title: "5. Warum ein kleiner Luftspalt so wichtig ist",
         paragraphs: [
-          "In Luft ist die Permeabilität viel geringer als die eines Ferromagneten vor der Sättigung. Daher kann selbst ein kurzer Luftspalt den größten Teil des magnetischen Widerstands des gesamten Stromkreises bereitstellen. Bei annähernd gleichem B im Kern und Spalt erfordert der Spalt Hzaz = B/μ₀, also eine erhebliche Spannung.",
-          "Addieren Sie bei der Berechnung eines Stromkreises mit Lücke die erforderlichen Amperewindungen des Kerns und der Luft. Wenn der Kernwiderstand vernachlässigt werden kann, gilt NI ≈ Bg/μ₀, wobei g die Gesamtlänge aller aufeinanderfolgenden Luftspalte ist. Wenn zwei Lücken von jeweils 0,5 mm vorhanden sind, setzen Sie 1 mm in die Formel ein. Bei dieser Näherung werden Feldausbeulungen an den Rändern und Leckströme außer Acht gelassen.",
-          "Ein Luftspalt ist nicht immer ein Nachteil. In Speicherdrosseln hilft es, Energie zu speichern und verringert die Abhängigkeit der Induktivität von der Nichtlinearität des Kerns. Ein erheblicher Teil der Energie befindet sich im Lückenfeld. Bei Relais und Elektromagneten hingegen hat der Spalt großen Einfluss auf den benötigten Strom und die Anziehungskraft.",
+          "Luft hat eine viel kleinere Permeabilität als ein Ferromagnet vor der Sättigung. Schon ein kurzer Luftspalt kann daher den größten Teil des magnetischen Widerstands des Kreises ausmachen. Bei etwa gleichem B in Kern und Spalt braucht der Spalt die magnetische Feldstärke B/μ₀ und damit eine große magnetische Spannung.",
+          "Bei einem Magnetkreis mit Luftspalt addiert man die Durchflutung für Kern und Luft. Ist der Kernanteil vernachlässigbar, gilt NI ≈ Bg/μ₀, mit g als Gesamtlänge aller Luftspalte. Bei zwei Spalten zu je 0,5 mm setzt man 1 mm ein. Die Näherung vernachlässigt Randstreuung und Streufluss.",
+          "Ein Luftspalt ist nicht immer ein Nachteil. In Speicherdrosseln speichert er Energie und verringert den Einfluss der Kernnichtlinearität auf die Induktivität. Ein großer Teil der Energie liegt im Spaltfeld. Bei Relais und Elektromagneten bestimmt der Spalt dagegen stark den nötigen Strom und die Anzugskraft.",
         ],
         formula: {
           expression:
             "NI = Hserlser + (B/μ₀)g; wenn der Kern vernachlässigt wird: NI ≈ Bg/μ₀",
           legend:
-            "g ist die Gesamtlänge der Luftspalte in m; lser ist die Weglänge entlang des Kerns in m; Hser ist die Spannung im Kern bei ausgewähltem B.",
-          note: "Annähernd gleicher Querschnitt, gleicher Durchfluss, geringe Leckage und Randeffekte werden vorausgesetzt. Für eine genaue Auslegung werden diese Effekte gesondert berücksichtigt.",
+            "g ist die Gesamtlänge der Luftspalte in m; lser ist die Weglänge im Kern in m; Hser ist die magnetische Feldstärke im Kern bei gegebenem B.",
+          note: "Vorausgesetzt werden annähernd gleicher Querschnitt, gleicher Fluss sowie geringe Streuung und Randeffekte. Für eine genaue Auslegung berücksichtigt man diese Effekte gesondert.",
         },
         example: {
-          title: "Ampere-Windungen für Luftspalt",
+          title: "Durchflutung für einen Luftspalt",
           given:
-            "Bedarf B = 0,50 T. Gesamtspalt g = 1 mm, N = 500 Umdrehungen. Vernachlässigen Sie den magnetischen Kernwiderstand und Kanteneffekte.",
+            "Gefordert: B = 0,50 T. Gesamtspalt g = 1 mm, N = 500 Windungen. Der magnetische Widerstand des Kerns und Randeffekte werden vernachlässigt.",
           steps: [
             "g = 0,001 m.",
-            "Erforderliche magnetomotorische Kraft: NI ≈ 0,50 · 0,001 / (1,256637 · 10⁻⁶) ≈ 398 A Umdrehung.",
+            "Erforderliche Durchflutung: NI ≈ 0,50 · 0,001 / (1,256637 · 10⁻⁶) ≈ 398 A.",
             "Strom I = 398/500 ≈ 0,796 A.",
-            "In einer realen Schaltung benötigt der Kern ebenfalls Amperewindungen, und Leckage und Feldknickung verändern das Ergebnis.",
+            "In einer realen Schaltung braucht auch der Kern Durchflutung, und Streuung und Randeffekte verändern das Ergebnis.",
           ],
           answer:
-            "Ein vereinfachtes Modell erfordert einen Strom von etwa 0,80 A.",
+            "Das vereinfachte Modell erfordert einen Strom von etwa 0,80 A.",
         },
       },
       {
         id: "magnetic-quantities-hysteresis",
         title: "6. Hysterese, Verluste und Feldenergie",
         paragraphs: [
-          "Wenn H eines Ferromagneten zyklisch variiert wird, bildet die B(H)-Abhängigkeit normalerweise eine Hystereseschleife. Nachdem H auf Null zurückgekehrt ist, kann die Induktion Br bestehen bleiben – Restinduktion. Um B in einem bestimmten Zyklus auf Null zu bringen, ist das Gegenteil von Hc erforderlich – die Koerzitivfeldstärke. Die Werte hängen vom verwendeten Material, den Bedingungen und den Eigenschaften ab.",
-          "Die Schleifenfläche B(H) entspricht der Energie der Hystereseverluste pro Zyklus pro Volumeneinheit. Im leitfähigen Kern entstehen durch das Wechselfeld zusätzlich Wirbelströme und Erwärmung. Um solche Verluste zu reduzieren, werden isolierte dünne Bleche aus Elektroband, Ferriten und anderen geeigneten Materialien verwendet. Die Auswahl hängt von der Frequenz und der zulässigen Induktion ab.",
-          "In einem linearen Medium beträgt die Energiedichte des Magnetfelds w = BH/2. In Vakuum und Luft kann es als B²/(2μ₀) geschrieben werden. Für eine Spule stimmt dies mit W = LI²/2 überein. In nichtlinearen Materialien und Hysteresematerialien können eine Konstante μ und die BH/2-Formel nicht ohne Einschränkung verwendet werden: Der Magnetisierungspfad und die Verluste spielen eine Rolle.",
+          "Variiert man H eines Ferromagneten zyklisch, bildet B(H) meist eine Hystereseschleife. Kehrt H auf null zurück, bleibt die Remanenzflussdichte Br bestehen. Um B wieder auf null zu bringen, braucht man die entgegengerichtete Koerzitivfeldstärke Hc. Die Werte hängen vom Werkstoff und von den Bedingungen ab.",
+          "Die Fläche der Schleife B(H) entspricht der Hystereseverlustenergie je Zyklus und Volumeneinheit. Im leitenden Kern entstehen durch das Wechselfeld zusätzlich Wirbelströme und Wärme. Man senkt diese Verluste mit isolierten dünnen Elektroblechen, Ferriten und anderen geeigneten Werkstoffen. Die Wahl hängt von Frequenz und zulässiger Flussdichte ab.",
+          "In einem linearen Medium beträgt die Energiedichte des Magnetfeldes w = BH/2. In Vakuum und Luft kann man B²/(2μ₀) schreiben. Für eine Spule ergibt das W = LI²/2. Bei nichtlinearen und hysteresebehafteten Werkstoffen gelten ein konstantes μ und die Formel BH/2 nicht ohne Einschränkung: Magnetisierungsweg und Verluste spielen eine Rolle.",
         ],
         formula: {
           expression:
             "Für ein lineares Medium: w = ½BH = B²/(2μ); Wcoils = ½LI²",
           legend:
-            "w – Energiedichte in J/m³; W ist die Gesamtenergie in J; μ – magnetische Permeabilität; Br – Restinduktion in T; Hc ist die Koerzitivfeldstärke in A/m.",
-          note: "Energieformeln mit ½ gelten für eine lineare Abhängigkeit. Der Zyklusverlust pro Volumeneinheit hängt mit der Schleifenfläche ∮H dB zusammen.",
+            "w ist die Energiedichte in J/m³; W ist die Gesamtenergie in J; μ ist die Permeabilität; Br ist die Remanenzflussdichte in T; Hc ist die Koerzitivfeldstärke in A/m.",
+          note: "Die Formeln mit ½ gelten für lineare Zusammenhänge. Die Verlustenergie je Zyklus und Volumeneinheit entspricht der Schleifenfläche ∮H dB.",
         },
         callout: {
           type: "tip",
-          title: "Algorithmus zur Berechnung eines Magnetkreises",
-          text: "Zeichnen Sie den Fließweg ein und markieren Sie die Lücken. Konvertieren Sie Längen und Flächen in SI. Finden Sie B = Φ/A in jedem Abschnitt. Wählen Sie H aus dem linearen Modell oder der Materialkurve. Addiere Hl und vergleiche mit NI. Überprüfen Sie abschließend die Sättigung, Erwärmung und die Grenzen der akzeptierten Näherungen.",
+          title: "Vorgehen bei der Berechnung eines Magnetkreises",
+          text: "Zeichnen Sie den Flussweg und markieren Sie die Luftspalte. Rechnen Sie Längen und Flächen in SI-Einheiten um. Bestimmen Sie B = Φ/A in jedem Abschnitt. Entnehmen Sie H dem linearen Modell oder der Werkstoffkennlinie. Addieren Sie Hl und vergleichen Sie mit NI. Prüfen Sie zuletzt Sättigung, Erwärmung und die Grenzen der Näherungen.",
         },
       },
     ],
@@ -1009,7 +1009,7 @@ export const magnetismLessons = [
         symbol: "H",
         unit: "A/m",
         definition:
-          "Eine vektorielle Größe, die zur Beschreibung der magnetisierenden Wirkung freier Ströme und zur Berechnung magnetischer Kreise verwendet wird.",
+          "Vektorgröße zur Beschreibung der magnetisierenden Wirkung freier Ströme und zur Berechnung von Magnetkreisen.",
       },
       {
         term: "Magnetische Permeabilität",
@@ -1017,7 +1017,7 @@ export const magnetismLessons = [
         symbol: "μ",
         unit: "H/m",
         definition:
-          "In einem linear isotropen Medium beträgt der Kopplungskoeffizient B = μH; μ = μ₀μᵣ.",
+          "Im linearen isotropen Medium der Faktor zwischen H und B: B = μH; μ = μ₀μᵣ.",
       },
       {
         term: "Magnetische Durchflutung",
@@ -1025,7 +1025,7 @@ export const magnetismLessons = [
         symbol: "Θ",
         unit: "A",
         definition:
-          "Die gesamten Amperewindungen, die den Magnetkreis magnetisieren; für eine Wicklung Θ = NI.",
+          "Gesamte Amperewindungszahl, die den Magnetkreis magnetisiert; für eine Wicklung Θ = NI.",
       },
       {
         term: "Magnetischer Widerstand / Reluktanz",
@@ -1033,7 +1033,7 @@ export const magnetismLessons = [
         symbol: "ℛm",
         unit: "A/Wb",
         definition:
-          "Im linearen Modell eines Magnetkreises beträgt das Verhältnis der magnetomotorischen Kraft zum Fluss: ℛm = Θ/Φ = l/(μA).",
+          "Im linearen Magnetkreis das Verhältnis von Durchflutung zu Fluss: ℛm = Θ/Φ = l/(μA).",
       },
       {
         term: "Magnetische Sättigung",
@@ -1041,7 +1041,7 @@ export const magnetismLessons = [
         symbol: "B",
         unit: "T",
         definition:
-          "Der Charakteristikbereich eines Ferromagneten, in dem ein weiterer Anstieg von H zu einem relativ geringen Anstieg von B führt.",
+          "Bereich der Kennlinie eines Ferromagneten, in dem ein größeres H nur noch einen kleinen Zuwachs von B bewirkt.",
       },
       {
         term: "Remanenzflussdichte",
@@ -1049,7 +1049,7 @@ export const magnetismLessons = [
         symbol: "Br",
         unit: "T",
         definition:
-          "Der Wert der magnetischen Induktion, der nach einem bestimmten Magnetisierungsprozess bei H = 0 bleibt.",
+          "Wert der magnetischen Flussdichte, der nach der Magnetisierung bei H = 0 bestehen bleibt.",
       },
       {
         term: "Koerzitivfeldstärke",
@@ -1057,7 +1057,7 @@ export const magnetismLessons = [
         symbol: "Hc",
         unit: "A/m",
         definition:
-          "Der Modul der entgegengesetzten Spannung, der erforderlich ist, um B auf dem entsprechenden Zweig der Hystereseschleife auf Null zu bringen.",
+          "Betrag der entgegengerichteten magnetischen Feldstärke, die B auf dem betreffenden Ast der Hystereseschleife auf null bringt.",
       },
       {
         term: "Hysterese",
@@ -1065,37 +1065,37 @@ export const magnetismLessons = [
         symbol: "B(H)",
         unit: "—",
         definition:
-          "Abhängigkeit des magnetischen Zustands von der Vorgeschichte; Bei der zyklischen Magnetisierungsumkehr äußert es sich als B(H)-Schleife und Verluste.",
+          "Abhängigkeit des magnetischen Zustands von der Vorgeschichte; bei zyklischer Ummagnetisierung zeigt sie sich als B(H)-Schleife und als Verluste.",
       },
     ],
     summary: [
-      "B ist die Induktion in T, H ist die Spannung in A/m, Φ ist der Fluss in Wb, Ψ ist die Flussverknüpfung.",
-      "B = μ₀μᵣH arbeitet unter den akzeptierten Bedingungen eines linearen Mediums; Die Permeabilität eines Ferromagneten ist keine universelle Konstante.",
-      "Der Fluss in einem gleichmäßigen senkrechten Abschnitt ist BA; die Flussverkettung gleicher Windungen ist gleich NΦ.",
-      "Magnetomotorische Kraft Θ = NI; in einer einfachen linearen Kette Φ = Θ/ℛm und ℛm = l/(μA).",
-      "Der Luftspalt kann den Großteil der erforderlichen Amperewindungen und der gespeicherten Energie bestimmen.",
-      "Sättigung, Hysterese und Wirbelströme schränken die Anwendbarkeit idealer Modelle ein.",
+      "B ist die magnetische Flussdichte in T, H die magnetische Feldstärke in A/m, Φ der magnetische Fluss in Wb, Ψ die Flussverkettung.",
+      "B = μ₀μᵣH gilt im linearen Medium; die Permeabilität eines Ferromagneten ist keine allgemeine Konstante.",
+      "Der Fluss durch einen homogenen, senkrechten Querschnitt ist BA; die Flussverkettung bei gleichem Fluss ist NΦ.",
+      "Durchflutung Θ = NI; im einfachen linearen Kreis gilt Φ = Θ/ℛm mit ℛm = l/(μA).",
+      "Der Luftspalt kann den Großteil der nötigen Durchflutung und der gespeicherten Energie bestimmen.",
+      "Sättigung, Hysterese und Wirbelströme begrenzen die Gültigkeit idealer Modelle.",
     ],
     quiz: [
       {
         id: "magnetic-quantities-1",
         type: "choice",
-        question: "Welches Mengen-Einheiten-Paar ist richtig?",
+        question: "Welches Paar aus Größe und Einheit ist richtig?",
         options: [
-          "Magnetischer Fluss Φ - Tesla",
-          "Spannung H - Ampere pro Meter",
-          "Magnetische Induktion B - Weber",
-          "Relative Permeabilität μᵣ - Henry",
+          "Magnetischer Fluss Φ – Tesla",
+          "Magnetische Feldstärke H – Ampere pro Meter",
+          "Magnetische Flussdichte B – Weber",
+          "Relative Permeabilität μᵣ – Henry",
         ],
         answer: 1,
         explanation:
-          "H wird in A/m gemessen. B wird in T gemessen, Φ in Wb und μᵣ ist dimensionslos.",
+          "H wird in A/m gemessen. B wird in T gemessen, Φ in Wb, und μᵣ ist dimensionslos.",
       },
       {
         id: "magnetic-quantities-2",
         type: "numeric",
         question:
-          "Die gleichmäßige Induktion B = 0,50 T steht senkrecht zum Kernquerschnitt A = 6 cm². Finden Sie den magnetischen Fluss in Milliweber.",
+          "Die homogene Flussdichte B = 0,50 T steht senkrecht zum Kernquerschnitt A = 6 cm². Wie groß ist der magnetische Fluss in Milliweber?",
         answer: 0.3,
         unit: "mWb",
         tolerance: 0.005,
@@ -1106,42 +1106,42 @@ export const magnetismLessons = [
         id: "magnetic-quantities-3",
         type: "choice",
         question:
-          "Warum kann für einen ferromagnetischen Kern bei keinem Strom die gleiche Konstante μᵣ verwendet werden?",
+          "Warum darf man für einen ferromagnetischen Kern nicht bei jedem Strom dasselbe μᵣ verwenden?",
         options: [
-          "Die Permeabilität ist immer Null",
-          "Die Anzahl der Windungen ändert sich automatisch mit der Stromstärke",
-          "Weber und Tesla sind die gleichen Einheiten",
-          "Es gibt Nichtlinearität, Sättigung und Abhängigkeit von der Geschichte",
+          "Die Permeabilität ist immer null",
+          "Die Windungszahl ändert sich automatisch mit dem Strom",
+          "Weber und Tesla sind dieselbe Einheit",
+          "Es gibt Nichtlinearität, Sättigung und Abhängigkeit von der Vorgeschichte",
         ],
         answer: 3,
         explanation:
-          "In einem Ferromagneten ist B(H) normalerweise nichtlinear und weist eine Hysterese auf. Die Konstante μᵣ kann nur eine Näherung für ein gegebenes Regime sein.",
+          "Bei Ferromagneten ist B(H) meist nichtlinear und zeigt Hysterese. Ein konstantes μᵣ ist nur eine Näherung für einen bestimmten Betriebspunkt.",
       },
       {
         id: "magnetic-quantities-4",
         type: "numeric",
         question:
-          "Die Spule hat 400 Windungen und einen Strom von 0,50 A. Ermitteln Sie die magnetomotorische Kraft Θ.",
+          "Die Spule hat 400 Windungen und führt 0,50 A. Wie groß ist die Durchflutung Θ?",
         answer: 200,
         unit: "A",
         tolerance: 0.5,
         explanation:
-          "Θ = NI = 400 · 0,50 = 200 Eine Umdrehung. Dies ist keine mechanische Kraft in Newton.",
+          "Θ = NI = 400 · 0,50 = 200 A. Das ist keine mechanische Kraft in Newton.",
       },
       {
         id: "magnetic-quantities-5",
         type: "choice",
         question:
-          "Warum kann ein kleiner Luftspalt die erforderlichen Amperewindungen stark erhöhen?",
+          "Warum kann ein kleiner Luftspalt die erforderliche Durchflutung stark erhöhen?",
         options: [
-          "Die Luftdurchlässigkeit ist im Vergleich zur Durchlässigkeit des ungesättigten Kerns gering",
-          "In Luft ist ein magnetischer Fluss im Allgemeinen unmöglich",
-          "Die Lücke erhöht immer die Anzahl der Windungen",
-          "In Luft haben B und H die gleichen SI-Zahlenwerte",
+          "Die Permeabilität von Luft ist klein gegenüber der des ungesättigten Kerns",
+          "In Luft ist ein magnetischer Fluss grundsätzlich unmöglich",
+          "Der Spalt erhöht immer die Windungszahl",
+          "In Luft haben B und H dieselben SI-Zahlenwerte",
         ],
         answer: 0,
         explanation:
-          "Magnetischer Widerstand ℛm = l/(μA). In Luft μ ≈ μ₀ kann daher selbst ein kurzer Spalt einen großen magnetischen Widerstand haben und einen erheblichen Hl-Wert erfordern.",
+          "Magnetischer Widerstand ℛm = l/(μA). In Luft ist μ ≈ μ₀, daher kann schon ein kurzer Spalt einen großen magnetischen Widerstand haben und eine hohe magnetische Spannung Hl erfordern.",
       },
     ],
   },
