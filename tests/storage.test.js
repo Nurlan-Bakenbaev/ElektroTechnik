@@ -60,6 +60,10 @@ test("removeAttemptKeys removes keys with the prefix", () => {
       store[k] = v;
     },
     removeItem: (k) => delete store[k],
+    key: (i) => Object.keys(store)[i] ?? null,
+    get length() {
+      return Object.keys(store).length;
+    },
   };
   removeAttemptKeys();
   assert.ok(!("volt-academy:attempt:1" in store));
