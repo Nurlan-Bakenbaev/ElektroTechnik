@@ -20,24 +20,24 @@ export const examQuestions = [
     lessonId: "current",
     type: "numeric",
     question:
-      "Eine Ladung von 18 C durchläuft den Drahtquerschnitt in 6 s. Finden Sie den durchschnittlichen Strom in Ampere.",
+      "Eine elektrische Ladung von 18 Coulomb (C) fließt in einer Zeitdauer von 6 s durch den Leiterquerschnitt. Wie groß ist die durchschnittliche Stromstärke in Ampere?",
     answer: 3,
     unit: "A",
     tolerance: 0.01,
     explanation:
-      "Stromstärke - Ladung pro Zeiteinheit: I = ΔQ / Δt = 18 C / 6 s = 3 A. Ein Ampere entspricht einem Coulomb pro Sekunde.",
+      "Die durchschnittliche Stromstärke ist die transportierte Ladung geteilt durch die Zeit: I = ΔQ / Δt = 18 C / 6 s = 3 A. Ein Ampere entspricht einem Coulomb pro Sekunde.",
   },
   {
     id: "exam-03",
     lessonId: "current",
     type: "numeric",
     question:
-      "Es fließt 2 Minuten lang ein Gleichstrom von 0,4 A. Welche Ladung geht durch den Drahtquerschnitt? Geben Sie Ihre Antwort in Coulomb an.",
+      "Bei einer konstanten Stromstärke von 0,4 A: Welche elektrische Ladung fließt in einer Zeitdauer von 2 Minuten durch den Leiterquerschnitt? Geben Sie das Ergebnis in Coulomb an.",
     answer: 48,
     unit: "C",
     tolerance: 0.1,
     explanation:
-      "Zuerst rechnen wir die Zeit um: t = 2 × 60 = 120 s. Dann ist Q = It = 0,4 A × 120 s = 48 C. Sie können in der Formel Minuten nicht ohne Umrechnung durch Ampere ersetzen.",
+      "Zuerst rechnen wir die Zeit um: t = 2 × 60 = 120 s. Dann ist Q = I · t = 0,4 A · 120 s = 48 C. Rechnen Sie die Zeit in Sekunden um, bevor Sie sie in die Formel einsetzen.",
   },
   {
     id: "exam-04",
@@ -53,7 +53,7 @@ export const examQuestions = [
     ],
     answer: 2,
     explanation:
-      "Bei einer Parallelschaltung werden die Anfänge der Zweige mit einem Knoten und die Enden mit einem anderen verbunden. Der Potentialunterschied zwischen diesen Knoten ist gleich: U₁ = U₂ = Uist = 12 V. Die Ströme entlang der Zweige können unterschiedlich sein.",
+      "Bei einer Parallelschaltung sind die Anfänge der Zweige mit demselben Knoten und die Enden mit einem zweiten Knoten verbunden. Die Potenzialdifferenz zwischen diesen Knoten ist für alle Zweige gleich: U₁ = U₂ = 12 V. Die Stromstärken in den Zweigen können unterschiedlich sein.",
   },
   {
     id: "exam-05",
@@ -81,7 +81,7 @@ export const examQuestions = [
     ],
     answer: 3,
     explanation:
-      "Der Bruch hinterlässt keinen geschlossenen Weg für den Gleichstrom. Bei einem Kurzschluss ist der äußere Widerstand des Stromkreises sehr gering und der Strom wird durch den Innenwiderstand der Quelle und der Leitungen begrenzt. Dadurch entsteht starke Hitze. Es ist unmöglich, einen Kurzschluss in der Praxis zu überprüfen.",
+      "Bei geöffnetem Schalter ist der Stromkreis unterbrochen, sodass kein dauerhafter Gleichstrom fließt. Bei einem Kurzschluss ist der äußere Widerstand sehr gering; der Strom wird dann nur durch den Innenwiderstand der Quelle und der Leitungen begrenzt. Dadurch entsteht starke Erwärmung. Ein Kurzschluss wird nicht praktisch aufgebaut, da er gefährlich ist.",
   },
   {
     id: "exam-07",
@@ -102,7 +102,7 @@ export const examQuestions = [
     question:
       "Wie schließt man ein Voltmeter an, um die Spannung an einem Widerstand zu messen und den Stromkreis so wenig wie möglich zu beeinflussen?",
     options: [
-      "Konsequent; Der Widerstand des Voltmeters sollte sehr klein sein",
+      "In Reihe zum Widerstand; der Innenwiderstand des Voltmeters sollte sehr klein sein",
       "Parallel zum Widerstand; Der Widerstand des Voltmeters sollte sehr hoch sein",
       "Anstelle eines Widerstands; Der Widerstand des Voltmeters sollte Null sein",
       "Bei einer Stromkreisunterbrechung; Der Widerstand des Voltmeters sollte unendlich sein",
@@ -281,7 +281,7 @@ export const examQuestions = [
     unit: "%",
     tolerance: 0.1,
     explanation:
-      "Effizienz η = Puseful/P_zuput × 100 % = 375/500 × 100 % = 75 %. Die restlichen 125 W stammen aus Verlusten: Wärme, Reibung, Schall und andere Formen der Energieübertragung, die für diese Aufgabe nicht nützlich sind.",
+      "Der Wirkungsgrad beträgt η = P_nutz/P_zu · 100 % = 375/500 · 100 % = 75 %. Die restlichen 125 W entfallen auf Verluste, etwa durch Wärme, Reibung und Schall.",
   },
   {
     id: "exam-22",
@@ -297,7 +297,7 @@ export const examQuestions = [
     ],
     answer: 1,
     explanation:
-      "Wuseful = 0,80 × 200 = 160 J. Nach dem Energieerhaltungssatz ist Wloss = Winput − Wuseful = 200 − 160 = 40 J. Verluste bedeuten nicht das Verschwinden von Energie: Sie geht in Formen über, die nicht der Zweck des Geräts sind.",
+      "Die Nutzenergie ist W_nutz = 0,80 · 200 J = 160 J. Nach dem Energieerhaltungssatz beträgt die Verlustenergie W_verlust = W_zu − W_nutz = 200 J − 160 J = 40 J. Energie geht nicht verloren, sondern wird in für den Zweck nicht nutzbare Formen umgewandelt.",
   },
   {
     id: "exam-23",
@@ -349,7 +349,7 @@ export const examQuestions = [
     unit: "µC",
     tolerance: 1,
     explanation:
-      "Q = CU. Mit C in Mikrofarad und U in Volt erhält man sofort das Ergebnis in Mikrocoulomb: Q = 100 × 12 = 1200 µC = 1,2 µC. Die Platten haben Ladungen +Q und −Q; ihre algebraische Summe für einen idealen Kondensator ist Null.",
+      "Q = C · U. Mit C in Mikrofarad und U in Volt erhält man das Ergebnis in Mikrocoulomb: Q = 100 · 12 = 1200 µC = 1,2 mC. Die Platten tragen die Ladungen +Q und −Q; ihre Gesamtladung ist bei einem idealen Kondensator null.",
   },
   {
     id: "exam-27",
@@ -377,7 +377,7 @@ export const examQuestions = [
     ],
     answer: 1,
     explanation:
-      "Während des Ladevorgangs nimmt der Strom ab, da die Spannung am Kondensator zunimmt. Im stationären Gleichstromzustand leitet ein ideales Dielektrikum keine Ladung: I → 0, der Spannungsabfall am Widerstand IR → 0, also Uc → Uist. Echte Kondensatoren können einen geringen Leckstrom haben.",
+      "Während des Ladevorgangs nimmt die Stromstärke ab, da die Spannung am Kondensator zunimmt. Im stationären Gleichstromzustand fließt durch einen idealen Kondensator kein Strom: I → 0 und der Spannungsabfall am Widerstand IR → 0, also U_C → U. Reale Kondensatoren können einen geringen Leckstrom haben.",
   },
   {
     id: "exam-29",
@@ -453,7 +453,7 @@ export const examQuestions = [
     ],
     answer: 1,
     explanation:
-      "Das Faradaysche Gesetz setzt EMF auf Änderungen im magnetischen Fluss: ε = −N dΦ/dt. Bewegung ist nur eine Möglichkeit, den Fluss zu verändern. Der Wechselstrom eines benachbarten Elektromagneten verändert Feld und Fluss auch bei ruhenden Spulen; Dies ist das Prinzip der gegenseitigen Induktion und des Transformators.",
+      "Das Faradaysche Induktionsgesetz verknüpft die Induktionsspannung mit der zeitlichen Änderung des magnetischen Flusses: ε = −N dΦ/dt. Bewegung ist nur eine Möglichkeit, den Fluss zu ändern. Auch ein veränderlicher Strom in einem benachbarten Elektromagneten kann das Magnetfeld und damit den Fluss durch eine ruhende Spule ändern. Das ist das Prinzip der gegenseitigen Induktion und des Transformators.",
   },
   {
     id: "exam-34",
@@ -474,14 +474,14 @@ export const examQuestions = [
     question:
       "Welche Zeile entspricht den magnetischen Größen und ihren SI-Einheiten richtig?",
     options: [
-      "Induktion B – Weber; Durchfluss Φ - Tesla; Spannung H - Ampere",
-      "Induktion B - Volt; Fluss Φ – Coulomb; Spannung H - Ohm",
-      "Induktion B – Ampere/Meter; Durchfluss Φ - Tesla; Spannung H - Weber",
-      "Induktion B – Tesla; Strömung Φ – Weber; Spannung H - Ampere/Meter",
+      "B – Weber; Φ – Tesla; H – Ampere pro Meter",
+      "B – Volt; Φ – Coulomb; H – Ohm",
+      "B – Ampere pro Meter; Φ – Tesla; H – Weber",
+      "B – Tesla; Φ – Weber; H – Ampere pro Meter",
     ],
     answer: 3,
     explanation:
-      "B wird in Tesla (T), Φ in Weber (Wb) und H in Ampere pro Meter (A/m) gemessen. Für ein einheitliches Feld Φ = BA cos θ also 1 Wb = 1 T m². In einem linear isotropen Medium B = μ₀μrH; B und H hängen zusammen, sind aber unterschiedliche Größen.",
+      "Die magnetische Flussdichte B wird in Tesla (T), der magnetische Fluss Φ in Weber (Wb) und die magnetische Feldstärke H in Ampere pro Meter (A/m) gemessen. Für ein homogenes Feld gilt Φ = BA cos θ und damit 1 Wb = 1 T·m². In einem linearen isotropen Medium gilt B = μ₀μᵣH; B und H sind unterschiedliche Größen.",
   },
 ];
 
@@ -546,32 +546,32 @@ export const formulaSheet = [
     legend:
       "W – Energie, J; P – Leistung, W; U – Spannung, V; I – Strom, A; t – Zeit, s.",
     conditions:
-      "P-Konstante; In der Gleichheit UIt sind Spannung und Strom konstant. Für variable Leistung W = ∫P dt. Die Kombination von kW und h ergibt kWh.",
+      "W = P · t gilt bei konstanter Leistung; W = U · I · t gilt bei konstanten Werten von U und I. Bei zeitlich veränderlicher Leistung gilt allgemein W = ∫P(t) dt. Leistung in kW und Zeit in h ergeben Energie in kWh.",
   },
   {
     lessonId: "power",
-    title: "Elektrische Energie",
-    expression: "P = UI; Widerstand = I²R = U²/R",
+    title: "Elektrische Leistung",
+    expression: "P = U · I; P = I² · R = U² / R",
     legend:
       "P – Leistung, W; U – Spannung, V; I – Strom, A; R - Widerstand, Ohm.",
     conditions:
-      "Die erste Formel gilt für Gleichstrom; Die letzten beiden sind für einen ohmschen Widerstand. In phasenverschobenen Wechselstromkreisen hängt die mittlere Leistung zusätzlich vom cos φ ab.",
+      "Die erste Formel gilt für Gleichstrom. Die letzten beiden gelten für einen ohmschen Widerstand. In Wechselstromkreisen hängt die Wirkleistung zusätzlich vom Leistungsfaktor cos φ ab.",
   },
   {
     lessonId: "efficiency",
-    title: "Effizienz",
-    expression: "η = Wuseful / Winput = Puseful / P_zuput; η% = 100η",
+    title: "Wirkungsgrad",
+    expression: "η = W_nutz / W_zu = P_nutz / P_zu; η (%) = 100 · η",
     legend:
       "η – dimensionsloser Wirkungsgrad; W – Energie, J; P – Leistung, W.",
     conditions:
-      "Energie bezieht sich auf einen Prozess, Leistung auf einen stationären Zustand. Für einen konventionellen Energiewandler gilt 0 ≤ η ≤ 1.",
+      "Der Wirkungsgrad kann für Energie über einen Prozess oder für Leistung im stationären Betrieb bestimmt werden. Für einen Energiewandler gilt 0 ≤ η ≤ 1.",
   },
   {
     lessonId: "field",
     title: "Elektrische Feldstärke",
     expression: "E = F / |q|; E_hom = |U| /d",
     legend:
-      "E – Spannungsmodul, N/C = V/m; F – Modul der elektrischen Kraft, N; q – Testladung, C; d – Entfernung, m.",
+      "E – elektrische Feldstärke, N/C = V/m; F – Betrag der elektrischen Kraft, N; q – Betrag der Testladung, C; d – Abstand, m.",
     conditions:
       "Die Testladung ist klein und verzerrt das Feld nicht. E = |U|/d gilt für ein gleichmäßiges Feld, wenn der Abstand entlang der Feldlinie gemessen wird.",
   },
@@ -587,9 +587,9 @@ export const formulaSheet = [
   {
     lessonId: "capacitor",
     title: "Kapazität und Ladung des Kondensators",
-    expression: "C=Q/U; Flach = ε₀εrA / d",
+    expression: "C = Q / U; C_platte = ε₀ · εᵣ · A / d",
     legend:
-      "C – Kapazität, F; Q ist der Ladungsmodul einer Platte, C; U – Spannungsmodul, V; A ist die Überlappungsfläche der Platten, m²; d – Lücke, m.",
+      "C – Kapazität, F; Q – Betrag der Ladung einer Platte, C; U – Spannung zwischen den Platten, V; A – Überlappungsfläche der Platten, m²; d – Plattenabstand, m.",
     conditions:
       "Lineares Dielektrikum. Die Formel für einen Parallelplattenkondensator geht davon aus, dass d deutlich kleiner ist als die Größe der Platten und Randeffekte vernachlässigt.",
   },
@@ -610,7 +610,7 @@ export const formulaSheet = [
     legend:
       "Ctotal – äquivalente Kapazität, F; C₁, C₂ – Kapazitäten einzelner Kondensatoren, F.",
     conditions:
-      "Ideale lineare Kondensatoren. Für eine Reihenschaltung zunächst ungeladener Kondensatoren sind die Lademodule gleich; Bei Parallelschaltung sind die Spannungen gleich.",
+      "Ideale lineare Kondensatoren. Bei einer Reihenschaltung zunächst ungeladener Kondensatoren sind die Ladungsbeträge gleich; bei einer Parallelschaltung sind die Spannungen gleich.",
   },
   {
     lessonId: "capacitor",
@@ -626,7 +626,7 @@ export const formulaSheet = [
     title: "Kraft auf einen stromdurchflossenen Leiter",
     expression: "F = BIl sin α",
     legend:
-      "F – magnetische Kraft, N; B – magnetische Induktion, T; I – Strom, A; l ist die Länge des Abschnitts, m; α ist der Winkel zwischen der Stromrichtung und B.",
+      "F – magnetische Kraft, N; B – magnetische Flussdichte, T; I – Stromstärke, A; l – Länge des Leiterabschnitts, m; α – Winkel zwischen Stromrichtung und B.",
     conditions:
       "Der gerade Leiter befindet sich vollständig in einem gleichmäßigen Feld. Maximale Kraft bei 90°, Nullkraft bei 0° und 180°.",
   },
@@ -635,36 +635,36 @@ export const formulaSheet = [
     title: "Magnetischer Fluss",
     expression: "Φ = BA cos θ; 1 Wb = 1 T m²",
     legend:
-      "Φ – Durchfluss, Wb; B – Induktion, T; A – ebene Fläche, m²; θ ist der Winkel zwischen B und der Normalen zur Oberfläche.",
+      "Φ – magnetischer Fluss, Wb; B – magnetische Flussdichte, T; A – Fläche, m²; θ – Winkel zwischen B und der Flächennormalen.",
     conditions:
-      "Gleichmäßiges Feld und ebene Oberfläche. Im allgemeinen Fall ergibt sich der Fluss als Integral Φ = ∫ B·dA. Der Winkel wird zur Normalen und nicht zur Stufe selbst gemessen.",
+      "Gleichmäßiges Feld und ebene Oberfläche. Im allgemeinen Fall ergibt sich der Fluss als Integral Φ = ∫ B·dA. Der Winkel wird zwischen B und der Flächennormalen gemessen, nicht zwischen B und der Oberfläche.",
   },
   {
     lessonId: "electromagnetism",
     title: "Elektromagnetische Induktion",
-    expression: "ε = −N dΦ/dt; εDurchschnitt = −N ΔΦ/Δt",
+    expression: "ε = −N dΦ/dt; ε̄ = −N ΔΦ/Δt",
     legend:
-      "ε – EMF, V; N ist die Anzahl der Windungen, die gleichmäßig von der Strömung abgedeckt werden; Φ – Fluss durch eine Windung, Wb; t – Zeit, s.",
+      "ε – Induktionsspannung, V; N – Windungszahl; Φ – magnetischer Fluss durch eine Windung, Wb; t – Zeit, s.",
     conditions:
-      "Die Formel mit N geht von einem gleichen Fluss durch alle Windungen aus. Das Zeichen „−“ drückt die Lenzsche Regel aus: Die induktive Wirkung verhindert eine Strömungsänderung.",
+      "Die Formel mit N setzt voraus, dass alle Windungen denselben magnetischen Fluss umfassen. Das Minuszeichen beschreibt die Lenzsche Regel: Die Induktionswirkung ist der Änderung des magnetischen Flusses entgegengerichtet.",
   },
   {
     lessonId: "magnetic-quantities",
-    title: "Lange Spulenfeldstärke",
+    title: "Magnetische Feldstärke im Inneren einer langen Spule",
     expression: "H ≈ NI / l",
     legend:
       "H – magnetische Feldstärke, A/m; N ist die Anzahl der Windungen; I – Strom, A; l ist die Länge der Spule, m.",
     conditions:
-      "Langes, gleichmäßig gewickeltes Magnetventil; Das Feld wird von innen gesehen, von den Enden weg. Für komplexe Kerne und Luftspalte ist ein Modell des Magnetkreises erforderlich.",
+      "Lange, gleichmäßig gewickelte Spule; betrachtet wird das Feld im Inneren, weit entfernt von den Enden. Für komplexe Kerne und Luftspalte ist ein Modell des Magnetkreises erforderlich.",
   },
   {
     lessonId: "magnetic-quantities",
-    title: "Zusammenhang zwischen magnetischer Induktion und Spannung",
+    title: "Zusammenhang zwischen magnetischer Flussdichte und Feldstärke",
     expression: "B = μ₀μrH; μ₀ ≈ 1,256637 × 10⁻⁶ H/m",
     legend:
-      "B – Induktion, T; H – Spannung, A/m; μ₀ – magnetische Konstante; μr – relative magnetische Permeabilität.",
+      "B – magnetische Flussdichte, T; H – magnetische Feldstärke, A/m; μ₀ – magnetische Feldkonstante; μᵣ – relative Permeabilität.",
     conditions:
-      "Lineares isotropes Medium. Für Vakuum ist μr = 1. Für Ferromagnete hängt μr vom Modus, der Sättigung und der magnetischen Geschichte ab; es kann nur in der akzeptierten Näherung als konstant angesehen werden.",
+      "In einem linearen isotropen Medium gilt die Beziehung mit konstanter Permeabilität; im Vakuum ist μᵣ = 1. Bei Ferromagneten hängt μᵣ vom Arbeitspunkt und der magnetischen Vorgeschichte ab und ist wegen Hysterese und Sättigung nicht konstant.",
   },
 ];
 

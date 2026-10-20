@@ -67,7 +67,7 @@ function Circuit({ voltage, resistance, current, second, parallel = false }) {
       className="lab-diagram"
       viewBox="0 0 420 220"
       role="img"
-      aria-label={`Quelle ${format(voltage)} Volt, ${parallel ? "parallel" : "sequentiell"} Verbindung, Strom ${format(current)} Ampere`}
+      aria-label={`Quelle ${format(voltage)} Volt, ${parallel ? "Parallelschaltung" : "Reihenschaltung"}, Stromstärke ${format(current)} Ampere`}
     >
       <defs>
         <marker
@@ -222,7 +222,8 @@ function Charges({ charge, time }) {
         Leiterquerschnitt
       </text>
       <text x="210" y="207" className="lab-svg-label">
-        Für {format(time)} s Anklage geht vorbei {format(charge)} C
+        In {format(time)} s fließen {format(charge)} Coulomb (C) durch den
+        Leiterquerschnitt.
       </text>
     </svg>
   );
@@ -273,7 +274,7 @@ function Plates({ voltage, gap = 4, capacitor = false }) {
           : `d = ${format(gap)} cm`}
       </text>
       <text x="210" y="22" className="lab-svg-label">
-        {capacitor ? "Flacher Kondensator" : "Gleichmäßiges elektrisches Feld"}
+        {capacitor ? "Plattenkondensator" : "Gleichmäßiges elektrisches Feld"}
       </text>
     </svg>
   );
@@ -361,7 +362,7 @@ function Magnet({ angle = 45, coil = false, turns = 200, current = 1 }) {
             S
           </text>
           <text x="210" y="215" className="lab-svg-label">
-            {turns} dreht sich · ich = {format(current)} A L = 20 cm
+            {turns} Windungen · I = {format(current)} A · L = 20 cm
           </text>
         </>
       ) : (
@@ -464,10 +465,10 @@ function Flux({ angle, field, area }) {
         </text>
       </g>
       <text x="70" y="29" className="lab-svg-label">
-        B = {format(field)} mTl
+        B = {format(field)} mT
       </text>
       <text x="212" y="203" className="lab-svg-label">
-        S = {format(area)} cm² α = {angle}° zum Normaln
+        S = {format(area)} cm² · α = {angle}° zur Flächennormalen
       </text>
     </svg>
   );
@@ -522,19 +523,19 @@ export default function InteractiveLab({ lessonId }) {
 
   switch (id) {
     case "current":
-      title = "Wie viel Ladung fließt in einer Sekunde?";
+      title = "Wie hängen Ladung, Zeitdauer und Stromstärke zusammen?";
       lead =
-        "Ladung und Zeit ändern. Der Strom zeigt die Rate der Ladungsübertragung an.";
+        "Stellen Sie die elektrische Ladung Q und die Zeitdauer t ein. Die Stromstärke gibt die Ladungsübertragung pro Zeit an.";
       controls = [
-        range("charge", "Laden Sie Q auf", 1, 24, 1, "C"),
-        range("time", "Zeit t", 1, 12, 1, "s"),
+        range("charge", "Elektrische Ladung Q (Coulomb)", 1, 24, 1, "C"),
+        range("time", "Zeitdauer t", 1, 12, 1, "s"),
       ];
       visual = <Charges charge={v.charge} time={v.time} />;
       formula = `I = Q / t = ${format(v.charge)} / ${format(v.time)}`;
       result = v.charge / v.time;
       unit = "A";
       note =
-        "1 A = 1 C/s. Das Diagramm zeigt eine herkömmliche positive Ladung. In einem Metall bewegen sich Elektronen in die entgegengesetzte Richtung.";
+        "1 A = 1 Coulomb (C) pro Sekunde. Das Diagramm zeigt die technische Stromrichtung positiver Ladungen. In einem Metall bewegen sich die Elektronen entgegengesetzt.";
       break;
     case "circuits": {
       const req = parallel ? (v.r1 * v.r2) / (v.r1 + v.r2) : v.r1 + v.r2;
@@ -549,14 +550,14 @@ export default function InteractiveLab({ lessonId }) {
               aria-pressed={!parallel}
               onClick={() => setParallel(false)}
             >
-              Konsequent
+              Reihenschaltung
             </button>
             <button
               type="button"
               aria-pressed={parallel}
               onClick={() => setParallel(true)}
             >
-              Parallel dazu
+              Parallelschaltung
             </button>
           </div>
           {range("r1", "Widerstand R₁", 50, 500, 10, "Ω")}
@@ -572,7 +573,7 @@ export default function InteractiveLab({ lessonId }) {
           current={12 / req}
         />
       );
-      formula = parallel ? "Rtotal = R₁ · R₂ / (R₁ + R₂)" : "Rtotal = R₁ + R₂";
+      formula = parallel ? "R_ges = R₁ · R₂ / (R₁ + R₂)" : "R_ges = R₁ + R₂";
       result = req;
       unit = "Ω";
       note = parallel
@@ -581,28 +582,36 @@ export default function InteractiveLab({ lessonId }) {
       break;
     }
     case "voltage":
-      title = "Energie pro Anhänger";
+      title = "Spannung: Energie pro Ladung";
       lead =
         "Die Spannung setzt die Arbeit des elektrischen Feldes und die übertragene Ladung in Beziehung.";
       controls = [
         range("work", "Arbeit W", 1, 48, 1, "J"),
-        range("voltageCharge", "Laden Sie Q auf", 1, 8, 0.5, "C"),
+        range(
+          "voltageCharge",
+          "Elektrische Ladung Q (Coulomb)",
+          1,
+          8,
+          0.5,
+          "C",
+        ),
       ];
       result = v.work / v.voltageCharge;
       unit = "V";
       formula = `U = W / Q = ${format(v.work)} / ${format(v.voltageCharge)}`;
       visual = <Plates voltage={result} />;
       note =
-        "1 V = 1 J/C. Am 17. Dezember 2014 wurde die Arbeit mit mehr als 1000 Mitarbeitern durchgeführt. Die Spannung wird immer zwischen zwei Punkten eingestellt.";
+        "1 V = 1 J/C. Die elektrische Spannung wird stets zwischen zwei Punkten angegeben.";
       break;
     case "resistance": {
       const resistance = (0.0175 * v.length) / v.area;
-      title = "Warum ist ein langer, dünner Draht widerstandsfähiger?";
+      title =
+        "Wie beeinflussen Länge und Querschnitt den elektrischen Widerstand?";
       lead =
         "Untersuchen Sie Kupferdraht bei einer konstanten Temperatur von etwa 20 °C.";
       controls = [
         range("length", "Länge l", 1, 50, 1, "m"),
-        range("area", "Schnittbereich S", 0.5, 4, 0.25, "mm²"),
+        range("area", "Leiterquerschnitt S", 0.5, 4, 0.25, "mm²"),
       ];
       visual = (
         <div className="lab-conductor">
@@ -614,7 +623,7 @@ export default function InteractiveLab({ lessonId }) {
             }}
           />
           <div className="lab-conductor-caption">
-            <span>Kupfer Kupfer</span>
+            <span>Kupferleiter</span>
             <strong>ρ = 0,0175 Ohm mm²/m</strong>
           </div>
           <p>
@@ -636,7 +645,7 @@ export default function InteractiveLab({ lessonId }) {
       lead =
         "Konstante Leistung und Betriebszeit einstellen. Behalten Sie den Überblick über Energieeinheiten.";
       controls = [
-        range("watts", "Macht P", 10, 200, 10, "W"),
+        range("watts", "Leistung P", 10, 200, 10, "W"),
         range("hours", "Zeit t", 0.5, 12, 0.5, "h"),
       ];
       result = (v.watts * v.hours) / 1000;
@@ -646,7 +655,7 @@ export default function InteractiveLab({ lessonId }) {
         <div className="lab-energy-display">
           <span>Energiezähler</span>
           <strong>
-            {format(v.watts * v.hours)} <small>Wa</small>
+            {format(v.watts * v.hours)} <small>Wh</small>
           </strong>
           <div className="lab-energy-dots" aria-hidden="true">
             {Array.from({ length: 12 }, (_, i) => (
@@ -677,15 +686,15 @@ export default function InteractiveLab({ lessonId }) {
       formula = `P = U · I = ${format(v.voltage)} · ${format(v.amps)}`;
       result = v.voltage * v.amps;
       unit = "W";
-      note = `Für jede Sekunde, die das Gerät empfängt ${format(result)} J Energie. Der Lastwiderstand entspricht hier den gewählten U und I. Für Wechselstrom reicht die allgemeine Formel P = U · I ohne Berücksichtigung der Art der Last nicht aus.`;
+      note = `Das Gerät nimmt pro Sekunde ${format(result)} J elektrische Energie auf. Der Lastwiderstand entspricht hier den gewählten Werten für U und I. Bei Wechselstrom hängt die Wirkleistung zusätzlich von der Phasenverschiebung ab.`;
       break;
     case "efficiency":
       title = "Wohin geht die empfangene Energie?";
       lead =
         "Der Wirkungsgrad gibt an, welcher Anteil der Eingangsleistung in Nutzleistung umgewandelt wird.";
       controls = [
-        range("input", "Eingangsstrom-P_zu", 20, 200, 10, "W"),
-        range("efficiency", "Effizienz η", 10, 100, 5, "%"),
+        range("input", "Eingangsleistung P_zu", 20, 200, 10, "W"),
+        range("efficiency", "Wirkungsgrad η", 10, 100, 5, "%"),
       ];
       visual = <EnergyFlow input={v.input} efficiency={v.efficiency} />;
       formula = `P_nutz = P_zu · η = ${format(v.input)} · ${format(v.efficiency / 100)}`;
@@ -712,13 +721,13 @@ export default function InteractiveLab({ lessonId }) {
     case "capacitor":
       title = "Wie speichert ein Kondensator Ladung?";
       lead =
-        "Die Kapazität verbindet das Lademodul auf jeder Platte mit der Spannung zwischen ihnen.";
+        "Die Kapazität verknüpft den Betrag der Ladung auf einer Platte mit der Spannung zwischen den Platten.";
       controls = [
         range("capacitance", "Kapazität C", 10, 500, 10, "µF"),
         range("voltage", "Spannung U", 1, 24, 1, "V"),
       ];
       visual = <Plates voltage={v.voltage} gap={4} capacitor />;
-      formula = `Q = C · U = ${format(v.capacitance)} µF · ${format(v.voltage)} B`;
+      formula = `Q = C · U = ${format(v.capacitance)} µF · ${format(v.voltage)} V`;
       result = v.capacitance * v.voltage;
       unit = "µC";
       note = `Gespeicherte Energie W = C U² / 2 = ${format((v.capacitance * 1e-6 * v.voltage ** 2) / 2, 5)} J. Die Ladungen der Platten sind gleich groß und haben entgegengesetztes Vorzeichen; Die Gesamtladung eines idealen Kondensators ist Null.`;
@@ -738,15 +747,15 @@ export default function InteractiveLab({ lessonId }) {
     case "electromagnetism":
       title = "Steuern Sie das Spulenfeld";
       lead =
-        "Mehr Windungen oder ein höherer Strom bedeuten mehr magnetische Induktion in einer langen Spule.";
+        "Mehr Windungen oder eine höhere Stromstärke erhöhen die magnetische Flussdichte im Inneren einer langen Spule.";
       controls = [
-        range("turns", "Anzahl der Windungen N", 50, 500, 25, "dreht sich"),
+        range("turns", "Windungszahl N", 50, 500, 25, "Windungen"),
         range("coilAmps", "Stromstärke I", 0.1, 2, 0.1, "A"),
       ];
       visual = <Magnet coil turns={v.turns} current={v.coilAmps} />;
       formula = `B ≈ μ₀ N I / L; L = 0,20 m`;
       result = ((4 * Math.PI * 1e-7 * v.turns * v.coilAmps) / 0.2) * 1000;
-      unit = "mTl";
+      unit = "mT";
       note =
         "Modell: langer kernloser Magnet, von den Enden entfernt; μ₀ ≈ 4π·10⁻⁷ H/m. Die Zeichnung ist relativ und nicht maßstabsgetreu. Der Kern verändert das Feld und das Eisen kann gesättigt werden. Bei einer Änderung der Stromrichtung werden die Pole umgekehrt.";
       break;
@@ -755,8 +764,8 @@ export default function InteractiveLab({ lessonId }) {
       lead =
         "Der magnetische Fluss hängt von der Induktion B, der Fläche S und dem Winkel zur Flächennormalen ab.";
       controls = [
-        range("field", "Induktion B", 1, 100, 1, "mTl"),
-        range("fluxArea", "Bereich S", 5, 100, 5, "cm²"),
+        range("field", "Magnetische Flussdichte B", 1, 100, 1, "mT"),
+        range("fluxArea", "Fläche S", 5, 100, 5, "cm²"),
         range("fluxAngle", "Winkel zur Normalen α", 0, 90, 5, "°"),
       ];
       visual = <Flux angle={v.fluxAngle} field={v.field} area={v.fluxArea} />;
@@ -768,9 +777,9 @@ export default function InteractiveLab({ lessonId }) {
         0.0001 *
         Math.cos((v.fluxAngle * Math.PI) / 180) *
         1e6;
-      unit = "µVb";
+      unit = "µWb";
       note =
-        "Für gleichmäßiges Feld und ebene Fläche. Die Normale n steht senkrecht auf der Oberfläche: Bei α = 0° ist die Strömung maximal, bei 90° ist sie Null. In SI: 1 mT = 10⁻³ T; 1 cm² = 10⁻⁴ m²; 1 Wb = 1 T m².";
+        "Für ein gleichmäßiges Feld und eine ebene Fläche. Die Flächennormale n steht senkrecht auf der Oberfläche: Bei α = 0° ist der magnetische Fluss maximal, bei 90° ist er null. In SI gilt: 1 mT = 10⁻³ T; 1 cm² = 10⁻⁴ m²; 1 Wb = 1 T·m².";
       break;
     case "ohm":
     default:

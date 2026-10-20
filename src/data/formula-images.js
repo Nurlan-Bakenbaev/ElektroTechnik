@@ -61,7 +61,7 @@ export const formulaImages = {
     source:
       "https://latex.codecogs.com/svg.image?%5Cdpi%7B140%7D%5Cdisplaystyle%20R%3D%5Cfrac%20UI%3B%5Cquad%201%5C%2C%5COmega%3D1%5C%2C%5Cmathrm%7BV/A%7D",
   },
-  "R = ρ l / S;  Kreis = π d² / 4": {
+  "R = ρ · l / A;  A = π · d² / 4": {
     src: "/images/formulas/11.svg",
     latex: "R=\\rho\\frac lA;\\quad A=\\frac{\\pi d^2}{4}",
     source:
@@ -186,7 +186,7 @@ export const formulaImages = {
     source:
       "https://latex.codecogs.com/svg.image?%5Cdpi%7B140%7D%5Cdisplaystyle%20E%3Dk%5Cfrac%7B%7CQ%7C%7D%7Br%5E2%7D%3B%5Cquad%20%5Cvec%20E_%7B%5Cmathrm%7Bges%7D%7D%3D%5Cvec%20E_1%2B%5Cvec%20E_2%2B%5Ccdots",
   },
-  "Afields = q UAB; ΔE_pot = −Afield": {
+  "W_Feld = q · U_AB; ΔE_pot = −W_Feld": {
     src: "/images/formulas/31.svg",
     latex:
       "W_{\\mathrm{Feld}}=qU_{AB};\\quad \\Delta E_{\\mathrm{pot}}=-W_{\\mathrm{Feld}}",
@@ -232,7 +232,7 @@ export const formulaImages = {
     source:
       "https://latex.codecogs.com/svg.image?%5Cdpi%7B140%7D%5Cdisplaystyle%20%5Cvec%20B_%7B%5Cmathrm%7Bges%7D%7D%3D%5Cvec%20B_1%2B%5Cvec%20B_2%3B%5Cquad%20B_%7B%5Cperp%7D%3D%5Csqrt%7BB_1%5E2%2BB_2%5E2%7D",
   },
-  "Fmag = |q| · v · B · sin α; Fprov = B I l sin α": {
+  "F_mag = |q| · v · B · sin α; F_Leiter = B · I · l · sin α": {
     src: "/images/formulas/38.svg",
     latex:
       "F_{\\mathrm{mag}}=|q|vB\\sin\\alpha;\\quad F_{\\mathrm{Leiter}}=BIl\\sin\\alpha",
@@ -361,13 +361,13 @@ export const formulaImages = {
     source:
       "https://latex.codecogs.com/svg.image?%5Cdpi%7B140%7D%5Cdisplaystyle%20W%3DPt%3DUIt%3B%5Cquad%201%5C%2C%5Cmathrm%7BkWh%7D%3D3%7B%2C%7D6%5Ccdot10%5E6%5C%2C%5Cmathrm%20J",
   },
-  "P = UI; Widerstand = I²R = U²/R": {
+  "P = U · I; P = I² · R = U² / R": {
     src: "/images/formulas/58.svg",
     latex: "P=UI;\\quad P_R=I^2R=\\frac{U^2}R",
     source:
       "https://latex.codecogs.com/svg.image?%5Cdpi%7B140%7D%5Cdisplaystyle%20P%3DUI%3B%5Cquad%20P_R%3DI%5E2R%3D%5Cfrac%7BU%5E2%7DR",
   },
-  "η = Wuseful / Winput = Puseful / P_zuput; η% = 100η": {
+  "η = W_nutz / W_zu = P_nutz / P_zu; η (%) = 100 · η": {
     src: "/images/formulas/59.svg",
     latex:
       "\\eta=\\frac{W_{\\mathrm{nutz}}}{W_{\\mathrm{zu}}}=\\frac{P_{\\mathrm{nutz}}}{P_{\\mathrm{zu}}};\\quad \\eta_{\\%}=100\\eta",
@@ -387,7 +387,7 @@ export const formulaImages = {
     source:
       "https://latex.codecogs.com/svg.image?%5Cdpi%7B140%7D%5Cdisplaystyle%20F%3Dk%5Cfrac%7B%7Cq_1q_2%7C%7D%7Br%5E2%7D%3B%5Cquad%20k%5Capprox8%7B%2C%7D99%5Ccdot10%5E9%5C%2C%5Cmathrm%7BN%5C%2Cm%5E2/C%5E2%7D",
   },
-  "C=Q/U; Flach = ε₀εrA / d": {
+  "C = Q / U; C_platte = ε₀ · εᵣ · A / d": {
     src: "/images/formulas/62.svg",
     latex:
       "C=\\frac QU;\\quad C_{\\mathrm{Platte}}=\\varepsilon_0\\varepsilon_r\\frac Ad",
@@ -426,10 +426,10 @@ export const formulaImages = {
     source:
       "https://latex.codecogs.com/svg.image?%5Cdpi%7B140%7D%5Cdisplaystyle%20%5CPhi%3DBA%5Ccos%5Ctheta%3B%5Cquad%201%5C%2C%5Cmathrm%7BWb%7D%3D1%5C%2C%5Cmathrm%7BT%5C%2Cm%5E2%7D",
   },
-  "ε = −N dΦ/dt; εDurchschnitt = −N ΔΦ/Δt": {
+  "ε = −N dΦ/dt; ε̄ = −N ΔΦ/Δt": {
     src: "/images/formulas/68.svg",
     latex:
-      "\\mathcal E=-N\\frac{d\\Phi}{dt};\\quad \\overline{\\mathcal E}=-N\\frac{\\Delta\\Phi}{\\Delta t}",
+      "\\varepsilon=-N\\frac{d\\Phi}{dt};\\quad \\bar{\\varepsilon}=-N\\frac{\\Delta\\Phi}{\\Delta t}",
     source:
       "https://latex.codecogs.com/svg.image?%5Cdpi%7B140%7D%5Cdisplaystyle%20%5Cmathcal%20E%3D-N%5Cfrac%7Bd%5CPhi%7D%7Bdt%7D%3B%5Cquad%20%5Coverline%7B%5Cmathcal%20E%7D%3D-N%5Cfrac%7B%5CDelta%5CPhi%7D%7B%5CDelta%20t%7D",
   },

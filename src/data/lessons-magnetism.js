@@ -20,7 +20,7 @@ export const magnetismLessons = [
         title: "1. Zwei Leiter mit einem elektrischen Feld dazwischen",
         paragraphs: [
           "Ein Kondensator besteht aus zwei leitenden Platten, die durch einen Isolator getrennt sind. Eine Quelle verschiebt Elektronen von einer Platte zur anderen: Eine Platte trägt die Ladung −Q, die andere +Q. Insgesamt bleibt der Kondensator elektrisch neutral. Die Energie steckt im elektrischen Feld zwischen den Platten.",
-          "Die Kapazität C gibt an, wie viel Ladung Q jede Platte bei einer Spannung U aufnimmt. Das Farad ist eine große Einheit, daher nutzt man meist Teile davon: 1 µF = 10⁻⁶ F, 1 nF = 10⁻⁹ F, 1 pF = 10⁻¹² F.",
+          "Die Kapazität C gibt an, wie viel Ladung Q eine Platte bei einer Spannung U trägt. Ihre SI-Einheit ist das Farad (F); 1 F = 1 Coulomb (C)/V. Da das Farad eine große Einheit ist, nutzt man meist Teile davon: 1 µF = 10⁻⁶ F, 1 nF = 10⁻⁹ F, 1 pF = 10⁻¹² F.",
           "Für einen idealen Kondensator gilt Q = CU. Q ist der Betrag der Ladung einer Platte. Bei konstanter Spannung fließt im Gleichstromfall kein Strom. Ändert sich die Spannung, fließt ein Strom: Die Quelle lädt oder entlädt die Platten.",
         ],
         formula: {
@@ -80,8 +80,8 @@ export const magnetismLessons = [
           given:
             "C₁ = 10 µF und C₂ = 20 µF liegen in Reihe an einer 12-V-Quelle. Beide sind zu Beginn entladen.",
           steps: [
-            "Cges = 10 20 / (10 + 20) = 6,67 µF.",
-            "Gesamtladung Q = CgesU = 6,67 μF · 12 V ≈ 80 μC.",
+            "C_ges = 10 · 20 / (10 + 20) = 6,67 µF.",
+            "Gesamtladung Q = C_ges · U = 6,67 µF · 12 V ≈ 80 µC.",
             "U₁ = Q/C₁ = 80/10 = 8 V; U₂ = Q/C₂ = 80/20 = 4 V.",
             "Probe: 8 V + 4 V = 12 V. Die kleinere Kapazität erhält die größere Spannung.",
           ],
@@ -363,9 +363,10 @@ export const magnetismLessons = [
           "In einem Leiter bewegen sich die Ladungsträger geordnet, daher wirkt das Feld auf den stromdurchflossenen Leiter. Für ein gerades Leiterstück der Länge l in einem homogenen Feld gilt F = BIl sin α. Dabei ist α der Winkel zwischen der technischen Stromrichtung und B. Darauf beruht der Elektromotor.",
         ],
         formula: {
-          expression: "Fmag = |q| · v · B · sin α; Fprov = B I l sin α",
+          expression:
+            "F_mag = |q| · v · B · sin α; F_Leiter = B · I · l · sin α",
           legend:
-            "F ist die Kraft in N; q ist die Ladung in C; v ist die Geschwindigkeit in m/s; B ist die magnetische Flussdichte in T; I ist der Strom in A; l ist die wirksame Länge in m.",
+            "F – Kraft, N; q – Ladung, C; v – Geschwindigkeit, m/s; B – magnetische Flussdichte, T; I – Stromstärke, A; l – wirksame Leiterlänge, m.",
           note: "Die Leiterformel gilt für ein gerades Leiterstück im homogenen Feld. Vektorform für eine Ladung: F⃗mag = q(v⃗ × B⃗).",
         },
         example: {
@@ -375,7 +376,7 @@ export const magnetismLessons = [
           steps: [
             "Länge umrechnen: l = 0,10 m.",
             "Wegen α = 90° ist sin α = 1.",
-            "F = BIl = 0,20 3 0,10 = 0,060 N.",
+            "F = B · I · l = 0,20 · 3 · 0,10 = 0,060 N.",
             "Dreht man den Leiter in Feldrichtung, wird α = 0° und die Kraft null.",
           ],
           answer:
@@ -748,7 +749,7 @@ export const magnetismLessons = [
       {
         term: "Selbstinduktion",
         german: "Selbstinduktion",
-        symbol: "𝓔ich selbst",
+        symbol: "U_ind",
         unit: "V",
         definition:
           "Entstehung einer Spannung im Stromkreis durch Änderung des eigenen Stroms und Flusses.",
