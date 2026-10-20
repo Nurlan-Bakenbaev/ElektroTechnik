@@ -537,7 +537,7 @@ test("German typography, local equation images and reduced-motion scrolling work
   await expect
     .poll(() => formula.evaluate((e) => e.complete && e.naturalWidth > 0))
     .toBe(true);
-  await expect(formula).toHaveAttribute("src", /\/images\/formulas\/28.svg$/);
+  await expect(formula).toHaveAttribute("src", /\/images\/formulas\/wiki-[a-f0-9]+\.svg$/);
   await page.emulateMedia({ reducedMotion: "reduce" });
   await expect(page.locator("html")).not.toHaveClass(/lenis/);
   expect(errors).toEqual([]);

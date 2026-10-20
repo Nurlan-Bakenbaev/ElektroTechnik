@@ -1,0 +1,128 @@
+/**
+ * Short, action-first openings for every lesson.  The long reference text
+ * remains available below, but learners begin with a question and an
+ * observation so the lesson teaches a mental model before introducing terms.
+ */
+export const teachingGuides = {
+  current: {
+    problem: "Warum wird eine Lampe heller, wenn mehr Ladung pro Sekunde durch sie fließt?",
+    observe: "Im geschlossenen Kreis zeigt das Amperemeter einen Wert. Der Schalter unterbricht den Ladungsfluss sofort.",
+    predict: "Vermutung: Die Stromstärke beschreibt nicht die Geschwindigkeit einzelner Elektronen, sondern die Ladungsmenge pro Zeit.",
+    experiment: "Schalter schließen und den Messwert beobachten. Vergleiche 250 mA mit 1 A.",
+    explain: "Stromstärke I ist der Ladungsfluss pro Zeit. Ihre Einheit Ampere entspricht Coulomb pro Sekunde.",
+    apply: "Ordne einem USB-Ladegerät mit 2 A den passenden Messbereich zu.",
+    reflect: "Kannst du erklären, warum ein Stromkreis geschlossen sein muss?",
+  },
+  circuits: {
+    problem: "Warum bleibt eine Lampe in einer Reihenschaltung aus, wenn nur eine Verbindung unterbrochen wird?",
+    observe: "Eine Reihenschaltung hat nur einen Weg. In einer Parallelschaltung gibt es mehrere Zweige.",
+    predict: "Vermutung: In Reihe ist der Strom an jeder Stelle gleich; parallel teilt er sich auf.",
+    experiment: "Schalte einen Zweig ab und beobachte, ob die anderen Verbraucher weiterarbeiten.",
+    explain: "Die Topologie des Stromkreises entscheidet, ob Strom einen gemeinsamen Weg oder mehrere Wege hat.",
+    apply: "Wähle die Schaltung, die für zwei unabhängige Lampen im Haus sinnvoll ist.",
+    reflect: "Was passiert mit der Gesamtstromstärke, wenn ein paralleler Zweig hinzukommt?",
+  },
+  voltage: {
+    problem: "Warum kann eine Spannungsquelle Ladungen bewegen, obwohl die Ladungen im Leiter schon vorhanden sind?",
+    observe: "Zwischen zwei Punkten zeigt das Voltmeter eine Potentialdifferenz. Ohne geschlossenen Kreis fließt dabei kein dauerhafter Strom.",
+    predict: "Vermutung: Spannung ist eine Energieänderung pro Ladung, nicht die Menge der Ladung selbst.",
+    experiment: "Miss die Quelle zuerst ohne Last und dann unter Last. Vergleiche die beiden Werte.",
+    explain: "U beschreibt den Antrieb zwischen zwei Punkten; 1 Volt bedeutet 1 Joule pro Coulomb.",
+    apply: "Prüfe, ob ein 5-V-Sensor sicher an einer 12-V-Quelle betrieben werden darf.",
+    reflect: "Warum braucht ein Voltmeter eine Parallelschaltung?",
+  },
+  resistance: {
+    problem: "Warum begrenzt ein Widerstand den Strom, obwohl er selbst keine Ladung verbraucht?",
+    observe: "Bei gleicher Spannung sinkt der Messstrom, wenn der Widerstand größer wird.",
+    predict: "Vermutung: Material, Länge und Querschnitt bestimmen, wie stark ein Leiter den Ladungsfluss hemmt.",
+    experiment: "Stelle 12 V ein und verdopple R. Beobachte, wie sich I verändert.",
+    explain: "Widerstand R beschreibt die Beziehung zwischen Spannung und Stromstärke eines Bauteils.",
+    apply: "Bestimme den Vorwiderstand für eine LED-Schaltung und achte auf die Einheit Ohm.",
+    reflect: "Welche Bauteileigenschaft verändert sich bei einem längeren Draht?",
+  },
+  "ohms-law": {
+    problem: "Was passiert mit I, wenn bei 12 V der Widerstand von 6 Ω auf 24 Ω steigt?",
+    observe: "Die Simulation berechnet I aus der gewählten Spannung und dem Widerstand.",
+    predict: "Vermutung: Vierfacher Widerstand führt bei gleicher Spannung zu einem Viertel des Stroms.",
+    experiment: "Stelle 12 V ein und probiere 6 Ω, 12 Ω und 24 Ω. Lies jedes Ergebnis ab.",
+    explain: "Das Ohmsche Gesetz verbindet U, I und R. Bei konstantem U ist I umgekehrt proportional zu R.",
+    apply: "Berechne den Strom für 24 V und 8 Ω, bevor du die Lösung einblendest.",
+    reflect: "Welche Größe musst du umstellen, wenn der Strom gegeben ist?",
+  },
+  energy: {
+    problem: "Warum kostet ein Gerät mit kleiner Leistung manchmal mehr, wenn es viel länger läuft?",
+    observe: "Ein Leistungsmesser zeigt die momentane Rate; der Energiezähler sammelt diese Rate über die Zeit.",
+    predict: "Vermutung: Energie hängt sowohl von der Leistung als auch von der Betriebsdauer ab.",
+    experiment: "Vergleiche 100 W für 10 h mit 1 kW für 1 h. Beide Fälle liefern dieselbe Energie.",
+    explain: "Elektrische Arbeit ist Leistung mal Zeit. Eine Kilowattstunde ist eine Energieeinheit.",
+    apply: "Schätze die Kosten einer 60-W-Lampe bei 5 h täglicher Nutzung.",
+    reflect: "Warum wird Zeit bei der Energieabrechnung mitgeführt?",
+  },
+  power: {
+    problem: "Warum erwärmt ein Gerät mit höherer Leistung einen Leiter stärker?",
+    observe: "Bei gleicher Spannung steigt die Leistung mit der Stromstärke.",
+    predict: "Vermutung: Leistung beschreibt, wie schnell Energie umgesetzt wird.",
+    experiment: "Ändere U oder I und beobachte die Anzeige des Wattmeters.",
+    explain: "P ist Energie pro Zeit. In einem Gleichstromkreis gilt P = U · I.",
+    apply: "Vergleiche die Leistung eines 12-V-Motors bei 2 A und 4 A.",
+    reflect: "Welche Einheit gehört zur Leistung und welche zur Energie?",
+  },
+  efficiency: {
+    problem: "Warum wird bei einem Motor nicht die gesamte elektrische Energie zu Bewegung?",
+    observe: "Ein Teil der Eingangsenergie erscheint als Wärme, Schall oder Reibung.",
+    predict: "Vermutung: Der Wirkungsgrad liegt bei realen Geräten unter 100 Prozent.",
+    experiment: "Vergleiche Nutzleistung und aufgenommene Leistung eines Modells.",
+    explain: "Der Wirkungsgrad ist das Verhältnis von Nutzenergie zu zugeführter Energie.",
+    apply: "Bewerte, ob 90 % Wirkungsgrad für ein Netzteil plausibel ist.",
+    reflect: "Welche Verluste würdest du bei einem Transformator erwarten?",
+  },
+  field: {
+    problem: "Wie kann eine Ladung eine andere Ladung beeinflussen, ohne sie zu berühren?",
+    observe: "Feldlinien zeigen Richtung und relative Stärke der elektrischen Kraft im Raum.",
+    predict: "Vermutung: Das Feld ist nahe einer Punktladung stärker als weiter entfernt.",
+    experiment: "Verschiebe eine Probeladung im Feldmodell und beobachte Richtung und Kraft.",
+    explain: "Das elektrische Feld ordnet jedem Ort eine Kraft pro Ladung zu.",
+    apply: "Erkläre, warum Feldlinien sich nicht schneiden.",
+    reflect: "Was zeigt die Dichte der Feldlinien an?",
+  },
+  capacitor: {
+    problem: "Warum kann ein Kondensator Energie speichern, obwohl kein Strom dauerhaft durch sein Dielektrikum fließt?",
+    observe: "Beim Laden steigt die Kondensatorspannung; beim Entladen fällt sie über den Widerstand ab.",
+    predict: "Vermutung: Größere Kapazität speichert bei gleicher Spannung mehr Ladung.",
+    experiment: "Ändere C oder R und vergleiche die Ladezeitkonstante τ.",
+    explain: "Ein Kondensator speichert Ladung und Energie in einem elektrischen Feld.",
+    apply: "Wähle einen Kondensator, der die geforderte Spannung sicher verträgt.",
+    reflect: "Warum begrenzt ein Widerstand den Ladestrom?",
+  },
+  magnets: {
+    problem: "Warum zieht ein Magnet Eisen an, aber eine Kupfermünze meist nicht?",
+    observe: "Magnetfeldlinien bilden geschlossene Linien und treten am Nordpol aus.",
+    predict: "Vermutung: Das Material reagiert abhängig von seiner magnetischen Struktur.",
+    experiment: "Teste verschiedene Materialien im Feldmodell und vergleiche die Wirkung.",
+    explain: "Ein Magnetfeld beschreibt die Kraftwirkung bewegter Ladungen und magnetischer Stoffe.",
+    apply: "Ordne Nord- und Südpol anhand der Feldlinienrichtung zu.",
+    reflect: "Warum schneiden sich Feldlinien nicht?",
+  },
+  electromagnetism: {
+    problem: "Wie kann aus elektrischem Strom ein Magnetfeld entstehen?",
+    observe: "Ein stromdurchflossener Leiter lenkt eine Kompassnadel ab.",
+    predict: "Vermutung: Mehr Strom oder mehr Windungen verstärken die magnetische Wirkung.",
+    experiment: "Ändere Stromstärke und Windungszahl einer Spule.",
+    explain: "Elektromagnetismus verbindet elektrische Ströme mit Magnetfeldern und Induktion.",
+    apply: "Erkläre das Grundprinzip eines Relais oder Elektromotors.",
+    reflect: "Was ändert sich beim Umpolen des Stroms?",
+  },
+  "magnetic-quantities": {
+    problem: "Welche Größe brauchst du, wenn du die Kraftwirkung eines Magnetfelds vergleichen willst?",
+    observe: "B, H und Φ beschreiben unterschiedliche Aspekte desselben magnetischen Systems.",
+    predict: "Vermutung: Eine Größe beschreibt das Feld, eine andere den Fluss durch eine Fläche.",
+    experiment: "Verändere Feldstärke und Fläche und beobachte den magnetischen Fluss.",
+    explain: "Magnetische Größen haben eigene Einheiten und dürfen nicht gleichgesetzt werden.",
+    apply: "Wähle Tesla für die Flussdichte und Weber für den magnetischen Fluss.",
+    reflect: "Warum hängt der Fluss von der Fläche und vom Winkel ab?",
+  },
+};
+
+export function getTeachingGuide(id) {
+  return teachingGuides[id] || teachingGuides.current;
+}

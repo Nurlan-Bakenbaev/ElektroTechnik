@@ -53,7 +53,7 @@ export const examQuestions = [
     ],
     answer: 2,
     explanation:
-      "Bei einer Parallelschaltung werden die Anfänge der Zweige mit einem Knoten und die Enden mit einem anderen verbunden. Der Potentialunterschied zwischen diesen Knoten ist gleich: U₁ = U₂ = Uist = 12 V. Die Ströme entlang der Zweige können unterschiedlich sein.",
+      "Bei einer Parallelschaltung werden die Anfänge der Zweige mit einem Knoten und die Enden mit einem anderen verbunden. Der Potentialunterschied zwischen diesen Knoten ist gleich: U₁ = U₂ = U = 12 V. Die Ströme entlang der Zweige können unterschiedlich sein.",
   },
   {
     id: "exam-05",
@@ -281,7 +281,7 @@ export const examQuestions = [
     unit: "%",
     tolerance: 0.1,
     explanation:
-      "Effizienz η = Puseful/P_zuput × 100 % = 375/500 × 100 % = 75 %. Die restlichen 125 W stammen aus Verlusten: Wärme, Reibung, Schall und andere Formen der Energieübertragung, die für diese Aufgabe nicht nützlich sind.",
+      "Wirkungsgrad η = P_nutz/P_zu · 100 % = 375/500 · 100 % = 75 %. Die restlichen 125 W stammen aus Verlusten: Wärme, Reibung, Schall und andere Formen der Energieübertragung, die für diese Aufgabe nicht nützlich sind.",
   },
   {
     id: "exam-22",
@@ -560,7 +560,7 @@ export const formulaSheet = [
   {
     lessonId: "efficiency",
     title: "Effizienz",
-    expression: "η = Wuseful / Winput = Puseful / P_zuput; η% = 100η",
+    expression: "η = W_nutz / W_zu = P_nutz / P_zu; η% = 100η",
     legend:
       "η – dimensionsloser Wirkungsgrad; W – Energie, J; P – Leistung, W.",
     conditions:
@@ -606,16 +606,16 @@ export const formulaSheet = [
     lessonId: "capacitor",
     title: "Kondensatoranschlüsse",
     expression:
-      "Parallel dazu: Ctotal = C₁ + C₂ + …; nacheinander: 1/Ctotal = 1/C₁ + 1/C₂ + …",
+      "Parallel dazu: C_ges = C₁ + C₂ + …; nacheinander: 1/C_ges = 1/C₁ + 1/C₂ + …",
     legend:
-      "Ctotal – äquivalente Kapazität, F; C₁, C₂ – Kapazitäten einzelner Kondensatoren, F.",
+      "C_ges – äquivalente Kapazität, F; C₁, C₂ – Kapazitäten einzelner Kondensatoren, F.",
     conditions:
       "Ideale lineare Kondensatoren. Für eine Reihenschaltung zunächst ungeladener Kondensatoren sind die Lademodule gleich; Bei Parallelschaltung sind die Spannungen gleich.",
   },
   {
     lessonId: "capacitor",
     title: "Zeitkonstante der RC-Schaltung",
-    expression: "τ = RC; Uc(t) = U₀(1 − e^(−t/τ))",
+    expression: "τ = RC; U_C(t) = U₀(1 − e^(−t/τ)); U_C(t) = U_C,0 e^(−t/τ)",
     legend:
       "τ – Zeitkonstante, s; R – Widerstand, Ohm; C – Kapazität, F; U₀ – Quellenspannung, V; t – Zeit nach der Verbindung, s.",
     conditions:

@@ -408,7 +408,7 @@ export const basicsLessons = [
       {
         term: "Ersatzwiderstand",
         german: "Ersatzwiderstand",
-        symbol: "Anf",
+        symbol: "R_ges",
         unit: "Ω - Ohm",
         definition:
           "Widerstand, der eine Widerstandsgruppe ersetzt und bei gleicher Klemmenspannung denselben Gesamtstrom ergibt.",
@@ -602,7 +602,7 @@ export const basicsLessons = [
           "Eine Sinusspannung hat Augenblickswert, Scheitelwert Û und Effektivwert U_eff. Der Effektivwert erzeugt an demselben Widerstand dieselbe mittlere Wärmeleistung wie eine gleich große Gleichspannung. Für reinen Sinus gilt U_eff = Û/√2. Beispiel: 12 V Effektivwert entsprechen etwa 16,97 V Scheitelwert. Angaben zur Netzspannung oder zur Sekundärspannung eines Transformators sind meist Effektivwerte.",
         ],
         formula: {
-          expression: "u(t) = Û · sin(2πft);  Uact = Û / √2;  T = 1/f",
+          expression: "u(t) = Û · sin(2πft);  U_eff = Û / √2;  T = 1/f",
           legend:
             "u(t) – Augenblickswert der Spannung in V; Û – Scheitelwert in V; f – Frequenz in Hz; T – Periodendauer in s.",
           note: "Der Faktor √2 gilt für einen Sinus ohne Gleichanteil. Bei anderen Kurvenformen berechnet man den Effektivwert anders.",
@@ -658,7 +658,7 @@ export const basicsLessons = [
       {
         term: "Effektivwert",
         german: "Effektivwert",
-        symbol: "Uakt",
+        symbol: "U_eff",
         unit: "V - Volt",
         definition:
           "Wert einer Gleichspannung, die an demselben Widerstand dieselbe mittlere Wärmeleistung erzeugt wie die betrachtete Wechselspannung.",

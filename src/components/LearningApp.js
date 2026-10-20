@@ -62,6 +62,8 @@ import {
 } from "../lib/storage.js";
 import Quiz from "./Quiz";
 import InteractiveLab from "./InteractiveLab";
+import TeachingSequence from "./TeachingSequence";
+import Notation from "./Notation";
 
 const icons = {
   basics: Zap,
@@ -1095,6 +1097,7 @@ function Lesson({ lesson, profile, bookmark, onComplete }) {
         {tab === "theory" && (
           <div className="reading-layout">
             <article className="lesson-article">
+              <TeachingSequence lesson={lesson} />
               <div className="objectives-box">
                 <span className="eyebrow">
                   <Lightbulb size={16} />
@@ -1193,7 +1196,7 @@ function Lesson({ lesson, profile, bookmark, onComplete }) {
                       {t.term}
                       <small>
                         {t.german}
-                        {t.symbol ? ` · ${t.symbol}` : ""}
+                        {t.symbol ? <> · <Notation>{t.symbol}</Notation></> : ""}
                         {t.unit ? ` · ${t.unit}` : ""}
                       </small>
                     </strong>
@@ -1394,7 +1397,7 @@ function Glossary() {
           {filtered.map((t) => (
             <article key={t.term}>
               <div className="term-symbol">
-                {t.symbol || <BookOpen size={21} />}
+                {t.symbol ? <Notation>{t.symbol}</Notation> : <BookOpen size={21} />}
               </div>
               <div>
                 <h2>
@@ -2102,7 +2105,7 @@ function Essentials() {
           >
             <div className="concept-top">
               <span>{String(i + 1).padStart(2, "0")}</span>
-              <span>{c.symbol}</span>
+              <span><Notation>{c.symbol}</Notation></span>
             </div>
             <h2>{c.title}</h2>
             <span className="concept-german">

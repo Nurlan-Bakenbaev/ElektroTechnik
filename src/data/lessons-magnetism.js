@@ -98,9 +98,9 @@ export const magnetismLessons = [
         ],
         formula: {
           expression:
-            "τ = RC; Ucharge(t) = U₀(1 − e^(−t/τ)); Udel(t) = Uinit e^(−t/τ)",
+            "τ = RC; U_C(t) = U₀(1 − e^(−t/τ)); U_C(t) = U_C,0 e^(−t/τ)",
           legend:
-            "τ und t sind Zeiten in Sekunden; R ist der Widerstand in Ohm; C ist die Kapazität in Farad; U₀ ist die Quellenspannung; Uinit ist die Anfangsspannung beim Entladen.",
+            "τ und t sind Zeiten in Sekunden; R ist der Widerstand in Ohm; C ist die Kapazität in Farad; U₀ ist die Quellenspannung; U_C,0 ist die Anfangsspannung beim Entladen.",
           note: "Die Ladeformel gilt für die Anfangsspannung 0 V. Beim Laden gilt i(t) = (U₀/R)e^(−t/τ); beim Entladen hängt das Vorzeichen des Stroms von der gewählten Zählrichtung ab.",
         },
         example: {
@@ -192,7 +192,7 @@ export const magnetismLessons = [
       {
         term: "Leckstrom",
         german: "Leckstrom",
-        symbol: "Iut",
+        symbol: "I_Leck",
         unit: "A",
         definition:
           "Durch unvollkommene Isolation fließt ein kleiner Strom, der die Ladung langsam abbaut.",
@@ -748,7 +748,7 @@ export const magnetismLessons = [
       {
         term: "Selbstinduktion",
         german: "Selbstinduktion",
-        symbol: "𝓔ich selbst",
+        symbol: "𝓔_ind",
         unit: "V",
         definition:
           "Entstehung einer Spannung im Stromkreis durch Änderung des eigenen Stroms und Flusses.",
@@ -960,7 +960,7 @@ export const magnetismLessons = [
         ],
         formula: {
           expression:
-            "NI = Hserlser + (B/μ₀)g; wenn der Kern vernachlässigt wird: NI ≈ Bg/μ₀",
+            "NI = H_K l_K + (B/μ₀)g; wenn der Kern vernachlässigt wird: NI ≈ Bg/μ₀",
           legend:
             "g ist die Gesamtlänge der Luftspalte in m; lser ist die Weglänge im Kern in m; Hser ist die magnetische Feldstärke im Kern bei gegebenem B.",
           note: "Vorausgesetzt werden annähernd gleicher Querschnitt, gleicher Fluss sowie geringe Streuung und Randeffekte. Für eine genaue Auslegung berücksichtigt man diese Effekte gesondert.",

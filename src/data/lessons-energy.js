@@ -84,9 +84,9 @@ export const energyLessons = [
           "Achtung bei den Formelzeichen: Q steht sowohl für Ladung als auch für Wärmemenge. Man unterscheidet sie über Index, Zusammenhang und Einheit: Ladung in Coulomb, Wärme in Joule. In einem Motor wird nicht alle Energie zu Wärme, ein Teil wird mechanische Arbeit. Die Formel I² · R · t beschreibt dort nur die Wärmeverluste.",
         ],
         formula: {
-          expression: "Qheat = I² R t = U² t / R",
+          expression: "Q_W = I² R t = U² t / R",
           legend:
-            "Qheat – Wärmemenge, J; I – Stromstärke, A; R – Ohmscher Widerstand, Ω; t – Zeit, s.",
+            "Q_W – Joulesche Wärme, J; I – Stromstärke, A; R – ohmscher Widerstand, Ω; t – Zeit, s.",
           note: "Verdoppelt sich die Stromstärke bei gleichem R und t, wird viermal so viel Wärme frei.",
         },
       },
@@ -150,7 +150,7 @@ export const energyLessons = [
       {
         term: "Wärmemenge",
         german: "Wärmemenge",
-        symbol: "Qheat",
+        symbol: "Q_W",
         unit: "J",
         definition:
           "Als Wärme übertragene Energie. Beim Widerstand mit konstanter Stromstärke gilt I² · R · t.",
@@ -166,7 +166,7 @@ export const energyLessons = [
       {
         term: "Joulesches Gesetz",
         german: "Joulesches Gesetz",
-        symbol: "Qheat = I²Rt",
+        symbol: "Q_W = I²Rt",
         unit: "J",
         definition:
           "Zusammenhang zwischen der im Widerstand frei werdenden Wärme, Stromstärke, Widerstand und Zeit.",
@@ -426,7 +426,7 @@ export const energyLessons = [
       {
         term: "Abgabeleistung",
         german: "Abgabeleistung",
-        symbol: "Schmollmund",
+        symbol: "P_ab",
         unit: "W",
         definition:
           "Vom System abgegebene Leistung, z. B. mechanische Leistung an der Welle.",
@@ -434,7 +434,7 @@ export const energyLessons = [
       {
         term: "Verlustleistung",
         german: "Verlustleistung",
-        symbol: "Psweat",
+        symbol: "P_V",
         unit: "W",
         definition:
           "Teil der Aufnahmeleistung, der nicht in die vorgesehene Nutzleistung umgewandelt wird.",
@@ -555,7 +555,7 @@ export const energyLessons = [
           "Für einen Wandler ohne zusätzliche Energiequelle liegt η zwischen 0 und 1. Ein ideales Gerät hat in Übungsaufgaben 100 %, reale Systeme haben Verluste. In Formeln setzt man 85 % als 0,85 ein, nicht als 85.",
         ],
         formula: {
-          expression: "η = E_nutz / Ein; η = P_nutz / P_zu; η% = η 100%",
+          expression: "η = E_nutz / E_zu; η = P_nutz / P_zu; η% = η 100%",
           legend:
             "E_nutz und P_nutz – Nutzenergie und Nutzleistung; E_zu und P_zu – Energie und Leistung am Eingang.",
           note: "Vergleichen Sie gleiche Zeitabschnitte und dieselbe Systemgrenze. Zähler und Nenner müssen dieselbe Einheit haben.",
@@ -674,7 +674,7 @@ export const energyLessons = [
       {
         term: "Energiebilanz",
         german: "Energiebilanz",
-        symbol: "Ein = Efloor + E_Verlust",
+        symbol: "E_zu = E_nutz + E_V",
         unit: "J",
         definition:
           "Erfassung aller zu-, ab- und gespeicherten Energien im betrachteten System.",
@@ -886,12 +886,12 @@ export const energyLessons = [
         id: "field-work-materials",
         title: "6. Feldarbeit, Leiter und Dielektrika",
         paragraphs: [
-          "Bewegt sich eine Ladung von A nach B, verrichtet das elektrische Feld die Arbeit Afield = q · (φA − φB) = q · UAB. Eine positive Ladung, die sich mit dem Feld bewegt, verliert potenzielle Energie. Die Feldarbeit ist positiv. Bei negativer Ladung kehrt das Vorzeichen von q das Ergebnis um. Für Spannung und Arbeit zählen Anfangs- und Endpunkt, nicht nur die Entfernung.",
+          "Bewegt sich eine Ladung von A nach B, verrichtet das elektrische Feld die Arbeit W_Feld = q · (φA − φB) = q · U_AB. Eine positive Ladung, die sich mit dem Feld bewegt, verliert potenzielle Energie. Die Feldarbeit ist positiv. Bei negativer Ladung kehrt das Vorzeichen von q das Ergebnis um. Für Spannung und Arbeit zählen Anfangs- und Endpunkt, nicht nur die Entfernung.",
           "Ein Leiter enthält frei bewegliche Ladungsträger, die sich im Feld verschieben. In einem Dielektrikum sind die Ladungen überwiegend gebunden. Das Feld bewirkt eine Polarisation: Positive und negative Ladungen werden leicht gegeneinander verschoben oder Dipole richten sich aus. Die Polarisation schwächt das Feld und ist die Grundlage der Wirkung eines Dielektrikums im Kondensator.",
           "Wird die Feldstärke für ein Material zu groß, kommt es zum elektrischen Durchschlag: Der Isolator wird leitend. Für die Isolation zählen daher nicht nur die Spannung, sondern auch Abstände, Elektrodenform, Luftfeuchte und Materialeigenschaften. Verwenden Sie in Versuchen sichere Kleinspannungsquellen und fertige Schaltungen. Geladene Kondensatoren können auch nach dem Abschalten Energie speichern.",
         ],
         formula: {
-          expression: "Afields = q UAB; ΔE_pot = −Afield",
+          expression: "W_Feld = q U_AB; ΔE_pot = −W_Feld",
           legend:
             "UAB = φA − φB – Spannung von A nach B, V; q – Ladung mit Vorzeichen, C; Afield – Feldarbeit, J.",
           note: "Das ist die Arbeit eines elektrostatischen Feldes. Wirken weitere Kräfte, bestimmt die Gesamtarbeit aller Kräfte die Änderung der kinetischen Energie.",

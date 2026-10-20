@@ -307,8 +307,15 @@ test("all 19 final calculation answers match physical formulas and requested uni
   verifyCalculations(examQuestions, examCalculations);
 });
 
+test("notation does not contain known OCR or placeholder artifacts", () => {
+  const source = JSON.stringify({ lessons, examQuestions, formulaSheet });
+  for (const artifact of ["Schmollmund", "Psweat", "Uakt", "Iut", "𝓔ich selbst", "Afields", "Efloor", "Puseful", "P_zuput", "Qheat", "Hserlser"]) {
+    assert.doesNotMatch(source, new RegExp(artifact));
+  }
+});
+
 test("every displayed lesson and reference formula has a locally stored SVG image", async () => {
-  const { formulaImages } = await import("../src/data/formula-images.js");
+  const { formulaImages, formulaAssets } = await import("../src/data/formula-images.js");
   const { readFile } = await import("node:fs/promises");
   const formulas = [
     ...lessons.flatMap((l) =>
@@ -317,14 +324,17 @@ test("every displayed lesson and reference formula has a locally stored SVG imag
     ...formulaSheet.map((f) => f.expression),
   ];
   for (const expression of formulas) {
-    const image = formulaImages[expression];
-    assert.ok(image, `Missing formula image: ${expression}`);
-    assert.match(image.source, /^https:\/\/latex\.codecogs\.com\/svg\.image\?/);
-    const svg = await readFile(
-      new URL(`../public${image.src}`, import.meta.url),
-      "utf8",
-    );
-    assert.match(svg, /<svg/);
-    assert.doesNotMatch(svg, /<script|<foreignObject|onload=/i);
+    const imageSet = formulaImages[expression];
+    assert.ok(imageSet, `Missing formula image: ${expression}`);
+    assert.ok(imageSet.images.length > 0, `Formula has no image assets: ${expression}`);
+    for (const assetId of imageSet.images) {
+      const asset = formulaAssets[assetId];
+      assert.ok(asset, `Missing formula asset: ${assetId}`);
+      assert.match(asset.revisionUrl, /^https:\/\/.*\?oldid=/);
+      assert.match(asset.licenseUrl, /^https:\/\/creativecommons\.org\/licenses\/by-sa\/4\.0/);
+      const svg = await readFile(new URL(`../public${asset.src}`, import.meta.url), "utf8");
+      assert.match(svg, /<svg/);
+      assert.doesNotMatch(svg, /<script|<foreignObject|onload=/i);
+    }
   }
 });

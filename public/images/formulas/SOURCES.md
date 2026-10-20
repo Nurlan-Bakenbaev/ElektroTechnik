@@ -1,3 +1,5 @@
-# Formelbilder
+# Formula image sources
 
-Mathematische Darstellung: CodeCogs Equation Editor (https://www.codecogs.com/latex/eqneditor.php). Lokal gespeicherte SVG-Bilder, abgerufen am 20.10.2026. Die exakten Quell-URLs und zugänglichen LaTeX-Beschreibungen stehen in src/data/formula-images.js.
+The formula images in this directory are local SVG renders from Wikimedia Math. Each asset is linked in `src/data/formula-images.js` to the originating Wikipedia article revision and carries the Wikimedia/ Wikipedia CC BY-SA 4.0 license. They are bundled locally so the lesson remains usable offline and does not depend on a third-party equation service at runtime.
+
+Attribution: Wikipedia authors and Wikimedia Foundation, rendered through Wikimedia Math, CC BY-SA 4.0. See the `revisionUrl` and `licenseUrl` fields beside each asset for the exact source and revision.
