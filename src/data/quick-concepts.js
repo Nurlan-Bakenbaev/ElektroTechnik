@@ -4,7 +4,7 @@ export const quickConcepts = [
     title: "Aufladen",
     german: "Elektrische Ladung",
     symbol: "Q",
-    unit: "C-Anhänger",
+    unit: "C - Coulomb",
     short:
       "Ladung ist eine elektrische Eigenschaft von Teilchen. Es kann positiv und negativ sein; Das Elektron trägt eine negative Ladung. Q zeigt den übertragenen Ladungsbetrag an.",
     analogy:
