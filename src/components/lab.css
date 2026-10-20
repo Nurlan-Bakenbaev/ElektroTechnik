@@ -446,3 +446,228 @@
     padding: 20px 16px;
   }
 }
+.lab {
+  font-size: 17px;
+  line-height: 1.75;
+}
+.lab p,
+.lab label,
+.lab select,
+.lab input,
+.lab button {
+  font-size: 17px;
+}
+.lab-tag,
+.lab-live,
+.lab-control-label label,
+.lab-range-ends,
+.lab-control-label output span,
+.lab-result-label,
+.lab-formula,
+.lab-note,
+.lab-safety,
+.lab-conductor-caption,
+.lab-conductor p,
+.lab-flow span,
+.lab-flow small,
+.lab-energy-display > span,
+.lab-energy-display p {
+  font-size: 14px;
+}
+.lab-control-label output,
+.lab-result > strong span {
+  font-size: 16px;
+}
+.lab-result > strong {
+  font-size: 29px;
+}
+.lab-svg-label {
+  font-size: 14px;
+}
+.lab-switch button {
+  transition:
+    background 0.18s ease,
+    box-shadow 0.18s ease,
+    transform 0.18s ease;
+}
+.lab-switch button:hover {
+  transform: translateY(-1px);
+}
+.lab-switch button:active {
+  transform: scale(0.98);
+}
+.lab-conductor-wire {
+  transition:
+    width 0.2s cubic-bezier(0.22, 1, 0.36, 1),
+    height 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+@media (max-width: 700px) {
+  .lab p,
+  .lab label,
+  .lab select,
+  .lab input,
+  .lab button {
+    font-size: 16px;
+  }
+  .lab-tag,
+  .lab-live,
+  .lab-control-label label,
+  .lab-range-ends,
+  .lab-control-label output span,
+  .lab-result-label,
+  .lab-formula,
+  .lab-note,
+  .lab-safety,
+  .lab-conductor-caption,
+  .lab-conductor p,
+  .lab-flow span,
+  .lab-flow small,
+  .lab-energy-display > span,
+  .lab-energy-display p {
+    font-size: 13px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .lab-switch button,
+  .lab-conductor-wire {
+    transition: none;
+  }
+}
+
+.lab {
+  border-color: #d7dfd8;
+  border-radius: 18px;
+  background: #fffefa;
+  color: #182d2a;
+  box-shadow: 0 12px 32px #173b3509;
+}
+
+.lab-tag,
+.lab-live,
+.lab-control-label label,
+.lab-range-ends,
+.lab-control-label output span,
+.lab-result-label,
+.lab-formula,
+.lab-note,
+.lab-safety,
+.lab-conductor-caption,
+.lab-conductor p,
+.lab-flow span,
+.lab-flow small,
+.lab-energy-display > span,
+.lab-energy-display p {
+  color: #52645f;
+}
+
+.lab-tag > span {
+  background: #e3eee5;
+}
+
+.lab-live i {
+  background: #26786b;
+}
+
+.lab-lead {
+  color: #465c54;
+  font-size: 16px;
+}
+
+.lab-visual {
+  border-color: #e0e7df;
+  border-radius: 14px;
+  background: #f5f7f1;
+}
+
+.lab-wire,
+.lab-field-line {
+  stroke: #668276;
+}
+
+.lab-source {
+  stroke: #26786b;
+}
+
+.lab-svg-symbol {
+  fill: #193b34;
+}
+
+.lab-svg-label {
+  fill: #304b42;
+}
+
+.lab-resistor {
+  fill: #c9dfcf;
+  stroke: #26786b;
+}
+
+.lab-node {
+  fill: #26786b;
+}
+
+.lab-control input[type="range"] {
+  accent-color: #14584f;
+  background: #dce5de;
+}
+
+.lab-control input[type="range"]:focus-visible,
+.lab-switch button:focus-visible {
+  outline-color: #12645a;
+}
+
+.lab-switch {
+  background: #e8eee8;
+}
+
+.lab-switch button {
+  color: #425a53;
+}
+
+.lab-switch button[aria-pressed="true"] {
+  color: #173b35;
+}
+
+.lab-result {
+  border-color: #cbded0;
+  border-radius: 13px;
+  background: #e8f0e7;
+}
+
+.lab-result > strong,
+.lab-formula {
+  color: #193b34;
+}
+
+.lab-conductor-wire {
+  border-color: #9b7841;
+  background: linear-gradient(#d7c193, #c4a879 60%, #ae8d5a);
+}
+
+.lab-flow-useful {
+  background: #dcebdd;
+}
+
+.lab-flow-loss {
+  background: #f3ecdc;
+}
+
+.lab-flow strong,
+.lab-flow-arrow,
+.lab-flow-loss strong,
+.lab-energy-display > strong {
+  color: #193b34;
+}
+
+.lab-energy-dots i {
+  background: #dce5de;
+}
+
+.lab-energy-dots .lab-dot-on {
+  background: #78a28a;
+}
+
+@media (max-width: 700px) {
+  .lab {
+    padding: 20px 16px;
+  }
+}

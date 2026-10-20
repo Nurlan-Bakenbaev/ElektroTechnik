@@ -7,6 +7,7 @@ import {
   getLesson,
 } from "../src/data/course.js";
 import { examQuestions, formulaSheet } from "../src/data/exam.js";
+import { quickConcepts } from "../src/data/quick-concepts.js";
 import { LESSON_IDS } from "../src/lib/progress.js";
 
 const expectedIds = [
@@ -224,6 +225,45 @@ test("formula and glossary links resolve to real lessons and include their expla
     assert.ok(lesson, `${term.term}: known glossary lesson reference`);
     assert.equal(term.lessonTitle, lesson.title);
   }
+});
+
+test("Coulomb terminology and physics formula labels stay explicit and correct", () => {
+  const currentExample = getLesson("current").sections.find(
+    (section) => section.id === "current-definition",
+  ).example;
+  assert.match(
+    currentExample.given,
+    /elektrische Ladung von 2,4 Coulomb \(C\).*Leiterquerschnitt/,
+  );
+  assert.ok(currentExample.steps.includes("Einsetzen: I = 2,4/8 = 0,3 A."));
+  assert.equal(currentExample.answer, "Der Strom beträgt 0,3 A oder 300 mA.");
+
+  const chargeConcept = quickConcepts.find(
+    (concept) => concept.id === "charge",
+  );
+  assert.equal(chargeConcept.title, "Elektrische Ladung");
+  assert.equal(chargeConcept.unit, "Coulomb (C)");
+  assert.equal(
+    quickConcepts.find((concept) => concept.id === "power").title,
+    "Leistung",
+  );
+
+  const powerFormula = formulaSheet.find(
+    (formula) => formula.lessonId === "power",
+  );
+  assert.equal(powerFormula.title, "Elektrische Leistung");
+  assert.match(powerFormula.expression, /P = I² · R/);
+  assert.doesNotMatch(powerFormula.expression, /Widerstand =/);
+
+  const capacitanceAnswer = examQuestions.find(
+    (question) => question.id === "exam-26",
+  );
+  assert.match(capacitanceAnswer.explanation, /1200 µC = 1,2 mC/);
+  assert.equal(
+    getLesson("power").terms.find((term) => term.term === "Abgabeleistung")
+      .symbol,
+    "P_ab",
+  );
 });
 
 // Independent calculations from the quantities and requested units in each

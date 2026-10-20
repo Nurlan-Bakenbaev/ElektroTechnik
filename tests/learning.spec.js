@@ -27,6 +27,25 @@ async function readProfile(page) {
   );
 }
 
+function contrastRatio(foreground, background) {
+  const luminance = (color) => {
+    const channels = color
+      .match(/\d+/g)
+      .map(Number)
+      .map((value) => {
+        const channel = value / 255;
+        return channel <= 0.04045
+          ? channel / 12.92
+          : ((channel + 0.055) / 1.055) ** 2.4;
+      });
+    return channels[0] * 0.2126 + channels[1] * 0.7152 + channels[2] * 0.0722;
+  };
+  const values = [luminance(foreground), luminance(background)].sort(
+    (a, b) => b - a,
+  );
+  return (values[0] + 0.05) / (values[1] + 0.05);
+}
+
 async function openLessonQuiz(page, lesson) {
   await visit(page, `lesson/${lesson.id}`);
   await page.getByRole("tab", { name: "Wissenstest", exact: true }).click();
@@ -298,6 +317,21 @@ test("every lesson has an interactive lab whose sliders update its model without
       exact: true,
     });
     await expect(lab).toBeVisible();
+    if (lesson.id === "current") {
+      await expect(
+        lab.getByRole("slider", {
+          name: "Elektrische Ladung Q (Coulomb)",
+          exact: true,
+        }),
+      ).toBeVisible();
+      await expect(lab).toContainText("Coulomb (C)");
+    }
+    if (lesson.id === "energy") {
+      await expect(lab).toContainText("Wh");
+    }
+    if (lesson.id === "magnetic-quantities") {
+      await expect(lab.locator(".lab-result")).toContainText("µWb");
+    }
     const sliders = lab.getByRole("slider");
     expect(await sliders.count()).toBeGreaterThan(0);
     for (const control of await lab.locator(".lab-control").all()) {
@@ -540,6 +574,54 @@ test("German typography, local equation images and reduced-motion scrolling work
   await expect(formula).toHaveAttribute("src", /\/images\/formulas\/wiki-[a-f0-9]+\.svg$/);
   await page.emulateMedia({ reducedMotion: "reduce" });
   await expect(page.locator("html")).not.toHaveClass(/lenis/);
+  expect(errors).toEqual([]);
+});
+
+test("redesigned typography, interactive contrast and reduced-motion entrance remain accessible", async ({
+  page,
+}) => {
+  const errors = watchErrors(page);
+  await visit(page);
+  const styles = await page.evaluate(() =>
+    [
+      ".button-dark",
+      ".button-light",
+      ".sidebar",
+      ".main-nav > a.nav-active",
+    ].map((selector) => {
+      const element = document.querySelector(selector);
+      const style = getComputedStyle(element);
+      return {
+        selector,
+        foreground: style.color,
+        background: style.backgroundColor,
+      };
+    }),
+  );
+  for (const style of styles) {
+    expect(
+      contrastRatio(style.foreground, style.background),
+      `${style.selector} should have readable text contrast`,
+    ).toBeGreaterThanOrEqual(4.5);
+  }
+  expect(
+    await page
+      .locator("body")
+      .evaluate((element) => parseFloat(getComputedStyle(element).fontSize)),
+  ).toBeGreaterThanOrEqual(17);
+  expect(
+    await page
+      .locator(".hero-copy > p")
+      .evaluate((element) => parseFloat(getComputedStyle(element).fontSize)),
+  ).toBeGreaterThanOrEqual(17);
+
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await expect(page.locator("html")).not.toHaveClass(/lenis/);
+  expect(
+    await page
+      .locator(".hero-copy")
+      .evaluate((element) => getComputedStyle(element).animationName),
+  ).toBe("none");
   expect(errors).toEqual([]);
 });
 
