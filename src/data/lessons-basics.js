@@ -8,120 +8,120 @@ export const basicsLessons = [
     category: "basics",
     duration: 24,
     description:
-      "Von der Bewegung elektrischer Ladungen über die Stärke des Stroms, seine Richtung und die korrekte Messung mit einem Amperemeter.",
+      "Von der Ladungsbewegung über die Stromstärke und ihre Richtung bis zur richtigen Messung mit dem Amperemeter.",
     objectives: [
-      "Erklären Sie, welche Ladungen sich in einem Leiter bewegen und warum Strom entsteht.",
-      "Berechnen Sie Strom, Ladung und Zeit mit korrekter Einheitenumrechnung.",
-      "Unterscheiden Sie zwischen der technischen Stromrichtung und der Elektronenbewegung, schließen Sie ein Amperemeter an eine Modellschaltung an.",
+      "Erklären, welche Ladungsträger sich im Leiter bewegen und wie ein Strom entsteht.",
+      "Stromstärke, Ladung und Zeit berechnen und dabei die Einheiten richtig umrechnen.",
+      "Technische Stromrichtung und Elektronenbewegung unterscheiden und ein Amperemeter richtig anschließen.",
     ],
     sections: [
       {
         id: "charge-carriers",
-        title: "1. Woher kommt der Strom und warum bewegen sich Elektronen?",
+        title: "1. Wie entsteht ein elektrischer Strom?",
         paragraphs: [
-          "Stellen Sie sich eine Batterie, Kabel, einen Schalter und eine Lampe vor. Bewegliche Elektronen befinden sich bereits vor dem Einschalten in den Metalldrähten und Glühfäden der Lampe. Sie gehören zur Substanz der Leiter: Einige Elektronen können sich zwischen Atomen bewegen, und die positiven Ionen des Kristallgitters bleiben in der Nähe ihrer Plätze. Während es keinen gerichteten elektrischen Einfluss gibt, bewegen sich Elektronen chaotisch. Im Durchschnitt fließt in beide Richtungen die gleiche Ladung durch einen imaginären Querschnitt des Drahtes, sodass der resultierende Strom Null ist.",
-          "Chemische Reaktionen in einer Batterie sorgen für die Ladungstrennung und die Spannung zwischen ihren Anschlüssen. Wenn ein Stromkreis geschlossen ist, entsteht durch eine leichte Umverteilung der Ladungen entlang der Leiter ein elektrisches Feld im Stromkreis. Das Feld übt eine Kraft auf vorhandene bewegliche Ladungen aus und fügt der chaotischen Bewegung eine kleine Richtungsabweichung hinzu. So entsteht Strom – die gerichtete Bewegung elektrischer Ladungen. Die Batterie versorgt den Stromkreis mit Energie und hält diese Bewegung aufrecht; Es muss nicht zuerst der leere Draht mit neuen Elektronen gefüllt werden. Der elektrische Einfluss breitet sich viel schneller durch einen Stromkreis aus, als ein einzelnes Elektron entlang eines Drahtes wandert.",
-          "Elektrische Ladung ist eine Eigenschaft von Teilchen, die ihre elektrische Wechselwirkung bestimmt. Gleiche Ladungen stoßen ab, ungleiche Ladungen ziehen sich an. Die Ladung wird mit Q bezeichnet und in Coulomb C gemessen. Ein Elektron trägt eine Ladung −e, wobei e ≈ 1,602 · 10⁻¹⁹ C. Ein Coulomb entspricht im Absolutwert der Ladung von etwa 6,24 · 10¹⁸ Elektronen. In einem Metall wird der Strom durch Elektronen und in einem Elektrolyten durch positive und negative Ionen transportiert. Daher bezieht sich die allgemeine Definition von Strom auf die Bewegung von Ladungen und ist nicht nur für Metalldrähte geeignet.",
+          "Denken Sie an eine Batterie, Leitungen, einen Schalter und eine Lampe. Die beweglichen Elektronen sind schon vor dem Einschalten in den Metalldrähten vorhanden. Die positiven Atomrümpfe bleiben im Kristallgitter fest. Ohne äußeres Feld bewegen sich die Elektronen ungeordnet. Im Mittel fließt durch jeden Leiterquerschnitt in beide Richtungen gleich viel Ladung, der Strom ist also null.",
+          "Die Quelle trennt Ladungen und erzeugt so die Spannung an ihren Klemmen. Ist der Stromkreis geschlossen, baut sich im Leiter ein elektrisches Feld auf. Dieses Feld übt eine Kraft auf die freien Ladungsträger aus und überlagert der ungeordneten Bewegung eine gerichtete Driftbewegung. Das ist der elektrische Strom. Die Quelle liefert die Energie und hält die Bewegung aufrecht. Das Feld breitet sich dabei sehr viel schneller aus, als sich ein einzelnes Elektron bewegt.",
+          "Die elektrische Ladung Q bestimmt die elektrische Wechselwirkung von Teilchen. Gleichnamige Ladungen stoßen sich ab, ungleichnamige ziehen sich an. Die Einheit ist das Coulomb (C). Ein Elektron trägt die Ladung −e mit e ≈ 1,602 · 10⁻¹⁹ C. Ein Coulomb entspricht daher etwa 6,24 · 10¹⁸ Elementarladungen. In Metallen tragen Elektronen den Strom, in Elektrolyten positive und negative Ionen.",
         ],
         callout: {
           type: "insight",
           title:
-            "Das stromführende Kabel muss nicht vollständig aufgeladen sein",
-          text: "Ein Metalldraht bleibt in einem herkömmlichen Stromkreis nahezu elektrisch neutral: Die negativen und positiven Ladungen in seinem Volumen werden praktisch ausgeglichen. Strom beschreibt die Übertragung von Ladung über einen Abschnitt und nicht die Ansammlung einer großen Ladung im gesamten Draht.",
+            "Ein stromführender Draht ist nicht aufgeladen",
+          text: "Ein Draht bleibt im Stromkreis praktisch elektrisch neutral. Positive und negative Ladungen heben sich auf. Der Strom beschreibt die Ladung, die durch einen Querschnitt transportiert wird, nicht eine Überschussladung im Draht.",
         },
       },
       {
         id: "current-definition",
-        title: "2. Stromstärke: wie viel Ladung pro Sekunde fließt",
+        title: "2. Stromstärke: Ladung pro Zeit",
         paragraphs: [
-          "Die kürzeste Formulierung: Stromstärke – wie viel Ladung pro Sekunde durchläuft. Schneiden wir im Geiste den Draht quer durch und zählen wir die Ladung, die während der ausgewählten Zeit durch diesen Abschnitt fließt. Je mehr Ladung gleichzeitig fließt, desto größer ist der Strom. Die Stromstärke wird mit I bezeichnet. Ein Ampere bedeutet die Übertragung eines Coulombs in einer Sekunde. Der Name „Strom“ ist historisch: Das Ampere misst die Geschwindigkeit des Ladungstransfers, nicht die mechanische Kraft in Newton. Der Vergleich mit der Wasserströmung ist nützlich: Strömung ähnelt der Strömung durch einen Rohrquerschnitt. Die Ladungen sind jedoch bereits im gesamten Draht vorhanden und ihre elektrische Wechselwirkung ist nicht auf die Bewegung von Wasser beschränkt.",
-          "Für Gleichstrom ist I = Q/t. Wenn der Strom schwankt, gibt das Verhältnis ΔQ/Δt den durchschnittlichen Strom über das Intervall an; Der Momentanwert wird mathematisch als I = dQ/dt geschrieben. Bei Problemen in diesem Abschnitt wird davon ausgegangen, dass der Strom konstant ist, sofern nicht anders angegeben. Rechnen Sie vor dem Austausch die Zeit in Sekunden und die Ladung in Coulomb um: 1 min = 60 s, 1 mC = 0,001 C. Nützliche Einheiten: 1 A = 1000 mA = 1.000.000 µA.",
+          "Die Stromstärke gibt an, wie viel Ladung pro Sekunde durch einen Leiterquerschnitt fließt. Je mehr Ladung in derselben Zeit transportiert wird, desto größer ist die Stromstärke I. Ein Ampere bedeutet: Ein Coulomb fließt in einer Sekunde. Der Vergleich mit Wasser in einem Rohr hilft, hat aber Grenzen: Die Ladungsträger sind im Draht schon vorhanden.",
+          "Für Gleichstrom gilt I = Q/t. Bei veränderlichem Strom liefert ΔQ/Δt den Mittelwert, der Augenblickswert ist I = dQ/dt. Hier ist der Strom, wenn nichts anderes steht, konstant. Rechnen Sie zuerst um: Zeit in Sekunden, Ladung in Coulomb. Es gilt 1 min = 60 s und 1 mC = 0,001 C. Außerdem: 1 A = 1000 mA = 1.000.000 µA.",
         ],
         formula: {
           expression: "I = Q / t;  Q = I · t;  t = Q / I",
           legend:
-            "I – Stromstärke, A; Q ist die übertragene Ladung, C; t – Zeit, s.",
-          note: "Diese Formen gelten direkt für Gleichstrom; Q ist hier der Modul der übertragenen Ladung.",
+            "I – Stromstärke in A; Q – transportierte Ladung in C; t – Zeit in s.",
+          note: "Gilt unmittelbar für Gleichstrom; Q ist hier der Betrag der transportierten Ladung.",
         },
         example: {
           title: "Beispiel: Ladung durch einen Leiter",
           given:
-            "In 8 s floss eine Ladung von 2,4 C durch den Drahtquerschnitt. Finden Sie den Gleichstrom in Ampere und Milliampere.",
+            "In 8 s fließt eine Ladung von 2,4 C durch den Drahtquerschnitt. Gesucht ist der Gleichstrom in A und mA.",
           steps: [
-            "Alle Daten sind bereits in SI-Einheiten: Q = 2,4 C und t = 8 s.",
-            "Wir wählen die Definition der Stromstärke: I = Q/t.",
-            "Ersatz: I = 2,4/8 = 0,3 A.",
-            "Umrechnen: 0,3 A · 1000 = 300 mA. Maßkontrolle: C/s = A.",
+            "Alle Werte liegen in SI-Einheiten vor: Q = 2,4 C und t = 8 s.",
+            "Wir verwenden die Definition der Stromstärke: I = Q/t.",
+            "Einsetzen: I = 2,4/8 = 0,3 A.",
+            "Umrechnen: 0,3 A · 1000 = 300 mA. Einheitenprobe: C/s = A.",
           ],
           answer: "Der Strom beträgt 0,3 A oder 300 mA.",
         },
       },
       {
         id: "current-direction",
-        title: "3. Stromrichtung und Bewegung der Elektronen",
+        title: "3. Stromrichtung und Elektronenbewegung",
         paragraphs: [
-          "In der Elektrotechnik herrschte Einigkeit darüber, dass die Richtung des Stroms die Bewegungsrichtung der positiven Ladung ist. Im Außenkreis einer Konstantspannungsquelle fließt der technische Strom vom Pluspol durch die Last zum Minuspol. In Diagrammen zeigen Strompfeile normalerweise in diese Richtung. Die Regel wurde vor der Entdeckung des Elektrons übernommen und ist bis heute die gebräuchliche Berechnungssprache.",
-          "Im Metallteil desselben externen Stromkreises wandern Elektronen in die entgegengesetzte Richtung: vom Minuspol zum Pluspol. Es besteht kein Widerspruch, denn die Bewegung einer negativen Ladung nach links entspricht in Richtung des technischen Stroms der Bewegung einer positiven Ladung nach rechts. Es ist auch wichtig, die langsame Drift einzelner Elektronen von der schnellen Ausbreitung des elektrischen Einflusses entlang des Stromkreises zu unterscheiden: Die Lampe leuchtet nicht auf, nachdem ein Elektron den gesamten Weg von der Batterie zurückgelegt hat.",
+          "Per Vereinbarung ist die technische Stromrichtung die Bewegungsrichtung positiver Ladungen. Im äußeren Stromkreis fließt der technische Strom vom Pluspol durch den Verbraucher zum Minuspol. Strompfeile im Schaltplan zeigen in diese Richtung. Die Festlegung stammt aus der Zeit vor der Entdeckung des Elektrons und gilt bis heute.",
+          "Im Metall bewegen sich die Elektronen entgegengesetzt, vom Minuspol zum Pluspol. Das ist kein Widerspruch: Negative Ladung nach links wirkt wie positive Ladung nach rechts. Die Driftgeschwindigkeit der Elektronen ist gering, das Feld breitet sich aber sehr schnell aus. Die Lampe leuchtet daher sofort, nicht erst wenn ein Elektron den ganzen Weg zurückgelegt hat.",
         ],
         callout: {
           type: "tip",
-          title: "Wie man sich in Diagrammen nicht verwirren lässt",
-          text: "Wählen Sie bei Berechnungen immer zuerst die Richtung des technischen Stroms aus. Ein negatives Ergebnis bedeutet, dass der tatsächliche technische Strom entgegen dem ausgewählten Pfeil fließt; es handelt sich nicht um eine „negative Strommenge“.",
+          title: "Orientierung im Schaltplan",
+          text: "Legen Sie bei Berechnungen zuerst eine Stromrichtung (Zählpfeil) fest. Ein negatives Ergebnis bedeutet, dass der technische Strom entgegen dem Pfeil fließt. Es gibt keine „negative Stromstärke“ im physikalischen Sinn.",
         },
       },
       {
         id: "closed-loop",
         title:
-          "4. Warum brauchen wir eine Rückleitung und einen geschlossenen Pfad?",
+          "4. Warum braucht man einen geschlossenen Stromkreis?",
         paragraphs: [
-          "Langfristiger Gleichstrom erfordert mobile Ladungsträger, ein aufrechterhaltenes elektrisches Feld und einen geschlossenen Pfad. Im einfachsten Stromkreis verläuft der Pfad von einem Anschluss der Batterie über das Kabel, das Last- und das Rückleitungskabel zum zweiten Anschluss und setzt sich innerhalb der Quelle aufgrund von Prozessen in der Quelle selbst fort. Der Rückleiter wird benötigt, um kontinuierlich Ladung zu übertragen, ohne dass sich diese ständig am gebrochenen Ende ansammelt. Wenn Sie nur einen Pol der Batterie an die Lampe anschließen, kann es zu einer kurzfristigen Umverteilung der Ladungen kommen, es fließt jedoch kein stabiler Strom durch die Lampe.",
-          "In einem externen Stromkreis bewirkt ein elektrisches Feld, dass sich Ladungsträger in eine gerichtete Richtung bewegen. Im Inneren der Batterie sorgen chemische Prozesse für die Ladungstrennung und kompensieren so die Energieübertragung auf die Last. Elektronen bewegen sich in den Metallbereichen, und im Elektrolyten finden Ionen und Reaktionen an den Elektroden statt: Sie müssen sich nicht vorstellen, dass dasselbe Elektron die Batterie mit Sicherheit im Kreis umkreist. Bei einer Entladung ist der Vorrat an verfügbarer chemischer Energie erschöpft, nicht jedoch der Vorrat aller Elektronen. Die Lampe nimmt Energie auf und wandelt sie in Licht und Wärme um; die Ladung bleibt erhalten.",
-          "Ein offener Schalter unterbricht den leitenden Pfad, sodass im stationären Zustand eines einfachen idealen Stromkreises der Strom Null ist, obwohl die Spannung zwischen den Anschlüssen der Quelle bestehen bleiben kann. Bei einem Kurzschluss sind die Leitungen über einen Pfad mit sehr geringem Widerstand verbunden: Der Strom wird hauptsächlich durch den Innenwiderstand der Quelle und des Drahtes begrenzt. Dies führt zu großer Hitze und kann zur Beschädigung der Quelle führen. Studieren Sie solche Zustände durch Berechnung oder in einem Simulator; Echte Batterien können nicht mit einem Kabel verbunden werden.",
+          "Ein dauerhafter Gleichstrom braucht bewegliche Ladungsträger, ein aufrechterhaltenes Feld und einen geschlossenen Weg. Er führt von einer Klemme der Quelle über Hinleiter und Verbraucher und über den Rückleiter zur anderen Klemme. Im Inneren der Quelle setzt er sich fort. Schließt man nur einen Pol an die Lampe an, verschieben sich kurz Ladungen, ein stabiler Strom fließt aber nicht.",
+          "Außerhalb der Quelle treibt das elektrische Feld die Ladungsträger an. In der Quelle trennen chemische Vorgänge die Ladungen und liefern so die Energie für den Verbraucher. Im Elektrolyten wandern Ionen, an den Elektroden laufen Reaktionen ab. Bei der Entladung wird der Vorrat an chemischer Energie aufgebraucht, nicht der Vorrat an Elektronen. Die Lampe wandelt Energie in Licht und Wärme um. Die Ladung bleibt erhalten.",
+          "Ein offener Schalter unterbricht den Stromkreis. Der Strom ist dann null, die Klemmenspannung der Quelle bleibt bestehen. Bei einem Kurzschluss werden die Pole über einen sehr kleinen Widerstand verbunden. Nur der Innenwiderstand der Quelle und der Leitung begrenzen dann den Strom. Es entsteht starke Erwärmung, die Quelle kann beschädigt werden. Untersuchen Sie solche Fälle nur rechnerisch oder im Simulator.",
         ],
         callout: {
           type: "warning",
           title:
-            "Das Schließen eines Stromkreises bedeutet nicht, dass die Leitungen direkt verbunden werden",
-          text: "Ein normaler Stromkreis enthält eine Last, die den Strom begrenzt und Energie umwandelt. Verwenden Sie für Trainingsaufbauten eine sichere, strombegrenzende Niederspannungsquelle und eine geeignete Last.",
+            "Geschlossen heißt nicht kurzgeschlossen",
+          text: "Ein normaler Stromkreis enthält einen Verbraucher, der den Strom begrenzt und Energie umwandelt. Verwenden Sie für Übungsaufbauten eine strombegrenzte Kleinspannungsquelle und einen geeigneten Verbraucher.",
         },
       },
       {
         id: "ammeter",
-        title: "5. So messen Sie den Strom",
+        title: "5. So messen Sie die Stromstärke",
         paragraphs: [
-          "Das Amperemeter wird in Reihe geschaltet: Ein Abschnitt des Stromkreises wird unterbrochen und das Gerät in die entstandene Lücke eingeführt. Dann fließt der gleiche Strom durch das Gerät wie durch das untersuchte Element. Ein ideales Amperemeter hat keinen Innenwiderstand, ein echtes hat einen kleinen. Seine Aufgabe besteht darin, den Strom im Stromkreis möglichst wenig zu verändern. Wenn Sie ein Amperemeter parallel zur Quelle anschließen, entsteht fast ein Kurzschluss.",
-          "Wählen Sie im Multimeter den Konstantstrommodus für den Stromkreis mit der Batterie, die richtigen COM- und A- oder mA-Buchsen sowie den zulässigen Bereich aus. Die Montage und Neuanordnung der Sonden erfolgt bei ausgeschaltetem Strom. Wenn der erwartete Strom unbekannt ist, beginnen Sie mit einem geeigneten Maximalbereich innerhalb der Gerätespezifikationen. Nach der Messung wird die Sonde wieder von der Stromsteckdose in die Spannungssteckdose zurückgesteckt, um nicht versehentlich den nächsten Stromkreis zu schließen. Diese Übungen gelten für Niederspannungs-Übungsschaltungen und nicht für Steckdosenmessungen.",
+          "Das Amperemeter wird in Reihe geschaltet. Dazu trennen Sie den Stromkreis auf und setzen das Gerät in die Lücke. Dann fließt durch das Gerät derselbe Strom wie durch das Bauelement. Ein ideales Amperemeter hat den Innenwiderstand null, ein reales einen sehr kleinen. Es soll den Strom möglichst wenig beeinflussen. Parallel zur Quelle angeschlossen, wirkt es fast wie ein Kurzschluss.",
+          "Stellen Sie am Multimeter Gleichstrom (DC) ein. Verwenden Sie die Buchsen COM und A bzw. mA und einen passenden Messbereich. Verdrahten Sie nur im spannungsfreien Zustand um. Ist der Strom unbekannt, beginnen Sie mit dem größten Bereich. Stecken Sie die Messleitung nach der Messung wieder in die Spannungsbuchse zurück. Diese Hinweise gelten nur für Übungsschaltungen mit Kleinspannung, nicht für Messungen an der Steckdose.",
         ],
         callout: {
           type: "insight",
-          title: "Hinweisschild",
-          text: "Wenn Strom in den roten Anschluss des Messgeräts einfließt und über COM austritt, ist der Messwert normalerweise positiv. Ein Negativ auf dem Bildschirm für Gleichstrom zeigt normalerweise die entgegengesetzte Polarität des Anschlusses an, wenn der richtige Modus ausgewählt ist.",
+          title: "Hinweis zur Polarität",
+          text: "Fließt der Strom in die rote Buchse hinein und über COM heraus, zeigt das Gerät einen positiven Wert. Ein negativer Wert bei Gleichstrom bedeutet bei richtigem Messbereich: Die Polarität ist vertauscht.",
         },
       },
       {
         id: "charge-conservation",
         title: "6. In der Lampe wird kein Strom verbraucht",
         paragraphs: [
-          "In einem unverzweigten, etablierten Stromkreis fließt pro Sekunde die gleiche Ladung durch jeden Abschnitt. Wenn vor der Lampe 20 mA fließen, fließen auch 20 mA nach ihr. Die Lampe empfängt elektrische Energie und wandelt diese in Licht und Wärme um, zerstört jedoch keine Elektronen. Diese Unterscheidung zwischen Ladung und Energie hilft, die gesamte Elektrotechnik zu verstehen.",
-          "Am Verzweigungsknoten wird der Strom aufgeteilt: Die Summe der eingehenden Ströme ist gleich der Summe der ausgehenden. Andernfalls würde sich die Ladung ständig im Knoten ansammeln. Beispielsweise kann ein Strom von 90 mA in 30 mA und 60 mA aufgeteilt werden. Nach Anschluss der Zweige beträgt der Gesamtstrom wieder 90 mA. Für einen etablierten Stromkreis ist dies die erste Regel von Kirchhoff – eine direkte Folge der Ladungserhaltung.",
+          "Im unverzweigten Stromkreis fließt durch jeden Querschnitt pro Sekunde gleich viel Ladung. Fließen vor der Lampe 20 mA, dann auch danach. Die Lampe nimmt elektrische Energie auf und gibt Licht und Wärme ab. Elektronen verbraucht sie nicht. Der Unterschied zwischen Ladung und Energie ist in der Elektrotechnik grundlegend.",
+          "Am Knotenpunkt teilt sich der Strom auf: Die Summe der zufließenden Ströme ist gleich der Summe der abfließenden. Sonst würde sich im Knoten Ladung ansammeln. Beispiel: 90 mA teilen sich in 30 mA und 60 mA. Nach dem Zusammenführen sind es wieder 90 mA. Das ist die Knotenregel (1. Kirchhoffsches Gesetz) und folgt aus der Ladungserhaltung.",
         ],
         formula: {
           expression: "ΣIEingang = ΣIAusgang",
           legend:
-            "Die Summe der Ströme, die in einen Knoten eintreten, ist gleich der Summe der Ströme, die ihn verlassen.",
-          note: "Bei der Berechnung werden die gewählten Stromrichtungen berücksichtigt. Für diesen Kurs werden stationäre Bedingungen ohne Ladungsansammlung im Knoten berücksichtigt.",
+            "Die Summe der Ströme, die in einen Knoten fließen, ist gleich der Summe der Ströme, die ihn verlassen.",
+          note: "Beachten Sie die gewählten Zählpfeile. Wir betrachten stationäre Zustände ohne Ladungsansammlung im Knoten.",
         },
         example: {
-          title: "Beispiel: Laden in zwei Minuten",
+          title: "Beispiel: Ladung in zwei Minuten",
           given:
-            "Durch den LED-Kreis fließen ständig 30 mA. Wie viel Ladung wird in 2 Minuten befördert?",
+            "Durch eine LED-Schaltung fließen konstant 30 mA. Welche Ladung wird in 2 Minuten transportiert?",
           steps: [
-            "Wir übersetzen den Strom: I = 30 mA = 0,030 A.",
-            "Rechne die Zeit um: t = 2 · 60 = 120 s.",
-            "Wir verwenden Q = I · t: Q = 0,030 · 120 = 3,6 C.",
-            "Diese Ladung durchlief jeden Abschnitt der unverzweigten Stromkreises; Die LED wandelt Energie um, anstatt Ladung zu verbrauchen.",
+            "Strom umrechnen: I = 30 mA = 0,030 A.",
+            "Zeit umrechnen: t = 2 · 60 = 120 s.",
+            "Mit Q = I · t: Q = 0,030 · 120 = 3,6 C.",
+            "Diese Ladung durchfließt jeden Querschnitt des unverzweigten Stromkreises. Die LED wandelt Energie um, sie verbraucht keine Ladung.",
           ],
-          answer: "Durch den Stromkreis floss eine Ladung von 3,6 C.",
+          answer: "Es wurde eine Ladung von 3,6 C transportiert.",
         },
       },
     ],
@@ -132,7 +132,7 @@ export const basicsLessons = [
         symbol: "Q",
         unit: "C - Coulomb",
         definition:
-          "Eine physikalische Größe, die die elektrischen Eigenschaften von Partikeln und die Menge der übertragenen Elektrizität charakterisiert.",
+          "Physikalische Größe, die die elektrische Wechselwirkung von Teilchen und die transportierte Elektrizitätsmenge beschreibt.",
       },
       {
         term: "Stromstärke",
@@ -140,7 +140,7 @@ export const basicsLessons = [
         symbol: "I",
         unit: "A - Ampere",
         definition:
-          "Ladung, die pro Zeiteinheit durch den Querschnitt eines Leiters fließt; für Gleichstrom I = Q/t.",
+          "Ladung, die pro Zeit durch den Querschnitt eines Leiters fließt; bei Gleichstrom I = Q/t.",
       },
       {
         term: "Gleichstrom",
@@ -148,7 +148,7 @@ export const basicsLessons = [
         symbol: "DC",
         unit: "—",
         definition:
-          "Genau genommen ein Strom, dessen Wert und Richtung sich mit der Zeit nicht ändert.",
+          "Strom, dessen Betrag und Richtung sich zeitlich nicht ändern.",
       },
       {
         term: "Ladungsträger",
@@ -156,7 +156,7 @@ export const basicsLessons = [
         symbol: "—",
         unit: "—",
         definition:
-          "Ein geladenes Teilchen, das eine Ladung tragen kann; In Metallen dienen Elektronen als bewegliche Träger.",
+          "Geladenes Teilchen, das Ladung transportiert; in Metallen sind Elektronen die beweglichen Ladungsträger.",
       },
       {
         term: "Amperemeter",
@@ -164,7 +164,7 @@ export const basicsLessons = [
         symbol: "A",
         unit: "A - Ampere",
         definition:
-          "Ein Gerät zur Strommessung, das in Reihe mit dem zu untersuchenden Bereich geschaltet ist.",
+          "Messgerät für die Stromstärke; wird in Reihe zum untersuchten Zweig geschaltet.",
       },
       {
         term: "Knoten",
@@ -172,83 +172,83 @@ export const basicsLessons = [
         symbol: "—",
         unit: "—",
         definition:
-          "Eine Verbindung von Zweigen, bei der im stationären Zustand ein Ausgleich der eingehenden und ausgehenden Ströme erfolgt.",
+          "Verbindungspunkt mehrerer Zweige; im stationären Zustand ist die Summe der zufließenden gleich der Summe der abfließenden Ströme.",
       },
     ],
     summary: [
-      "Strom entsteht, wenn ein elektrisches Feld eine Richtungsdrift vorhandener Ladungsträger verursacht; in Metallen sind dies Elektronen.",
-      "Für Gleichstrom I = Q/t; Ampere ist gleich Coulomb pro Sekunde.",
-      "Der herkömmliche Strom im äußeren Stromkreis geht von Plus nach Minus, die Elektronen im Metall gehen in die entgegengesetzte Richtung.",
-      "Für Langzeitstrom benötigen Sie einen geschlossenen Pfad mit einem Rückleiter und einer Quelle, die das Feld aufrechterhält und Energie überträgt.",
-      "Das Amperemeter ist in Reihe geschaltet; Der Strom in einem unverzweigten Stromkreis ist in allen Abschnitten gleich.",
-      "Die Last wandelt Energie um und die Ladung im Stromkreis wird gespeichert.",
+      "Ein Strom entsteht, wenn ein elektrisches Feld die vorhandenen Ladungsträger in eine Richtung treibt; in Metallen sind das Elektronen.",
+      "Für Gleichstrom gilt I = Q/t; 1 A = 1 C/s.",
+      "Der technische Strom fließt im äußeren Stromkreis von Plus nach Minus, die Elektronen im Metall in die Gegenrichtung.",
+      "Ein dauerhafter Strom braucht einen geschlossenen Stromkreis mit einer Quelle, die das Feld aufrechterhält und Energie liefert.",
+      "Das Amperemeter wird in Reihe geschaltet; im unverzweigten Stromkreis ist die Stromstärke überall gleich.",
+      "Der Verbraucher wandelt Energie um; die Ladung bleibt im Stromkreis erhalten.",
     ],
     quiz: [
       {
         id: "current-1",
         type: "choice",
-        question: "Welche Definition von Strom ist richtig?",
+        question: "Welche Aussage zur Stromstärke ist richtig?",
         options: [
-          "Energie, die jedes Coulomb Ladung erhält",
+          "Energie, die jedes Coulomb Ladung aufnimmt",
           "Ladung, die pro Zeiteinheit durch einen Leiterquerschnitt fließt",
-          "Auf Elektronen wirkende mechanische Kraft",
+          "Mechanische Kraft auf die Elektronen",
           "Anzahl der Elektronen im gesamten Draht",
         ],
         answer: 1,
         explanation:
-          "Die Stromstärke charakterisiert die Geschwindigkeit des Ladungstransfers: I = Q/t für Gleichstrom. Energie pro Ladungseinheit ist Spannung und mechanische Kraft wird in Newton gemessen.",
+          "Die Stromstärke gibt an, wie viel Ladung pro Zeit fließt: I = Q/t bei Gleichstrom. Energie pro Ladung ist die Spannung, Kraft wird in Newton gemessen.",
       },
       {
         id: "current-2",
         type: "numeric",
         question:
-          "Eine Ladung von 24 C durchströmte den Drahtquerschnitt in 8 s. Wie groß ist die Konstantstromstärke in Ampere?",
+          "In 8 s fließt eine Ladung von 24 C durch den Drahtquerschnitt. Wie groß ist die Stromstärke bei Gleichstrom in A?",
         answer: 3,
         unit: "A",
         tolerance: 0.01,
         explanation:
-          "Wir verwenden I = Q/t. Ersetzen Sie 24 C / 8 s = 3 A. Ein Coulomb pro Sekunde entspricht einem Ampere.",
+          "Mit I = Q/t: 24 C / 8 s = 3 A. Ein Coulomb pro Sekunde ist ein Ampere.",
       },
       {
         id: "current-3",
         type: "choice",
         question:
-          "In welche Richtung wandern Elektronen im metallischen Außenkreis einer Batterie?",
+          "In welche Richtung wandern die Elektronen im metallischen äußeren Stromkreis einer Batterie?",
         options: [
-          "Von Plus nach Minus, wie bei einem herkömmlichen Strom",
-          "Von Minus nach Plus, gegen technischen Strom",
-          "Sie sind selbst bei Vorhandensein von Strom bewegungslos",
-          "Nur von der Lampe bis zum nächstgelegenen Terminal",
+          "Von Plus nach Minus, wie der technische Strom",
+          "Von Minus nach Plus, entgegen dem technischen Strom",
+          "Sie ruhen, auch wenn Strom fließt",
+          "Nur von der Lampe bis zur nächsten Klemme",
         ],
         answer: 1,
         explanation:
-          "Elektronen haben eine negative Ladung. Daher ist ihre Drift vom Minuspol zum Pluspol entgegengesetzt zur akzeptierten Richtung des technischen Stroms.",
+          "Elektronen sind negativ geladen. Sie wandern daher vom Minuspol zum Pluspol, also entgegen der technischen Stromrichtung.",
       },
       {
         id: "current-4",
         type: "choice",
         question:
-          "Wie schließe ich ein Amperemeter an, um den Strom durch einen Widerstand zu messen?",
+          "Wie wird ein Amperemeter angeschlossen, um den Strom durch einen Widerstand zu messen?",
         options: [
           "Parallel zur Quelle",
-          "Parallel zum Widerstand, ohne den Stromkreis zu unterbrechen",
-          "In Reihe mit einem Widerstand, wenn der Strom während der Montage ausgeschaltet wird",
-          "Nur eine Sonde zum Widerstand",
+          "Parallel zum Widerstand, ohne den Stromkreis aufzutrennen",
+          "In Reihe mit dem Widerstand, wobei beim Aufbau die Spannung abgeschaltet ist",
+          "Nur eine Messleitung an den Widerstand",
         ],
         answer: 2,
         explanation:
-          "Bei Reihenschaltung fließt der gesamte Widerstandsstrom durch das Amperemeter. Aufgrund seines geringen Widerstands stellt der Parallelanschluss an eine Quelle einen gefährlichen Kurzschluss dar.",
+          "In Reihe fließt der gesamte Widerstandsstrom durch das Gerät. Wegen seines kleinen Innenwiderstands wäre der Parallelanschluss an einer Quelle ein gefährlicher Kurzschluss.",
       },
       {
         id: "current-5",
         type: "numeric",
         question:
-          "Der Strom beträgt 25 mA. Welche Ladung in Coulomb passiert den Querschnitt in 40 s?",
+          "Die Stromstärke beträgt 25 mA. Welche Ladung in C fließt in 40 s durch den Querschnitt?",
         answer: 1,
         unit: "C",
         tolerance: 0.01,
         explanation:
-          "Zuerst rechnen wir 25 mA = 0,025 A um. Dann ist Q = I · t = 0,025 · 40 = 1 C. Milliampere können ohne Umrechnung nicht durch Ampere ersetzt werden.",
+          "Zuerst umrechnen: 25 mA = 0,025 A. Dann Q = I · t = 0,025 · 40 = 1 C. Milliampere dürfen nicht ohne Umrechnung mit Ampere gemischt werden.",
       },
     ],
   },
@@ -261,75 +261,75 @@ export const basicsLessons = [
     category: "basics",
     duration: 28,
     description:
-      "Lernen Sie, ein Diagramm zu lesen, Knoten und Zweige zu finden und zwischen seriellen, parallelen und gemischten Verbindungen zu unterscheiden.",
+      "Schaltpläne lesen, Knotenpunkte und Zweige finden sowie Reihen-, Parallel- und gemischte Schaltungen unterscheiden.",
     objectives: [
-      "Bestimmen Sie die Art der Verbindung anhand der Knoten des Diagramms und nicht anhand der externen Position der Teile.",
-      "Erklären Sie die Verteilung von Strömen und Spannungen in Reihen- und Parallelschaltungen.",
-      "Vereinfachen Sie den gemischten Kreislauf konsequent und überprüfen Sie das Ergebnis anhand von Erhaltungssätzen.",
+      "Die Schaltungsart anhand der Knotenpunkte bestimmen, nicht nach der Lage der Bauteile im Plan.",
+      "Die Verteilung von Strömen und Spannungen in Reihen- und Parallelschaltungen erklären.",
+      "Gemischte Schaltungen schrittweise vereinfachen und das Ergebnis mit den Kirchhoffschen Gesetzen prüfen.",
     ],
     sections: [
       {
         id: "circuit-language",
-        title: "1. Stromkreis, Schaltbild, Knoten und Zweig",
+        title: "1. Stromkreis, Schaltplan, Knotenpunkt und Zweig",
         paragraphs: [
-          "Ein Stromkreis besteht aus einer Reihe verbundener Elemente, durch die Strom fließen kann. Die Quelle liefert elektrische Energie, die Last wandelt sie um, Drähte verbinden die Elemente und der Schalter steuert den leitenden Pfad. Ein Schaltplan zeigt elektrische Verbindungen und Symbole und nicht den tatsächlichen Abstand zwischen Teilen. Zwei scheinbar unterschiedliche Diagramme können denselben Schaltkreis beschreiben.",
-          "Knoten – elektrisch gemeinsame Verbindung von Leitern; Alle Punkte eines idealen Drahtes haben das gleiche Potenzial. Ein Zweig ist ein Abschnitt zwischen Knoten, durch den derselbe Strom fließt. Ein geschlossener Pfad gemäß einem Diagramm wird als Stromkreis bezeichnet. Der Schnittpunkt von Linien bedeutet nicht immer eine Verbindung: Verlassen Sie sich auf den Verbindungspunkt und das akzeptierte Notationssystem. Um die Art der Schaltung zu bestimmen, ist es sinnvoll, einen durchgehenden idealen Draht gedanklich auf einen einzigen Punkt zu reduzieren.",
+          "Ein Stromkreis besteht aus verbundenen Bauelementen, durch die Strom fließen kann. Die Quelle liefert Energie, der Verbraucher wandelt sie um, Leitungen verbinden die Teile, und ein Schalter öffnet oder schließt den Stromkreis. Der Schaltplan zeigt die elektrischen Verbindungen, nicht die räumliche Lage. Zwei unterschiedlich gezeichnete Pläne können dieselbe Schaltung darstellen.",
+          "Ein Knotenpunkt ist eine gemeinsame Verbindung von Leitern. Alle Punkte eines idealen Leiters haben dasselbe Potenzial. Ein Zweig ist ein Abschnitt zwischen zwei Knotenpunkten, in dem überall derselbe Strom fließt. Ein geschlossener Weg heißt Masche. Kreuzen sich Linien, ist das nicht immer eine Verbindung. Entscheidend sind der Verbindungspunkt und die Zeichenregeln. Hilfreich: Denken Sie sich jeden idealen Leiter auf einen Punkt zusammengezogen.",
         ],
         callout: {
           type: "tip",
-          title: "Schauen Sie sich die Verbindungen an, nicht die Zeichnung.",
-          text: "Werden zwei Widerstände nebeneinander eingezeichnet, bedeutet das nicht, dass es sich um eine Parallelschaltung handelt. Überprüfen Sie, mit welchen zwei Knoten jeder von ihnen verbunden ist.",
+          title: "Auf die Verbindungen achten, nicht auf die Zeichnung",
+          text: "Zwei nebeneinander gezeichnete Widerstände sind nicht automatisch parallel geschaltet. Prüfen Sie, mit welchen beiden Knotenpunkten jeder Widerstand verbunden ist.",
         },
       },
       {
         id: "series",
-        title: "2. Serielle Verbindung",
+        title: "2. Reihenschaltung",
         paragraphs: [
-          "Elemente werden in Reihe geschaltet, wenn durch sie der gleiche Strom fließt und zwischen ihnen kein Stromzweig besteht. Die Anklage kann keinen anderen Weg wählen. Daher ist I = I₁ = I₂. Die Quellenspannung verteilt sich auf die Elemente: U = U₁ + U₂. Wenn Sie den Stromkreis irgendwo unterbrechen, wird der Strom in allen Elementen dieses Zweigs unterbrochen.",
-          "Bei Widerständen ist der Gesamtwiderstand gleich der Summe der Einzelwiderstände: Req = R₁ + R₂ + …. Ein Ersatzwiderstand ist ein Ersatzwiderstand, der bei gleicher externer Spannung den gleichen Gesamtstrom zieht. Je größer der Widerstandswert eines bestimmten Vorwiderstands ist, desto größer ist der Anteil der an ihm anliegenden Gesamtspannung. Das Beispiel verwendet die Beziehung U = I · R, die in der Lektion zum Ohmschen Gesetz ausführlich erläutert wird.",
+          "Bauelemente liegen in Reihe, wenn derselbe Strom durch sie fließt und dazwischen kein Zweig abgeht. Die Ladung hat keinen anderen Weg. Daher gilt I = I₁ = I₂. Die Quellenspannung teilt sich auf: U = U₁ + U₂. Unterbrechen Sie die Reihenschaltung an einer Stelle, fließt in allen Elementen kein Strom mehr.",
+          "Der Gesamtwiderstand ist die Summe der Einzelwiderstände: Req = R₁ + R₂ + …. Der Ersatzwiderstand nimmt bei gleicher Spannung denselben Gesamtstrom auf wie die Schaltung. Je größer ein Widerstand, desto größer ist sein Anteil an der Gesamtspannung. Im Beispiel wird U = I · R verwendet; es wird in der Lektion zum Ohmschen Gesetz genauer behandelt.",
         ],
         formula: {
           expression: "I = I₁ = I₂;  U = U₁ + U₂;  Req = R₁ + R₂",
           legend:
-            "I – Zweigstrom, A; U ist die Gesamtspannung V; Req – Ersatzwiderstand, Ω.",
-          note: "Die Widerstandsformel bezieht sich auf Widerstände; Die Gleichheit der Ströme wird durch das Fehlen von Zweigen bestimmt.",
+            "I – Zweigstrom in A; U – Gesamtspannung in V; Req – Ersatzwiderstand in Ω.",
+          note: "Die Summenformel gilt für Widerstände; gleiche Ströme folgen daraus, dass kein Zweig abgeht.",
         },
         example: {
           title: "Beispiel: zwei Widerstände in Reihe",
           given:
-            "R₁ = 2 Ω und R₂ = 4 Ω sind in Reihe an eine 12-V-Quelle angeschlossen. Ermitteln Sie den Gesamtstrom und die Gesamtspannung an jedem Widerstand.",
+            "R₁ = 2 Ω und R₂ = 4 Ω liegen in Reihe an einer 12-V-Quelle. Gesucht sind der Gesamtstrom und die Spannung an jedem Widerstand.",
           steps: [
-            "Addieren Sie die Widerstände: Req = 2 + 4 = 6 Ω.",
-            "Wir berechnen den Gesamtstrom: I = U/Req = 12/6 = 2 A.",
-            "Durch beide Widerstände fließt der gleiche Strom. U₁ = I · R₁ = 2 · 2 = 4 V; U₂ = 2 · 4 = 8 V.",
-            "Wir prüfen: U₁ + U₂ = 4 + 8 = 12 V - Quellenspannung. Bei höherem Widerstand ist der Spannungsabfall größer.",
+            "Widerstände addieren: Req = 2 + 4 = 6 Ω.",
+            "Gesamtstrom: I = U/Req = 12/6 = 2 A.",
+            "Durch beide Widerstände fließt derselbe Strom: U₁ = I · R₁ = 2 · 2 = 4 V; U₂ = 2 · 4 = 8 V.",
+            "Probe: U₁ + U₂ = 4 + 8 = 12 V, das ist die Quellenspannung. Am größeren Widerstand fällt mehr Spannung ab.",
           ],
-          answer: "Strom 2 A; an R₁ - 4 V, an R₂ - 8 V.",
+          answer: "Strom 2 A; an R₁ 4 V, an R₂ 8 V.",
         },
       },
       {
         id: "parallel",
         title: "3. Parallelschaltung",
         paragraphs: [
-          "Elemente sind parallel verbunden, wenn beide Enden jedes Elements mit denselben zwei Knoten verbunden sind. Die Potentialdifferenz zwischen diesen Knoten ist gleich, daher sind die Spannungen an den Zweigen gleich: U = U₁ = U₂. Der Quellstrom im Knoten wird in Zweigströme aufgeteilt und nach deren Verbindung wieder addiert: I = I₁ + I₂. Der Zweig mit dem geringeren Widerstand bei gleicher Spannung lässt mehr Strom durch.",
-          "Durch das Hinzufügen eines parallel leitenden Zweigs erhöht sich der Gesamtstrom bei konstanter Spannung, sodass der Ersatzwiderstand sinkt. Er ist immer kleiner als der kleinste Widerstand eines einzelnen Zweiges mit positivem Endwiderstand. Wenn ein Zweig geöffnet wird, bleiben die übrigen Pfade geschlossen. Daher sind private Verbraucher für den parallelen Anschluss an dasselbe Netzwerk konzipiert, obwohl tatsächliche Elektroinstallationen eine professionelle Planung und einen professionellen Schutz erfordern.",
+          "Bauelemente liegen parallel, wenn beide Anschlüsse jedes Elements an denselben zwei Knotenpunkten liegen. Dazwischen herrscht dieselbe Spannung: U = U₁ = U₂. Der Quellenstrom teilt sich im Knotenpunkt auf und addiert sich danach wieder: I = I₁ + I₂. Der Zweig mit dem kleineren Widerstand führt bei gleicher Spannung den größeren Strom.",
+          "Jeder zusätzliche Zweig erhöht bei konstanter Spannung den Gesamtstrom. Der Ersatzwiderstand sinkt daher und ist immer kleiner als der kleinste Einzelwiderstand. Öffnet man einen Zweig, arbeiten die übrigen weiter. Deshalb werden Verbraucher im Haushalt parallel an dasselbe Netz angeschlossen. Echte Elektroinstallationen erfordern aber fachgerechte Planung und Schutzmaßnahmen.",
         ],
         formula: {
           expression: "U = U₁ = U₂;  I = I₁ + I₂;  1/Req = 1/R₁ + 1/R₂",
           legend:
-            "Für zwei Widerstände: Req = (R₁ · R₂)/(R₁ + R₂). Widerstände werden in Ω gemessen.",
-          note: "Das durch die Summenformel geteilte Produkt gilt für zwei parallele Widerstände. Für mehrfache Rückfaltwiderstände.",
+            "Für zwei Widerstände: Req = (R₁ · R₂)/(R₁ + R₂). Widerstände in Ω.",
+          note: "Produkt durch Summe gilt nur für zwei parallele Widerstände. Bei mehreren addiert man die Leitwerte.",
         },
         example: {
           title: "Beispiel: zwei parallele Zweige",
           given:
-            "Die Widerstände 6 Ω und 3 Ω werden parallel an eine ideale 12-V-Quelle angeschlossen. Finden Sie die Ströme und den Ersatzwiderstand.",
+            "Die Widerstände 6 Ω und 3 Ω liegen parallel an einer idealen 12-V-Quelle. Gesucht sind die Ströme und der Ersatzwiderstand.",
           steps: [
-            "Jeder Zweig hat eine Spannung: U₁ = U₂ = 12 V.",
+            "An jedem Zweig liegt dieselbe Spannung: U₁ = U₂ = 12 V.",
             "Zweigströme: I₁ = 12/6 = 2 A; I₂ = 12/3 = 4 A.",
             "Gesamtstrom: I = 2 + 4 = 6 A.",
-            "Req = U/I = 12/6 = 2 Ω. Prüfen Sie mit der zweiten Formel: (6 · 3)/(6 + 3) = 18/9 = 2 Ω.",
-            "Die resultierenden 2 Ω sind kleiner als 3 Ω, wie es bei einer Parallelschaltung der Fall sein sollte.",
+            "Req = U/I = 12/6 = 2 Ω. Probe mit der zweiten Formel: (6 · 3)/(6 + 3) = 18/9 = 2 Ω.",
+            "2 Ω sind kleiner als 3 Ω, wie es bei einer Parallelschaltung sein muss.",
           ],
           answer:
             "Zweigströme 2 A und 4 A, Gesamtstrom 6 A, Ersatzwiderstand 2 Ω.",
@@ -337,43 +337,43 @@ export const basicsLessons = [
       },
       {
         id: "mixed",
-        title: "4. Gemischte Schaltung: von komplex zu einfach und zurück",
+        title: "4. Gemischte Schaltung: erst vereinfachen, dann zurückrechnen",
         paragraphs: [
-          "Ein gemischter Stromkreis besteht aus seriellen und parallelen Abschnitten. Sie können nicht alle Widerstände hintereinander hinzufügen, nur weil sie in einem Bild vorhanden sind. Suchen Sie zunächst eine Gruppe, die tatsächlich in Reihe oder parallel geschaltet ist, ersetzen Sie sie durch einen Ersatzwiderstand und zeichnen Sie die vereinfachte Schaltung neu. Wiederholen Sie diesen Vorgang, bis der gesamte Stromkreis einen Widerstand erreicht.",
-          "Gehen Sie dann zurück: Ermitteln Sie den Gesamtstrom, die Spannung an jeder vergrößerten Gruppe und die Ströme ihrer ursprünglichen Elemente. Wenn beispielsweise 4 Ω in Reihe mit einem parallelen Paar aus 6 Ω und 3 Ω geschaltet sind, wird dieses Paar durch 2 Ω ersetzt. Gesamtwiderstand 6 Ω; Bei 12 V beträgt der Gesamtstrom 2 A. An 4 Ω fallen 8 V ab und an der Parallelgruppe verbleiben 4 V. Das bedeutet, dass die Ströme darin 4/6 ≈ 0,667 A und 4/3 ≈ 1,333 A betragen; ihre Summe ergibt 2 A.",
+          "Eine gemischte Schaltung enthält Reihen- und Parallelgruppen. Man darf nicht einfach alle Widerstände addieren. Suchen Sie zuerst eine Gruppe, die wirklich in Reihe oder parallel liegt, und ersetzen Sie sie durch einen Ersatzwiderstand. Zeichnen Sie die Schaltung neu und wiederholen Sie das, bis nur noch ein Widerstand bleibt.",
+          "Danach rechnen Sie zurück: Gesamtstrom, Spannung an jeder Gruppe, dann die Ströme der einzelnen Elemente. Beispiel: 4 Ω in Reihe mit 6 Ω ∥ 3 Ω. Die Parallelgruppe wird zu 2 Ω, der Gesamtwiderstand ist 6 Ω. Bei 12 V fließen 2 A. An 4 Ω fallen 8 V ab, an der Parallelgruppe bleiben 4 V. Die Ströme sind 4/6 ≈ 0,667 A und 4/3 ≈ 1,333 A. Ihre Summe ist 2 A.",
         ],
         callout: {
           type: "insight",
           title:
-            "Nicht jedes Schema kann auf diese Weise zusammengebrochen werden",
-          text: "Brückenschaltungen dürfen keine einfachen Reihen- und Parallelgruppen haben. Dann brauchen wir allgemeine Kirchhoff-Gleichungen. Führen Sie keine Elemente zusammen, wenn zwischen ihnen ein zusätzlicher Zweig besteht.",
+            "Nicht jede Schaltung lässt sich so vereinfachen",
+          text: "Brückenschaltungen enthalten oft keine einfachen Reihen- und Parallelgruppen. Dann braucht man die Kirchhoffschen Gesetze. Fassen Sie keine Elemente zusammen, wenn zwischen ihnen ein weiterer Zweig abgeht.",
         },
       },
       {
         id: "sources-and-states",
-        title: "5. Schaltungsquellen und -zustände",
+        title: "5. Quellen schalten und Betriebszustände",
         paragraphs: [
-          "Durch Reihenschaltung von Quellen mit übereinstimmender Polarität addieren sich deren Spannungen: Zwei ideale Zellen mit jeweils 1,5 V ergeben 3 V. Bei entgegengesetzter Polarität werden die Spannungen subtrahiert. Echte Quellen haben einen Innenwiderstand, Einschränkungen hinsichtlich Strom, Chemie und Lademodus. Daher erlaubt die Arithmetik idealer Quellen an sich keine beliebige Verbindung realer Batterien.",
-          "Ideale Quellen mit unterschiedlichen Spannungen können nicht direkt parallel geschaltet werden: Sie würden gleichzeitig unterschiedliche Spannungen zwischen denselben Knoten erfordern. Echte Quellen haben einen großen Ausgleichsstrom, der durch Innenwiderstände begrenzt wird. Auch die gleiche Nennspannung garantiert keine Kompatibilität. Eine Parallelschaltung ist nur für dafür vorgesehene Quellen mit entsprechender Absicherung zulässig. Ein offener Stromkreis bedeutet, dass kein leitender Pfad vorhanden ist. Ein Kurzschluss bedeutet, dass ein Pfad mit sehr geringem Widerstand die normale Last umgeht.",
+          "Bei Reihenschaltung von Quellen mit gleicher Polarität addieren sich die Spannungen: Zwei ideale Zellen mit je 1,5 V ergeben 3 V. Bei entgegengesetzter Polarität werden sie subtrahiert. Reale Quellen haben einen Innenwiderstand und Grenzen bei Strom und Ladeverfahren. Die Rechnung mit idealen Quellen erlaubt daher nicht jede beliebige Schaltung echter Batterien.",
+          "Ideale Quellen mit unterschiedlicher Spannung dürfen nicht parallel geschaltet werden. Sie würden zwischen denselben Knotenpunkten verschiedene Spannungen erzwingen. Bei realen Quellen fließt ein großer Ausgleichsstrom, den nur die Innenwiderstände begrenzen. Auch gleiche Nennspannung garantiert keine Verträglichkeit. Parallelbetrieb ist nur bei dafür vorgesehenen und abgesicherten Quellen zulässig. Im Leerlauf ist der Stromkreis offen, es fließt kein Strom. Im Kurzschluss umgeht ein sehr kleiner Widerstand den Verbraucher.",
         ],
         callout: {
           type: "warning",
-          title: "Übe mit Quellen",
-          text: "Studieren Sie die Zusammenhänge von Batterien und Akkus anhand von Rechenmodellen oder vorgefertigten Trainingsgeräten. Schließen Sie die Pole nicht direkt an und montieren Sie keine parallelen Batteriepacks ohne zellenspezifisches Diagramm.",
+          title: "Üben mit Quellen",
+          text: "Üben Sie das Schalten von Batterien und Akkus rechnerisch oder mit fertigen Lerngeräten. Schließen Sie Pole nie direkt kurz und bauen Sie keine Parallelpacks ohne passenden Schaltplan.",
         },
       },
       {
         id: "circuit-checks",
-        title: "6. Wie man ein Diagramm liest und die Lösung überprüft",
+        title: "6. Schaltplan lesen und Ergebnis prüfen",
         paragraphs: [
-          "Beginnen Sie mit der Quelle und notieren Sie sich beide Ausgaben. Beschriften Sie dann die Knoten, finden Sie alle Pfade zwischen ihnen und beschriften Sie die ausgewählten Richtungen der Ströme. Stellen Sie für jede Gruppe die Frage: Ist der Strom gleich, weil es keine Gabelung gibt, oder ist die Spannung gleich, weil die Enden mit einem gemeinsamen Knotenpaar verbunden sind? Erst danach wählen Sie eine Formel. Das Amperemeter wird in Reihe in den Zweig eingefügt und das Voltmeter wird zwischen zwei Punkten parallel zum Element angeschlossen.",
-          "Überprüfen Sie Ihre Antwort physisch. In einer Reihenschaltung muss die Summe der Spannungsabfälle gleich der Gruppenspannung sein. In einem Knoten muss die Summe der Zweigströme mit dem Gesamtstrom übereinstimmen. Der Widerstand einer Reihengruppe ist größer als jeder Term und einer Parallelgruppe ist kleiner als der kleinste. In einem realen Stromkreis können der Widerstand der Drähte, der Innenwiderstand der Quelle und der Einfluss von Geräten geringfügig von der idealen Berechnung abweichen. Verstehen Sie zunächst das Modell und bewerten Sie dann seine Einschränkungen.",
+          "Beginnen Sie bei der Quelle und markieren Sie beide Klemmen. Benennen Sie die Knotenpunkte, suchen Sie alle Wege dazwischen und tragen Sie die Zählpfeile der Ströme ein. Fragen Sie bei jeder Gruppe: Ist der Strom gleich, weil kein Zweig abgeht? Oder ist die Spannung gleich, weil beide Enden an denselben Knotenpunkten liegen? Erst dann wählen Sie die Formel. Das Amperemeter liegt in Reihe im Zweig, das Voltmeter parallel zum Bauelement.",
+          "Prüfen Sie das Ergebnis: In einer Reihenschaltung ergeben die Teilspannungen die Gesamtspannung. Im Knotenpunkt ergeben die Zweigströme den Gesamtstrom. Der Widerstand einer Reihengruppe ist größer als jeder Einzelwiderstand, der einer Parallelgruppe kleiner als der kleinste. Leitungswiderstand, Innenwiderstand der Quelle und Messgeräte können real leicht von der idealen Rechnung abweichen. Verstehen Sie erst das Modell, dann seine Grenzen.",
         ],
         formula: {
           expression: "Am Knoten: ΣIinput = ΣIoutput; im Stromkreis: ΣU = 0",
           legend:
-            "Das Gesetz der Ströme hängt mit der Ladungserhaltung zusammen; Spannungsgesetz – mit Energiebilanz pro Ladungseinheit.",
-          note: "In der Kontursumme werden Spannungsanstiege und -abfälle mit Vorzeichen in der gewählten Bypass-Richtung erfasst; Hier betrachten wir Schaltkreise ohne sich ändernden magnetischen Fluss.",
+            "Die Knotenregel folgt aus der Ladungserhaltung, die Maschenregel aus der Energiebilanz pro Ladung.",
+          note: "In der Maschengleichung zählen Spannungen mit Vorzeichen entsprechend dem gewählten Umlaufsinn. Wir betrachten Schaltungen ohne sich änderndes Magnetfeld.",
         },
       },
     ],
@@ -384,7 +384,7 @@ export const basicsLessons = [
         symbol: "—",
         unit: "—",
         definition:
-          "Verbindungselemente ohne Abzweigungen dazwischen; Durch die Elemente fließt der gleiche Strom.",
+          "Bauelemente ohne Abzweig dazwischen; durch sie fließt derselbe Strom.",
       },
       {
         term: "Parallelschaltung",
@@ -392,7 +392,7 @@ export const basicsLessons = [
         symbol: "—",
         unit: "—",
         definition:
-          "Verbindungselemente zwischen demselben Knotenpaar; Die Spannungen der Elemente sind gleich.",
+          "Bauelemente an demselben Knotenpunktpaar; an ihnen liegt dieselbe Spannung.",
       },
       {
         term: "Gemischte Schaltung",
@@ -400,7 +400,7 @@ export const basicsLessons = [
         symbol: "—",
         unit: "—",
         definition:
-          "Eine Schaltung, die sowohl serielle als auch parallele Abschnitte enthält.",
+          "Schaltung mit Reihen- und Parallelgruppen.",
       },
       {
         term: "Zweig",
@@ -408,7 +408,7 @@ export const basicsLessons = [
         symbol: "—",
         unit: "—",
         definition:
-          "Ein Abschnitt eines Stromkreises zwischen Knoten, deren Elemente einen gemeinsamen Strom haben.",
+          "Abschnitt zwischen zwei Knotenpunkten, in dem überall derselbe Strom fließt.",
       },
       {
         term: "Ersatzwiderstand",
@@ -416,7 +416,7 @@ export const basicsLessons = [
         symbol: "Anf",
         unit: "Ω - Ohm",
         definition:
-          "Ein Widerstand, der eine Gruppe von Widerständen ersetzt und dabei die Abhängigkeit des Gesamtstroms von der Spannung an seinen Anschlüssen beibehält.",
+          "Widerstand, der eine Widerstandsgruppe ersetzt und bei gleicher Klemmenspannung denselben Gesamtstrom ergibt.",
       },
       {
         term: "Kurzschluss",
@@ -424,78 +424,78 @@ export const basicsLessons = [
         symbol: "—",
         unit: "—",
         definition:
-          "Verbindungspunkte in einem Stromkreis durch sehr geringen Widerstand, der einen übermäßigen Strom verursachen kann.",
+          "Verbindung über einen sehr kleinen Widerstand, wodurch ein übermäßig großer Strom fließen kann.",
       },
     ],
     summary: [
-      "Die Art der Verbindung wird durch die Knoten des Diagramms bestimmt und nicht durch die Anordnung der Teile in der Abbildung.",
-      "In Reihe: Der Strom ist gleich, die Spannungen und Widerstände addieren sich.",
-      "Parallel: Die Spannung ist gleich, die Ströme addieren sich und die Sperrwiderstände addieren sich.",
-      "Die gemischte Schaltung wird zunächst vereinfacht, dann auf die Ströme und Spannungen der einzelnen Elemente zurückgeführt.",
-      "Ideale Quellen unterschiedlicher Spannung können nicht direkt parallel geschaltet werden.",
-      "Überprüfen Sie das Stromgleichgewicht in den Knoten, das Spannungsgleichgewicht in den Schaltkreisen und die Angemessenheit des Ersatzwiderstands.",
+      "Die Schaltungsart folgt aus den Knotenpunkten, nicht aus der Lage der Bauteile im Plan.",
+      "Reihenschaltung: gleicher Strom; Spannungen und Widerstände addieren sich.",
+      "Parallelschaltung: gleiche Spannung; Ströme und Leitwerte addieren sich.",
+      "Gemischte Schaltungen erst vereinfachen, dann Ströme und Spannungen zurückrechnen.",
+      "Ideale Quellen mit unterschiedlicher Spannung dürfen nicht parallel geschaltet werden.",
+      "Prüfen Sie die Knotenregel, die Maschenregel und die Plausibilität des Ersatzwiderstands.",
     ],
     quiz: [
       {
         id: "circuits-1",
         type: "choice",
-        question: "Warum werden zwei Widerstände parallel geschaltet?",
+        question: "Wann sind zwei Widerstände parallel geschaltet?",
         options: [
           "Sie werden horizontal gezeichnet",
-          "Ein P_zu des ersten ist mit einem P_zu des zweiten verbunden",
-          "Beide Widerstände sind mit demselben Knotenpaar verbunden",
+          "Ein Anschluss des ersten ist mit einem Anschluss des zweiten verbunden",
+          "Beide Widerstände liegen an demselben Knotenpunktpaar",
           "Ihre Widerstände sind gleich",
         ],
         answer: 2,
         explanation:
-          "Parallelität wird durch zwei gemeinsame Knoten definiert. Dies gewährleistet die gleiche Spannung an beiden Elementen, unabhängig von deren Widerständen oder Position in der Abbildung.",
+          "Parallelschaltung bedeutet zwei gemeinsame Knotenpunkte. Dann liegt an beiden Elementen dieselbe Spannung, unabhängig von Widerstandswert oder Lage im Plan.",
       },
       {
         id: "circuits-2",
         type: "numeric",
         question:
-          "Widerstände 120 Ω und 180 Ω sind in Reihe geschaltet. Finden Sie den entsprechenden Widerstand in Ohm.",
+          "Die Widerstände 120 Ω und 180 Ω liegen in Reihe. Wie groß ist der Ersatzwiderstand in Ω?",
         answer: 300,
         unit: "Ω",
         tolerance: 0.1,
         explanation:
-          "Für Serienwiderstände Req = R₁ + R₂ = 120 + 180 = 300 Ω. Das Ergebnis ist größer als jeder einzelne Widerstand.",
+          "Bei Reihenschaltung gilt Req = R₁ + R₂ = 120 + 180 = 300 Ω. Das Ergebnis ist größer als jeder Einzelwiderstand.",
       },
       {
         id: "circuits-3",
         type: "numeric",
         question:
-          "Zwei 12 Ω-Widerstände sind parallel geschaltet. Wie groß ist ihr Gesamtwiderstand in Ohm?",
+          "Zwei Widerstände von je 12 Ω liegen parallel. Wie groß ist der Ersatzwiderstand in Ω?",
         answer: 6,
         unit: "Ω",
         tolerance: 0.01,
         explanation:
-          "1/Req = 1/12 + 1/12 = 2/12, also Reeq = 6 Ω. Zwei identische parallele Zweige ergeben einen Widerstand, der halb so groß ist wie der Widerstand von einem.",
+          "1/Req = 1/12 + 1/12 = 2/12, also Req = 6 Ω. Zwei gleiche parallele Zweige ergeben den halben Einzelwiderstand.",
       },
       {
         id: "circuits-4",
         type: "choice",
         question:
-          "Der Gesamtstrom zweier Parallelzweige beträgt 0,8 A. Im ersten fließen 0,3 A. Welcher Strom fließt im zweiten?",
+          "Der Gesamtstrom zweier Parallelzweige beträgt 0,8 A. Im ersten Zweig fließen 0,3 A. Wie groß ist der Strom im zweiten Zweig?",
         options: ["1,1 A", "0,5 A", "0,24 A", "0,8 A"],
         answer: 1,
         explanation:
-          "Nach dem Stromgesetz gilt I = I₁ + I₂. Daher ist I₂ = 0,8 − 0,3 = 0,5 A. Die Ladung im Knoten akkumuliert sich im stationären Zustand nicht.",
+          "Nach der Knotenregel gilt I = I₁ + I₂. Also ist I₂ = 0,8 − 0,3 = 0,5 A. Im stationären Zustand sammelt sich im Knotenpunkt keine Ladung an.",
       },
       {
         id: "circuits-5",
         type: "choice",
         question:
-          "Was passiert, wenn ein Zweig einer Parallelschaltung mit idealer Spannungsquelle ausfällt?",
+          "Was passiert, wenn ein Zweig einer Parallelschaltung an einer idealen Spannungsquelle ausfällt?",
         options: [
-          "In allen anderen Branchen wird der Strom definitiv verschwinden",
-          "Die Spannung der verbleibenden Zweige wird sich definitiv verdoppeln",
-          "Die verbleibenden betriebsbereiten Zweige werden weiterhin mit der gleichen Spannung betrieben",
-          "Der Widerstandswert der verbleibenden Widerstände wird Null",
+          "In allen anderen Zweigen fällt der Strom zwangsläufig aus",
+          "Die Spannung der übrigen Zweige verdoppelt sich zwangsläufig",
+          "Die übrigen intakten Zweige liegen weiterhin an derselben Spannung",
+          "Der Widerstand der übrigen Widerstände wird null",
         ],
         answer: 2,
         explanation:
-          "Andere Zweige haben geschlossene Pfade zwischen denselben Quellpins. Eine ideale Quelle hält die Spannung aufrecht und der Gesamtstromverbrauch wird um den Strom des getrennten Zweigs reduziert.",
+          "Die übrigen Zweige liegen weiter an denselben Klemmen. Die ideale Quelle hält die Spannung konstant, der Gesamtstrom sinkt um den Strom des getrennten Zweigs.",
       },
     ],
   },
@@ -508,122 +508,122 @@ export const basicsLessons = [
     category: "basics",
     duration: 26,
     description:
-      "Unter Spannung versteht man Energie pro Ladungseinheit, Potenzialdifferenz und die zwischen zwei Punkten gemessene Größe.",
+      "Spannung als Energie pro Ladung, als Potenzialdifferenz zwischen zwei Punkten und ihre richtige Messung.",
     objectives: [
-      "Setzen Sie die Spannung mit der Ladungsübertragungsenergie in Beziehung und unterscheiden Sie sie vom Strom.",
-      "Arbeiten Sie mit Potentialen, Polarität, Gleich- und Wechselspannung.",
-      "Schließen Sie das Voltmeter richtig an und berücksichtigen Sie die Quellenspannung unter Last.",
+      "Die Spannung mit der übertragenen Energie pro Ladung verknüpfen und von der Stromstärke unterscheiden.",
+      "Mit Potenzialen, Polarität, Gleich- und Wechselspannung arbeiten.",
+      "Das Voltmeter richtig anschließen und die Klemmenspannung unter Belastung berücksichtigen.",
     ],
     sections: [
       {
         id: "energy-per-charge",
-        title: "1. Spannung beantwortet die Frage „wie viel Energie“",
+        title: "1. Spannung: Wie viel Energie pro Ladung?",
         paragraphs: [
-          "Strom gibt an, wie viel Ladung pro Sekunde fließt. Die Spannung zeigt eine weitere Eigenschaft: wie viel Energie pro Ladungseinheit übertragen wird, wenn sie sich zwischen zwei Punkten bewegt. Wenn jedes Coulomb der Last 12 J Energie zuführt, beträgt die Spannung an der Last 12 V. Ein Volt ist ein Joule pro Coulomb. Daher kann man nicht vergleichen, „was größer ist – 2 A oder 12 V“: Die Werte beschreiben verschiedene Aspekte des Prozesses.",
-          "Die Batterie wandelt chemische Energie in elektrische Energie um und sorgt für die Ladungstrennung. Eine Last, beispielsweise ein Widerstand, wandelt die empfangene Energie in Wärme um. Wenn eine positive Ladung durch eine passive Last von einem höheren Potenzial zu einem niedrigeren Potenzial gelangt, ist die vom elektrischen Feld geleistete Arbeit positiv. Bei einfachen Energieproblemen werden positive Werte der übertragenen Energie und Ladung verwendet; Bei der Richtungsanalyse werden Schilder berücksichtigt.",
+          "Die Stromstärke sagt, wie viel Ladung pro Sekunde fließt. Die Spannung sagt, wie viel Energie je Ladung zwischen zwei Punkten umgesetzt wird. Gibt jedes Coulomb an den Verbraucher 12 J ab, beträgt die Spannung 12 V. Ein Volt ist ein Joule pro Coulomb. Man kann daher 2 A und 12 V nicht vergleichen. Es sind verschiedene Größen.",
+          "Die Quelle wandelt zum Beispiel chemische in elektrische Energie um und trennt Ladungen. Ein Verbraucher wie ein Widerstand wandelt die aufgenommene Energie in Wärme um. Bewegt sich eine positive Ladung durch einen passiven Verbraucher vom höheren zum niedrigeren Potenzial, verrichtet das Feld positive Arbeit. In einfachen Energieaufgaben rechnet man mit positiven Beträgen. Bei der Richtungsanalyse beachtet man die Vorzeichen.",
         ],
         formula: {
           expression: "U = W / Q;  W = U · Q",
           legend:
-            "U – Spannung, V; W – übertragene Energie oder Arbeit, J; Q – Ladung, C. 1 V = 1 J/C.",
-          note: "Für konstante Spannung und übertragene Ladung; Bei Wechselspannung wird die Energie unter Berücksichtigung der zeitlichen Spannungsänderung berechnet.",
+            "U – Spannung in V; W – übertragene Energie oder Arbeit in J; Q – Ladung in C. 1 V = 1 J/C.",
+          note: "Gilt für konstante Spannung. Bei Wechselspannung berechnet man die Energie mit dem zeitlichen Verlauf der Spannung.",
         },
         example: {
-          title: "Beispiel: Spannung durch Energie",
+          title: "Beispiel: Spannung aus der Energie",
           given:
-            "Wenn eine Ladung von 5 C durch die Last fließt, werden 60 J auf sie übertragen. Bestimmen Sie die Spannung.",
+            "Fließt eine Ladung von 5 C durch den Verbraucher, werden 60 J umgesetzt. Gesucht ist die Spannung.",
           steps: [
-            "Wir wählen die Definition: U = W/Q.",
-            "Wir ersetzen die Daten: U = 60 J / 5 C = 12 J/C.",
-            "Da 1 J/C = 1 V ist, erhalten wir 12 V.",
-            "Interpretation: Jeder Anhänger überträgt 12 J auf diese Last, nicht 60 J.",
+            "Definition verwenden: U = W/Q.",
+            "Einsetzen: U = 60 J / 5 C = 12 J/C.",
+            "Wegen 1 J/C = 1 V ergibt sich 12 V.",
+            "Deutung: Jedes Coulomb gibt 12 J ab, nicht 60 J.",
           ],
-          answer: "Die Lastspannung beträgt 12 V.",
+          answer: "Die Spannung am Verbraucher beträgt 12 V.",
         },
       },
       {
         id: "potential-difference",
-        title: "2. Potenzial und Wahl des Bezugspunkts",
+        title: "2. Potenzial und Bezugspunkt",
         paragraphs: [
-          "Das elektrische Potenzial φ charakterisiert die potentielle Energie einer positiven Einheitsladung an einem Punkt. In einem Stromkreis wird normalerweise ein Punkt als Nullpotential gewählt und der Rest wird relativ dazu ausgedrückt. Die Wahl des Nullpunkts selbst ist bedingt: Wie die Höhe über der ausgewählten Marke hängt auch die absolute Zahl von der Referenz ab. Die physikalische Bedeutung für die Arbeit ist die Potentialdifferenz zwischen zwei Punkten.",
-          "Wir definieren die Spannung U_AB als φ_A − φ_B. Wenn φ_A = 9 V und φ_B = 4 V relativ zum gemeinsamen Nullpunkt, dann ist U_AB = 5 V. In umgekehrter Reihenfolge ist U_BA = −5 V. Das Setzen eines gemeinsamen Nullpunkts im Diagramm bedeutet nicht, dass der Punkt unbedingt mit Erde oder einem Schutzleiter verbunden ist. Verwechseln Sie nicht den herkömmlichen gemeinsamen Punkt des elektronischen Schaltkreises mit der Schutzerde der tatsächlichen Installation.",
+          "Das elektrische Potenzial φ beschreibt die potenzielle Energie einer positiven Einheitsladung an einem Punkt. Im Stromkreis wählt man meist einen Punkt als Bezugspunkt mit dem Potenzial null. Alle anderen Potenziale beziehen sich darauf. Der Zahlenwert hängt vom Bezugspunkt ab, wie eine Höhenangabe vom Nullniveau. Physikalisch entscheidend ist die Potenzialdifferenz zwischen zwei Punkten.",
+          "Die Spannung U_AB ist definiert als φ_A − φ_B. Mit φ_A = 9 V und φ_B = 4 V gegenüber demselben Bezugspunkt ist U_AB = 5 V. In umgekehrter Reihenfolge gilt U_BA = −5 V. Ein Bezugspunkt im Schaltplan ist nicht unbedingt mit Erde oder Schutzleiter verbunden. Verwechseln Sie das Bezugspotenzial einer Elektronikschaltung nicht mit dem Schutzleiter einer Installation.",
         ],
         formula: {
           expression: "U_AB = φ_A − φ_B;  U_BA = −U_AB",
           legend:
-            "φ_A und φ_B – Potentiale der Punkte A und B, V; U_AB – Spannung von Punkt A relativ zu B, V.",
-          note: "Die Bedeutung des Zeichens hängt von der gewählten Reihenfolge der Punkte ab. Die hier gewählte Definition muss während der gesamten Berechnung beibehalten werden.",
+            "φ_A und φ_B – Potenziale der Punkte A und B in V; U_AB – Spannung von A gegenüber B in V.",
+          note: "Das Vorzeichen hängt von der Reihenfolge der Punkte ab. Behalten Sie die gewählte Festlegung in der ganzen Rechnung bei.",
         },
         callout: {
           type: "tip",
           title: "Immer zwei Punkte",
-          text: "Der Ausdruck „Spannung an einem 5-V-Punkt“ ist die Abkürzung für „die Spannung dieses Punktes relativ zu einem ausgewählten gemeinsamen 5-V-Knoten“. Geben Sie den Referenzpunkt an.",
+          text: "„5 V an einem Punkt“ bedeutet: 5 V gegenüber dem gewählten Bezugspunkt. Geben Sie den Bezugspunkt immer an.",
         },
       },
       {
         id: "voltage-without-current",
-        title: "3. Warum kann es Spannung ohne Strom geben?",
+        title: "3. Spannung ohne Strom",
         paragraphs: [
-          "An den offenen Anschlüssen einer funktionierenden Batterie liegt Spannung an, obwohl von außen praktisch kein Gleichstrom vorhanden ist. Die Quelle hält bereits eine Potentialdifferenz aufrecht, es gibt jedoch keinen geschlossenen Leiterpfad. Ebenso kann zwischen den Platten eines geladenen Kondensators eine Spannung herrschen, ohne dass ein stetiger Strom durch ein ideales Dielektrikum fließt. Das Vorhandensein von Spannung und das Vorhandensein von Strom sind unterschiedliche Aussagen.",
-          "Wenn ein Widerstand an eine Batterie angeschlossen wird, wird ein Strom erzeugt, der von der Spannung und dem Widerstand des gesamten Stromkreises abhängt. Eine ideale Spannungsquelle hält bei jeder im Modell zulässigen Last eine bestimmte Spannung aufrecht. Eine echte Quelle hat einen Innenwiderstand und eine Strombegrenzung. Wenn der Strom zunimmt, kann seine Klemmenspannung sinken: Ein Teil der Spannung fällt auf den Innenwiderstand. Daher verspricht die Nennbeschriftung der Batterie keine konstante Spannung unter jeder Belastung.",
+          "An den offenen Klemmen einer Batterie liegt Spannung an, obwohl außen kein Gleichstrom fließt. Die Quelle hält die Potenzialdifferenz aufrecht, es fehlt nur der geschlossene Stromkreis. Ebenso kann an einem geladenen Kondensator Spannung herrschen, ohne dass durch das ideale Dielektrikum ein Strom fließt. Spannung und Strom sind verschiedene Zustände.",
+          "Schließt man einen Widerstand an die Batterie an, fließt ein Strom. Er hängt von der Spannung und vom Gesamtwiderstand ab. Eine ideale Spannungsquelle hält ihre Spannung bei jeder Belastung konstant. Eine reale Quelle hat einen Innenwiderstand und eine Stromgrenze. Steigt der Strom, sinkt die Klemmenspannung, denn ein Teil der Spannung fällt am Innenwiderstand ab. Die Nennspannung gilt also nicht bei jeder Belastung.",
         ],
         formula: {
           expression: "Uterminale = E − I r",
           legend:
-            "E – Quell-EMK, V; r – Innenwiderstand, Ω; I ist der von der Quelle gelieferte Strom A.",
-          note: "Ein einfaches Modell einer Entladequelle mit konstanter EMF und konstantem Innenwiderstand; Beim Laden und in anderen Modi werden die Stromrichtung und die Vorzeichen separat berücksichtigt.",
+            "E – Quellenspannung (EMK) in V; r – Innenwiderstand in Ω; I – Strom der Quelle in A.",
+          note: "Einfaches Modell einer entladenen Quelle mit konstanter EMK und konstantem Innenwiderstand. Beim Laden und in anderen Betriebsarten beachtet man Stromrichtung und Vorzeichen gesondert.",
         },
         example: {
-          title: "Beispiel: Batteriespannung unter Last",
+          title: "Beispiel: Klemmenspannung unter Last",
           given:
-            "Quellen-EMF E = 9 V, Innenwiderstand r = 1 Ω. Es liefert einen Strom von 0,2 A. Wie hoch ist die Spannung an seinen Anschlüssen?",
+            "Quellenspannung E = 9 V, Innenwiderstand r = 1 Ω. Die Quelle liefert 0,2 A. Wie groß ist die Klemmenspannung?",
           steps: [
-            "Die Spannung fällt am Innenwiderstand I · r = 0,2 · 1 = 0,2 V ab.",
-            "Beim Entladen ist die Klemmenspannung kleiner als die EMK: UKlemmen = E − I · r.",
-            "Wir ersetzen: Uterminals = 9 − 0,2 = 8,8 V.",
-            "Im Leerlauf ist I ≈ 0, sodass die Spannung in diesem Modell etwa 9 V betragen würde.",
+            "Spannungsfall am Innenwiderstand: I · r = 0,2 · 1 = 0,2 V.",
+            "Beim Entladen ist die Klemmenspannung kleiner als die EMK: U_Kl = E − I · r.",
+            "Einsetzen: U_Kl = 9 − 0,2 = 8,8 V.",
+            "Im Leerlauf ist I ≈ 0, die Spannung wäre in diesem Modell etwa 9 V.",
           ],
-          answer: "An den Quellanschlüssen unter dieser Last liegen 8,8 V an.",
+          answer: "Unter dieser Last liegen an den Klemmen 8,8 V.",
         },
       },
       {
         id: "voltmeter",
-        title: "4. So messen Sie die Spannung richtig",
+        title: "4. Spannung richtig messen",
         paragraphs: [
-          "Das Voltmeter ist parallel geschaltet: Seine beiden Sonden sind an zwei Punkte angeschlossen, deren Potentialdifferenz bestimmt werden muss. Um die Spannung an einem Widerstand zu messen, werden Sonden an seinen Anschlüssen angebracht, ohne den Hauptzweig zu unterbrechen. Ein ideales Voltmeter hat einen unendlich hohen Widerstand und verbraucht keinen Strom. Ein reales Gerät hat eine große, aber endliche Eingangsimpedanz und kann Schaltkreise mit hoher Impedanz beeinflussen.",
-          "Wählen Sie für die Batterie Gleichspannungsmessung, COM- und V-Buchsen, und der Bereich liegt nicht unter der erwarteten Spannung. Die rote Sonde mit einem höheren Potenzial im Vergleich zur schwarzen ergibt einen positiven Messwert; Durch eine Neuanordnung der Sonden ändert sich das Vorzeichen. Beispielsweise bedeuten −4,5 V im richtigen Modus die entgegengesetzte Polarität zur ausgewählten. Vor der Messung ist es wichtig, sicherzustellen, dass das rote Kabel nicht in der Strombuchse verbleibt: Der Stromeingang hat einen niedrigen Widerstand und ist nicht für den Anschluss über die Stromquelle vorgesehen.",
+          "Das Voltmeter wird parallel geschaltet. Die beiden Messleitungen kommen an die zwei Punkte, zwischen denen die Spannung gemessen werden soll. Für die Spannung an einem Widerstand legen Sie die Leitungen an seine Anschlüsse. Den Stromkreis müssen Sie dafür nicht auftrennen. Ein ideales Voltmeter hat unendlich großen Innenwiderstand und nimmt keinen Strom auf. Ein reales Gerät hat einen hohen, aber endlichen Eingangswiderstand und kann hochohmige Schaltungen beeinflussen.",
+          "Für Batterien wählen Sie Gleichspannung (DC), die Buchsen COM und V und einen Messbereich über der erwarteten Spannung. Liegt die rote Leitung am höheren Potenzial, ist der Wert positiv. Vertauschen der Leitungen kehrt das Vorzeichen um. Zeigt das Gerät im richtigen Bereich −4,5 V, ist die Polarität umgekehrt wie angenommen. Prüfen Sie vor dem Messen, dass die rote Leitung nicht in der Strombuchse steckt. Der Stromeingang hat einen sehr kleinen Widerstand und darf nicht parallel an einer Quelle liegen.",
         ],
         callout: {
           type: "warning",
-          title: "Betriebsbedingungen der Trainingsmessung",
-          text: "Hier werden Niederspannungs-Trainingsquellen besprochen. Für die Messung der Netzspannung sind ein entsprechendes Gerät, eine entsprechende Sicherheitskategorie und eine Schulung erforderlich; Bei dieser Lektion handelt es sich nicht um eine Anleitung zum Arbeiten in einer Steckdose.",
+          title: "Bedingungen für Übungsmessungen",
+          text: "Hier geht es um Kleinspannungs-Übungsquellen. Für Messungen an der Netzspannung brauchen Sie ein geeignetes Gerät mit passender Messkategorie und eine Unterweisung. Diese Lektion ist keine Anleitung für Arbeiten an der Steckdose.",
         },
       },
       {
         id: "dc-ac",
         title: "5. Gleich- und Wechselspannung",
         paragraphs: [
-          "Gleichspannung im engeren Sinne behält über die Zeit ihre Größe und Polarität. In einem U(t)-Diagramm ist dies eine horizontale Linie. Eine mit DC gekennzeichnete Quelle unterstützt normalerweise eine Polarität, obwohl die tatsächliche Spannung beim Entladen wellenförmig sein oder sich langsam ändern kann. Wechselspannung ändert periodisch die Polarität; Ein typisches Beispiel ist die Sinusspannung.",
-          "Für eine Sinuskurve gibt es einen Momentanwert, eine Amplitude Û und einen Effektivwert Urms. Der Effektivwert ergibt die gleiche durchschnittliche Wärmeleistung am gleichen Widerstand wie eine gleiche konstante Spannung. Für eine reine Sinuskurve ist Uact = Û/√2. Beispielsweise entspricht der Effektivwert von 12 V einer Amplitude von etwa 16,97 V. Die übliche Bezeichnung für die Netzspannung oder Sekundärwicklung eines Transformators gibt in der Regel den Effektivwert und nicht den Amplitudenwert an.",
+          "Eine Gleichspannung behält Betrag und Polarität. Im u(t)-Diagramm ist sie eine waagerechte Linie. Eine mit DC gekennzeichnete Quelle liefert eine feste Polarität. Beim Entladen kann die Spannung aber leicht schwanken oder sinken. Eine Wechselspannung wechselt periodisch ihre Polarität. Ein typisches Beispiel ist die Sinusspannung.",
+          "Eine Sinusspannung hat Augenblickswert, Scheitelwert Û und Effektivwert U_eff. Der Effektivwert erzeugt an demselben Widerstand dieselbe mittlere Wärmeleistung wie eine gleich große Gleichspannung. Für reinen Sinus gilt U_eff = Û/√2. Beispiel: 12 V Effektivwert entsprechen etwa 16,97 V Scheitelwert. Angaben zur Netzspannung oder zur Sekundärspannung eines Transformators sind meist Effektivwerte.",
         ],
         formula: {
           expression: "u(t) = Û · sin(2πft);  Uact = Û / √2;  T = 1/f",
           legend:
-            "u(t) – Momentanspannung, V; Û – Amplitude, V; f – Frequenz, Hz; T – Punkt, s.",
-          note: "Die Beziehung mit √2 gilt für eine Sinuskurve ohne konstante Komponente; Für andere Wellenformen wird der Effektivwert anders berechnet.",
+            "u(t) – Augenblickswert der Spannung in V; Û – Scheitelwert in V; f – Frequenz in Hz; T – Periodendauer in s.",
+          note: "Der Faktor √2 gilt für einen Sinus ohne Gleichanteil. Bei anderen Kurvenformen berechnet man den Effektivwert anders.",
         },
       },
       {
         id: "voltage-balance",
         title: "6. Spannungs- und Energiebilanz",
         paragraphs: [
-          "In einem einfachen geschlossenen Stromkreis erhöht die Quelle die potentielle Energie der Ladung und die Last verringert sie. Wenn die Quelle 12 V liefert und zwei Reihenwiderstände Spannungsabfälle von 5 V und 7 V aufweisen, erhält ein Anhänger 12 J von der Quelle und gibt 5 J und 7 J an die Lasten ab. Die Summe ist gleich. Dies ist die energetische Bedeutung der Kirchhoffschen Spannungsregel für Stromkreise ohne sich ändernden magnetischen Fluss.",
-          "Beim Summieren von Spannungen entlang einer geschlossenen Schleife müssen Sie die Vorzeichen berücksichtigen. Beim Umgehen der Quelle von Minus nach Plus kommt es zu einem Anstieg von +12 V, und beim Passieren passiver Widerstände in Stromrichtung kommt es zu einem Abfall von -5 V und -7 V: +12 - 5 - 7 = 0. Bei parallelen Elementen können Spannungen nicht summiert werden: Sie sind bereits zwischen identischen Knoten verbunden und haben die gleiche Spannung. Wenn das Ergebnis gegen diese Regeln verstößt, überprüfen Sie zunächst die Polaritäten und die Anschlussart.",
+          "Im einfachen Stromkreis erhöht die Quelle die potenzielle Energie der Ladung, der Verbraucher senkt sie. Liefert die Quelle 12 V und fallen an zwei Reihenwiderständen 5 V und 7 V ab, nimmt jedes Coulomb 12 J auf und gibt 5 J und 7 J ab. Die Summen sind gleich. Das ist die Energiebedeutung der Maschenregel, solange sich kein Magnetfeld ändert.",
+          "Beim Aufsummieren der Spannungen in einer Masche zählen die Vorzeichen. Durchläuft man die Quelle von Minus nach Plus, steigt die Spannung um +12 V. Bei passiven Widerständen in Stromrichtung fällt sie um −5 V und −7 V: +12 − 5 − 7 = 0. Bei parallelen Elementen addiert man die Spannungen nicht, denn alle liegen an denselben Knotenpunkten. Ergibt sich ein Widerspruch, prüfen Sie zuerst Polarität und Schaltungsart.",
         ],
         callout: {
           type: "insight",
-          title: "Drei verwandte, aber unterschiedliche Größen",
-          text: "Ladung Q wird in C gemessen, Strom I in C/s, Spannung U in J/C. Ihre Kombination U · I ergibt J/s, also Leistung. Daraus ergibt sich später die Formel P = U · I.",
+          title: "Drei verwandte, aber verschiedene Größen",
+          text: "Ladung Q wird in C gemessen, Stromstärke I in C/s, Spannung U in J/C. U · I ergibt J/s, also Leistung. Daraus folgt später P = U · I.",
         },
       },
     ],
@@ -634,7 +634,7 @@ export const basicsLessons = [
         symbol: "U",
         unit: "V - Volt",
         definition:
-          "Möglicher Unterschied zwischen zwei Punkten; charakterisiert die Energie pro Einheit übertragener Ladung.",
+          "Potenzialdifferenz zwischen zwei Punkten; Energie pro übertragener Ladung.",
       },
       {
         term: "Elektrisches Potenzial",
@@ -642,7 +642,7 @@ export const basicsLessons = [
         symbol: "φ",
         unit: "V - Volt",
         definition:
-          "Potenzielle Energie einer positiven Einheitsladung relativ zu einem ausgewählten Referenzniveau.",
+          "Potenzielle Energie einer positiven Einheitsladung bezogen auf einen gewählten Bezugspunkt.",
       },
       {
         term: "Elektromotorische Kraft",
@@ -650,7 +650,7 @@ export const basicsLessons = [
         symbol: "E",
         unit: "V - Volt",
         definition:
-          "Arbeit externer Quellkräfte pro Ladungseinheit; In einem einfachen Modell ist sie gleich der Leerlaufspannung.",
+          "Arbeit der Quellenkräfte pro Ladung; im einfachen Modell gleich der Leerlaufspannung.",
       },
       {
         term: "Voltmeter",
@@ -658,7 +658,7 @@ export const basicsLessons = [
         symbol: "V",
         unit: "V - Volt",
         definition:
-          "Ein hochohmiges Gerät, das zwischen zwei Punkten angeschlossen ist, um die Potenzialdifferenz zu messen.",
+          "Hochohmiges Messgerät, das zur Messung der Potenzialdifferenz zwischen zwei Punkten parallel angeschlossen wird.",
       },
       {
         term: "Effektivwert",
@@ -666,7 +666,7 @@ export const basicsLessons = [
         symbol: "Uakt",
         unit: "V - Volt",
         definition:
-          "Der Wert einer konstanten Spannung, die am gleichen Widerstand die gleiche durchschnittliche Wärmeleistung wie die zu prüfende Spannung erzeugt.",
+          "Wert einer Gleichspannung, die an demselben Widerstand dieselbe mittlere Wärmeleistung erzeugt wie die betrachtete Wechselspannung.",
       },
       {
         term: "Polarität",
@@ -674,83 +674,83 @@ export const basicsLessons = [
         symbol: "+ / −",
         unit: "—",
         definition:
-          "Zeigt an, welcher der beiden Anschlüsse für die gewählte Spannungsrichtung das höhere Potenzial hat.",
+          "Gibt an, welche von zwei Klemmen bei gewählter Spannungsrichtung das höhere Potenzial hat.",
       },
     ],
     summary: [
-      "Die Spannung hängt mit der Energie zusammen: U = W/Q, ein Volt entspricht einem Joule pro Coulomb.",
-      "Die Spannung wird zwischen zwei Punkten bestimmt; U_AB = φ_A − φ_B.",
-      "Eine Batterie mit offenem Stromkreis kann Spannung ohne externen Gleichstrom haben.",
-      "Das Voltmeter ist parallel geschaltet; Es muss eine hohe Eingangsimpedanz haben.",
-      "Für eine reale Entladequelle gilt in einem einfachen Modell Uterminals = E − I · r.",
-      "Bei einer Sinuskurve ist die effektive Spannung gleich der Amplitude geteilt durch √2.",
+      "Spannung hängt mit Energie zusammen: U = W/Q; 1 V = 1 J/C.",
+      "Spannung gilt zwischen zwei Punkten: U_AB = φ_A − φ_B.",
+      "Eine Batterie im Leerlauf hat Spannung, ohne dass außen Gleichstrom fließt.",
+      "Das Voltmeter wird parallel geschaltet und muss hochohmig sein.",
+      "Im einfachen Modell einer entladenen realen Quelle gilt U_Kl = E − I · r.",
+      "Beim Sinus ist der Effektivwert der Scheitelwert geteilt durch √2.",
     ],
     quiz: [
       {
         id: "voltage-1",
         type: "choice",
-        question: "Was bedeuten 6 V an einer Last?",
+        question: "Was bedeuten 6 V an einem Verbraucher?",
         options: [
-          "6 A fließt zwangsläufig durch ihn hindurch",
-          "Jeder Anhänger überträgt 6 J Energie auf sie",
-          "Genau 6 Elektronen passieren es pro Sekunde.",
+          "Zwangsläufig fließen 6 A durch ihn",
+          "Jedes Coulomb gibt 6 J Energie an ihn ab",
+          "Genau 6 Elektronen fließen pro Sekunde hindurch",
           "Sein Widerstand muss 6 Ω betragen",
         ],
         answer: 1,
         explanation:
-          "1 V = 1 J/C. Eine Spannung von 6 V bedeutet 6 J pro 1 C übertragener Ladung. Der Strom hängt auch von den Eigenschaften der Last ab.",
+          "1 V = 1 J/C. 6 V bedeuten 6 J pro 1 C übertragener Ladung. Der Strom hängt zusätzlich vom Verbraucher ab.",
       },
       {
         id: "voltage-2",
         type: "numeric",
         question:
-          "Beim Durchlaufen von 4 °C werden 36 J auf die Last übertragen. Wie groß ist die Spannung in Volt?",
+          "Beim Durchlaufen von 4 C werden 36 J auf den Verbraucher übertragen. Wie groß ist die Spannung in V?",
         answer: 9,
         unit: "V",
         tolerance: 0.01,
         explanation:
-          "U = W/Q = 36 J / 4 C = 9 V. Ladung durch Energie zu teilen wäre per Definition und Dimension falsch.",
+          "U = W/Q = 36 J / 4 C = 9 V. Ladung durch Energie zu teilen wäre nach Definition und Einheit falsch.",
       },
       {
         id: "voltage-3",
         type: "numeric",
         question:
-          "Das Potenzial A beträgt 3 V und das Potenzial B beträgt 8 V relativ zu einer Null. Finden Sie U_AB = φ_A − φ_B.",
+          "Das Potenzial von A beträgt 3 V, das von B 8 V, jeweils gegenüber demselben Bezugspunkt. Bestimmen Sie U_AB = φ_A − φ_B.",
         answer: -5,
         unit: "V",
         tolerance: 0.01,
         explanation:
-          "U_AB = 3 − 8 = −5 V. Das Vorzeichen zeigt, dass Punkt A ein niedrigeres Potenzial hat als B. Wenn die Reihenfolge der Punkte geändert würde, wäre es +5 V.",
+          "U_AB = 3 − 8 = −5 V. Das Vorzeichen zeigt, dass A ein niedrigeres Potenzial hat als B. Bei vertauschter Reihenfolge wären es +5 V.",
       },
       {
         id: "voltage-4",
         type: "choice",
         question:
-          "Wie schließe ich ein Voltmeter richtig an, um die Spannung an einem Widerstand zu messen?",
+          "Wie wird ein Voltmeter angeschlossen, um die Spannung an einem Widerstand zu messen?",
         options: [
-          "Konsequenterweise den Ast brechen",
-          "Parallel zu zwei Widerstandsklemmen",
-          "Beide Sonden an ein Terminal",
-          "Über Strombuchse statt V-Eingang",
+          "Nacheinander den Zweig auftrennen",
+          "Parallel zu den beiden Anschlüssen des Widerstands",
+          "Beide Messleitungen an dieselbe Klemme",
+          "Über die Strombuchse statt des V-Eingangs",
         ],
         answer: 1,
         explanation:
-          "Das Voltmeter vergleicht die Potentiale der beiden Anschlüsse des Elements, sodass es parallel geschaltet ist. Sein hoher Widerstand reduziert den Einfluss auf den zu prüfenden Stromkreis.",
+          "Das Voltmeter vergleicht die Potenziale beider Anschlüsse, daher liegt es parallel. Sein hoher Widerstand hält die Rückwirkung auf die Schaltung klein.",
       },
       {
         id: "voltage-5",
         type: "choice",
         question:
-          "Welche Aussage über einen offenen Stromkreis bei einer Batterie ist wahr?",
+          "Welche Aussage über eine Batterie im Leerlauf ist richtig?",
         options: [
-          "Wenn kein Strom vorhanden ist, liegt auch keine Spannung an der Batterie an.",
+          "Ohne Strom liegt auch keine Spannung an der Batterie an",
           "Spannung liegt nur innerhalb der Lampe vor",
-          "Möglicherweise liegt an den Batterieklemmen Spannung an, obwohl der externe Strom nahezu Null ist",
-          "In einem offenen Stromkreis ist der Strom notwendigerweise unendlich",
+          "An den Batterieklemmen kann Spannung anliegen, obwohl der äußere Strom nahezu null ist",
+          "In einem offenen Stromkreis ist der Strom zwangsläufig unendlich groß",
         ],
         answer: 2,
         explanation:
-          "Die Batterie hält die Ladungstrennung und den Potentialunterschied aufrecht. Für externen Gleichstrom ist zusätzlich eine geschlossene Leiterbahn erforderlich.",
+          "Die Batterie hält Ladungstrennung und Potenzialdifferenz aufrecht. Für einen Gleichstrom nach außen braucht es zusätzlich einen geschlossenen Stromkreis.",
       },
     ],
   },
@@ -763,122 +763,122 @@ export const basicsLessons = [
     category: "basics",
     duration: 28,
     description:
-      "Verstehen Sie, woher der Widerstand kommt, wie er durch Material, Größe und Temperatur beeinflusst wird und wie man ihn misst.",
+      "Woher der Widerstand kommt, wie Material, Abmessungen und Temperatur ihn beeinflussen und wie man ihn misst.",
     objectives: [
-      "Erklären Sie den Widerstand durch die Wechselwirkung von Ladungsträgern mit einem Material.",
-      "Berechnen Sie den Widerstand anhand von Spannung und Strom sowie spezifischem Widerstand und Geometrie.",
-      "Berücksichtigen Sie die Temperaturabhängigkeit und -toleranz. Es ist sicher, den Widerstand eines stromlosen Teils zu messen.",
+      "Den Widerstand durch die Wechselwirkung der Ladungsträger mit dem Leitermaterial erklären.",
+      "Den Widerstand aus Spannung und Strom sowie aus spezifischem Widerstand und Geometrie berechnen.",
+      "Temperaturabhängigkeit und Toleranz berücksichtigen und den Widerstand sicher an einem spannungsfreien Bauteil messen.",
     ],
     sections: [
       {
         id: "microscopic-resistance",
-        title: "1. Warum verhindert ein Leiter den Stromfluss?",
+        title: "1. Warum begrenzt ein Leiter den Strom?",
         paragraphs: [
-          "In einem Metall verursacht ein elektrisches Feld eine gerichtete Elektronendrift, sie interagieren jedoch mit Schwingungen des Kristallgitters, Verunreinigungen und Defekten im Material. Die vom Feld empfangene Energie wird häufig in Form von Wärme auf die Substanz übertragen. Um einen bestimmten Strom durch einen realen Leiter aufrechtzuerhalten, ist daher normalerweise eine Spannung ungleich Null erforderlich. Die Fähigkeit eines Elements, den Strom zu begrenzen, wird durch den elektrischen Widerstand R charakterisiert.",
-          "Bei gleicher angelegter Spannung entspricht ein höherer Widerstand einem niedrigeren Strom. Der Widerstand wird in Ohm gemessen, Symbol Ω. Wenn bei einer Spannung von 1 V ein Strom von 1 A durch das Element fließt, beträgt das U/I-Verhältnis 1 Ω. Ein Widerstand ist ein speziell angefertigtes Element mit einem bestimmten Widerstandswert; Widerstand ist eine physikalische Größe, die auch Drähte, Kontakte, Wicklungen und andere Geräte haben. In diesem Fall bleibt die Ladung nicht „für immer hängen“: Im etablierten Stromkreis fließt sie weiterhin durch das Element.",
+          "Im Metall treibt das elektrische Feld die Elektronen in eine Richtung. Sie stoßen dabei mit Gitterschwingungen, Störstellen und Fehlstellen zusammen. Die vom Feld aufgenommene Energie wird als Wärme an das Material abgegeben. Für einen bestimmten Strom braucht man deshalb eine Spannung. Wie stark ein Bauelement den Strom begrenzt, beschreibt der Ohmsche Widerstand R.",
+          "Bei gleicher Spannung bedeutet ein größerer Widerstand einen kleineren Strom. Die Einheit ist das Ohm (Ω). Fließt bei 1 V ein Strom von 1 A, ist U/I = 1 Ω. Ein Widerstand ist ein Bauelement mit festgelegtem Widerstandswert. Widerstand als Eigenschaft haben auch Leitungen, Kontakte und Wicklungen. Ladung bleibt dabei nicht im Bauelement hängen, sie fließt im stationären Zustand weiter.",
         ],
         formula: {
           expression: "R = U / I;  1 Ω = 1 V/A",
           legend:
-            "R – Widerstand, Ω; U ist die Spannung am Element, V; I ist der Strom durch ihn, A.",
-          note: "Das U/I-Verhältnis bestimmt den statischen Widerstand im gewählten Betriebspunkt. Nur für ein ohmsches Element ist es unter konstanten Bedingungen unabhängig von Strom und Spannung.",
+            "R – Widerstand in Ω; U – Spannung am Bauelement in V; I – Strom durch das Bauelement in A.",
+          note: "U/I ist der statische Widerstand im gewählten Arbeitspunkt. Nur bei einem ohmschen Bauelement ist er unter konstanten Bedingungen von Strom und Spannung unabhängig.",
         },
         example: {
-          title: "Beispiel: Widerstand durch Messung",
+          title: "Beispiel: Widerstand aus Messwerten",
           given:
-            "Am Widerstand werden 6 V gemessen, der Strom durch ihn beträgt 20 mA. Finden Sie Widerstand.",
+            "Am Widerstand werden 6 V gemessen, der Strom beträgt 20 mA. Gesucht ist der Widerstand.",
           steps: [
-            "Rechnen Sie den Strom in Ampere um: 20 mA = 0,020 A.",
-            "Wir verwenden R = U/I: R = 6/0,020 = 300 Ω.",
-            "Wir prüfen: Bei 300 Ω und 0,020 A beträgt die Spannung U = I · R = 6 V.",
-            "Wenn Milliampere durch 20 ersetzt würde, würde die Antwort fälschlicherweise um den Faktor Tausend reduziert.",
+            "Strom in A umrechnen: 20 mA = 0,020 A.",
+            "Mit R = U/I: R = 6/0,020 = 300 Ω.",
+            "Probe: U = I · R = 0,020 · 300 = 6 V.",
+            "Würde man 20 mA nicht umrechnen, wäre das Ergebnis um den Faktor 1000 zu klein.",
           ],
-          answer: "Der Widerstandswert des Widerstands beträgt 300 Ω.",
+          answer: "Der Widerstand beträgt 300 Ω.",
         },
       },
       {
         id: "material-and-geometry",
         title: "2. Material, Länge und Querschnittsfläche",
         paragraphs: [
-          "Der Widerstand eines homogenen Leiters hängt vom Material und der Form ab. Je länger der Draht, desto größer der Widerstand: Bei gleichem Strom erfolgt die Wechselwirkung von Ladungsträgern mit dem Material über einen längeren Weg. Je größer die Querschnittsfläche, desto geringer ist der Widerstand: Ladung kann über eine größere Fläche übertragen werden. Die Formel bezieht sich auf die Fläche, nicht auf den Durchmesser. Für einen runden Draht ist S = πd²/4, d. h. eine Verdoppelung des Durchmessers vervierfacht die Fläche.",
-          "Die Materialeigenschaft wird durch den spezifischen Widerstand ρ charakterisiert. Seine SI-Einheit ist Ω m. Für Drähte ist es zweckmäßig, Ω · mm²/m zu verwenden, wenn die Fläche in mm² und die Länge in m ersetzt wird. Beispielsweise wird für Kupfer bei 20 °C häufig ρ ≈ 0,0175 Ω mm²/m angenommen. Dies ist ein ungefährer Lehrwert in Abhängigkeit von Zusammensetzung und Temperatur. Bei einer Zweidrahtleitung wird die Gesamtlänge der Hin- und Rückleitungen berücksichtigt: Eine Belastung von 10 m von der Quelle bedeutet in der Regel 20 m leitende Strecke.",
+          "Der Widerstand eines homogenen Leiters hängt von Material und Form ab. Je länger der Draht, desto größer der Widerstand: Die Ladungsträger wechselwirken über eine längere Strecke mit dem Material. Je größer die Querschnittsfläche, desto kleiner der Widerstand. In der Formel steht die Fläche, nicht der Durchmesser. Für einen runden Draht gilt S = πd²/4. Doppelter Durchmesser ergibt also die vierfache Fläche.",
+          "Das Material beschreibt der spezifische Widerstand ρ. Seine SI-Einheit ist Ω m. Bei Drähten rechnet man bequem in Ω · mm²/m, wenn die Fläche in mm² und die Länge in m angegeben sind. Für Kupfer bei 20 °C nimmt man oft ρ ≈ 0,0175 Ω mm²/m an. Das ist ein Näherungswert, er hängt von Zusammensetzung und Temperatur ab. Bei einer Zweidrahtleitung zählt die Länge von Hin- und Rückleiter: Ein Verbraucher in 10 m Entfernung bedeutet meist 20 m Leitungslänge.",
         ],
         formula: {
           expression: "R = ρ l / S;  Kreis = π d² / 4",
           legend:
-            "ρ – spezifischer Widerstand; l – Länge, m; S – Querschnittsfläche; d – Durchmesser.",
-          note: "Die Formel geht von einem homogenen Leiter mit konstantem Querschnitt und gegebener Temperatur aus. Verwenden Sie konsistente Flächen- und ρ-Einheiten.",
+            "ρ – spezifischer Widerstand; l – Länge in m; S – Querschnittsfläche; d – Durchmesser.",
+          note: "Die Formel gilt für einen homogenen Leiter mit konstantem Querschnitt bei gegebener Temperatur. Verwenden Sie zueinander passende Einheiten für Fläche und ρ.",
         },
         example: {
-          title: "Beispiel: Kupferleitungswiderstand",
+          title: "Beispiel: Widerstand einer Kupferleitung",
           given:
-            "Die Last befindet sich 10 m von der Quelle entfernt und ist über zwei Kupferdrähte mit einem Querschnitt von 1 mm² angeschlossen. Nehmen Sie ρ = 0,0175 Ω mm²/m. Ermitteln Sie den Widerstand beider Drähte zusammen.",
+            "Ein Verbraucher ist 10 m von der Quelle entfernt und mit zwei Kupferdrähten von je 1 mm² Querschnitt angeschlossen. Es gilt ρ = 0,0175 Ω mm²/m. Gesucht ist der Widerstand beider Drähte zusammen.",
           steps: [
-            "Der Strom fließt durch die Vorwärtsleitung zur Last und durch die Rückwärtsleitung zurück: l = 10 + 10 = 20 m.",
-            "Die Fläche S = 1 mm² entspricht der Einheit des spezifischen Widerstands.",
-            "Wir berechnen Rlines = ρ · l/S = 0,0175 · 20/1 = 0,35 Ω.",
-            "Bei einem Strom von 2 A würde der Spannungsabfall auf dieser Leitung UNetz = 2 · 0,35 = 0,7 V betragen. Dies zeigt, warum die Leitungen nicht immer als ideal angesehen werden können.",
+            "Der Strom fließt über den Hinleiter zum Verbraucher und über den Rückleiter zurück: l = 10 + 10 = 20 m.",
+            "Die Fläche S = 1 mm² passt zur Einheit des spezifischen Widerstands.",
+            "R_Ltg = ρ · l/S = 0,0175 · 20/1 = 0,35 Ω.",
+            "Bei 2 A beträgt der Spannungsfall auf der Leitung U_Ltg = 2 · 0,35 = 0,7 V. Leitungen darf man daher nicht immer als ideal annehmen.",
           ],
           answer:
-            "Der Gesamtwiderstand der Hin- und Rückleitungen beträgt 0,35 Ω.",
+            "Der Gesamtwiderstand von Hin- und Rückleiter beträgt 0,35 Ω.",
         },
       },
       {
         id: "temperature",
-        title: "3. Temperatur verändert den Widerstand",
+        title: "3. Die Temperatur verändert den Widerstand",
         paragraphs: [
-          "Wenn ein gewöhnlicher Metallleiter erhitzt wird, verstärken sich die Schwingungen des Kristallgitters und sein Widerstand erhöht sich normalerweise. In einem kleinen Temperaturbereich kann die Abhängigkeit durch eine Gerade angenähert werden: R(T) = R₀[1 + α(T − T₀)]. Der Koeffizient α charakterisiert die relative Widerstandsänderung pro Grad und hat die Einheit K⁻¹. Der Temperaturunterschied in Grad Celsius entspricht numerisch dem Unterschied in Kelvin.",
-          "Für Kupfer nahe 20 °C können wir α ≈ 0,00393 K⁻¹ annehmen. Wenn die Kupferwicklung bei 20 °C 10 Ω hätte, dann ergibt das lineare Modell bei 70 °C 10 [1 + 0,00393 50] ≈ 11,97 Ω. Nicht alle Materialien verhalten sich gleich: Der Widerstand eines NTC-Thermistors nimmt bei Erwärmung ab, während der eines PTC-Elements zunimmt. Die lineare Formel kann ohne Überprüfung nicht auf beliebige Materialien und einen großen Temperaturbereich erweitert werden.",
+          "Erwärmt man einen Metalleiter, schwingt das Kristallgitter stärker, und der Widerstand steigt meist. In einem kleinen Temperaturbereich ist der Verlauf annähernd linear: R(T) = R₀[1 + α(T − T₀)]. Der Temperaturkoeffizient α gibt die relative Widerstandsänderung je Kelvin an, Einheit K⁻¹. Eine Temperaturdifferenz in °C ist zahlenmäßig gleich der in K.",
+          "Für Kupfer nahe 20 °C gilt α ≈ 0,00393 K⁻¹. Hat eine Kupferwicklung bei 20 °C 10 Ω, ergibt das lineare Modell bei 70 °C: 10 · [1 + 0,00393 · 50] ≈ 11,97 Ω. Nicht alle Werkstoffe verhalten sich so: Der Widerstand eines NTC-Thermistors sinkt bei Erwärmung, der eines PTC-Elements steigt. Die lineare Formel gilt nicht ohne Prüfung für beliebige Werkstoffe und große Temperaturbereiche.",
         ],
         formula: {
           expression: "R(T) ≈ R₀ · [1 + α · (T − T₀)]",
           legend:
-            "R₀ – Widerstand bei Temperatur T₀; α ist der Temperaturkoeffizient K⁻¹.",
-          note: "Die Näherung ist in dem Bereich anwendbar, in dem α als konstant angesehen werden kann. Die Temperatur muss die Temperatur des Elements selbst sein, nicht nur die der Luft um es herum.",
+            "R₀ – Widerstand bei der Temperatur T₀; α – Temperaturkoeffizient in K⁻¹.",
+          note: "Die Näherung gilt dort, wo α als konstant angesehen werden kann. Maßgeblich ist die Temperatur des Bauteils selbst, nicht die der Umgebungsluft.",
         },
         callout: {
           type: "insight",
-          title: "Warum unterscheidet sich eine kalte Lampe von einer heißen?",
-          text: "Der Metallfaden einer Glühlampe hat einen Kältewiderstand, der deutlich geringer ist als der Arbeitswiderstand. Beim Einschalten ist der Strom kurzzeitig höher als der Dauerstrom. Daher lässt sich durch die Messung eines kalten Filaments mit einem Ohmmeter kein Betriebsstrom vorhersagen, ohne dass die Wärme berücksichtigt wird.",
+          title: "Warum unterscheidet sich eine kalte von einer heißen Lampe?",
+          text: "Der Metallfaden einer Glühlampe hat kalt einen deutlich kleineren Widerstand als im Betrieb. Beim Einschalten ist der Strom kurzzeitig größer als der Dauerstrom. Mit dem Ohmmeter am kalten Faden lässt sich der Betriebsstrom daher nicht vorhersagen.",
         },
       },
       {
         id: "resistors-tolerance",
-        title: "4. Nennleistung, Toleranz und zulässige Leistung",
+        title: "4. Nennwert, Toleranz und Belastbarkeit",
         paragraphs: [
-          "Bei einem realen Widerstand werden der Nennwiderstand und die Toleranz eingestellt. Ein Nennwert von 1 kΩ mit einer Toleranz von ±5 % bedeutet, dass ein funktionsfähiges Element unter bestimmten Bedingungen einen Widerstand von 950 bis 1050 Ω haben kann. Bei der Toleranz handelt es sich um die zulässige Abweichung bei der Herstellung und nicht um einen Fehler, der zu jedem Messwert hinzugefügt werden muss. Die Nennwerte werden aus Standardserien ausgewählt und die Markierungen können numerisch oder farbig sein.",
-          "Es ist wichtig, die Leistung des Widerstands zu berücksichtigen. Wenn Strom fließt, erwärmt er sich: P = I²R = U²/R für einen ohmschen Widerstand. Wenn an 100 Ω 10 V angelegt werden, beträgt die Leistung 1 W. Ein Widerstand mit einer zulässigen Nennleistung von 0,25 W ist für einen solchen Langzeitbetrieb nicht geeignet, auch wenn sein Widerstand richtig gewählt ist. Die zulässige Leistung hängt auch von den Temperatur- und Kühlbedingungen ab; eine angemessene Marge und Angaben des Herstellers sind erforderlich.",
+          "Bei einem realen Widerstand sind Nennwiderstand und Toleranz angegeben. Ein Widerstand mit 1 kΩ und ±5 % darf einen Wert von 950 bis 1050 Ω haben. Die Toleranz ist die zulässige Fertigungsabweichung, kein Fehler, der zu jeder Messung hinzukommt. Die Nennwerte stammen aus genormten Reihen. Die Kennzeichnung erfolgt mit Ziffern oder Farbringen.",
+          "Beachten Sie auch die Verlustleistung. Ein Widerstand erwärmt sich: P = I²R = U²/R. Liegen an 100 Ω 10 V an, beträgt die Leistung 1 W. Ein Widerstand mit 0,25 W Nennleistung ist dafür im Dauerbetrieb ungeeignet, auch wenn der Widerstandswert stimmt. Die zulässige Leistung hängt zudem von Temperatur und Kühlung ab. Planen Sie Reserve ein und beachten Sie die Herstellerangaben.",
         ],
         callout: {
           type: "tip",
-          title: "Drei Parameter bei der Auswahl eines Widerstands",
-          text: "Widerstand, Toleranz und zulässige Leistung prüfen. Bei kritischeren Stromkreisen werden zusätzlich Betriebsspannung, Temperaturkoeffizient und Kühlbedingungen berücksichtigt.",
+          title: "Drei Kenngrößen bei der Auswahl eines Widerstands",
+          text: "Prüfen Sie Widerstandswert, Toleranz und Belastbarkeit. Bei kritischen Schaltungen kommen Betriebsspannung, Temperaturkoeffizient und Kühlung hinzu.",
         },
       },
       {
         id: "ohmmeter",
-        title: "5. Messung mit einem Ohmmeter und Einfluss der Schaltung",
+        title: "5. Messen mit dem Ohmmeter und Einfluss der Schaltung",
         paragraphs: [
-          "Das Ohmmeter liefert ein eigenes kleines Messsignal und ermittelt anhand der Reaktion den Widerstand. Daher kann der Widerstand nur an einem stromlosen Stromkreis gemessen werden. Vor der Messung wird die externe Stromversorgung abgeschaltet und die Energiespeicher entsprechend der vorgesehenen Schaltung sicher entladen, anschließend wird die Spannungsfreiheit überprüft. Schließen Sie den Ω-Modus nicht an eine eingeschaltete Quelle an: Der Messwert ist falsch und das Gerät kann beschädigt werden.",
-          "Bleibt der Widerstand im Stromkreis, können die Parallelpfade den gemessenen Widerstand verringern. Um ein bestimmtes Teil zu messen, reicht es normalerweise aus, eine seiner Leitungen bei ausgeschaltetem Strom abzutrennen. Der Widerstand der Sonden und Kontakte macht sich bei der Messung kleiner Widerstände bemerkbar und das Berühren beider Leitungen mit den Fingern kann die Messung sehr großer Widerstände verfälschen. Die OL-Angabe bedeutet oft Bereichsüberschreitung oder Lücke und nicht den genauen Wert von Unendlich; Die Bedeutung des Symbols ist in der Geräteanleitung angegeben.",
+          "Das Ohmmeter erzeugt selbst einen kleinen Messstrom und bestimmt daraus den Widerstand. Deshalb darf nur in einer spannungsfreien Schaltung gemessen werden. Schalten Sie vorher die Versorgung ab, entladen Sie Energiespeicher auf sichere Weise und prüfen Sie die Spannungsfreiheit. Schließen Sie das Gerät im Ω-Bereich nie an eine eingeschaltete Quelle an. Der Messwert wäre falsch, und das Gerät kann beschädigt werden.",
+          "Bleibt der Widerstand in der Schaltung, können parallele Zweige den gemessenen Wert verringern. Meist genügt es, einen Anschluss des Bauteils im spannungsfreien Zustand abzulöten oder abzutrennen. Bei kleinen Widerständen wirken Leitungs- und Übergangswiderstände. Bei sehr großen Widerständen kann Berühren der Messspitzen den Wert verfälschen. „OL“ bedeutet meist Bereichsüberschreitung oder offenen Stromkreis, nicht genau unendlich. Die Bedeutung steht in der Bedienungsanleitung.",
         ],
         callout: {
           type: "warning",
-          title: "Der Kondensator ist auch eine Quelle für Restenergie",
-          text: "Das Abklemmen der Batterie garantiert nicht, dass im Stromkreis keine Spannung anliegt: Ein geladener Kondensator kann sie speichern. Entladen Sie es nicht durch versehentlichen Kurzschluss; Verwenden Sie die für das Trainingsschema vorgesehene Methode.",
+          title: "Auch ein Kondensator kann Restenergie speichern",
+          text: "Ein abgeklemmter Akku garantiert keine Spannungsfreiheit: Ein geladener Kondensator kann Spannung speichern. Entladen Sie ihn nicht durch einen Kurzschluss. Nutzen Sie die in der Übungsschaltung vorgesehene Methode.",
         },
       },
       {
         id: "conductance-and-models",
-        title: "6. Leitfähigkeit und Grenzen eines einfachen Modells",
+        title: "6. Leitwert und Grenzen des einfachen Modells",
         paragraphs: [
-          "Der Kehrwert des Widerstands wird als elektrische Leitfähigkeit G = 1/R bezeichnet. Seine Einheit ist Siemens, S. Ein 100-Ω-Widerstand hat eine Leitfähigkeit von 0,01 S oder 10 mS. Bei Parallelwiderständen ist es praktisch, die Leitfähigkeiten zu addieren: Jeder neue Zweig fügt die Möglichkeit der Ladungsübertragung hinzu, also Geq = G₁ + G₂. Verwechseln Sie das Symbol S der Siemens-Einheit nicht mit dem Buchstaben S für Fläche in einer geometrischen Formel: Die Bedeutung wird durch den Kontext bestimmt.",
-          "Bei idealen Drähten wird angenommen, dass R = 0 ist und der Bruch einen unendlich großen Widerstand hat. Dies sind nützliche Begrenzungsmodelle. In Wirklichkeit hat der Draht einen Widerstand, aber die Isolierung kann auslaufen und zusammenbrechen, wenn die Spannung zu hoch ist. Darüber hinaus ändert sich das U/I-Verhältnis von Diode, Heizlampe und anderen nichtlinearen Elementen mit dem Arbeitspunkt. Die folgende Lektion erklärt, wann der Widerstand als konstant angesehen werden kann und wann das Ohmsche Gesetz in seiner einfachsten Form angewendet werden kann.",
+          "Der Kehrwert des Widerstands ist der Leitwert G = 1/R. Die Einheit ist das Siemens (S). Ein Widerstand von 100 Ω hat den Leitwert 0,01 S oder 10 mS. Bei Parallelschaltung addieren sich die Leitwerte: Jeder neue Zweig bietet einen zusätzlichen Weg für die Ladung, also Gges = G₁ + G₂. Verwechseln Sie das Einheitenzeichen S nicht mit dem Formelzeichen S für die Fläche. Der Zusammenhang zeigt, was gemeint ist.",
+          "Ein idealer Leiter hat R = 0, eine Unterbrechung hat unendlich großen Widerstand. Das sind nützliche Grenzfälle. Real hat jeder Draht einen Widerstand, und eine Isolierung kann bei zu hoher Spannung durchschlagen. Bei nichtlinearen Bauelementen wie Diode oder Glühlampe ändert sich U/I mit dem Arbeitspunkt. Die nächste Lektion zeigt, wann der Widerstand als konstant gilt und das Ohmsche Gesetz in einfacher Form anwendbar ist.",
         ],
         formula: {
           expression: "G = 1/R;  Gparallel = G₁ + G₂ + …",
-          legend: "G – Leitfähigkeit, S; R – Widerstand, Ω; 1 S = 1/Ω.",
-          note: "Wenn R > 0, bedeutet mehr Widerstand weniger Leitfähigkeit. Bei nichtlinearen Elementen muss der Arbeitspunkt angegeben werden.",
+          legend: "G – Leitwert in S; R – Widerstand in Ω; 1 S = 1/Ω.",
+          note: "Für R > 0 gilt: größerer Widerstand, kleinerer Leitwert. Bei nichtlinearen Bauelementen muss der Arbeitspunkt angegeben werden.",
         },
       },
     ],
@@ -889,7 +889,7 @@ export const basicsLessons = [
         symbol: "R",
         unit: "Ω - Ohm",
         definition:
-          "Eine Größe, die Spannung und Strom in Beziehung setzt; im Betriebspunkt R = U/I und für ein ohmsches Element unter konstanten Bedingungen konstant.",
+          "Größe, die Spannung und Strom verknüpft: im Arbeitspunkt R = U/I; bei ohmschen Bauelementen unter konstanten Bedingungen konstant.",
       },
       {
         term: "Spezifischer Widerstand",
@@ -897,7 +897,7 @@ export const basicsLessons = [
         symbol: "ρ",
         unit: "Ω · m",
         definition:
-          "Charakteristisch für das in der Formel enthaltene Material R = ρl/S für einen homogenen Leiter.",
+          "Werkstoffkenngröße in der Formel R = ρl/S für einen homogenen Leiter.",
       },
       {
         term: "Elektrischer Leitwert",
@@ -912,7 +912,7 @@ export const basicsLessons = [
         symbol: "α",
         unit: "K⁻¹",
         definition:
-          "Der Koeffizient der relativen Widerstandsänderung bei Temperaturänderungen innerhalb des anwendbaren Bereichs.",
+          "Koeffizient der relativen Widerstandsänderung bei Temperaturänderung im gültigen Bereich.",
       },
       {
         term: "Toleranz",
@@ -920,7 +920,7 @@ export const basicsLessons = [
         symbol: "± %",
         unit: "%",
         definition:
-          "Zulässige Abweichung des Widerstands eines realen Elements vom Nennwert unter gegebenen Bedingungen.",
+          "Zulässige Abweichung des Widerstands eines realen Bauelements vom Nennwert.",
       },
       {
         term: "Ohmmeter",
@@ -928,84 +928,84 @@ export const basicsLessons = [
         symbol: "Ω",
         unit: "Misst Ω",
         definition:
-          "Ein Gerät zur Messung des Widerstands eines stromlosen Elements anhand seines eigenen Messsignals.",
+          "Messgerät für den Widerstand eines spannungsfreien Bauelements mit eigenem Messstrom.",
       },
     ],
     summary: [
-      "Der Widerstand begrenzt den Strom; für den Arbeitspunkt R = U/I, Einheit - Ohm.",
-      "Für einen homogenen Draht R = ρl/S: Die Länge erhöht den Widerstand, die Querschnittsfläche nimmt ab.",
-      "Zählen Sie bei einer Zweidrahtleitung sowohl die Hin- als auch die Rückleitung. Die Fläche eines Kreises ist proportional zum Quadrat seines Durchmessers.",
-      "Der Widerstand von gewöhnlichem Metall nimmt normalerweise zu, wenn es erhitzt wird; Die Temperaturformel hat einen begrenzten Bereich.",
-      "Überprüfen Sie bei der Auswahl eines Widerstands die Nennleistung, Toleranz und zulässige Leistung.",
-      "Das Ohmmeter wird nur an ein stromloses Element angeschlossen; Parallelpfade und Restladungen verfälschen die Messung oder stellen ein Risiko dar.",
+      "Der Widerstand begrenzt den Strom; im Arbeitspunkt gilt R = U/I, Einheit Ohm.",
+      "Für einen homogenen Draht gilt R = ρl/S: Mehr Länge erhöht, mehr Querschnitt verringert den Widerstand.",
+      "Bei einer Zweidrahtleitung zählen Hin- und Rückleiter. Die Kreisfläche ist proportional zum Quadrat des Durchmessers.",
+      "Der Widerstand von Metallen steigt meist mit der Temperatur; die lineare Formel gilt nur in einem begrenzten Bereich.",
+      "Bei der Auswahl eines Widerstands prüfen Sie Nennwert, Toleranz und Belastbarkeit.",
+      "Das Ohmmeter wird nur an spannungsfreien Bauteilen verwendet; Parallelzweige und Restladungen verfälschen die Messung oder sind gefährlich.",
     ],
     quiz: [
       {
         id: "resistance-1",
         type: "numeric",
         question:
-          "Am Element liegen 12 V an, durch es fließen 30 mA. Finden Sie den Widerstand in Ohm.",
+          "Am Bauelement liegen 12 V an, es fließen 30 mA. Wie groß ist der Widerstand in Ω?",
         answer: 400,
         unit: "Ω",
         tolerance: 0.1,
         explanation:
-          "30 mA = 0,030 A. R = U/I = 12/0,030 = 400 Ω. Eine Umrechnung von Milliampere in Ampere ist erforderlich.",
+          "30 mA = 0,030 A. R = U/I = 12/0,030 = 400 Ω. Die Umrechnung von mA in A ist nötig.",
       },
       {
         id: "resistance-2",
         type: "choice",
         question:
-          "Wie ändert sich der Widerstand eines homogenen Drahtes, wenn seine Länge bei konstanter Fläche und Temperatur verdoppelt wird?",
+          "Wie ändert sich der Widerstand eines homogenen Drahtes, wenn die Länge bei gleicher Fläche und Temperatur verdoppelt wird?",
         options: [
           "Wird halbiert",
-          "Wird sich nicht ändern",
-          "Wird sich verdoppeln",
-          "Wird sich vervierfachen",
+          "Bleibt unverändert",
+          "Verdoppelt sich",
+          "Vervierfacht sich",
         ],
         answer: 2,
         explanation:
-          "Die direkte Proportionalität zur Länge ergibt sich aus R = ρl/S. Mit l₂ = 2l₁ und Konstanten ρ und S erhalten wir R₂ = 2R₁.",
+          "Aus R = ρl/S folgt: Der Widerstand ist proportional zur Länge. Mit l₂ = 2l₁ und konstanten ρ und S ergibt sich R₂ = 2R₁.",
       },
       {
         id: "resistance-3",
         type: "choice",
         question:
-          "Der Durchmesser des Runddrahtes wurde verdoppelt. Material, Länge und Temperatur sind gleich. Was passiert mit dem Widerstand?",
+          "Der Durchmesser eines Runddrahtes wird verdoppelt. Material, Länge und Temperatur bleiben gleich. Was geschieht mit dem Widerstand?",
         options: [
-          "Wird um das Vierfache verringert",
+          "Sinkt auf ein Viertel",
           "Wird halbiert",
-          "Wird sich verdoppeln",
-          "Wird sich nicht ändern",
+          "Verdoppelt sich",
+          "Bleibt unverändert",
         ],
         answer: 0,
         explanation:
-          "S = πd²/4, also vervierfacht eine Verdoppelung des Durchmessers die Fläche. Da R umgekehrt proportional zur Fläche ist, wird der Widerstand viermal kleiner.",
+          "S = πd²/4: Doppelter Durchmesser ergibt vierfache Fläche. Da R umgekehrt proportional zur Fläche ist, sinkt der Widerstand auf ein Viertel.",
       },
       {
         id: "resistance-4",
         type: "numeric",
         question:
-          "Ein 1000-Ω-Widerstand hat eine Toleranz von ±5 %. Was ist der obere zulässige Widerstand in Ohm?",
+          "Ein Widerstand mit 1000 Ω hat eine Toleranz von ±5 %. Wie groß ist der größte zulässige Widerstand in Ω?",
         answer: 1050,
         unit: "Ω",
         tolerance: 0.1,
         explanation:
-          "5 % von 1000 Ω sind 1000 · 0,05 = 50 Ω. Die Obergrenze liegt bei 1000 + 50 = 1050 Ω; der untere wäre 950 Ω.",
+          "5 % von 1000 Ω sind 1000 · 0,05 = 50 Ω. Der obere Grenzwert ist 1000 + 50 = 1050 Ω; der untere wäre 950 Ω.",
       },
       {
         id: "resistance-5",
         type: "choice",
         question:
-          "Wie misst man den Widerstand eines Widerstands in einem zusammengebauten Stromkreis richtig?",
+          "Wie misst man den Widerstand eines Widerstands in einer aufgebauten Schaltung richtig?",
         options: [
-          "Schalten Sie den Strom ein, um die Arbeit mit dem Ohmmeter zu erleichtern",
-          "Schalten Sie den Strom ab, prüfen Sie die Spannungsfreiheit und trennen Sie bei Parallelpfaden eine Klemme",
-          "Stellen Sie den Strommessbereich ein und platzieren Sie die Sonden parallel",
-          "Schließen Sie zunächst alle Kondensatoren mit einem Metallwerkzeug kurz",
+          "Die Spannung einschalten, um die Messung mit dem Ohmmeter zu erleichtern",
+          "Spannung abschalten, Spannungsfreiheit prüfen und bei Parallelzweigen einen Anschluss abtrennen",
+          "Strommessbereich einstellen und die Messleitungen parallel anlegen",
+          "Zuerst alle Kondensatoren mit einem Metallwerkzeug kurzschließen",
         ],
         answer: 1,
         explanation:
-          "Das Ohmmeter verwendet ein eigenes Messsignal und ist für ein spannungsloses Objekt ausgelegt. Parallelzweige können den Messwert senken, sodass ein Anschluss des Widerstands vom Stromkreis getrennt wird. Restenergie wird nur auf sichere Weise abgeführt.",
+          "Das Ohmmeter nutzt einen eigenen Messstrom und ist für spannungsfreie Objekte gedacht. Parallele Zweige können den Messwert senken, daher trennt man einen Anschluss des Widerstands ab. Restenergie wird nur auf sichere Weise abgeführt.",
       },
     ],
   },
@@ -1018,120 +1018,120 @@ export const basicsLessons = [
     category: "basics",
     duration: 30,
     description:
-      "Verbinden Sie Strom, Spannung und Widerstand und lernen Sie, Probleme mit Einheiten, Diagrammen und realen Einschränkungen zu lösen.",
+      "Stromstärke, Spannung und Widerstand verknüpfen und Aufgaben mit Einheiten, Kennlinien und realen Einschränkungen lösen.",
     objectives: [
-      "Wenden Sie U = I · R an und wählen Sie die entsprechende Form der Gleichung.",
-      "Lesen Sie die Strom-Spannungs-Kennlinie ab und prüfen Sie, ob das Element ohmsch ist.",
-      "Berechnen Sie Widerstandsschaltungen und unterscheiden Sie das ideale Modell vom tatsächlichen Verhalten der Quelle und Last.",
+      "U = I · R anwenden und die passende Form der Gleichung wählen.",
+      "Die Strom-Spannungs-Kennlinie lesen und prüfen, ob ein Bauelement ohmsch ist.",
+      "Widerstandsschaltungen berechnen und das ideale Modell vom realen Verhalten von Quelle und Verbraucher unterscheiden.",
     ],
     sections: [
       {
         id: "ohmic-law",
-        title: "1. Was besagt das Ohmsche Gesetz?",
+        title: "1. Was sagt das Ohmsche Gesetz?",
         paragraphs: [
-          "Bei einem ohmschen Leiter ist unter konstanten physikalischen Bedingungen der Strom direkt proportional zur angelegten Spannung. Eine Verdoppelung der Spannung verdoppelt den Strom, eine Verdreifachung verdreifacht ihn. Der Proportionalitätskoeffizient wird durch den Widerstand bestimmt: I = U/R. Die äquivalente Schreibweise U = I · R bezieht sich auf die Spannung an einem Element, den Strom durch dasselbe Element und seinen Widerstand.",
-          "Die Bedingung des ständigen Widerstands ist grundlegend. Temperatur, Material und Geometrie müssen nahezu unverändert bleiben. Das U/I-Verhältnis lässt sich in vielen Betriebspunkten bestimmen, beweist damit aber nicht das Ohmsche Gesetz: Ohmsches Verhalten bedeutet, dass das Verhältnis bei Spannungsänderungen konstant bleibt. Die Diode und die stark erhitzte Lampenwendel werden nicht über den gesamten Bereich durch eine Konstante R beschrieben.",
+          "Bei einem ohmschen Leiter ist der Strom unter konstanten Bedingungen proportional zur angelegten Spannung. Doppelte Spannung ergibt doppelten Strom, dreifache Spannung dreifachen. Der Proportionalitätsfaktor ist der Widerstand: I = U/R. Gleichwertig ist U = I · R. Gemeint sind die Spannung an einem Bauelement, der Strom durch dasselbe Bauelement und sein Widerstand.",
+          "Die Bedingung konstanter Widerstand ist wesentlich. Temperatur, Material und Geometrie müssen nahezu unverändert bleiben. U/I lässt sich in jedem Arbeitspunkt bilden, beweist aber noch kein ohmsches Verhalten. Ohmsch heißt: Das Verhältnis bleibt bei Spannungsänderung konstant. Diode und stark erhitzter Glühfaden werden nicht über den ganzen Bereich durch ein konstantes R beschrieben.",
         ],
         formula: {
           expression: "U = I · R;  I = U / R;  R = U / I",
-          legend: "U – Spannung, V; I – Strom, A; R ist der Widerstand Ω.",
-          note: "U und ich meinen den gleichen Bereich. Ein konstantes R setzt ein ohmsches Element und konstante Bedingungen, vor allem die Temperatur, voraus.",
+          legend: "U – Spannung in V; I – Strom in A; R – Widerstand in Ω.",
+          note: "U und I beziehen sich auf dasselbe Bauelement. Ein konstantes R setzt ein ohmsches Bauelement und konstante Bedingungen voraus, vor allem die Temperatur.",
         },
         callout: {
           type: "insight",
-          title: "Ein Gesetz, keine Definition für irgendein Gerät",
-          text: "Die Formel R = U/I gibt den statischen Widerstand an einem Punkt an. Das Ohmsche Gesetz gibt außerdem die Konstanz dieses Verhältnisses für ein ohmsches Element unter bestimmten Bedingungen an.",
+          title: "Ein Gesetz, keine allgemeine Definition",
+          text: "R = U/I liefert den statischen Widerstand in einem Punkt. Das Ohmsche Gesetz sagt zusätzlich, dass dieses Verhältnis bei einem ohmschen Bauelement unter bestimmten Bedingungen konstant bleibt.",
         },
       },
       {
         id: "solving-with-units",
-        title: "2. Lösungsalgorithmus, ohne die Formel zu erraten",
+        title: "2. Lösungsweg ohne Raten",
         paragraphs: [
-          "Schreiben Sie zunächst auf, was Sie wissen und was Sie finden müssen. Beachten Sie, zu welchem ​​Element die Daten gehören. Wandeln Sie dann die Mengen in vereinbarte Einheiten um und drücken Sie die Unbekannte aus U = I · R aus, bevor Sie Zahlen ersetzen. Teilen Sie für den Strom die Spannung durch den Widerstand. Teilen Sie für den Widerstand die Spannung durch den Strom. Beschriften Sie nach der Berechnung die Einheit und prüfen Sie, ob die Größenordnung plausibel ist.",
-          "Die zuverlässigste Option ist V, A und Ω. Aber passende Präfixe vereinfachen manchmal die Berechnung: V/kΩ ergibt mA und mA · kΩ ergibt V. Beispielsweise ist 5 V / 1 kΩ = 5 mA. Fehler treten auf, wenn die Zahl 1000 Ω unmerklich durch 1 Ω oder 20 mA durch 20 A ersetzt wird. Schreiben Sie die Umrechnung explizit auf: 2,2 kΩ = 2200 Ω; 470 mA = 0,470 A; 250 mV = 0,250 V.",
+          "Notieren Sie zuerst, was gegeben und was gesucht ist. Achten Sie darauf, zu welchem Bauelement die Werte gehören. Rechnen Sie in passende Einheiten um und stellen Sie U = I · R nach der Unbekannten um, bevor Sie Zahlen einsetzen. Strom: Spannung durch Widerstand. Widerstand: Spannung durch Strom. Schreiben Sie die Einheit dazu und prüfen Sie, ob die Größenordnung plausibel ist.",
+          "Am sichersten rechnet man in V, A und Ω. Passende Vorsätze erleichtern aber manche Rechnung: V/kΩ ergibt mA, und mA · kΩ ergibt V. Beispiel: 5 V / 1 kΩ = 5 mA. Fehler entstehen, wenn aus 1000 Ω unbemerkt 1 Ω oder aus 20 mA 20 A wird. Schreiben Sie die Umrechnung auf: 2,2 kΩ = 2200 Ω; 470 mA = 0,470 A; 250 mV = 0,250 V.",
         ],
         example: {
-          title: "Beispiel: Strom durch einen 2,2 kΩ-Widerstand",
+          title: "Beispiel: Strom durch einen Widerstand von 2,2 kΩ",
           given:
-            "Eine ideale 11-V-Quelle wird an einen ohmschen Widerstand von 2,2 kΩ angeschlossen. Finden Sie den Strom.",
+            "Eine ideale 11-V-Quelle liegt an einem ohmschen Widerstand von 2,2 kΩ. Gesucht ist der Strom.",
           steps: [
-            "Gegeben sei U = 11 V, R = 2,2 kΩ = 2200 Ω. Wir suchen I.",
-            "Wir drücken den Strom aus: I = U/R.",
-            "Wir ersetzen: I = 11/2200 = 0,005 A = 5 mA.",
-            "Wir überprüfen durch umgekehrte Substitution: I · R = 0,005 · 2200 = 11 V.",
-            "Physikalischer Test: Ein Widerstand von Tausenden Ohm bei einer Spannung von mehreren Volt sollte einen Strom in der Größenordnung von Milliampere erzeugen.",
+            "Gegeben: U = 11 V, R = 2,2 kΩ = 2200 Ω. Gesucht: I.",
+            "Nach dem Strom umstellen: I = U/R.",
+            "Einsetzen: I = 11/2200 = 0,005 A = 5 mA.",
+            "Probe: I · R = 0,005 · 2200 = 11 V.",
+            "Plausibilität: Einige tausend Ohm an wenigen Volt ergeben einen Strom im Bereich von Milliampere.",
           ],
           answer: "Durch den Widerstand fließen 5 mA.",
         },
       },
       {
         id: "characteristic",
-        title: "3. Strom-Spannungs-Kennlinie: siehe Gesetz in der Grafik",
+        title: "3. Kennlinie: das Gesetz im Diagramm",
         paragraphs: [
-          "Die Strom-Spannungs-Kennlinie zeigt, wie der Strom von der Spannung abhängt. Wenn wir U horizontal und I vertikal zeichnen, erhalten wir für einen ohmschen Widerstand eine Gerade durch den Ursprung. Seine Steigung ist gleich I/U = 1/R, also Leitfähigkeit. Eine steilere Linie bedeutet ein kleineres R. Wenn Sie die Achsen vertauschen und U(I) zeichnen, ist die Steigung gleich R. Schauen Sie sich daher immer die Achsenbeschriftungen an, bevor Sie das Diagramm lesen.",
-          "Nehmen wir an, die Messungen ergaben Paare von 2 V und 10 mA, 4 V und 20 mA, 6 V und 30 mA. In allen Fällen ist R = 200 Ω, was mit dem ohmschen Modell übereinstimmt. Wenn bei 6 V der Strom 25 mA beträgt, beträgt das Verhältnis bereits 240 Ω: Erwärmung, Nichtlinearität des Elements oder Messfehler müssen untersucht werden. Ein einzelner Punkt allein erlaubt keinen Beweis der Linearität. Der Versuch wird innerhalb der zulässigen Strom- und Leistungsgrenzen durchgeführt, da sonst die Erwärmung selbst zu einer Veränderung des Messobjektes führt.",
+          "Die Strom-Spannungs-Kennlinie zeigt, wie der Strom von der Spannung abhängt. Trägt man U waagerecht und I senkrecht auf, ist sie bei einem ohmschen Widerstand eine Gerade durch den Ursprung. Ihre Steigung ist I/U = 1/R, also der Leitwert. Eine steilere Gerade bedeutet ein kleineres R. Trägt man U(I) auf, ist die Steigung R. Prüfen Sie deshalb immer zuerst die Achsenbeschriftung.",
+          "Angenommen, die Messung ergibt 2 V und 10 mA, 4 V und 20 mA, 6 V und 30 mA. Immer ist R = 200 Ω, das passt zum ohmschen Modell. Beträgt der Strom bei 6 V nur 25 mA, ist das Verhältnis schon 240 Ω. Dann muss man Erwärmung, Nichtlinearität oder Messfehler untersuchen. Ein einzelner Punkt beweist die Linearität nicht. Messen Sie nur innerhalb der zulässigen Strom- und Leistungsgrenzen, sonst verändert die Erwärmung das Messobjekt selbst.",
         ],
         formula: {
           expression: "Im I(U)-Diagramm gilt: Steigung = ΔI/ΔU = 1/R",
           legend:
-            "ΔI – Stromänderung, A; ΔU ist die entsprechende Spannungsänderung V.",
-          note: "Bei einer linearen Kennlinie eines ohmschen Widerstands ist die Steigung konstant. Die lokale Steigung einer nichtlinearen Kennlinie und das U/I-Verhältnis sind unterschiedliche Konzepte.",
+            "ΔI – Stromänderung in A; ΔU – zugehörige Spannungsänderung in V.",
+          note: "Bei der linearen Kennlinie eines ohmschen Widerstands ist die Steigung konstant. Bei nichtlinearen Kennlinien sind die örtliche Steigung und das Verhältnis U/I verschiedene Größen.",
         },
         callout: {
           type: "tip",
-          title: "Schnelle Qualitätsprüfung",
-          text: "Bei konstantem R sollte eine Erhöhung von U I erhöhen. Bei konstantem U sollte eine Erhöhung von R I verringern. Wenn die Berechnung etwas anderes sagt, sind höchstwahrscheinlich die Formel oder die Einheiten falsch geschrieben.",
+          title: "Schnelle Plausibilitätsprüfung",
+          text: "Bei konstantem R muss mit größerem U auch I größer werden. Bei konstantem U muss mit größerem R der Strom I kleiner werden. Zeigt die Rechnung etwas anderes, sind meist Formel oder Einheiten falsch.",
         },
       },
       {
         id: "design-resistor",
-        title: "4. Widerstandsauswahl und Heiztest",
+        title: "4. Widerstand auswählen und Erwärmung prüfen",
         paragraphs: [
-          "Das Ohmsche Gesetz hilft nicht nur, den Strom zu ermitteln, sondern auch einen Widerstand für einen bestimmten Modus auszuwählen. Soll der Widerstand 9 V bei einem Strom von 15 mA haben, ist R = 9/0,015 = 600 Ω erforderlich. Verfügbare Nennwerte und Toleranzen erfordern möglicherweise den nächstgelegenen geeigneten Wert und eine Neuberechnung. Der Widerstand kann nicht unabhängig von der Leistung gewählt werden: Das Element muss die erzeugte Wärme sicher ableiten.",
-          "Für einen ohmschen Widerstand kann die Leistung wie folgt berechnet werden: P = U · I = I²R = U²/R. Diese Gleichheiten ergeben sich aus der Definition der elektrischen Leistung und dem Ohmschen Gesetz. Sie sind nützlich, um den Modus zu überprüfen: Bei einem festen U erhöht eine Verringerung von R sowohl den Strom als auch die Erwärmung. Bei einem festen I erhöht eine Erhöhung von R die Erwärmung. Bevor Sie die Ergebnisse vergleichen, sollten Sie herausfinden, welcher Wert wirklich konstant bleibt.",
+          "Mit dem Ohmschen Gesetz berechnet man nicht nur den Strom, sondern wählt auch einen Widerstand für einen Betriebspunkt. Sollen bei 15 mA 9 V abfallen, braucht man R = 9/0,015 = 600 Ω. Bei Normreihen und Toleranzen nimmt man den nächstgeeigneten Wert und rechnet nach. Den Widerstand wählt man nie ohne die Leistung: Das Bauteil muss die entstehende Wärme sicher abgeben.",
+          "Für einen ohmschen Widerstand gilt: P = U · I = I²R = U²/R. Diese Beziehungen folgen aus der Definition der Leistung und dem Ohmschen Gesetz. Bei festem U steigen mit kleinerem R sowohl Strom als auch Erwärmung. Bei festem I steigt die Erwärmung mit größerem R. Klären Sie vor dem Vergleichen, welche Größe wirklich konstant bleibt.",
         ],
         example: {
           title: "Beispiel: Widerstand für einen bestimmten Strom",
           given:
-            "Der Widerstand sollte bei einem Strom von 20 mA um 6 V abfallen. Finden Sie den Widerstand und die Ausgangsleistung. Bewerten Sie den Widerstand auf 0,25 W.",
+            "Am Widerstand sollen bei 20 mA 6 V abfallen. Gesucht sind der Widerstand und die Verlustleistung. Beurteilen Sie, ob ein Widerstand mit 0,25 W geeignet ist.",
           steps: [
             "Strom umrechnen: 20 mA = 0,020 A.",
-            "Wir berechnen den Widerstand: R = U/I = 6/0,020 = 300 Ω.",
+            "Widerstand: R = U/I = 6/0,020 = 300 Ω.",
             "Leistung: P = U · I = 6 · 0,020 = 0,12 W.",
-            "Überprüfen wir es mit einer anderen Form: I²R = 0,020² · 300 = 0,12 W.",
-            "0,12 W sind weniger als 0,25 W. Bei geeigneten Temperatur- und Kühlbedingungen ist diese Nennleistung geeignet; Die tatsächliche Auswahl wird anhand der Herstellerangaben und des benötigten Lagerbestands überprüft.",
+            "Probe mit anderer Form: I²R = 0,020² · 300 = 0,12 W.",
+            "0,12 W sind weniger als 0,25 W. Bei geeigneter Temperatur und Kühlung passt diese Nennleistung. Die endgültige Auswahl prüft man mit den Herstellerangaben.",
           ],
           answer:
-            "Es wird ein 300-Ω-Widerstand benötigt; Die Verlustleistung beträgt 0,12 W. Unter geeigneten Betriebsbedingungen sind nominell 0,25 W akzeptabel.",
+            "Benötigt wird ein Widerstand von 300 Ω; die Verlustleistung beträgt 0,12 W. Unter geeigneten Bedingungen genügen 0,25 W Nennleistung.",
         },
       },
       {
         id: "whole-circuit",
         title:
-          "5. Ohmsches Gesetz für den gesamten Stromkreis und die reale Quelle",
+          "5. Ohmsches Gesetz für den ganzen Stromkreis und die reale Quelle",
         paragraphs: [
-          "Um den Gesamtstrom eines komplexen Widerstandskreises mit einer idealen Quelle zu ermitteln, ermitteln Sie zunächst den äquivalenten Lastwiderstand. Dann verwenden Sie I = Uist/Req. Danach zurück zu den einzelnen Elementen: Im Reihenteil ist der Gesamtstrom bekannt, im Parallelteil sind die gleichen Spannungen bekannt. Sie können die gesamte Quellenspannung nicht durch den Widerstandswert eines separaten Vorwiderstands teilen, wenn nur ein Teil der Spannung darüber abfällt.",
-          "Bei einer realen Quelle mit EMK E und Innenwiderstand r bildet ein externer Widerstand R eine Reihenschaltung mit r. Daher gilt I = E/(R + r) und die Lastspannung U = I · R = E − I · r. Bei E = 12 V, r = 1 Ω und R = 5 Ω beträgt der Strom beispielsweise 2 A und die Last beträgt 10 V. Der Unterschied von 2 V ist auf den Innenwiderstand zurückzuführen. Das Modell erklärt den Spannungseinbruch, ersetzt jedoch nicht die Daten zur Strombegrenzung und zum Schutz der realen Quelle.",
+          "Den Gesamtstrom einer Widerstandsschaltung an einer idealen Quelle bestimmen Sie so: Zuerst den Ersatzwiderstand berechnen, dann I = U/Req. Danach gehen Sie zu den Einzelelementen zurück: In der Reihenschaltung ist der Strom bekannt, in der Parallelschaltung die Spannung. Die ganze Quellenspannung darf man nicht durch einen einzelnen Reihenwiderstand teilen, wenn an ihm nur ein Teil der Spannung abfällt.",
+          "Bei einer realen Quelle mit EMK E und Innenwiderstand r liegt der äußere Widerstand R in Reihe mit r. Es gilt I = E/(R + r) und für die Klemmenspannung U = I · R = E − I · r. Beispiel: E = 12 V, r = 1 Ω, R = 5 Ω ergibt 2 A und 10 V am Verbraucher. Die fehlenden 2 V fallen am Innenwiderstand ab. Das Modell erklärt den Spannungseinbruch, ersetzt aber nicht die Herstellerangaben zu Strombegrenzung und Schutz.",
         ],
         formula: {
           expression: "I = E / (R + r);  Uload = I R = E − I r",
           legend:
-            "E – EMF, V; R – externer Lastwiderstand, Ω; r ist der Innenwiderstand der Quelle, Ω.",
-          note: "Es wird eine Quellenentladung im einfachen stationären Zustand betrachtet. Bei r = 0 erhalten wir eine ideale Spannungsquelle.",
+            "E – EMK in V; R – äußerer Lastwiderstand in Ω; r – Innenwiderstand der Quelle in Ω.",
+          note: "Betrachtet wird eine entladende Quelle im einfachen stationären Zustand. Für r = 0 erhält man die ideale Spannungsquelle.",
         },
       },
       {
         id: "boundaries-and-review",
         title:
-          "6. Wo das Gesetz nicht in einfacher Form angewendet werden kann",
+          "6. Wo das Gesetz nicht in einfacher Form gilt",
         paragraphs: [
-          "Eine Glühbirne, eine Diode, eine Batterie und eine elektronische Einheit müssen keine Widerstände mit konstantem R sein. In einer Diode hängt der Strom stark nichtlinear von der Spannung ab; Durch die Erwärmung ändert sich der Widerstand der Lampe. In einem Kondensator und einer Spule ist der Strom während transienter Prozesse mit einer Änderung der Spannung oder des magnetischen Flusses verbunden, sodass es normalerweise unmöglich ist, sie durch einen einzigen konstanten Widerstand zu ersetzen. Bei Wechselstrom mit reaktiven Elementen wird eine allgemeinere Größe eingeführt – die Impedanz.",
-          "Der praktische Testablauf ist wie folgt: Element und Modus bestimmen, passendes Modell auswählen, Spannung an diesem bestimmten Element notieren, Einheiten angeben und Ergebnis berechnen. Überprüfen Sie dann die Ströme in den Knoten, die Spannungen in den Stromkreisen und die Leistung. Wenn die Antwort unerwartet groß ist, führen Sie kein Experiment durch, um „die Formel zu testen“: Überprüfen Sie zunächst die Präfixe, Kurzschlüsse und Grenzen des Modells. Formal ist ein unendlicher Strom bei R = 0 für eine ideale Quelle ein Zeichen für die Ungeeignetheit der Idealisierung und keine echte Anweisung.",
+          "Glühlampe, Diode, Batterie und elektronische Baugruppen sind nicht unbedingt Widerstände mit konstantem R. Bei der Diode hängt der Strom stark nichtlinear von der Spannung ab. Bei der Glühlampe ändert die Erwärmung den Widerstand. Bei Kondensator und Spule ist der Strom in Ausgleichsvorgängen mit der Änderung von Spannung bzw. Magnetfluss verbunden. Man kann sie nicht durch einen konstanten Widerstand ersetzen. Bei Wechselstrom mit Blindelementen verwendet man die Impedanz.",
+          "Praktischer Ablauf: Bauelement und Betriebszustand bestimmen, ein passendes Modell wählen, die Spannung genau an diesem Bauelement ablesen, Einheiten prüfen, rechnen. Danach kontrollieren Sie Knotenregel, Maschenregel und Leistung. Ist das Ergebnis unerwartet groß, probieren Sie es nicht am realen Aufbau aus. Prüfen Sie zuerst Vorsätze, Kurzschlüsse und die Grenzen des Modells. Der unendlich große Strom bei R = 0 an einer idealen Quelle zeigt nur, dass die Idealisierung nicht passt.",
         ],
         callout: {
           type: "insight",
-          title: "Eine Formel, drei verschiedene Fragen",
-          text: "Für gegebenes U und R suchen wir nach dem Strom. Für gegebenes I und R suchen wir nach der erforderlichen Spannung. Wählen Sie bei gegebenen U und I den Widerstand aus. Eine erfolgreiche Lösung beginnt mit dem Verständnis dessen, was bekannt ist und was konstant bleibt.",
+          title: "Eine Formel, drei Fragestellungen",
+          text: "Sind U und R gegeben, suchen Sie den Strom. Sind I und R gegeben, suchen Sie die Spannung. Sind U und I gegeben, suchen Sie den Widerstand. Eine gute Lösung beginnt damit, zu klären, was bekannt ist und was konstant bleibt.",
         },
       },
     ],
@@ -1142,7 +1142,7 @@ export const basicsLessons = [
         symbol: "U = I · R",
         unit: "V = A · Ω",
         definition:
-          "Bei einem ohmschen Element ist unter konstanten Bedingungen der Strom direkt proportional zur Spannung und ihr Verhältnis ist gleich dem konstanten Widerstand.",
+          "Bei einem ohmschen Bauelement ist der Strom unter konstanten Bedingungen proportional zur Spannung; das Verhältnis ist der konstante Widerstand.",
       },
       {
         term: "Ohmscher Widerstand",
@@ -1150,7 +1150,7 @@ export const basicsLessons = [
         symbol: "R",
         unit: "Ω - Ohm",
         definition:
-          "Ein Element, dessen Widerstand im betrachteten Bereich und unter gegebenen Bedingungen nahezu konstant ist.",
+          "Bauelement mit im betrachteten Bereich nahezu konstantem Widerstand.",
       },
       {
         term: "Strom-Spannungs-Kennlinie",
@@ -1158,7 +1158,7 @@ export const basicsLessons = [
         symbol: "I(U)",
         unit: "Diagramm A von V",
         definition:
-          "Abhängigkeit des Stroms durch das Element von der Spannung an seinen Anschlüssen.",
+          "Abhängigkeit des Stroms durch ein Bauelement von der Spannung an seinen Klemmen.",
       },
       {
         term: "Arbeitspunkt",
@@ -1166,7 +1166,7 @@ export const basicsLessons = [
         symbol: "(U, I)",
         unit: "V, A",
         definition:
-          "Ein bestimmtes Paar aus Spannung und Strom, das den Modus des Elements charakterisiert.",
+          "Zusammengehöriges Wertepaar aus Spannung und Strom, das den Betriebszustand des Bauelements beschreibt.",
       },
       {
         term: "Innenwiderstand",
@@ -1174,7 +1174,7 @@ export const basicsLessons = [
         symbol: "r",
         unit: "Ω - Ohm",
         definition:
-          "Ein Parameter eines einfachen Quellenmodells, der einen Teil der Verluste und die Änderung der Klemmenspannung unter Last erklärt.",
+          "Kenngröße des einfachen Quellenmodells; erklärt Verluste und den Einbruch der Klemmenspannung unter Last.",
       },
       {
         term: "Lineare Kennlinie",
@@ -1182,54 +1182,54 @@ export const basicsLessons = [
         symbol: "—",
         unit: "—",
         definition:
-          "Bei einem ohmschen Widerstand die direkte Abhängigkeit des Stroms von der Spannung, die durch den Koordinatenursprung fließt.",
+          "Kennlinie eines ohmschen Widerstands: Gerade durch den Ursprung, der Strom ist proportional zur Spannung.",
       },
     ],
     summary: [
       "Grundformen des Ohmschen Gesetzes: U = I · R, I = U/R, R = U/I.",
-      "Ein konstantes R setzt ein ohmsches Element und konstante Bedingungen, insbesondere die Temperatur, voraus.",
-      "Verwenden Sie Spannung und Strom desselben Elements. Übersetzen Sie Präfixe vor der Berechnung.",
-      "Im I(U)-Diagramm eines ohmschen Widerstands verläuft am Anfang eine Gerade, deren Steigung 1/R beträgt.",
-      "Überprüfen Sie nach der Widerstandsberechnung die Leistung P = U · I und die zulässige Erwärmung.",
-      "Für eine Quelle mit Innenwiderstand I = E/(R + r); Dioden und reaktive Elemente erfordern unterschiedliche Modelle.",
+      "Ein konstantes R setzt ein ohmsches Bauelement und konstante Bedingungen voraus, vor allem konstante Temperatur.",
+      "Verwenden Sie Spannung und Strom desselben Bauelements. Rechnen Sie Vorsätze vor der Rechnung um.",
+      "Im I(U)-Diagramm eines ohmschen Widerstands ist die Kennlinie eine Gerade durch den Ursprung mit der Steigung 1/R.",
+      "Prüfen Sie nach der Widerstandsberechnung die Leistung P = U · I und die zulässige Erwärmung.",
+      "Für eine Quelle mit Innenwiderstand gilt I = E/(R + r); Dioden und Blindelemente brauchen andere Modelle.",
     ],
     quiz: [
       {
         id: "ohm-1",
         type: "numeric",
         question:
-          "An einen ohmschen Widerstand von 400 Ω werden 8 V angelegt. Wie groß ist der Strom in Milliampere?",
+          "An einem ohmschen Widerstand von 400 Ω liegen 8 V. Wie groß ist der Strom in mA?",
         answer: 20,
         unit: "mA",
         tolerance: 0.1,
         explanation:
-          "I = U/R = 8/400 = 0,020 A. Mit 1000 multiplizieren und 20 mA erhalten. Die erforderliche Antworteinheit ist hier Milliampere.",
+          "I = U/R = 8/400 = 0,020 A. Mit 1000 multipliziert ergeben sich 20 mA. Gefragt ist hier die Einheit mA.",
       },
       {
         id: "ohm-2",
         type: "numeric",
         question:
-          "Durch den 1,5 kΩ Widerstand fließen 4 mA. Finden Sie die Spannung in Volt.",
+          "Durch einen Widerstand von 1,5 kΩ fließen 4 mA. Wie groß ist die Spannung in V?",
         answer: 6,
         unit: "V",
         tolerance: 0.01,
         explanation:
-          "R = 1500 Ω, I = 0,004 A. U = I R = 0,004 1500 = 6 V. Sie können auch sofort den angepassten mA kΩ = V verwenden.",
+          "R = 1500 Ω, I = 0,004 A. U = I · R = 0,004 · 1500 = 6 V. Man kann auch direkt mA · kΩ = V verwenden.",
       },
       {
         id: "ohm-3",
         type: "choice",
         question:
-          "Unter welchen Bedingungen verdoppelt sich der Strom durch einen ohmschen Widerstand, wenn sich die Spannung verdoppelt?",
+          "Unter welcher Bedingung verdoppelt sich der Strom durch einen ohmschen Widerstand, wenn sich die Spannung verdoppelt?",
         options: [
-          "Bleibt sein Widerstand konstant, ändert sich auch die Temperatur praktisch nicht",
-          "Für jedes Element, unabhängig von seinen Eigenschaften",
+          "Wenn sein Widerstand konstant bleibt, ändert sich auch die Temperatur praktisch nicht",
+          "Für jedes Bauelement, unabhängig von seinen Eigenschaften",
           "Nur wenn sich auch der Widerstand verdoppelt",
-          "Nur wenn die Spannung Null ist",
+          "Nur wenn die Spannung null ist",
         ],
         answer: 0,
         explanation:
-          "Bei konstantem R folgt die direkte Proportionalität aus I = U/R. Wenn das Element heiß oder nichtlinear wird, kann sich der Widerstand ändern und der Strom verdoppelt sich nicht.",
+          "Bei konstantem R folgt die Proportionalität aus I = U/R. Wird das Bauelement heiß oder ist es nichtlinear, kann sich der Widerstand ändern, und der Strom verdoppelt sich nicht.",
       },
       {
         id: "ohm-4",
@@ -1239,22 +1239,22 @@ export const basicsLessons = [
         options: [
           "Der Widerstand des ersten ist größer",
           "Die Widerstände müssen gleich sein",
-          "Der Widerstand des ersten ist geringer",
+          "Der Widerstand des ersten ist kleiner",
           "Der erste Widerstand lässt keinen Strom durch",
         ],
         answer: 2,
         explanation:
-          "Wenn die Vertikale I und die Horizontale U ist, beträgt die Steigung 1/R. Je steiler die Gerade ist, desto größer ist der Strom bei gleicher Spannung und desto geringer ist der Widerstand.",
+          "Bei I senkrecht und U waagerecht ist die Steigung 1/R. Je steiler die Gerade, desto größer der Strom bei gleicher Spannung und desto kleiner der Widerstand.",
       },
       {
         id: "ohm-5",
         type: "choice",
         question:
-          "Die Quelle hat E = 12 V und r = 1 Ω, Last R = 5 Ω. Welchen Strom sagt das einfache Modell voraus?",
+          "Die Quelle hat E = 12 V und r = 1 Ω, der Verbraucher R = 5 Ω. Welchen Strom liefert das einfache Modell?",
         options: ["12 A", "2,4 A", "2 A", "0,5 A"],
         answer: 2,
         explanation:
-          "Innen- und Außenwiderstand sind in Reihe geschaltet: R + r = 6 Ω. I = E/(R + r) = 12/6 = 2 A. Eine Division von 12/5 würde den inneren Widerstand ignorieren.",
+          "Innen- und Außenwiderstand liegen in Reihe: R + r = 6 Ω. I = E/(R + r) = 12/6 = 2 A. Mit 12/5 würde man den Innenwiderstand ignorieren.",
       },
     ],
   },

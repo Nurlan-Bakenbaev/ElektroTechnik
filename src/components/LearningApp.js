@@ -493,10 +493,10 @@ function CircuitArt() {
             refY="3"
             orient="auto"
           >
-            <path d="M0,0 L6,3 L0,6" fill="#5b6b37" />
+            <path d="M0,0 L6,3 L0,6" fill="#344d6e" />
           </marker>
         </defs>
-        <circle cx="201" cy="127" r="94" fill="#e3efb0" fillOpacity=".35" />
+        <circle cx="201" cy="127" r="94" fill="#fde2a2" fillOpacity=".35" />
         {/* lightning motif */}
         <g className="lightning" transform="translate(260,10)">
           <path d="M10 10 L40 40 L26 40 L60 90 L30 70 L44 70 L10 10" fill="none" stroke="#ffd86b" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round" />
@@ -504,20 +504,20 @@ function CircuitArt() {
         <path
           d="M78 100V57Q78 46 90 46H173M222 46H302Q315 46 315 59V190Q315 204 302 204H91Q78 204 78 190V150"
           fill="none"
-          stroke="#434c31"
+          stroke="#303d4d"
           strokeWidth="2.5"
         />
         <path
           d="M173 34H222V58H173Z"
-          fill="#f8fbe9"
-          stroke="#434c31"
+          fill="#fef7e6"
+          stroke="#303d4d"
           strokeWidth="2.5"
         />
-        <path d="M57 113H100M66 132H91" stroke="#434c31" strokeWidth="3" />
-        <path d="M78 100V113M78 132V150" stroke="#434c31" strokeWidth="2.5" />
+        <path d="M57 113H100M66 132H91" stroke="#303d4d" strokeWidth="3" />
+        <path d="M78 100V113M78 132V150" stroke="#303d4d" strokeWidth="2.5" />
         <path
           d="M266 46h16M315 112v16M130 204h-16"
-          stroke="#5b6b37"
+          stroke="#344d6e"
           strokeWidth="2"
           markerEnd="url(#current-arrow)"
         />
@@ -530,14 +530,14 @@ function CircuitArt() {
         <text x="332" y="123" className="svg-label">
           I
         </text>
-        <text x="106" y="114" fontSize="12" fill="#596044">
+        <text x="106" y="114" fontSize="12" fill="#435061">
           +
         </text>
-        <text x="103" y="139" fontSize="13" fill="#596044">
+        <text x="103" y="139" fontSize="13" fill="#435061">
           −
         </text>
-        <circle cx="78" cy="46" r="4" fill="#434c31" />
-        <circle cx="315" cy="204" r="4" fill="#434c31" />
+        <circle cx="78" cy="46" r="4" fill="#303d4d" />
+        <circle cx="315" cy="204" r="4" fill="#303d4d" />
 
         {/* Electron animation: decorative, respects reduced-motion */}
         <g className="electrons" aria-hidden="true">
