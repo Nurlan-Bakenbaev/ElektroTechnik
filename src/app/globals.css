@@ -3782,3 +3782,101 @@ summary:focus-visible {
     padding: 7px;
   }
 }
+
+body {
+  font-size: 18px;
+  line-height: 1.75;
+}
+.eyebrow,
+.small-text,
+.sidebar-label,
+.breadcrumb,
+.xp-indicator,
+.profile-button strong,
+.profile-button small,
+.course-badge,
+.sidebar-progress-title,
+.lesson-card-meta,
+.lesson-card-title > span,
+.lesson-header-meta,
+.section-index,
+.formula-box > .eyebrow,
+.worked-example > .eyebrow,
+.reading-toc > .eyebrow,
+.lesson-navigation,
+.page-footer,
+.trust-strip {
+  font-size: 14px;
+}
+.button {
+  font-size: 15px;
+  transition:
+    background 0.2s,
+    box-shadow 0.2s,
+    transform 0.18s ease;
+}
+.button:hover {
+  transform: translateY(-1px);
+}
+.button:active {
+  transform: translateY(0) scale(0.98);
+}
+.lesson-card,
+.path-card {
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s,
+    background 0.2s,
+    transform 0.18s ease;
+}
+.lesson-card:hover,
+.path-card:hover {
+  transform: translateY(-2px);
+}
+.lesson-card h3 {
+  font-size: 23px;
+}
+.lesson-card > p {
+  font-size: 15px;
+}
+.section-heading h2,
+.curriculum-group .section-heading h2 {
+  font-size: 31px;
+}
+.textbook-section h2 {
+  font-size: 32px;
+}
+.formula-box > strong {
+  font-size: 30px;
+}
+.formula-box > p {
+  font-size: 17px;
+}
+.formula-box > small {
+  font-size: 14px;
+}
+@media (max-width: 700px) {
+  body {
+    font-size: 17px;
+  }
+  .section-heading h2,
+  .curriculum-group .section-heading h2 {
+    font-size: 27px;
+  }
+  .textbook-section h2 {
+    font-size: 28px;
+  }
+  .lesson-card h3 {
+    font-size: 21px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

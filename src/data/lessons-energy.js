@@ -33,7 +33,7 @@ export const energyLessons = [
         id: "energy-voltage-charge",
         title: "2. Von Spannung und Ladung zur Arbeit",
         paragraphs: [
-          "Die Spannung gibt die Energie je Ladung an: 1 V entspricht 1 J/C. Fließt eine Ladung von 3 C durch einen Abschnitt mit 12 V, überträgt das Feld 36 J. Je größer Spannung und Ladung, desto mehr Energie wird übertragen.",
+          "Die Spannung gibt die Energie pro elektrischer Ladung an: 1 V entspricht 1 J/C. Fließt eine elektrische Ladung von 3 Coulomb (C) durch einen Abschnitt mit 12 V, überträgt das Feld 36 J. Je größer Spannung und Ladung, desto mehr Energie wird übertragen.",
           "Bei konstanter Stromstärke fließt in der Zeit t die Ladung Q = I · t. Eingesetzt in A = U · Q ergibt sich A = U · I · t. Dabei gilt: U in Volt, I in Ampere, t in Sekunden, A in Joule. Ändern sich Spannung oder Stromstärke, darf man nicht einfach Mittelwerte einsetzen. Dann addiert man die Energie abschnittsweise oder integriert die Momentanleistung.",
         ],
         formula: {
@@ -296,7 +296,7 @@ export const energyLessons = [
         id: "power-ui",
         title: "2. Warum ist die elektrische Leistung P = U · I?",
         paragraphs: [
-          "Die Spannung U gibt die Energie je Coulomb an, die Stromstärke I die Ladung je Sekunde. Das Produkt ergibt Energie pro Sekunde: (J/C) · (C/s) = J/s. Bei konstanter Spannung und Stromstärke ist die Leistung eines Verbrauchers daher P = U · I.",
+          "Die Spannung U gibt die Energie pro elektrischer Ladung an; die Ladung wird in Coulomb (C) gemessen. Die Stromstärke I gibt die Ladung pro Sekunde an. Das Produkt ergibt Energie pro Sekunde: (J/C) · (C/s) = J/s. Bei konstanter Spannung und Stromstärke ist die Leistung eines Verbrauchers daher P = U · I.",
           "Diese Formel liefert die gesamte elektrische Leistung am Eingang des Geräts. Wie viel davon als Bewegung oder Licht nutzbar ist, sagt sie nicht. Ein Motor mit 12 V und 3 A nimmt 36 W auf. Seine mechanische Leistung an der Welle ist wegen Wärme und Reibung kleiner.",
           "Bei Wechselstrom ist die Momentanleistung p = u(t) · i(t). Das Produkt der Effektivwerte ergibt dort die Scheinleistung in VA. Die Wirkleistung hängt zusätzlich vom Leistungsfaktor ab. Hier gilt P = U · I nur für Gleichstrom oder für rein ohmsche Last mit Effektivwerten.",
         ],
@@ -426,7 +426,7 @@ export const energyLessons = [
       {
         term: "Abgabeleistung",
         german: "Abgabeleistung",
-        symbol: "Schmollmund",
+        symbol: "P_ab",
         unit: "W",
         definition:
           "Vom System abgegebene Leistung, z. B. mechanische Leistung an der Welle.",
@@ -434,7 +434,7 @@ export const energyLessons = [
       {
         term: "Verlustleistung",
         german: "Verlustleistung",
-        symbol: "Psweat",
+        symbol: "P_Verlust",
         unit: "W",
         definition:
           "Teil der Aufnahmeleistung, der nicht in die vorgesehene Nutzleistung umgewandelt wird.",
@@ -674,7 +674,7 @@ export const energyLessons = [
       {
         term: "Energiebilanz",
         german: "Energiebilanz",
-        symbol: "Ein = Efloor + E_Verlust",
+        symbol: "E_zu = E_nutz + E_Verlust",
         unit: "J",
         definition:
           "Erfassung aller zu-, ab- und gespeicherten Energien im betrachteten System.",
@@ -801,7 +801,7 @@ export const energyLessons = [
         id: "field-strength",
         title: "2. Elektrische Feldstärke: Kraft je Ladung",
         paragraphs: [
-          "Die elektrische Feldstärke E beschreibt das Feld an einem Punkt. Sie ist die Kraft auf eine positive Probeladung geteilt durch deren Ladung: E = F/q. Die Einheit N/C gibt an, wie viel Newton pro Coulomb wirken. Dieselbe Einheit schreibt man V/m. Es ist keine andere Größe.",
+          "Die elektrische Feldstärke E beschreibt das Feld an einem Punkt. Sie ist die Kraft auf eine positive Probeladung geteilt durch deren Ladung: E = F/q. Die Ladung q wird in Coulomb (C) gemessen. Die Einheit N/C gibt an, wie viel Newton pro Coulomb wirken. Dieselbe Einheit schreibt man V/m; es handelt sich um dieselbe Größe.",
           "Die Feldstärke ist ein Vektor mit Betrag und Richtung. Es gilt F⃗ = q · E⃗. Bei positivem q zeigt die Kraft in Feldrichtung, bei negativem q entgegengesetzt. Für den Betrag der Kraft gilt F = |q| · E. Das Elektron ist negativ geladen. Die Kraft auf ein Elektron zeigt deshalb entgegen E⃗.",
           "Die Feldstärke hängt nicht von der Probeladung ab. Verdoppelt man sie, verdoppelt sich die Kraft, das Verhältnis F/q bleibt gleich. Eine sehr große Probeladung kann allerdings die Feldquelle selbst verändern. Dann gilt die Annahme eines unveränderten Feldes nicht mehr.",
         ],
@@ -886,14 +886,14 @@ export const energyLessons = [
         id: "field-work-materials",
         title: "6. Feldarbeit, Leiter und Dielektrika",
         paragraphs: [
-          "Bewegt sich eine Ladung von A nach B, verrichtet das elektrische Feld die Arbeit Afield = q · (φA − φB) = q · UAB. Eine positive Ladung, die sich mit dem Feld bewegt, verliert potenzielle Energie. Die Feldarbeit ist positiv. Bei negativer Ladung kehrt das Vorzeichen von q das Ergebnis um. Für Spannung und Arbeit zählen Anfangs- und Endpunkt, nicht nur die Entfernung.",
+          "Bewegt sich eine Ladung q von A nach B, verrichtet das elektrostatische Feld die Arbeit W_Feld = q · (φ_A − φ_B) = q · U_AB. Eine positive Ladung, die sich in Feldrichtung bewegt, verliert elektrische potenzielle Energie; die Feldarbeit ist positiv. Bei einer negativen Ladung kehrt sich das Vorzeichen der Feldarbeit um. Für Spannung und Arbeit zählen Anfangs- und Endpunkt, nicht nur die Entfernung.",
           "Ein Leiter enthält frei bewegliche Ladungsträger, die sich im Feld verschieben. In einem Dielektrikum sind die Ladungen überwiegend gebunden. Das Feld bewirkt eine Polarisation: Positive und negative Ladungen werden leicht gegeneinander verschoben oder Dipole richten sich aus. Die Polarisation schwächt das Feld und ist die Grundlage der Wirkung eines Dielektrikums im Kondensator.",
           "Wird die Feldstärke für ein Material zu groß, kommt es zum elektrischen Durchschlag: Der Isolator wird leitend. Für die Isolation zählen daher nicht nur die Spannung, sondern auch Abstände, Elektrodenform, Luftfeuchte und Materialeigenschaften. Verwenden Sie in Versuchen sichere Kleinspannungsquellen und fertige Schaltungen. Geladene Kondensatoren können auch nach dem Abschalten Energie speichern.",
         ],
         formula: {
-          expression: "Afields = q UAB; ΔE_pot = −Afield",
+          expression: "W_Feld = q · U_AB; ΔE_pot = −W_Feld",
           legend:
-            "UAB = φA − φB – Spannung von A nach B, V; q – Ladung mit Vorzeichen, C; Afield – Feldarbeit, J.",
+            "U_AB = φ_A − φ_B – Spannung zwischen A und B, V; q – Ladung mit Vorzeichen, C; W_Feld – Arbeit des elektrischen Feldes, J.",
           note: "Das ist die Arbeit eines elektrostatischen Feldes. Wirken weitere Kräfte, bestimmt die Gesamtarbeit aller Kräfte die Änderung der kinetischen Energie.",
         },
       },

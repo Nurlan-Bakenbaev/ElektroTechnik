@@ -1,12 +1,12 @@
 export const quickConcepts = [
   {
     id: "charge",
-    title: "Aufladen",
+    title: "Elektrische Ladung",
     german: "Elektrische Ladung",
     symbol: "Q",
-    unit: "C - Coulomb",
+    unit: "Coulomb (C)",
     short:
-      "Ladung ist eine elektrische Eigenschaft von Teilchen. Es kann positiv und negativ sein; Das Elektron trägt eine negative Ladung. Q zeigt den übertragenen Ladungsbetrag an.",
+      "Elektrische Ladung ist eine Eigenschaft von Teilchen. Sie kann positiv oder negativ sein; das Elektron trägt eine negative Ladung. Q bezeichnet die transportierte Ladungsmenge.",
     analogy:
       "Die übertragene Ladungsmenge kann mit der durch das Rohr fließenden Wassermenge verglichen werden. Ladung hat jedoch zwei Vorzeichen und Wasser spiegelt diese Eigenschaft nicht wider.",
     pitfall:
@@ -18,11 +18,11 @@ export const quickConcepts = [
     title: "Stromstärke",
     german: "Stromstärke",
     symbol: "I",
-    unit: "Ein Ampere",
+    unit: "Ampere (A)",
     short:
-      "Die Stromstärke gibt an, wie viel Ladung pro Sekunde durch einen Querschnitt fließt. Für Gleichstrom ist I = Q/t. Ein Ampere ist ein Coulomb pro Sekunde.",
+      "Die Stromstärke gibt an, wie viel elektrische Ladung pro Sekunde durch einen Leiterquerschnitt fließt. Für Gleichstrom gilt I = Q/t. Ein Ampere entspricht einem Coulomb pro Sekunde.",
     analogy:
-      "Wie beim Wasserfluss durch ein Rohr: Mehr Wasser pro Sekunde bedeutet mehr Durchfluss. Der Draht verfügt bereits vor dem Einschalten über bewegliche Elektronen, und das elektrische Feld beginnt, sie zu lenken.",
+      "Wie beim Wasserfluss durch ein Rohr: Je mehr Wasser pro Sekunde hindurchströmt, desto größer ist die Durchflussrate. Im Draht sind bewegliche Elektronen bereits vorhanden; das elektrische Feld setzt sie in eine gerichtete Driftbewegung.",
     pitfall:
       "Der Strom ist nicht gleich der Geschwindigkeit eines Elektrons. Die technische Stromrichtung in einem Metall ist der Elektronendrift entgegengesetzt.",
     lessonId: "current",
@@ -32,13 +32,13 @@ export const quickConcepts = [
     title: "Spannung",
     german: "Elektrische Spannung",
     symbol: "U",
-    unit: "V Volt",
+    unit: "Volt (V)",
     short:
-      "Die Spannung zwischen zwei Punkten zeigt die Energie pro Ladungseinheit an. Bei 5 V kann jeder Anhänger 5 J an die Last übertragen. U = W/Q.",
+      "Die Spannung zwischen zwei Punkten gibt die übertragene Energie pro Ladung an: Bei 5 V werden pro Coulomb Ladung 5 J umgesetzt. U = W/Q.",
     analogy:
-      "Klingt nach einem Druckunterschied, der einen Wasserfluss verursachen kann. Es werden zwei Punkte verglichen; Das Vorhandensein einer Differenz garantiert keinen Fluss, wenn der Pfad geschlossen ist.",
+      "Spannung lässt sich begrenzt mit einem Druckunterschied vergleichen, der einen Wasserstrom antreiben kann. Sie wird stets zwischen zwei Punkten angegeben; allein eine Spannung garantiert noch keinen Strom.",
     pitfall:
-      "Die Spannung kann beispielsweise bei einer von der Last getrennten Batterie stromlos sein. Strom erfordert auch einen leitenden Pfad.",
+      "An den Klemmen einer unbelasteten Batterie kann Spannung anliegen, obwohl kein Strom fließt. Ein Strom fließt nur in einem geschlossenen leitfähigen Stromkreis.",
     lessonId: "voltage",
   },
   {
@@ -46,7 +46,7 @@ export const quickConcepts = [
     title: "Widerstand",
     german: "Elektrischer Widerstand",
     symbol: "R",
-    unit: "Ω Ohm",
+    unit: "Ohm (Ω)",
     short:
       "Der Widerstand gibt an, wie stark das Element den Strom begrenzt. Bei gleicher Spannung fließt weniger Strom durch einen größeren Widerstand. Für ein ohmsches Element ist R = U/I konstant.",
     analogy:
@@ -60,7 +60,7 @@ export const quickConcepts = [
     title: "Elektrisches Feld",
     german: "Elektrisches Feld",
     symbol: "E",
-    unit: "V/m Volt pro Meter",
+    unit: "Volt pro Meter (V/m)",
     short:
       "Ein elektrisches Feld wirkt auf Ladungen als Kraft. Seine Intensität E gibt die Kraft pro Einheit positiver Testladung an: E = F/q.",
     analogy:
@@ -74,9 +74,9 @@ export const quickConcepts = [
     title: "Magnetfeld",
     german: "Magnetisches Feld",
     symbol: "B",
-    unit: "T Tesla",
+    unit: "Tesla (T)",
     short:
-      "Das Magnetfeld ist mit der Bewegung von Ladungen und magnetischen Momenten verbunden. Es wirkt auf bewegte Ladungen, stromführende Leiter und Magnete. B ist magnetische Induktion.",
+      "Das Magnetfeld steht mit bewegten Ladungen und magnetischen Momenten in Zusammenhang. Es wirkt auf bewegte Ladungen, stromdurchflossene Leiter und Magnete. B bezeichnet die magnetische Flussdichte.",
     analogy:
       "Kleine Kompasspfeile helfen Ihnen, die Richtung des Feldes an verschiedenen Punkten zu erkennen. Sie zeigen die Richtung an, bedeuten aber nicht, dass das Feld aus kleinen Pfeilen besteht.",
     pitfall:
@@ -99,12 +99,12 @@ export const quickConcepts = [
   },
   {
     id: "power",
-    title: "Macht",
+    title: "Leistung",
     german: "Elektrische Leistung",
     symbol: "P",
-    unit: "W Watt",
+    unit: "Watt (W)",
     short:
-      "Leistung gibt an, wie schnell Energie übertragen wird. Ein Watt ist ein Joule pro Sekunde. Für den konstanten Modus gilt P = U · I.",
+      "Die elektrische Leistung gibt an, wie schnell Energie übertragen wird. Ein Watt entspricht einem Joule pro Sekunde. Für Gleichstrom gilt P = U · I.",
     analogy:
       "Zwei identisch aufgebaute Heizgeräte übertragen unterschiedlich viel Energie pro Minute: bei 2 kW doppelt so viel wie bei 1 kW. Dieser Vergleich gilt bei einer konstanten angegebenen Leistung.",
     pitfall:
@@ -116,7 +116,7 @@ export const quickConcepts = [
     title: "Energie und Arbeit",
     german: "Elektrische Energie und Arbeit",
     symbol: "W",
-    unit: "J Joule",
+    unit: "Joule (J)",
     short:
       "Elektrische Energie gibt an, wie viel Energie der Stromkreis an das Gerät übertragen hat. Bei konstanter Leistung W = P t; Energie wird in Wärme, Licht, Bewegung und andere Formen umgewandelt.",
     analogy:
@@ -144,7 +144,7 @@ export const quickConcepts = [
     title: "Kapazität",
     german: "Kapazität",
     symbol: "C",
-    unit: "F Farad",
+    unit: "Farad (F)",
     short:
       "Die Kapazität gibt an, wie viel Ladung auf einer Platte des Kondensators für eine bestimmte Spannung zwischen den Platten benötigt wird. Für einen linearen Kondensator ist C = Q/U.",
     analogy:
@@ -155,12 +155,12 @@ export const quickConcepts = [
   },
   {
     id: "efficiency",
-    title: "Effizienz",
+    title: "Wirkungsgrad",
     german: "Wirkungsgrad",
     symbol: "η",
     unit: "% oder Bruch von 0 bis 1",
     short:
-      "Der Wirkungsgrad ist der Anteil der zugeführten Energie, der in die gewünschte Nutzform umgewandelt wird: η = Wpol/Win. Für den stationären Zustand können Nutz- und Aufnahmeleistung verglichen werden.",
+      "Der Wirkungsgrad ist das Verhältnis von Nutzenergie zur zugeführten Energie: η = W_nutz/W_zu. Im stationären Betrieb können auch Nutzleistung und aufgenommene Leistung verglichen werden.",
     analogy:
       "Wenn ein Motor 100 J aufnimmt, 80 J in nutzbare mechanische Arbeit umwandelt und 20 J in Wärme verliert, beträgt sein Wirkungsgrad für diesen Zweck 80 %.",
     pitfall:

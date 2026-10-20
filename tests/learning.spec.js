@@ -298,6 +298,21 @@ test("every lesson has an interactive lab whose sliders update its model without
       exact: true,
     });
     await expect(lab).toBeVisible();
+    if (lesson.id === "current") {
+      await expect(
+        lab.getByRole("slider", {
+          name: "Elektrische Ladung Q (Coulomb)",
+          exact: true,
+        }),
+      ).toBeVisible();
+      await expect(lab).toContainText("Coulomb (C)");
+    }
+    if (lesson.id === "energy") {
+      await expect(lab).toContainText("Wh");
+    }
+    if (lesson.id === "magnetic-quantities") {
+      await expect(lab.locator(".lab-result")).toContainText("µWb");
+    }
     const sliders = lab.getByRole("slider");
     expect(await sliders.count()).toBeGreaterThan(0);
     for (const control of await lab.locator(".lab-control").all()) {

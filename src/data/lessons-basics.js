@@ -45,7 +45,7 @@ export const basicsLessons = [
         example: {
           title: "Beispiel: Ladung durch einen Leiter",
           given:
-            "In 8 s fließt eine Ladung von 2,4 C durch den Drahtquerschnitt. Gesucht ist der Gleichstrom in A und mA.",
+            "In einer Zeitdauer von 8 s fließt eine elektrische Ladung von 2,4 Coulomb (C) durch den Leiterquerschnitt. Gesucht ist die Stromstärke in A und mA.",
           steps: [
             "Alle Werte liegen in SI-Einheiten vor: Q = 2,4 C und t = 8 s.",
             "Wir verwenden die Definition der Stromstärke: I = Q/t.",
@@ -199,7 +199,7 @@ export const basicsLessons = [
         id: "current-2",
         type: "numeric",
         question:
-          "In 8 s fließt eine Ladung von 24 C durch den Drahtquerschnitt. Wie groß ist die Stromstärke bei Gleichstrom in A?",
+          "In einer Zeitdauer von 8 s fließt eine elektrische Ladung von 24 Coulomb (C) durch den Leiterquerschnitt. Wie groß ist die Stromstärke bei Gleichstrom?",
         answer: 3,
         unit: "A",
         tolerance: 0.01,
@@ -408,7 +408,7 @@ export const basicsLessons = [
       {
         term: "Ersatzwiderstand",
         german: "Ersatzwiderstand",
-        symbol: "Anf",
+        symbol: "R_ers",
         unit: "Ω - Ohm",
         definition:
           "Widerstand, der eine Widerstandsgruppe ersetzt und bei gleicher Klemmenspannung denselben Gesamtstrom ergibt.",
@@ -514,7 +514,7 @@ export const basicsLessons = [
         id: "energy-per-charge",
         title: "1. Spannung: Wie viel Energie pro Ladung?",
         paragraphs: [
-          "Die Stromstärke sagt, wie viel Ladung pro Sekunde fließt. Die Spannung sagt, wie viel Energie je Ladung zwischen zwei Punkten umgesetzt wird. Gibt jedes Coulomb an den Verbraucher 12 J ab, beträgt die Spannung 12 V. Ein Volt ist ein Joule pro Coulomb. Man kann daher 2 A und 12 V nicht vergleichen. Es sind verschiedene Größen.",
+          "Die Stromstärke gibt an, wie viel elektrische Ladung pro Sekunde fließt. Die Spannung beschreibt die Energie pro Ladung zwischen zwei Punkten. Das Coulomb (C) ist die Einheit der elektrischen Ladung: Werden pro Coulomb 12 J umgesetzt, beträgt die Spannung 12 V. Ein Volt entspricht einem Joule pro Coulomb. Stromstärke und Spannung sind verschiedene Größen und lassen sich nicht direkt vergleichen.",
           "Die Quelle wandelt zum Beispiel chemische in elektrische Energie um und trennt Ladungen. Ein Verbraucher wie ein Widerstand wandelt die aufgenommene Energie in Wärme um. Bewegt sich eine positive Ladung durch einen passiven Verbraucher vom höheren zum niedrigeren Potenzial, verrichtet das Feld positive Arbeit. In einfachen Energieaufgaben rechnet man mit positiven Beträgen. Bei der Richtungsanalyse beachtet man die Vorzeichen.",
         ],
         formula: {
@@ -526,7 +526,7 @@ export const basicsLessons = [
         example: {
           title: "Beispiel: Spannung aus der Energie",
           given:
-            "Fließt eine Ladung von 5 C durch den Verbraucher, werden 60 J umgesetzt. Gesucht ist die Spannung.",
+            "Fließt eine elektrische Ladung von 5 Coulomb (C) durch den Verbraucher, werden 60 J umgesetzt. Gesucht ist die Spannung.",
           steps: [
             "Definition verwenden: U = W/Q.",
             "Einsetzen: U = 60 J / 5 C = 12 J/C.",
@@ -794,13 +794,13 @@ export const basicsLessons = [
         id: "material-and-geometry",
         title: "2. Material, Länge und Querschnittsfläche",
         paragraphs: [
-          "Der Widerstand eines homogenen Leiters hängt von Material und Form ab. Je länger der Draht, desto größer der Widerstand: Die Ladungsträger wechselwirken über eine längere Strecke mit dem Material. Je größer die Querschnittsfläche, desto kleiner der Widerstand. In der Formel steht die Fläche, nicht der Durchmesser. Für einen runden Draht gilt S = πd²/4. Doppelter Durchmesser ergibt also die vierfache Fläche.",
+          "Der Widerstand eines homogenen Leiters hängt von Material und Form ab. Je länger der Draht, desto größer der Widerstand: Die Ladungsträger wechselwirken über eine längere Strecke mit dem Material. Je größer die Querschnittsfläche, desto kleiner der Widerstand. In der Formel steht die Fläche, nicht der Durchmesser. Für einen runden Draht gilt A = πd²/4. Doppelter Durchmesser ergibt also die vierfache Fläche.",
           "Das Material beschreibt der spezifische Widerstand ρ. Seine SI-Einheit ist Ω m. Bei Drähten rechnet man bequem in Ω · mm²/m, wenn die Fläche in mm² und die Länge in m angegeben sind. Für Kupfer bei 20 °C nimmt man oft ρ ≈ 0,0175 Ω mm²/m an. Das ist ein Näherungswert, er hängt von Zusammensetzung und Temperatur ab. Bei einer Zweidrahtleitung zählt die Länge von Hin- und Rückleiter: Ein Verbraucher in 10 m Entfernung bedeutet meist 20 m Leitungslänge.",
         ],
         formula: {
-          expression: "R = ρ l / S;  Kreis = π d² / 4",
+          expression: "R = ρ · l / A;  A = π · d² / 4",
           legend:
-            "ρ – spezifischer Widerstand; l – Länge in m; S – Querschnittsfläche; d – Durchmesser.",
+            "ρ – spezifischer Widerstand; l – Länge in m; A – Querschnittsfläche; d – Durchmesser.",
           note: "Die Formel gilt für einen homogenen Leiter mit konstantem Querschnitt bei gegebener Temperatur. Verwenden Sie zueinander passende Einheiten für Fläche und ρ.",
         },
         example: {
@@ -809,8 +809,8 @@ export const basicsLessons = [
             "Ein Verbraucher ist 10 m von der Quelle entfernt und mit zwei Kupferdrähten von je 1 mm² Querschnitt angeschlossen. Es gilt ρ = 0,0175 Ω mm²/m. Gesucht ist der Widerstand beider Drähte zusammen.",
           steps: [
             "Der Strom fließt über den Hinleiter zum Verbraucher und über den Rückleiter zurück: l = 10 + 10 = 20 m.",
-            "Die Fläche S = 1 mm² passt zur Einheit des spezifischen Widerstands.",
-            "R_Ltg = ρ · l/S = 0,0175 · 20/1 = 0,35 Ω.",
+            "Die Fläche A = 1 mm² passt zur Einheit des spezifischen Widerstands.",
+            "R_Ltg = ρ · l/A = 0,0175 · 20/1 = 0,35 Ω.",
             "Bei 2 A beträgt der Spannungsfall auf der Leitung U_Ltg = 2 · 0,35 = 0,7 V. Leitungen darf man daher nicht immer als ideal annehmen.",
           ],
           answer:
@@ -891,7 +891,7 @@ export const basicsLessons = [
         symbol: "ρ",
         unit: "Ω · m",
         definition:
-          "Werkstoffkenngröße in der Formel R = ρl/S für einen homogenen Leiter.",
+          "Werkstoffkenngröße in der Formel R = ρl/A für einen homogenen Leiter.",
       },
       {
         term: "Elektrischer Leitwert",
@@ -927,7 +927,7 @@ export const basicsLessons = [
     ],
     summary: [
       "Der Widerstand begrenzt den Strom; im Arbeitspunkt gilt R = U/I, Einheit Ohm.",
-      "Für einen homogenen Draht gilt R = ρl/S: Mehr Länge erhöht, mehr Querschnitt verringert den Widerstand.",
+      "Für einen homogenen Draht gilt R = ρl/A: Mehr Länge erhöht, mehr Querschnitt verringert den Widerstand.",
       "Bei einer Zweidrahtleitung zählen Hin- und Rückleiter. Die Kreisfläche ist proportional zum Quadrat des Durchmessers.",
       "Der Widerstand von Metallen steigt meist mit der Temperatur; die lineare Formel gilt nur in einem begrenzten Bereich.",
       "Bei der Auswahl eines Widerstands prüfen Sie Nennwert, Toleranz und Belastbarkeit.",
@@ -958,7 +958,7 @@ export const basicsLessons = [
         ],
         answer: 2,
         explanation:
-          "Aus R = ρl/S folgt: Der Widerstand ist proportional zur Länge. Mit l₂ = 2l₁ und konstanten ρ und S ergibt sich R₂ = 2R₁.",
+          "Aus R = ρl/A folgt: Der Widerstand ist proportional zur Länge. Mit l₂ = 2l₁ und konstanten ρ und A ergibt sich R₂ = 2R₁.",
       },
       {
         id: "resistance-3",
@@ -973,7 +973,7 @@ export const basicsLessons = [
         ],
         answer: 0,
         explanation:
-          "S = πd²/4: Doppelter Durchmesser ergibt vierfache Fläche. Da R umgekehrt proportional zur Fläche ist, sinkt der Widerstand auf ein Viertel.",
+          "A = πd²/4: Doppelter Durchmesser ergibt vierfache Fläche. Da R umgekehrt proportional zur Fläche ist, sinkt der Widerstand auf ein Viertel.",
       },
       {
         id: "resistance-4",
