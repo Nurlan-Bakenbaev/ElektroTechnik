@@ -349,7 +349,7 @@ export const examQuestions = [
     unit: "µC",
     tolerance: 1,
     explanation:
-      "Q = CU. Mit C in Mikrofarad und U in Volt erhält man sofort das Ergebnis in Mikrocoulomb: Q = 100 × 12 = 1200 µC = 1,2 µC. Die Platten haben Ladungen +Q und −Q; ihre algebraische Summe für einen idealen Kondensator ist Null.",
+      "Q = CU. Mit C in Mikrofarad und U in Volt erhält man sofort das Ergebnis in Mikrocoulomb: Q = 100 × 12 = 1200 µC = 1,2 mC. Die Platten haben Ladungen +Q und −Q; ihre algebraische Summe für einen idealen Kondensator ist Null.",
   },
   {
     id: "exam-27",
@@ -550,8 +550,8 @@ export const formulaSheet = [
   },
   {
     lessonId: "power",
-    title: "Elektrische Energie",
-    expression: "P = UI; Widerstand = I²R = U²/R",
+    title: "Elektrische Leistung",
+    expression: "P = U · I; P = I² · R; P = U² / R",
     legend:
       "P – Leistung, W; U – Spannung, V; I – Strom, A; R - Widerstand, Ohm.",
     conditions:
