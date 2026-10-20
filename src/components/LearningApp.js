@@ -105,6 +105,7 @@ export default function LearningApp() {
   const [storageError, setStorageError] = useState("");
   const [toast, setToast] = useState("");
   const toastTimer = useRef(null);
+  const [showRegister, setShowRegister] = useState(false);
 
   useEffect(() => {
     let initial;
@@ -328,6 +329,12 @@ export default function LearningApp() {
               {progress.xp} XP
             </span>
             <span className="topbar-separator" />
+            <button
+              className="button button-outline register-button"
+              onClick={() => setShowRegister(true)}
+            >
+              Registrieren
+            </button>
             <a className="profile-button" href="#/profile">
               <span className="avatar">
                 {profile.name.charAt(0).toUpperCase()}
@@ -340,6 +347,17 @@ export default function LearningApp() {
               </span>
               <ChevronDown size={13} />
             </a>
+            {showRegister && (
+              <RegisterDialog
+                profile={profile}
+                onClose={() => setShowRegister(false)}
+                onSave={(name) => {
+                  updateProfile((p) => ({ ...p, name }));
+                  setShowRegister(false);
+                  notify("Registrierung lokal gespeichert");
+                }}
+              />
+            )}
           </div>
         </header>
         {storageError && (
@@ -2168,6 +2186,85 @@ function ResetDialog({ onCancel, onConfirm }) {
             Daten löschen
           </button>
         </div>
+      </div>
+    </dialog>
+  );
+}
+
+function RegisterDialog({ profile, onClose, onSave }) {
+  const dialogRef = useRef(null);
+  const [name, setName] = useState(profile?.name || "");
+  const [confirmLocal, setConfirmLocal] = useState(false);
+  useEffect(() => {
+    const dialog = dialogRef.current;
+    dialog.showModal();
+    const overflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      dialog.close();
+      document.body.style.overflow = overflow;
+    };
+  }, []);
+  function submit(e) {
+    e.preventDefault();
+    if (!name || !confirmLocal) return;
+    onSave(name);
+  }
+  return (
+    <dialog
+      data-lenis-prevent
+      ref={dialogRef}
+      className="confirm-modal"
+      aria-labelledby="register-title"
+      onCancel={onClose}
+      onClick={(event) => {
+        if (event.target === event.currentTarget) onClose();
+      }}
+    >
+      <div onClick={(event) => event.stopPropagation()}>
+        <span className="lock-circle">
+          <Sparkles size={28} />
+        </span>
+        <h2 id="register-title">Registrierung (lokal)</h2>
+        <p>
+          Geben Sie Ihren Namen ein. Ihre Daten werden nur lokal im Browser
+          gespeichert und nicht an einen Server gesendet.
+        </p>
+        <form onSubmit={submit}>
+          <label htmlFor="register-name">Name</label>
+          <input
+            id="register-name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            maxLength={32}
+            required
+          />
+          <label className="checkbox">
+            <input
+              type="checkbox"
+              checked={confirmLocal}
+              onChange={(e) => setConfirmLocal(e.target.checked)}
+            />
+            Ich bestätige, dass meine Daten nur lokal gespeichert werden und
+            nicht an einen Server gesendet werden.
+          </label>
+          <div className="button-row">
+            <button
+              type="button"
+              className="button button-outline"
+              onClick={onClose}
+            >
+              Abbrechen
+            </button>
+            <button
+              type="submit"
+              className="button button-dark"
+              disabled={!name || !confirmLocal}
+            >
+              Registrieren
+            </button>
+          </div>
+        </form>
       </div>
     </dialog>
   );
