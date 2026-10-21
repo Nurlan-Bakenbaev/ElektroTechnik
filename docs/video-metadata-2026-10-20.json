@@ -1,0 +1,132 @@
+{
+  "current": {
+    "id": "-OzDSNHCfB4",
+    "originalTitle": "Stromstärke einfach erklärt│Physik Lernvideo│Learning Level Up",
+    "channel": "Learning Level Up",
+    "durationSeconds": 193,
+    "previewStatus": "OK",
+    "embeddingAllowed": true,
+    "source": "https://www.youtube-nocookie.com/embed/-OzDSNHCfB4?hl=de",
+    "checkedOn": "2026-10-20"
+  },
+  "circuits": {
+    "id": "D0Cm8JG5Ibk",
+    "originalTitle": "Reihenschaltung und Parallelschaltung - erklärt - Berechnung - simplexy.de",
+    "channel": "simplexy",
+    "durationSeconds": 211,
+    "previewStatus": "OK",
+    "embeddingAllowed": true,
+    "source": "https://www.youtube-nocookie.com/embed/D0Cm8JG5Ibk?hl=de",
+    "checkedOn": "2026-10-20"
+  },
+  "voltage": {
+    "id": "R9Zz6mbCNME",
+    "originalTitle": "TechTip Basic: Die elektrische Spannung",
+    "channel": "SMA Solar Technology",
+    "durationSeconds": 173,
+    "previewStatus": "OK",
+    "embeddingAllowed": true,
+    "source": "https://www.youtube-nocookie.com/embed/R9Zz6mbCNME?hl=de",
+    "checkedOn": "2026-10-20"
+  },
+  "resistance": {
+    "id": "CVXN0tLSnNY",
+    "originalTitle": "Der elektrische Widerstand - einfach und anschaulich erklärt",
+    "channel": "physikdigital • de",
+    "durationSeconds": 154,
+    "previewStatus": "OK",
+    "embeddingAllowed": true,
+    "source": "https://www.youtube-nocookie.com/embed/CVXN0tLSnNY?hl=de",
+    "checkedOn": "2026-10-20"
+  },
+  "ohm": {
+    "id": "sPwwKxkaBJE",
+    "originalTitle": "Ohmsches Gesetz einfach erklärt | URI-Dreieck mit Übung",
+    "channel": "Smartelektrik0",
+    "durationSeconds": 207,
+    "previewStatus": "OK",
+    "embeddingAllowed": true,
+    "source": "https://www.youtube-nocookie.com/embed/sPwwKxkaBJE?hl=de",
+    "checkedOn": "2026-10-20"
+  },
+  "energy": {
+    "id": "ISnVP1jq7qE",
+    "originalTitle": "Elektrische Arbeit und Energie (L00004)",
+    "channel": "Physik-Lernvideos",
+    "durationSeconds": 144,
+    "previewStatus": "OK",
+    "embeddingAllowed": true,
+    "source": "https://www.youtube-nocookie.com/embed/ISnVP1jq7qE?hl=de",
+    "checkedOn": "2026-10-20"
+  },
+  "power": {
+    "id": "Eq2tZdJ7NAM",
+    "originalTitle": "Physik - elektrische Leistung und Arbeit einfach und kurz erklärt",
+    "channel": "erklaerung-und-mehr",
+    "durationSeconds": 183,
+    "previewStatus": "OK",
+    "embeddingAllowed": true,
+    "source": "https://www.youtube-nocookie.com/embed/Eq2tZdJ7NAM?hl=de",
+    "checkedOn": "2026-10-20"
+  },
+  "efficiency": {
+    "id": "gOXEm2Gh5wc",
+    "originalTitle": "Wirkungsgrad berechnen | Elektrizität | Physik | Lehrerschmidt",
+    "channel": "Lehrerschmidt",
+    "durationSeconds": 160,
+    "previewStatus": "OK",
+    "embeddingAllowed": true,
+    "source": "https://www.youtube-nocookie.com/embed/gOXEm2Gh5wc?hl=de",
+    "checkedOn": "2026-10-20"
+  },
+  "field": {
+    "id": "YRNarrlYCoQ",
+    "originalTitle": "Das elektrische Feld verstehen! | Elektrizität (2 von 14)",
+    "channel": "Think Logic",
+    "durationSeconds": 284,
+    "previewStatus": "OK",
+    "embeddingAllowed": true,
+    "source": "https://www.youtube-nocookie.com/embed/YRNarrlYCoQ?hl=de",
+    "checkedOn": "2026-10-20"
+  },
+  "capacitor": {
+    "id": "xyaqZgqhIBc",
+    "originalTitle": "Kondensator: Aufbau, Ladung, Stromfluss und Nutzen – Physik | Duden Learnattack",
+    "channel": "Duden Learnattack",
+    "durationSeconds": 257,
+    "previewStatus": "OK",
+    "embeddingAllowed": true,
+    "source": "https://www.youtube-nocookie.com/embed/xyaqZgqhIBc?hl=de",
+    "checkedOn": "2026-10-20"
+  },
+  "magnets": {
+    "id": "5FRdulem8c4",
+    "originalTitle": "Das Magnetfeld | Dauermagnetismus | Physik - Sachunterricht | Lehrerschmidt",
+    "channel": "Lehrerschmidt",
+    "durationSeconds": 165,
+    "previewStatus": "OK",
+    "embeddingAllowed": true,
+    "source": "https://www.youtube-nocookie.com/embed/5FRdulem8c4?hl=de",
+    "checkedOn": "2026-10-20"
+  },
+  "electromagnetism": {
+    "id": "CkYO5RMsZuo",
+    "originalTitle": "Elektromagnetische Induktion  - einfach und anschaulich erklärt von physikdigital.de",
+    "channel": "physikdigital • de",
+    "durationSeconds": 226,
+    "previewStatus": "OK",
+    "embeddingAllowed": true,
+    "source": "https://www.youtube-nocookie.com/embed/CkYO5RMsZuo?hl=de",
+    "checkedOn": "2026-10-20"
+  },
+  "magnetic-quantities": {
+    "id": "P42WB6HbynQ",
+    "originalTitle": "Magnetische Flussdichte & Feldstärke | Physik Tutorial",
+    "channel": "Studytiger - Physik & E-Technik",
+    "durationSeconds": 232,
+    "previewStatus": "OK",
+    "embeddingAllowed": true,
+    "source": "https://www.youtube-nocookie.com/embed/P42WB6HbynQ?hl=de",
+    "checkedOn": "2026-10-20"
+  }
+}

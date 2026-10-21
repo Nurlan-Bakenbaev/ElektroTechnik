@@ -46,3 +46,21 @@ Browser coverage additionally checks all thirteen rendered topics, access to pre
 - [Course directory, mobile](screenshots/azubi-course-mobile.png)
 
 The final adaptation checks passed: `npm run lint`, `npm test` (**44 passed**), `npm run build`, and `npm run test:e2e` (**19 passed, 0 failed**). The browser suite includes all 65 topic questions and the 35-question final exam. Screenshot inspection supplements the assertions; it is not a claim of a complete accessibility certification.
+
+## Essentials expansion and topic-first introductions
+
+The subsequent fundamentals revision passed `npm run lint`, `npm test` (**46 passed**), `npm run build`, and the full `npm run test:e2e` suite (**23 passed, 0 failed**). New browser scenarios visit every concept, verify its definitions/example/lesson link, exercise incorrect and corrected self-check answers and reset between topics, and check mobile overflow. The current lesson is checked for charge carriers, source, closed circuit and opposite directions before calculation. Existing course/exam, storage and laboratory scenarios remain in the suite.
+
+Numerical unit checks independently calculate the stated charge/time, cable drop/loss, USB power budget, energy, energy costs, efficiency and capacitor charge results. They also verify the numerical self-check answer keys. Browser evidence was inspected at desktop and 375-pixel mobile widths:
+
+- [Expanded essentials, desktop](screenshots/essentials-desktop.png)
+- [Capacitance explanation, mobile](screenshots/essentials-capacitance-mobile.png)
+- [Current mechanism before calculation, mobile](screenshots/current-primer-mobile.png)
+
+## Final release with short lesson videos
+
+Final checks for the combined explanations/video change passed: lint, optimized production build, **48 unit/content tests**, and the complete **25-scenario browser suite**. The final browser-run record reports `passed` with no failed tests. The suite includes all course and final-exam questions, storage/import/export, all laboratories, the expanded essentials, and the new video controls.
+
+Video scenarios visit all thirteen lessons, check the selected URL, title, channel and duration, verify that no iframe request occurs before activation, and verify removal on close and topic change. Keyboard activation and the responsive 16:9 frame are checked at 375 pixels. External frames are intercepted for these integration tests; separate official metadata checks establish the observed running times and initial embed availability. See [VIDEO_SOURCES.md](VIDEO_SOURCES.md) and the archived public metadata for those evidence boundaries.
+
+- [Video control, mobile](screenshots/lesson-video-mobile.png)

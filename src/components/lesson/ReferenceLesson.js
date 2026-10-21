@@ -31,6 +31,7 @@ import Quiz from "../Quiz";
 import Notation from "../Notation";
 import { lessonBasics } from "../../data/lesson-basics.js";
 import QuantityLegend, { UnitText } from "../QuantityLegend";
+import LessonVideo from "../LessonVideo";
 import "./reference-lesson.css";
 
 const InteractiveLab = dynamic(() => import("../InteractiveLab"), {
@@ -188,16 +189,17 @@ export default function ReferenceLesson({
       )}
       <section
         className="ohm-it-context"
-        aria-label="Ohmsches Gesetz im IT-Alltag"
+        aria-label="Grundlagen des Ohmschen Gesetzes"
       >
         <span className="brief-context">
-          FACHINFORMATIK · {lessonBasics.ohm.context}
+          GRUNDLAGEN · {lessonBasics.ohm.context}
         </span>
         <p>
           <UnitText>{lessonBasics.ohm.answer}</UnitText>
         </p>
         <QuantityLegend items={lessonBasics.ohm.units} compact />
       </section>
+      <LessonVideo key={lesson.id} lessonId={lesson.id} />
       <div
         className="ohm-view-tabs"
         role="tablist"

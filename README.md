@@ -2,7 +2,7 @@
 
 Eine Lernplattform auf Deutsch, entwickelt mit **Next.js 16, React 19 und JavaScript**. Der neu aufgebaute Referenzunterricht zum Ohmschen Gesetz führt durch ein echtes virtuelles Experiment; die weiteren zwölf Module bleiben als bestehende Lernangebote erhalten und werden schrittweise migriert.
 
-**Für Azubis in der Fachinformatik:** Alle 13 Themen haben jetzt einen eigenen IT-Einstieg, ein verständliches Praxisbeispiel und kurze, neu formulierte Erklärungen für sämtliche 78 Abschnitte. Ausführliche Originalerklärungen sind weiterhin aufklappbar. Labore, Fragen, Profil und Fortschritt bleiben erhalten. Eine gemeinsame Legende erklärt Größen und Einheiten, insbesondere Ladung in Coulomb (C), Kapazität C in Farad (F), Ampere, Watt und Kilowattstunden.
+**Für Azubis in der Fachinformatik:** Alle 13 Themen beginnen mit dem elektrotechnischen Grundbegriff; Anwendungen folgen der Erklärung. Verständliche Beispiele und neu formulierte Erklärungen ergänzen sämtliche 78 Abschnitte. Ausführliche Originalerklärungen sind weiterhin aufklappbar. Labore, Fragen, Profil und Fortschritt bleiben erhalten. Eine gemeinsame Legende erklärt Größen und Einheiten, insbesondere Ladung in Coulomb (C), Kapazität C in Farad (F), Ampere, Watt und Kilowattstunden.
 
 Die gemeinsame Oberfläche ist als IT-Lernwerkstatt aufgebaut: interaktiver Netzteilvergleich auf der Startseite, modulweise Kursübersicht mit Praxisbezug und fachbezogene Legenden direkt in Lektionen, Laboren und numerischen Testaufgaben.
 
@@ -16,9 +16,10 @@ Im Referenzlabor: 12 Lernschritte, Schalter, Amperemeter, Voltmeter, modellbasie
 
 - 13 ausführliche Themen mit 78 Abschnitten und 31 gelösten Beispielen.
 - 13 interaktive Experimente zu Strom, Schaltungen, Spannung, Widerstand, Energie und Feldern.
+- Pro Thema ein deutschsprachiges YouTube-Video von höchstens fünf Minuten; Player erst auf Wunsch, mit Kanal, Dauer und direktem Link. [Auswahl und Metadatenprüfung](docs/VIDEO_SOURCES.md).
 - 65 Übungsfragen, davon 26 Rechenaufgaben; ein Thema gilt ab 4 von 5 richtigen Antworten als bestanden.
 - Abschlussprüfung mit 35 Fragen, davon 19 Rechenaufgaben, nach Abschluss aller Themen. Bestehensgrenze: 28 von 35.
-- 12 Grundbegriffe, Lexikon, Formelsammlung und Merkliste.
+- „Einfach erklärt“: 12 ausführliche Grundbegriffe mit Bedeutung, Einheiten, schrittweisem Beispiel und erklärender Selbstkontrolle; außerdem Lexikon, Formelsammlung und Merkliste.
 - Acht OpenStax-Abbildungen mit [Lizenznachweisen](public/images/ATTRIBUTION.md).
 - Lokal gespeicherte SVG-Formelbilder von Wikimedia Math. [Quellen](public/images/formulas/SOURCES.md); die Bilder verlinken ihre Quellrevisionen und Lizenz.
 

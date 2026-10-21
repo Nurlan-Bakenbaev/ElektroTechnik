@@ -459,13 +459,13 @@ test("beginner concepts, formula reference and all eight textbook illustrations 
 }) => {
   const errors = watchErrors(page);
   await visit(page, "essentials");
-  await expect(page.locator(".concept-card")).toHaveCount(12);
+  await expect(page.locator(".essentials-topics button")).toHaveCount(12);
   await expect(page.locator(".origin-card")).toContainText(
     "Es sind bereits Ladungen im Kabel vorhanden",
   );
-  await page.locator(".concept-card").first().locator("summary").click();
+  await page.locator(".essential-comparison summary").click();
   await expect(
-    page.locator(".concept-card").first().locator("details"),
+    page.locator(".essential-comparison"),
   ).toHaveAttribute("open", "");
   await visit(page, "formulas");
   await expect(page.locator(".reference-formula")).toHaveCount(20);

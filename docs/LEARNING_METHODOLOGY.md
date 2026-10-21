@@ -21,8 +21,16 @@ The Ohm model assumes a constant temperature and constant resistance. It must no
 
 ## Beginner explanations across the existing course
 
-Each topic now starts with a concrete IT question, an answer in ordinary German, three essential distinctions, an explained legend and one worked practical example. The 78 sections each receive a concise explanation before their original long reference. Learners can read and apply the basic idea first and expand the background later.
+Each topic starts with a question about the electrical concept itself, an answer in ordinary German, three essential distinctions, an explained legend and one worked example. Applications follow the definition rather than replace it. The 78 sections each receive a concise explanation before their original long reference. Learners can read and apply the basic idea first and expand the background later.
 
 Examples connect current/voltage to regulated power supplies, resistance to cable voltage drop, power to USB/PoE, energy to workplace electricity costs, efficiency to power-supply heat, fields to ESD, capacitance to buffering, and magnetism to HDD/SSD/fans. Advanced magnetic quantities are identified as background knowledge rather than assumed daily calculation work for a Fachinformatiker. No examination-board syllabus compliance is claimed.
 
 Units are taught at the point of use. A symbol is not a substitute for an explanation: Q is charge and C after a number means coulomb; C as a capacitance symbol is measured in F. New section summaries are original teaching copy; the sourced equation images and retained reference material keep their attribution.
+
+## Foundational concepts before applications
+
+`#/essentials` now provides twelve selectable explanations in three groups. Each distinguishes the meaning, symbol and unit; explains the mechanism in two paragraphs; walks through one example; identifies a misconception; and gives a self-check with explanatory feedback. Optional comparisons name the limits of their analogy. The twelve unscored checks do not change course XP or unlock the final exam.
+
+The current lesson first explains existing electrons, the source's energy and voltage, and the closed conducting path. An attributed OpenStax open/closed circuit illustration supports that explanation. Electron motion and conventional current have separate explicit directions. The expanded unit legend precedes the charge/time calculation, which explains the cross-section, the reason for division, and a reverse check. A power-supply selection question is no longer used as the definition of current.
+
+Each lesson also offers a German YouTube video of at most five minutes. A topic-specific viewing prompt directs attention to the concept rather than treating watching as completion. Sources, duration verification and coverage boundaries are recorded in [VIDEO_SOURCES.md](VIDEO_SOURCES.md). Watching does not replace the experiment or final topic quiz and does not modify progress.

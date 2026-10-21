@@ -1,6 +1,7 @@
-import { ArrowRight, Check, Laptop, FlaskConical } from "lucide-react";
+import { ArrowRight, Check, BookOpen, FlaskConical } from "lucide-react";
 import { lessonBasics } from "../data/lesson-basics.js";
 import QuantityLegend, { UnitText } from "./QuantityLegend";
+import CurrentPrimer from "./CurrentPrimer";
 
 export default function LessonBrief({ lessonId, onExperiment }) {
   const basics = lessonBasics[lessonId];
@@ -8,11 +9,11 @@ export default function LessonBrief({ lessonId, onExperiment }) {
   return (
     <section
       className="lesson-brief"
-      aria-label="Verständlicher Einstieg mit IT-Beispiel"
+      aria-label="Grundlagen und erklärtes Beispiel"
     >
       <div className="brief-context">
-        <Laptop size={16} />
-        <span>FACHINFORMATIK · {basics.context}</span>
+        <BookOpen size={16} />
+        <span>GRUNDLAGEN · {basics.context}</span>
       </div>
       <h2>
         <UnitText>{basics.question}</UnitText>
@@ -20,8 +21,9 @@ export default function LessonBrief({ lessonId, onExperiment }) {
       <p className="brief-answer">
         <UnitText>{basics.answer}</UnitText>
       </p>
+      {lessonId === "current" && <CurrentPrimer />}
       <div className="brief-basics">
-        <span className="brief-label">DAS BRAUCHST DU ZUERST</span>
+        <span className="brief-label">DAS SOLLTEST DU JETZT VERSTEHEN</span>
         <ul>
           {basics.essentials.map((point) => (
             <li key={point}>
@@ -31,13 +33,13 @@ export default function LessonBrief({ lessonId, onExperiment }) {
           ))}
         </ul>
       </div>
-      <QuantityLegend items={basics.units} compact />
+      <QuantityLegend items={basics.units} />
       <article
         className="it-worked-example"
-        aria-label="Beispiel aus der IT-Praxis"
+        aria-label="Schrittweise erklärtes Beispiel"
       >
         <header>
-          <span>PRAXISBEISPIEL</span>
+          <span>BEISPIEL · SCHRITT FÜR SCHRITT</span>
           <h3>{basics.example.title}</h3>
         </header>
         <p>

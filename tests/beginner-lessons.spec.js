@@ -18,7 +18,7 @@ test("all thirteen existing topics present adapted explanations and retain their
     await visit(page, `lesson/${lesson.id}`);
     if (lesson.id === "ohm") {
       await expect(
-        page.getByRole("region", { name: "Ohmsches Gesetz im IT-Alltag" }),
+        page.getByRole("region", { name: "Grundlagen des Ohmschen Gesetzes" }),
       ).toContainText(lessonBasics.ohm.answer);
       await page
         .getByRole("tab", { name: "Nachschlagen", exact: true })
@@ -48,10 +48,9 @@ test("coulomb and capacitance explanations are directly accessible in lessons an
 }) => {
   await visit(page, "lesson/current");
   const legend = page.locator(".lesson-brief .quantity-legend");
-  await expect(legend).toContainText("C = Coulomb");
-  await legend
-    .getByRole("button", { name: "Was bedeuten die Zeichen?" })
-    .click();
+  await expect(
+    legend.getByRole("button", { name: "Was bedeuten die Zeichen?" }),
+  ).toHaveAttribute("aria-expanded", "true");
   await expect(legend).toContainText("Q");
   await expect(legend).toContainText("C — Coulomb");
   await expect(
@@ -63,9 +62,6 @@ test("coulomb and capacitance explanations are directly accessible in lessons an
   );
   await visit(page, "lesson/capacitor");
   const capacitorLegend = page.locator(".lesson-brief .quantity-legend");
-  await capacitorLegend
-    .getByRole("button", { name: "Was bedeuten die Zeichen?" })
-    .click();
   await expect(capacitorLegend).toContainText("F — Farad");
   await expect(capacitorLegend).toContainText("gemessen wird sie in Farad");
 });

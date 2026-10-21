@@ -1,27 +1,27 @@
-/** Original beginner explanations, written around IT tasks. Full references stay available. */
+/** Topic-first beginner explanations with worked applications. Full references stay available. */
 export const lessonBasics = {
   current: {
-    context: "USB-Geräte und Netzteile",
-    question: "Drückt ein 3-A-Netzteil immer 3 A in den Router?",
+    context: "Elektrische Stromstärke",
+    question: "Was ist elektrischer Strom, und wie misst man seine Stärke?",
     answer:
-      "Nein. Die Stromangabe am Netzteil beschreibt seine maximale Lieferfähigkeit. Wie viel Strom tatsächlich fließt, hängt vom angeschlossenen Gerät und seinem Betriebszustand ab. Spannung, Stecker und Polarität müssen ebenfalls passen.",
+      "Elektrischer Strom ist die gerichtete Bewegung elektrischer Ladung. In einem Metalldraht übernehmen das die negativ geladenen Elektronen. Die Stromstärke beschreibt, wie viel Ladung pro Sekunde durch einen Querschnitt fließt. Sie wird in Ampere gemessen. Bevor wir rechnen, klären wir, warum die Ladungen überhaupt in Bewegung kommen.",
     essentials: [
-      "Stromstärke bedeutet Ladung pro Zeit, nicht Elektronengeschwindigkeit.",
-      "Im Metalldraht bewegen sich Elektronen; die technische Stromrichtung ist entgegengesetzt.",
-      "Eine Stromangabe auf dem Netzteil ist eine Grenze, kein erzwungener Verbrauch.",
+      "Die Quelle stellt Spannung und Energie bereit; die Elektronen sind bereits im Draht vorhanden.",
+      "Für dauerhaften Gleichstrom braucht es einen geschlossenen leitfähigen Weg. Elektronen driften im äußeren Metallkreis von Minus nach Plus.",
+      "1 A bedeutet 1 Coulomb Ladung pro Sekunde. Mehr Ampere bedeuten mehr Ladung pro Zeit, nicht automatisch mehr Spannung.",
     ],
     units: ["current", "charge", "time"],
     example: {
-      title: "Eine Stromstärke richtig lesen",
+      title: "Von der Ladungsmenge zur Stromstärke",
       given:
-        "Im virtuellen Leiter passieren in 4 s insgesamt 2 C Ladungsbetrag den Querschnitt.",
+        "In einem geschlossenen Modellstromkreis wird an einer festen Stelle im Draht gemessen: In 4 s fließen insgesamt 2 C Ladungsbetrag durch den Querschnitt. Gesucht ist die mittlere Stromstärke.",
       steps: [
-        "C bedeutet Coulomb: die insgesamt transportierte Ladung. s bedeutet Sekunde: die dafür benötigte Zeit.",
-        "Teile die Ladungsmenge 2 durch die Zeit 4. So erhältst du die Ladung pro Sekunde.",
-        "Das Ergebnis ist 0,5 A. Dieselbe Stromstärke kannst du als 500 mA schreiben.",
+        "Ordne die Angaben zu: Q ist die Ladungsmenge, hier 2 Coulomb (2 C). t ist die Zeit, hier 4 Sekunden (4 s). Ein Querschnitt ist eine gedachte Schnittfläche durch den Draht, an der wir die vorbeifließende Ladung zählen.",
+        "Gesucht ist die Ladung in einer Sekunde. Teile deshalb die gesamte Ladungsmenge durch die gesamte Zeit: 2 geteilt durch 4 ergibt 0,5 Coulomb pro Sekunde.",
+        "Ein Coulomb pro Sekunde heißt ein Ampere. Die mittlere Stromstärke beträgt also 0,5 A. Milli bedeutet ein Tausendstel: 0,5 A sind 500 mA. Kontrolle: 0,5 Coulomb je Sekunde ergeben in 4 Sekunden wieder 2 Coulomb.",
       ],
       result:
-        "0,5 A = 500 mA. Das ist ein Ladungsfluss, noch keine Leistung in Watt.",
+        "Die mittlere Stromstärke beträgt 0,5 A = 500 mA. Pro Sekunde passiert ein Ladungsbetrag von 0,5 Coulomb die Messstelle.",
     },
     sections: {
       "charge-carriers":
@@ -39,11 +39,10 @@ export const lessonBasics = {
     },
   },
   circuits: {
-    context: "Mehrere Geräte versorgen",
-    question:
-      "Warum geht dein Monitor nicht aus, wenn du den zweiten ausschaltest?",
+    context: "Stromkreisarten",
+    question: "Wie unterscheiden sich Reihen- und Parallelschaltung?",
     answer:
-      "Die Geräte sind nicht wie Glieder einer Kette hintereinandergeschaltet. Sie haben eigene Zweige an einer gemeinsamen Versorgung. Jeder Zweig kann getrennt arbeiten; die gemeinsame Versorgung muss den Gesamtbedarf tragen.",
+      "Ein Stromkreis verbindet eine Quelle über Leitungen und Verbraucher zu einem geschlossenen Weg. In einer Reihenschaltung gibt es nur einen gemeinsamen Strompfad. In einer Parallelschaltung teilt sich der Strom auf mehrere Zweige auf. Aus dieser Verbindung ergeben sich die Regeln für Strom und Spannung.",
     essentials: [
       "In Reihe gibt es einen gemeinsamen Stromweg.",
       "Parallel liegen die Zweige an derselben Spannung.",
@@ -78,15 +77,14 @@ export const lessonBasics = {
     },
   },
   voltage: {
-    context: "Passendes Netzteil auswählen",
-    question:
-      "Der Stecker passt. Darfst du deshalb ein 19-V-Netzteil am 12-V-Router verwenden?",
+    context: "Elektrische Spannung",
+    question: "Was ist Spannung, und warum kann sie ohne Strom vorhanden sein?",
     answer:
-      "Nein. Gleicher Stecker bedeutet nicht passende Versorgung. Die Ausgangsspannung, Gleich- oder Wechselspannung, Polarität, Steckerbelegung und ausreichende Strombelastbarkeit müssen den Herstellerangaben entsprechen.",
+      "Spannung beschreibt den elektrischen Unterschied zwischen zwei Punkten: wie viel Energie pro Ladungsmenge übertragen werden kann. Anschaulich ist sie der elektrische Antrieb. Sie wird in Volt gemessen. An einer Batterie kann Spannung anliegen, obwohl der Schalter offen ist und kein dauerhafter Strom fließt.",
     essentials: [
       "Spannung U wird zwischen zwei Punkten angegeben und in Volt gemessen.",
       "Spannung und Strom sind verschiedene Größen.",
-      "USB Power Delivery handelt unterstützte Spannungsprofile aus; eine höhere Spannung wird nicht beliebig angelegt.",
+      "Ein Voltmeter misst zwischen zwei Punkten und wird parallel zum betrachteten Bauteil angeschlossen.",
     ],
     units: ["voltage", "current", "energy", "charge"],
     example: {
@@ -117,11 +115,10 @@ export const lessonBasics = {
     },
   },
   resistance: {
-    context: "Kabel, Steckkontakte und Erwärmung",
-    question:
-      "Warum kann ein schlechtes Kabel trotz passendem Netzteil Probleme machen?",
+    context: "Elektrischer Widerstand",
+    question: "Was begrenzt den Strom in einem Leiter oder Bauteil?",
     answer:
-      "Kabel und Kontakte haben einen elektrischen Widerstand. Bei Stromfluss fällt daran Spannung ab und ein Teil der Energie wird zu Wärme. Am Gerät kann deshalb weniger Spannung ankommen als am Ausgang des Netzteils.",
+      "Der elektrische Widerstand beschreibt das Verhältnis von Spannung zu Strom an einem Bauteil. Bei gleicher Spannung fließt durch einen größeren ohmschen Widerstand weniger Strom. Material, Länge, Querschnitt und Temperatur beeinflussen den Leitungswiderstand. Fließt Strom, wird dabei elektrische Energie in Wärme umgewandelt.",
     essentials: [
       "Widerstand R wird in Ohm (Ω) angegeben.",
       "Längere Leitungen haben bei gleichem Material und Querschnitt mehr Widerstand.",
@@ -156,11 +153,10 @@ export const lessonBasics = {
     },
   },
   ohm: {
-    context: "Spannungsabfall an einer Leitung",
-    question:
-      "Was verändert sich, wenn ein Kabel einen größeren Widerstand hat?",
+    context: "Ohmsches Gesetz",
+    question: "Wie hängen Spannung, Stromstärke und Widerstand zusammen?",
     answer:
-      "Bei vorgegebenem Strom fällt an einem größeren Kabelwiderstand mehr Spannung ab. Bei vorgegebener Spannung fließt durch einen größeren ohmschen Widerstand dagegen weniger Strom. Entscheidend ist immer, welche Größe gleich bleibt.",
+      "Das Ohmsche Gesetz verbindet Spannung, Stromstärke und Widerstand an einem ohmschen Bauteil. Bei gleichbleibender Temperatur ist sein Widerstand annähernd konstant: Eine doppelte Spannung bewirkt dann einen doppelten Strom. Bei gleicher Spannung bewirkt ein doppelter Widerstand dagegen einen halb so großen Strom. Du kannst jeweils eine Größe aus den beiden anderen bestimmen.",
     essentials: [
       "Wähle zuerst das betrachtete Bauteil und die gesuchte Größe.",
       "U und I müssen sich auf dasselbe Bauteil beziehen.",
@@ -195,14 +191,14 @@ export const lessonBasics = {
     },
   },
   energy: {
-    context: "Stromkosten eines Arbeitsplatzes",
-    question: "Was kostet es, einen PC jeden Arbeitstag laufen zu lassen?",
+    context: "Elektrische Energie und Arbeit",
+    question: "Wie viel elektrische Energie wird insgesamt übertragen?",
     answer:
-      "Dafür brauchst du die mittlere aufgenommene Leistung und die Betriebszeit. Die Wattzahl allein ist noch kein Verbrauch. Erst über die Zeit entsteht eine Energiemenge, die auf der Stromrechnung meist in kWh steht.",
+      "Elektrische Energie kann in Wärme, Licht oder Bewegung umgewandelt werden. Elektrische Arbeit beschreibt die Übertragung dieser Energie. Bei gleichbleibender Leistung hängt die insgesamt umgesetzte Energiemenge von der Betriebsdauer ab: Doppelt so lange bedeutet doppelt so viel Energie. Gemessen wird Energie in Joule oder im Alltag in Wattstunden und Kilowattstunden.",
     essentials: [
       "Watt und Kilowatt beschreiben Leistung.",
       "Wh und kWh beschreiben Energie über eine Betriebsdauer.",
-      "Für eine Kostenrechnung brauchst du zusätzlich den Preis je kWh.",
+      "Energie bleibt erhalten: Ein Verbraucher wandelt sie um, er verbraucht keine Ladungsträger.",
     ],
     units: ["power", "kilowattHour", "time", "energy"],
     example: {
@@ -233,14 +229,14 @@ export const lessonBasics = {
     },
   },
   power: {
-    context: "USB und PoE-Leistungsbudget",
-    question: "Reicht die Versorgung für alle angeschlossenen Geräte?",
+    context: "Elektrische Leistung",
+    question: "Wie schnell wird elektrische Energie umgesetzt?",
     answer:
-      "Die Leistung beschreibt den momentanen Energieumsatz. Bei einer definierten Gleichstromversorgung ergibt sie sich aus Spannung mal Stromstärke. Für ein Netzteil oder einen PoE-Switch musst du zusätzlich dessen Gesamt- und Anschlussgrenzen beachten.",
+      "Die elektrische Leistung beschreibt den Energieumsatz pro Zeit. 1 Watt bedeutet 1 Joule pro Sekunde. Für Gleichstrom ergibt sich die Leistung an einem Anschluss aus seiner Spannung mal seiner Stromstärke. Die gesamte umgesetzte Energie kennst du erst, wenn du zusätzlich die Betriebsdauer berücksichtigst.",
     essentials: [
       "P ist die Leistung; W ist ihre Einheit Watt.",
       "1 kW sind 1000 W. Ein höherer Nennwert ist nicht automatisch höherer Verbrauch.",
-      "PoE-Gesamtbudget, einzelne Portgrenzen und Aushandlung müssen zusammen passen.",
+      "Leistung in Watt und Energie in Wattstunden sind unterschiedliche Größen: Zur Energie gehört die Betriebsdauer.",
     ],
     units: ["power", "voltage", "current", "kilowattHour"],
     example: {
@@ -270,11 +266,10 @@ export const lessonBasics = {
     },
   },
   efficiency: {
-    context: "Netzteilverluste und Kühlung",
-    question:
-      "Warum kommt am PC weniger Leistung an, als das Netzteil aus dem Netz aufnimmt?",
+    context: "Wirkungsgrad",
+    question: "Welcher Anteil der zugeführten Energie ist nutzbar?",
     answer:
-      "Bei der Umwandlung entstehen Verluste, meist als Wärme. Der Wirkungsgrad beschreibt den nutzbaren Anteil. Deshalb ist die elektrische Ausgangsleistung eines Netzteils nicht gleich seiner Aufnahmeleistung.",
+      "Der Wirkungsgrad vergleicht die nutzbar abgegebene mit der zugeführten Energie. Bei gleichbleibendem Betrieb kannst du auch die Leistungen vergleichen. 80 % bedeuten: Von 100 zugeführten Anteilen sind 80 für den gewünschten Zweck nutzbar. Der Rest ist nicht verschwunden, sondern wird beispielsweise in Wärme umgewandelt.",
     essentials: [
       "η heißt Eta und bezeichnet den Wirkungsgrad.",
       "80 % entsprechen dem Rechenfaktor 0,8.",
@@ -308,15 +303,14 @@ export const lessonBasics = {
     },
   },
   field: {
-    context: "ESD und empfindliche Elektronik",
-    question:
-      "Warum kann eine kleine Entladung für Elektronik problematisch sein?",
+    context: "Elektrisches Feld",
+    question: "Wie können Ladungen ohne Berührung aufeinander wirken?",
     answer:
-      "Getrennte Ladungen erzeugen ein elektrisches Feld. Beim Ladungsausgleich kann ein kurzer Stromimpuls entstehen. ESD-Schutz soll solche unkontrollierten Entladungen an empfindlichen Bauteilen verhindern.",
+      "Ein elektrisches Feld beschreibt die Kraftwirkung auf Ladungen im Raum. Positive und negative Ladungen erfahren im gleichen Feld entgegengesetzte Kräfte. Die Feldstärke gibt an, wie groß die Kraft pro Ladung am betrachteten Ort ist. Ein Feld kann bestehen, obwohl kein dauerhafter Strom fließt.",
     essentials: [
       "Ein elektrisches Feld wirkt auf Ladungen, auch wenn noch kein dauerhafter Strom fließt.",
       "Spannung und Feldstärke sind verschiedene Größen.",
-      "Für den IT-Alltag ist zuerst das Verständnis von Aufladung und Entladung wichtig; Feldberechnungen sind die Vertiefung.",
+      "Ein Feldpfeil zeigt die Kraft auf eine positive Probeladung. Auf ein Elektron wirkt die Kraft entgegengesetzt.",
     ],
     units: ["field", "voltage", "charge"],
     example: {
@@ -347,10 +341,10 @@ export const lessonBasics = {
     },
   },
   capacitor: {
-    context: "Spannung puffern und Ladung speichern",
-    question: "Was machen die Kondensatoren auf einer Platine?",
+    context: "Kondensator und Kapazität",
+    question: "Wie speichert ein Kondensator elektrische Energie?",
     answer:
-      "Kondensatoren können kurzzeitig Ladung und Energie in einem elektrischen Feld speichern. In Schaltungen helfen sie beispielsweise beim Puffern oder Filtern. Ein Kondensator ist aber keine beliebig große Ersatzbatterie.",
+      "Ein Kondensator besteht aus zwei leitenden Flächen, die durch einen Isolierstoff getrennt sind. Beim Laden entstehen gleich große entgegengesetzte Ladungen auf den beiden Seiten. Die Energie steckt im elektrischen Feld dazwischen. Seine Kapazität beschreibt den Ladungsbetrag pro Volt; sie wird in Farad gemessen.",
     essentials: [
       "C als Größenzeichen heißt Kapazität; die Einheit ist Farad (F).",
       "C hinter einer Zahl kann Coulomb bedeuten. Ladung und Kapazität sind nicht dasselbe.",
@@ -384,26 +378,27 @@ export const lessonBasics = {
     },
   },
   magnets: {
-    context: "HDD, Lüfter und SSD unterscheiden",
-    question: "Ist eine SSD genauso magnetisch wie eine Festplatte?",
+    context: "Magnete und magnetische Feldlinien",
+    question: "Wie wirken Magnete, und was zeigen ihre Feldlinien?",
     answer:
-      "Eine HDD speichert Informationen magnetisch; eine SSD verwendet elektronische Speicherzellen. Ein Lüfter nutzt wiederum magnetische Kräfte zur Bewegung. Das gleiche Wort Magnetismus kann also im IT-Alltag sehr unterschiedliche Aufgaben betreffen.",
+      "Ein gewöhnlicher Magnet besitzt einen Nord- und einen Südpol. Gleichnamige Pole stoßen sich ab, ungleichnamige ziehen sich an. Seine Wirkung beschreiben wir mit einem Magnetfeld. Feldlinien zeigen dessen Richtung; außerhalb eines Magneten verlaufen sie von Nord nach Süd und setzen sich im Inneren zu geschlossenen Verläufen fort.",
     essentials: [
       "Magnete haben Nord- und Südpol.",
       "Feldlinien beschreiben die Richtung des Feldes, nicht eine sichtbare Substanz.",
-      "Magnetische Speicherung und elektronische Speicherung sind unterschiedliche Prinzipien.",
+      "Ein Kompass richtet sich nach dem Magnetfeld an seinem Ort aus. Die Feldrichtung kann durch mehrere Quellen gemeinsam bestimmt werden.",
     ],
     units: ["fluxDensity", "flux"],
     example: {
-      title: "Drei Bauteile, drei Aufgaben",
-      given: "Du ordnest HDD, SSD und Lüfter nach ihrem Funktionsprinzip ein.",
+      title: "Zwei Stabmagnete und ein Kompass",
+      given:
+        "Du betrachtest zwei Stabmagnete mit markiertem Nord- und Südpol und eine kleine Kompassnadel in ihrer Umgebung.",
       steps: [
-        "Bei der HDD werden magnetische Zustände zur Speicherung verwendet.",
-        "Die SSD verwendet Flash-Speicher und benötigt dafür keinen magnetischen Schreibmechanismus.",
-        "Im Lüftermotor wirken Magnetfelder und elektrische Ströme zusammen, um Bewegung zu erzeugen.",
+        "Bringst du Nordpol und Südpol zueinander, ziehen sich die Magnete an. Nordpol vor Nordpol oder Südpol vor Südpol führt zur Abstoßung.",
+        "Die Kompassnadel richtet sich nach dem Magnetfeld an ihrem Ort aus. Ihr Nordende zeigt in die Richtung der Feldlinie, außerhalb eines einzelnen Stabmagneten also vom Nordpol zum Südpol.",
+        "Berücksichtige beide Magnete: Ihre Felder überlagern sich. Die Nadel zeigt die gemeinsame Wirkung am Messort, nicht automatisch direkt auf einen bestimmten Pol.",
       ],
       result:
-        "HDD: magnetisch speichern. SSD: elektronisch speichern. Lüfter: elektrische Energie in Bewegung umwandeln.",
+        "Pole erklären Anziehung und Abstoßung. Der Kompass zeigt die örtliche Feldrichtung; Feldlinien stellen diese Richtung im Raum dar.",
     },
     sections: {
       "magnets-poles":
@@ -421,8 +416,8 @@ export const lessonBasics = {
     },
   },
   electromagnetism: {
-    context: "Lüftermotoren und Schaltnetzteile",
-    question: "Wie wird aus elektrischem Strom eine Bewegung?",
+    context: "Elektromagnetismus und Induktion",
+    question: "Wie hängen Strom, Magnetfeld und induzierte Spannung zusammen?",
     answer:
       "Ein Strom erzeugt ein Magnetfeld. In einem Motor wirken elektrische Ströme und Magnetfelder so zusammen, dass ein Drehmoment entsteht. Umgekehrt kann eine Änderung des magnetischen Flusses eine Spannung hervorrufen.",
     essentials: [
@@ -459,15 +454,14 @@ export const lessonBasics = {
     },
   },
   "magnetic-quantities": {
-    context: "Datenblätter und magnetische Bauteile einordnen",
-    question:
-      "Warum stehen bei Magnetfeldern mehrere unterschiedliche Buchstaben?",
+    context: "Magnetische Größen",
+    question: "Was beschreiben Flussdichte B, Feldstärke H und Fluss Φ?",
     answer:
-      "Weil nicht jede Angabe dieselbe Frage beantwortet: B beschreibt eine Flussdichte, H eine magnetische Feldstärke und Φ einen Fluss durch eine Fläche. Für Fachinformatiker zählt zuerst, diese Angaben nicht zu verwechseln; die genaue Magnetkreisrechnung ist die Vertiefung.",
+      "B beschreibt die magnetische Flussdichte am betrachteten Ort. H ist die magnetische Feldstärke; ihr Zusammenhang mit B hängt vom Material ab. Der magnetische Fluss Φ berücksichtigt eine Fläche und die Ausrichtung des Feldes zu dieser Fläche. Die Größen sind verwandt, besitzen aber unterschiedliche Bedeutungen und Einheiten.",
     essentials: [
       "B wird in Tesla (T), H in Ampere pro Meter (A/m) und Φ in Weber (Wb) angegeben.",
       "Der Kernwerkstoff und die Geometrie beeinflussen die Wirkung einer Spule.",
-      "Das ist Hintergrundwissen für Bauteile, kein kompletter Entwurfskurs für Netzteile.",
+      "Zum magnetischen Fluss gehören eine betrachtete Fläche und ihre Ausrichtung zum Feld.",
     ],
     units: ["fluxDensity", "magneticField", "flux", "inductance"],
     example: {

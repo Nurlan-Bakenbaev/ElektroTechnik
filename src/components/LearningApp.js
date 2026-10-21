@@ -43,7 +43,7 @@ import {
 } from "lucide-react";
 import { lessons, categories, getLesson, allTerms } from "../data/course.js";
 import { examQuestions, formulaSheet, sources } from "../data/exam.js";
-import { quickConcepts } from "../data/quick-concepts.js";
+import Essentials from "./Essentials";
 import { illustrations } from "../data/illustrations.js";
 import {
   STORAGE_KEY,
@@ -66,6 +66,7 @@ import { lessonBasics } from "../data/lesson-basics.js";
 import LessonBrief from "./LessonBrief";
 import QuantityLegend, { UnitText } from "./QuantityLegend";
 import PowerSupplyDemo from "./PowerSupplyDemo";
+import LessonVideo from "./LessonVideo";
 import Notation from "./Notation";
 import dynamic from "next/dynamic";
 const ReferenceLesson = dynamic(() => import("./lesson/ReferenceLesson"), {
@@ -1105,6 +1106,7 @@ function Lesson({ lesson, profile, bookmark, onComplete }) {
           )}
         </div>
       </div>
+      <LessonVideo key={lesson.id} lessonId={lesson.id} />
       <div
         className="lesson-tabs"
         role="tablist"
@@ -2116,193 +2118,6 @@ function VisualGallery() {
         })}
       </div>
     </section>
-  );
-}
-function Essentials() {
-  return (
-    <>
-      <PageIntro
-        eyebrow="FÜR DEN ALLERERSTEN SCHRITT"
-        title="Was bedeuten die Begriffe?"
-        text="Ein Nachschlagebereich für die Grundlagen. Die 13 Lektionen erklären die Zusammenhänge mit IT-Beispielen; hier kannst du ein einzelnes Wort wiederholen."
-      />
-      <QuantityLegend
-        items={[
-          "current",
-          "charge",
-          "voltage",
-          "power",
-          "kilowattHour",
-          "capacitance",
-        ]}
-        compact
-      />
-      <section className="origin-card">
-        <div className="eyebrow">
-          <Zap size={16} />
-          WOHER KOMMT DER STROM?
-        </div>
-        <h2>
-          Die Quelle gibt Energie.
-          <br />
-          Es sind bereits Ladungen im Kabel vorhanden.
-        </h2>
-        <p>
-          Ein Metalldraht verfügt bereits vor dem Einschalten über bewegliche
-          Elektronen. Sie bewegen sich ungeordnet; dabei gibt es noch keinen
-          gerichteten Ladungstransport. Aufgrund chemischer Reaktionen bleibt in
-          der Batterie eine Potentialdifferenz bestehen. Sobald der Stromkreis
-          geschlossen ist, entsteht ein elektrisches Feld, das die Elektronen
-          langsam driften lässt. Der Generator nutzt mechanische Energie
-          anstelle chemischer Energie.
-        </p>
-        <div className="origin-steps">
-          {[
-            {
-              symbol: "U",
-              title: "Quelle",
-              text: "Hält Spannung aufrecht und überträgt Energie.",
-            },
-            {
-              symbol: "E",
-              title: "Feld",
-              text: "Wirkt auf Ladungen in einem leitenden Pfad.",
-            },
-            {
-              symbol: "I",
-              title: "Strom",
-              text: "Ladungen bewegen sich entlang eines geschlossenen Kreislaufs gerichtet.",
-            },
-            {
-              symbol: "P",
-              title: "Leistung",
-              text: "Das Gerät wandelt Energie in Licht, Wärme oder Bewegung um.",
-            },
-          ].map((s, i) => (
-            <div key={s.symbol}>
-              <span>{s.symbol}</span>
-              <strong>{s.title}</strong>
-              <p>{s.text}</p>
-              {i < 3 && <ArrowRight size={14} />}
-            </div>
-          ))}
-        </div>
-        <div className="origin-note">
-          <Lightbulb size={19} />
-          <p>
-            Die Lampe „frisst“ keine Elektronen, sondern wandelt Energie um. In
-            einem normalen Stromkreis bleibt die Ladung erhalten. Das Feld baut
-            sich schnell auf, obwohl die Elektronen selbst langsam driften.
-          </p>
-        </div>
-        <a className="text-link" href="#/lesson/current">
-          Im Detail verstehen – die erste Lektion
-          <ArrowRight size={15} />
-        </a>
-      </section>
-      <div className="section-heading concepts-heading">
-        <div>
-          <span className="eyebrow">ZWÖLF WICHTIGE GRUNDBEGRIFFE</span>
-          <h2>Wörterbuch ohne unnötige Komplexität.</h2>
-        </div>
-      </div>
-      <div className="concepts-grid">
-        {quickConcepts.map((c, i) => (
-          <Reveal
-            as="article"
-            delay={(i % 2) * 0.06}
-            className="concept-card"
-            key={c.id}
-          >
-            <div className="concept-top">
-              <span>{String(i + 1).padStart(2, "0")}</span>
-              <span>
-                <Notation>{c.symbol}</Notation>
-              </span>
-            </div>
-            <h2>{c.title}</h2>
-            <span className="concept-german">
-              {c.german} · {c.unit}
-            </span>
-            <p className="concept-definition">{c.short}</p>
-            <details>
-              <summary>
-                Stellen wir uns das anhand eines Beispiels vor
-                <ChevronDown size={14} />
-              </summary>
-              <p>{c.analogy}</p>
-            </details>
-            <div className="concept-pitfall">
-              <Lightbulb size={15} />
-              <p>{c.pitfall}</p>
-            </div>
-            <a className="text-link" href={`#/lesson/${c.lessonId}`}>
-              Gehen Sie zur detaillierten Lektion
-              <ArrowUpRight size={14} />
-            </a>
-          </Reveal>
-        ))}
-      </div>
-      <section className="first-calculations">
-        <div className="section-heading">
-          <div>
-            <span className="eyebrow">Versuchen wir es zu lösen</span>
-            <h2>Die Formel ist eine Kurzgeschichte.</h2>
-          </div>
-        </div>
-        <div className="starter-example">
-          <span>01</span>
-          <div>
-            <h3>Wie finde ich die Stromstärke?</h3>
-            <p>
-              In 10 s fließen 20 C Ladung durch den Draht. Zuerst schreiben wir:
-              Q = 20 C, t = 10 s. Wir wählen I = Q/t. Wir ersetzen Zahlen durch
-              Einheiten: I = 20 C / 10 s = 2 A.
-            </p>
-            <strong>Ergebnis: 2 A — 2 Ampere.</strong>
-            <small>
-              Überprüfen Sie: 2 Ampere sind 2 Coulomb pro Sekunde. In 10
-              Sekunden erhalten Sie 20 Coulomb.
-            </small>
-            <a className="text-link" href="#/lesson/current">
-              In der Lektion üben
-              <ArrowRight size={14} />
-            </a>
-          </div>
-        </div>
-        <div className="starter-example">
-          <span>02</span>
-          <div>
-            <h3>Wie viel Energie verbraucht das Gerät?</h3>
-            <p>
-              Die Leistung des Gerätes beträgt 1.500 W, die Betriebszeit beträgt
-              20 Minuten. Rechnen wir in praktische Einheiten um: 1.500 W = 1,5
-              kW, 20 Minuten = ⅓ Stunde. Multiplizieren Sie Leistung mit Zeit.
-            </p>
-            <strong>Ergebnis: 0,5 kWh — eine halbe Kilowattstunde.</strong>
-            <small>
-              In Joule: 1.500 W · 1.200 s = 1.800.000 J. Ein Ergebnis, zwei
-              Energieeinheiten.
-            </small>
-            <a className="text-link" href="#/lesson/energy">
-              Weitere Rechenbeispiele
-              <ArrowRight size={14} />
-            </a>
-          </div>
-        </div>
-      </section>
-      <div className="essentials-next">
-        <h2>Jetzt haben die Worte eine Bedeutung.</h2>
-        <p>
-          Jede Lektion enthält eine ausführlichere Erklärung, Diagramme, einen
-          Simulator und fünf Fragen – einschließlich Rechenaufgaben.
-        </p>
-        <a className="button button-dark" href="#/lesson/current">
-          Beginnen Sie mit dem ersten Thema
-          <ArrowRight size={17} />
-        </a>
-      </div>
-    </>
   );
 }
 

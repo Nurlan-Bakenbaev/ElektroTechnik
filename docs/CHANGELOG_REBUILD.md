@@ -2,6 +2,10 @@
 
 ## 2026-10-20
 
+- Added a different German YouTube video to each of the thirteen lessons, including the Ohm workspace. Official embed metadata confirms complete durations from 2:24 to 4:44 and initial embed availability. The player loads only on request, closes on dismissal/topic changes, and has an external fallback. Sources and observed metadata are documented separately.
+- Replaced the short essentials cards with twelve topic-first explanations, worked examples, explicit symbol/unit definitions and unscored self-checks with corrective feedback. Added grouped topic navigation, responsive reading layout and links to the existing lessons.
+- Reframed all thirteen lesson introductions around their actual electrical topic. The current lesson now teaches charge carriers, source, closed circuit and both directions before its calculation; added an attributed OpenStax circuit illustration and expanded legends before worked examples.
+
 - Adapted all thirteen existing topics for beginner Fachinformatik trainees. Added original IT introductions, worked examples and 78 concise section explanations in `src/data/lesson-basics.js`; retained every original reference paragraph in expandable sections.
 - Added shared quantity/unit legends and numeric unit annotations in lessons, labs and quiz feedback. Explicitly distinguished charge Q in coulomb (C), capacitance C in farad (F), energy and power.
 - Rebuilt the shared shell, homepage and course directory as an IT learning workshop. The homepage now demonstrates supply rating versus device demand with the existing physical model; the directory shows practical context and existing progress/bookmarks.
