@@ -126,6 +126,13 @@ body {
   padding: 32px;
   max-width: 1650px;
 }
+.dashboard-title {
+  margin: 22px 0 28px;
+  color: #153b51;
+  font-size: clamp(28px, 3vw, 38px);
+  line-height: 1.25;
+  letter-spacing: -0.03em;
+}
 .button-dark {
   color: #fff;
   background: #0c3d55;

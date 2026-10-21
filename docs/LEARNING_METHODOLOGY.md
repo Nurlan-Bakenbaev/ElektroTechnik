@@ -1,5 +1,13 @@
 # Teaching electrical engineering through action
 
+## Collections and course scope
+
+The canonical thirteen-lesson list defines the video library, summaries and topic-test index. Each entry retains its chapter number and links to its existing lesson. The formula library uses the same topic identifiers. No new course subjects or progression requirements are added. Summaries give the concept's meaning, three essential rules and a quantity/unit legend; they supplement the worked examples and experiments. The test index opens the existing quizzes directly, shows the best retained score and explains the final-exam prerequisites without modifying them.
+
+The optional local German videos are openly licensed university material. Relevant excerpts are labelled as shortened, with visible source/license credit. Viewing prompts identify what to look for and disclose narrower coverage or advanced derivations. Videos do not award XP; answering the existing topic questions still determines completion. See [video selection and scope](VIDEO_SOURCES.md).
+
+## Reference lesson
+
 The reference lesson follows Problem → Observe → Predict → Experiment → Explain → Apply → Check → Reflect. It is designed for beginners who know the words voltage, current and resistance but have not yet connected them mathematically.
 
 1. Present a 12 V circuit and ask what a larger resistor changes.

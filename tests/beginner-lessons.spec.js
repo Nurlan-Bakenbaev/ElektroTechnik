@@ -91,25 +91,23 @@ test("the new course directory preserves category filters, bookmarks and lesson 
   await expect(page).toHaveURL(/#\/lesson\/energy$/);
 });
 
-test("the redesigned homepage demonstrates supply capacity without forcing current and fits mobile screens", async ({
+test("the homepage starts with learning content without the removed supply banner and fits mobile screens", async ({
   page,
 }) => {
   const errors = [];
   page.on("pageerror", (error) => errors.push(error.message));
   await page.emulateMedia({ reducedMotion: "reduce" });
   await visit(page);
-  const demo = page.getByRole("region", { name: "Netzteil ausprobieren" });
-  await expect(demo.locator("output").first()).toHaveText("1 A");
-  await demo.getByRole("radio", { name: "2 A", exact: true }).check();
-  await expect(demo.locator("output").first()).toHaveText("1 A");
-  await demo.getByRole("slider", { name: /Strombedarf/ }).press("End");
-  await expect(demo.locator(".supply-verdict")).toContainText(
-    "reicht die Strombelastbarkeit nicht",
-  );
-  await demo.getByRole("radio", { name: "3 A", exact: true }).check();
-  await expect(demo.locator(".supply-verdict")).toContainText(
-    "Für diesen Bedarf ausreichend",
-  );
+  await expect(
+    page.getByRole("heading", { name: "Deine Lernübersicht", level: 1 }),
+  ).toBeVisible();
+  await expect(page.locator(".hero")).toHaveCount(0);
+  await expect(
+    page.getByRole("region", { name: "Netzteil ausprobieren" }),
+  ).toHaveCount(0);
+  await expect(
+    page.getByRole("region", { name: "Kurszusammensetzung" }),
+  ).toBeVisible();
   await page.screenshot({
     path: "docs/screenshots/azubi-home-desktop.png",
     fullPage: true,

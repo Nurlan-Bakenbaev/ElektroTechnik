@@ -40,6 +40,7 @@ import {
   UserRound,
   X,
   Zap,
+  Video,
 } from "lucide-react";
 import { lessons, categories, getLesson, allTerms } from "../data/course.js";
 import { examQuestions, formulaSheet, sources } from "../data/exam.js";
@@ -65,8 +66,12 @@ import InteractiveLab from "./InteractiveLab";
 import { lessonBasics } from "../data/lesson-basics.js";
 import LessonBrief from "./LessonBrief";
 import QuantityLegend, { UnitText } from "./QuantityLegend";
-import PowerSupplyDemo from "./PowerSupplyDemo";
 import LessonVideo from "./LessonVideo";
+import {
+  VideoCollection,
+  SummaryCollection,
+  TestCollection,
+} from "./LearningCollections";
 import Notation from "./Notation";
 import dynamic from "next/dynamic";
 const ReferenceLesson = dynamic(() => import("./lesson/ReferenceLesson"), {
@@ -84,11 +89,19 @@ const navItems = [
   { id: "curriculum", label: "Lernpfad", icon: BookOpen },
   { id: "essentials", label: "Einfach erklärt", icon: Lightbulb },
   { id: "glossary", label: "Lexikon", icon: LibraryBig },
-  { id: "formulas", label: "Formelsammlung", icon: Atom },
   { id: "bookmarks", label: "Merkliste", icon: Bookmark },
 ];
+const collectionNavItems = [
+  { id: "videos", label: "Videos nach Themen", icon: Video },
+  { id: "summaries", label: "Zusammenfassungen", icon: BookOpen },
+  { id: "formulas", label: "Formeln & Einheiten", icon: Atom },
+  { id: "tests", label: "Alle Tests", icon: CheckCircle2 },
+];
 function readRoute() {
-  const [view, id] = window.location.hash.replace(/^#\/?/, "").split("/");
+  const [path, query = ""] = window.location.hash
+    .replace(/^#\/?/, "")
+    .split("?");
+  const [view, id] = path.split("/");
   return {
     view: [
       "home",
@@ -101,10 +114,14 @@ function readRoute() {
       "bookmarks",
       "profile",
       "sources",
+      "videos",
+      "summaries",
+      "tests",
     ].includes(view)
       ? view
       : "home",
     id: id || "",
+    tab: new URLSearchParams(query).get("tab") === "quiz" ? "quiz" : "",
   };
 }
 function go(view, id = "") {
@@ -217,6 +234,9 @@ export default function LearningApp() {
           home: "Lernübersicht",
           curriculum: "Lernpfad",
           essentials: "Einfach erklärt",
+          videos: "Videos nach Themen",
+          summaries: "Zusammenfassungen",
+          tests: "Alle Tests",
           glossary: "Lexikon",
           formulas: "Verzeichnis der Formeln",
           bookmarks: "Merkliste",
@@ -269,19 +289,30 @@ export default function LearningApp() {
           ))}
         </nav>
         <div className="sidebar-divider" />
-        <div className="sidebar-label">TESTEN SIE SICH</div>
-        <a
-          className={`exam-nav ${route.view === "exam" ? "nav-active" : ""}`}
-          href="#/exam"
-        >
-          <GraduationCap size={20} strokeWidth={1.6} />
-          <span>Abschlussprüfung</span>
-          {progress.examUnlocked ? (
-            <span className="nav-dot" />
-          ) : (
-            <LockKeyhole size={14} />
-          )}
-        </a>
+        <div className="sidebar-label">LERNSAMMLUNGEN</div>
+        <nav className="main-nav collection-nav" aria-label="Lernsammlungen">
+          {collectionNavItems.map((item) => (
+            <a
+              key={item.id}
+              href={`#/${item.id}`}
+              className={
+                route.view === item.id ||
+                (item.id === "tests" && route.view === "exam")
+                  ? "nav-active"
+                  : ""
+              }
+              aria-current={
+                route.view === item.id ||
+                (item.id === "tests" && route.view === "exam")
+                  ? "page"
+                  : undefined
+              }
+            >
+              <item.icon size={19} strokeWidth={1.6} />
+              <span>{item.label}</span>
+            </a>
+          ))}
+        </nav>
         <div className="sidebar-course">
           <div className="sidebar-course-top">
             <span className="course-symbol">
@@ -385,7 +416,7 @@ export default function LearningApp() {
           </div>
         )}
         <motion.main
-          key={`${route.view}-${route.id}`}
+          key={`${route.view}-${route.id}-${route.tab || ""}`}
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           id="main-content"
@@ -404,14 +435,20 @@ export default function LearningApp() {
             <Curriculum profile={profile} bookmark={bookmark} />
           )}
           {route.view === "essentials" && <Essentials />}
+          {route.view === "videos" && <VideoCollection />}
+          {route.view === "summaries" && <SummaryCollection />}
+          {route.view === "tests" && (
+            <TestCollection profile={profile} progress={progress} />
+          )}
           {route.view === "bookmarks" && (
             <Bookmarks profile={profile} bookmark={bookmark} />
           )}
           {route.view === "lesson" &&
             (lesson ? (
               <Lesson
-                key={lesson.id}
+                key={`${lesson.id}-${route.tab || ""}`}
                 lesson={lesson}
+                initialTab={route.tab}
                 profile={profile}
                 bookmark={bookmark}
                 onComplete={(score) => {
@@ -616,44 +653,7 @@ function Dashboard({ profile, progress, current, bookmark }) {
         </span>
         <span className="course-badge">Ausbildung · Fachinformatik</span>
       </div>
-      <section className="hero">
-        <div className="hero-copy">
-          <div className="eyebrow">
-            <span className="green-dash" />
-            VOLT. / IT-LERNWERKSTATT
-          </div>
-          <h1>
-            12 Volt. 3 Ampere.
-            <br /> Was heißt das für dein Gerät?
-          </h1>
-          <p>
-            Was muss beim Netzteil passen? Warum wird ein Kabel warm? Lerne an
-            IT-Beispielen und schlage Volt, Ampere oder Kilowattstunden direkt
-            im Unterricht nach.
-          </p>
-          <div className="hero-actions">
-            <a className="button button-dark" href={`#/lesson/${current.id}`}>
-              {progress.completed ? "Weiterlernen" : "Jetzt loslernen"}
-              <ArrowUpRight size={18} />
-            </a>
-            <a className="text-link" href="#/curriculum">
-              Lernpfad entdecken
-              <ArrowRight size={15} />
-            </a>
-          </div>
-          <div className="hero-note">
-            <span className="mini-avatars">
-              <span>U</span>
-              <span>I</span>
-              <span>R</span>
-            </span>
-            <span>
-              Erst die Grundlagen. Dann rechnen. Bei Bedarf vertiefen.
-            </span>
-          </div>
-        </div>
-        <PowerSupplyDemo />
-      </section>
+      <h1 className="dashboard-title">Deine Lernübersicht</h1>
       <section className="course-stats" aria-label="Kurszusammensetzung">
         <div>
           <span className="stat-icon">
@@ -1024,8 +1024,8 @@ function Bookmarks({ profile, bookmark }) {
   );
 }
 
-function Lesson({ lesson, profile, bookmark, onComplete }) {
-  const [tab, setTab] = useState("theory");
+function Lesson({ lesson, profile, bookmark, onComplete, initialTab }) {
+  const [tab, setTab] = useState(initialTab === "quiz" ? "quiz" : "theory");
   const score = profile.results[lesson.id]?.score;
   const nextLesson = lessons[lesson.number];
   const Icon = icons[lesson.category];
@@ -1045,6 +1045,7 @@ function Lesson({ lesson, profile, bookmark, onComplete }) {
         profile={profile}
         bookmark={bookmark}
         onComplete={onComplete}
+        initialTab={initialTab}
       />
     );
   }
@@ -1533,15 +1534,15 @@ function Formulas() {
   return (
     <>
       <PageIntro
-        eyebrow="VERBINDUNGEN, DIE SICH NÜTZLICH ERINNERN SIND"
-        title="Weniger Pauken. Mehr verstehen."
-        text="Grundformeln des Kurses mit Dekodierung von Werten und Anwendungsbedingungen. Rechnen Sie Werte immer in kompatible Einheiten um."
+        eyebrow="LERNSAMMLUNGEN · FORMELN"
+        title="Alle Formeln mit Erklärung"
+        text="Die 20 Grundformeln des Kurses als Formelbilder: mit Bedeutung der Zeichen, Einheiten und Anwendungsbedingungen. Über den Link kommst du zur passenden Herleitung und Rechenaufgabe."
       />
       <div className="units-reminder">
         <Lightbulb size={21} />
         <p>
-          <strong>Bevor Sie zählen:</strong> 1 mA = 0,001 A · 1 kOhm = 1.000 Ohm
-          · 1 µF = 0,000001 F · 1 kWh = 3.600.000 J.
+          <strong>Vor dem Rechnen Einheiten umwandeln:</strong> 1 mA = 0,001 A ·
+          1 kΩ = 1.000 Ω · 1 µF = 0,000001 F · 1 kWh = 3.600.000 J.
         </p>
       </div>
       <div className="filter-tabs">
@@ -1576,10 +1577,13 @@ function Formulas() {
                 </span>
               </div>
               <FormulaImage expression={f.expression} />
-              <p>{f.legend}</p>
+              <p>
+                <UnitText>{f.legend}</UnitText>
+              </p>
               <small>{f.conditions}</small>
+              <QuantityLegend items={lessonBasics[f.lessonId].units} compact />
               <a href={`#/lesson/${f.lessonId}`}>
-                Verstehen Sie, wie es funktioniert
+                Herleitung und Beispiel ansehen
                 <ArrowUpRight size={14} />
               </a>
             </article>

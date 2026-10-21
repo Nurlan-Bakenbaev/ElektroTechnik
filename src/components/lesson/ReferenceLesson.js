@@ -61,6 +61,7 @@ export default function ReferenceLesson({
   profile,
   bookmark,
   onComplete,
+  initialTab,
 }) {
   const [state, dispatch] = useReducer(
     lessonReducer,
@@ -70,7 +71,7 @@ export default function ReferenceLesson({
   const [ready, setReady] = useState(false);
   const [warning, setWarning] = useState("");
   const [saved, setSaved] = useState(false);
-  const [tab, setTab] = useState("lesson");
+  const [tab, setTab] = useState(initialTab === "quiz" ? "quiz" : "lesson");
   const [symbol, setSymbol] = useState("I");
   const [navigationError, setNavigationError] = useState("");
   const heading = useRef(null);

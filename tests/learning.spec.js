@@ -464,9 +464,10 @@ test("beginner concepts, formula reference and all eight textbook illustrations 
     "Es sind bereits Ladungen im Kabel vorhanden",
   );
   await page.locator(".essential-comparison summary").click();
-  await expect(
-    page.locator(".essential-comparison"),
-  ).toHaveAttribute("open", "");
+  await expect(page.locator(".essential-comparison")).toHaveAttribute(
+    "open",
+    "",
+  );
   await visit(page, "formulas");
   await expect(page.locator(".reference-formula")).toHaveCount(20);
   for (const id of [
@@ -599,7 +600,7 @@ test("redesigned typography, interactive contrast and reduced-motion entrance re
   page,
 }) => {
   const errors = watchErrors(page);
-  await visit(page);
+  await visit(page, "tests");
   const styles = await page.evaluate(() =>
     [
       ".button-dark",
@@ -622,6 +623,7 @@ test("redesigned typography, interactive contrast and reduced-motion entrance re
       `${style.selector} should have readable text contrast`,
     ).toBeGreaterThanOrEqual(4.5);
   }
+  await visit(page);
   expect(
     await page
       .locator("body")
@@ -629,7 +631,7 @@ test("redesigned typography, interactive contrast and reduced-motion entrance re
   ).toBeGreaterThanOrEqual(17);
   expect(
     await page
-      .locator(".hero-copy > p")
+      .locator(".next-section .section-heading h2")
       .evaluate((element) => parseFloat(getComputedStyle(element).fontSize)),
   ).toBeGreaterThanOrEqual(17);
 
@@ -637,7 +639,7 @@ test("redesigned typography, interactive contrast and reduced-motion entrance re
   await expect(page.locator("html")).not.toHaveClass(/lenis/);
   expect(
     await page
-      .locator(".hero-copy")
+      .locator(".dashboard-title")
       .evaluate((element) => getComputedStyle(element).animationName),
   ).toBe("none");
   expect(errors).toEqual([]);

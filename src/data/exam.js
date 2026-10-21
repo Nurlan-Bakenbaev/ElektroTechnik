@@ -491,142 +491,143 @@ export const formulaSheet = [
     title: "Elektrische Stromstärke",
     expression: "I = ΔQ / Δt",
     legend:
-      "I – durchschnittlicher Strom, A; ΔQ – durchgelassene Ladung, C; Δt – Zeit, s.",
+      "I: mittlere Stromstärke in Ampere (A). ΔQ: Ladungsmenge durch den Leiterquerschnitt in Coulomb (C). Δt: benötigte Zeit in Sekunden (s).",
     conditions:
-      "Für Gleichstrom ist Q = It. Bei Wechselstrom ist der Momentanwert von I = dQ/dt.",
+      "Teile die transportierte Ladungsmenge durch die dafür benötigte Zeit. Bei gleichbleibendem Strom gilt der Wert während des gesamten betrachteten Zeitraums.",
   },
   {
     lessonId: "voltage",
     title: "Spannungs- und Feldarbeit",
     expression: "U = W / Q",
     legend:
-      "U ist die Spannung zwischen dem Start- und Endpunkt, V; W – elektrische Feldarbeit, J; Q – übertragene Ladung, C.",
+      "U: Spannung zwischen zwei Punkten in Volt (V). W: übertragene elektrische Energie in Joule (J). Q: bewegte Ladungsmenge in Coulomb (C).",
     conditions:
-      "Für ein elektrostatisches Feld ist W = Q(φstart − φend). Das Vorzeichen hängt von der Übertragungsrichtung und dem Vorzeichen der Ladung ab.",
+      "Spannung beschreibt Energie pro Ladung. Für die Rechnung müssen Energie und Ladungsmenge zum selben Vorgang gehören. Die gewählte Bezugsrichtung bestimmt das Vorzeichen.",
   },
   {
     lessonId: "resistance",
     title: "Homogener Leiterwiderstand",
     expression: "R = ρl / A",
     legend:
-      "R – Widerstand, Ohm; ρ – spezifischer Widerstand, Ohm m; l – Länge, m; A – Querschnittsfläche, m².",
+      "R: Widerstand in Ohm (Ω). ρ: spezifischer Widerstand des Materials in Ω·m. l: Leiterlänge in Metern (m). A: Querschnittsfläche in Quadratmetern (m²); hier bedeutet A keine Ampere.",
     conditions:
-      "Ein homogener Leiter mit konstantem Querschnitt bei einer bestimmten Temperatur. Für ρ in Ohm mm²/m wird die Fläche in mm² angegeben.",
+      "Gilt für einen gleichmäßigen Leiter bei fester Temperatur. Mehr Länge erhöht den Widerstand, mehr Querschnitt verringert ihn. Bei ρ in Ω·mm²/m setzt du den Querschnitt in mm² ein.",
   },
   {
     lessonId: "circuits",
-    title: "Vorwiderstände",
+    title: "Reihenschaltung von Widerständen",
     expression: "Rtotal = R₁ + R₂ + …; I₁ = I₂ = I; U = U₁ + U₂ + …",
     legend:
-      "R – Widerstand, Ohm; I – Strom, A; U – Spannung, V; Indizes kennzeichnen einzelne Elemente.",
+      "R: Widerstand in Ohm (Ω). I: Stromstärke in Ampere (A). U: Spannung in Volt (V). Die tiefgestellten Zahlen kennzeichnen die einzelnen Widerstände; ges bedeutet gesamt.",
     conditions:
       "Die Elemente werden nacheinander ohne Verzweigungen zwischen ihnen verbunden. Den Widerstand der Anschlussdrähte vernachlässigen wir.",
   },
   {
     lessonId: "circuits",
-    title: "Parallelwiderstände",
+    title: "Parallelschaltung von Widerständen",
     expression: "1/Rtotal = 1/R₁ + 1/R₂ + …; U₁ = U₂ = U; I = I₁ + I₂ + …",
-    legend: "R – Widerstand, Ohm; I – Strom, A; U – Spannung, V.",
+    legend:
+      "R: Widerstand in Ohm (Ω). I: Stromstärke in Ampere (A). U: Spannung in Volt (V). Die Zahlen bezeichnen einzelne Zweige; ges bedeutet gesamt.",
     conditions:
-      "Alle Zweige sind mit einem Knotenpaar verbunden. Für zwei Widerstände ist Rtotal = R₁R₂/(R₁ + R₂).",
+      "Alle Zweige liegen an denselben zwei Anschlussknoten. Deshalb ist ihre Spannung gleich. Die Zweigströme addieren sich; der Gesamtwiderstand ist kleiner als der kleinste Einzelwiderstand.",
   },
   {
     lessonId: "ohm",
     title: "Ohmsches Gesetz für einen Schaltungsabschnitt",
     expression: "I = U / R; U = IR; R = U / I",
     legend:
-      "I – Strom, A; U ist die Spannung am Widerstand, V; R - Widerstand, Ohm.",
+      "I: Stromstärke in Ampere (A). U: Spannung am betrachteten Widerstand in Volt (V). R: dessen Widerstand in Ohm (Ω).",
     conditions:
-      "Ohmscher Abschnitt unter konstanten physikalischen Bedingungen, insbesondere Temperatur. Nichtlineare Elemente erfordern ihre eigenen Strom-Spannungs-Kennlinien.",
+      "Gilt für einen ohmschen Widerstand bei gleichbleibender Temperatur. Wähle die Umstellung nach der gesuchten Größe. Spannung und Stromstärke müssen zum selben Bauteil gehören.",
   },
   {
     lessonId: "energy",
     title: "Elektrische Energie und Arbeit",
     expression: "W = Pt = UIt; 1 kWh = 3,6 × 10⁶ J",
     legend:
-      "W – Energie, J; P – Leistung, W; U – Spannung, V; I – Strom, A; t – Zeit, s.",
+      "W als Formelzeichen: elektrische Arbeit bzw. Energie in Joule (J). P: Leistung in Watt (W). U: Spannung in Volt (V). I: Stromstärke in Ampere (A). t: Zeit in Sekunden (s).",
     conditions:
-      "P-Konstante; In der Gleichheit UIt sind Spannung und Strom konstant. Für variable Leistung W = ∫P dt. Die Kombination von kW und h ergibt kWh.",
+      "Für konstante Leistung. Bei der Rechnung mit Spannung und Stromstärke müssen auch diese konstant sein. Watt mal Sekunden ergibt Joule; Kilowatt mal Stunden ergibt Kilowattstunden. kWh ist Energie, kW ist Leistung.",
   },
   {
     lessonId: "power",
     title: "Elektrische Leistung",
     expression: "P = U · I; P = I² · R; P = U² / R",
     legend:
-      "P – Leistung, W; U – Spannung, V; I – Strom, A; R - Widerstand, Ohm.",
+      "P: Leistung in Watt (W). U: Spannung in Volt (V). I: Stromstärke in Ampere (A). R: Widerstand in Ohm (Ω).",
     conditions:
-      "Die erste Formel gilt für Gleichstrom; Die letzten beiden sind für einen ohmschen Widerstand. In phasenverschobenen Wechselstromkreisen hängt die mittlere Leistung zusätzlich vom cos φ ab.",
+      "Das Produkt aus Spannung und Stromstärke liefert hier die Gleichstromleistung. Die beiden Umstellungen mit R gelten für ohmsche Widerstände. Sie lassen sich nicht unverändert auf die mittlere Leistung beliebiger Wechselstromverbraucher übertragen.",
   },
   {
     lessonId: "efficiency",
-    title: "Effizienz",
+    title: "Wirkungsgrad",
     expression: "η = W_nutz / W_zu = P_nutz / P_zu; η% = 100η",
     legend:
-      "η – dimensionsloser Wirkungsgrad; W – Energie, J; P – Leistung, W.",
+      "η (Eta): Wirkungsgrad ohne Einheit, oft in Prozent angegeben. W: Energie in Joule (J). P: Leistung in Watt (W). nutz: nutzbarer Anteil; zu: insgesamt zugeführt.",
     conditions:
-      "Energie bezieht sich auf einen Prozess, Leistung auf einen stationären Zustand. Für einen konventionellen Energiewandler gilt 0 ≤ η ≤ 1.",
+      "Teile den nutzbaren Anteil durch den zugeführten Anteil. Vergleiche dieselbe Systemgrenze und denselben Zeitraum; für das Leistungsverhältnis einen stationären Betrieb. Ein Energiewandler hat höchstens 100 % Wirkungsgrad.",
   },
   {
     lessonId: "field",
     title: "Elektrische Feldstärke",
     expression: "E = F / |q|; E_hom = |U| /d",
     legend:
-      "E – Spannungsmodul, N/C = V/m; F – Modul der elektrischen Kraft, N; q – Testladung, C; d – Entfernung, m.",
+      "E: Betrag der elektrischen Feldstärke in Newton pro Coulomb (N/C) oder Volt pro Meter (V/m). F: Kraftbetrag in Newton (N). q: Probeladung in Coulomb (C). U: Spannung in Volt (V). d: Abstand in Metern (m).",
     conditions:
-      "Die Testladung ist klein und verzerrt das Feld nicht. E = |U|/d gilt für ein gleichmäßiges Feld, wenn der Abstand entlang der Feldlinie gemessen wird.",
+      "Die Probeladung muss so klein sein, dass sie das Feld kaum verändert. Die Beziehung mit Spannung und Abstand gilt für ein homogenes Feld, gemessen entlang der Feldlinien. Die Feldrichtung ist als Kraftrichtung auf eine positive Probeladung festgelegt.",
   },
   {
     lessonId: "field",
     title: "Coulombsches Gesetz",
     expression: "F = k|q₁q₂| /r²; k ≈ 8,99 × 10⁹ N m²/C²",
     legend:
-      "F – Kraftmodul, N; q₁, q₂ – Ladungen, C; r ist der Abstand zwischen den Ladungen, m.",
+      "F: Kraftbetrag in Newton (N). q₁ und q₂: elektrische Ladungen in Coulomb (C). r: Abstand in Metern (m). k: Coulomb-Konstante für das Vakuum.",
     conditions:
-      "Festpunktladungen im Vakuum; Für Luft reicht in der Regel die gleiche Näherung aus. Gleiche Ladungen stoßen ab, ungleiche Ladungen ziehen sich an.",
+      "Für ruhende Punktladungen im Vakuum; in Luft meist eine gute Näherung. Gleiche Vorzeichen stoßen sich ab, verschiedene ziehen sich an. Doppelter Abstand bedeutet ein Viertel des Kraftbetrags.",
   },
   {
     lessonId: "capacitor",
     title: "Kapazität und Ladung des Kondensators",
     expression: "C=Q/U; Flach = ε₀εrA / d",
     legend:
-      "C – Kapazität, F; Q ist der Ladungsmodul einer Platte, C; U – Spannungsmodul, V; A ist die Überlappungsfläche der Platten, m²; d – Lücke, m.",
+      "C als Formelzeichen: Kapazität in Farad (F). Q: Betrag der Ladung auf einer Platte in Coulomb (Einheit C). U: Spannung in Volt (V). A: Plattenfläche in m². d: Plattenabstand in Metern (m). ε₀: elektrische Feldkonstante; εr: relative Permittivität des Materials ohne Einheit.",
     conditions:
-      "Lineares Dielektrikum. Die Formel für einen Parallelplattenkondensator geht davon aus, dass d deutlich kleiner ist als die Größe der Platten und Randeffekte vernachlässigt.",
+      "Für einen linearen Kondensator. Die Plattenformel setzt parallele Platten und ein gleichmäßiges Dielektrikum voraus. Ihr Abstand muss gegenüber den Plattenabmessungen klein sein, damit Randeffekte vernachlässigbar bleiben.",
   },
   {
     lessonId: "capacitor",
     title: "Kondensatorenergie",
     expression: "W = CU²/2 = Q²/(2C) = QU/2",
     legend:
-      "W – Energie, J; C – konstante Kapazität, F; U – Spannung, V; Q ist der Ladungsmodul einer Platte, C.",
+      "W: gespeicherte Energie in Joule (J). C: Kapazität in Farad (F). U: Spannung in Volt (V). Q: Betrag der Ladung auf einer Platte in Coulomb (C).",
     conditions:
-      "Linearer Kondensator. Sobald ein idealer isolierter Kondensator von der Quelle getrennt ist, behält er die Ladung, aber nicht unbedingt die Spannung.",
+      "Für einen linearen Kondensator mit konstanter Kapazität. Seine Energie steckt im elektrischen Feld. Bei doppelter Spannung wird viermal so viel Energie gespeichert; reale Kondensatoren können sich nach dem Trennen entladen.",
   },
   {
     lessonId: "capacitor",
-    title: "Kondensatoranschlüsse",
+    title: "Reihen- und Parallelschaltung von Kondensatoren",
     expression:
       "Parallel dazu: C_ges = C₁ + C₂ + …; nacheinander: 1/C_ges = 1/C₁ + 1/C₂ + …",
     legend:
-      "C_ges – äquivalente Kapazität, F; C₁, C₂ – Kapazitäten einzelner Kondensatoren, F.",
+      "Cges: Gesamtkapazität in Farad (F). C₁ und C₂: Kapazitäten der einzelnen Kondensatoren, ebenfalls in Farad (F).",
     conditions:
-      "Ideale lineare Kondensatoren. Für eine Reihenschaltung zunächst ungeladener Kondensatoren sind die Lademodule gleich; Bei Parallelschaltung sind die Spannungen gleich.",
+      "Für ideale lineare Kondensatoren. Parallel ist die Spannung gleich und die Kapazitäten addieren sich. In Reihe sind bei anfangs ungeladenen Kondensatoren die Ladungsbeträge gleich; die Gesamtkapazität ist kleiner als die kleinste Einzelkapazität.",
   },
   {
     lessonId: "capacitor",
     title: "Zeitkonstante der RC-Schaltung",
     expression: "τ = RC; U_C(t) = U₀(1 − e^(−t/τ)); U_C(t) = U_C,0 e^(−t/τ)",
     legend:
-      "τ – Zeitkonstante, s; R – Widerstand, Ohm; C – Kapazität, F; U₀ – Quellenspannung, V; t – Zeit nach der Verbindung, s.",
+      "τ (Tau): Zeitkonstante in Sekunden (s). R: Widerstand in Ohm (Ω). C: Kapazität in Farad (F). U₀: konstante Quellenspannung; UC: Kondensatorspannung, jeweils in Volt (V). t: Zeit seit dem Schalten in Sekunden (s). e: Eulersche Zahl.",
     conditions:
-      "Laden eines zunächst ungeladenen idealen Kondensators über einen Widerstand aus einer Konstantquelle. Für τ erreicht die Spannung etwa 63,2 % U₀; für 5τ - etwa 99,3 %.",
+      "Die ansteigende Kurve beschreibt das Laden über einen Widerstand an konstanter Spannung; die fallende Kurve das Entladen. Nach einer Zeitkonstante sind beim Laden etwa 63 % der Endspannung erreicht, nach fünf etwa 99 %. Beim Entladen bezeichnet UC,0 die Anfangsspannung.",
   },
   {
     lessonId: "electromagnetism",
     title: "Kraft auf einen stromdurchflossenen Leiter",
     expression: "F = BIl sin α",
     legend:
-      "F – magnetische Kraft, N; B – magnetische Induktion, T; I – Strom, A; l ist die Länge des Abschnitts, m; α ist der Winkel zwischen der Stromrichtung und B.",
+      "F: Kraftbetrag in Newton (N). B: magnetische Flussdichte in Tesla (T). I: Stromstärke in Ampere (A). l: Leiterlänge im Feld in Metern (m). α (Alpha): Winkel zwischen technischer Stromrichtung und Magnetfeld.",
     conditions:
       "Der gerade Leiter befindet sich vollständig in einem gleichmäßigen Feld. Maximale Kraft bei 90°, Nullkraft bei 0° und 180°.",
   },
@@ -635,36 +636,36 @@ export const formulaSheet = [
     title: "Magnetischer Fluss",
     expression: "Φ = BA cos θ; 1 Wb = 1 T m²",
     legend:
-      "Φ – Durchfluss, Wb; B – Induktion, T; A – ebene Fläche, m²; θ ist der Winkel zwischen B und der Normalen zur Oberfläche.",
+      "Φ (Phi): magnetischer Fluss in Weber (Wb). B: magnetische Flussdichte in Tesla (T). A: betrachtete Fläche in Quadratmetern (m²). θ (Theta): Winkel zwischen dem Feld und der Senkrechten auf der Fläche.",
     conditions:
-      "Gleichmäßiges Feld und ebene Oberfläche. Im allgemeinen Fall ergibt sich der Fluss als Integral Φ = ∫ B·dA. Der Winkel wird zur Normalen und nicht zur Stufe selbst gemessen.",
+      "Für ein gleichmäßiges Feld durch eine ebene Fläche. Steht das Feld senkrecht zur Fläche, ist der Flussbetrag maximal; verläuft es parallel zur Fläche, ist der Fluss null. A bezeichnet hier eine Fläche, keine Stromstärke.",
   },
   {
     lessonId: "electromagnetism",
     title: "Elektromagnetische Induktion",
     expression: "ε = −N dΦ/dt; εDurchschnitt = −N ΔΦ/Δt",
     legend:
-      "ε – EMF, V; N ist die Anzahl der Windungen, die gleichmäßig von der Strömung abgedeckt werden; Φ – Fluss durch eine Windung, Wb; t – Zeit, s.",
+      "ε (Epsilon): induzierte Spannung in Volt (V). N: Windungszahl ohne Einheit. Φ (Phi): magnetischer Fluss durch eine Windung in Weber (Wb). t: Zeit in Sekunden (s). Δ: Änderung im betrachteten Zeitraum.",
     conditions:
-      "Die Formel mit N geht von einem gleichen Fluss durch alle Windungen aus. Das Zeichen „−“ drückt die Lenzsche Regel aus: Die induktive Wirkung verhindert eine Strömungsänderung.",
+      "Alle Windungen müssen vom gleichen magnetischen Fluss durchsetzt sein. Entscheidend ist dessen Änderung. Das Minuszeichen beschreibt die Lenzsche Regel: Ein entstehender Induktionsstrom wirkt der verursachenden Flussänderung entgegen.",
   },
   {
     lessonId: "magnetic-quantities",
-    title: "Lange Spulenfeldstärke",
+    title: "Magnetische Feldstärke einer langen Spule",
     expression: "H ≈ NI / l",
     legend:
-      "H – magnetische Feldstärke, A/m; N ist die Anzahl der Windungen; I – Strom, A; l ist die Länge der Spule, m.",
+      "H: magnetische Feldstärke in Ampere pro Meter (A/m). N: Windungszahl ohne Einheit. I: Stromstärke in Ampere (A). l: Länge der Spule in Metern (m).",
     conditions:
-      "Langes, gleichmäßig gewickeltes Magnetventil; Das Feld wird von innen gesehen, von den Enden weg. Für komplexe Kerne und Luftspalte ist ein Modell des Magnetkreises erforderlich.",
+      "Näherung im Inneren einer langen, gleichmäßig gewickelten Spule, fern von ihren Enden. Mehr Windungen oder mehr Strom erhöhen die Feldstärke. Die Formel gilt nicht unverändert für beliebige Kerne mit Luftspalten.",
   },
   {
     lessonId: "magnetic-quantities",
-    title: "Zusammenhang zwischen magnetischer Induktion und Spannung",
+    title: "Zusammenhang zwischen Flussdichte B und Feldstärke H",
     expression: "B = μ₀μrH; μ₀ ≈ 1,256637 × 10⁻⁶ H/m",
     legend:
-      "B – Induktion, T; H – Spannung, A/m; μ₀ – magnetische Konstante; μr – relative magnetische Permeabilität.",
+      "B: magnetische Flussdichte in Tesla (T). H: magnetische Feldstärke in Ampere pro Meter (A/m), keine Spannung. μ₀: magnetische Feldkonstante in Henry pro Meter (H/m). μr: relative Permeabilität des Materials ohne Einheit.",
     conditions:
-      "Lineares isotropes Medium. Für Vakuum ist μr = 1. Für Ferromagnete hängt μr vom Modus, der Sättigung und der magnetischen Geschichte ab; es kann nur in der akzeptierten Näherung als konstant angesehen werden.",
+      "Für ein lineares Material, dessen Eigenschaften in allen Richtungen gleich sind. Im Vakuum ist die relative Permeabilität 1. Bei ferromagnetischen Materialien kann sie sich unter anderem mit Feldstärke und Sättigung ändern; ein konstanter Wert ist dort nur eine Näherung.",
   },
 ];
 

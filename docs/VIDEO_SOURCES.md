@@ -1,29 +1,26 @@
-# Short German videos for the thirteen lessons
+# German lesson videos without YouTube embeds
 
-Selection checked on 2026-10-20. Each lesson has a different YouTube video with a complete running time of at most 300 seconds; no longer video is disguised as a short excerpt. Selection uses German educational publishers and German original titles/descriptions. The interface labels are shortened for readability; original titles and observed metadata are archived in [video-metadata-2026-10-20.json](video-metadata-2026-10-20.json).
+Selection and license checked on **2026-10-21**. The course now serves thirteen local MP4 clips from the openly licensed **GET it digital** university consortium. Each belongs to one of the thirteen existing course topics; no further modules are added. Every delivered clip is shorter than five minutes. Some source films are longer: shortened excerpts are explicitly labelled **Gekürzter Auszug** in the interface and in the [attribution table](../public/videos/ATTRIBUTION.md). They are never described as complete short films.
 
-| Lesson | Video / publisher | Duration |
-| --- | --- | --- |
-| Elektrische Stromstärke | [Stromstärke einfach erklärt — Learning Level Up](https://www.youtube.com/watch?v=-OzDSNHCfB4) | 3:13 |
-| Stromkreisarten | [Reihen- und Parallelschaltung — simplexy](https://www.youtube.com/watch?v=D0Cm8JG5Ibk) | 3:31 |
-| Spannungen | [Die elektrische Spannung — SMA Solar Technology](https://www.youtube.com/watch?v=R9Zz6mbCNME) | 2:53 |
-| Elektrischer Widerstand | [Der elektrische Widerstand — physikdigital](https://www.youtube.com/watch?v=CVXN0tLSnNY) | 2:34 |
-| Ohmsches Gesetz | [Ohmsches Gesetz mit Übung — Smartelektrik0](https://www.youtube.com/watch?v=sPwwKxkaBJE) | 3:27 |
-| Elektrische Energie und Arbeit | [Elektrische Arbeit und Energie — Physik-Lernvideos](https://www.youtube.com/watch?v=ISnVP1jq7qE) | 2:24 |
-| Elektrische Leistung | [Elektrische Leistung und Arbeit — erklaerung-und-mehr](https://www.youtube.com/watch?v=Eq2tZdJ7NAM) | 3:03 |
-| Wirkungsgrad | [Wirkungsgrad berechnen — Lehrerschmidt](https://www.youtube.com/watch?v=gOXEm2Gh5wc) | 2:40 |
-| Elektrisches Feld | [Das elektrische Feld verstehen — Think Logic](https://www.youtube.com/watch?v=YRNarrlYCoQ) | 4:44 |
-| Kondensator | [Kondensator: Aufbau und Nutzen — Duden Learnattack](https://www.youtube.com/watch?v=xyaqZgqhIBc) | 4:17 |
-| Magnete und magnetische Feldlinien | [Das Magnetfeld — Lehrerschmidt](https://www.youtube.com/watch?v=5FRdulem8c4) | 2:45 |
-| Elektromagnetismus | [Elektromagnetische Induktion — physikdigital](https://www.youtube.com/watch?v=CkYO5RMsZuo) | 3:46 |
-| Magnetische Größen | [Magnetische Flussdichte und Feldstärke — Studytiger](https://www.youtube.com/watch?v=P42WB6HbynQ) | 3:52 |
+## Source and reuse permission
 
-## Verification and scope
+- [Publisher's video library](https://getitdigital.uni-wuppertal.de/index.php?site=videos)
+- [Publisher's license declaration](https://getitdigital.uni-wuppertal.de/index.php?site=lizenz)
+- [CC BY 4.0 license](https://creativecommons.org/licenses/by/4.0/)
+- [Per-file source, original title, source interval, actual duration, modifications, byte count and SHA-256](video-metadata-2026-10-21.json)
 
-Durations, original titles, channel names and embed availability were read from YouTube's public embed response. Requests to the official `youtube-nocookie.com/embed/VIDEO_ID?hl=de` endpoint include the site's origin as the Referer. The `PLAYER_VARS.embedded_player_response` JSON contains `embedPreview.thumbnailPreviewRenderer.videoDurationSeconds`, the original title and channel, `previewPlayabilityStatus.status`, and `videoFlags.playableInEmbed`. All selected entries returned `OK` and allowed embedding. This validates metadata and initial availability, not uninterrupted third-party playback in every region or a complete pedagogical review of each transcript. Availability can change later.
+The publisher supplies downloadable MP4 files and permits distribution and adaptation under CC BY 4.0, with source/author credit and disclosed changes. Credits and a license link appear beside every player, including in the collection. Embedded project logos and author information are retained. The delivered files were remuxed with fast-start metadata; selected films were time-trimmed without altering their image/audio content. Stream-copy cuts may start at a nearby keyframe; the manifest distinguishes requested intervals from observed playback duration.
 
-The electromagnetism video specifically illustrates induction. The magnetic-quantities video focuses on B and H; the lesson text additionally teaches magnetic flux Φ. Those boundaries are explicit in the learner's viewing prompt. Videos supplement the thirteen lessons; watching them is not tracked as proof of comprehension and does not award XP.
+The earlier YouTube selection and its 2026-10-20 metadata are historical records only. No current lesson uses that player or those URLs. We do not remove advertisements or branding from YouTube content; the replacement uses independently licensed downloadable media.
 
-`LessonVideo` loads no player, thumbnail or external script before the learner chooses to view. It creates an iframe on the official privacy-enhanced embed host without autoplay. Closing it removes the iframe and stops that player; navigating to another lesson resets it. An explicit `strict-origin-when-cross-origin` referrer policy supplies the origin required by YouTube. A direct YouTube link remains available when embedding is unavailable.
+## Topic boundaries and teaching use
 
-Browser tests intercept external iframe requests to test our disclosure, URLs, keyboard controls, removal on close/navigation and responsive dimensions. They do not pretend to test YouTube's actual media playback. Public metadata was checked separately as described above.
+The canonical lesson list defines all thirteen collections. The series/parallel clip stops before equivalent-source analysis. The capacitor clip focuses on construction, charge and capacitance. The Ohm clip demonstrates the law in a resistor circuit. Resistance and magnetic-field-strength clips contain university-level derivations and are labelled as deepening material in the viewing prompts. The electromagnetism clip covers induction; the magnetic-quantities clip focuses on H and a coil example, while the lesson additionally explains B and Φ. These supplementary clips do not replace the beginner explanations, worked examples or interactive laboratories.
+
+## Player behavior and checks
+
+A native HTML video element is created only when the learner chooses **Video ansehen**. The files are served from this site's origin, including the GitHub Pages subpath. There are no YouTube embeds, YouTube branding, ad scripts or third-party media requests. Closing the player or changing a route removes it; starting another library video pauses the previous one. A direct file link remains available. The player has 80% of its available desktop width, retaining 16:9 proportions, and uses the full available width on mobile.
+
+All thirteen files were inspected with ffprobe for H.264 video, AAC audio and actual duration under 300 seconds. Content samples were inspected to select relevant intervals. Content tests verify the delivered files against the SHA-256 provenance manifest. Browser checks load all thirteen real files without mocking their media, validate duration and decoded video dimensions, exercise actual advancing playback, keyboard activation, closing/navigation, desktop sizing and mobile layout. They also reject any observed requests to YouTube/player/ad hosts. Availability on the deployed site is checked separately after publication.
+
+The clips have German speech but no separate caption tracks. The lesson text remains available; full caption accessibility is not claimed. Watching a clip does not award XP or count as passing a topic.

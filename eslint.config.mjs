@@ -19,6 +19,7 @@ export default [
       "src/components/Essentials.js",
       "src/components/CurrentPrimer.js",
       "src/components/LessonVideo.js",
+      "src/components/LearningCollections.js",
       "src/components/PowerSupplyDemo.js",
       "tests/physics.test.js",
       "tests/lesson-engine.test.js",
@@ -29,6 +30,7 @@ export default [
       "tests/essentials.spec.js",
       "tests/lesson-videos.test.js",
       "tests/lesson-videos.spec.js",
+      "tests/collections.spec.js",
     ],
     languageOptions: {
       ecmaVersion: "latest",

@@ -2,6 +2,7 @@ import "@fontsource-variable/manrope";
 import "./globals.css";
 import "./academy.css";
 import "./essentials.css";
+import "./collections.css";
 import LearningExperience from "../components/LearningExperience";
 
 export const metadata = {

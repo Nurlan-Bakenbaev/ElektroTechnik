@@ -64,3 +64,23 @@ Final checks for the combined explanations/video change passed: lint, optimized 
 Video scenarios visit all thirteen lessons, check the selected URL, title, channel and duration, verify that no iframe request occurs before activation, and verify removal on close and topic change. Keyboard activation and the responsive 16:9 frame are checked at 375 pixels. External frames are intercepted for these integration tests; separate official metadata checks establish the observed running times and initial embed availability. See [VIDEO_SOURCES.md](VIDEO_SOURCES.md) and the archived public metadata for those evidence boundaries.
 
 - [Video control, mobile](screenshots/lesson-video-mobile.png)
+
+## Thirteen-topic collections and local video release — 2026-10-21
+
+Lint, the optimized production build and **49 unit/content tests** passed. All **29 browser scenarios** have passed after correcting two new video-size assertions: the first full run passed 27 scenarios, and its two failures compared the player's content width against a parent width that incorrectly included padding. The corrected three-scenario video suite passed, including actual playback and mutual pausing. No product layout change was needed for those assertion failures.
+
+The full run retained the complete 65-question course and 35-question examination flow, laboratories, profile/storage/import/export, beginner explanations and guided Ohm workspace. New collection checks cover exactly thirteen canonical topics and chapter numbers, search/no-results behavior, sourced formulas with legends, direct quiz links for ordinary and reference lessons, saved-score preservation, final-exam gating, mobile navigation and horizontal overflow. The requested homepage banner is absent.
+
+All thirteen delivered MP4 files match their archived SHA-256/byte-count manifest. ffprobe found H.264 video and AAC audio with durations under 300 seconds. Browser tests load the real local files without media mocks, verify metadata/video dimensions and native controls, and exercise advancing playback, closing/navigation, pausing the previous library video, keyboard activation, 80% desktop content width and full-width mobile layout. No requests to YouTube, its media/thumbnail hosts or DoubleClick were observed. Source/license links and excerpt disclosures are checked. See [source and verification scope](VIDEO_SOURCES.md).
+
+Screenshot evidence was generated from the running application and inspected:
+
+- [Homepage without the removed banner](screenshots/azubi-home-desktop.png)
+- [Topic summaries](screenshots/collections-summaries-desktop.png)
+- [All tests, mobile](screenshots/collections-tests-mobile.png)
+- [Native video, desktop](screenshots/lesson-video-desktop.png)
+- [Native video, mobile](screenshots/lesson-video-mobile.png)
+
+These clips have German speech, with no separate caption tracks; no full media-accessibility certification is claimed. Repository-contributor cleanup is a separate history operation and is not represented as completed by these website checks.
+
+The GitHub Pages static export also built successfully with `STATIC_EXPORT=true NEXT_PUBLIC_BASE_PATH=/ElektroTechnik`. All six collection/video browser scenarios passed against that exported site served under `/ElektroTechnik/`, including all thirteen actual media files and quiz deep links. This specifically checks the deployment subpath rather than assuming the root-path production-server checks cover it.
