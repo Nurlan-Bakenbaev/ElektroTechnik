@@ -126,3 +126,9 @@ After the final storage-budget adjustment, all 59 unit tests passed again and th
 - [kW/kWh comparison, mobile](screenshots/energy-comparison-mobile.png)
 
 Free explanations and paper drawings are self-reviewed. A basic safety exercise links to the DRK first-aid material, checked on 2026-10-22; it is not a complete current standards course or professional qualification. The workshop prepares exercise families rather than reproducing the publisher's answer key. No complete accessibility certification or external teacher review is claimed.
+
+## Learning-focus simplification — 2026-10-22
+
+Removed promotional/duplicate homepage panels, decorative parallax and slogan footer. Workshop progress/backup controls and supplementary reading now use native, keyboard-accessible disclosures. Video controls are compact; the official player and source fallback appear when expanded. Optional local registration is on the profile page. Lesson data, quiz identifiers and storage formats were not changed.
+
+Lint, all 11 unit/content test files and the Pages static export passed. The full 45-scenario Chromium suite passed, including all 68 workshop exercises, the 65 course questions and the 35-question final examination. After the final header/footer changes, the rebuilt export passed six additional targeted scenarios covering the homepage, local registration, mobile navigation, contrast/reduced motion, the full website tour and layouts from 320 to 1440 pixels. The updated overview and workshop screenshots above show the simplified interface. External YouTube responses remain intercepted in integration tests; these checks do not establish future external video availability.

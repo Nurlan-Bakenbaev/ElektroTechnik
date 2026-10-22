@@ -1,11 +1,5 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import {
-  motion,
-  useReducedMotion,
-  useScroll,
-  useTransform,
-} from "motion/react";
 import { scrollToReadingTarget } from "./LearningExperience";
 import { Reveal, AnimatedProgress } from "./LearningMotion";
 import FormulaImage from "./FormulaImage";
@@ -30,7 +24,6 @@ import {
   Calculator,
   Download,
   Flame,
-  GraduationCap,
   LayoutGrid,
   LibraryBig,
   Lightbulb,
@@ -329,7 +322,7 @@ export default function LearningApp() {
           </span>
           <span className="brand-caption">Dein Lernstudio</span>
         </a>
-        <div className="sidebar-label">IHR RAUM</div>
+        <div className="sidebar-label">LERNEN</div>
         <nav className="main-nav">
           {navItems.map((item) => (
             <a
@@ -408,8 +401,6 @@ export default function LearningApp() {
               <Menu size={22} />
             </button>
             <span className="breadcrumb">
-              Meine Akademie
-              <ChevronRight size={13} />
               <strong>{title}</strong>
             </span>
           </div>
@@ -441,21 +432,24 @@ export default function LearningApp() {
               {progress.xp} XP
             </span>
             <span className="topbar-separator" />
-            <button
-              className="button button-outline register-button"
-              onClick={() => setShowRegister(true)}
+            {route.view === "profile" && (
+              <button
+                className="button button-outline register-button"
+                onClick={() => setShowRegister(true)}
+              >
+                Registrieren
+              </button>
+            )}
+            <a
+              className="profile-button"
+              href="#/profile"
+              title="Profil und Fortschritt"
             >
-              Registrieren
-            </button>
-            <a className="profile-button" href="#/profile">
               <span className="avatar">
                 {profile.name.charAt(0).toUpperCase()}
               </span>
               <span>
                 <strong>{displayName(profile.name)}</strong>
-                <small>
-                  Stufe {progress.level} · {progress.levelName}
-                </small>
               </span>
               <ChevronDown size={13} />
             </a>
@@ -479,10 +473,8 @@ export default function LearningApp() {
             <a href="#/profile">Profil öffnen</a>
           </div>
         )}
-        <motion.main
+        <main
           key={`${route.view}-${route.id}-${route.tab || ""}`}
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
           id="main-content"
           className={`main-content view-${route.view}`}
           tabIndex={-1}
@@ -569,15 +561,7 @@ export default function LearningApp() {
             />
           )}
           {route.view === "sources" && <Sources />}
-        </motion.main>
-        <footer className="page-footer">
-          <span className="footer-brand">volt.</span>
-          <span>Studieren. Verstehen. Anwenden.</span>
-          <a href="#/sources">
-            Für Neugierige gemacht
-            <ArrowUpRight size={13} />
-          </a>
-        </footer>
+        </main>
       </div>
       {toast && (
         <div className="toast" role="status">
@@ -717,222 +701,65 @@ function CircuitArt() {
 }
 
 function Dashboard({ profile, progress, current, bookmark, onTour }) {
-  const intro = useRef(null);
-  const reduced = useReducedMotion();
-  const { scrollYProgress } = useScroll({
-    target: intro,
-    offset: ["start start", "end start"],
-  });
-  const glowY = useTransform(scrollYProgress, [0, 1], [0, 16]);
-  const glowScale = useTransform(scrollYProgress, [0, 1], [1, 1.04]);
   const previews =
     progress.completed === 13
       ? lessons.slice(10)
-      : lessons.slice(
-          Math.max(0, current.number - 1),
-          Math.max(0, current.number - 1) + 3,
-        );
+      : lessons.slice(current.number - 1, current.number + 2);
   return (
     <>
-      <div className="welcome-line">
-        <span>
-          <span className="tiny-sun">✳</span>Ein guter Tag, um Neues zu
-          verstehen
-        </span>
-        <span className="course-badge">Ausbildung · Fachinformatik</span>
-      </div>
-      <div className="dashboard-intro" ref={intro}>
-        <motion.div
-          className="dashboard-glow"
-          aria-hidden="true"
-          style={reduced ? undefined : { y: glowY, scale: glowScale }}
-        />
+      <div className="dashboard-intro">
         <h1 className="dashboard-title">Deine Lernübersicht</h1>
-        <div className="tour-home-entry">
-          <button
-            type="button"
-            className="tour-launch"
-            data-tour-launch="home"
-            onClick={onTour}
-          >
-            <Compass size={19} />
-            Website-Tour starten
-          </button>
-          <p>Neu hier? Lass dir zeigen, wo du was findest.</p>
-        </div>
+        <button
+          type="button"
+          className="tour-launch"
+          data-tour-launch="home"
+          onClick={onTour}
+        >
+          <Compass size={18} />
+          Website-Tour starten
+        </button>
       </div>
-      <section className="course-stats" aria-label="Kurszusammensetzung">
-        <div>
-          <span className="stat-icon">
-            <BookOpen size={20} />
-          </span>
-          <strong>13</strong>
-          <span>
-            detaillierte Themen<small>Alles ist miteinander verbunden</small>
-          </span>
-        </div>
-        <div>
-          <span className="stat-icon">
-            <CheckCircle2 size={20} />
-          </span>
-          <strong>65</strong>
-          <span>
-            Übungsfragen<small>5 nach jedem Thema</small>
-          </span>
-        </div>
-        <div>
-          <span className="stat-icon">
-            <GraduationCap size={23} />
-          </span>
-          <strong>35</strong>
-          <span>
-            Prüfungsfragen<small>Ein großer Wissenstest</small>
-          </span>
-        </div>
-      </section>
-      <a className="workshop-entry" href="#/workshop/energy-1">
-        <span className="workshop-entry-icon">
-          <Calculator size={25} />
-        </span>
-        <div>
-          <span className="eyebrow">DEIN RECHENWEG ZÄHLT</span>
-          <h2>Die Aufgabenwerkstatt</h2>
-          <p>
-            Einheiten verstehen, das passende Modell wählen und jeden
-            Rechenschritt prüfen. Mit Hinweisen, Beispielen und einem zweiten
-            Versuch mit neuen Angaben.
-          </p>
-        </div>
-        <ArrowUpRight size={23} />
-      </a>
-      <a className="essentials-banner" href="#/essentials">
-        <span className="essentials-icon">
-          <Lightbulb size={22} strokeWidth={1.5} />
-        </span>
-        <div>
-          <strong>Ampere, Watt und Coulomb: Was bedeuten die Wörter?</strong>
-          <p>
-            Die Grundbegriffe nachschlagen und Unterschiede verstehen — etwa
-            Leistung in kW und Energie in kWh.
-          </p>
-        </div>
-        <ArrowUpRight size={20} />
-      </a>
       <section className="next-section">
         <div className="section-heading">
-          <div>
-            <span className="eyebrow">
-              {progress.completed
-                ? "WIR GEHEN IHREN WEG WEITER"
-                : "SCHRITT FÜR SCHRITT"}
-            </span>
-            <h2>
-              {progress.completed === 13
-                ? "Sie haben das gesamte Wissen gebündelt."
-                : progress.completed
-                  ? "Die nächste Entdeckung steht bevor."
-                  : "Beginnen Sie mit den Grundlagen."}
-            </h2>
-          </div>
+          <h2>
+            {progress.completed === 13 ? "Themen wiederholen" : "Weiterlernen"}
+          </h2>
           <a className="text-link" href="#/curriculum">
-            Alle 13 Themen
-            <ArrowRight size={16} />
+            Alle 13 Themen <ArrowRight size={16} />
           </a>
         </div>
         <div className="lesson-grid">
-          {previews.map((l, i) => (
+          {previews.map((lesson, index) => (
             <LessonCard
-              key={l.id}
-              lesson={l}
+              key={lesson.id}
+              lesson={lesson}
               profile={profile}
               bookmark={bookmark}
-              featured={i === 0}
+              featured={index === 0}
             />
           ))}
         </div>
       </section>
-      <VisualGallery />
-      <section className="learning-path">
-        <div className="section-heading">
-          <div>
-            <span className="eyebrow">KURSPLAN</span>
-            <h2>Von einfach bis zum Gesamtbild.</h2>
-          </div>
-          <span className="muted small-text">4 Abschnitte · 13 Themen</span>
-        </div>
-        <div className="path-grid">
-          {categories.map((c, i) => {
-            const Icon = icons[c.id];
-            const group = lessons.filter((l) => l.category === c.id);
-            const done = group.filter(
-              (l) => profile.results[l.id]?.score >= 4,
-            ).length;
-            return (
-              <a
-                className="path-card"
-                key={c.id}
-                href={`#/lesson/${group[0].id}`}
-              >
-                <span className="path-number">
-                  0{i + 1}
-                  <ArrowUpRight size={16} />
-                </span>
-                <Icon size={30} strokeWidth={1.3} />
-                <h3>{c.name}</h3>
-                <p>{c.caption}</p>
-                <div className="path-progress">
-                  <span>{c.range}</span>
-                  <span>
-                    {done} / {group.length}
-                  </span>
-                </div>
-              </a>
-            );
-          })}
-        </div>
-      </section>
-      <section className="exam-banner">
-        <span className="exam-banner-icon">
-          <Trophy size={28} strokeWidth={1.4} />
-        </span>
-        <div>
-          <span className="eyebrow">BRINGEN SIE IHR WISSEN ZUSAMMEN</span>
-          <h2>Das Ende, das zum Anfang werden wird.</h2>
-          <p>
-            {progress.examUnlocked
-              ? "Alle Themen wurden gemeistert. Zeit, das Gesamtbild zu überprüfen."
-              : "Vervollständigen Sie 13 Themen und eröffnen Sie eine Abschlussprüfung mit 35 Fragen."}
-          </p>
-        </div>
-        <a className="button button-light" href="#/exam">
-          {progress.examUnlocked
-            ? "Zur Abschlussprüfung"
-            : `${progress.completed} von 13 gemeistert`}
-          {progress.examUnlocked ? (
-            <ArrowUpRight size={17} />
-          ) : (
-            <LockKeyhole size={15} />
-          )}
+      <nav className="study-shortcuts" aria-label="Üben und nachschlagen">
+        <a href="#/workshop/energy-1">
+          <Calculator size={19} /> Aufgaben lösen <ArrowRight size={16} />
         </a>
-      </section>
-      <div className="trust-strip">
-        <span>
-          <ShieldCheck size={17} />
-          Keine Registrierung
-        </span>
-        <span>
-          <UserRound size={17} />
-          Ihr Lerntempo
-        </span>
-        <span>
-          <Download size={17} />
-          Der Fortschritt bleibt bei Ihnen
-        </span>
-      </div>
+        <a href="#/essentials">
+          <Lightbulb size={19} /> Grundbegriffe verstehen{" "}
+          <ArrowRight size={16} />
+        </a>
+        <a href="#/tests">
+          <CheckCircle2 size={19} /> Wissen testen <ArrowRight size={16} />
+        </a>
+      </nav>
+      {progress.examUnlocked && (
+        <a className="button button-dark" href="#/exam">
+          Zur Abschlussprüfung <ArrowRight size={17} />
+        </a>
+      )}
     </>
   );
 }
-
 function LessonCard({ lesson, profile, bookmark, featured = false }) {
   const Icon = icons[lesson.category];
   const score = profile.results[lesson.id]?.score;
@@ -2072,8 +1899,9 @@ function Sources() {
           <p>
             Die Lektionen erklären zuerst die Grundidee, dann zeigen sie
             Beispiele und Übungen. Rechenaufgaben nennen die Bedingungen ihres
-            Modells, etwa Gleichstrom, ideale Bauteile oder ein lineares Material.
-            Die Aufgabenwerkstatt ergänzt den Kurs mit prüfbaren Rechenschritten.
+            Modells, etwa Gleichstrom, ideale Bauteile oder ein lineares
+            Material. Die Aufgabenwerkstatt ergänzt den Kurs mit prüfbaren
+            Rechenschritten.
           </p>
           <p>
             Die folgenden Links sind zusätzliche maßgebliche Materialien für ein
@@ -2168,63 +1996,6 @@ function LessonFigure({ illustration }) {
     </figure>
   );
 }
-function VisualGallery() {
-  const topics = ["field", "capacitor", "magnets"];
-  return (
-    <section className="visual-gallery">
-      <div className="section-heading">
-        <div>
-          <span className="eyebrow">VISUELLES VERSTÄNDNIS</span>
-          <h2>Sehen Sie, was unsichtbar ist.</h2>
-        </div>
-        <a className="text-link" href="#/sources">
-          OpenStax-Illustrationen
-          <ArrowUpRight size={14} />
-        </a>
-      </div>
-      <div className="visual-grid">
-        {topics.map((id) => {
-          const image = illustrations[id];
-          return (
-            <article className="visual-card" key={id}>
-              <a href={`#/lesson/${id}`}>
-                <div className="visual-image">
-                  <Image
-                    src={image.src}
-                    alt={image.alt}
-                    width={image.width}
-                    height={image.height}
-                    sizes="(max-width: 600px) 90vw, 360px"
-                  />
-                </div>
-                <div className="visual-card-title">
-                  <span>
-                    <small>
-                      THEMA {String(getLesson(id).number).padStart(2, "0")}
-                    </small>
-                    <strong>{getLesson(id).title}</strong>
-                  </span>
-                  <ArrowUpRight size={17} />
-                </div>
-              </a>
-              <div className="visual-credit">
-                OpenStax / Rice University ·{" "}
-                <a
-                  href={image.licenseUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  CC BY 4.0
-                </a>
-              </div>
-            </article>
-          );
-        })}
-      </div>
-    </section>
-  );
-}
-
 function ResetDialog({ onCancel, onConfirm }) {
   const dialogRef = useRef(null);
   useEffect(() => {

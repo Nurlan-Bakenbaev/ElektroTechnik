@@ -13,13 +13,7 @@ export default function LessonVideo({ lessonId }) {
   return (
     <section className="lesson-video" aria-labelledby={headingId}>
       <div className="lesson-video-summary">
-        <div className="lesson-video-icon" aria-hidden="true">
-          <Play size={23} />
-        </div>
         <div className="lesson-video-description">
-          <span className="essentials-label">
-            ZUM THEMA · VIDEO AUF DEUTSCH
-          </span>
           <h2 id={headingId}>{video.title}</h2>
           <p>
             <span>{video.channel}</span>
@@ -31,7 +25,7 @@ export default function LessonVideo({ lessonId }) {
         </div>
         <button
           type="button"
-          className="button button-dark"
+          className="button button-outline"
           aria-expanded={expanded}
           aria-controls={panelId}
           onClick={() => setExpanded(!expanded)}
@@ -67,11 +61,10 @@ export default function LessonVideo({ lessonId }) {
           </>
         )}
       </div>
-      <div className="lesson-video-footer">
+      <div className="lesson-video-footer" hidden={!expanded}>
         <p>
-          {expanded
-            ? "Wenn der Player nicht lädt, kannst du das Video direkt auf YouTube öffnen."
-            : "Der YouTube-Player wird erst nach deinem Klick geladen. YouTube kann Werbung und eigenes Branding anzeigen."}
+          YouTube kann Werbung und eigenes Branding anzeigen. Lädt der Player
+          nicht, öffne das Originalvideo.
         </p>
         <a
           href={`https://www.youtube.com/watch?v=${video.id}`}

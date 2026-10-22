@@ -560,53 +560,50 @@ export default function Workshop({ selectedId }) {
   return (
     <div className="workshop-page">
       <header className="workshop-heading">
-        <span className="eyebrow">VERSTEHEN · RECHNEN · BEGRÜNDEN</span>
-        <h1>Aufgaben lösen. Schritt für Schritt.</h1>
-        <p>
-          Wähle ein Thema und löse die Aufgabe Schritt für Schritt: Modell,
-          Einheiten, Rechnung und Kontrolle. Zu jeder Familie gibt es zwei
-          eigene Aufgaben mit Erklärungen und optionaler Hilfe.
-        </p>
-        <div className="workshop-stats">
-          <span>
-            <strong>{independent}</strong> ohne Hilfe gelöst
-          </span>
-          <span>
-            <strong>{assisted}</strong> mit Hilfe geübt
-          </span>
-          <span>
-            <strong>{workshopTasks.length}</strong> Aufgaben
-          </span>
-        </div>
-        <p className="workshop-profile-note">
-          Versuche werden separat in diesem Browser gespeichert; Kurs-XP bleiben
-          unverändert. Freie Texte und Zeichnungen prüfst du selbst.
-        </p>
-        <div className="workshop-backup">
-          <button
-            type="button"
-            className="button button-outline"
-            onClick={exportWorkshop}
-            disabled={!ready}
-          >
-            Werkstatt sichern
-          </button>
-          <button
-            type="button"
-            className="button button-outline"
-            onClick={() => importInput.current?.click()}
-          >
-            Werkstatt-Sicherung laden
-          </button>
-          <input
-            ref={importInput}
-            type="file"
-            accept="application/json,.json"
-            hidden
-            aria-label="Werkstatt-Sicherungsdatei"
-            onChange={prepareImport}
-          />
-        </div>
+        <h1>Aufgabenwerkstatt</h1>
+        <details className="workshop-settings">
+          <summary>Übungsstand und Sicherung</summary>
+          <div className="workshop-stats">
+            <span>
+              <strong>{independent}</strong> ohne Hilfe gelöst
+            </span>
+            <span>
+              <strong>{assisted}</strong> mit Hilfe geübt
+            </span>
+            <span>
+              <strong>{workshopTasks.length}</strong> Aufgaben
+            </span>
+          </div>
+          <p className="workshop-profile-note">
+            Versuche werden separat in diesem Browser gespeichert; Kurs-XP
+            bleiben unverändert. Freie Texte und Zeichnungen prüfst du selbst.
+          </p>
+          <div className="workshop-backup">
+            <button
+              type="button"
+              className="button button-outline"
+              onClick={exportWorkshop}
+              disabled={!ready}
+            >
+              Werkstatt sichern
+            </button>
+            <button
+              type="button"
+              className="button button-outline"
+              onClick={() => importInput.current?.click()}
+            >
+              Werkstatt-Sicherung laden
+            </button>
+            <input
+              ref={importInput}
+              type="file"
+              accept="application/json,.json"
+              hidden
+              aria-label="Werkstatt-Sicherungsdatei"
+              onChange={prepareImport}
+            />
+          </div>
+        </details>
         {pendingImport && (
           <section
             className="workshop-import"

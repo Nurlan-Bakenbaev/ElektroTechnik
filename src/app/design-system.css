@@ -136,18 +136,74 @@ body {
   margin-bottom: 32px;
 }
 .dashboard-intro {
-  position: relative;
-  isolation: isolate;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 32px;
 }
-.dashboard-glow {
-  position: absolute;
-  width: min(60%, 450px);
-  height: 130px;
-  top: -35px;
-  right: 0;
-  background: radial-gradient(ellipse, #e6e3ff99, #fafbfe00 70%);
-  z-index: -1;
-  pointer-events: none;
+.dashboard-intro .dashboard-title {
+  margin: 0;
+}
+.dashboard-intro .tour-launch {
+  font-size: 14px;
+}
+.study-shortcuts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  gap: 12px;
+  margin: 28px 0;
+}
+.study-shortcuts a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  min-height: 56px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--ink);
+  font-size: 16px;
+}
+.study-shortcuts a svg:last-child {
+  margin-left: auto;
+}
+.study-shortcuts a:hover {
+  border-color: #4338ca;
+}
+.workshop-heading h1 {
+  margin: 0 0 16px;
+}
+.workshop-settings summary,
+.foundation-links summary {
+  cursor: pointer;
+  min-height: 44px;
+  padding: 10px 0;
+  color: var(--ink);
+  font-size: 16px;
+  font-weight: 650;
+}
+.workshop-heading {
+  margin-bottom: 24px;
+}
+.workshop-settings > p {
+  font-size: 15px;
+}
+.lesson-video-summary {
+  padding: 16px;
+  gap: 16px;
+}
+.lesson-video-description h2 {
+  font-size: 18px;
+  margin: 0 0 4px;
+}
+.lesson-video-footer[hidden] {
+  display: none;
+}
+.foundation-links {
+  padding-block: 8px;
 }
 .workshop-entry {
   display: flex;

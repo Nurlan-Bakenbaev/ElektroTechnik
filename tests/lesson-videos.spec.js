@@ -37,10 +37,10 @@ test("every lesson offers its selected short video and only creates a player aft
     );
     await expect(panel.locator("iframe")).toHaveCount(0);
     expect(requests).toHaveLength(index);
+    await panel.getByRole("button", { name: "Video ansehen" }).click();
     await expect(
       panel.getByRole("link", { name: "Auf YouTube öffnen" }),
     ).toHaveAttribute("href", `https://www.youtube.com/watch?v=${video.id}`);
-    await panel.getByRole("button", { name: "Video ansehen" }).click();
     const iframe = panel.locator("iframe");
     await expect(iframe).toHaveAttribute(
       "src",

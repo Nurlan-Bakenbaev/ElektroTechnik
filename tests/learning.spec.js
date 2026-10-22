@@ -652,6 +652,10 @@ test("merged local registration trims names, persists them and supports cancella
 }) => {
   const errors = watchErrors(page);
   await visit(page);
+  await expect(
+    page.getByRole("button", { name: "Registrieren", exact: true }),
+  ).toHaveCount(0);
+  await page.locator(".profile-button").click();
   await page.getByRole("button", { name: "Registrieren", exact: true }).click();
   const dialog = page.getByRole("dialog", { name: "Registrierung (lokal)" });
   await expect(dialog).toBeVisible();

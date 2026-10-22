@@ -1,5 +1,13 @@
 # Reference rebuild changelog
 
+## 2026-10-22 — Fokus auf das Lernen
+
+- Reduced the homepage to the next lesson cards and short practice/reference links. Removed the greeting, promotional banners, large question counters, decorative gallery, duplicate category overview and parallax glow. The final-exam shortcut appears when the exam is available; all tests remain in navigation.
+- Collapsed workshop statistics and backup controls into an optional disclosure, bringing the actual exercise closer to the heading. Attempts, help tracking and backups retain their behavior.
+- Removed the slogan footer and redundant breadcrumb text. The optional local-registration action is now available on the profile page; the header retains the course progress and profile link without repeating the level description.
+- Removed the whole-page fade/slide when changing routes, so lesson text appears immediately at its final contrast and position.
+- Condensed lesson video controls; player details and the YouTube fallback appear on expansion. Related supplementary lessons are now behind “Passende Vertiefungen”. Full lesson explanations, examples, formula legends, labs and local course progress remain available.
+
 ## 2026-10-22 — Veröffentlichung und Aufgabenanalyse
 
 - Added a 15-stop, opt-in website tour with real navigation/spotlights, keyboard focus management, mobile menu handling and return to the starting page. The tour never submits a quiz, starts a video or changes course results.

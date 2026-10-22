@@ -106,7 +106,7 @@ test("the homepage starts with learning content without the removed supply banne
     page.getByRole("region", { name: "Netzteil ausprobieren" }),
   ).toHaveCount(0);
   await expect(
-    page.getByRole("region", { name: "Kurszusammensetzung" }),
+    page.getByRole("navigation", { name: "Üben und nachschlagen" }),
   ).toBeVisible();
   await page.screenshot({
     path: "docs/screenshots/azubi-home-desktop.png",

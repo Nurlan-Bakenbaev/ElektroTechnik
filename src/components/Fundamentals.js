@@ -16,18 +16,19 @@ export function FoundationLinks({ lessonId }) {
       className="foundation-links"
       aria-label="Zusätzliche Grundlagen und Praxis"
     >
-      <h3>Verständlich vertiefen</h3>
-      <p>Diese ergänzenden Erklärungen passen zur Lektion:</p>
-      <ul>
-        {related.map((guide) => (
-          <li key={guide.id}>
-            <a href={`#/fundamentals/${guide.id}`}>
-              {guide.title}
-              <ArrowRight size={16} aria-hidden="true" />
-            </a>
-          </li>
-        ))}
-      </ul>
+      <details>
+        <summary>Passende Vertiefungen</summary>
+        <ul>
+          {related.map((guide) => (
+            <li key={guide.id}>
+              <a href={`#/fundamentals/${guide.id}`}>
+                {guide.title}
+                <ArrowRight size={16} aria-hidden="true" />
+              </a>
+            </li>
+          ))}
+        </ul>
+      </details>
     </aside>
   );
 }

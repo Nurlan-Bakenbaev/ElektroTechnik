@@ -66,6 +66,7 @@ test("workshop backup requires confirmation and invalid data cannot replace atte
     WORKSHOP_KEY,
   );
   const downloadPromise = page.waitForEvent("download");
+  await page.getByText("Übungsstand und Sicherung", { exact: true }).click();
   await page
     .getByRole("button", { name: "Werkstatt sichern", exact: true })
     .click();

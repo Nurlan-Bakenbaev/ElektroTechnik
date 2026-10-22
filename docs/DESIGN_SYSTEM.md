@@ -20,6 +20,8 @@ The proportions describe visual hierarchy, not a measured pixel quota. Meaningfu
 
 ## Typography and spacing
 
+The overview prioritises continuing a lesson. Greetings, promotional panels, large course counters and decorative illustration galleries are omitted. Workshop statistics/backups and related reading use optional disclosures; videos expand on request. The compact navbar progress remains the persistent progress indicator.
+
 Locally bundled **Plus Jakarta Sans Variable**; Arial/sans-serif fallback. A 4/8-pixel spacing rhythm uses 8, 16, 24, 32, 40 and 48 pixels, with smaller optical adjustments for borders and icons. Heading scale: 32–52 px on the overview, 28–36 px in task cards, 23–28 px for sections. Lesson reading stays selectable at **19 or 22 px**, secondary reading at 17/20 px. Metadata has a 12-pixel floor. Reading line height is approximately 1.75–1.85 with a bounded line length.
 
 ## Interaction states
