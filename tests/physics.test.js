@@ -104,9 +104,11 @@ test("grading supports equivalent units, tolerances, multiple choice and matchin
 });
 test("notation retains subscripts, Greek symbols, German glyphs and surrounding text", () => {
   const input =
-    "Änderung: P_ab + P_zu; 4,7 kΩ; 220 µF; φ = 30°; Δ; ä ö ü Ä Ö Ü ß × ÷ ± ≤ ≥";
+    "Änderung: P_ab + P_zu; φ_A − φ_B; μ_r; 4,7 kΩ; 220 µF; φ = 30°; Δ; ä ö ü Ä Ö Ü ß × ÷ ± ≤ ≥";
   const parts = notationParts(input);
   assert.ok(parts.some((p) => p.text === "P" && p.subscript === "ab"));
+  assert.ok(parts.some((p) => p.text === "φ" && p.subscript === "A"));
+  assert.ok(parts.some((p) => p.text === "μ" && p.subscript === "r"));
   assert.equal(
     parts.map((p) => p.text + (p.subscript ? `_${p.subscript}` : "")).join(""),
     input,

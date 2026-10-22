@@ -2,15 +2,10 @@
 
 import { useState } from "react";
 import { Clock3, ExternalLink, Play, X } from "lucide-react";
-import {
-  lessonVideos,
-  formatVideoDuration,
-  videoUrl,
-} from "../data/lesson-videos.js";
+import { lessonVideos, formatVideoDuration } from "../data/lesson-videos.js";
 
 export default function LessonVideo({ lessonId }) {
   const [expanded, setExpanded] = useState(false);
-  const [loadError, setLoadError] = useState(false);
   const video = lessonVideos[lessonId];
   if (!video) return null;
   const panelId = `lesson-video-${lessonId}`;
@@ -23,16 +18,15 @@ export default function LessonVideo({ lessonId }) {
         </div>
         <div className="lesson-video-description">
           <span className="essentials-label">
-            ZUM THEMA · DEUTSCH · WERBEFREI
+            ZUM THEMA · VIDEO AUF DEUTSCH
           </span>
           <h2 id={headingId}>{video.title}</h2>
           <p>
-            <span>{video.creator}</span>
+            <span>{video.channel}</span>
             <span>
               <Clock3 size={14} />
               {formatVideoDuration(video.durationSeconds)} Min.
             </span>
-            {video.edited && <span>Gekürzter Auszug</span>}
           </p>
         </div>
         <button
@@ -40,10 +34,7 @@ export default function LessonVideo({ lessonId }) {
           className="button button-dark"
           aria-expanded={expanded}
           aria-controls={panelId}
-          onClick={() => {
-            setExpanded(!expanded);
-            setLoadError(false);
-          }}
+          onClick={() => setExpanded(!expanded)}
         >
           {expanded ? (
             <>
@@ -65,44 +56,29 @@ export default function LessonVideo({ lessonId }) {
               <strong>Achte beim Anschauen darauf:</strong> {video.focus}
             </p>
             <div className="lesson-video-player">
-              <video
-                src={videoUrl(video)}
-                aria-label={`Lernvideo: ${video.title}`}
-                controls
-                playsInline
-                preload="metadata"
-                onError={() => setLoadError(true)}
-                onPlay={(event) => {
-                  document.querySelectorAll("video").forEach((other) => {
-                    if (other !== event.currentTarget) other.pause();
-                  });
-                }}
+              <iframe
+                src={`https://www.youtube-nocookie.com/embed/${video.id}?hl=de&cc_lang_pref=de&rel=0`}
+                title={`Lernvideo: ${video.title}`}
+                referrerPolicy="strict-origin-when-cross-origin"
+                allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+                allowFullScreen
               />
             </div>
-            {loadError && (
-              <p role="alert" className="lesson-video-error">
-                Das Video konnte nicht geladen werden. Öffne die Videodatei über
-                den Link unten oder lade die Seite erneut.
-              </p>
-            )}
           </>
         )}
       </div>
       <div className="lesson-video-footer">
         <p>
-          <a href={video.sourcePage} target="_blank" rel="noopener noreferrer">
-            {video.creator}
-          </a>{" "}
-          ·{" "}
-          <a href={video.licenseUrl} target="_blank" rel="noopener noreferrer">
-            {video.license}
-          </a>
-          {video.edited
-            ? " · Für diesen Kurs gekürzt; Bild und Ton unverändert."
-            : " · Ungekürztes Video; Bild und Ton unverändert."}
+          {expanded
+            ? "Wenn der Player nicht lädt, kannst du das Video direkt auf YouTube öffnen."
+            : "Der YouTube-Player wird erst nach deinem Klick geladen. YouTube kann Werbung und eigenes Branding anzeigen."}
         </p>
-        <a href={videoUrl(video)} target="_blank" rel="noopener noreferrer">
-          Videodatei öffnen <ExternalLink size={14} />
+        <a
+          href={`https://www.youtube.com/watch?v=${video.id}`}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Auf YouTube öffnen <ExternalLink size={14} />
         </a>
       </div>
     </section>

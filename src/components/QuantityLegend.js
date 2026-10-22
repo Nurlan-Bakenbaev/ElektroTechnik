@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { BookOpen, ChevronDown } from "lucide-react";
 import { quantities, unitDefinitions, splitUnitText } from "../data/units.js";
+import Notation from "./Notation";
 
 export function UnitName({ unit }) {
   const definition = unitDefinitions[unit];
@@ -10,7 +11,6 @@ export function UnitName({ unit }) {
     <abbr
       className="unit-abbreviation"
       title={`${definition.name}: ${definition.meaning}`}
-      tabIndex={0}
     >
       {unit}
     </abbr>
@@ -27,7 +27,7 @@ export function UnitText({ children }) {
         <UnitName unit={part.unit} />
       </span>
     ) : (
-      part.text
+      <Notation key={index}>{part.text}</Notation>
     ),
   );
 }

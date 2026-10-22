@@ -25,7 +25,7 @@ test("sidebar collections contain exactly the thirteen requested topics and allo
     name: "Lernsammlungen",
     exact: true,
   });
-  await expect(navigation.getByRole("link")).toHaveCount(4);
+  await expect(navigation.getByRole("link")).toHaveCount(5);
   await navigation
     .getByRole("link", { name: "Videos nach Themen", exact: true })
     .click();
@@ -142,7 +142,7 @@ test("test collection opens ordinary and reference quizzes directly and preserve
   ).toHaveAttribute("aria-current", "page");
 });
 
-test("all four collections fit mobile screens and remain reachable through the sidebar", async ({
+test("all five collections fit mobile screens and remain reachable through the sidebar", async ({
   page,
 }) => {
   await page.setViewportSize({ width: 375, height: 900 });

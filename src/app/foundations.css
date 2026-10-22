@@ -1,0 +1,424 @@
+.foundations-heading {
+  max-width: 850px;
+  margin-bottom: 30px;
+}
+.foundations-heading h1 {
+  margin: 14px 0 20px;
+  font-size: clamp(30px, 3.7vw, 47px);
+  line-height: 1.2;
+  letter-spacing: -0.035em;
+  color: #122e41;
+}
+.foundations-heading > p {
+  font-size: 19px;
+  line-height: 1.85;
+  color: #304c5e;
+}
+.foundations-layout {
+  display: grid;
+  grid-template-columns: 245px minmax(0, 1fr);
+  gap: 26px;
+  align-items: start;
+}
+.foundations-nav {
+  position: sticky;
+  top: 90px;
+  border: 1px solid #becfd9;
+  background: #fff;
+  border-radius: 9px;
+  padding: 20px 12px;
+}
+.foundations-nav > span {
+  margin: 0 10px 18px;
+}
+.foundations-nav nav {
+  display: grid;
+  gap: 5px;
+}
+.foundations-select {
+  display: none;
+}
+.foundations-nav a {
+  display: flex;
+  gap: 9px;
+  padding: 11px 10px;
+  line-height: 1.55;
+  border-radius: 5px;
+  font-size: 14px;
+  color: #294b5e;
+}
+.foundations-nav a > span {
+  font-size: 12px;
+  flex-shrink: 0;
+  padding-top: 2px;
+}
+.foundations-nav a[aria-current="page"] {
+  background: #dff0f2;
+  color: #113d50;
+  box-shadow: inset 3px 0 #177a8b;
+  font-weight: 800;
+}
+.foundation-article {
+  min-width: 0;
+  padding: clamp(22px, 3vw, 38px);
+  background: #fff;
+  color: #172d3d;
+  border: 1px solid #b5c9d5;
+  border-radius: 10px;
+}
+.foundation-article > header {
+  border-bottom: 1px solid #c8d7e0;
+  padding-bottom: 25px;
+}
+.foundation-article h2 {
+  font-size: clamp(27px, 3vw, 38px);
+  line-height: 1.3;
+  letter-spacing: -0.025em;
+  margin: 15px 0 22px;
+  color: #112e41;
+}
+.foundation-article h3 {
+  font-size: 25px;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+  color: #15394e;
+  margin: 12px 0 20px;
+}
+.lesson-workspace .foundation-article :is(p, li) {
+  font-size: var(--reading-body);
+  line-height: 1.85;
+  color: #1e3444;
+  max-width: 68ch;
+  text-wrap: pretty;
+}
+.foundation-article p + p {
+  margin-top: 20px;
+}
+.foundation-article .foundation-lead {
+  font-weight: 600;
+  border-left: 4px solid #137c90;
+  padding-left: 18px;
+}
+.foundation-section {
+  padding: 30px 0;
+  border-bottom: 1px solid #d2dfe7;
+}
+.foundation-section-number {
+  font:
+    750 13px/1.5 ui-monospace,
+    monospace;
+  color: #157085;
+}
+.foundation-table-wrap {
+  max-width: 100%;
+  overflow-x: auto;
+  margin: 28px 0;
+  border: 1px solid #bccfdc;
+  border-radius: 7px;
+}
+.foundation-table-wrap table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 530px;
+  font-size: 16px;
+  line-height: 1.7;
+  text-align: left;
+}
+.foundation-table-wrap caption {
+  text-align: left;
+  font-weight: 800;
+  color: #173a50;
+  padding: 16px;
+}
+.foundation-table-wrap th,
+.foundation-table-wrap td {
+  padding: 15px;
+  border-top: 1px solid #c8d9e3;
+  vertical-align: top;
+  color: #263e4f;
+}
+.foundation-table-wrap thead th {
+  background: #edf4f7;
+  color: #193e53;
+}
+.foundation-table-wrap tbody th {
+  font-weight: 750;
+  background: #f6f8fa;
+}
+.foundation-example {
+  margin: 30px 0;
+  padding: 24px;
+  border: 1px solid #b4cbd9;
+  border-radius: 8px;
+  background: #f3f7f9;
+}
+.foundation-example ol {
+  padding-left: 25px;
+  display: grid;
+  gap: 17px;
+  margin: 22px 0;
+}
+.foundation-result {
+  padding-top: 20px;
+  border-top: 1px solid #b6cfd4;
+}
+.foundation-check {
+  border: 1px solid #b8d2c4;
+  border-radius: 8px;
+  padding: 25px;
+  background: #f2f8f4;
+}
+.foundation-check fieldset {
+  border: 0;
+  padding: 0;
+  margin: 18px 0 22px;
+}
+.foundation-check legend {
+  font-size: var(--reading-body);
+  line-height: 1.7;
+  font-weight: 800;
+  margin-bottom: 18px;
+  color: #1d3e32;
+}
+.foundation-check label {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 13px 0;
+  color: #233d31;
+  font-size: var(--reading-small);
+  line-height: 1.75;
+}
+.foundation-check input {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  margin-top: 5px;
+  accent-color: #16715b;
+}
+.foundation-check [role="status"] {
+  margin-top: 20px;
+  padding: 17px;
+  border: 1px solid #b4cfc0;
+  background: #fff;
+}
+.lesson-workspace .foundation-check-note {
+  font-size: 14px;
+  margin-top: 17px;
+  color: #3d5d4b;
+}
+.foundation-sources {
+  margin: 25px 0;
+  padding: 18px;
+  border: 1px solid #c7d6e0;
+  border-radius: 6px;
+}
+.foundation-sources summary {
+  cursor: pointer;
+  color: #2a4e62;
+  font-size: 15px;
+  line-height: 1.7;
+  font-weight: 750;
+}
+.foundation-sources ul {
+  padding-left: 22px;
+  margin: 16px 0;
+}
+.foundation-sources a {
+  color: #145e78;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.lesson-workspace .foundation-sources :is(p, li) {
+  font-size: 15px;
+}
+.foundation-lesson-link {
+  white-space: normal;
+  line-height: 1.6;
+}
+.foundation-lesson-link svg {
+  flex-shrink: 0;
+}
+.foundation-video {
+  margin-top: 35px;
+}
+.foundation-video > h3 {
+  font-size: 21px;
+}
+.foundation-paging {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  margin-top: 30px;
+  border-top: 1px solid #c8d8e1;
+  padding-top: 25px;
+}
+.foundation-paging a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  color: #175a74;
+  font-size: 16px;
+}
+.foundation-links {
+  margin: 25px 0 0;
+  padding: 22px;
+  background: #f4f7fa;
+  border: 1px solid #c2d3de;
+  border-radius: 7px;
+}
+.foundation-links h3 {
+  font-size: 20px;
+  line-height: 1.5;
+  color: #193e54;
+  margin: 0 0 10px;
+}
+.lesson-workspace .foundation-links p {
+  font-size: 16px;
+  color: #385362;
+  line-height: 1.8;
+}
+.foundation-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0 0;
+  display: grid;
+  gap: 5px;
+}
+.foundation-links a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  padding: 9px 0;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #135a75;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.foundation-links a svg {
+  flex-shrink: 0;
+  margin-left: auto;
+}
+.power-type-explorer {
+  padding: 22px;
+  margin: 28px 0;
+  border: 1px solid #b7cddc;
+  border-radius: 8px;
+  background: #f7fafc;
+}
+.power-type-explorer h2 {
+  font-size: 25px;
+}
+.power-type-explorer svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-block: 20px;
+}
+.power-type-explorer svg text {
+  fill: #27475c;
+  font:
+    15px ui-monospace,
+    monospace;
+}
+.power-type-modes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 20px;
+}
+.power-type-modes button {
+  min-height: 44px;
+  padding: 11px 15px;
+  border: 1px solid #aec6d7;
+  border-radius: 5px;
+  color: #1b4b62;
+  font-size: 15px;
+  font-weight: 750;
+  background: #fff;
+}
+.power-type-modes button[aria-pressed="true"] {
+  color: white;
+  background: #15465e;
+  border-color: #15465e;
+}
+.power-type-explorer > label {
+  display: grid;
+  gap: 12px;
+  font-size: 17px;
+  color: #254a60;
+}
+.power-type-explorer input {
+  width: 100%;
+  accent-color: #196f86;
+  min-height: 36px;
+}
+.power-type-explorer output {
+  display: block;
+  margin-block: 15px;
+  padding: 15px;
+  background: #e6f1f5;
+  color: #133d53;
+  font-size: 18px;
+  line-height: 1.6;
+}
+/* Core reading text is dark on opaque white surfaces, never on a decorative gradient. */
+.lesson-workspace {
+  --reading-ink: #172d3d;
+  --reading-secondary: #294352;
+}
+.lesson-workspace .brief-answer {
+  font-weight: 500;
+}
+.lesson-workspace :is(.lesson-brief, .textbook-section, .ohm-reference) {
+  background: #fff;
+}
+.lesson-workspace sub {
+  font-size: max(12px, 0.75em);
+}
+@media (max-width: 1100px) {
+  .foundations-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .foundations-nav {
+    position: static;
+  }
+  .foundations-nav nav {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 760px) {
+  .foundations-nav nav {
+    display: none;
+  }
+  .foundations-select {
+    display: block;
+  }
+  .foundations-select select {
+    width: 100%;
+    padding: 12px;
+    min-height: 46px;
+    border: 1px solid #b9ccda;
+    color: #1c4056;
+    background: #fff;
+    font-size: 16px;
+    border-radius: 5px;
+  }
+  .foundation-article {
+    padding: 24px 19px;
+  }
+  .foundation-example,
+  .foundation-check,
+  .power-type-explorer {
+    padding: 18px;
+  }
+  .foundation-article h3 {
+    font-size: 23px;
+  }
+  .foundation-paging {
+    flex-wrap: wrap;
+  }
+}

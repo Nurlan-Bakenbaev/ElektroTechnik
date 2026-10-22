@@ -1,6 +1,17 @@
 # Reference rebuild changelog
 
+## 2026-10-22 — Veröffentlichung und Aufgabenanalyse
+
+- Leseransicht und acht ergänzende Erklärungen vollständig geprüft; Tablet-Kopfzeile und griechische Indizes korrigiert.
+- Offizielle YouTube-Einbettungen wiederhergestellt, lokale MP4-Ausgabe entfernt.
+- Alle 61 hochgeladenen Europa-Seiten auf Aufgabentypen und Lücken im Lernangebot untersucht; priorisierter Ausbauplan mit eigenen Kontrollbeispielen dokumentiert.
+
 ## 2026-10-21
+
+- Subsequent requested revision: restored official YouTube embeds and removed the locally distributed MP4 files. YouTube ads/branding are no longer claimed to be suppressed. Kept the requested 80% desktop player width.
+- Audited all thirteen lessons, symbols, unit explanations and 31 solved examples. Corrected the I(U) proportionality factor, source-discharge wording, constant versus varying DC, material/count terminology and several misleading formula-reference labels.
+- Added eight supplementary topics covering current origins, DC/AC, electrical quantities, fields, capacitors, magnetic materials, motors and shielding. Each has full explanations, a worked example and unscored self-check. The original thirteen topic quizzes and final-exam gates remain compatible.
+- Added 19/22-pixel reading preferences, focused reading, responsive section navigation, explicit concept traps, accessible target focus and darker body text on opaque white surfaces. See [lesson review](LESSON_REVIEW_2026-10-21.md).
 
 - Removed the large power-supply homepage banner at the user's request; the page starts with the learning overview and existing progress.
 - Added a sidebar collection group for videos, thirteen topic summaries, twenty sourced formula images with explanations/legends, and all thirteen five-question tests plus the gated 35-question final exam. All entries come from the original thirteen lessons and retain their chapter numbers; no additional subjects are introduced. Search filters videos, summaries and topic tests.

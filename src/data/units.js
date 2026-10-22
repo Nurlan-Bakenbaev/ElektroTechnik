@@ -10,6 +10,10 @@ export const unitDefinitions = {
     name: "Ampere",
     meaning: "Einheit der Stromstärke I: elektrische Ladung pro Sekunde.",
   },
+  µA: {
+    name: "Mikroampere",
+    meaning: "Ein Millionstel Ampere. 1000 µA sind 1 mA.",
+  },
   mA: {
     name: "Milliampere",
     meaning: "Ein Tausendstel Ampere. 1000 mA sind 1 A.",
@@ -28,6 +32,15 @@ export const unitDefinitions = {
     meaning: "Ein Millionstel Coulomb; eine kleine Ladungsmenge.",
   },
   Ω: { name: "Ohm", meaning: "Einheit des elektrischen Widerstands R." },
+  S: {
+    name: "Siemens",
+    meaning:
+      "Einheit des elektrischen Leitwerts G, dem Kehrwert des Widerstands. Nicht mit dem Formelzeichen S für eine Fläche verwechseln.",
+  },
+  mS: {
+    name: "Millisiemens",
+    meaning: "Ein Tausendstel Siemens; Einheit kleiner Leitwerte.",
+  },
   kΩ: {
     name: "Kiloohm",
     meaning: "1000 Ohm. Das k steht für den Faktor tausend.",
@@ -82,6 +95,10 @@ export const unitDefinitions = {
     name: "Newton",
     meaning: "Einheit der Kraft F. Nicht mit der Windungszahl N verwechseln.",
   },
+  mN: {
+    name: "Millinewton",
+    meaning: "Ein Tausendstel Newton. 1000 mN sind 1 N.",
+  },
   "V/m": {
     name: "Volt pro Meter",
     meaning:
@@ -100,6 +117,10 @@ export const unitDefinitions = {
     name: "Millitesla",
     meaning: "Ein Tausendstel Tesla. 1000 mT sind 1 T.",
   },
+  µT: {
+    name: "Mikrotesla",
+    meaning: "Ein Millionstel Tesla. 1000 µT sind 1 mT.",
+  },
   Wb: {
     name: "Weber",
     meaning: "Einheit des magnetischen Flusses Φ durch eine Fläche.",
@@ -107,6 +128,10 @@ export const unitDefinitions = {
   µWb: {
     name: "Mikroweber",
     meaning: "Ein Millionstel Weber; eine kleine magnetische Flussmenge.",
+  },
+  mWb: {
+    name: "Milliweber",
+    meaning: "Ein Tausendstel Weber. 1000 mWb sind 1 Wb.",
   },
   "A/m": {
     name: "Ampere pro Meter",
@@ -118,6 +143,10 @@ export const unitDefinitions = {
     meaning:
       "Einheit der Induktivität L einer Spule. Hinter einer Zahl ist H eine Einheit, als Formelzeichen kann H die magnetische Feldstärke bedeuten.",
   },
+  mH: {
+    name: "Millihenry",
+    meaning: "Ein Tausendstel Henry; Einheit der Induktivität einer Spule.",
+  },
   Hz: {
     name: "Hertz",
     meaning: "Einheit der Frequenz f: Schwingungen pro Sekunde.",
@@ -126,6 +155,15 @@ export const unitDefinitions = {
   cm: {
     name: "Zentimeter",
     meaning: "Ein Hundertstel Meter. 100 cm sind 1 m.",
+  },
+  mm: {
+    name: "Millimeter",
+    meaning: "Ein Tausendstel Meter. 1000 mm sind 1 m.",
+  },
+  K: {
+    name: "Kelvin",
+    meaning:
+      "SI-Einheit der Temperatur. Ein Temperaturunterschied von 1 K ist so groß wie ein Unterschied von 1 °C.",
   },
   "mm²": {
     name: "Quadratmillimeter",
@@ -146,6 +184,12 @@ export const unitDefinitions = {
       "Einheit der Temperatur. Das Gradzeichen unterscheidet °C von Coulomb (C).",
   },
 };
+
+// Both common Unicode spellings of the micro prefix retain their original text.
+for (const [unit, definition] of Object.entries(unitDefinitions)) {
+  if (unit.includes("µ"))
+    unitDefinitions[unit.replaceAll("µ", "μ")] = definition;
+}
 
 export const quantities = {
   charge: {

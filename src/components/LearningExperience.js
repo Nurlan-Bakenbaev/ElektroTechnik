@@ -8,18 +8,25 @@ import "lenis/dist/lenis.css";
 let activeScroller = null;
 
 /** One scrolling controller for wheels, reading anchors and route changes. */
-export function scrollToReadingTarget(target, { immediate = false } = {}) {
+export function scrollToReadingTarget(
+  target,
+  { immediate = false, offset = -28 } = {},
+) {
   if (activeScroller) {
     activeScroller.scrollTo(target, {
       immediate,
-      offset: typeof target === "number" ? 0 : -28,
+      offset: typeof target === "number" ? 0 : offset,
     });
     return;
   }
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const behavior = immediate || reduce ? "instant" : "smooth";
   if (typeof target === "number") window.scrollTo({ top: target, behavior });
-  else target?.scrollIntoView({ behavior, block: "start" });
+  else if (target)
+    window.scrollTo({
+      top: window.scrollY + target.getBoundingClientRect().top + offset,
+      behavior,
+    });
 }
 
 export default function LearningExperience({ children }) {

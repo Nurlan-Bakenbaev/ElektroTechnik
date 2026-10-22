@@ -53,7 +53,9 @@ async function openLessonQuiz(page, lesson) {
 }
 
 async function answerQuestion(page, question, { correct = true } = {}) {
-  await expect(page.locator("#quiz-question")).toHaveText(question.question);
+  await expect(page.locator("#quiz-question")).toHaveText(
+    question.question.replace(/_(?=[\p{L}\d])/gu, ""),
+  );
   if (question.type === "choice") {
     const answer = correct
       ? question.answer

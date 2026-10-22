@@ -4700,7 +4700,7 @@ summary:focus-visible {
   justify-content: flex-end;
   gap: 12px;
 }
-@media (max-width: 700px) {
+@media (max-width: 900px) {
   .topbar-right {
     gap: 8px;
   }

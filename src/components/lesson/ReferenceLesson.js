@@ -32,6 +32,8 @@ import Notation from "../Notation";
 import { lessonBasics } from "../../data/lesson-basics.js";
 import QuantityLegend, { UnitText } from "../QuantityLegend";
 import LessonVideo from "../LessonVideo";
+import LessonPitfall from "../LessonPitfall";
+import { FoundationLinks } from "../Fundamentals";
 import "./reference-lesson.css";
 
 const InteractiveLab = dynamic(() => import("../InteractiveLab"), {
@@ -199,6 +201,8 @@ export default function ReferenceLesson({
           <UnitText>{lessonBasics.ohm.answer}</UnitText>
         </p>
         <QuantityLegend items={lessonBasics.ohm.units} compact />
+        <LessonPitfall lessonId="ohm" />
+        <FoundationLinks lessonId="ohm" />
       </section>
       <LessonVideo key={lesson.id} lessonId={lesson.id} />
       <div

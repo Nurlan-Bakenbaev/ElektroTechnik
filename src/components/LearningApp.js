@@ -67,6 +67,10 @@ import { lessonBasics } from "../data/lesson-basics.js";
 import LessonBrief from "./LessonBrief";
 import QuantityLegend, { UnitText } from "./QuantityLegend";
 import LessonVideo from "./LessonVideo";
+import LessonReader from "./LessonReader";
+import LessonOutline from "./LessonOutline";
+import { lessonStudy } from "../data/lesson-study.js";
+import Fundamentals from "./Fundamentals";
 import {
   VideoCollection,
   SummaryCollection,
@@ -94,6 +98,7 @@ const navItems = [
 const collectionNavItems = [
   { id: "videos", label: "Videos nach Themen", icon: Video },
   { id: "summaries", label: "Zusammenfassungen", icon: BookOpen },
+  { id: "fundamentals", label: "Grundlagen & Praxis", icon: Lightbulb },
   { id: "formulas", label: "Formeln & Einheiten", icon: Atom },
   { id: "tests", label: "Alle Tests", icon: CheckCircle2 },
 ];
@@ -117,6 +122,7 @@ function readRoute() {
       "videos",
       "summaries",
       "tests",
+      "fundamentals",
     ].includes(view)
       ? view
       : "home",
@@ -237,6 +243,7 @@ export default function LearningApp() {
           videos: "Videos nach Themen",
           summaries: "Zusammenfassungen",
           tests: "Alle Tests",
+          fundamentals: "Grundlagen & Praxis",
           glossary: "Lexikon",
           formulas: "Verzeichnis der Formeln",
           bookmarks: "Merkliste",
@@ -437,6 +444,11 @@ export default function LearningApp() {
           {route.view === "essentials" && <Essentials />}
           {route.view === "videos" && <VideoCollection />}
           {route.view === "summaries" && <SummaryCollection />}
+          {route.view === "fundamentals" && (
+            <LessonReader>
+              <Fundamentals selectedId={route.id} />
+            </LessonReader>
+          )}
           {route.view === "tests" && (
             <TestCollection profile={profile} progress={progress} />
           )}
@@ -445,21 +457,23 @@ export default function LearningApp() {
           )}
           {route.view === "lesson" &&
             (lesson ? (
-              <Lesson
-                key={`${lesson.id}-${route.tab || ""}`}
-                lesson={lesson}
-                initialTab={route.tab}
-                profile={profile}
-                bookmark={bookmark}
-                onComplete={(score) => {
-                  updateProfile((p) => recordLesson(p, lesson.id, score));
-                  notify(
-                    score >= 4
-                      ? "Thema gemeistert! Fortschritt gespeichert."
-                      : "Der Versuch wurde gerettet. Sie können den Test erneut durchführen.",
-                  );
-                }}
-              />
+              <LessonReader>
+                <Lesson
+                  key={`${lesson.id}-${route.tab || ""}`}
+                  lesson={lesson}
+                  initialTab={route.tab}
+                  profile={profile}
+                  bookmark={bookmark}
+                  onComplete={(score) => {
+                    updateProfile((p) => recordLesson(p, lesson.id, score));
+                    notify(
+                      score >= 4
+                        ? "Thema gemeistert! Fortschritt gespeichert."
+                        : "Der Versuch wurde gerettet. Sie können den Test erneut durchführen.",
+                    );
+                  }}
+                />
+              </LessonReader>
             ) : (
               <EmptyState
                 icon={BookOpen}
@@ -1029,6 +1043,20 @@ function Lesson({ lesson, profile, bookmark, onComplete, initialTab }) {
   const score = profile.results[lesson.id]?.score;
   const nextLesson = lessons[lesson.number];
   const Icon = icons[lesson.category];
+  const exampleFormula = lesson.sections.find(
+    (section) => section.id === lessonStudy[lesson.id].formulaSection,
+  )?.formula;
+  function openPanel(id) {
+    setTab(id);
+    requestAnimationFrame(() => {
+      const panel = document.getElementById(`panel-${id}`);
+      const toolbarHeight =
+        document.querySelector(".reader-toolbar")?.getBoundingClientRect()
+          .height || 0;
+      panel?.focus({ preventScroll: true });
+      scrollToReadingTarget(panel, { offset: -toolbarHeight - 24 });
+    });
+  }
   function next(passed) {
     if (passed) {
       if (nextLesson) go("lesson", nextLesson.id);
@@ -1057,7 +1085,7 @@ function Lesson({ lesson, profile, bookmark, onComplete, initialTab }) {
           Zum Kursprogramm
         </a>
         <span>
-          Betreff {String(lesson.number).padStart(2, "0")}
+          Thema {String(lesson.number).padStart(2, "0")}
           <span className="muted"> / 13</span>
         </span>
         <button
@@ -1148,16 +1176,20 @@ function Lesson({ lesson, profile, bookmark, onComplete, initialTab }) {
           </button>
         ))}
       </div>
-      <div role="tabpanel" id={`panel-${tab}`} aria-labelledby={`tab-${tab}`}>
+      <div
+        role="tabpanel"
+        id={`panel-${tab}`}
+        aria-labelledby={`tab-${tab}`}
+        tabIndex={-1}
+      >
         {tab === "theory" && (
           <div className="reading-layout">
+            <LessonOutline lesson={lesson} />
             <article className="lesson-article">
               <LessonBrief
                 lessonId={lesson.id}
-                onExperiment={() => {
-                  setTab("lab");
-                  scrollToReadingTarget(320);
-                }}
+                formula={exampleFormula}
+                onExperiment={() => openPanel("lab")}
               />
               <details className="objectives-box">
                 <summary>Lernziele für die Vertiefung anzeigen</summary>
@@ -1185,7 +1217,7 @@ function Lesson({ lesson, profile, bookmark, onComplete, initialTab }) {
                     {String(i + 1).padStart(2, "0")}
                     <span />
                   </div>
-                  <h2>{s.title}</h2>
+                  <h2>{s.title.replace(/^\d+\.\s*/, "")}</h2>
                   <p className="plain-explanation">
                     <UnitText>
                       {lessonBasics[lesson.id].sections[s.id]}
@@ -1193,7 +1225,8 @@ function Lesson({ lesson, profile, bookmark, onComplete, initialTab }) {
                   </p>
                   <details className="lesson-depth">
                     <summary>
-                      Ausführliche Erklärung, Formel und Rechenweg
+                      Vertiefen: Erklärung{s.formula ? " · Formel" : ""}
+                      {s.example ? " · Rechenbeispiel" : ""}
                     </summary>
                     {s.paragraphs.map((p, j) => (
                       <p key={j}>
@@ -1303,63 +1336,21 @@ function Lesson({ lesson, profile, bookmark, onComplete, initialTab }) {
                   <Activity size={24} />
                 </span>
                 <div>
-                  <h3>Probieren Sie es jetzt selbst aus.</h3>
+                  <h3>Jetzt selbst ausprobieren</h3>
                   <p>
-                    Ändern Sie die Einstellungen im Simulator und testen Sie
-                    sich dann selbst.
+                    Verändere die Werte im Labor. Erkläre dir den Zusammenhang,
+                    bevor du den Wissenstest beginnst.
                   </p>
                 </div>
                 <button
                   className="button button-dark"
-                  onClick={() => {
-                    setTab("lab");
-                    scrollToReadingTarget(320);
-                  }}
+                  onClick={() => openPanel("lab")}
                 >
                   Experiment starten
                   <ArrowRight size={16} />
                 </button>
               </div>
             </article>
-            <aside className="reading-toc">
-              <QuantityLegend items={lessonBasics[lesson.id].units} compact />
-              <span className="eyebrow">IN DIESER LEKTION</span>
-              <nav>
-                {lesson.sections.map((s, i) => (
-                  <a
-                    key={s.id}
-                    href={`#section-${s.id}`}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      scrollToReadingTarget(
-                        document.getElementById(`section-${s.id}`),
-                      );
-                    }}
-                  >
-                    <span>{String(i + 1).padStart(2, "0")}</span>
-                    {s.title}
-                  </a>
-                ))}
-                <a
-                  href="#summary"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    scrollToReadingTarget(document.getElementById("summary"));
-                  }}
-                >
-                  <CheckCircle2 size={14} />
-                  Die Hauptsache
-                </a>
-              </nav>
-              <div className="toc-tip">
-                <span>✳</span>
-                <p>
-                  Beeilen Sie sich nicht.
-                  <br />
-                  Verständnis ist wichtiger als Geschwindigkeit.
-                </p>
-              </div>
-            </aside>
           </div>
         )}
         {tab === "lab" && (
@@ -1367,12 +1358,12 @@ function Lesson({ lesson, profile, bookmark, onComplete, initialTab }) {
             <InteractiveLab lessonId={lesson.id} />
             <div className="lab-next">
               <p>
-                Sehen Sie, wie die Mengen zusammenhängen? Lassen Sie uns Ihr
-                Verständnis überprüfen.
+                Wie hängen die Größen zusammen? Prüfe dein Verständnis jetzt mit
+                fünf Fragen.
               </p>
               <button
                 className="button button-dark"
-                onClick={() => setTab("quiz")}
+                onClick={() => openPanel("quiz")}
               >
                 Zum Wissenstest
                 <ArrowRight size={16} />
@@ -1947,7 +1938,9 @@ function Profile({ profile, progress, onUpdate, notify }) {
               // use helper to remove attempt keys (best-effort)
               removeAttemptKeys();
               removeAttemptKeys("volt-academy:lesson:");
-            } catch {}
+            } catch {
+              // The profile reset can still complete when separate session storage is unavailable.
+            }
             notify("Fortschritt zurückgesetzt");
           }}
         />

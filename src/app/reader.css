@@ -1,0 +1,421 @@
+/* Reading settings are scoped to lessons; instruments retain their own scale. */
+.lesson-workspace {
+  --reading-body: 19px;
+  --reading-small: 17px;
+  --reading-ink: #203645;
+  --reading-secondary: #385362;
+}
+.lesson-workspace[data-reading-size="large"] {
+  --reading-body: 22px;
+  --reading-small: 20px;
+}
+.reader-toolbar {
+  position: sticky;
+  top: 8px;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: fit-content;
+  max-width: 100%;
+  padding: 9px 12px;
+  margin: 0 0 24px auto;
+  background: #fff;
+  border: 1px solid #b2c7d3;
+  border-radius: 10px;
+  box-shadow: 0 4px 18px #112c4110;
+}
+.reader-toolbar-label {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 14px;
+  font-weight: 750;
+  color: #25485e;
+}
+.reader-size-buttons {
+  display: flex;
+  gap: 3px;
+  padding: 3px;
+  border-radius: 6px;
+  background: #edf2f5;
+}
+.reader-toolbar button {
+  min-height: 40px;
+  padding: 8px 12px;
+  border-radius: 5px;
+  font-size: 14px;
+  color: #294d62;
+  font-weight: 750;
+  white-space: nowrap;
+}
+.reader-size-buttons button[aria-pressed="true"] {
+  background: #103c54;
+  color: white;
+}
+.reader-focus {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  border: 1px solid #b2c7d3;
+}
+.reader-focus[aria-pressed="true"] {
+  background: #d9fa8b;
+  color: #173b39;
+  border-color: #9ebd69;
+}
+.reader-toolbar button:focus-visible,
+.lesson-outline button:focus-visible,
+.outline-select select:focus-visible {
+  outline: 3px solid #11748c;
+  outline-offset: 3px;
+}
+.reader-notice {
+  padding: 12px;
+  color: #365565;
+  background: #edf4f7;
+  line-height: 1.7;
+  font-size: 15px;
+}
+.lesson-workspace .reading-layout {
+  grid-template-columns: minmax(0, 1fr) 250px;
+  grid-template-areas: "article outline";
+  gap: 32px;
+}
+.lesson-article {
+  grid-area: article;
+}
+.lesson-outline {
+  grid-area: outline;
+  position: sticky;
+  top: 100px;
+  max-height: calc(100vh - 120px);
+  overflow: auto;
+  padding: 20px 14px;
+  border: 1px solid #c4d3dc;
+  border-radius: 10px;
+  background: #fff;
+  color: #284758;
+}
+.lesson-outline h2 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  margin: 0 0 15px;
+  letter-spacing: 0;
+}
+.lesson-outline nav {
+  display: grid;
+  gap: 5px;
+}
+.lesson-outline nav button {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  width: 100%;
+  padding: 10px;
+  min-height: 44px;
+  border-radius: 5px;
+  text-align: left;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #385767;
+}
+.lesson-outline nav button > span {
+  color: #4d6b7b;
+  font-size: 12px;
+  flex-shrink: 0;
+}
+.lesson-outline nav button[aria-current="location"] {
+  color: #123f56;
+  background: #e0f1f4;
+  font-weight: 800;
+  box-shadow: inset 3px 0 #087c91;
+}
+.lesson-outline > p {
+  margin: 18px 10px 0;
+  padding-top: 15px;
+  border-top: 1px solid #d5e0e6;
+  color: #456373;
+  font-size: 13px;
+  line-height: 1.8;
+}
+.outline-select {
+  display: none;
+}
+.lesson-workspace .lesson-header {
+  padding: 28px 30px;
+  border-left: 0;
+  border-top: 4px solid #168397;
+  border-radius: 10px;
+}
+.lesson-workspace .lesson-header h1 {
+  line-height: 1.2;
+  max-width: 25ch;
+}
+.lesson-workspace .lesson-lead {
+  color: #304e60;
+  max-width: 70ch;
+  font-size: var(--reading-body);
+  line-height: 1.7;
+}
+.lesson-workspace .lesson-tabs {
+  margin-top: 24px;
+}
+.lesson-workspace .lesson-brief {
+  padding: clamp(22px, 3vw, 38px);
+  border-radius: 10px;
+}
+.lesson-workspace
+  :is(
+    .brief-answer,
+    .textbook-section > p.plain-explanation,
+    .lesson-depth p,
+    .it-worked-example > p,
+    .it-worked-example li p,
+    .current-primer li p,
+    .ohm-it-context > p,
+    .ohm-reference p
+  ) {
+  font-size: var(--reading-body);
+  line-height: 1.85;
+  color: var(--reading-ink);
+  max-width: 68ch;
+  text-wrap: pretty;
+}
+.lesson-workspace
+  :is(
+    .brief-basics li,
+    .brief-result,
+    .worked-example p,
+    .worked-example li,
+    .lesson-terms p,
+    .lesson-summary li,
+    .current-primer > aside p,
+    .quantity-legend dd,
+    .lesson-pitfall p
+  ) {
+  font-size: var(--reading-small);
+  line-height: 1.8;
+  color: var(--reading-secondary);
+}
+.lesson-workspace :is(.lesson-brief h2, .textbook-section > h2) {
+  line-height: 1.35;
+  letter-spacing: -0.025em;
+}
+.lesson-workspace .textbook-section {
+  padding: 28px 30px;
+  margin-bottom: 22px;
+  background: white;
+  border: 1px solid #c4d3dc;
+  border-radius: 10px;
+}
+.lesson-workspace .textbook-section .section-index {
+  margin-bottom: 15px;
+}
+.lesson-workspace .lesson-depth {
+  background: #f6f8fa;
+  padding: 17px 19px;
+}
+.lesson-workspace .lesson-depth summary {
+  min-height: 32px;
+  font-size: 15px;
+  line-height: 1.8;
+}
+.lesson-workspace .lesson-depth[open] summary {
+  padding-bottom: 14px;
+  border-bottom: 1px solid #cbd9e2;
+}
+.lesson-workspace .lesson-terms,
+.lesson-workspace .lesson-summary {
+  background: #fff;
+  padding: 25px;
+  border: 1px solid #c4d3dc;
+  border-radius: 10px;
+}
+.lesson-workspace .quantity-legend dt strong {
+  font-size: 17px;
+}
+.lesson-workspace .quantity-legend dt small {
+  font-size: 15px;
+}
+.lesson-workspace .it-worked-example {
+  background: #f1f6f8;
+  padding: 24px;
+}
+.lesson-pitfall {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  padding: 20px;
+  margin: 24px 0;
+  background: #f0f8f5;
+  border-left: 4px solid #39816c;
+  border-radius: 5px;
+}
+.lesson-pitfall > svg {
+  flex-shrink: 0;
+  color: #246c57;
+  margin-top: 2px;
+}
+.lesson-pitfall span {
+  color: #27644f;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+}
+.lesson-pitfall h3 {
+  margin: 7px 0 10px;
+  font-size: 20px;
+  line-height: 1.5;
+  color: #244739;
+}
+.lesson-pitfall p {
+  margin: 0;
+}
+.brief-formula {
+  padding: 18px;
+  margin: 20px 0;
+  background: white;
+  border: 1px solid #b8cdd9;
+  border-radius: 7px;
+}
+.brief-formula summary {
+  cursor: pointer;
+  color: #164d64;
+  font-size: 15px;
+  font-weight: 750;
+  line-height: 1.7;
+}
+.brief-formula > p {
+  color: #385363;
+  font-size: var(--reading-small);
+  line-height: 1.8;
+}
+.lesson-workspace [role="tabpanel"]:focus {
+  outline: none;
+}
+.lesson-workspace :is(h2, #summary):focus-visible {
+  outline: 3px solid #1b8195;
+  outline-offset: 7px;
+}
+.app-shell:has([data-reading-focus="true"]) .sidebar,
+.app-shell:has([data-reading-focus="true"]) .mobile-menu {
+  display: none;
+}
+.app-shell:has([data-reading-focus="true"]) .app-body {
+  margin-left: 0;
+}
+.app-shell:has([data-reading-focus="true"]) .main-content {
+  max-width: 1260px;
+}
+.lesson-workspace .ohm-step-description {
+  font-size: var(--reading-body);
+  line-height: 1.8;
+}
+.lesson-workspace
+  :is(.ohm-guidance p, .ohm-guidance li, .ohm-concept p, .ohm-model-notes p) {
+  font-size: var(--reading-small);
+  line-height: 1.75;
+}
+.lesson-workspace .ohm-view-tabs {
+  overflow-x: auto;
+}
+.lesson-workspace .ohm-view-tabs > button {
+  flex-shrink: 0;
+}
+@media (max-width: 1280px) {
+  .lesson-workspace .reading-layout {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "outline" "article";
+    gap: 20px;
+  }
+  .lesson-outline {
+    top: 82px;
+    z-index: 15;
+    padding: 10px 14px;
+    max-height: none;
+    overflow: visible;
+  }
+  .lesson-outline h2,
+  .lesson-outline nav,
+  .lesson-outline > p {
+    display: none;
+  }
+  .outline-select {
+    display: block;
+  }
+  .outline-select select {
+    display: block;
+    width: 100%;
+    min-height: 42px;
+    border: 0;
+    padding: 7px;
+    color: #193f55;
+    background: #fff;
+    font-size: 16px;
+    font-weight: 700;
+  }
+}
+@media (max-width: 760px) {
+  .reader-toolbar {
+    top: 6px;
+    padding: 7px;
+    gap: 6px;
+    margin-bottom: 20px;
+  }
+  .reader-toolbar-label {
+    font-size: 13px;
+    gap: 5px;
+  }
+  .reader-toolbar-label svg {
+    display: none;
+  }
+  .reader-toolbar button {
+    padding-inline: 9px;
+    min-height: 42px;
+    font-size: 13px;
+  }
+  .reader-size-buttons {
+    padding: 2px;
+  }
+  .lesson-outline {
+    top: 78px;
+    padding: 7px 10px;
+  }
+  .lesson-workspace .lesson-header {
+    padding: 22px;
+  }
+  .lesson-workspace .lesson-header h1 {
+    font-size: 32px;
+  }
+  .lesson-workspace .lesson-header-meta {
+    line-height: 1.8;
+  }
+  .lesson-workspace .textbook-section {
+    padding: 24px 20px;
+  }
+  .lesson-workspace .it-worked-example {
+    padding: 18px;
+  }
+  .lesson-workspace .textbook-section > h2 {
+    font-size: 26px;
+  }
+  .lesson-pitfall {
+    padding: 16px;
+    gap: 10px;
+  }
+  .lesson-pitfall > svg {
+    width: 18px;
+  }
+  .brief-formula {
+    padding: 14px;
+  }
+}
+@media print {
+  .reader-toolbar,
+  .lesson-outline {
+    display: none;
+  }
+}

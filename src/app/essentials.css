@@ -77,7 +77,7 @@
   border-radius: 5px;
   overflow: hidden;
 }
-.lesson-video-player video {
+.lesson-video-player iframe {
   position: absolute;
   inset: 0;
   width: 100%;

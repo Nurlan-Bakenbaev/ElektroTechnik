@@ -93,7 +93,7 @@ export const examQuestions = [
     unit: "V",
     tolerance: 0.01,
     explanation:
-      "Spannungsmodul U = |W| / |Q| = 24 J / 3 C = 8 V. Die Spannung gibt an, wie viel Energie pro Einheit übertragener Ladung vorhanden ist: 1 V = 1 J / C.",
+      "Der Betrag der Spannung beträgt 24 J geteilt durch 3 C, also 8 V. Spannung beschreibt Energie pro Ladung: Ein Volt entspricht einem Joule pro Coulomb.",
   },
   {
     id: "exam-08",
@@ -588,7 +588,7 @@ export const formulaSheet = [
   {
     lessonId: "capacitor",
     title: "Kapazität und Ladung des Kondensators",
-    expression: "C=Q/U; Flach = ε₀εrA / d",
+    expression: "C = Q/U; C = ε₀εrA / d",
     legend:
       "C als Formelzeichen: Kapazität in Farad (F). Q: Betrag der Ladung auf einer Platte in Coulomb (Einheit C). U: Spannung in Volt (V). A: Plattenfläche in m². d: Plattenabstand in Metern (m). ε₀: elektrische Feldkonstante; εr: relative Permittivität des Materials ohne Einheit.",
     conditions:

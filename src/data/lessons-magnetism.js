@@ -80,7 +80,7 @@ export const magnetismLessons = [
           given:
             "C₁ = 10 µF und C₂ = 20 µF liegen in Reihe an einer 12-V-Quelle. Beide sind zu Beginn entladen.",
           steps: [
-            "Cges = 10 20 / (10 + 20) = 6,67 µF.",
+            "Cges = (10 · 20) / (10 + 20) ≈ 6,67 µF.",
             "Gesamtladung Q = CgesU = 6,67 μF · 12 V ≈ 80 μC.",
             "U₁ = Q/C₁ = 80/10 = 8 V; U₂ = Q/C₂ = 80/20 = 4 V.",
             "Probe: 8 V + 4 V = 12 V. Die kleinere Kapazität erhält die größere Spannung.",
@@ -176,10 +176,18 @@ export const magnetismLessons = [
       {
         term: "Dielektrikum",
         german: "Dielektrikum",
+        symbol: "—",
+        unit: "—",
+        definition:
+          "Isolierstoff, dessen Polarisation das elektrische Feld und die Kapazität beeinflusst.",
+      },
+      {
+        term: "Relative Permittivität",
+        german: "relative Permittivität",
         symbol: "εᵣ",
         unit: "dimensionslos",
         definition:
-          "Isolierstoff, dessen Polarisation das elektrische Feld und die Kapazität beeinflusst.",
+          "Materialkennzahl: Sie gibt im einfachen Plattenmodell an, um welchen Faktor die Kapazität gegenüber Vakuum steigt. Sie bezeichnet eine Eigenschaft des Isolierstoffs, nicht den Stoff selbst.",
       },
       {
         term: "Zeitkonstante",
@@ -363,7 +371,7 @@ export const magnetismLessons = [
           "In einem Leiter bewegen sich die Ladungsträger geordnet, daher wirkt das Feld auf den stromdurchflossenen Leiter. Für ein gerades Leiterstück der Länge l in einem homogenen Feld gilt F = BIl sin α. Dabei ist α der Winkel zwischen der technischen Stromrichtung und B. Darauf beruht der Elektromotor.",
         ],
         formula: {
-          expression: "Fmag = |q| · v · B · sin α; Fprov = B I l sin α",
+          expression: "F_mag = |q| · v · B · sin α; F_Leiter = B I l sin α",
           legend:
             "F ist die Kraft in N; q ist die Ladung in C; v ist die Geschwindigkeit in m/s; B ist die magnetische Flussdichte in T; I ist der Strom in A; l ist die wirksame Länge in m.",
           note: "Die Leiterformel gilt für ein gerades Leiterstück im homogenen Feld. Vektorform für eine Ladung: F⃗mag = q(v⃗ × B⃗).",
@@ -375,7 +383,7 @@ export const magnetismLessons = [
           steps: [
             "Länge umrechnen: l = 0,10 m.",
             "Wegen α = 90° ist sin α = 1.",
-            "F = BIl = 0,20 3 0,10 = 0,060 N.",
+            "F = BIl = 0,20 · 3 · 0,10 = 0,060 N.",
             "Dreht man den Leiter in Feldrichtung, wird α = 0° und die Kraft null.",
           ],
           answer:
@@ -416,7 +424,7 @@ export const magnetismLessons = [
         paragraphs: [
           "Ferromagnetische Werkstoffe wie Eisen, Nickel und Kobalt lassen sich stark magnetisieren. Weichmagnetische Werkstoffe ändern ihre Magnetisierung leicht; sie eignen sich für Kerne von Elektromagneten und Transformatoren. Hartmagnetische Werkstoffe behalten ihre Magnetisierung und werden für Dauermagnete verwendet. „Weich“ und „hart“ beziehen sich hier nicht auf die mechanische Härte.",
           "Nicht jedes Metall wird von einem Dauermagneten angezogen. Kupfer und Aluminium verhalten sich anders als Eisen. Paramagnetische Stoffe verstärken ein äußeres Feld nur schwach, diamagnetische schwächen es nur schwach. Im einfachen Versuch fällt das kaum auf, bei Präzisionsmessungen spielt es eine Rolle.",
-          "Stahlteile verändern das Feldbild. Starke Magnete ziehen sich kräftig an und können Finger einklemmen. Für Versuche genügen kleine Magnete, ein Kompass und ungefährliche Ströme. Beachten Sie bei empfindlichen Geräten und medizinischen Implantaten die Herstellerangaben. Die Stärke eines Magneten lässt sich nicht erkennen.",
+          "Stahlteile verändern das Feldbild. Starke Magnete ziehen sich kräftig an und können Finger einklemmen. Für Versuche genügen kleine Magnete, ein Kompass und ungefährliche Ströme. Beachten Sie bei empfindlichen Geräten und medizinischen Implantaten die Herstellerangaben. An der Größe eines Magneten allein lässt sich seine magnetische Wirkung nicht zuverlässig erkennen.",
         ],
         callout: {
           type: "insight",
@@ -676,7 +684,7 @@ export const magnetismLessons = [
           steps: [
             "ΔI = 0 − 2 = −2 A.",
             "ΔI/Δt = −2/0,010 = −200 A/s.",
-            "|𝓔av| = L |ΔI/Δt| = 0,20 200 = 40 V.",
+            "|𝓔av| = L |ΔI/Δt| = 0,20 · 200 = 40 V.",
             "Vor dem Abschalten betrug die Feldenergie W = 0,5 · 0,20 · 2² = 0,40 J; sie muss abgebaut oder zurückgespeist werden.",
           ],
           answer:
@@ -708,10 +716,18 @@ export const magnetismLessons = [
       {
         term: "Zylinderspule / Solenoid",
         german: "Zylinderspule / Solenoid",
-        symbol: "N",
-        unit: "drehen",
+        symbol: "—",
+        unit: "—",
         definition:
           "Lange zylindrische Spule, in deren Inneren das Feld als nahezu homogen gelten kann.",
+      },
+      {
+        term: "Windungszahl",
+        german: "Windungszahl",
+        symbol: "N",
+        unit: "dimensionslos",
+        definition:
+          "Anzahl der Drahtwindungen einer Spule. N ist eine reine Zahl; das Wort Windungen dient zur Verdeutlichung und ist keine eigene SI-Einheit.",
       },
       {
         term: "Elektromagnetische Induktion",
@@ -962,7 +978,7 @@ export const magnetismLessons = [
           expression:
             "NI = H_K l_K + (B/μ₀)g; wenn der Kern vernachlässigt wird: NI ≈ Bg/μ₀",
           legend:
-            "g ist die Gesamtlänge der Luftspalte in m; lser ist die Weglänge im Kern in m; Hser ist die magnetische Feldstärke im Kern bei gegebenem B.",
+            "g ist die Gesamtlänge der Luftspalte in Metern (m). l_K ist die Weglänge im Kern in Metern (m), H_K die magnetische Feldstärke im Kern in Ampere pro Meter (A/m). B ist die magnetische Flussdichte in Tesla (T), N die Windungszahl ohne Einheit und I die Stromstärke in Ampere (A). μ₀ ist die magnetische Feldkonstante.",
           note: "Vorausgesetzt werden annähernd gleicher Querschnitt, gleicher Fluss sowie geringe Streuung und Randeffekte. Für eine genaue Auslegung berücksichtigt man diese Effekte gesondert.",
         },
         example: {

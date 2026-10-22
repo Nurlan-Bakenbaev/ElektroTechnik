@@ -84,3 +84,22 @@ Screenshot evidence was generated from the running application and inspected:
 These clips have German speech, with no separate caption tracks; no full media-accessibility certification is claimed. Repository-contributor cleanup is a separate history operation and is not represented as completed by these website checks.
 
 The GitHub Pages static export also built successfully with `STATIC_EXPORT=true NEXT_PUBLIC_BASE_PATH=/ElektroTechnik`. All six collection/video browser scenarios passed against that exported site served under `/ElektroTechnik/`, including all thirteen actual media files and quiz deep links. This specifically checks the deployment subpath rather than assuming the root-path production-server checks cover it.
+
+## Reader, eight supplementary explanations and restored YouTube — 2026-10-22
+
+The current release supersedes the local-video delivery described above. Official YouTube embeds load only after activation; advertising and branding are disclosed and are not suppressed. MP4 files are removed from the current public output. Archived media metadata remains historical evidence.
+
+Final checks passed: lint, **54 individual unit/content/model tests** with the regular `npm test` command, optimized production build, and the complete **36-scenario browser suite**. The complete course/examination path answers all 65 topic questions and 35 final questions, then verifies a lower-scoring retry does not duplicate XP. Tests also cover all eight supplementary guides and self-checks, DC/AC polarity, preference persistence independently of saved results, invalid/blocked reader storage, lesson outlines, focus/summary opening and 320/375/768-pixel layouts.
+
+An actual 3-pixel overflow at 768 pixels came from the header profile chevron: the expanded account controls did not fit before the former 700-pixel breakpoint. Compact header controls now apply through 900 pixels. The regression assertion remains strict; it was not relaxed or replaced by global overflow hiding. Greek indexed symbols now render with subscripts while retaining their underlying text in the pure notation model.
+
+The Pages static export with `/ElektroTechnik` succeeds and occupies approximately **4.0 MB**. No `out/videos` directory is present. Representative reader and motor-guide screenshots were visually inspected; the motor-guide lead is 19-pixel dark text (`rgb(30, 52, 68)`) on white, with a selectable 22-pixel mode.
+
+All **10 reader, supplementary-guide and YouTube integration scenarios** also passed against that static export served at `/ElektroTechnik/` on port 3003. This checks the actual Pages asset paths and hash routes in addition to the root-path production suite.
+
+- [Reader, desktop](screenshots/reader-desktop.png)
+- [Reader, mobile](screenshots/reader-mobile.png)
+- [Motor explanation, desktop](screenshots/foundations-motors-desktop.png)
+- [Shielding, mobile](screenshots/foundations-shielding-mobile.png)
+
+YouTube browser integration uses intercepted iframe responses and therefore does not claim that every external video will always play, be ad-free, or remain available. This release does not claim full WCAG certification. The [Europa analysis](EUROPA_ANALYSE_2026-10-22.md) documents additional problem-solving work still needed; it is not a claim that the complete workbook has already become an interactive exercise bank.

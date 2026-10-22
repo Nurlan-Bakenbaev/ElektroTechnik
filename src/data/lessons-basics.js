@@ -145,7 +145,7 @@ export const basicsLessons = [
         symbol: "DC",
         unit: "—",
         definition:
-          "Strom, dessen Betrag und Richtung sich zeitlich nicht ändern.",
+          "Strom mit gleichbleibender Richtung. Bei konstantem Gleichstrom bleibt zusätzlich der Betrag gleich; pulsierender Gleichstrom kann sich im Betrag ändern.",
       },
       {
         term: "Ladungsträger",
@@ -560,13 +560,13 @@ export const basicsLessons = [
         title: "3. Spannung ohne Strom",
         paragraphs: [
           "An den offenen Klemmen einer Batterie liegt Spannung an, obwohl außen kein Gleichstrom fließt. Die Quelle hält die Potenzialdifferenz aufrecht, es fehlt nur der geschlossene Stromkreis. Ebenso kann an einem geladenen Kondensator Spannung herrschen, ohne dass durch das ideale Dielektrikum ein Strom fließt. Spannung und Strom sind verschiedene Zustände.",
-          "Schließt man einen Widerstand an die Batterie an, fließt ein Strom. Er hängt von der Spannung und vom Gesamtwiderstand ab. Eine ideale Spannungsquelle hält ihre Spannung bei jeder Belastung konstant. Eine reale Quelle hat einen Innenwiderstand und eine Stromgrenze. Steigt der Strom, sinkt die Klemmenspannung, denn ein Teil der Spannung fällt am Innenwiderstand ab. Die Nennspannung gilt also nicht bei jeder Belastung.",
+          "Schließt man einen Widerstand an die Batterie an, fließt ein Strom. Er hängt von der Spannung und vom Gesamtwiderstand ab. Eine ideale Spannungsquelle hält ihre Spannung bei jeder Belastung konstant. Im einfachen Innenwiderstandsmodell einer realen Batterie sinkt die Klemmenspannung mit wachsendem Strom. Geregelte Netzteile können ihre Spannung dagegen innerhalb des vorgesehenen Lastbereichs annähernd konstant halten. Ihre Strom- und Leistungsgrenzen gelten trotzdem.",
         ],
         formula: {
           expression: "Uterminale = E − I r",
           legend:
             "E – Quellenspannung (EMK) in V; r – Innenwiderstand in Ω; I – Strom der Quelle in A.",
-          note: "Einfaches Modell einer entladenen Quelle mit konstanter EMK und konstantem Innenwiderstand. Beim Laden und in anderen Betriebsarten beachtet man Stromrichtung und Vorzeichen gesondert.",
+          note: "Einfaches Modell einer entladenden Quelle mit konstanter EMK und konstantem Innenwiderstand. Die Quelle gibt Energie ab. Beim Laden beachtet man Stromrichtung und Vorzeichen gesondert.",
         },
         example: {
           title: "Beispiel: Klemmenspannung unter Last",
@@ -598,7 +598,7 @@ export const basicsLessons = [
         id: "dc-ac",
         title: "5. Gleich- und Wechselspannung",
         paragraphs: [
-          "Eine Gleichspannung behält Betrag und Polarität. Im u(t)-Diagramm ist sie eine waagerechte Linie. Eine mit DC gekennzeichnete Quelle liefert eine feste Polarität. Beim Entladen kann die Spannung aber leicht schwanken oder sinken. Eine Wechselspannung wechselt periodisch ihre Polarität. Ein typisches Beispiel ist die Sinusspannung.",
+          "Eine Gleichspannung behält ihre Polarität. Bei konstanter Gleichspannung bleibt zusätzlich der Betrag gleich: Im u(t)-Diagramm ist sie eine waagerechte Linie. Eine mit DC gekennzeichnete Quelle liefert eine feste Polarität; beim Entladen kann ihr Spannungsbetrag trotzdem sinken. Eine Wechselspannung wechselt ihre Polarität, in den hier betrachteten Beispielen periodisch. Ein typisches Beispiel ist die Sinusspannung.",
           "Eine Sinusspannung hat Augenblickswert, Scheitelwert Û und Effektivwert U_eff. Der Effektivwert erzeugt an demselben Widerstand dieselbe mittlere Wärmeleistung wie eine gleich große Gleichspannung. Für reinen Sinus gilt U_eff = Û/√2. Beispiel: 12 V Effektivwert entsprechen etwa 16,97 V Scheitelwert. Angaben zur Netzspannung oder zur Sekundärspannung eines Transformators sind meist Effektivwerte.",
         ],
         formula: {
@@ -677,7 +677,7 @@ export const basicsLessons = [
       "Spannung gilt zwischen zwei Punkten: U_AB = φ_A − φ_B.",
       "Eine Batterie im Leerlauf hat Spannung, ohne dass außen Gleichstrom fließt.",
       "Das Voltmeter wird parallel geschaltet und muss hochohmig sein.",
-      "Im einfachen Modell einer entladenen realen Quelle gilt U_Kl = E − I · r.",
+      "Im einfachen Modell einer entladenden realen Quelle gilt U_Kl = E − I · r. Die Quelle gibt dabei Energie an den äußeren Stromkreis ab.",
       "Beim Sinus ist der Effektivwert der Scheitelwert geteilt durch √2.",
     ],
     quiz: [
@@ -798,7 +798,7 @@ export const basicsLessons = [
           "Das Material beschreibt der spezifische Widerstand ρ. Seine SI-Einheit ist Ω m. Bei Drähten rechnet man bequem in Ω · mm²/m, wenn die Fläche in mm² und die Länge in m angegeben sind. Für Kupfer bei 20 °C nimmt man oft ρ ≈ 0,0175 Ω mm²/m an. Das ist ein Näherungswert, er hängt von Zusammensetzung und Temperatur ab. Bei einer Zweidrahtleitung zählt die Länge von Hin- und Rückleiter: Ein Verbraucher in 10 m Entfernung bedeutet meist 20 m Leitungslänge.",
         ],
         formula: {
-          expression: "R = ρ l / S;  Kreis = π d² / 4",
+          expression: "R = ρ l / S; S = π d² / 4",
           legend:
             "ρ – spezifischer Widerstand; l – Länge in m; S – Querschnittsfläche; d – Durchmesser.",
           note: "Die Formel gilt für einen homogenen Leiter mit konstantem Querschnitt bei gegebener Temperatur. Verwenden Sie zueinander passende Einheiten für Fläche und ρ.",
@@ -1023,7 +1023,7 @@ export const basicsLessons = [
         id: "ohmic-law",
         title: "1. Was sagt das Ohmsche Gesetz?",
         paragraphs: [
-          "Bei einem ohmschen Leiter ist der Strom unter konstanten Bedingungen proportional zur angelegten Spannung. Doppelte Spannung ergibt doppelten Strom, dreifache Spannung dreifachen. Der Proportionalitätsfaktor ist der Widerstand: I = U/R. Gleichwertig ist U = I · R. Gemeint sind die Spannung an einem Bauelement, der Strom durch dasselbe Bauelement und sein Widerstand.",
+          "Bei einem ohmschen Leiter ist der Strom unter konstanten Bedingungen proportional zur angelegten Spannung. Doppelte Spannung ergibt doppelten Strom, dreifache Spannung dreifachen. Im Zusammenhang I = U/R ist der Proportionalitätsfaktor zwischen Strom und Spannung der Leitwert, also der Kehrwert des Widerstands. Gleichwertig ist U = I · R. Gemeint sind die Spannung an einem Bauelement, der Strom durch dasselbe Bauelement und sein Widerstand.",
           "Die Bedingung konstanter Widerstand ist wesentlich. Temperatur, Material und Geometrie müssen nahezu unverändert bleiben. U/I lässt sich in jedem Arbeitspunkt bilden, beweist aber noch kein ohmsches Verhalten. Ohmsch heißt: Das Verhältnis bleibt bei Spannungsänderung konstant. Diode und stark erhitzter Glühfaden werden nicht über den ganzen Bereich durch ein konstantes R beschrieben.",
         ],
         formula: {

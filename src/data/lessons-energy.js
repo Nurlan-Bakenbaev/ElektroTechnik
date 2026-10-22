@@ -39,7 +39,7 @@ export const energyLessons = [
         formula: {
           expression: "A = U · Q = U · I · t",
           legend:
-            "A – elektrische Arbeit, J; U – Gleichspannung, V; Q – Ladung, C; I – Gleichstrom, A; t – Zeit, s.",
+            "A als Formelzeichen bezeichnet hier die elektrische Arbeit in Joule (J). U ist die Spannung in Volt (V), Q die Ladung in Coulomb (C), I die Stromstärke in Ampere (Einheit A) und t die Zeit in Sekunden (s). A als Arbeit ist nicht die Einheit Ampere.",
           note: "Die Form U · I · t gilt nur für konstantes U und I. Allgemein ist die Energie die Summe aller P · Δt.",
         },
         example: {
@@ -98,7 +98,7 @@ export const energyLessons = [
           "Die Nennleistung ist nicht immer die mittlere Leistung. Der Wasserkocher läuft nur beim Aufheizen. Der Kühlschrank schaltet den Kompressor zyklisch ein. Der Computer verbraucht je nach Last unterschiedlich viel. Sind die Betriebsarten bekannt, berechnet man den Verbrauch für jede einzeln und addiert ihn. Genaue Werte liefert ein Energiemessgerät.",
         ],
         formula: {
-          expression: "E = P t; Kosten = E-Tarif",
+          expression: "E = P t; Kosten = E · Tarif",
           legend:
             "Mit P in kW und t in h erhält man die Energie E in kWh. Der Preis muss sich auf 1 kWh beziehen.",
           note: "Für mehrere Zeitabschnitte gilt Etot = P₁t₁ + P₂t₂ + … . Dabei zählt die tatsächliche Betriebszeit jeder Betriebsart.",
@@ -283,7 +283,7 @@ export const energyLessons = [
         formula: {
           expression: "P=A/t; 1 W = 1 J/s",
           legend:
-            "P – mittlere Leistung, W; A – übertragene Energie, J; t – Zeit, s.",
+            "P ist die mittlere Leistung in Watt (W). A als Formelzeichen bezeichnet hier die übertragene Energie in Joule (J), nicht die Einheit Ampere. t ist die Zeit in Sekunden (s).",
           note: "Bei konstanter Leistung gilt A = P · t. Bei veränderlicher Leistung ist die Energie die Fläche unter der Kurve P(t).",
         },
         callout: {
@@ -403,7 +403,7 @@ export const energyLessons = [
       {
         term: "Watt",
         german: "Watt",
-        symbol: "W, W",
+        symbol: "W",
         unit: "J/s",
         definition:
           "Einheit der Leistung: 1 W entspricht 1 J Energie pro Sekunde.",
@@ -887,13 +887,13 @@ export const energyLessons = [
         title: "6. Feldarbeit, Leiter und Dielektrika",
         paragraphs: [
           "Bewegt sich eine Ladung von A nach B, verrichtet das elektrische Feld die Arbeit W_Feld = q · (φA − φB) = q · U_AB. Eine positive Ladung, die sich mit dem Feld bewegt, verliert potenzielle Energie. Die Feldarbeit ist positiv. Bei negativer Ladung kehrt das Vorzeichen von q das Ergebnis um. Für Spannung und Arbeit zählen Anfangs- und Endpunkt, nicht nur die Entfernung.",
-          "Ein Leiter enthält frei bewegliche Ladungsträger, die sich im Feld verschieben. In einem Dielektrikum sind die Ladungen überwiegend gebunden. Das Feld bewirkt eine Polarisation: Positive und negative Ladungen werden leicht gegeneinander verschoben oder Dipole richten sich aus. Die Polarisation schwächt das Feld und ist die Grundlage der Wirkung eines Dielektrikums im Kondensator.",
+          "Ein Leiter enthält frei bewegliche Ladungsträger. In einem Dielektrikum sind die Ladungen überwiegend gebunden. Das Feld verschiebt positive und negative Ladungen leicht gegeneinander oder richtet Dipole aus: Das heißt Polarisation. Bei festgehaltener freier Plattenladung schwächt ein eingesetztes Dielektrikum das Feld im Kondensator. Hält eine Quelle stattdessen die Spannung konstant, fließt zusätzliche Ladung nach; bei unveränderter Plattengeometrie bleibt das Feld näherungsweise gleich.",
           "Wird die Feldstärke für ein Material zu groß, kommt es zum elektrischen Durchschlag: Der Isolator wird leitend. Für die Isolation zählen daher nicht nur die Spannung, sondern auch Abstände, Elektrodenform, Luftfeuchte und Materialeigenschaften. Verwenden Sie in Versuchen sichere Kleinspannungsquellen und fertige Schaltungen. Geladene Kondensatoren können auch nach dem Abschalten Energie speichern.",
         ],
         formula: {
           expression: "W_Feld = q U_AB; ΔE_pot = −W_Feld",
           legend:
-            "UAB = φA − φB – Spannung von A nach B, V; q – Ladung mit Vorzeichen, C; Afield – Feldarbeit, J.",
+            "UAB ist die Spannung von Punkt A gegenüber Punkt B in Volt (V). q ist die Ladung mit Vorzeichen in Coulomb (C). W_Feld ist die Arbeit des elektrischen Feldes in Joule (J). ΔE_pot bezeichnet die Änderung der potenziellen Energie in Joule (J).",
           note: "Das ist die Arbeit eines elektrostatischen Feldes. Wirken weitere Kräfte, bestimmt die Gesamtarbeit aller Kräfte die Änderung der kinetischen Energie.",
         },
       },

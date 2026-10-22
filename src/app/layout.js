@@ -3,6 +3,8 @@ import "./globals.css";
 import "./academy.css";
 import "./essentials.css";
 import "./collections.css";
+import "./reader.css";
+import "./foundations.css";
 import LearningExperience from "../components/LearningExperience";
 
 export const metadata = {

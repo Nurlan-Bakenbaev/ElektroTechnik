@@ -4,7 +4,7 @@ export const lessonBasics = {
     context: "Elektrische Stromstärke",
     question: "Was ist elektrischer Strom, und wie misst man seine Stärke?",
     answer:
-      "Elektrischer Strom ist die gerichtete Bewegung elektrischer Ladung. In einem Metalldraht übernehmen das die negativ geladenen Elektronen. Die Stromstärke beschreibt, wie viel Ladung pro Sekunde durch einen Querschnitt fließt. Sie wird in Ampere gemessen. Bevor wir rechnen, klären wir, warum die Ladungen überhaupt in Bewegung kommen.",
+      "Elektrischer Strom ist die gerichtete Bewegung elektrischer Ladung. In einem Metalldraht übernehmen das die negativ geladenen Elektronen. Die Stromstärke beschreibt, wie viel Ladung pro Sekunde durch einen Querschnitt fließt. Sie wird in Ampere gemessen. Die Quelle liefert die Energie für den Ladungsfluss; die Elektronen sind schon im Draht vorhanden.",
     essentials: [
       "Die Quelle stellt Spannung und Energie bereit; die Elektronen sind bereits im Draht vorhanden.",
       "Für dauerhaften Gleichstrom braucht es einen geschlossenen leitfähigen Weg. Elektronen driften im äußeren Metallkreis von Minus nach Plus.",

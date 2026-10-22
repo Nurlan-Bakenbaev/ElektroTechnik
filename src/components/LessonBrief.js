@@ -2,13 +2,17 @@ import { ArrowRight, Check, BookOpen, FlaskConical } from "lucide-react";
 import { lessonBasics } from "../data/lesson-basics.js";
 import QuantityLegend, { UnitText } from "./QuantityLegend";
 import CurrentPrimer from "./CurrentPrimer";
+import FormulaImage from "./FormulaImage";
+import LessonPitfall from "./LessonPitfall";
+import { FoundationLinks } from "./Fundamentals";
 
-export default function LessonBrief({ lessonId, onExperiment }) {
+export default function LessonBrief({ lessonId, onExperiment, formula }) {
   const basics = lessonBasics[lessonId];
   if (!basics) return null;
   return (
     <section
       className="lesson-brief"
+      id="lesson-start"
       aria-label="Grundlagen und erklärtes Beispiel"
     >
       <div className="brief-context">
@@ -33,6 +37,7 @@ export default function LessonBrief({ lessonId, onExperiment }) {
           ))}
         </ul>
       </div>
+      <LessonPitfall lessonId={lessonId} />
       <QuantityLegend items={basics.units} />
       <article
         className="it-worked-example"
@@ -45,6 +50,15 @@ export default function LessonBrief({ lessonId, onExperiment }) {
         <p>
           <UnitText>{basics.example.given}</UnitText>
         </p>
+        {formula && (
+          <details className="brief-formula" open>
+            <summary>Passende Formel aus der Formelsammlung</summary>
+            <FormulaImage expression={formula.expression} />
+            <p>
+              <UnitText>{formula.legend}</UnitText>
+            </p>
+          </details>
+        )}
         <ol>
           {basics.example.steps.map((step, index) => (
             <li key={step}>
@@ -71,6 +85,7 @@ export default function LessonBrief({ lessonId, onExperiment }) {
           </button>
         </div>
       )}
+      <FoundationLinks lessonId={lessonId} />
     </section>
   );
 }

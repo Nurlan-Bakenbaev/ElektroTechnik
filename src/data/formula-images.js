@@ -817,7 +817,7 @@ export const formulaImages = {
     ],
     "note": ""
   },
-  "R = ρ l / S;  Kreis = π d² / 4": {
+  "R = ρ l / S; S = π d² / 4": {
     "images": [
       "a4c8dc1470becb738459e766a766ecb8a2024795"
     ],
@@ -874,7 +874,7 @@ export const formulaImages = {
     ],
     "note": ""
   },
-  "E = P t; Kosten = E-Tarif": {
+  "E = P t; Kosten = E · Tarif": {
     "images": [
       "b7bf28799560afa646621289b6d4f647a4fbbaef"
     ],
@@ -981,7 +981,7 @@ export const formulaImages = {
     ],
     "note": "Das Quellbild bezeichnet die gespeicherte Energie mit E. Im Kurs verwenden wir dafür W. Sie wird in Joule gemessen; E steht hier nicht für die elektrische Feldstärke."
   },
-  "Fmag = |q| · v · B · sin α; Fprov = B I l sin α": {
+  "F_mag = |q| · v · B · sin α; F_Leiter = B I l sin α": {
     "images": [
       "030b09234d2f9e0fdd8806a9c2fbea68c7a9a38e",
       "f9580c0209dd4181136cfb5c9728d280b929d8d8"
@@ -1139,7 +1139,7 @@ export const formulaImages = {
     ],
     "note": "Die Quelle verwendet Ladungen mit Vorzeichen. Für den reinen Kraftbetrag verwendest du ihre Beträge. Gleiche Vorzeichen bedeuten Abstoßung, verschiedene Anziehung."
   },
-  "C=Q/U; Flach = ε₀εrA / d": {
+  "C = Q/U; C = ε₀εrA / d": {
     "images": [
       "cbb6e07710f0599a1b53811b9cf76436935218c6",
       "e230f522e021058342e520ade91ab3926d567534"

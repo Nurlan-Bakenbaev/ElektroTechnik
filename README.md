@@ -4,7 +4,7 @@ Eine Lernplattform auf Deutsch, entwickelt mit **Next.js 16, React 19 und JavaSc
 
 **Für Azubis in der Fachinformatik:** Alle 13 Themen beginnen mit dem elektrotechnischen Grundbegriff; Anwendungen folgen der Erklärung. Verständliche Beispiele und neu formulierte Erklärungen ergänzen sämtliche 78 Abschnitte. Ausführliche Originalerklärungen sind weiterhin aufklappbar. Labore, Fragen, Profil und Fortschritt bleiben erhalten. Eine gemeinsame Legende erklärt Größen und Einheiten, insbesondere Ladung in Coulomb (C), Kapazität C in Farad (F), Ampere, Watt und Kilowattstunden.
 
-Die Startseite beginnt direkt mit der Lernübersicht. Im Seitenmenü stehen vier Sammlungen: Videos nach Themen, Zusammenfassungen, Formeln mit Einheiten und alle Tests. Sie beziehen sich ausschließlich auf die 13 vorgegebenen Themen und Kapitelnummern. Fachbezogene Legenden erklären die Zeichen direkt in Lektionen, Laboren, Formeln und numerischen Testaufgaben.
+Die Startseite beginnt direkt mit der Lernübersicht. Im Seitenmenü stehen Videos nach Themen, Zusammenfassungen, Grundlagen & Praxis, Formeln mit Einheiten und alle Tests. Die 13 Hauptlektionen behalten ihre Kapitelnummern und Testresultate. Acht ergänzende Themen vertiefen auf Wunsch die Grundlagen. Fachbezogene Legenden erklären die Zeichen direkt in Lektionen, Laboren, Formeln und numerischen Testaufgaben.
 
 **Live:** https://nurlan-bakenbaev.github.io/ElektroTechnik/
 
@@ -16,7 +16,8 @@ Im Referenzlabor: 12 Lernschritte, Schalter, Amperemeter, Voltmeter, modellbasie
 
 - 13 ausführliche Themen mit 78 Abschnitten und 31 gelösten Beispielen.
 - 13 interaktive Experimente zu Strom, Schaltungen, Spannung, Widerstand, Energie und Feldern.
-- Pro Thema ein lokal eingebundenes deutschsprachiges Video unter fünf Minuten: ohne YouTube-Player, YouTube-Branding oder Werbeskripte. Offen lizenzierte Hochschulvideos von GET it digital; gekürzte Auszüge sind gekennzeichnet. Quellen- und Lizenzangaben bleiben erhalten. Der Player öffnet erst auf Wunsch und ist auf großen Bildschirmen 20 % schmaler, auf Mobilgeräten nutzt er die verfügbare Breite. [Auswahl, Rechte und Laufzeitprüfung](docs/VIDEO_SOURCES.md).
+- Pro Hauptlektion ein deutschsprachiges YouTube-Video unter fünf Minuten, über den offiziellen Player eingebunden. Er lädt erst auf Wunsch; Kanal, Dauer und direkter Link bleiben sichtbar. YouTube kann Werbung und Branding anzeigen. Es werden keine fremden Videodateien mehr über diese Website verteilt. Der Player bleibt auf großen Bildschirmen 20 % schmaler und auf Mobilgeräten breit. [Auswahl und Laufzeitnachweise](docs/VIDEO_SOURCES.md).
+- Acht eigenständig formulierte Zusatzthemen: Herkunft des Stroms, DC/AC, elektrische Größen, elektrische und magnetische Felder, Kondensatoren, ferro-/para-/diamagnetische Stoffe, Elektromotoren und Werkstoffe/Abschirmungen. Mit Vergleichen, Beispielen, Quellen und jeweils einer unbewerteten Selbstkontrolle. Das DC/AC-Modell zeigt Polarität und Spannungsverlauf interaktiv.
 - 65 Übungsfragen, davon 26 Rechenaufgaben; ein Thema gilt ab 4 von 5 richtigen Antworten als bestanden.
 - Abschlussprüfung mit 35 Fragen, davon 19 Rechenaufgaben, nach Abschluss aller Themen. Bestehensgrenze: 28 von 35.
 - „Einfach erklärt“: 12 ausführliche Grundbegriffe mit Bedeutung, Einheiten, schrittweisem Beispiel und erklärender Selbstkontrolle; außerdem Lexikon, Formelsammlung und Merkliste.
@@ -26,7 +27,7 @@ Im Referenzlabor: 12 Lernschritte, Schalter, Amperemeter, Voltmeter, modellbasie
 
 ## Gestaltung und Speicherung
 
-Größere Leseschrift, responsive Navigation und lokal eingebundene Manrope-Schrift. **Lenis** steuert sanftes Scrollen, **Motion** animiert Seitenwechsel. Die Systemeinstellung für reduzierte Bewegung wird berücksichtigt; Touch-Scrollen bleibt nativ.
+Leseschrift mit wählbaren 19 oder 22 Pixeln, dunkler Text auf weißen Leseflächen und ein Lesefokus ohne Seitenmenü. Die Anzeigeeinstellungen werden getrennt vom Lernprofil gespeichert. Das Inhaltsverzeichnis bleibt auch auf Mobilgeräten erreichbar; Sprünge fokussieren den gewählten Abschnitt. **Lenis** steuert sanftes Scrollen, **Motion** animiert Seitenwechsel. Die Systemeinstellung für reduzierte Bewegung wird berücksichtigt; Touch-Scrollen bleibt nativ.
 
 Name, Lernfortschritt, beste Ergebnisse, XP, Level und Merkliste werden ausschließlich im Browser gespeichert. Bestehende Profile bleiben kompatibel. Im Profil sind JSON-Export, validierter Import und ein bestätigter Reset verfügbar. Keine Anmeldung, Datenbank oder API-Schlüssel erforderlich. Keine automatische Synchronisierung zwischen Geräten. Kein garantierter Offlinezugriff/PWA.
 
@@ -66,4 +67,6 @@ STATIC_EXPORT=true NEXT_PUBLIC_BASE_PATH=/ElektroTechnik npm run build
 
 Das Verzeichnis `out/` enthält die statische Website. `.github/workflows/deploy-pages.yml` prüft, baut und veröffentlicht bei Push auf `main`. Alle Quellcode-Branches sind integriert; ein einziger Workflow und `next.config.mjs` steuern Build und Veröffentlichung. Die Branch `gh-pages` enthält frühere Build-Artefakte und wird nicht in den Quellcode gemischt. GitHub Pages muss als Quelle **GitHub Actions** verwenden.
 
-Die Navigation verwendet Hash-Routen; lokale Bilder, Videos, Schriftdateien und Formelbilder funktionieren auch unter `/ElektroTechnik/`. Die Sammlungen liegen unter `#/videos`, `#/summaries`, `#/formulas` und `#/tests`. Testlinks öffnen direkt den Wissenstest der passenden Lektion. Externe Webseiten dienen als Quellen- und Lizenznachweise.
+Die Navigation verwendet Hash-Routen; lokale Bilder, Schriftdateien und Formelbilder funktionieren auch unter `/ElektroTechnik/`. Die Sammlungen liegen unter `#/videos`, `#/summaries`, `#/fundamentals`, `#/formulas` und `#/tests`. Zusatzthemen lassen sich direkt verlinken, etwa `#/fundamentals/dc-ac` oder `#/fundamentals/shielding`. Testlinks öffnen direkt den Wissenstest der passenden Hauptlektion.
+
+Die [Analyse der 61 hochgeladenen Europa-Seiten](docs/EUROPA_ANALYSE_2026-10-22.md) ordnet Aufgabenfamilien den vorhandenen Lektionen zu und beschreibt fehlende Rechen-, Diagramm- und Schaltungstrainings. Sie unterscheidet den aktuellen Funktionsumfang vom weiteren Ausbau; die Buchdatei wird nicht veröffentlicht.
