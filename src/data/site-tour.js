@@ -1,0 +1,95 @@
+// Stable selectors point at actual controls; the tour never submits an answer.
+export const tourSteps = [
+  {
+    route: "home",
+    target: ".dashboard-title",
+    title: "Willkommen in deinem Lernstudio",
+    text: "Dieser Rundgang zeigt dir, wo du lernst, ausprobierst und dein Wissen prüfst. Mit Weiter besuchst du die Bereiche. Du kannst jederzeit schließen und später neu starten.",
+  },
+  {
+    route: "home",
+    target: '.sidebar .main-nav a[href="#/curriculum"]',
+    menu: true,
+    title: "Deine Navigation",
+    text: "Im Lernpfad findest du alle 13 Themen. Einfach erklärt hilft bei Grundbegriffen; im Lexikon schlägst du Begriffe nach. Gespeicherte Lektionen findest du in der Merkliste. Auf dem Handy öffnest du diese Navigation über das Menü oben links.",
+  },
+  {
+    route: "curriculum",
+    target: ".view-curriculum h1",
+    title: "Hier beginnt dein Lernweg",
+    text: "Wähle ein Thema und lerne in deinem Tempo. Die Karten zeigen die Inhalte und deinen bisherigen Stand. Du kannst zu jeder Lektion zurückkehren; die ursprünglichen 13 Themen bilden den bewerteten Kurs.",
+  },
+  {
+    route: "workshop/energy-1",
+    target: ".workshop-task > header h2",
+    title: "Aufgaben wirklich selbst lösen",
+    text: "In der Aufgabenwerkstatt wählst du eine Familie und bearbeitest die Schritte selbst. Einheiten, Zwischenergebnisse und Modellentscheidungen werden geprüft. Hinweise und Musterlösung sind optional; dein Werkstattversuch wird getrennt vom Kursprofil gespeichert.",
+  },
+  {
+    route: "lesson/current",
+    target: "#lesson-start h2",
+    title: "Erst verstehen, dann rechnen",
+    text: "Eine Lektion beginnt mit der Grundidee, verständlichen Begriffen und einem erklärten Beispiel. Die Legende sagt dir, was Zeichen und Einheiten bedeuten. Weiter unten findest du vertiefende Abschnitte. Über Speichern legst du die Lektion in deiner Merkliste ab.",
+  },
+  {
+    route: "lesson/current",
+    target: ".reader-toolbar",
+    title: "So liest es sich angenehmer",
+    text: "Wähle 19 oder 22 Pixel. Lesefokus blendet die Seitennavigation aus; mit Fokus beenden holst du sie zurück. Die Abschnittsauswahl führt dich direkt zum gewünschten Teil. Deine Leseeinstellungen bleiben unabhängig von Testergebnissen gespeichert.",
+  },
+  {
+    route: "lesson/current",
+    target: "#tab-lab",
+    activate: "#tab-lab",
+    title: "Zusammenhänge selbst ausprobieren",
+    text: "Unter Interaktiv veränderst du Werte und beobachtest das Modell. Probiere nach dem Rundgang einen Regler aus: Was passiert mit dem Strom, wenn sich Spannung oder Widerstand ändern? Das virtuelle Labor ergänzt die Erklärung.",
+  },
+  {
+    route: "lesson/current",
+    target: ".lesson-video",
+    title: "Ein kurzes Video zur Lektion",
+    text: "Video ansehen lädt den offiziellen YouTube-Player erst nach deinem Klick. Auf YouTube öffnen ist der direkte Weg zum Original. Werbung oder YouTube-Branding können erscheinen. Während des Rundgangs wird kein Video gestartet.",
+  },
+  {
+    route: "fundamentals/current-origin",
+    target: ".foundation-article > header h2",
+    title: "Grundlagen und Praxis vertiefen",
+    text: "Acht zusätzliche Erklärungen behandeln unter anderem die Herkunft des Stroms, DC und AC, Kondensatoren, Magnetwerkstoffe, Motoren und Abschirmung. Beispiele und Selbstkontrollen helfen dir beim Verstehen; sie verändern die Kursbewertung nicht.",
+  },
+  {
+    route: "videos",
+    target: ".view-videos h1",
+    title: "Alle Videos an einem Ort",
+    text: "In Videos nach Themen findest du die kurzen deutschen Videos zu den 13 Kurslektionen. Suche nach einem Thema und öffne den passenden Player. Du musst dafür nicht jede Lektion einzeln durchsuchen.",
+  },
+  {
+    route: "summaries",
+    target: ".view-summaries h1",
+    title: "Das Wichtigste wiederholen",
+    text: "Die Zusammenfassungen bündeln die Kernaussagen jedes Themas. Nutze sie nach einer Lektion oder vor einem Test. Wenn ein Zusammenhang noch unklar ist, öffne die vollständige Lektion mit ihren Beispielen.",
+  },
+  {
+    route: "formulas",
+    target: ".reference-formula",
+    title: "Formeln mit Bedeutung",
+    text: "Hier stehen die Formelbilder mit Quellen und Erläuterungen. Prüfe vor dem Einsetzen, welche Größe gesucht ist, was die Zeichen bedeuten und welche Einheiten passen. Eine Formel hilft erst, wenn das verwendete Modell zur Aufgabe passt.",
+  },
+  {
+    route: "tests",
+    target: "#collection-exam-heading",
+    title: "Üben und den Fortschritt prüfen",
+    text: "Jede Kurslektion hat fünf Fragen, auch Rechenaufgaben. Mit mindestens vier richtigen Antworten gilt ein Thema als gemeistert. Nach allen 13 Themen öffnet sich die Abschlussprüfung mit 35 Fragen. Wiederholungen behalten dein bestes Ergebnis; der Rundgang startet keinen Test.",
+  },
+  {
+    route: "glossary",
+    target: ".view-glossary input",
+    title: "Ein unbekanntes Wort? Nachschlagen",
+    text: "Suche im Lexikon nach einem Fachbegriff. Du findest seine Erklärung und den Weg zur passenden Lektion. Achte auf den Unterschied zwischen einer Größe, ihrem Formelzeichen und ihrer Einheit — etwa Stromstärke, I und Ampere.",
+  },
+  {
+    route: "profile",
+    target: ".view-profile h1",
+    title: "Dein Profil und deine Daten",
+    text: "Hier änderst du deinen Namen und sicherst oder überträgst deinen Fortschritt als JSON-Datei. Die Daten liegen lokal in diesem Browser; sie werden nicht automatisch zwischen Geräten synchronisiert. Geschafft! Du kannst den Rundgang über Website-Tour jederzeit erneut öffnen.",
+  },
+];

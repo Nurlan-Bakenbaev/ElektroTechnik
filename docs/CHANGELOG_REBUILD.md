@@ -2,6 +2,10 @@
 
 ## 2026-10-22 — Veröffentlichung und Aufgabenanalyse
 
+- Added a 15-stop, opt-in website tour with real navigation/spotlights, keyboard focus management, mobile menu handling and return to the starting page. The tour never submits a quiz, starts a video or changes course results.
+- Implemented the separate Aufgabenwerkstatt: 68 original exercises in 34 families, 248 checked steps, 144 numerical results, hints, worked solutions, reflections, unit-aware arithmetic help and local attempt/backup handling. This is preparation by exercise family, not a publisher answer-key reproduction or automated grading of drawings/free text.
+- Added an interactive kW/kWh comparison to both energy and power lessons; moved the course progress indicator into a compact navbar control and removed the large sidebar progress card.
+- Introduced the light/indigo design system, locally hosted Plus Jakarta Sans, restrained pointer/scroll motion and reduced-motion behavior. Added mathjs and Zod with lazy workshop loading and editor extension recommendations.
 - Leseransicht und acht ergänzende Erklärungen vollständig geprüft; Tablet-Kopfzeile und griechische Indizes korrigiert.
 - Offizielle YouTube-Einbettungen wiederhergestellt, lokale MP4-Ausgabe entfernt.
 - Alle 61 hochgeladenen Europa-Seiten auf Aufgabentypen und Lücken im Lernangebot untersucht; priorisierter Ausbauplan mit eigenen Kontrollbeispielen dokumentiert.

@@ -1,25 +1,52 @@
-# VOLT. reference design system
+# Volt. interface system
 
-The instrument surface is navy `#08131f`, raised panels `#101f2e`, borders `#2b4356`, primary instrument text near-white, and secondary labels `#b0c4d3`. Cyan `#55e0ef` identifies electrical interaction, amber `#ffd071` the selected graph point, and green `#aef28c` a closed circuit or successful state. Text and icons always accompany color.
+The implementation lives in `src/app/design-system.css`, `tour.css` and `workshop.css`; React components use the existing Motion and Lenis integration. This is the project's Next.js/JavaScript interface, with plain CSS rather than a second utility framework.
 
-Reading panels use white, ink `#102939`, and a visible blue-gray border. Manrope is locally bundled with Arial/sans-serif fallback. Instrument numbers use the system monospace stack and tabular figures. Minimum UI text is 12 CSS px; explanations use 16–17 px. German diacritics, Greek symbols and engineering units are preserved. Formula SVGs stay black on white, with local horizontal scrolling where needed.
+## Colour roles
 
-The desktop workspace uses a 175 px step rail, flexible instrument area and 270–310 px guidance panel. Below 1250 px guidance moves below the instruments; below 700 px steps become a horizontal rail and task guidance precedes the experiment. The page itself must never scroll horizontally. On phones the circuit has a local scroll area so its labels stay readable.
-
-Motion: entrance opacity/6 px translation lasts 200 ms; button transitions 160 ms. The circuit's dashed line marks the electrical path, not electron speed. It stops when current is zero. Reduced motion removes translation and disables path animation. Reading text stays still after entrance.
-
-| Component | Responsibility and states | Accessibility / failure |
+| Role | Hex | Use |
 |---|---|---|
-| `ReferenceLesson` | Tabs, step navigation, guidance, persistence | Labeled tabs, keyboard arrows/Home/End, readable storage warnings |
-| `OhmWorkbench` | Circuit, instrument readings, controls, graph, table | Labeled keyboard ranges; described SVG; native fullscreen with fallback notice |
-| `KnowledgeCheck` | Choice, numeric, multi-select, matching | Fieldset/legend; inline errors; status feedback; hints and retries |
-| `FormulaImage` | Source equation SVG and attribution | Formula alt text; keyboard scroll; article revision and license links |
-| `Notation` | Semantic subscripts in terms | Preserves surrounding Unicode text without HTML injection |
+| Dominant canvas, about 60% | `#FAFBFE` | Quiet page background |
+| Supporting surfaces, about 30% | `#FFFFFF`, `#F2F4F9` | Reading cards and grouped content |
+| Supporting dark structure | `#10182A` | Sidebar |
+| Borders | `#D7DEEB` | Groups and component boundaries |
+| Main text | `#172033` | Headings and reading |
+| Secondary text | `#4B5870` | Metadata and supporting explanations |
+| Accent, about 10% | `#4338CA` | Primary actions and active navigation |
+| Accent hover | `#3730A3` | Primary hover state |
+| Accent tint | `#EEEDFF` | Selected/active supporting background |
 
-The existing global course shell and old modules have legacy theme rules. This stylesheet is scoped to the reference experience; a complete global theme cleanup is not yet done. A second theme is deferred until the reference flow is stable.
+The proportions describe visual hierarchy, not a measured pixel quota. Meaningful status colours remain available for correct/incorrect answers. Text, icons and labels communicate status alongside colour.
 
-## Shared IT workshop layer
+## Typography and spacing
 
-`src/app/academy.css`, loaded after legacy globals, now owns the shared course presentation. The navigation and live instrument preview use deep navy with cyan signals; reading surfaces use white and blue-gray borders. The primary study area uses larger 17–18 px explanations, structured practical examples and expandable long references. The course directory is organized as module rows, preserving bookmarks and pass status rather than creating another grid of generic cards.
+Locally bundled **Plus Jakarta Sans Variable**; Arial/sans-serif fallback. A 4/8-pixel spacing rhythm uses 8, 16, 24, 32, 40 and 48 pixels, with smaller optical adjustments for borders and icons. Heading scale: 32–52 px on the overview, 28–36 px in task cards, 23–28 px for sections. Lesson reading stays selectable at **19 or 22 px**, secondary reading at 17/20 px. Metadata has a 12-pixel floor. Reading line height is approximately 1.75–1.85 with a bounded line length.
 
-`QuantityLegend` always exposes full unit names in its compact summary and can expand definitions. `UnitText` annotates numeric units without rewriting the wording; these annotations supplement the visible legend. `PowerSupplyDemo` is an actual controlled exercise: changing supply capacity does not change the demanded device current; an insufficient rating is flagged without pretending to simulate a real protection circuit.
+## Interaction states
+
+- Primary: white text on `#4338CA`; hover `#3730A3`; active scale 0.98.
+- Secondary: dark text on white, visible border; hover uses a pale indigo surface.
+- Keyboard focus: 3-pixel indigo outline with a 3-pixel offset; native dialog traps tour focus and Escape closes it.
+- Pointer hover: 240 ms button transition and at most 1.02 scale; cards lift 4 px with a restrained elevation change. Hover motion applies to precise pointing devices.
+- Disabled: inactive controls are visibly subdued and use actual `disabled` attributes.
+- Target sizes: primary controls at least 44 px high; tour controls at least 44 × 44 px.
+
+## Motion and performance
+
+Existing `LearningMotion.js` uses Motion's viewport-triggered fade/18-pixel entrance and small stagger delays. Lenis provides the shared scrolling controller. Text stays still after entry: no parallax or hover-follow movement is added to paragraphs, answer fields or diagrams that must be measured.
+
+`prefers-reduced-motion` disables smooth scrolling and decorative transitions; the same content and task controls remain available. Native scrolling remains available. Transparent blur is confined to the header; reading cards are opaque white. The task engine and its math/validation libraries load with the workshop route, while the tour component loads on request.
+
+No conversion funnel, forced registration or autoplay is introduced. The primary action is learning, and the tour is opt-in. Completed reading or visiting a page never grants course XP.
+
+## Libraries and editor support
+
+- Motion and Lenis: existing motion/scrolling layers.
+- mathjs: unit conversions, authored numerical checks and an arithmetic calculator whose accepted syntax is restricted before evaluation.
+- Zod: validates task records and browser-local workshop state.
+- `@fontsource-variable/plus-jakarta-sans`: self-hosted font assets.
+- Existing Lucide icons, ESLint, Prettier and Playwright remain in use.
+
+`.vscode/extensions.json` supplies recommendations for ESLint, Prettier and GitHub Actions. These are recommendations; the cloud shell cannot install extensions into an absent user editor. Sourced formula SVGs remain the presentation format requested by the user.
+
+Font and new software license/notice files are included in `public/licenses`. Design-token contrast on white: primary text 16.27:1, secondary text 7.17:1, white on the primary indigo button 7.90:1. See the quality report for the actual browser checks and their limits.

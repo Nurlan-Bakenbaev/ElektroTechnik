@@ -1,6 +1,11 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import { motion } from "motion/react";
+import {
+  motion,
+  useReducedMotion,
+  useScroll,
+  useTransform,
+} from "motion/react";
 import { scrollToReadingTarget } from "./LearningExperience";
 import { Reveal, AnimatedProgress } from "./LearningMotion";
 import FormulaImage from "./FormulaImage";
@@ -21,6 +26,8 @@ import {
   ChevronDown,
   ChevronRight,
   Clock3,
+  Compass,
+  Calculator,
   Download,
   Flame,
   GraduationCap,
@@ -81,6 +88,12 @@ import dynamic from "next/dynamic";
 const ReferenceLesson = dynamic(() => import("./lesson/ReferenceLesson"), {
   loading: () => <p role="status">Das Lernlabor wird geladen …</p>,
 });
+const SiteTour = dynamic(() => import("./SiteTour"), {
+  loading: () => <p role="status">Der Rundgang wird geladen …</p>,
+});
+const Workshop = dynamic(() => import("./Workshop"), {
+  loading: () => <p role="status">Die Aufgabenwerkstatt wird geladen …</p>,
+});
 
 const icons = {
   basics: Zap,
@@ -91,6 +104,7 @@ const icons = {
 const navItems = [
   { id: "home", label: "Lernübersicht", icon: LayoutGrid },
   { id: "curriculum", label: "Lernpfad", icon: BookOpen },
+  { id: "workshop", label: "Aufgabenwerkstatt", icon: Calculator },
   { id: "essentials", label: "Einfach erklärt", icon: Lightbulb },
   { id: "glossary", label: "Lexikon", icon: LibraryBig },
   { id: "bookmarks", label: "Merkliste", icon: Bookmark },
@@ -123,6 +137,7 @@ function readRoute() {
       "summaries",
       "tests",
       "fundamentals",
+      "workshop",
     ].includes(view)
       ? view
       : "home",
@@ -145,6 +160,8 @@ export default function LearningApp() {
   const [toast, setToast] = useState("");
   const toastTimer = useRef(null);
   const [showRegister, setShowRegister] = useState(false);
+  const [tourOpen, setTourOpen] = useState(false);
+  const tourOrigin = useRef(null);
 
   useEffect(() => {
     let initial;
@@ -174,25 +191,58 @@ export default function LearningApp() {
   useEffect(() => {
     if (
       profile &&
+      !tourOpen &&
       route.view === "lesson" &&
       getLesson(route.id) &&
       profile.lastLesson !== route.id
     )
       updateProfile((p) => ({ ...p, lastLesson: route.id }));
-  }, [route.view, route.id, profile?.lastLesson]);
+  }, [route.view, route.id, profile?.lastLesson, tourOpen]);
   useEffect(() => {
-    if (!mobileOpen) return;
+    if (!mobileOpen && !tourOpen) return;
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
     const close = (event) => {
-      if (event.key === "Escape") setMobileOpen(false);
+      if (event.key === "Escape" && !tourOpen) setMobileOpen(false);
     };
     window.addEventListener("keydown", close);
     return () => {
       document.body.style.overflow = previousOverflow;
       window.removeEventListener("keydown", close);
     };
-  }, [mobileOpen]);
+  }, [mobileOpen, tourOpen]);
+
+  function startTour(event) {
+    tourOrigin.current = {
+      hash: location.hash,
+      scroll: window.scrollY,
+      launch: event.currentTarget.dataset.tourLaunch,
+    };
+    setMobileOpen(false);
+    setTourOpen(true);
+  }
+  function closeTour(completed) {
+    const origin = tourOrigin.current;
+    if (origin) location.hash = origin.hash || "#/home";
+    setTourOpen(false);
+    setMobileOpen(false);
+    let attempts = 0;
+    const restore = () => {
+      const button =
+        origin?.launch === "sidebar" &&
+        window.matchMedia("(max-width: 1200px)").matches
+          ? document.querySelector(".mobile-menu")
+          : document.querySelector(
+              `[data-tour-launch="${origin?.launch || "sidebar"}"]`,
+            );
+      if (button && button.getBoundingClientRect().width) {
+        button.focus({ preventScroll: true });
+        scrollToReadingTarget(origin?.scroll || 0, { immediate: true });
+      } else if (++attempts < 30) requestAnimationFrame(restore);
+    };
+    requestAnimationFrame(() => requestAnimationFrame(restore));
+    if (completed) notify("Rundgang abgeschlossen. Viel Freude beim Lernen!");
+  }
 
   function updateProfile(updater) {
     setProfile((current) => {
@@ -244,6 +294,7 @@ export default function LearningApp() {
           summaries: "Zusammenfassungen",
           tests: "Alle Tests",
           fundamentals: "Grundlagen & Praxis",
+          workshop: "Aufgabenwerkstatt",
           glossary: "Lexikon",
           formulas: "Verzeichnis der Formeln",
           bookmarks: "Merkliste",
@@ -320,32 +371,16 @@ export default function LearningApp() {
             </a>
           ))}
         </nav>
-        <div className="sidebar-course">
-          <div className="sidebar-course-top">
-            <span className="course-symbol">
-              <Zap size={18} />
-            </span>
-            <span>DEIN AUSBILDUNGSWEG</span>
-          </div>
-          <h3>
-            Grundlagen verstehen.
-            <br />
-            Im IT-Alltag anwenden.
-          </h3>
-          <div className="sidebar-progress-title">
-            <span>Ihr Fortschritt</span>
-            <strong>{progress.percent}%</strong>
-          </div>
-          <div className="progress-track">
-            <AnimatedProgress value={progress.percent} />
-          </div>
-          <p>{progress.completed} von 13 Themen gemeistert</p>
-          <a href={`#/lesson/${current.id}`}>
-            Weiterlernen
-            <ArrowUpRight size={16} />
-          </a>
-        </div>
         <div className="sidebar-bottom">
+          <button
+            type="button"
+            className="tour-launch"
+            data-tour-launch="sidebar"
+            onClick={startTour}
+          >
+            <Compass size={18} />
+            Website-Tour
+          </button>
           <a href="#/sources">
             <ShieldCheck size={17} />
             Über Kursmaterialien
@@ -379,6 +414,28 @@ export default function LearningApp() {
             </span>
           </div>
           <div className="topbar-right">
+            <a
+              className="navbar-progress"
+              href="#/curriculum"
+              aria-label={`Lernfortschritt: ${progress.completed} von 13 Themen, ${progress.percent} Prozent`}
+            >
+              <span>
+                <strong>{progress.percent}%</strong>
+                <span>
+                  {progress.completed}/13<small> Themen</small>
+                </span>
+              </span>
+              <span
+                className="navbar-progress-track"
+                role="progressbar"
+                aria-label="Kursfortschritt"
+                aria-valuemin={0}
+                aria-valuemax={100}
+                aria-valuenow={progress.percent}
+              >
+                <span style={{ width: `${progress.percent}%` }} />
+              </span>
+            </a>
             <span className="xp-indicator">
               <Sparkles size={15} />
               {progress.xp} XP
@@ -436,12 +493,18 @@ export default function LearningApp() {
               progress={progress}
               current={current}
               bookmark={bookmark}
+              onTour={startTour}
             />
           )}
           {route.view === "curriculum" && (
             <Curriculum profile={profile} bookmark={bookmark} />
           )}
           {route.view === "essentials" && <Essentials />}
+          {route.view === "workshop" && (
+            <LessonReader>
+              <Workshop selectedId={route.id} />
+            </LessonReader>
+          )}
           {route.view === "videos" && <VideoCollection />}
           {route.view === "summaries" && <SummaryCollection />}
           {route.view === "fundamentals" && (
@@ -527,6 +590,9 @@ export default function LearningApp() {
             <X size={15} />
           </button>
         </div>
+      )}
+      {tourOpen && (
+        <SiteTour onClose={closeTour} onMenuChange={setMobileOpen} />
       )}
     </div>
   );
@@ -650,7 +716,15 @@ function CircuitArt() {
   );
 }
 
-function Dashboard({ profile, progress, current, bookmark }) {
+function Dashboard({ profile, progress, current, bookmark, onTour }) {
+  const intro = useRef(null);
+  const reduced = useReducedMotion();
+  const { scrollYProgress } = useScroll({
+    target: intro,
+    offset: ["start start", "end start"],
+  });
+  const glowY = useTransform(scrollYProgress, [0, 1], [0, 16]);
+  const glowScale = useTransform(scrollYProgress, [0, 1], [1, 1.04]);
   const previews =
     progress.completed === 13
       ? lessons.slice(10)
@@ -667,7 +741,26 @@ function Dashboard({ profile, progress, current, bookmark }) {
         </span>
         <span className="course-badge">Ausbildung · Fachinformatik</span>
       </div>
-      <h1 className="dashboard-title">Deine Lernübersicht</h1>
+      <div className="dashboard-intro" ref={intro}>
+        <motion.div
+          className="dashboard-glow"
+          aria-hidden="true"
+          style={reduced ? undefined : { y: glowY, scale: glowScale }}
+        />
+        <h1 className="dashboard-title">Deine Lernübersicht</h1>
+        <div className="tour-home-entry">
+          <button
+            type="button"
+            className="tour-launch"
+            data-tour-launch="home"
+            onClick={onTour}
+          >
+            <Compass size={19} />
+            Website-Tour starten
+          </button>
+          <p>Neu hier? Lass dir zeigen, wo du was findest.</p>
+        </div>
+      </div>
       <section className="course-stats" aria-label="Kurszusammensetzung">
         <div>
           <span className="stat-icon">
@@ -697,6 +790,21 @@ function Dashboard({ profile, progress, current, bookmark }) {
           </span>
         </div>
       </section>
+      <a className="workshop-entry" href="#/workshop/energy-1">
+        <span className="workshop-entry-icon">
+          <Calculator size={25} />
+        </span>
+        <div>
+          <span className="eyebrow">DEIN RECHENWEG ZÄHLT</span>
+          <h2>Die Aufgabenwerkstatt</h2>
+          <p>
+            Einheiten verstehen, das passende Modell wählen und jeden
+            Rechenschritt prüfen. Mit Hinweisen, Beispielen und einem zweiten
+            Versuch mit neuen Angaben.
+          </p>
+        </div>
+        <ArrowUpRight size={23} />
+      </a>
       <a className="essentials-banner" href="#/essentials">
         <span className="essentials-icon">
           <Lightbulb size={22} strokeWidth={1.5} />
@@ -1938,6 +2046,7 @@ function Profile({ profile, progress, onUpdate, notify }) {
               // use helper to remove attempt keys (best-effort)
               removeAttemptKeys();
               removeAttemptKeys("volt-academy:lesson:");
+              removeAttemptKeys("volt-workshop:");
             } catch {
               // The profile reset can still complete when separate session storage is unavailable.
             }
@@ -1959,14 +2068,12 @@ function Sources() {
       <div className="source-intro">
         <BookOpen size={27} />
         <div>
-          <h2>Wie ist dieses Tutorial organisiert?</h2>
+          <h2>Wie lernst du mit Volt.?</h2>
           <p>
-            Jedes Kapitel führt vom physikalischen Verständnis über die Formel
-            zur gelösten Aufgabe und zur selbstständigen Übung. Alle
-            Zahlenbeispiele beziehen sich auf explizit angegebene Modelle:
-            ideale Elemente, Gleichstrom oder lineares Medium. Absatznummern
-            werden von Ihrem Programm gespeichert; zwei mit 2.8 gekennzeichnete
-            Themen werden gesondert betrachtet.
+            Die Lektionen erklären zuerst die Grundidee, dann zeigen sie
+            Beispiele und Übungen. Rechenaufgaben nennen die Bedingungen ihres
+            Modells, etwa Gleichstrom, ideale Bauteile oder ein lineares Material.
+            Die Aufgabenwerkstatt ergänzt den Kurs mit prüfbaren Rechenschritten.
           </p>
           <p>
             Die folgenden Links sind zusätzliche maßgebliche Materialien für ein
@@ -1992,12 +2099,12 @@ function Sources() {
       <div className="callout callout-warning">
         <ShieldCheck size={22} />
         <div>
-          <strong>Vom Trainingsmodell zur echten Rennstrecke</strong>
+          <strong>Vom Lernmodell zur realen Anlage</strong>
           <p>
-            Die Trainer dienen dem Verstehen und nicht dem Entwerfen von
-            Krafttraining. Verwenden Sie für physikalische Experimente eine
-            Niederspannungs-Trainingsquelle und entsprechend dimensionierte
-            Komponenten. Experimentieren Sie nicht mit Haushaltsstrom.
+            Die virtuellen Experimente sind vereinfachte Lernmodelle. Sie
+            ersetzen keine fachgerechte Planung, Prüfung oder Einweisung an
+            realen Anlagen. Praktische Versuche gehören in eine geeignete
+            Lernumgebung mit fachkundiger Begleitung.
           </p>
         </div>
       </div>

@@ -1,10 +1,13 @@
-import "@fontsource-variable/manrope";
+import "@fontsource-variable/plus-jakarta-sans";
 import "./globals.css";
 import "./academy.css";
 import "./essentials.css";
 import "./collections.css";
 import "./reader.css";
 import "./foundations.css";
+import "./tour.css";
+import "./workshop.css";
+import "./design-system.css";
 import LearningExperience from "../components/LearningExperience";
 
 export const metadata = {

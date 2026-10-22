@@ -70,3 +70,17 @@ Das Verzeichnis `out/` enthält die statische Website. `.github/workflows/deploy
 Die Navigation verwendet Hash-Routen; lokale Bilder, Schriftdateien und Formelbilder funktionieren auch unter `/ElektroTechnik/`. Die Sammlungen liegen unter `#/videos`, `#/summaries`, `#/fundamentals`, `#/formulas` und `#/tests`. Zusatzthemen lassen sich direkt verlinken, etwa `#/fundamentals/dc-ac` oder `#/fundamentals/shielding`. Testlinks öffnen direkt den Wissenstest der passenden Hauptlektion.
 
 Die [Analyse der 61 hochgeladenen Europa-Seiten](docs/EUROPA_ANALYSE_2026-10-22.md) ordnet Aufgabenfamilien den vorhandenen Lektionen zu und beschreibt fehlende Rechen-, Diagramm- und Schaltungstrainings. Sie unterscheidet den aktuellen Funktionsumfang vom weiteren Ausbau; die Buchdatei wird nicht veröffentlicht.
+
+## Aufgabenwerkstatt, Rundgang und neues Interface
+
+`#/workshop/energy-1` öffnet die Aufgabenwerkstatt: **68 eigene Aufgaben in 34 Familien mit 248 prüfbaren Schritten**, darunter 144 numerische Antworten. Die Themen reichen von Vorsätzen und Umstellen über Leitungsfall, Reihe/parallel, E12, belastete Teiler, Brücken und Quellen bis RC, Magnetismus, Motorprinzip und Induktion. Hinweise, Musterlösungen, freie Reflexion, Rechenhilfe und ein zweiter Datensatz begleiten den Rechenweg. Fehlerfeedback oder geöffnete Hilfe kennzeichnen den Versuch als unterstützt. Freie Texte und Papierskizzen werden nicht automatisch bewertet.
+
+Die Werkstatt speichert unter `volt-workshop:v1`, getrennt vom Kursprofil, und kann ihre eigene JSON-Sicherung exportieren und nach Bestätigung importieren. Ein Profil-Reset entfernt auch die Werkstattversuche. Der Profil-Export enthält weiterhin nur das Kursprofil: Für die Werkstatt die dort angebotene Sicherung verwenden. Der Rundgang ist freiwillig, startet über **Website-Tour** und kehrt bei Ende oder Escape zur Ausgangsseite zurück. Er verändert keine Testergebnisse und spielt keine Videos ab.
+
+Die Energie- und Leistungslektion enthalten einen interaktiven Vergleich von **kW und kWh**. Die kompakte Kursanzeige liegt im oberen Navbar. Das Interface verwendet die lokale Schrift Plus Jakarta Sans, ein helles Farbsystem, Motion und Lenis mit Berücksichtigung reduzierter Bewegung. Umsetzung, Farben und Zustände: [Designsystem](docs/DESIGN_SYSTEM.md).
+
+### Woher kommen die Inhalte?
+
+Die Lektionen sind kuratierte JavaScript-Datensätze in `src/data/lessons-*.js`, mit Einstiegen in `lesson-basics.js`. Texte und Fragen werden nicht während des Lesens durch eine KI erzeugt und nicht von fremden Webseiten nachgeladen. Die Werkstattfamilien in `workshop-tasks.js` erzeugen je zwei fest definierte Varianten aus eigenen Texten und Zahlen. mathjs berechnet die hinterlegten Ergebnisse und prüft Einheiten; Zod validiert Aufgaben und gespeicherte Versuche. Formeln bleiben lokal gespeicherte, attribuierte Internet-SVGs.
+
+Neue Bibliotheken: `mathjs`, `zod`, `@fontsource-variable/plus-jakarta-sans`. Die Rechenbibliotheken und die Werkstatt werden nur mit der entsprechenden Ansicht geladen. `.vscode/extensions.json` enthält Empfehlungen für ESLint, Prettier und GitHub Actions, keine Behauptung einer Installation im persönlichen Editor.

@@ -5,6 +5,7 @@ import CurrentPrimer from "./CurrentPrimer";
 import FormulaImage from "./FormulaImage";
 import LessonPitfall from "./LessonPitfall";
 import { FoundationLinks } from "./Fundamentals";
+import EnergyComparison from "./EnergyComparison";
 
 export default function LessonBrief({ lessonId, onExperiment, formula }) {
   const basics = lessonBasics[lessonId];
@@ -26,6 +27,7 @@ export default function LessonBrief({ lessonId, onExperiment, formula }) {
         <UnitText>{basics.answer}</UnitText>
       </p>
       {lessonId === "current" && <CurrentPrimer />}
+      {["energy", "power"].includes(lessonId) && <EnergyComparison />}
       <div className="brief-basics">
         <span className="brief-label">DAS SOLLTEST DU JETZT VERSTEHEN</span>
         <ul>

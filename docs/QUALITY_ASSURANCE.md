@@ -103,3 +103,26 @@ All **10 reader, supplementary-guide and YouTube integration scenarios** also pa
 - [Shielding, mobile](screenshots/foundations-shielding-mobile.png)
 
 YouTube browser integration uses intercepted iframe responses and therefore does not claim that every external video will always play, be ad-free, or remain available. This release does not claim full WCAG certification. The [Europa analysis](EUROPA_ANALYSE_2026-10-22.md) documents additional problem-solving work still needed; it is not a claim that the complete workbook has already become an interactive exercise bank.
+
+## Workshop, website tour and interface revision — 2026-10-22
+
+The subsequent release implements **68 original workshop exercises across 34 families**, with **248 checked steps** including **144 numerical answers**. Independent reference values verify every numerical key, including both data sets. All 68 exercises have also been completed through their actual browser controls; this verifies step gating, result recording and the absence of course XP awards for workshop completion.
+
+Lint, the optimized build, **59 unit/content/model tests**, and the full **45-scenario browser suite** passed. The full browser suite ran against the Pages static export served at `/ElektroTechnik/`, not just a root-path development server. It retains the 65-question course/35-question examination flow, all laboratories, saved profiles, reader controls, YouTube integration and supplementary explanations. The new scenarios cover the complete 15-stop tour, mobile navigation/spotlight alignment with animation enabled, keyboard focus containment, return to the starting page, course-profile preservation, workshop drafts/reflections, incorrect units, equivalent energy units, hints, assisted versus independent results, arithmetic help, reset and confirmed backup import.
+
+All workshop calculations are evaluated from authored data. Learner arithmetic is parsed under a restricted numeric/operator grammar before execution: no assignments, property access, variables, collections or arbitrary function calls are permitted. Exponents and expression length are bounded; nonfinite calculator results are rejected. Task records and local attempts are validated by Zod. Restoring attempts recomputes completion from their actual answers. A separate regression round-trips all 68 completed attempts with full-length reflections; the import/storage limit is 1 MiB so legitimate written responses do not exceed the earlier 100 kB limit.
+
+The compact course indicator replaces the former large sidebar card and remains visible at 320, 375, 768, 1024, 1280 and 1440 pixels. Workshop choice fieldsets now explicitly allow shrinking, and option text is wrapped in a shrinkable span; this fixes a real 30-pixel overflow at 320 pixels rather than hiding it. On smaller screens a native family selector replaces the long workshop sidebar. The tour accounts for the sidebar's animated opening before measuring the spotlight, explicitly cycles keyboard focus and restores the mobile-menu trigger when its sidebar launch button is no longer visible.
+
+The local Plus Jakarta Sans font loads successfully. Principal design-token contrasts on white are **16.27:1** for primary text, **7.17:1** for secondary text, and **7.90:1** for white text on the indigo primary button. Browser assertions also check the rendered button/sidebar/active-navigation colour pairs. Reduced motion disables Lenis scrolling and decorative movement. The original homepage supply banner remains removed; the new workshop entry is a direct learning action. Reading panels remain opaque white.
+
+The static export is approximately **4.8 MB**, including the new separately loaded workshop engine. The dependency audit reports **0 production dependency vulnerabilities** at verification time. New font/software license texts and the mathjs notice are shipped in `public/licenses`. Editor extensions are recommendations in `.vscode/extensions.json`; no installation into an absent personal editor is claimed.
+
+After the final storage-budget adjustment, all 59 unit tests passed again and the rebuilt Pages export passed six targeted tour/import/energy/responsive scenarios. No dependency or runtime changes followed those checks.
+
+- [Updated overview](screenshots/studio-home-desktop.png)
+- [Workshop and schematic, desktop](screenshots/workshop-desktop.png)
+- [Website tour, mobile](screenshots/tour-mobile.png)
+- [kW/kWh comparison, mobile](screenshots/energy-comparison-mobile.png)
+
+Free explanations and paper drawings are self-reviewed. A basic safety exercise links to the DRK first-aid material, checked on 2026-10-22; it is not a complete current standards course or professional qualification. The workshop prepares exercise families rather than reproducing the publisher's answer key. No complete accessibility certification or external teacher review is claimed.

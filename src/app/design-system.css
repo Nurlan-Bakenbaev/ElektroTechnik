@@ -1,0 +1,422 @@
+/* Volt. design tokens: 8px rhythm, restrained indigo, quiet reading surfaces. */
+:root {
+  --canvas: #fafbfe;
+  --surface: #ffffff;
+  --surface-subtle: #f2f4f9;
+  --text-primary: #172033;
+  --text-secondary: #4b5870;
+  --accent: #4338ca;
+  --accent-hover: #3730a3;
+  --accent-soft: #eeedff;
+  --border: #d7deeb;
+  --bg: var(--canvas);
+  --ink: var(--text-primary);
+  --muted: var(--text-secondary);
+  --line: var(--border);
+  --green: var(--accent);
+  --green-deep: var(--accent);
+  --radius: 12px;
+  --motion-ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+body {
+  background: var(--canvas);
+  color: var(--text-primary);
+  font-family: "Plus Jakarta Sans Variable", Arial, sans-serif;
+}
+.app-shell {
+  background: var(--canvas);
+}
+.main-content {
+  padding-top: 40px;
+}
+.sidebar {
+  background: #10182a;
+  border-right: 1px solid #263047;
+}
+.brand-mark {
+  background: #eeedff;
+  color: #4338ca;
+  border-radius: 12px;
+}
+.brand-dot {
+  color: #a5a0ff;
+}
+.main-nav > a {
+  border-radius: 9px;
+  min-height: 48px;
+  color: #c8d0e2;
+}
+.main-nav > a.nav-active,
+.main-nav > a.nav-active:hover {
+  background: #4338ca;
+  border-color: #4338ca;
+  color: #fff;
+}
+.main-nav > a:hover {
+  color: #fff;
+  background: #24304a;
+}
+.topbar {
+  background: #ffffffed;
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid #d7deeb;
+  gap: 16px;
+}
+.topbar-left {
+  flex: 1;
+  min-width: 0;
+}
+.topbar-right {
+  flex-shrink: 0;
+}
+.topbar .breadcrumb {
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.topbar .breadcrumb strong {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.topbar
+  :is(
+    .breadcrumb,
+    .breadcrumb strong,
+    .profile-button,
+    .profile-button strong,
+    .profile-button small,
+    .profile-button > svg,
+    .mobile-menu
+  ) {
+  color: #33425b;
+}
+.topbar .avatar {
+  background: #eeedff;
+  border-color: #fff;
+  outline-color: #ccd1e7;
+  color: #3730a3;
+}
+.topbar .register-button {
+  background: #fff;
+  border: 1px solid #a8b3c8;
+  color: #34405b;
+}
+.topbar .xp-indicator {
+  color: #33425b;
+  background: #f1f3f9;
+  border-color: #d6dce9;
+}
+.topbar .topbar-separator {
+  border-color: #d6dce9;
+}
+.navbar-progress {
+  color: #47536b;
+  background: #fff;
+  border-color: #ccd4e4;
+}
+.navbar-progress strong {
+  color: #3730a3;
+}
+.navbar-progress-track {
+  background: #e3e6f0;
+}
+.navbar-progress-track > span {
+  background: #4f46e5;
+}
+.eyebrow {
+  color: #4b5670;
+  letter-spacing: 0.09em;
+}
+.dashboard-title {
+  color: #172033;
+  font-size: clamp(34px, 3.7vw, 52px);
+  line-height: 1.15;
+  letter-spacing: -0.05em;
+  margin-bottom: 32px;
+}
+.dashboard-intro {
+  position: relative;
+  isolation: isolate;
+}
+.dashboard-glow {
+  position: absolute;
+  width: min(60%, 450px);
+  height: 130px;
+  top: -35px;
+  right: 0;
+  background: radial-gradient(ellipse, #e6e3ff99, #fafbfe00 70%);
+  z-index: -1;
+  pointer-events: none;
+}
+.workshop-entry {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 28px;
+  margin: 32px 0 20px;
+  border: 1px solid #c7c3e9;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 5px 24px #4338ca05;
+}
+.workshop-entry h2 {
+  font-size: 27px;
+  color: #202b43;
+  margin: 8px 0 12px;
+  line-height: 1.3;
+  letter-spacing: -0.03em;
+}
+.workshop-entry p {
+  color: #4b5870;
+  font-size: 17px;
+  line-height: 1.7;
+  margin: 0;
+  max-width: 66ch;
+}
+.workshop-entry > svg {
+  color: #4338ca;
+  flex-shrink: 0;
+}
+.workshop-entry-icon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  color: #4338ca;
+  background: #eeedff;
+}
+@media (max-width: 650px) {
+  .workshop-entry {
+    align-items: flex-start;
+    gap: 14px;
+    padding: 20px;
+  }
+  .workshop-entry-icon {
+    display: none;
+  }
+  .workshop-entry h2 {
+    font-size: 24px;
+  }
+}
+.course-stats {
+  gap: 1px;
+  background: #dde2ed;
+  border: 1px solid #dde2ed;
+  border-radius: 14px;
+  overflow: hidden;
+}
+.course-stats > div {
+  border: 0;
+  background: #fff;
+  padding: 24px;
+}
+.course-stats .stat-icon {
+  background: #f1f3f9;
+  color: #4b5870;
+  border-radius: 10px;
+}
+.course-stats strong {
+  color: #172033;
+}
+.button {
+  border-radius: 9px;
+  min-height: 44px;
+  transition:
+    transform 0.24s var(--motion-ease),
+    background-color 0.24s,
+    border-color 0.24s,
+    box-shadow 0.24s;
+}
+.button-dark,
+.button-green {
+  background: #4338ca;
+  color: #fff;
+  border-color: #4338ca;
+  box-shadow: 0 4px 12px #4338ca14;
+}
+.button-dark:hover,
+.button-green:hover {
+  background: #3730a3;
+  color: #fff;
+  border-color: #3730a3;
+  box-shadow: 0 6px 18px #4338ca26;
+}
+.button-light,
+.button-outline {
+  background: #fff;
+  color: #34415a;
+  border: 1px solid #aab6c9;
+}
+.button-light:hover,
+.button-outline:hover {
+  color: #25205d;
+  border-color: #8178c4;
+  background: #f5f4ff;
+}
+.button:active {
+  transform: scale(0.98);
+}
+.button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+.lesson-card,
+.path-card {
+  border: 1px solid #d6deec;
+  border-radius: 14px;
+  box-shadow: 0 3px 12px #17203304;
+  background: #fff;
+  transition:
+    transform 0.28s var(--motion-ease),
+    box-shadow 0.28s,
+    border-color 0.28s;
+}
+.lesson-card.featured {
+  background: #f8f8ff;
+  border-color: #c1bee8;
+}
+.lesson-card .lesson-card-title,
+.path-card h3 {
+  color: #172033;
+}
+.lesson-card :is(p, .lesson-card-meta),
+.path-card p {
+  color: #4b5870;
+}
+.text-link {
+  color: #3730a3;
+}
+.essentials-banner {
+  border: 1px solid #d8dced;
+  background: #f2f3fa;
+  color: #26314c;
+  border-radius: 12px;
+}
+.essentials-banner strong {
+  color: #24304a;
+}
+.essentials-banner p {
+  color: #4b5870;
+}
+.essentials-icon {
+  color: #4338ca;
+  background: #e6e5fb;
+  border-radius: 10px;
+}
+.lesson-workspace {
+  --reading-ink: #253147;
+  --reading-secondary: #414f65;
+}
+.lesson-workspace .lesson-header {
+  border-top-color: #6055d7;
+  background: #fff;
+}
+.lesson-workspace .lesson-header h1 {
+  color: #172033;
+}
+.lesson-workspace .lesson-tabs {
+  background: #f1f3f9;
+  border-color: #d7deeb;
+  border-radius: 10px;
+  padding: 5px;
+}
+.lesson-tabs > button.active {
+  background: #fff;
+  color: #3730a3;
+  box-shadow: 0 2px 8px #17203312;
+  border-radius: 7px;
+}
+.reader-size-buttons button[aria-pressed="true"] {
+  background: #4338ca;
+}
+.reader-toolbar button,
+.profile-button {
+  min-height: 44px;
+}
+.reader-focus[aria-pressed="true"] {
+  background: #eeedff;
+  color: #3730a3;
+  border-color: #a9a2e8;
+}
+.lesson-outline nav button[aria-current="location"],
+.foundations-nav a[aria-current="page"] {
+  background: #f0efff;
+  color: #3730a3;
+  box-shadow: inset 3px 0 #6055d7;
+}
+.foundation-article {
+  border-color: #d3dbea;
+  border-radius: 14px;
+}
+.foundation-article :is(h2, h3),
+.foundations-heading h1 {
+  color: #172033;
+}
+.foundation-article .foundation-lead {
+  border-color: #6055d7;
+}
+.tour-launch {
+  color: #3730a3;
+  border-color: #b5b2e0;
+  border-radius: 9px;
+}
+.sidebar-bottom .tour-launch {
+  background: #202a40;
+  border-color: #49536a;
+}
+.tour-panel {
+  border-top-color: #6055d7;
+}
+.tour-progress span,
+.tour-actions .tour-next {
+  background: #4338ca;
+  border-color: #4338ca;
+}
+.tour-spotlight {
+  border-color: #b7aeff;
+}
+:is(a, button, input, select, textarea, summary):focus-visible {
+  outline: 3px solid #695de3;
+  outline-offset: 3px;
+}
+@media (hover: hover) and (pointer: fine) {
+  .button:not(:disabled):hover {
+    transform: translateY(-1px) scale(1.02);
+  }
+  .lesson-card:hover,
+  .path-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 32px #1720330d;
+    border-color: #aaa4dd;
+  }
+}
+@media (max-width: 760px) {
+  .main-content {
+    padding-top: 24px;
+  }
+  .dashboard-title {
+    font-size: 34px;
+  }
+  .course-stats > div {
+    padding: 18px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .lesson-card:hover,
+  .path-card:hover,
+  .button:hover,
+  .button:active {
+    transform: none !important;
+  }
+}
